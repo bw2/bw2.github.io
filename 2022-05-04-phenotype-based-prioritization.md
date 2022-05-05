@@ -26,10 +26,9 @@ To evaluate LIRICAL performance, I ran it on 75 previously-solved rare disease c
 - 2 cases: solved with a gene that was previously associated with a different disease phenotype. 
 - 14 cases: solved with a gene not previously associated with a disease. 
 
-LIRICAL correctly identified the correct gene in 65 out of the 75 cases (87%).  
-In 42 out of 75 cases (56%), this gene was among the top 3 results.
+LIRICAL correctly identified the correct gene in 65 out of the 75 cases (87%), and in 42 out of 75 cases (56%) it was in the top 3.
 
-This histogram describes how often LIRICAL ranked the correct gene in the top 5, between 6-10, and >10th in the list, colored by inheritance mode. 
+This histogram show how often LIRICAL ranked the correct gene in the top 5, between 6-10, and >10th in the list, colored by inheritance mode. 
 The x-axis represents # of cases:
 
 ![image](https://user-images.githubusercontent.com/6240170/166860675-e89e4271-33b5-4489-955f-5ce4fed5274c.png)
