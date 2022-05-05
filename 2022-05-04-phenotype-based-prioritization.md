@@ -17,7 +17,7 @@ For the above example, LIRICAL outputs:
 
 <img width="1164" alt="image" src="https://user-images.githubusercontent.com/6240170/166859374-128a44d3-6590-44e4-ba95-279bfa2fada9.png">
 
-Clinical geneticists that previously evaluated this case without using LIRICAL came to the conclusion that variants in KMT2C explain 
+Clinical geneticists that previously evaluated this case without using LIRICAL came to the conclusion that variants in the KMT2C gene explain 
 this patient's phenotype. 
 
 To evaluate LIRICAL performance, I ran it on 75 previously-solved rare disease cases from the [Rare Genomes Project](https://raregenomes.org/). 
