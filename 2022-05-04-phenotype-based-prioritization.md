@@ -38,7 +38,7 @@ list and it's post-test probability:
 
 <img width="729" alt="image" src="https://user-images.githubusercontent.com/6240170/166860896-d35babad-a1a5-4d20-a9b4-cc3f58dc8045.png">
 
-In most cases (49 out of the 75 = 65%), the correct result was among the top 5 hits and for many (36 out of 75 = 48%) it also had a post-test probability between 1% and 100%. On the other hand, for 15 cases (20%) the correct result was below 5th in the list and had a post-test probability near 0.
+In most cases (49 out of 75 = 65%), the correct result was among the top 5 hits and for many (36 out of 75 = 48%) it also had a post-test probability between 1% and 100%. On the other hand, for 15 cases (20%) the correct result was below 5th in the list and had a post-test probability near 0.
 
 **Conclusion:** LIRICAL shows high sensitivity in finding the causal genes for rare disease cases from [RGP](https://raregenomes.org/). 
 
