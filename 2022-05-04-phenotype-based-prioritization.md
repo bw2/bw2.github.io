@@ -10,7 +10,7 @@ Lets say an individual has symptoms described by these 7 HPO terms:
 - Short stature ([HP:0004322](https://hpo.jax.org/app/browse/term/HP:0004322))
 - Supraventricular tachycardia ([HP:0004755](https://hpo.jax.org/app/browse/term/HP:0004755))
 
-The LIRICAL algorithm takes these 7 HPO terms along with the individual's DNA variants (from WGS or WES) and outputs a list of candidate diagnoses, 
+The LIRICAL algorithm takes these 7 HPO terms along with the individual's variants (from WGS or WES) and outputs a list of candidate diagnoses, 
 their post-test probabilities, and visualizations showing which of the individual's HPO terms support or contradict each candidate.
 
 For the above example, LIRICAL outputs:
