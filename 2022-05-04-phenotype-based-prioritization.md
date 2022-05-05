@@ -43,7 +43,7 @@ In most cases (49 out of the 65), the correct result was among the top 5 hits an
 
 ---
 
-**How many genes would someone need to look through after running LIRICAL on a case?**
+**How many genes would someone need to look through for a typical case?**
 
 From the above plot, a conservative approach would be to only consider the top 5 results (x-axis) and only if they have a post-test probability (PTP) of 1% or higher (y-axis). 
 Based on these cutoffs, there would be 3 results to look at on average, but 39% of cases would have 5 or more results with PTP > 1%:
@@ -52,11 +52,18 @@ Based on these cutoffs, there would be 3 results to look at on average, but 39% 
 
 ---
 
-**What is the false-positives rate?**
+**What is the false-positive rate?**
 
-Does LIRICAL produce many false-positives? One way to look at this is 
+The above plot shows that, although LIRICAL reports the correct gene as #1 in the list in an impressive 23 out of 75 cases (31%), most of the time the 
+correct gene is further down in the list. All genes above the correct gene can be considered false positives.
 
+Another way to look into this and also test how much LIRICAL performance depends on variants vs. phenotype match is to rerun the same tests, but substitute in variants from completely unrelated healthy individuals sequenced as part of the same cohort. I did this 5x for each of the 75 solved cases above (=> 375 test runs). Unsurprisingly, this caused LIRICAL accuracy to drop to esssentially 0: only 10 out of the 375 LIRICAL reports (3%) still included the correct gene, and only 3 of these were in the top 5 and had a post-test probability > 1%.
 
+Unfortunately, in 260 out of 375 tests (70%) LIRICAL still reported at least one result with a post-test probability > 1%:
+
+<img width="429" alt="image" src="https://user-images.githubusercontent.com/6240170/166864705-af5f4943-d41e-4416-967d-e6f16183c85a.png">
+
+This means that, even with conservative thresholds of top-5 and PTP > 1%, a user would still see on average 2 false-positive results per case. 
 
 ---
 
