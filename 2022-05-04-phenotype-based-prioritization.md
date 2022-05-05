@@ -77,5 +77,12 @@ This again show that, even with conservative thresholds of top-5 and PTP > 1%, a
 Yes - by prefiltering the variants. For the tests above, I prefiltered each individual's variants to exclude ones that are common in the general popualation (keeping gnomAD v3 PopMax AF < 0.01). Applying this prefilter didn't change the number of true positive results, but increased their average rank from 7.6 to 5.9.
 Adding further prefiltering - such as by inheritance mode for cases where parents' DNA is available will almost certainly improve results further. 
 
+---
+
+References:
+
+1. Robinson PN, Ravanmehr V, Jacobsen JOB, et al. Interpretable Clinical Genomics with a Likelihood Ratio Paradigm. Am J Hum Genet. 2020;107(3):403-417. [doi:10.1016/j.ajhg.2020.06.021](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7477017/)
+2. Yuan X, Wang J, Dai B, et al. Evaluation of phenotype-driven gene prioritization methods for Mendelian diseases. Brief Bioinform. 2022;23(2):bbac019. [doi:10.1093/bib/bbac019](https://pubmed.ncbi.nlm.nih.gov/35134823/)
+
 
 
