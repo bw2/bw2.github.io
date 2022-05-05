@@ -39,7 +39,9 @@ list and it's post-test probability:
 
 <img width="729" alt="image" src="https://user-images.githubusercontent.com/6240170/166860896-d35babad-a1a5-4d20-a9b4-cc3f58dc8045.png">
 
-In most cases (49 out of the 65), the correct result was among the top 5 hits and for many (36 out of 65) it also had a post-test probability between 1% and 100%, but for 15 cases the correct result was below 5th in the list and had a post-test probability near 0.
+In most cases (49 out of the 75 = 65%), the correct result was among the top 5 hits and for many (36 out of 75 = 48%) it also had a post-test probability between 1% and 100%. On the other hand, for 15 cases (20%) the correct result was below 5th in the list and had a post-test probability near 0.
+
+**Conclusion:** LIRICAL shows high sensitivity in finding the causal genes for rare disease cases from [RGP](https://raregenomes.org/). 
 
 ---
 
@@ -48,14 +50,16 @@ In most cases (49 out of the 65), the correct result was among the top 5 hits an
 From the above plot, a conservative approach would be to only consider the top 5 results (x-axis) and only if they have a post-test probability (PTP) of 1% or higher (y-axis). 
 Based on these cutoffs, there would be 3 results to look at on average, but 39% of cases would have 5 or more results with PTP > 1%:
 
-![image](https://user-images.githubusercontent.com/6240170/166862021-2bb6f9e8-82a6-4b4e-8923-fdc1265df3d6.png)
+<img width="425" alt="image" src="https://user-images.githubusercontent.com/6240170/166865247-43ebc202-8007-41a0-b951-9a1cecf9048e.png">
+
+**Conclusion:**  3 genes per case when using cutoffs that would yield ~50% sensitivity.
 
 ---
 
 **What is the false-positive rate?**
 
 The above plot shows that, although LIRICAL reports the correct gene as #1 in the list in an impressive 23 out of 75 cases (31%), most of the time the 
-correct gene is further down in the list. All genes above the correct gene can be considered false positives.
+correct gene is further down in the list. All genes above the correct gene can be considered false positives. With conservative thresholds, this is ~2 genes on average.
 
 Another way to look into this and also test how much LIRICAL performance depends on variants vs. phenotype match is to rerun the same tests, but substitute in variants from completely unrelated healthy individuals sequenced as part of the same cohort. I did this 5x for each of the 75 solved cases above (=> 375 test runs). Unsurprisingly, this caused LIRICAL accuracy to drop to esssentially 0: only 10 out of the 375 LIRICAL reports (3%) still included the correct gene, and only 3 of these were in the top 5 and had a post-test probability > 1%.
 
@@ -63,13 +67,16 @@ Unfortunately, in 260 out of 375 tests (70%) LIRICAL still reported at least one
 
 <img width="429" alt="image" src="https://user-images.githubusercontent.com/6240170/166864705-af5f4943-d41e-4416-967d-e6f16183c85a.png">
 
-This means that, even with conservative thresholds of top-5 and PTP > 1%, a user would still see on average 2 false-positive results per case. 
+This again indicates that, even with conservative thresholds of top-5 and PTP > 1%, a user should expect to see on average 2 false-positive results per case. 
+
+**Conclusion:**  At least 2 genes per case.
 
 ---
 
-**NOTE:** For the tests above, I prefiltered each individual's variants to gnomAD v3 PopMax AF < 0.01 before running LIRICAL. 
-This didn't change the number of true positive results, but increased their average rank from 7.6 to 5.9.
-Adding further variant prefiltering by inheritance mode for cases where parents' DNA is available will almost certainly improve results further. 
+**How can LIRICAL performance be improved?**
+
+By prefiltering the variants. For the tests above, I prefiltered each individual's variants to those that are rare in the general popualation (defined as gnomAD v3 PopMax AF < 0.01). Applying this prefilter didn't change the number of true positive results, but increased their average rank from 7.6 to 5.9.
+Adding further prefiltering - such as by inheritance mode for cases where parents' DNA is available will almost certainly improve results further. 
 
 
 
