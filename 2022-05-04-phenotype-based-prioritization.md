@@ -46,7 +46,7 @@ In most cases (49 out of 75 = 65%), the correct result was among the top 5 hits 
 
 **How many genes would someone need to look through for a typical case?**
 
-From the above plot, a conservative approach would be to only consider the top 5 results (x-axis) and only if they have a post-test probability (PTP) of 1% or higher (y-axis). 
+From the above plot, a conservative approach would be to only consider the top 5 results (x-axis cutoff) and only if they have a post-test probability (PTP) of 1% or higher (y-axis cutoff). 
 Based on these cutoffs, there would be 3 results to look at on average, but 39% of cases would have 5 or more results with PTP > 1%:
 
 <img width="425" alt="image" src="https://user-images.githubusercontent.com/6240170/166865247-43ebc202-8007-41a0-b951-9a1cecf9048e.png">
