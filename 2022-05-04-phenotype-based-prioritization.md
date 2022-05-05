@@ -23,7 +23,7 @@ this patient's phenotype.
 To evaluate LIRICAL performance, I ran it on 75 previously-solved rare disease cases from the [Rare Genomes Project](https://raregenomes.org/). 
 
 - 59 cases: solved with a known gene-disease association. 
-- 2 cases: solved with a gene that was previously associated with a different disease phenotype than the one found in the patient. 
+- 2 cases: solved with a gene that was previously associated with a different disease phenotype. 
 - 14 cases: solved with a gene not previously associated with a disease. 
 
 LIRICAL correctly identified the correct gene in 65 out of the 75 cases (87%).  
