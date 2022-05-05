@@ -67,7 +67,7 @@ Unfortunately, in 260 out of 375 tests (70%) LIRICAL still reported at least one
 
 <img width="429" alt="image" src="https://user-images.githubusercontent.com/6240170/166864705-af5f4943-d41e-4416-967d-e6f16183c85a.png">
 
-This again indicates that, even with conservative thresholds of top-5 and PTP > 1%, a user should expect to see on average 2 false-positive results per case. 
+This again show that, even with conservative thresholds of top-5 and PTP > 1%, a user should expect to see on average 2 false-positive results per case. 
 
 **Conclusion:**  At least 2 genes per case.
 
