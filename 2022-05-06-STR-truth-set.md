@@ -1,9 +1,9 @@
-## Assembling an STR Truthset for Tool Benchmarking and Development 
+## CHM1_CHM13 Data as an STR Truthset for Tool Benchmarking and Development 
 
 There has been much progress over the past 10 years in the development of STR genotyping tools for short read whole-genome sequencing (WGS) data. 
-However, there's still room for improvement, and new tools continue to be developed.
+However, there's still room for improvement, and new tools continue to be developed which aim to close the current gap in accuracy and compute costs between STR genotyping tools and tools for other variant classes like SNVs and InDels.
 
-A high-quality truthset of WGS samples with known STR expansions or contractions is important for comparing these tools and for further tool development. 
+A high-quality truthset of WGS samples with known STR expansions or contractions is key to comparing existing tools and for further tool development. 
 
 To date, STR truth data has come from:
 
@@ -11,7 +11,7 @@ To date, STR truth data has come from:
    and generate an unlimited number of test cases. Benchmarking on simulated data is useful for setting 
    an upperbound on tool performance. If a tool doesn't work well on simuluated data, it almost certainly 
    will be even worse on real data. However, good performance is no guarantee of success since real data includes additional 
-   challenges like GC bias, locus-specific variation not present in the reference genome, etc. which can  
+   challenges like GC bias, locus-specific variation not present in the reference genome, etc. which can 
    affect STR tool performance. 
 2. **mendelian violations analysis:** large WGS datasets with trios are available, and can be used to compare the number of 
    mendelian violations produced by different STR calling tools or filtering strategies. This produces a somewhat coarse 
