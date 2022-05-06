@@ -24,12 +24,27 @@ To date, STR truth data has come from:
    and larger datasets are private or otherwise difficult to access (TODO: source). Additionally, PCR or other such truth data is 
    not ideal because large STR expansions are often approximate (eg. greater than 150 repeats). This is sufficient for determining 
    pathogenicity, but complicates evaluation and development of more accurate tools.   
-4. **long read data:** although this would seem like the ideal solution, STR calling from long read data is surprisingly inaccurate.
+4. **long read data:** although this would seem like the ideal solution, STR calling from long read data is surprisingly challenging.
 
 ----
 **CHM1_CHM13_2 Synthetic Diploid Benchmark as an STR Truthset**
 
-[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/) used haploid long-read assemblies. Although this is not HiFi data, 
+[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/) used haploid long-read assemblies. 
+Although this is not HiFi data, the assemblies used additional error correction. 
+
+----
+**Pipeline for deriving high-quality STR genotypes from the CHM1_CHM13_2 Synthetic Diploid Benchmark**
+
+[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/) provide a set of variant calls (VCF) generated through a process that's very 
+different from typical variant calling pipelines.  Instead of aligning individual PacBio reads to some reference and running a variant calling tool, 
+the SynDip Bechmark performed haploid assembly of the long reads, aligned the assembled contigs to eachother using minimap, and then simply read off the differences between the 2 haploid assemblies. 
+
+90% of these variants are SNVs, and 10% are indels. 
+
+More specifically, the steps were as follows:
+
+
+---
 
 
 
