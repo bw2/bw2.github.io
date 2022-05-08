@@ -14,7 +14,7 @@ with open("scripts/blog_post_template.html", "rt") as f:
 for markdown_file_path in glob.glob("*.md"):
     if markdown_file_path == "README.md":
         continue
-        
+
     print(f"Reading {markdown_file_path}")
     output_path = re.sub(".md$", ".html", markdown_file_path)
 
