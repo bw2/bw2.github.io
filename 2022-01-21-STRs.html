@@ -21,37 +21,75 @@
 </head>
 <body>
 
-  <div class="ui fixed menu" style="padding: 10px 20px">
-    <div class="ui text container" >
-      <div style="font-weight:800; padding-right:10px">Project Notes</div>
-      <div style="font-weight:500; color:#555555"> by Ben Weisburd</div>
+  <div class="ui fixed menu" style="padding: 10px 0px">
+    <div class="ui grid" style="width:100%; font-size:16px; color: rgba(0,0,0,.87); font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif">
+      <div class="ui three wide column"></div>
+      <div class="ui nine wide column">
+        <div style="font-weight:800; padding-right:10px; display:inline-block">Project Notes</div>
+        <div style="font-weight:500; color:#555555; display:inline-block"> by Ben Weisburd</div>
+      </div>
+      <div class="ui one wide column" style="text-align: right">[<a href="/">Home</a>]</div>
+      <div class="ui three wide column"></div>
     </div>
   </div>
 
-  <div class="ui main text container">
-    <div style="padding-top:75px"></div>
-  </div>    
-  <iframe src="https://b.0-0.plus/blog/md.htm?src=https://raw.githubusercontent.com/bw2/bw2.github.io/master/2022-01-21-STRs.md" frameborder="0" style="overflow:hidden;height:100%;width:100%" width="100%"></iframe>
+  <div style="padding-top:75px"></div>
+  <div class="ui grid">
+    <div class="ui three wide column"></div>
+    <div class="ui ten wide column" style="font-size:16px; color: rgba(0,0,0,.87); font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif">
 
-  <!-- https://giscus.app/ -->
-  <center>
-    <div class="container giscus" style="width:70%; margin-bottom:15px">
-      <script src="https://giscus.app/client.js"
-              data-repo="bw2/bw2.github.io"
-              data-repo-id="MDEwOlJlcG9zaXRvcnkzNTU2OTQ0OA=="
-              data-category="Announcements"
-              data-category-id="DIC_kwDOAh6_KM4CO_Vz"
-              data-mapping="pathname"
-              data-reactions-enabled="1"
-              data-emit-metadata="0"
-              data-input-position="bottom"
-              data-theme="light"
-              data-lang="en"
-              crossorigin="anonymous"
-              async>
-      </script>
+      <h3>STRs: Diagnosing CANVAS / RFC1 expansions using WGS data  <div style="color:grey; position:relative; float: right; font-size: 15px">1/21/2022</div></h3>
+<p><br />
+RFC1 STR expansions have recently been linked to <a href="https://www.omim.org/entry/614575">CANVAS</a> [<a href="https://pubmed.ncbi.nlm.nih.gov/30926972/">Cortese 2019</a>].
+This STR locus is unique among known pathogenic STR loci in that it's both autosomal recessive and has a pathogenic repeat motif (AAGGG) 
+that differs from the motif in the reference genome (AAAAG). Several other benign and pathogenic motifs have also been reported at this locus. 
+AAAGG is reported as benign [<a href="https://pubmed.ncbi.nlm.nih.gov/30926972/">Cortese 2019</a>] while ACAGG is reported to be pathogenic [<a href="https://pubmed.ncbi.nlm.nih.gov/33103729/">Scriba 2020</a>]. 
+AAGAG and AGAGG are reported as having uncertain significance [<a href="https://pubmed.ncbi.nlm.nih.gov/31824583/">Akcimen 2019</a>].</p>
+<p>Most individuals have the same motif on both chromosomes, while many carry one motif on one chromosome and another motif on the other chromosome. 
+To diagnose cases of CANVAS using WGS data a tool needs to distinguish between these scenarios since only biallelic expansions of 
+the AAGGG or ACAGG motifs are associated with disease. </p>
+<p>Existing STR genotyping tools such as ExpansionHunter and GangSTR require users to pre-specify the motif, and so do not work 
+well for loci where the motif can differ among individuals. Other tools such 
+as <a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02017-z">ExpansionHunterDenovo</a> do not have this 
+limitation, but are unable to distinguish unaffected carriers (such as those that have one benign AAAAG reference allele, 
+and one pathogenic AAGGG allele) from affected individuals (homozygous for the AAGGG allele). In both cases, ExpansionHunter 
+Denovo might detect the AAGGG allele, but would fail to detect the benign allele unless it is also highly expanded, and so 
+would not be useful for distinguishing heterozygous AAGGG carriers from the much rarer instances of homozygous AAGGG genotypes.    </p>
+<p>As a temporary solution, we addressed these limitations by 
+developing  <a href="https://github.com/broadinstitute/str-analysis/blob/main/str_analysis/call_non_ref_pathogenic_motifs.py">call_non_ref_pathogenic_motifs.py</a>. 
+For the RFC1 locus, the script first detects the one or two motifs present in an individual and then runs ExpansionHunter for each motif to estimate its 
+allele size as well as REViewer to generate read visualizations. The approach used by this script to detect motifs is, coincidentally, a 
+simpler version of the approach used by the recently-released <a href="https://www.biorxiv.org/content/10.1101/2021.11.18.469113v1">STRling</a> tool. 
+Unbiased comparisons are difficult given that we have a small number of positive controls and designed the script based on the positive 
+controls we had available. However, we found that the script had slightly better sensitivity than STRling on these positive <em>RFC1</em> controls while 
+maintaining high specificity. Additionally, it allowed us to generate read visualizations in a way not currently possible with other tools. 
+A more detailed description of the script is available on <a href="https://github.com/broadinstitute/str-analysis">GitHub</a>.</p>
+<p>We also plan to add more detailed tool comparisons to this blog in the near future.</p>
+<p><strong>Limitations:</strong></p>
+<p>The approach used by call_non_ref_pathogenic motifs will likely miss more complex expansions where a single haplotype has multiple motifs - such as the disease-associated (AAAGG)10-25(AAGGG)exp repeats described in 
+[<a href="https://academic.oup.com/brain/article/143/9/2673/5897694?login=true">Beecroft 2020</a>] </p>
+
+      <!-- https://giscus.app/ -->
+      <div class="container giscus" style="width:70%; margin:35px 10px">
+        <script src="https://giscus.app/client.js"
+                data-repo="bw2/bw2.github.io"
+                data-repo-id="MDEwOlJlcG9zaXRvcnkzNTU2OTQ0OA=="
+                data-category="Announcements"
+                data-category-id="DIC_kwDOAh6_KM4CO_Vz"
+                data-mapping="pathname"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="bottom"
+                data-theme="light"
+                data-lang="en"
+                crossorigin="anonymous"
+                async>
+        </script>
+      </div>
     </div>
-  </center>
+    <div class="ui three wide column"></div>
+  </div>
+
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
