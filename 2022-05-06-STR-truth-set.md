@@ -28,7 +28,9 @@ To date, STR truth data has come from:
 
 ----
 
-The table below lists STR calling tools and the benchmarking data used in their publications:
+The table below lists STR calling tools and the benchmarking data used in their publications. Table 1 in   
+[[Rajan-babu 2021](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8351082/)] provides comparisons of additional aspects of many of these tools. 
+
 
 <table>
 <tr>
@@ -100,10 +102,6 @@ The table below lists STR calling tools and the benchmarking data used in their 
    <td></td>
 </tr>
 </table>
-
-The following publications have compared STR calling tools:
-
-[[Rajan-babu 2021](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8351082/)]
 
 ----
 **CHM1_CHM13_2 Synthetic Diploid Benchmark as an STR Truthset**
