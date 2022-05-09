@@ -28,9 +28,7 @@ To date, STR truth data has come from:
 
 ----
 
-Data used for benchmarking STR calling tools.
-
-The table below lists published STR calling tools and the data used to demonstrate their performance.
+The table below lists STR calling tools and the benchmarking data used in their publications:
 
 <table>
 <tr>
