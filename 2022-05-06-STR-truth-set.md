@@ -28,9 +28,8 @@ To date, STR truth data has come from:
 
 ----
 
-The table below lists STR calling tools together with the benchmarking data used in their publications.  Table 1 in   
-[[Rajan-babu 2021](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8351082/)] provides comparisons of additional aspects of many of these tools. 
-
+The table below lists STR calling tools together with the benchmarking data used in their publications.  
+Table 1 in [[Rajan-babu 2021](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8351082/)] provides comparisons of additional aspects of many of these tools. 
 
 <table>
 <tr>
