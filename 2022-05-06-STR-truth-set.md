@@ -1,30 +1,112 @@
 ## CHM1_CHM13 Data as an STR Truthset for Tool Benchmarking and Development 
 
-There has been much progress over the past 10 years in the development of STR genotyping tools for short read whole-genome sequencing (WGS) data. 
-However, there's still room for improvement, and new tools continue to be developed which aim to close the current gap in accuracy and compute costs between STR genotyping tools and tools for other variant classes like SNVs and InDels.
+STR genotyping tools for short read whole-genome sequencing (WGS) data have improved significantly over the past 10 
+years. However, room for improvement remains, and new tools continue to be developed.
+A high-quality truthset is important for comparing existing tools and for future tool development.
 
-A high-quality truthset of WGS samples with known STR expansions or contractions is key to comparing existing tools and for further tool development. 
+<!-- close the current gap in accuracy and compute costs between STR genotyping tools and tools for other variant classes like SNVs and InDels. --> 
 
 To date, STR truth data has come from:
 
 1. **simulated STRs:** using a tool like wgsim, it's possible to simulate STR expansions or contractions at any STR locus 
-   and generate an unlimited number of test cases. Benchmarking on simulated data is useful for setting 
-   an upperbound on tool performance. If a tool doesn't work well on simuluated data, it almost certainly 
-   will be even worse on real data. However, good performance is no guarantee of success since real data includes additional 
-   challenges like GC bias, locus-specific variation not present in the reference genome, etc. which can 
-   affect STR tool performance. 
+   and generate an unlimited number of test cases. Benchmarking on simulated data can be useful for setting 
+   an upperbound on tool performance, but simulated data lacks some of the complexities of real data like GC bias, 
+   adjacent variants not present in the reference genome, etc. 
 2. **mendelian violations analysis:** large WGS datasets with trios are available, and can be used to compare the number of 
    mendelian violations produced by different STR calling tools or filtering strategies. This produces a somewhat coarse 
    truthset since it's impossible to say whether any individual mendelian violation is error or truth - just that 
-   overall, there should be no more than ~80 mendelian violations on average per trio (TODO: source). Additionally 
-   mendelian violations are confounded by a tool's false-negative rate - a tool that consistently misses STR expansions at 
-   difficult-to-call loci will produce fewer mendelian violations.
+   overall, there should be no more than ~80 mendelian violations on average per trio (TODO: source). Additionally, 
+   mendelian violations are confounded by a tool's false-negative rate since a tool that consistently fails to detect 
+   STR expansions at some loci will produce fewer mendelian violations.
 3. **PCR-validated pathogenic expansions:** there are several datasets with STR expansions that have been validated by PCR 
-   or other gold-standard methods. The main downside is that only 10 samples (each with 1 STR expansion) are publicly available 
-   and larger datasets are private or otherwise difficult to access (TODO: source). Additionally, PCR or other such truth data is 
-   not ideal because large STR expansions are often approximate (eg. greater than 150 repeats). This is sufficient for determining 
-   pathogenicity, but complicates evaluation and development of more accurate tools.   
-4. **long read data:** although this would seem like the ideal solution, STR calling from long read data is surprisingly challenging.
+   or other gold-standard methods. However, too few of these samples are available. Additionally, PCR or other such truth data is 
+   often gives only approximate expansion sizes (eg. greater than 150 repeats). This is sufficient for determining 
+   pathogenicity but complicates evaluation of tool accuracy.   
+4. **long read data:** although this would seem like the ideal solution, STR calling from long read data is still challenging.
+   The most recent published tool - Straglr - reports only ~70% concordance between long read STR calls and truth data 
+   generated from a diploid assembly of HG.. [].
+
+----
+
+Data used for benchmarking STR calling tools.
+
+The table below lists published STR calling tools and the data used to demonstrate their performance.
+
+<table>
+<tr>
+   <th>Data Type</th>
+   <th>Tool Name</th>
+   <th>Paper</th>
+   <th>Data Used For Benchmarking</th>
+</tr><tr>
+   <td rowspan="3">Long Read</td>
+   <td>Straglr</td>
+   <td>[<a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02447-3">Chiu 2021</a>]</td>
+   <td></td>
+</tr><tr>
+   <td>tandem-genotypes </td>
+   <td>[<a href="https://doi.org/10.1186/s13059-019-1667-6">Mitsuhashi 2019</a>]</td>
+   <td></td>
+</tr><tr>
+   <td>RepeatHMM</td>
+   <td>[<a href="https://doi.org/10.1186/s13073-017-0456-7">Liu 2017</a>]</td>
+   <td></td>
+</tr><tr>
+   <td rowspan="100">Short Read</td>
+   <td>STRling</td>
+   <td></td>
+   <td></td>
+</tr><tr>
+   <td>ExpansionHunterDenovo</td>
+   <td></td>
+   <td></td>
+</tr><tr>
+   <td>GangSTR</td>
+   <td></td>
+   <td></td>
+</tr><tr>
+   <td>ExpansionHunter</td>
+   <td></td>
+   <td></td>
+</tr><tr>
+   <td>TredParse</td>
+   <td></td>
+   <td></td>
+</tr><tr>
+   <td>STRetch</td>
+   <td></td>
+   <td></td>
+</tr><tr>
+   <td>HipSTR</td>
+   <td></td>
+   <td></td>
+</tr><tr>
+   <td>LobSTR</td>
+   <td></td>
+   <td></td>
+</tr><tr>
+   <td>PopSTR</td>
+   <td></td>
+   <td></td>
+</tr><tr>
+   <td>RepeatSeq</td>
+   <td></td>
+   <td></td>
+</tr><tr>
+   <td>ExSTRa</td>
+   <td></td>
+   <td></td>
+</tr><tr>
+   <td>TRhist</td>
+   <td></td>
+   <td></td>
+</tr><tr>
+   <td>SuperSTR</td>
+   <td></td>
+   <td></td>
+</tr>
+
+</table>
 
 ----
 **CHM1_CHM13_2 Synthetic Diploid Benchmark as an STR Truthset**
