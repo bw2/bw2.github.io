@@ -103,6 +103,7 @@ Table 1 in [[Rajan-babu 2021](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC83510
 </table>
 
 <br />
+.
 
 ----
 **CHM1_CHM13_2 Synthetic Diploid Benchmark as an STR Truthset**
