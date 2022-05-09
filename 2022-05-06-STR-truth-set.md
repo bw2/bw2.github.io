@@ -103,8 +103,11 @@ The table below lists STR calling tools and the benchmarking data used in their 
    <td></td>
    <td></td>
 </tr>
-
 </table>
+
+The following publications have compared STR calling tools:
+
+[[Rajan-babu 2021](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8351082/)]
 
 ----
 **CHM1_CHM13_2 Synthetic Diploid Benchmark as an STR Truthset**
