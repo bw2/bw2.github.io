@@ -31,7 +31,7 @@ The table below lists STR calling tools together with the benchmarking data used
 Table 1 in [[Rajan-Babu 2021](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8351082/)] provides additional comparisons for many of these tools. 
 
 <br />
-<table>
+<table class="ui striped table">
 <tr>
    <th>Data Type</th>
    <th>Tool Name</th>
