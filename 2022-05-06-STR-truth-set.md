@@ -26,11 +26,11 @@ To date, STR truth data has come from:
    The most recent published tool - Straglr - reports only ~70% concordance between long read STR calls and truth data 
    generated from a diploid assembly of HG.. [].
 
-----
 
 The table below lists STR calling tools together with the benchmarking data used in their publications.  
 Table 1 in [[Rajan-babu 2021](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8351082/)] provides comparisons of additional aspects of many of these tools. 
 
+<br />
 <table>
 <tr>
    <th>Data Type</th>
