@@ -52,55 +52,51 @@ The table below lists STR calling tools and the benchmarking data used in their 
 </tr><tr>
    <td rowspan="100">Short Read</td>
    <td>STRling</td>
-   <td></td>
+   <td>[<a href="https://www.biorxiv.org/content/10.1101/2021.11.18.469113v1">Dashnow 2021</a>]</td>
    <td></td>
 </tr><tr>
    <td>ExpansionHunterDenovo</td>
-   <td></td>
+   <td>[<a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02017-z">Dolzhenko 2020</a>]</td>
    <td></td>
 </tr><tr>
    <td>GangSTR</td>
-   <td></td>
+   <td>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6735967/">Mousavi 2019</a>]</td>
    <td></td>
 </tr><tr>
    <td>ExpansionHunter</td>
-   <td></td>
+   <td>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6853681/">Dolzhenko 2019</a>]</td>
    <td></td>
 </tr><tr>
    <td>TredParse</td>
-   <td></td>
+   <td>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5673627/">Tang 2017</a>]</td>
    <td></td>
 </tr><tr>
    <td>STRetch</td>
-   <td></td>
+   <td>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6102892/">Dashnow 2018</a>]</td>
    <td></td>
 </tr><tr>
    <td>HipSTR</td>
+   <td>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5482724/">Willems 2017</a>]</td>
    <td></td>
+</tr><tr>
+   <td>PopSTR2</td>
+   <td>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7141861/">Kristmundsdottir 2020</a>]</td>
    <td></td>
 </tr><tr>
    <td>LobSTR</td>
-   <td></td>
-   <td></td>
-</tr><tr>
-   <td>PopSTR</td>
-   <td></td>
-   <td></td>
-</tr><tr>
-   <td>RepeatSeq</td>
-   <td></td>
+   <td>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3371701/">Gymrek 2012</a>]</td>
    <td></td>
 </tr><tr>
    <td>ExSTRa</td>
-   <td></td>
+   <td>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6288141/">Tankard 2018</a>]</td>
    <td></td>
 </tr><tr>
    <td>TRhist</td>
-   <td></td>
+   <td>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3957077/">Doi 2014</a>]</td>
    <td></td>
 </tr><tr>
    <td>SuperSTR</td>
-   <td></td>
+   <td>[<a href="https://www.biorxiv.org/content/10.1101/2021.04.05.438449v2">Fearnley 2021</a>]</td>
    <td></td>
 </tr>
 </table>
