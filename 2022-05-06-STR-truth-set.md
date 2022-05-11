@@ -217,6 +217,7 @@ Below are the steps and their affect on number of variants remaining:
 </tr>
 </table>
 
+---
 
 **Part 2: Filter CHM1_CHM13_2 Variants To STR Variants **
 
@@ -269,6 +270,7 @@ de-novo:
        1015  (  0.6%) STR with no matching ref. repeat
 
 ```
+
 ---
 
 
