@@ -141,14 +141,41 @@ This yielded 5,362,620 variants of which 4,148,586 are in high-confidence region
     276469  (  6.7%) DEL
     286568  (  6.9%) INS
    3585549  ( 86.4%) SNV
----   
+
    1236613  ( 29.8%) genotype: 0|1
    1245185  ( 30.0%) genotype: 1|0
    1532879  ( 36.9%) genotype: 1|1
 ```
 
 ---
-Steps to convert this to an STR truthset:
+**Steps to convert this to an STR truthset:**
+
+<br />
+
+<table class="ui striped table">
+<tr>
+   <th>Step #</th>
+   <th>Description</th>
+   <th>Variants Dropped</th>
+   <th>% Lost</th>
+   <th>Variants Remaining</th>
+   <th>% Remaining</th>
+</tr><tr>
+   <td>1 </td>
+   <td>Start with all high-confidence, normal (ACGT) variants</td>
+   <td></td>
+   <td></td>
+   <td>4,129,390</td>
+   <td>100%</td>
+</tr><tr>
+   <td>1 </td>
+   <td>Lift-over variants to t2t-v2.0 reference genome (CHM13) using gatk LiftoverVcf.</td>
+   <td>213,645</td>
+   <td>5.2%</td>
+   <td>4,129,390</td>
+   <td>100%</td>
+</tr>
+</table>
 
 
 ---
