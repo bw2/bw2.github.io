@@ -217,10 +217,12 @@ Identify 180,471 (100.0%) TOTAL STR variants that have
  - at least 3 repeats of some motif in the variant & flanking sequence
  - is 9bp or longer
  - covers at least 90% of the variant sequence
- 
+
+Expansion vs. Contraction:
       89633  ( 49.7%) STR DEL
       90838  ( 50.3%) STR INS
 
+Expansion/Contraction size:
       94148  ( 52.2%) STR delta 1 repeats
       34703  ( 19.2%) STR delta 2 repeats
       17762  (  9.8%) STR delta 3 repeats
@@ -230,7 +232,8 @@ Identify 180,471 (100.0%) TOTAL STR variants that have
        3043  (  1.7%) STR delta 7 repeats
        2123  (  1.2%) STR delta 8 repeats
        7033  (  3.9%) STR delta 9+ repeats
-       
+  
+Motif sizes:
      106969  ( 59.3%) STR motif size 2 bp
       14884  (  8.2%) STR motif size 3 bp
       40423  ( 22.4%) STR motif size 4 bp
@@ -240,9 +243,13 @@ Identify 180,471 (100.0%) TOTAL STR variants that have
         565  (  0.3%) STR motif size 8 bp
        4359  (  2.4%) STR motif size 9+ bp
 
+     
+HOM vs. HET:
+     39492  ( 21.9%) genotype: 1|1
+
+de-novo:
        1015  (  0.6%) STR with no matching ref. repeat
-        471  (  0.3%) STR with left matching ref. repeat
-     177846  ( 98.5%) STR with right matching ref. repeat
+
 ```
 ---
 
