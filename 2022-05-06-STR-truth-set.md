@@ -243,37 +243,37 @@ Run filter_vcf_to_STR_variants.py on all 4,094,305 variants in high-confidence r
 
 This yields 180,471 TOTAL STR variants (4.4%)
 
-Expansion vs. Contraction:
+Expansions vs. Contractions:
       89633  ( 49.7%) STR DEL
       90838  ( 50.3%) STR INS
 
-Expansion/Contraction size:
-      94148  ( 52.2%) STR delta 1 repeats
-      34703  ( 19.2%) STR delta 2 repeats
-      17762  (  9.8%) STR delta 3 repeats
-      10413  (  5.8%) STR delta 4 repeats
-       6811  (  3.8%) STR delta 5 repeats
-       4435  (  2.5%) STR delta 6 repeats
-       3043  (  1.7%) STR delta 7 repeats
-       2123  (  1.2%) STR delta 8 repeats
-       7033  (  3.9%) STR delta 9+ repeats
+Expansion/Contraction Sizes:
+      94148  ( 52.2%) STR delta 1 repeat
+      34703  ( 19.2%) STR delta = 2 repeats
+      17762  (  9.8%) STR delta = 3 repeats
+      10413  (  5.8%) STR delta = 4 repeats
+       6811  (  3.8%) STR delta = 5 repeats
+       4435  (  2.5%) STR delta = 6 repeats
+       3043  (  1.7%) STR delta = 7 repeats
+       2123  (  1.2%) STR delta = 8 repeats
+       7033  (  3.9%) STR delta = 9+ repeats
   
-Motif sizes:
-     106969  ( 59.3%) STR motif size 2 bp
-      14884  (  8.2%) STR motif size 3 bp
-      40423  ( 22.4%) STR motif size 4 bp
-       9802  (  5.4%) STR motif size 5 bp
-       2667  (  1.5%) STR motif size 6 bp
-        802  (  0.4%) STR motif size 7 bp
-        565  (  0.3%) STR motif size 8 bp
-       4359  (  2.4%) STR motif size 9+ bp
+Motif Sizes:
+     106969  ( 59.3%) STR motif size = 2 bp
+      14884  (  8.2%) STR motif size = 3 bp
+      40423  ( 22.4%) STR motif size = 4 bp
+       9802  (  5.4%) STR motif size = 5 bp
+       2667  (  1.5%) STR motif size = 6 bp
+        802  (  0.4%) STR motif size = 7 bp
+        565  (  0.3%) STR motif size = 8 bp
+       4359  (  2.4%) STR motif size = 9+ bp
 
      
 HOM vs. HET:
-     39492  ( 21.9%) genotype: 1|1
+     39492  ( 21.9%) genotype = 1|1
 
 de-novo:
-       1015  (  0.6%) STR with no matching ref. repeat
+       1015  (  0.6%) STRs with no matching repeat in the left or right reference genome flanking sequence
 
 ```
 
