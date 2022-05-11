@@ -25,7 +25,7 @@ To date, STR truth data has come from:
 4. **long read data:** This may be the ideal source of truth data in the future, but currently suffers from a lack of well-validated accurate tools for      calling STR expansions. The most recent published tool - Straglr - reports only ~70% concordance between long read STR calls and truth data generated    from a diploid assembly of HG00733 [[Chiu 2021](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02447-3)].
 
 
-The table below lists STR calling tools + the benchmarking data used in their publications:  
+This table lists STR calling tools + the benchmarking data used in their publications:  
 
 <br />
 <table class="ui striped table">
