@@ -219,7 +219,7 @@ Below are the steps and their affect on number of variants remaining:
 
 ---
 
-**Part 2: Filter CHM1_CHM13_2 Variants To STR Variants **
+**Part 2: Filter CHM1_CHM13_2 Variants To STR Variants**
 
 To identify the INDELs that are actually STR variants, process each variant to:
 1. check if the INDEL's inserted or deleted sequence consists of some k-mer that covers at least 90% of the variant bases. 
