@@ -39,7 +39,10 @@ Table 1 in [[Rajan-Babu 2021](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC83510
    <td rowspan="3">Long Read</td>
    <td>Straglr</td>
    <td>[<a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02447-3">Chiu 2021</a>]</td>
-   <td>Simulated data using <a href="https://academic.oup.com/gigascience/article/6/4/gix010/3051934">NanoSim</a></td>
+   <td>
+      Simulated data using <a href="https://academic.oup.com/gigascience/article/6/4/gix010/3051934">NanoSim</a><br/>
+      Diploid assembly of HG00733 released by PacBio (no longer available?)
+   </td>
 </tr><tr>
    <td>tandem-genotypes </td>
    <td>[<a href="https://doi.org/10.1186/s13059-019-1667-6">Mitsuhashi 2019</a>]</td>
