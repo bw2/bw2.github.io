@@ -193,7 +193,7 @@ Below are the steps and their affect on number of variants remaining:
    <td>94.6%</td>
 </tr><tr>
    <td>3 </td>
-   <td>Filter out variants that are HOM-ALT after liftover: 
+   <td>Since all valid variants should have at least 1 allele that matches the CHM13 T22 reference, filter out variants that are HOM-ALT after liftover: 
       <ul>
          <li>1026 (0.03%) SNVs</li>
          <li>338 (0.01%) insertions</li>
