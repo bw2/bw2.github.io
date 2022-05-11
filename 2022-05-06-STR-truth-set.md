@@ -244,36 +244,36 @@ Run filter_vcf_to_STR_variants.py on all 4,094,305 variants in high-confidence r
 This yields 180,471 TOTAL STR variants (4.4%)
 
 Expansions vs. Contractions:
-      89633  ( 49.7%) STR DEL
-      90838  ( 50.3%) STR INS
+      89,633  ( 49.7%) STR DEL
+      90,838  ( 50.3%) STR INS
 
 Expansion/Contraction Sizes:
-      94148  ( 52.2%) STR delta 1 repeat
-      34703  ( 19.2%) STR delta = 2 repeats
-      17762  (  9.8%) STR delta = 3 repeats
-      10413  (  5.8%) STR delta = 4 repeats
-       6811  (  3.8%) STR delta = 5 repeats
-       4435  (  2.5%) STR delta = 6 repeats
-       3043  (  1.7%) STR delta = 7 repeats
-       2123  (  1.2%) STR delta = 8 repeats
-       7033  (  3.9%) STR delta = 9+ repeats
+      94,148  ( 52.2%) STR delta 1 repeat
+      34,703  ( 19.2%) STR delta = 2 repeats
+      17,762  (  9.8%) STR delta = 3 repeats
+      10,413  (  5.8%) STR delta = 4 repeats
+       6,811  (  3.8%) STR delta = 5 repeats
+       4,435  (  2.5%) STR delta = 6 repeats
+       3,043  (  1.7%) STR delta = 7 repeats
+       2,123  (  1.2%) STR delta = 8 repeats
+       7,033  (  3.9%) STR delta = 9+ repeats
   
 Motif Sizes:
-     106969  ( 59.3%) STR motif size = 2 bp
-      14884  (  8.2%) STR motif size = 3 bp
-      40423  ( 22.4%) STR motif size = 4 bp
-       9802  (  5.4%) STR motif size = 5 bp
-       2667  (  1.5%) STR motif size = 6 bp
-        802  (  0.4%) STR motif size = 7 bp
-        565  (  0.3%) STR motif size = 8 bp
-       4359  (  2.4%) STR motif size = 9+ bp
+     106,969  ( 59.3%) STR motif size = 2 bp
+      14,884  (  8.2%) STR motif size = 3 bp
+      40,423  ( 22.4%) STR motif size = 4 bp
+       9,802  (  5.4%) STR motif size = 5 bp
+       2,667  (  1.5%) STR motif size = 6 bp
+         802  (  0.4%) STR motif size = 7 bp
+         565  (  0.3%) STR motif size = 8 bp
+       4,359  (  2.4%) STR motif size = 9+ bp
 
      
 HOM vs. HET:
-     39492  ( 21.9%) genotype = 1|1
+     39,492  ( 21.9%) genotype = 1|1
 
 de-novo:
-       1015  (  0.6%) STRs with no matching repeat in the left or right reference genome flanking sequence
+       1,015  (  0.6%) STRs with no matching repeat in the left or right reference genome flanking sequence
 
 ```
 
