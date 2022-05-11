@@ -124,8 +124,11 @@ To show the truthsets currently being used, the table below lists STR calling to
 
 <br />
 
-*NOTE:* [Table 1](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8351082#Tab1) in [[Rajan-Babu 2021](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8351082/)] provides additional comparisons for many of these tools. 
+*NOTE:* [Table 1](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8351082#Tab1) in [[Rajan-Babu 2021](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8351082/)] provides additional comparisons of many of these tools. 
 
+The largest truthsets in this table are generated using diploid assemblies - as described in the Straglr paper - but the accuracy of these assemblies for STRs remains questionable. 
+
+Can we improve on this?
 
 ----
 **CHM1_CHM13_2 Synthetic Diploid Benchmark as an STR Truthset**
