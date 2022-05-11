@@ -136,6 +136,18 @@ To create the Synthetic Diploid Benchmark, [[Li 2018](https://www.ncbi.nlm.nih.g
 
 ![image](https://user-images.githubusercontent.com/6240170/167907455-84baa96d-95ae-44bc-8471-c7769bd6474f.png)
 
+This yielded 5,362,620 variants of which 4,148,586 are in high-confidence regions. Some details:
+``` 
+    276469  (  6.7%) DEL
+    286568  (  6.9%) INS
+   3585549  ( 86.4%) SNV
+---   
+   1236613  ( 29.8%) genotype: 0|1
+   1245185  ( 30.0%) genotype: 1|0
+   1532879  ( 36.9%) genotype: 1|1
+```
+
+---
 Steps to convert this to an STR truthset:
 
 
