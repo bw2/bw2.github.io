@@ -176,10 +176,10 @@ This yielded 5,362,620 variants of which 4,148,586 are in high-confidence region
         <li>10,297 MismatchedRefAllele </li>
       </ul>
    </td>
-   <td>213,645</td>
-   <td>5.2%</td>
-   <td>4,129,390</td>
-   <td>100%</td>
+   <td>223,929</td>
+   <td>5.4%</td>
+   <td>3,905,448</td>
+   <td>94.6%</td>
 </tr>
 </table>
 
