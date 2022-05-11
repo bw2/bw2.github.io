@@ -42,14 +42,14 @@ The table below lists STR calling tools together with the benchmarking data used
    <td>
       <ul>
          <li>Simulated data using <a href="https://academic.oup.com/gigascience/article/6/4/gix010/3051934">NanoSim</a></li>
-         <li>Diploid assembly of HG00733 released by PacBio (no longer available for download on PacBio website?)
+         <li>Diploid assembly of HG00733 based on []
             <ul>
                <li>215,894 STR loci</li>
                <li>2,992 expansions were 200bp to 4,000bp</li>
                <li>418 HET expansions with >= 100bp difference between long and short allele</li>
             </ul>
+         </li>
       </ul>
-            
    </td>
 </tr><tr>
    <td>tandem-genotypes </td>
@@ -58,7 +58,13 @@ The table below lists STR calling tools together with the benchmarking data used
 </tr><tr>
    <td>RepeatHMM</td>
    <td>[<a href="https://doi.org/10.1186/s13073-017-0456-7">Liu 2017</a>]</td>
-   <td></td>
+   <td>
+      <ul>
+         <li>NA12878 short-read calls as truth (40 loci)</li>
+         <li>20 patients with ATXN3 expansions</li>
+         <li>3 patients with ATXN10 expansions</li>
+      </ul>
+   </td>
 </tr><tr>
    <td rowspan="100">Short Read</td>
    <td>STRling</td>
