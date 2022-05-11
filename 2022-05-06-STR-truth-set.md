@@ -150,6 +150,11 @@ This yielded 5,362,620 variants of which 4,148,586 are in high-confidence region
 ---
 **Steps to convert this to an STR truthset:**
 
+Liftover to the new t2t-v2.0 reference genome to check concordance, then filter to STR variants by finding variants that have:
+ - at least 3 repeats of some motif in the variant & flanking sequence  
+ - are 9bp or longer  
+ - covers at least 90% of the variant sequence  
+
 
 <br />
 
@@ -210,10 +215,12 @@ This yielded 5,362,620 variants of which 4,148,586 are in high-confidence region
 </tr>
 </table>
 
+**Results**:
+
 ```
 Start with 4,094,305  (100.0%) TOTAL variants
 
-Identify 180,471 (100.0%) TOTAL STR variants that have 
+Filtering to STRs yields 180,471 (100.0%) TOTAL STR variants that have:
  - at least 3 repeats of some motif in the variant & flanking sequence
  - is 9bp or longer
  - covers at least 90% of the variant sequence
