@@ -233,10 +233,11 @@ To identify the INDELs that are actually STR variants, process each INDEL to:
 
 Keep variants that have:
  - at least 3 repeats of some motif in the variant + flanking sequences.
- - the total repeat size is 9bp or longer
+ - the total repeat size is 9bp or longer.
 
 This is approach is implemented in the [filter_vcf_to_STR_variants.py](https://github.com/broadinstitute/str-analysis/blob/main/str_analysis/filter_vcf_to_STR_variants.py) script. 
 
+Results:
 ```
 Start with 4,094,305  (100.0%) TOTAL variants
 
