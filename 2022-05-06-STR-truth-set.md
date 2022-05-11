@@ -150,6 +150,7 @@ This yielded 5,362,620 variants of which 4,148,586 are in high-confidence region
 ---
 **Steps to convert this to an STR truthset:**
 
+
 <br />
 
 <table class="ui striped table">
@@ -207,10 +208,42 @@ This yielded 5,362,620 variants of which 4,148,586 are in high-confidence region
    <td>4,094,305</td>
    <td>99.2%</td>
 </tr>
-
 </table>
 
+```
+Start with 4,094,305  (100.0%) TOTAL variants
 
+Identify 180,471 (100.0%) TOTAL STR variants that have 
+ - at least 3 repeats of some motif in the variant & flanking sequence
+ - is 9bp or longer
+ - covers at least 90% of the variant sequence
+ 
+      89633  ( 49.7%) STR DEL
+      90838  ( 50.3%) STR INS
+
+      94148  ( 52.2%) STR delta 1 repeats
+      34703  ( 19.2%) STR delta 2 repeats
+      17762  (  9.8%) STR delta 3 repeats
+      10413  (  5.8%) STR delta 4 repeats
+       6811  (  3.8%) STR delta 5 repeats
+       4435  (  2.5%) STR delta 6 repeats
+       3043  (  1.7%) STR delta 7 repeats
+       2123  (  1.2%) STR delta 8 repeats
+       7033  (  3.9%) STR delta 9+ repeats
+       
+     106969  ( 59.3%) STR motif size 2 bp
+      14884  (  8.2%) STR motif size 3 bp
+      40423  ( 22.4%) STR motif size 4 bp
+       9802  (  5.4%) STR motif size 5 bp
+       2667  (  1.5%) STR motif size 6 bp
+        802  (  0.4%) STR motif size 7 bp
+        565  (  0.3%) STR motif size 8 bp
+       4359  (  2.4%) STR motif size 9+ bp
+
+       1015  (  0.6%) STR with no matching ref. repeat
+        471  (  0.3%) STR with left matching ref. repeat
+     177846  ( 98.5%) STR with right matching ref. repeat
+```
 ---
 
 
