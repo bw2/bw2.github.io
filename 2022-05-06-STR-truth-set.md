@@ -125,19 +125,18 @@ This table lists STR calling tools + the benchmarking data used in their publica
 ----
 **CHM1_CHM13_2 Synthetic Diploid Benchmark as an STR Truthset**
 
-[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/) used haploid long-read assemblies. 
-Although this is not HiFi data, the assemblies used additional error correction. 
+To create the Synthetic Diploid Benchmark, [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)] generated variant calls by:
 
-----
-**Pipeline for deriving high-quality STR genotypes from the CHM1_CHM13_2 Synthetic Diploid Benchmark**
+1. Taking the 2 haploid assemblies of PacBio data from [Huddleston 2017](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5411763/). These are the CHM1 and CHM13 hydatidiform mole cell lines.
+2. Using PCR-free WGS data to error correct the PacBio assemblies
+3. Using minimap2 to align each haploid assembly to GRCh37 or GRCh38
+4. Generating a VCF of all differences (ie. variants) between CHM1/CHM13 and GRCh37 or GRCh38. 
 
-[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/) provide a set of variant calls (VCF) generated through a process that's very 
-different from typical variant calling pipelines.  Instead of aligning individual PacBio reads to some reference and running a variant calling tool, 
-the SynDip Bechmark performed haploid assembly of the long reads, aligned the assembled contigs to eachother using minimap, and then simply read off the differences between the 2 haploid assemblies. 
+**Li et al. 2018 Figure 1:** Constructing the Syndip benchmark dataset. 
 
-90% of these variants are SNVs, and 10% are indels. 
+![image](https://user-images.githubusercontent.com/6240170/167907455-84baa96d-95ae-44bc-8471-c7769bd6474f.png)
 
-More specifically, the steps were as follows:
+Steps to convert this to an STR truthset:
 
 
 ---
