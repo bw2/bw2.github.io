@@ -55,7 +55,7 @@ This table lists STR calling tools + the benchmarking data used in their publica
    <td>[<a href="https://doi.org/10.1186/s13059-019-1667-6">Mitsuhashi 2019</a>]</td>
    <td>
       <ul>
-         <li>Long read data from Plasmids with engineered expansions of 4 motifs</li>
+         <li>Long read data from Plasmids with engineered expansions of 4 motifs (CAG, CAA, GGGGCC, and iCCTG)</li>
          <li>3 patients with ATXN10 expansions</li>
          <li>NA12878 short-read calls at known pathogenic loci</li>
       </ul>
@@ -130,36 +130,33 @@ This table lists STR calling tools + the benchmarking data used in their publica
 ----
 **CHM1_CHM13_2 Synthetic Diploid Benchmark as an STR Truthset**
 
+[[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)] produced a high-qaulity truthset based on [Huddleston 2017](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5411763/) haploid assemblies of two individuals - CHM1 and CHM13. 
+
 To create the Synthetic Diploid Benchmark, [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)] generated variant calls by:
 
-1. Taking the 2 haploid assemblies generated from PacBio data from [Huddleston 2017](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5411763/). These are thes.
-2. Using PCR-free WGS data to error correct the PacBio assemblies
-3. Using minimap2 to align each haploid assembly to GRCh37 or GRCh38
-4. Generating a VCF of all differences (ie. variants) between CHM1/CHM13 and GRCh37 or GRCh38. 
+1. Aligning each haploid assembly to GRCh37 or GRCh38 using minimap2
+2. Converting the differences revealed by these alignments to variant calls. 
 
 **Li et al. 2018 Figure 1:** Constructing the Syndip benchmark dataset. 
 
 ![image](https://user-images.githubusercontent.com/6240170/167907455-84baa96d-95ae-44bc-8471-c7769bd6474f.png)
 
-This yielded 5,362,620 variants of which 4,148,586 are in high-confidence regions. Some details:
+This yielded 5,362,620 variants of which 4,148,586 were in high-confidence regions:
 ``` 
-    276469  (  6.7%) DEL
-    286568  (  6.9%) INS
    3585549  ( 86.4%) SNV
-
-   1236613  ( 29.8%) genotype: 0|1
-   1245185  ( 30.0%) genotype: 1|0
-   1532879  ( 36.9%) genotype: 1|1
+    286568  (  6.9%) INS
+    276469  (  6.7%) DEL
 ```
 
+Although [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)] mainly used this data to evaluate SNVs and INDELs, it may also serve as a high-quality SV and STR truthset because: 
+
+1. haploid assembly is more accurate than diploid assembly
+2. one of the two samples - CHM13 - is the basis of the telomere-to-telomere (t2t) assembly, so we can further validate STR variants by lifting them over to t2tv2.0 and checking that at least one allele is concordant with the t2t reference.
+
 ---
-**Steps to convert this to an STR truthset:**
+**Part 1: Check All CHM1_CHM13_2 Variants For Concordance with The CHM13 T2T Reference Genome Assembly **
 
-Liftover to the new t2t-v2.0 reference genome to check concordance, then filter to STR variants by finding variants that have:
- - at least 3 repeats of some motif in the variant & flanking sequence  
- - are 9bp or longer  
- - covers at least 90% of the variant sequence  
-
+Below are the steps and their affect on number of variants remaining:
 
 <br />
 
@@ -220,15 +217,24 @@ Liftover to the new t2t-v2.0 reference genome to check concordance, then filter 
 </tr>
 </table>
 
-**Results**:
+
+**Part 2: Filter CHM1_CHM13_2 Variants To STR Variants **
+
+To identify the INDELs that are actually STR variants, process each variant to:
+1. check if the INDEL's inserted or deleted sequence consists of some k-mer that covers at least 90% of the variant bases. 
+2. if yes, treat this k-mer as the STR repeat unit. Otherwise, treat the entire variant sequence as the repeat unit to allow detection of STR expansions or contractions that differ from the reference by only 1 repeat. 
+3. check the reference genome flanking sequence immediately to the left and right of the variant for additional repeats with the same repeat unit
+
+Keep variants that have:
+ - at least 3 repeats of some motif in the variant + flanking sequences.
+ - the total repeat size is 9bp or longer
+
+This is approach is implemented in the [filter_vcf_to_STR_variants.py](https://github.com/broadinstitute/str-analysis/blob/main/str_analysis/filter_vcf_to_STR_variants.py) script. 
 
 ```
 Start with 4,094,305  (100.0%) TOTAL variants
 
-Filtering to STRs yields 180,471 (100.0%) TOTAL STR variants that have:
- - at least 3 repeats of some motif in the variant & flanking sequence
- - is 9bp or longer
- - covers at least 90% of the variant sequence
+Filtering to STRs yields: 180,471 TOTAL STR variants
 
 Expansion vs. Contraction:
       89633  ( 49.7%) STR DEL
