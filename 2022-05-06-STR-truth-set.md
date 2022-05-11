@@ -180,6 +180,18 @@ This yielded 5,362,620 variants of which 4,148,586 are in high-confidence region
    <td>5.4%</td>
    <td>3,905,448</td>
    <td>94.6%</td>
+</tr><tr>
+   <td>3 </td>
+   <td>Filter out variants that are HOM-ALT after liftover: 
+      <ul>
+         <li>1026 (0.03%) SNVs</li>
+         <li>338 (0.01%) insertions</li>
+      </ul>
+   </td>
+   <td>1,364</td>
+   <td>0.0%</td>
+   <td>3,904,084</td>
+   <td>94.5%</td>
 </tr>
 </table>
 
