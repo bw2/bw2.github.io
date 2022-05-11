@@ -165,21 +165,21 @@ Below are the steps and how many variants pass each step:
 
 <table class="ui striped table">
 <tr>
-   <th>Step #</th>
+   <th>Step</th>
    <th>Description</th>
    <th>Variants Filtered</th>
    <th>% Filtered</th>
    <th>Variants Remaining</th>
    <th>% Remaining</th>
 </tr><tr>
-   <td>1 </td>
+   <td>#1 </td>
    <td>Start with all high-confidence, normal (ACGT) variants</td>
    <td></td>
    <td></td>
    <td>4,129,390</td>
    <td>100%</td>
 </tr><tr>
-   <td>2 </td>
+   <td>#2 </td>
    <td>Liftover variants to t2t-v2.0 reference genome (CHM13) using gatk LiftoverVcf. <br />
       <br/>
       These are the reasons variants failed this step: 
@@ -194,7 +194,7 @@ Below are the steps and how many variants pass each step:
    <td>3,905,448</td>
    <td>94.6%</td>
 </tr><tr>
-   <td>3 </td>
+   <td>#3 </td>
    <td>Since all valid variants should have at least 1 allele that matches the CHM13 T22 reference, filter out variants that are HOM-ALT after liftover: 
       <ul>
          <li>1026 (0.03%) SNVs</li>
@@ -206,14 +206,14 @@ Below are the steps and how many variants pass each step:
    <td>3,904,084</td>
    <td>94.5%</td>
 </tr><tr>
-   <td>4 </td>
+   <td>#4 </td>
    <td>Liftover variants from t2t-v2.0 back to GRCh38 using gatk LiftoverVcf. </td>
    <td>253</td>
    <td>0.0%</td>
    <td>3,903,831</td>
    <td>94.5%</td>
 </tr><tr>
-   <td>5</td>
+   <td>#5</td>
    <td>Restore the 190,474 deletions that were dropped in the 1st liftover (GRCh38 => CHM13) due to IndelStraddlesMultipleIntevals. I'm assuming this is an artifact of the liftover chain files and not a sufficient reason to discard these variants.</td>
    <td></td>
    <td></td>
