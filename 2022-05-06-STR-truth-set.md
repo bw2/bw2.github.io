@@ -159,7 +159,7 @@ Although [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)] main
 ---
 **Part 1: Check All CHM1_CHM13_2 Variants For Concordance with The CHM13 T2T Reference Genome Assembly**
 
-Below are the steps and their affect on number of variants remaining:
+Below are the steps and how many variants pass each step:
 
 <br />
 
