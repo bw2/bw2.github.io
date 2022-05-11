@@ -53,7 +53,9 @@ This table lists STR calling tools + the benchmarking data used in their publica
 </tr><tr>
    <td>tandem-genotypes </td>
    <td>[<a href="https://doi.org/10.1186/s13059-019-1667-6">Mitsuhashi 2019</a>]</td>
-   <td></td>
+   <li>Long read data from Plasmids with engineered expansions of 4 motifs</li>
+   <li>3 patients with ATXN10 expansions</li>
+   <li>NA12878 short-read calls at known pathogenic loci</li>
 </tr><tr>
    <td>RepeatHMM</td>
    <td>[<a href="https://doi.org/10.1186/s13073-017-0456-7">Liu 2017</a>]</td>
@@ -61,7 +63,7 @@ This table lists STR calling tools + the benchmarking data used in their publica
       <ul>
          <li>20 patients with ATXN3 expansions</li>
          <li>3 patients with ATXN10 expansions</li>
-         <li>NA12878 short-read calls as truth (40 loci)</li>
+         <li>NA12878 short-read calls at known pathogenic loci</li>
       </ul>
    </td>
 </tr><tr>
