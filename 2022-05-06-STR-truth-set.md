@@ -180,7 +180,9 @@ Below are the steps and their affect on number of variants remaining:
    <td>100%</td>
 </tr><tr>
    <td>2 </td>
-   <td>Liftover variants to t2t-v2.0 reference genome (CHM13) using gatk LiftoverVcf. <br />These are the reasons some variants failed this step: 
+   <td>Liftover variants to t2t-v2.0 reference genome (CHM13) using gatk LiftoverVcf. <br />
+      <br/>
+      These are the reasons variants failed this step: 
       <ul>
         <li>190,474 IndelStraddlesMultipleIntevals </li> 
         <li> 23,158 NoTarget </li>
