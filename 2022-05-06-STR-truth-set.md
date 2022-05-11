@@ -168,8 +168,14 @@ This yielded 5,362,620 variants of which 4,148,586 are in high-confidence region
    <td>4,129,390</td>
    <td>100%</td>
 </tr><tr>
-   <td>1 </td>
-   <td>Lift-over variants to t2t-v2.0 reference genome (CHM13) using gatk LiftoverVcf.</td>
+   <td>2 </td>
+   <td>Liftover variants to t2t-v2.0 reference genome (CHM13) using gatk LiftoverVcf. Reasons for failure: 
+      <ul>
+        <li>190,474 IndelStraddlesMultipleIntevals </li> 
+        <li> 23,158 NoTarget </li>
+        <li>10,297 MismatchedRefAllele </li>
+      </ul>
+   </td>
    <td>213,645</td>
    <td>5.2%</td>
    <td>4,129,390</td>
