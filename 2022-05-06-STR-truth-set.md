@@ -42,7 +42,7 @@ The table below lists STR calling tools together with the benchmarking data used
    <td>
       <ul>
          <li>Simulated data using <a href="https://academic.oup.com/gigascience/article/6/4/gix010/3051934">NanoSim</a></li>
-         <li>Diploid assembly of HG00733 based on [<a href="https://www.biorxiv.org/content/10.1101/327064v2.full">Kronenberg 2019</a>]
+         <li>Phased diploid assembly of HG00733 based on PacBio CLR + HiC data from [<a href="https://www.biorxiv.org/content/10.1101/327064v2.full">Kronenberg 2019</a>]
             <ul>
                <li>215,894 STR loci</li>
                <li>2,992 expansions were 200bp to 4,000bp</li>
