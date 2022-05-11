@@ -154,7 +154,7 @@ Although [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)] main
 2. one of the two samples - CHM13 - is the basis of the telomere-to-telomere (t2t) assembly, so we can further validate STR variants by lifting them over to t2tv2.0 and checking that at least one allele is concordant with the t2t reference.
 
 ---
-**Part 1: Check All CHM1_CHM13_2 Variants For Concordance with The CHM13 T2T Reference Genome Assembly **
+**Part 1: Check All CHM1_CHM13_2 Variants For Concordance with The CHM13 T2T Reference Genome Assembly**
 
 Below are the steps and their affect on number of variants remaining:
 
