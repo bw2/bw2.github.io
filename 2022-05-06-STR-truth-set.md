@@ -22,7 +22,7 @@ To date, STR truth data has come from:
 3. **PCR-validated pathogenic expansions:** A small number of WGS samples with PCR-validated STR expansions are publicly available - including the 10        samples from [[Dashnow 2018](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-018-1505-2)]. Typically only one locus is validated in        each sample, so there's too little data in this category to be useful for a genome-wide STR benchmark. Additionally, PCR and other related methods 
    often give only approximate expansion sizes (eg. "greater than 150 repeats"). This is sufficient for determining 
    pathogenicity but not for evaluating tool accuracy.   
-4. **long read data:** This may be the ideal source of truth data in the future, but currently suffers from a lack of well-validated accurate tools for      calling STR expansions. The most recent published tool - Straglr - reports only ~70% concordance between long read STR calls and truth data  generated    from a diploid assembly of HG.. [].
+4. **long read data:** This may be the ideal source of truth data in the future, but currently suffers from a lack of well-validated accurate tools for      calling STR expansions. The most recent published tool - Straglr - reports only ~70% concordance between long read STR calls and truth data  generated    from a diploid assembly of HG00733 [Chiu 2021](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02447-3).
 
 
 The table below lists STR calling tools together with the benchmarking data used in their publications.  
@@ -40,8 +40,16 @@ Table 1 in [[Rajan-Babu 2021](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC83510
    <td>Straglr</td>
    <td>[<a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02447-3">Chiu 2021</a>]</td>
    <td>
-      Simulated data using <a href="https://academic.oup.com/gigascience/article/6/4/gix010/3051934">NanoSim</a><br/>
-      Diploid assembly of HG00733 released by PacBio (no longer available?)
+      <ul>
+         <li>Simulated data using <a href="https://academic.oup.com/gigascience/article/6/4/gix010/3051934">NanoSim</a></li>
+         <li>Diploid assembly of HG00733 released by PacBio (no longer available for download on PacBio website?)
+            <ul>
+               <li>215,894 STR loci</li>
+               <li>2,992 expansions were 200bp to 4,000bp</li>
+               <li>418 HET expansions with >= 100bp difference between long and short allele</li>
+            </ul>
+      </ul>
+            
    </td>
 </tr><tr>
    <td>tandem-genotypes </td>
