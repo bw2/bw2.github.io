@@ -22,8 +22,7 @@ To date, STR truth data has come from:
 3. **PCR-validated pathogenic expansions:** A small number of WGS samples with PCR-validated STR expansions are publicly available - including the 10        samples from [[Dashnow 2018](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-018-1505-2)]. Typically only one locus is validated in        each sample, so there's too little data in this category to be useful for a genome-wide STR benchmark. Additionally, PCR and other related methods 
    often give only approximate expansion sizes (eg. "greater than 150 repeats"). This is sufficient for determining 
    pathogenicity but not for evaluating tool accuracy.   
-4. **long read data:** This may be the ideal source of truth data in the future, but currently suffers from a lack of well-validated accurate tools for      calling STR expansions. The most recent published tool - Straglr - reports only ~70% concordance between long read STR calls and truth data generated    from a diploid assembly of HG00733 [[Chiu 2021](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02447-3)].
-
+4. **long read data:** This might be the ideal source of truth in the future, but currently suffers from a lack of well-validated STR calling tools. The most-recently published tool - Straglr [[Chiu 2021](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02447-3)] - reports 73% concordance between heterozygous STR expansions called from HiFi PacBio data vs truth data generated from the diploid assembly of HG00733 [[Kronenberg 2019](https://www.biorxiv.org/content/10.1101/327064v2.full)]. [[Chiu 2021](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02447-3)] and other groups (unpublished) also raise concerns about diploid assemblies as a source of STR truth data since manual inspection of discordant loci often revealed that the assembly was not credible and relative to the data. 
 
 This table lists STR calling tools + the benchmarking data used in their publications:  
 
@@ -127,7 +126,7 @@ This table lists STR calling tools + the benchmarking data used in their publica
 
 To create the Synthetic Diploid Benchmark, [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)] generated variant calls by:
 
-1. Taking the 2 haploid assemblies of PacBio data from [Huddleston 2017](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5411763/). These are the CHM1 and CHM13 hydatidiform mole cell lines.
+1. Taking the 2 haploid assemblies generated from PacBio data from [Huddleston 2017](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5411763/). These are thes.
 2. Using PCR-free WGS data to error correct the PacBio assemblies
 3. Using minimap2 to align each haploid assembly to GRCh37 or GRCh38
 4. Generating a VCF of all differences (ie. variants) between CHM1/CHM13 and GRCh37 or GRCh38. 
