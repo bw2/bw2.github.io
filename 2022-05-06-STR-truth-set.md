@@ -167,8 +167,8 @@ Below are the steps and their affect on number of variants remaining:
 <tr>
    <th>Step #</th>
    <th>Description</th>
-   <th>Variants Dropped</th>
-   <th>% Dropped</th>
+   <th>Variants Filtered</th>
+   <th>% Filtered</th>
    <th>Variants Remaining</th>
    <th>% Remaining</th>
 </tr><tr>
