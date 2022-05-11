@@ -239,9 +239,9 @@ This is approach is implemented in the [filter_vcf_to_STR_variants.py](https://g
 
 Results:
 ```
-Start with 4,094,305  (100.0%) TOTAL variants
+Run filter_vcf_to_STR_variants.py on all 4,094,305 variants in high-confidence regions.
 
-Filtering to STRs yields: 180,471 TOTAL STR variants
+This yields 180,471 TOTAL STR variants (4.4%)
 
 Expansion vs. Contraction:
       89633  ( 49.7%) STR DEL
