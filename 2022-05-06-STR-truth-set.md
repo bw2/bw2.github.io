@@ -52,7 +52,8 @@ This table lists STR calling tools + the benchmarking data used in their publica
    </td>
 </tr><tr>
    <td>tandem-genotypes </td>
-   <td>[<a href="https://doi.org/10.1186/s13059-019-1667-6">Mitsuhashi 2019</a>]
+   <td>[<a href="https://doi.org/10.1186/s13059-019-1667-6">Mitsuhashi 2019</a>]</td>
+   <td>
       <ul>
          <li>Long read data from Plasmids with engineered expansions of 4 motifs</li>
          <li>3 patients with ATXN10 expansions</li>
