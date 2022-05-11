@@ -41,7 +41,7 @@ The table below lists STR calling tools + the benchmarking data used in their pu
    <td>
       <ul>
          <li>Simulated data using <a href="https://academic.oup.com/gigascience/article/6/4/gix010/3051934">NanoSim</a></li>
-         <li>4 patients with HTT, 3 patients with with FMR1</li>
+         <li>4 patients with HTT, 3 patients with FMR1</li>
          <li>Phased diploid assembly of HG00733 based on PacBio CLR + HiC data from [<a href="https://www.biorxiv.org/content/10.1101/327064v2.full">Kronenberg 2019</a>]
             <ul>
                <li>215,894 STR loci</li>
