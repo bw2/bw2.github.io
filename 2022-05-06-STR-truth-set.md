@@ -1,8 +1,8 @@
 ## CHM1_CHM13 Data as an STR Truthset for Tool Benchmarking and Development 
 
 STR genotyping tools for short read whole-genome sequencing (WGS) data have improved significantly over the past 10 
-years. However, additional improvements in computational cost and accuracy may be possible, and new tools continue to be developed.
-A high-quality STR truthset is important for these efforts - both for comparing existing tools and for focusing future tool development.
+years. Still, active tool development continues and additional improvements in speed and accuracy will likely be possible.
+A high-quality STR truthset is important for these efforts - both for comparing existing tools and for driving new tool development.
 
 <!-- close the current gap in accuracy and compute costs between STR genotyping tools and tools for other variant classes like SNVs and InDels. --> 
 
