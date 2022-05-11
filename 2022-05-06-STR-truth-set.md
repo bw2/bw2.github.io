@@ -22,11 +22,11 @@ To date, STR truth data has come from:
 3. **PCR-validated pathogenic expansions:** A small number of WGS samples with PCR-validated STR expansions are publicly available - including the 10        samples from [[Dashnow 2018](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-018-1505-2)]. Typically only one locus is validated in        each sample, so there's too little data in this category to be useful for a genome-wide STR benchmark. Additionally, PCR and other related methods 
    often give only approximate expansion sizes (eg. "greater than 150 repeats"). This is sufficient for determining 
    pathogenicity but not for evaluating tool accuracy.   
-4. **long read data:** This may be the ideal source of truth data in the future, but currently suffers from a lack of well-validated accurate tools for      calling STR expansions. The most recent published tool - Straglr - reports only ~70% concordance between long read STR calls and truth data  generated    from a diploid assembly of HG00733 [Chiu 2021](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02447-3).
+4. **long read data:** This may be the ideal source of truth data in the future, but currently suffers from a lack of well-validated accurate tools for      calling STR expansions. The most recent published tool - Straglr - reports only ~70% concordance between long read STR calls and truth data  generated    from a diploid assembly of HG00733 [[Chiu 2021](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02447-3)].
 
 
 The table below lists STR calling tools together with the benchmarking data used in their publications.  
-Table 1 in [[Rajan-Babu 2021](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8351082/)] provides additional comparisons for many of these tools. 
+[Table 1](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8351082#Tab1) in [[Rajan-Babu 2021](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8351082/)] provides additional comparisons for many of these tools. 
 
 <br />
 <table class="ui striped table">
