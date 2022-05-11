@@ -10,7 +10,7 @@ To date, STR truth data has come from:
 
 1. **simulated STRs:** using a tool like wgsim, it's possible to simulate STR expansions or contractions at any STR locus 
    and generate an unlimited number of test cases. Benchmarking on simulated data can be useful for setting 
-   an upperbound on tool performance. However, simulated data lacks some of the complexities of real data like GC bias, 
+   an upperbound on tool performance. However, simu lated data lacks some of the complexities of real data like GC bias, 
    adjacent variants not present in the reference genome, etc. so real-world performance can be significantly worse. 
 2. **mendelian violations analysis:** large WGS datasets with trios are available, and can be used to compare the number of 
    mendelian violations produced by different STR calling tools or filtering strategies. This produces a coarser  
@@ -157,7 +157,7 @@ This yielded 5,362,620 variants of which 4,148,586 are in high-confidence region
    <th>Step #</th>
    <th>Description</th>
    <th>Variants Dropped</th>
-   <th>% Lost</th>
+   <th>% Dropped</th>
    <th>Variants Remaining</th>
    <th>% Remaining</th>
 </tr><tr>
@@ -192,7 +192,22 @@ This yielded 5,362,620 variants of which 4,148,586 are in high-confidence region
    <td>0.0%</td>
    <td>3,904,084</td>
    <td>94.5%</td>
+</tr><tr>
+   <td>4 </td>
+   <td>Liftover variants from t2t-v2.0 back to GRCh38 using gatk LiftoverVcf. </td>
+   <td>253</td>
+   <td>0.0%</td>
+   <td>3,903,831</td>
+   <td>94.5%</td>
+</tr><tr>
+   <td>5</td>
+   <td>Restore deletions that were dropped in the 1st liftover (GRCh38 => CHM13) due to IndelStraddlesMultipleIntevals</td>
+   <td></td>
+   <td></td>
+   <td>4,094,305</td>
+   <td>99.2%</td>
 </tr>
+
 </table>
 
 
