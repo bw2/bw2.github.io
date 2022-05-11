@@ -226,8 +226,8 @@ Below are the steps and how many variants pass each step:
 
 **Part 2: Filter CHM1_CHM13_2 Variants To STR Variants**
 
-To identify the INDELs that are actually STR variants, process each variant to:
-1. check if the INDEL's inserted or deleted sequence consists of some k-mer that covers at least 90% of the variant bases. 
+To identify the INDELs that are actually STR variants, process each INDEL to:
+1. check if the inserted or deleted sequence consists of some k-mer that covers at least 90% of the variant bases. 
 2. if yes, treat this k-mer as the STR repeat unit. Otherwise, treat the entire variant sequence as the repeat unit to allow detection of STR expansions or contractions that differ from the reference by only 1 repeat. 
 3. check the reference genome flanking sequence immediately to the left and right of the variant for additional repeats with the same repeat unit
 
