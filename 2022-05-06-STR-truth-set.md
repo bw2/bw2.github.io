@@ -1,7 +1,7 @@
 ## CHM1_CHM13 Data as an STR Truthset for Tool Benchmarking and Development 
 
 STR genotyping tools for short read whole-genome sequencing (WGS) data have improved significantly over the past 10 
-years. Still, active tool development continues and additional improvements in speed and accuracy will likely be possible.
+years. Active tool development continues and additional improvements in speed and accuracy will likely be possible.
 A high-quality STR truthset is important for these efforts - both for comparing existing tools and for driving new tool development.
 
 <!-- close the current gap in accuracy and compute costs between STR genotyping tools and tools for other variant classes like SNVs and InDels. --> 
@@ -24,7 +24,7 @@ To date, STR truth data has come from:
    pathogenicity but not for evaluating tool accuracy.   
 4. **long read data:** This might be the ideal source of truth in the future, but currently suffers from a lack of well-validated STR calling tools. The most-recently published tool - Straglr [[Chiu 2021](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02447-3)] - reports 73% concordance between heterozygous STR expansions called from HiFi PacBio data vs truth data generated from the diploid assembly of HG00733 [[Kronenberg 2019](https://www.biorxiv.org/content/10.1101/327064v2.full)]. [[Chiu 2021](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02447-3)] and other groups (unpublished) also raise concerns about diploid assemblies as a source of STR truth data since manual inspection of discordant loci often revealed that the assembly was not credible and relative to the data. 
 
-This table lists STR calling tools + the benchmarking data used in their publications:  
+To show the truthsets currently being used, this table lists STR calling tools + the benchmarking data used in their publications:  
 
 <br />
 <table class="ui striped table">
