@@ -184,7 +184,7 @@ Below are the steps and their affect on number of variants remaining:
       <br/>
       These are the reasons variants failed this step: 
       <ul>
-        <li>190,474 IndelStraddlesMultipleIntevals </li> 
+        <li>190,474 IndelStraddlesMultipleIntevals (these are all deletions)</li> 
         <li> 23,158 NoTarget </li>
         <li>10,297 MismatchedRefAllele </li>
       </ul>
@@ -214,7 +214,7 @@ Below are the steps and their affect on number of variants remaining:
    <td>94.5%</td>
 </tr><tr>
    <td>5</td>
-   <td>Restore deletions that were dropped in the 1st liftover (GRCh38 => CHM13) due to IndelStraddlesMultipleIntevals</td>
+   <td>Restore the 190,474 deletions that were dropped in the 1st liftover (GRCh38 => CHM13) due to IndelStraddlesMultipleIntevals. I'm assuming this is an artifact of the liftover chain files and not a sufficient reason to discard these variants.</td>
    <td></td>
    <td></td>
    <td>4,094,305</td>
