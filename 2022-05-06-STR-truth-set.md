@@ -239,7 +239,8 @@ This is approach is implemented in the [filter_vcf_to_STR_variants.py](https://g
 
 Results:
 ```
-Run filter_vcf_to_STR_variants.py --min-fraction-of-variant-covered-by-repeat 0.9 on all 4,094,305 variants in high-confidence regions.
+Run filter_vcf_to_STR_variants.py --min-fraction-of-variant-covered-by-repeat 0.9 
+on all 4,094,305 variants in high-confidence regions.
 
 This yields 180,471 TOTAL STR variants (4.4%)
 
