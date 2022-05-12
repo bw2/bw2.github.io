@@ -237,6 +237,10 @@ Keep variants that have:
 
 This is approach is implemented in the [filter_vcf_to_STR_variants.py](https://github.com/broadinstitute/str-analysis/blob/main/str_analysis/filter_vcf_to_STR_variants.py) script. 
 
+Limitations:  The current approach doesn't properly handle interruptions in the repeat sequence and will miss most STR variants that include interuptions. 
+  This will be improved in a future version by integrating the TandemRepeatFinder [Benson 1999] algorithm.
+ 
+
 Results:
 ```
 Run filter_vcf_to_STR_variants.py --min-fraction-of-variant-covered-by-repeat 0.9 
