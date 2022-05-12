@@ -65,8 +65,7 @@ To show the truthsets currently being used, the table below lists STR calling to
    <td>[<a href="https://doi.org/10.1186/s13073-017-0456-7">Liu 2017</a>]</td>
    <td>
       <ul>
-         <li>20 patients with ATXN3 expansions</li>
-         <li>3 patients with ATXN10 expansions</li>
+         <li>20 patients with ATXN3 expansions, 3 patients with ATXN10 expansions</li>
          <li>NA12878 short-read calls at known pathogenic loci</li>
       </ul>
    </td>
