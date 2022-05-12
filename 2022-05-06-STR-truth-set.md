@@ -151,10 +151,10 @@ This yielded 5,362,620 variants of which 4,148,586 were in high-confidence regio
     276469  (  6.7%) DEL
 ```
 
-Although [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)] mainly used this data to evaluate SNVs and INDELs, it may also serve as a high-quality SV and STR truthset because: 
+Although [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)] used this data to evaluate SNV and INDEL calling tools, it can also serve as a high-quality SV and STR truthset since: 
 
 1. haploid assembly is more accurate than diploid assembly
-2. one of the two samples - CHM13 - is the basis of the telomere-to-telomere (t2t) assembly, so we can further validate STR variants by lifting them over to t2tv2.0 and checking that at least one allele is concordant with the t2t reference.
+2. one of the two samples - CHM13 - is the basis of the new telomere-to-telomere (t2t) reference assembly, so we can further validate STR variants by lifting them over to t2tv2.0 and checking that at least one allele is concordant with the t2t reference.
 
 ---
 **Part 1: Check All CHM1_CHM13_2 Variants For Concordance with The CHM13 T2T Reference Genome Assembly**
