@@ -258,6 +258,7 @@ Expansion/Contraction Sizes:
        2,123  (  1.2%) STR delta = 8 repeats
        7,033  (  3.9%) STR delta = 9+ repeats
   
+
 Motif Sizes:
      106,969  ( 59.3%) STR motif size = 2 bp
       14,884  (  8.2%) STR motif size = 3 bp
@@ -268,6 +269,29 @@ Motif Sizes:
          565  (  0.3%) STR motif size = 8 bp
        4,359  (  2.4%) STR motif size = 9+ bp
 
+Repeat Sizes:
+
+     173,749  ( 96.3%) STR size 0-25bp    *
+       5,010  (  2.8%) STR size 25-50bp   *
+         775  (  0.4%) STR size 50-75bp   *
+         255  (  0.1%) STR size 75-100bp  
+         157  (  0.1%) STR size 100-125bp
+         112  (  0.1%) STR size 125-150bp
+          76  (  0.0%) STR size 150-175bp
+          70  (  0.0%) STR size 175-200bp
+          51  (  0.0%) STR size 200-225bp
+          45  (  0.0%) STR size 225-250bp
+          29  (  0.0%) STR size 250-275bp
+          19  (  0.0%) STR size 275-300bp
+          16  (  0.0%) STR size 300-325bp
+          11  (  0.0%) STR size 325-350bp
+          17  (  0.0%) STR size 350-375bp
+          15  (  0.0%) STR size 375-400bp
+           5  (  0.0%) STR size 400-425bp
+          13  (  0.0%) STR size 425-450bp
+           9  (  0.0%) STR size 450-475bp
+          11  (  0.0%) STR size 475-500bp
+          26  (  0.0%) STR size 500+bp
      
 HOM vs. HET:
      39,492  ( 21.9%) genotype = 1|1
