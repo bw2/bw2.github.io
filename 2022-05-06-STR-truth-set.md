@@ -247,17 +247,6 @@ Expansions vs. Contractions:
       89,633  ( 49.7%) STR DEL
       90,838  ( 50.3%) STR INS
 
-Expansion/Contraction Sizes:
-      94,148  ( 52.2%) STR delta 1 repeat
-      34,703  ( 19.2%) STR delta = 2 repeats
-      17,762  (  9.8%) STR delta = 3 repeats
-      10,413  (  5.8%) STR delta = 4 repeats
-       6,811  (  3.8%) STR delta = 5 repeats
-       4,435  (  2.5%) STR delta = 6 repeats
-       3,043  (  1.7%) STR delta = 7 repeats
-       2,123  (  1.2%) STR delta = 8 repeats
-       7,033  (  3.9%) STR delta = 9+ repeats
-  
 
 Motif Sizes:
      106,969  ( 59.3%) STR motif size = 2 bp
@@ -269,8 +258,18 @@ Motif Sizes:
          565  (  0.3%) STR motif size = 8 bp
        4,359  (  2.4%) STR motif size = 9+ bp
 
-Repeat Sizes:
-
+Repeat Sizes (# of repeats):
+      94,148  ( 52.2%) STR delta 1 repeat
+      34,703  ( 19.2%) STR delta = 2 repeats
+      17,762  (  9.8%) STR delta = 3 repeats
+      10,413  (  5.8%) STR delta = 4 repeats
+       6,811  (  3.8%) STR delta = 5 repeats
+       4,435  (  2.5%) STR delta = 6 repeats
+       3,043  (  1.7%) STR delta = 7 repeats
+       2,123  (  1.2%) STR delta = 8 repeats
+       7,033  (  3.9%) STR delta = 9+ repeats
+  
+Repeat Sizes (# of base pairs):
      173,749  ( 96.3%) STR size 0-25bp    *
        5,010  (  2.8%) STR size 25-50bp   *
          775  (  0.4%) STR size 50-75bp   *
