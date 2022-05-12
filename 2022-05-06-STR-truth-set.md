@@ -301,6 +301,70 @@ de-novo:
 
 ```
 
+Switching to `--min-fraction-of-variant-covered-by-repeat 1.0` doesn't significantly change the results:
+
+```
+Run filter_vcf_to_STR_variants.py --min-fraction-of-variant-covered-by-repeat 1.0 
+on all 4,094,305 variants in high-confidence regions.
+
+This yields 177,826 TOTAL STR variants (4.3%)
+
+Expansions vs. Contractions:
+      89,188  ( 50.2%) STR DEL
+      88,638  ( 49.8%) STR INS
+ 
+Motif Sizes:
+     105,483  ( 59.3%) STR motif size 2 bp
+      14,759  (  8.3%) STR motif size 3 bp
+      39,751  ( 22.4%) STR motif size 4 bp
+       9,597  (  5.4%) STR motif size 5 bp
+       2,598  (  1.5%) STR motif size 6 bp
+         728  (  0.4%) STR motif size 7 bp
+         547  (  0.3%) STR motif size 8 bp
+       4,363  (  2.5%) STR motif size 9+ bp
+
+Repeat Sizes (# of repeats):
+      94,238  ( 53.0%) STR delta 1 repeats
+      34,697  ( 19.5%) STR delta 2 repeats
+      17,499  (  9.8%) STR delta 3 repeats
+      10,298  (  5.8%) STR delta 4 repeats
+       6,540  (  3.7%) STR delta 5 repeats
+       4,257  (  2.4%) STR delta 6 repeats
+       2,887  (  1.6%) STR delta 7 repeats
+       2,008  (  1.1%) STR delta 8 repeats
+       5,402  (  3.0%) STR delta 9+ repeats
+    
+Repeat Sizes (# of base pairs):
+     172,447  ( 97.0%) STR size 0-25bp
+       4,036  (  2.3%) STR size 25-50bp
+         641  (  0.4%) STR size 50-75bp
+         236  (  0.1%) STR size 75-100bp
+         134  (  0.1%) STR size 100-125bp
+          87  (  0.0%) STR size 125-150bp
+          57  (  0.0%) STR size 150-175bp
+          37  (  0.0%) STR size 175-200bp
+          32  (  0.0%) STR size 200-225bp
+          27  (  0.0%) STR size 225-250bp
+          18  (  0.0%) STR size 250-275bp
+          13  (  0.0%) STR size 275-300bp
+           3  (  0.0%) STR size 300-325bp
+           6  (  0.0%) STR size 325-350bp
+          11  (  0.0%) STR size 350-375bp
+           7  (  0.0%) STR size 375-400bp
+           3  (  0.0%) STR size 400-425bp
+           9  (  0.0%) STR size 425-450bp
+           5  (  0.0%) STR size 450-475bp
+           3  (  0.0%) STR size 475-500bp
+          14  (  0.0%) STR size 500+bp
+     
+HOM vs. HET:
+      39,341  ( 22.1%) genotype are homozygous
+
+de-novo:
+         663  (  0.4%) STRs with no matching repeat in the left or right reference genome flanking sequence
+
+```
+
 ---
 
 
