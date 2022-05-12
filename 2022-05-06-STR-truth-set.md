@@ -237,8 +237,9 @@ Keep variants that have:
 
 This is approach is implemented in the [filter_vcf_to_STR_variants.py](https://github.com/broadinstitute/str-analysis/blob/main/str_analysis/filter_vcf_to_STR_variants.py) script. 
 
-Limitations:  The current approach doesn't properly handle interruptions in the repeat sequence and will miss most STR variants that include interuptions. 
-  A future version of filter_vcf_to_STR_variants.py can avoid this by integrating the TandemRepeatFinder [Benson 1999] algorithm.
+Limitations:  
+  The current approach doesn't properly handle interruptions in the repeat sequence and will miss most STR variants that include interuptions. 
+  A future version of filter_vcf_to_STR_variants.py can avoid this limitation by integrating the TandemRepeatFinder [Benson 1999] algorithm.
  
 
 Results:
