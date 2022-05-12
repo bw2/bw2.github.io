@@ -78,7 +78,7 @@ To show the truthsets currently being used, the table below lists STR calling to
 </tr><tr>
    <td>ExpansionHunterDenovo</td>
    <td>[<a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02017-z">Dolzhenko 2020</a>]</td>
-   <td></td>
+   <td>91 patients with confirmed HTT, FXN, DMPK, or FMR1 expansions</td>
 </tr><tr>
    <td>GangSTR</td>
    <td>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6735967/">Mousavi 2019</a>]</td>
