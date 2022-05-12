@@ -294,7 +294,7 @@ Repeat Sizes (# of base pairs):
           26  (  0.0%) STR size 500+bp
      
 HOM vs. HET:
-     39,492  ( 21.9%) genotype = 1|1
+     39,492  ( 21.9%) genotype are homozygous
 
 de-novo:
        1,015  (  0.6%) STRs with no matching repeat in the left or right reference genome flanking sequence
