@@ -24,7 +24,7 @@ To date, STR truth data has come from:
    pathogenicity but not for evaluating tool accuracy.   
 4. **long read data:** This might be the ideal source of truth in the future, but currently suffers from a lack of well-validated STR calling tools. The most-recently published tool - Straglr [[Chiu 2021](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02447-3)] - reports 73% concordance between heterozygous STR expansions called from HiFi PacBio data vs truth data generated from the diploid assembly of HG00733 [[Kronenberg 2019](https://www.biorxiv.org/content/10.1101/327064v2.full)]. [[Chiu 2021](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02447-3)] and other groups (unpublished) also raise concerns about diploid assemblies as a source of STR truth data since manual inspection of discordant loci often revealed that the assembly was not credible and relative to the data. 
 
-To show the truthsets currently being used, the table below lists STR calling tools + the benchmarking data used in their publications:  
+The table below lists STR calling tools + the truth data used in their publications:  
 
 <br />
 <table class="ui striped table">
