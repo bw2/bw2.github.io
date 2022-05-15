@@ -102,15 +102,18 @@ To show the truthsets currently being used, the table below lists STR calling to
    <td>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6735967/">Mousavi 2019</a>]</td>
    <td>
       <ul>
-         <li>.</li>
+         <li></li>
       </ul>
    </td>
 </tr><tr>
    <td>ExpansionHunter</td>
-   <td>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6853681/">Dolzhenko 2019</a>]</td>
+   <td>
+      [<a href="https://genome.cshlp.org/content/early/2017/09/08/gr.225672.117">Dolzhenko 2017</a>],
+      [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6853681/">Dolzhenko 2019</a>]
+   </td>
    <td>
       <ul>
-         <li>.</li>
+         <li></li>
       </ul>
    </td>
 </tr><tr>
@@ -118,7 +121,7 @@ To show the truthsets currently being used, the table below lists STR calling to
    <td>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5673627/">Tang 2017</a>]</td>
    <td>
       <ul>
-         <li>.</li>
+         <li></li>
       </ul>
    </td>
 </tr><tr>
@@ -126,7 +129,7 @@ To show the truthsets currently being used, the table below lists STR calling to
    <td>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6102892/">Dashnow 2018</a>]</td>
    <td>
       <ul>
-         <li>.</li>
+         <li></li>
       </ul>
    </td>
 </tr><tr>
