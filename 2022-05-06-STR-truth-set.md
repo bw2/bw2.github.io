@@ -76,6 +76,7 @@ To show the truthsets currently being used, the table below lists STR calling to
    <td>
       <ul>
          <li>134 WGS samples with expansions at 14 known pathogenic STR loci</li>
+         <li>Diploid assemblies of Ashkenazi trio using HiFi PacBio. Assembled using PacBio Improved Phased Assembler (IPA), aligned to GRCh38 using pbmm2, variant calling using bcftools mpileup</li>
       </ul>
    </td>
 </tr><tr>
