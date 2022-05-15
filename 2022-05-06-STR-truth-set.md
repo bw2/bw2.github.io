@@ -40,7 +40,7 @@ To show the truthsets currently being used, the table below lists STR calling to
    <td>
       <ul>
          <li>Simulated data using <a href="https://academic.oup.com/gigascience/article/6/4/gix010/3051934">NanoSim</a></li>
-         <li>4 patients with HTT, 3 patients with FMR1</li>
+         <li>4 WGS samples with HTT, 3 WGS samples with FMR1</li>
          <li>Phased diploid assembly of HG00733 based on PacBio CLR + HiC data from [<a href="https://www.biorxiv.org/content/10.1101/327064v2.full">Kronenberg 2019</a>]
             <ul>
                <li>215,894 STR loci</li>
@@ -56,7 +56,7 @@ To show the truthsets currently being used, the table below lists STR calling to
    <td>
       <ul>
          <li>Long read data from Plasmids with engineered expansions of 4 motifs (CAG, CAA, GGGGCC, and iCCTG)</li>
-         <li>3 patients with ATXN10 expansions</li>
+         <li>3 WGS samples with ATXN10 expansions</li>
          <li>NA12878 short-read calls at known pathogenic loci</li>
       </ul>
    </td>
@@ -65,7 +65,7 @@ To show the truthsets currently being used, the table below lists STR calling to
    <td>[<a href="https://doi.org/10.1186/s13073-017-0456-7">Liu 2017</a>]</td>
    <td>
       <ul>
-         <li>20 patients with ATXN3, 3 patients with ATXN10 expansions</li>
+         <li>20 WGS samples with ATXN3, 3 WGS samples with ATXN10 expansions</li>
          <li>NA12878 short-read calls at known pathogenic loci</li>
       </ul>
    </td>
@@ -73,27 +73,51 @@ To show the truthsets currently being used, the table below lists STR calling to
    <td rowspan="100">Short Read</td>
    <td>STRling</td>
    <td>[<a href="https://www.biorxiv.org/content/10.1101/2021.11.18.469113v1">Dashnow 2021</a>]</td>
-   <td></td>
+   <td>
+      <ul>
+         <li>134 WGS samples with expansions at 14 known pathogenic STR loci</li>
+      </ul>
+   </td>
 </tr><tr>
    <td>ExpansionHunterDenovo</td>
    <td>[<a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02017-z">Dolzhenko 2020</a>]</td>
-   <td>91 patients with confirmed HTT, FXN, DMPK, or FMR1 expansions</td>
+   <td>
+      <ul>
+         <li>91 WGS samples with confirmed HTT, FXN, DMPK, or FMR1 expansions</li>
+      </ul>
+   </td>
 </tr><tr>
    <td>GangSTR</td>
    <td>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6735967/">Mousavi 2019</a>]</td>
-   <td></td>
+   <td>
+      <ul>
+         <li>.</li>
+      </ul>
+   </td>
 </tr><tr>
    <td>ExpansionHunter</td>
    <td>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6853681/">Dolzhenko 2019</a>]</td>
-   <td></td>
+   <td>
+      <ul>
+         <li>.</li>
+      </ul>
+   </td>
 </tr><tr>
    <td>TredParse</td>
    <td>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5673627/">Tang 2017</a>]</td>
-   <td></td>
+   <td>
+      <ul>
+         <li>.</li>
+      </ul>
+   </td>
 </tr><tr>
    <td>STRetch</td>
    <td>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6102892/">Dashnow 2018</a>]</td>
-   <td></td>
+   <td>
+      <ul>
+         <li>.</li>
+      </ul>
+   </td>
 </tr><tr>
    <td>HipSTR</td>
    <td>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5482724/">Willems 2017</a>]</td>
