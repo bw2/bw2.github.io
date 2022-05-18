@@ -28,7 +28,7 @@ To evaluate LIRICAL performance, I ran it on 75 previously-solved rare disease c
 - 2 cases: solved with a gene that was previously associated with a different disease phenotype. 
 - 14 cases: solved with a gene not previously associated with a disease. 
 
-LIRICAL correctly identified the correct gene in 65 out of the 75 cases (87%), and in 42 out of 75 cases (56%) it was in the top 3.
+LIRICAL correctly identified the correct gene in 65 out of the 75 cases (87%), and in 42 out of 75 cases (56%) the correct gene was in the top 3.
 
 This histogram show how often LIRICAL ranked the correct gene in the top 5, between 6-10, and >10th in the list, colored by inheritance mode. 
 The x-axis represents # of cases:
@@ -40,7 +40,7 @@ list and it's post-test probability:
 
 <img width="729" alt="image" src="https://user-images.githubusercontent.com/6240170/166860896-d35babad-a1a5-4d20-a9b4-cc3f58dc8045.png">
 
-In most cases (49 out of 75 = 65%), the correct result was among the top 5 hits and for many (36 out of 75 = 48%) it also had a post-test probability between 1% and 100%. On the other hand, for 15 cases (20%) the correct result was below 5th in the list and had a post-test probability near 0.
+In 49 out of 75 cases (65%), the correct result was among the top 5 hits and for 36 out of 75 (48%) it also had a post-test probability between 1% and 100%. On the other hand, for 15 cases (20%) the correct result was below 5th in the list and had a post-test probability near 0.
 
 **Conclusion:** LIRICAL shows relatively high sensitivity in finding the causal genes for rare disease cases from [RGP](https://raregenomes.org/). 
 
@@ -58,7 +58,7 @@ From the above plot, a conservative approach would be to only consider the top 5
 
 **What is the false-positive rate?**
 
-The above plot shows that, although LIRICAL reports the correct gene as #1 in the list in an impressive 23 out of 75 cases (31%), most of the time the 
+The above plot shows that, although LIRICAL reports the correct gene as #1 in the list in 23 out of 75 cases (31%), most of the time the 
 correct gene is further down in the list. All genes above the correct gene can be considered false positives. With conservative thresholds of only looking at the top 5 results and only when they have a post-test probability (PTP) of 1% or higher, analysts would need to look at ~2 false-positive genes per case on average.
 
 Another way to look into this and also test how much LIRICAL performance depends on variants vs. phenotype match is to rerun the same tests, but substitute in variants from completely unrelated healthy individuals sequenced as part of the same cohort. I did this 5x for each of the 75 solved cases above (=> 375 test runs). Unsurprisingly, this caused LIRICAL accuracy to drop to esssentially 0: only 10 out of the 375 LIRICAL reports (3%) still included the correct gene, and only 3 of these were in the top 5 and had a post-test probability > 1%.
