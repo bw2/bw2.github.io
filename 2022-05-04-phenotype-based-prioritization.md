@@ -32,11 +32,12 @@ LIRICAL correctly identified the correct gene in 65 out of the 75 cases (87%), a
 
 <i><u><b>NOTE</b></u>:  By default, LIRICAL uses gnomAD v2 allele frequencies (AFs) when analyzing variants. In order to take advantage of gnomAD v3.1 AFs, the analysis described here is based on first prefiltering the variant call files (VCFs) to gnomAD v3.1 POPMAX AF < 1% before passing them to LIRICAL.</i>
 
+<br />
 This histogram show how often LIRICAL ranked the correct gene in the top 5, between 6-10, and >10th in the list, colored by inheritance mode. 
-The x-axis represents # of cases:
-
+The x-axis represents # of cases: <br /> 
+  
+<br />
 <img width="1000" alt="LIRICAL correct gene rank by inheritance mode" src="https://user-images.githubusercontent.com/6240170/169574825-3e719744-07fe-4e0e-afc6-29c856436c27.png">
-
 
 
 Another way to look at this is - for the 65 cases where LIRICAL found the correct gene, what was that gene's rank in the 
@@ -67,7 +68,7 @@ correct gene is further down in the list. All genes above the correct gene can b
 
 Another way to look into this and also test how much LIRICAL performance depends on variants vs. phenotype match is to rerun the same tests, but substitute in variants from completely unrelated healthy individuals sequenced as part of the same cohort. I did this 5x for each of the 75 solved cases above (=> 375 test runs). Unsurprisingly, this caused LIRICAL accuracy to drop to esssentially 0: only 10 out of the 375 LIRICAL reports (3%) still included the correct gene, and only 3 of these were in the top 5 and had a post-test probability > 1%.
 
-Unfortunately, in 260 out of 375 tests (70%) LIRICAL still reported at least one result with a post-test probability > 1%:
+However, in 260 out of 375 tests (70%) LIRICAL still reported at least one result with a post-test probability > 1%:
 
 <!-- img width="429" alt="image" src="https://user-images.githubusercontent.com/6240170/166864705-af5f4943-d41e-4416-967d-e6f16183c85a.png" -->
 <img width="500" alt="histogram: % of RGP cases that had 0, 1, 2, 3, 4, or 5 false-positive LIRICAL results with PTP > 1 and rank <= 5" src="https://user-images.githubusercontent.com/6240170/166866744-55f075b5-08e5-4999-bbec-8bde066add03.png">
