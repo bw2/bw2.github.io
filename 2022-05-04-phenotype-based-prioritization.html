@@ -72,12 +72,12 @@ The x-axis represents # of cases: <br /> </p>
 <p>Another way to look at this is - for the 65 cases where LIRICAL found the correct gene, what was that gene's rank in the 
 list and it's post-test probability:</p>
 <p><img width="750" alt="Plot post-test probability vs LIRICAL rank" src="https://user-images.githubusercontent.com/6240170/166860896-d35babad-a1a5-4d20-a9b4-cc3f58dc8045.png"></p>
-<p>In 49 out of 75 cases (65%), the correct result was among the top 5 hits and for 36 out of 75 (48%) it also had a post-test probability between 1% and 100%. On the other hand, for 15 cases (20%) the correct result was below 5th in the list and had a post-test probability near 0.</p>
+<p>To summarize this plot, in 49 out of 75 cases (65%) the correct result was among the top 5 hits and for 36 out of 75 (48%) it also had a post-test probability between 1% and 100%. On the other hand, for 15 cases (20%) the correct result was below 5th in the list and had a post-test probability near 0. Then, for another 10 cases (13%), the correct result was not in the list at all. </p>
 <p><strong>Conclusion:</strong> LIRICAL shows relatively high sensitivity in finding the causal genes for rare disease cases from <a href="https://raregenomes.org/">RGP</a>. </p>
 <hr />
 <p><strong>How many genes would someone need to look through for a typical case?</strong></p>
-<p>From the above plot, a conservative approach would be to only consider the top 5 results (x-axis cutoff) and only if they have a post-test probability (PTP) of 1% or higher (y-axis cutoff). This would give 3 results to look at on average, with 39% of cases having 5 or more results with PTP &gt; 1%:</p>
-<p><img width="500" alt="histogram: % of RGP cases that have 0, 1, 2, 3, 4, or 5 LIRICAL results with PTP > 1 and rank &lt;= 5" src="https://user-images.githubusercontent.com/6240170/166865247-43ebc202-8007-41a0-b951-9a1cecf9048e.png"&gt;</p>
+<p>From the above plot, a conservative approach would be to only consider the top 5 results (x-axis cutoff) and only if they have a post-test probability (PTP) of 1% or higher (y-axis cutoff). This would give 3 results to look at on average, with 24% of cases having 5 or more results with PTP &gt; 1%:</p>
+<p><img width="500" alt="histogram: % of RGP cases that have 0, 1, 2, 3, 4, or 5 LIRICAL results with PTP > 1 and rank &lt;= 5" src="https://user-images.githubusercontent.com/6240170/169594097-7f9caeee-824c-4baf-b5d4-0992dfc70c56.png"&gt;</p>
 <p><strong>Conclusion:</strong>  3 genes per case when using cutoffs that would yield ~50% sensitivity.</p>
 <hr />
 <p><strong>What is the false-positive rate?</strong></p>
