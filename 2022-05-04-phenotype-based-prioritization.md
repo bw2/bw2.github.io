@@ -66,14 +66,14 @@ From the above plot, a conservative approach would be to only consider the top 5
 The above plot shows that, although LIRICAL reports the correct gene as #1 in the list in 23 out of 75 cases (31%), most of the time the 
 correct gene is further down in the list. All genes except the correct gene can be considered false positives. With conservative thresholds of only looking at the top 5 results and only when they have a post-test probability (PTP) of 1% or higher, analysts would need to look at ~2 false-positive genes per case on average.
 
-Another way to look into this and also test how much LIRICAL performance depends on variants vs. phenotype match is to rerun the same tests, but substitute in variants from completely unrelated healthy individuals sequenced as part of the same cohort. I did this 5x for each of the 75 solved cases above (=> 375 test runs). Unsurprisingly, this caused LIRICAL accuracy to drop to esssentially 0: only 10 out of the 375 LIRICAL reports (3%) still included the correct gene, and only 3 of these were in the top 5 and had a post-test probability > 1%.
+To test LIRICAL performance another way and also see how much it depends on variant-based matching vs. phenotype-based matching, I reran the same cases, but substituted in variants from completely unrelated healthy individuals sequenced as part of the same cohort. I did this 5x for each of the 75 solved cases above (=> 375 test runs). With VCFs from healthy individuals, LIRICAL accuracy dropped to esssentially 0: only 10 out of the 375 LIRICAL reports (3%) still included the correct gene, and only 3 of these were in the top 5 and had a post-test probability > 1%.
 
-However, in 260 out of 375 tests (70%) LIRICAL still reported at least one result with a post-test probability > 1%:
+However, in 260 out of 375 tests (70%) LIRICAL still reported at least one result with a post-test probability > 1%. This again shows that, even with conservative thresholds of top-5 and PTP > 1%, a user should expect to see on average 2 false-positive results per case:
 
 <!-- img width="429" alt="image" src="https://user-images.githubusercontent.com/6240170/166864705-af5f4943-d41e-4416-967d-e6f16183c85a.png" -->
 <img width="500" alt="histogram: % of RGP cases that had 0, 1, 2, 3, 4, or 5 false-positive LIRICAL results with PTP > 1 and rank <= 5" src="https://user-images.githubusercontent.com/6240170/166866744-55f075b5-08e5-4999-bbec-8bde066add03.png">
 
-This again shows that, even with conservative thresholds of top-5 and PTP > 1%, a user should expect to see on average 2 false-positive results per case. 
+For comparison, in the first analysis, 62 out of 75 cases (83%) had at least one result with a post-test probability > 1%, so LIRICAL post-test probability is on average slightly lower for false-positive results. 
 
 **Conclusion:**  At least 2 genes per case.
 
