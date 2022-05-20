@@ -81,7 +81,7 @@ For comparison, in the first analysis, 62 out of 75 cases (83%) had at least one
 
 **Can LIRICAL performance be improved further?**
 
-Yes - through additional prefiltering. For the tests above, I prefiltered each individual's variants to exclude variants that are common in the general population (keeping only variants with gnomAD v3 PopMax AF < 0.01). Applying this prefilter didn't change the number of true positive results, but improved their average rank from 7.6 to 5.9. Adding further prefiltering - such as by inheritance mode for cases where parents' DNA is available will almost certainly improve results further. 
+Yes - through additional prefiltering. For the tests above, I prefiltered each individual's variants to exclude variants that are common in the general population (keeping only variants with gnomAD v3 PopMax AF < 0.01). Applying this prefilter didn't change the number of true positive results, but improved their average rank from 7.6 to 5.9. Adding further prefiltering - such as by inheritance mode for cases where parents' DNA is available - will almost certainly improve results further. 
 
 ---
 
