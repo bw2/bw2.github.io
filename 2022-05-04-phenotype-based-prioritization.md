@@ -81,8 +81,7 @@ This again shows that, even with conservative thresholds of top-5 and PTP > 1%, 
 
 **Can LIRICAL performance be improved further?**
 
-Yes - through additional prefiltering. For the tests above, I prefiltered each individual's variants to exclude those that are common in the general popualation (keeping only variants with gnomAD v3 PopMax AF < 0.01). Applying this prefilter didn't change the number of true positive results, but improved their average rank from 7.6 to 5.9 (when considering the 62 out of 75 cases where the correct result was among the top 50 genes).
-Adding further prefiltering - such as by inheritance mode for cases where parents' DNA is available will almost certainly improve results further. 
+Yes - through additional prefiltering. For the tests above, I prefiltered each individual's variants to exclude those that are common in the general popualation (keeping only variants with gnomAD v3 PopMax AF < 0.01). Applying this prefilter didn't change the number of true positive results, but improved their average rank from 7.6 to 5.9. Adding further prefiltering - such as by inheritance mode for cases where parents' DNA is available will almost certainly improve results further. 
 
 ---
 
