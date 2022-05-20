@@ -9,6 +9,32 @@
   <title>Ben's Project Notes</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+  <style>
+    body {
+	font-family: sans-serif;
+    }
+    
+    .ui.text.container {
+	max-width: 800px !important;
+    }
+    
+    .pagetitle {
+	font-size: 16pt !important;
+	padding-left: 118px;
+	/* align-items: center; justify-content: center; flex-direction: column; */
+    }
+
+    .rowlink {
+	font-weight: 500;
+	font-size: 13pt;
+	color: #555555;
+    }
+    td {
+	padding:  7px 10px;
+    }
+
+  </style>
+  
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-G7WEXHL9KW"></script>
   <script>
@@ -22,20 +48,20 @@
 <body>
 
   <div class="ui fixed menu" style="padding: 10px 20px">
-    <div class="ui text container" >
-      <div style="font-weight:800; padding-right:10px">Project Notes</div>
-      <div style="font-weight:500; color:#555555"> by Ben Weisburd</div>
+    <div class="ui text container pagetitle">
+	<div style="font-weight:800; padding-right:10px">Project Notes</div>
+	<div style="font-weight:500; color:#555555"> by Ben Weisburd</div>
     </div>
   </div>
 
   <div class="ui main text container">
     <div style="padding-top:75px"></div>
-    <div>
-      <div style="font-weight:500; color:#555555">5-4-2022 - <a href="https://bw2.github.io/2022-05-04-phenotype-based-prioritization.html">Benchmarking LIRICAL for phenotype-based gene prioritization in rare disease cases</a></div>
-      <div style="font-weight:500; color:#555555">1-21-2022 - <a href="https://bw2.github.io/2022-01-21-STRs.html">STRs: Diagnosing CANVAS / RFC1 expansions using WGS data</a></div>
-    </div>
+    <table>
+      <tr class="rowlink"><td> 5-4-2022</td> <td><a href="https://bw2.github.io/2022-05-04-phenotype-based-prioritization.html">Benchmarking LIRICAL for phenotype-based gene prioritization in rare disease cases</a></td></tr>
+      <tr class="rowlink"><td>1-21-2022</td> <td><a href="https://bw2.github.io/2022-01-21-STRs.html">STRs: Diagnosing CANVAS / RFC1 expansions using WGS data</a></td></tr>
+    </table>
   </div>
-
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>
