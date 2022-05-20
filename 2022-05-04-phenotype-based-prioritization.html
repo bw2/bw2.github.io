@@ -53,7 +53,7 @@
 <p>The LIRICAL algorithm takes these as input along with the individual's variant call file (from WGS or WES) and outputs a list of candidate diagnoses, 
 their post-test probabilities, and visualizations showing which of the individual's HPO terms support or contradict each candidate.</p>
 <p>For the above example, LIRICAL outputs:</p>
-<p><img width="1164" alt="image" src="https://user-images.githubusercontent.com/6240170/166859374-128a44d3-6590-44e4-ba95-279bfa2fada9.png"></p>
+<p><img width="1000" alt="LIRICAL output screenshot" src="https://user-images.githubusercontent.com/6240170/166859374-128a44d3-6590-44e4-ba95-279bfa2fada9.png"></p>
 <p>Clinical geneticists that previously evaluated this case without using LIRICAL came to the conclusion that variants in the KMT2C gene explain 
 this patient's phenotype. </p>
 <p>To evaluate LIRICAL performance, I ran it on 75 previously-solved rare disease cases from the <a href="https://raregenomes.org/">Rare Genomes Project</a>. </p>
@@ -64,27 +64,29 @@ this patient's phenotype. </p>
 </ul>
 <p>LIRICAL correctly identified the correct gene in 65 out of the 75 cases (87%), and in 42 out of 75 cases (56%) the correct gene was in the top 3.</p>
 <p><i><u><b>NOTE</b></u>:  By default, LIRICAL uses gnomAD v2 allele frequencies (AFs) when analyzing variants. In order to take advantage of gnomAD v3.1 AFs, the analysis described here is based on first prefiltering the variant call files (VCFs) to gnomAD v3.1 POPMAX AF &lt; 1% before passing them to LIRICAL.</i></p>
-<p>This histogram show how often LIRICAL ranked the correct gene in the top 5, between 6-10, and &gt;10th in the list, colored by inheritance mode. 
-The x-axis represents # of cases:</p>
-<p><img alt="image" src="https://user-images.githubusercontent.com/6240170/166860675-e89e4271-33b5-4489-955f-5ce4fed5274c.png" /></p>
+<p><br />
+This histogram show how often LIRICAL ranked the correct gene in the top 5, between 6-10, and &gt;10th in the list, colored by inheritance mode. 
+The x-axis represents # of cases: <br /> </p>
+<p><br />
+<img width="1000" alt="LIRICAL correct gene rank by inheritance mode" src="https://user-images.githubusercontent.com/6240170/169574825-3e719744-07fe-4e0e-afc6-29c856436c27.png"></p>
 <p>Another way to look at this is - for the 65 cases where LIRICAL found the correct gene, what was that gene's rank in the 
 list and it's post-test probability:</p>
-<p><img width="729" alt="image" src="https://user-images.githubusercontent.com/6240170/166860896-d35babad-a1a5-4d20-a9b4-cc3f58dc8045.png"></p>
+<p><img width="750" alt="Plot post-test probability vs LIRICAL rank" src="https://user-images.githubusercontent.com/6240170/166860896-d35babad-a1a5-4d20-a9b4-cc3f58dc8045.png"></p>
 <p>In 49 out of 75 cases (65%), the correct result was among the top 5 hits and for 36 out of 75 (48%) it also had a post-test probability between 1% and 100%. On the other hand, for 15 cases (20%) the correct result was below 5th in the list and had a post-test probability near 0.</p>
 <p><strong>Conclusion:</strong> LIRICAL shows relatively high sensitivity in finding the causal genes for rare disease cases from <a href="https://raregenomes.org/">RGP</a>. </p>
 <hr />
 <p><strong>How many genes would someone need to look through for a typical case?</strong></p>
 <p>From the above plot, a conservative approach would be to only consider the top 5 results (x-axis cutoff) and only if they have a post-test probability (PTP) of 1% or higher (y-axis cutoff). This would give 3 results to look at on average, with 39% of cases having 5 or more results with PTP &gt; 1%:</p>
-<p><img width="425" alt="image" src="https://user-images.githubusercontent.com/6240170/166865247-43ebc202-8007-41a0-b951-9a1cecf9048e.png"></p>
+<p><img width="500" alt="histogram: % of RGP cases that have 0, 1, 2, 3, 4, or 5 LIRICAL results with PTP > 1 and rank &lt;= 5" src="https://user-images.githubusercontent.com/6240170/166865247-43ebc202-8007-41a0-b951-9a1cecf9048e.png"&gt;</p>
 <p><strong>Conclusion:</strong>  3 genes per case when using cutoffs that would yield ~50% sensitivity.</p>
 <hr />
 <p><strong>What is the false-positive rate?</strong></p>
 <p>The above plot shows that, although LIRICAL reports the correct gene as #1 in the list in 23 out of 75 cases (31%), most of the time the 
 correct gene is further down in the list. All genes above the correct gene can be considered false positives. With conservative thresholds of only looking at the top 5 results and only when they have a post-test probability (PTP) of 1% or higher, analysts would need to look at ~2 false-positive genes per case on average.</p>
 <p>Another way to look into this and also test how much LIRICAL performance depends on variants vs. phenotype match is to rerun the same tests, but substitute in variants from completely unrelated healthy individuals sequenced as part of the same cohort. I did this 5x for each of the 75 solved cases above (=&gt; 375 test runs). Unsurprisingly, this caused LIRICAL accuracy to drop to esssentially 0: only 10 out of the 375 LIRICAL reports (3%) still included the correct gene, and only 3 of these were in the top 5 and had a post-test probability &gt; 1%.</p>
-<p>Unfortunately, in 260 out of 375 tests (70%) LIRICAL still reported at least one result with a post-test probability &gt; 1%:</p>
+<p>However, in 260 out of 375 tests (70%) LIRICAL still reported at least one result with a post-test probability &gt; 1%:</p>
 <!-- img width="429" alt="image" src="https://user-images.githubusercontent.com/6240170/166864705-af5f4943-d41e-4416-967d-e6f16183c85a.png" -->
-<p><img width="428" alt="image" src="https://user-images.githubusercontent.com/6240170/166866744-55f075b5-08e5-4999-bbec-8bde066add03.png"></p>
+<p><img width="500" alt="histogram: % of RGP cases that had 0, 1, 2, 3, 4, or 5 false-positive LIRICAL results with PTP > 1 and rank &lt;= 5" src="https://user-images.githubusercontent.com/6240170/166866744-55f075b5-08e5-4999-bbec-8bde066add03.png"&gt;</p>
 <p>This again shows that, even with conservative thresholds of top-5 and PTP &gt; 1%, a user should expect to see on average 2 false-positive results per case. </p>
 <p><strong>Conclusion:</strong>  At least 2 genes per case.</p>
 <hr />
