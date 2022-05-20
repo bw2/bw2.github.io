@@ -1,4 +1,4 @@
-set -x
+set -ex
 
 git pull
 python3 scripts/generate_html.py
