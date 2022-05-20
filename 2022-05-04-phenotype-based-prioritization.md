@@ -53,9 +53,9 @@ To summarize this plot, in 49 out of 75 cases (65%) the correct result was among
 
 **How many genes would someone need to look through for a typical case?**
 
-From the above plot, a conservative approach would be to only consider the top 5 results (x-axis cutoff) and only if they have a post-test probability (PTP) of 1% or higher (y-axis cutoff). This would give 3 results to look at on average, with 39% of cases having 5 or more results with PTP > 1%:
+From the above plot, a conservative approach would be to only consider the top 5 results (x-axis cutoff) and only if they have a post-test probability (PTP) of 1% or higher (y-axis cutoff). This would give 3 results to look at on average, with 24% of cases having 5 or more results with PTP > 1%:
 
-<img width="500" alt="histogram: % of RGP cases that have 0, 1, 2, 3, 4, or 5 LIRICAL results with PTP > 1 and rank <= 5" src="https://user-images.githubusercontent.com/6240170/166865247-43ebc202-8007-41a0-b951-9a1cecf9048e.png">
+<img width="500" alt="histogram: % of RGP cases that have 0, 1, 2, 3, 4, or 5 LIRICAL results with PTP > 1 and rank <= 5" src="https://user-images.githubusercontent.com/6240170/169594097-7f9caeee-824c-4baf-b5d4-0992dfc70c56.png">
 
 **Conclusion:**  3 genes per case when using cutoffs that would yield ~50% sensitivity.
 
