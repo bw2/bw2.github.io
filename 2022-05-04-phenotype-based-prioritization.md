@@ -31,7 +31,6 @@ To evaluate LIRICAL performance, I ran it on 75 previously-solved rare disease c
 LIRICAL identified the correct gene in 65 out of the 75 cases (87%), and in 42 out of 75 cases (56%) the correct gene was in the top 3 results.
 
 <i><u><b>NOTE</b></u>:  By default, LIRICAL uses gnomAD v2 allele frequencies (AFs) when analyzing variants. In order to take advantage of gnomAD v3.1 AFs, I prefilted all variant call files (VCFs) to gnomAD v3.1 POPMAX AF < 1% before passing them to LIRICAL. See the last section below for stats on how this improved results.</i>
-
 <br />
 This histogram show how often LIRICAL ranked the correct gene in the top 5, between 6-10, and >10th in the list, colored by inheritance mode. 
 The x-axis represents # of cases: <br /> 
