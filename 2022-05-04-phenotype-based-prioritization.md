@@ -30,6 +30,8 @@ To evaluate LIRICAL performance, I ran it on 75 previously-solved rare disease c
 
 LIRICAL correctly identified the correct gene in 65 out of the 75 cases (87%), and in 42 out of 75 cases (56%) the correct gene was in the top 3.
 
+**NOTE**: By default, LIRICAL uses gnomAD v2 allele frequencies (AFs) when analyzing variants. In order to take advantage of gnomAD v3.1 AFs, the analysis described here is based on first prefiltering the variant call files (VCFs) to gnomAD v3.1 POPMAX AF < 1% before passing them to LIRICAL. 
+
 This histogram show how often LIRICAL ranked the correct gene in the top 5, between 6-10, and >10th in the list, colored by inheritance mode. 
 The x-axis represents # of cases:
 
@@ -76,7 +78,7 @@ This again shows that, even with conservative thresholds of top-5 and PTP > 1%, 
 
 **Can LIRICAL performance be improved further?**
 
-Yes - by prefiltering the variants. For the tests above, I prefiltered each individual's variants to exclude those that are common in the general popualation (keeping only variants with gnomAD v3 PopMax AF < 0.01). Applying this prefilter didn't change the number of true positive results, but improved their average rank from 7.6 to 5.9.
+Yes - through additional prefiltering. For the tests above, I prefiltered each individual's variants to exclude those that are common in the general popualation (keeping only variants with gnomAD v3 PopMax AF < 0.01). Applying this prefilter didn't change the number of true positive results, but improved their average rank from 7.6 to 5.9.
 Adding further prefiltering - such as by inheritance mode for cases where parents' DNA is available will almost certainly improve results further. 
 
 ---
