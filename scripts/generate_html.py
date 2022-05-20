@@ -16,13 +16,14 @@ for markdown_file_path in glob.glob("*.md"):
         continue
 
     print(f"Reading {markdown_file_path}")
-    output_path = re.sub(".md$", ".html", markdown_file_path)
-
+    output_prefix = re.sub(".md$", "", markdown_file_path)
+    output_html_path = f"{output_prefix}.html"
+    title = os.path.basename(output_prefix)
     with open(markdown_file_path, "rt") as f:
         markdown_html = markdown.markdown(f.read())
 
-    with open(output_path, "wt") as f:
-        f.write(blog_post_template.render(markdown_html=markdown_html))
+    with open(output_html_path, "wt") as f:
+        f.write(blog_post_template.render(markdown_html=markdown_html, title=title))
 
 
 #%%
