@@ -2,7 +2,7 @@
 
 LIRICAL [[Robinson 2020](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7477017/)] is a phenotype-based gene & variant prioritization tool.
 
-Lets say an individual has symptoms described by these 7 HPO terms:
+Let's say an individual has symptoms described by these 7 HPO terms:
 
 - Hearing impairment ([HP:0000365](https://hpo.jax.org/app/browse/term/HP:0000365))  
 - Autism ([HP:0000717](https://hpo.jax.org/app/browse/term/HP:0000717))
