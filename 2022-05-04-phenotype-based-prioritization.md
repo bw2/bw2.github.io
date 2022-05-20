@@ -40,7 +40,7 @@ The x-axis represents # of cases:
 Another way to look at this is - for the 65 cases where LIRICAL found the correct gene, what was that gene's rank in the 
 list and it's post-test probability:
 
-<img width="1000" alt="Plot post-test probability vs LIRICAL rank" src="https://user-images.githubusercontent.com/6240170/166860896-d35babad-a1a5-4d20-a9b4-cc3f58dc8045.png">
+<img width="750" alt="Plot post-test probability vs LIRICAL rank" src="https://user-images.githubusercontent.com/6240170/166860896-d35babad-a1a5-4d20-a9b4-cc3f58dc8045.png">
 
 In 49 out of 75 cases (65%), the correct result was among the top 5 hits and for 36 out of 75 (48%) it also had a post-test probability between 1% and 100%. On the other hand, for 15 cases (20%) the correct result was below 5th in the list and had a post-test probability near 0.
 
@@ -52,7 +52,7 @@ In 49 out of 75 cases (65%), the correct result was among the top 5 hits and for
 
 From the above plot, a conservative approach would be to only consider the top 5 results (x-axis cutoff) and only if they have a post-test probability (PTP) of 1% or higher (y-axis cutoff). This would give 3 results to look at on average, with 39% of cases having 5 or more results with PTP > 1%:
 
-<img width="425" alt="histogram: % of RGP cases that have 0, 1, 2, 3, 4, or 5 LIRICAL results with PTP > 1 and rank <= 5" src="https://user-images.githubusercontent.com/6240170/166865247-43ebc202-8007-41a0-b951-9a1cecf9048e.png">
+<img width="500" alt="histogram: % of RGP cases that have 0, 1, 2, 3, 4, or 5 LIRICAL results with PTP > 1 and rank <= 5" src="https://user-images.githubusercontent.com/6240170/166865247-43ebc202-8007-41a0-b951-9a1cecf9048e.png">
 
 **Conclusion:**  3 genes per case when using cutoffs that would yield ~50% sensitivity.
 
@@ -68,7 +68,7 @@ Another way to look into this and also test how much LIRICAL performance depends
 Unfortunately, in 260 out of 375 tests (70%) LIRICAL still reported at least one result with a post-test probability > 1%:
 
 <!-- img width="429" alt="image" src="https://user-images.githubusercontent.com/6240170/166864705-af5f4943-d41e-4416-967d-e6f16183c85a.png" -->
-<img width="428" alt="image" src="https://user-images.githubusercontent.com/6240170/166866744-55f075b5-08e5-4999-bbec-8bde066add03.png">
+<img width="500" alt="histogram: % of RGP cases that had 0, 1, 2, 3, 4, or 5 false-positive LIRICAL results with PTP > 1 and rank <= 5" src="https://user-images.githubusercontent.com/6240170/166866744-55f075b5-08e5-4999-bbec-8bde066add03.png">
 
 This again shows that, even with conservative thresholds of top-5 and PTP > 1%, a user should expect to see on average 2 false-positive results per case. 
 
