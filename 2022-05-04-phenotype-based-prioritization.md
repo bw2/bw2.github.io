@@ -35,7 +35,9 @@ LIRICAL correctly identified the correct gene in 65 out of the 75 cases (87%), a
 This histogram show how often LIRICAL ranked the correct gene in the top 5, between 6-10, and >10th in the list, colored by inheritance mode. 
 The x-axis represents # of cases:
 
-![image](https://user-images.githubusercontent.com/6240170/166860675-e89e4271-33b5-4489-955f-5ce4fed5274c.png)
+<img width="1000" alt="LIRICAL correct gene rank by inheritance mode" src="https://user-images.githubusercontent.com/6240170/169574825-3e719744-07fe-4e0e-afc6-29c856436c27.png">
+
+
 
 Another way to look at this is - for the 65 cases where LIRICAL found the correct gene, what was that gene's rank in the 
 list and it's post-test probability:
