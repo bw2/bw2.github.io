@@ -75,7 +75,7 @@ However, in 260 out of 375 tests (70%) LIRICAL still reported at least one resul
 
 For comparison, in the first analysis, 62 out of 75 cases (83%) had at least one result with a post-test probability > 1%, so LIRICAL post-test probability is on average slightly lower for false-positive results. 
 
-**Conclusion:**  At least 2 false-positive genes per case.
+**Conclusion:**  ~2 false-positive genes per case on average.
 
 ---
 
