@@ -91,7 +91,7 @@ Would we get higher sensitivity/specificity if we used different thresholds? The
   <tr><td>&gt; 0%</td><td>top-1 genes</td><td>29 out of 75 (39%)</td><td>0.5 genes</td></tr>
 </table>
 
-**Conclusion:** Based on this, it's better to look at the top 3 genes with PTP > 0% instead of the top 5 and PTP > 1%.
+Based on this, it's better to look at the top 3 genes with PTP > 0% instead of the top 5 and PTP > 1%.
   
   
 ---
