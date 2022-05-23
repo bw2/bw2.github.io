@@ -106,11 +106,13 @@ Would we get higher sensitivity/specificity if we used different thresholds? The
 <p><strong>Can LIRICAL performance be improved further?</strong></p>
 <p>Yes - through additional prefiltering. For the tests above, I prefiltered each individual's variants to exclude variants that are common in the general population (keeping only variants with gnomAD v3 PopMax AF &lt; 0.01). Applying this prefilter didn't change the number of true positive results, but improved their average rank from 7.6 to 5.9. Adding further prefiltering - such as by inheritance mode for cases where parents' DNA is available - will almost certainly improve results further. </p>
 <hr />
-<p>References:</p>
+<p><strong>References:</strong></p>
 <ol>
 <li>Robinson PN, Ravanmehr V, Jacobsen JOB, et al. Interpretable Clinical Genomics with a Likelihood Ratio Paradigm. Am J Hum Genet. 2020;107(3):403-417. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7477017/">doi:10.1016/j.ajhg.2020.06.021</a></li>
 <li>Yuan X, Wang J, Dai B, et al. Evaluation of phenotype-driven gene prioritization methods for Mendelian diseases. Brief Bioinform. 2022;23(2):bbac019. <a href="https://pubmed.ncbi.nlm.nih.gov/35134823/">doi:10.1093/bib/bbac019</a></li>
 </ol>
+<p><strong>Source code:</strong></p>
+<p><a href="https://hail.is/docs/batch/service.html">Hail Batch</a> LIRICAL pipeline: https://github.com/broadinstitute/phenotype-driven-analysis</p>
 
       <br />
       <center><img style="margin-left:25px;" width="586" alt="image" src="https://user-images.githubusercontent.com/6240170/167290392-8974f18a-af18-40c1-9f61-fbb6713fc8d0.png"></center>
