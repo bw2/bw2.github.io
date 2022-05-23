@@ -57,8 +57,6 @@ From the above plot, a conservative approach would be to only consider the top 5
 
 <img width="500" alt="histogram: % of RGP cases that have 0, 1, 2, 3, 4, or 5 LIRICAL results with PTP > 1 and rank <= 5" src="https://user-images.githubusercontent.com/6240170/169594097-7f9caeee-824c-4baf-b5d4-0992dfc70c56.png">
 
-**Conclusion:**  3 genes per case when using cutoffs that would yield ~50% sensitivity.
-
 ---
 
 **What is the false-positive rate?**
@@ -74,8 +72,6 @@ However, in 260 out of 375 tests (70%) LIRICAL still reported at least one resul
 <img width="500" alt="histogram: % of RGP cases that had 0, 1, 2, 3, 4, or 5 false-positive LIRICAL results with PTP > 1 and rank <= 5" src="https://user-images.githubusercontent.com/6240170/166866744-55f075b5-08e5-4999-bbec-8bde066add03.png">
 
 For comparison, in the first analysis, 62 out of 75 cases (83%) had at least one result with a post-test probability > 1%, so LIRICAL post-test probability is on average slightly lower for false-positive results. 
-
-**Conclusion:**  ~2 false-positive genes per case on average.
 
 ---
   
