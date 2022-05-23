@@ -110,5 +110,6 @@ Yes - through additional prefiltering. For the tests above, I prefiltered each i
 
 **Source code:**
 
-[Hail Batch](https://hail.is/docs/batch/service.html) LIRICAL pipeline: [https://github.com/broadinstitute/phenotype-driven-analysis](https://github.com/broadinstitute/phenotype-driven-analysis)
+[Hail Batch](https://hail.is/docs/batch/service.html) LIRICAL pipeline: 
+[https://github.com/broadinstitute/phenotype-driven-analysis](https://github.com/broadinstitute/phenotype-driven-analysis)
 
