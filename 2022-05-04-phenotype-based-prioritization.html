@@ -92,13 +92,13 @@ correct gene is further down in the list. All genes except the correct gene can 
 <p>Previously we saw that for 36 out of 75 (48%) cases, the correct gene was ranked in the top 5 and had a post-test probability between 1% and 100%. 
 Would we get higher sensitivity/specificity if we used different thresholds? The answer is yes:</p>
 <table class="ui striped center aligned table">
-  <tr><th>Post-test probability threshold</td><th>Top-k results</td><th># of true-positive genes <br />passing the thresholds</th><th>Average # of other genes (per case)<br />passing the thresholds</td></tr>
-  <tr><td>&gt; 1%</td><td>top 5 genes</td><td>36 out of 75 (48%)</td><td>2.1 genes</td></tr>
-  <tr><td>&gt; 0%</td><td>top 5 genes</td><td>47 out of 75 (62%)</td><td>3.2 genes</td></tr>
-  <tr><td>&gt; 0%</td><td>top 4 genes</td><td>44 out of 75 (59%)</td><td>2.6 genes</td></tr>
-  <tr><td>&gt; 0%</td><td>top 3 genes</td><td>42 out of 75 (56%)</td><td>1.9 genes</td></tr>
-  <tr><td>&gt; 0%</td><td>top 2 genes</td><td>40 out of 75 (53%)</td><td>1.2 genes</td></tr>
-  <tr><td>&gt; 0%</td><td>top 1 genes</td><td>29 out of 75 (39%)</td><td>0.5 genes</td></tr>
+  <tr><th>Post-test probability threshold</td><th>Top-k results</td><th># of true-positive genes <br />passing the thresholds</th><th># of genes (per case)<br />passing the thresholds</td></tr>
+  <tr><td>&gt; 1%</td><td>top 5 genes</td><td>36 out of 75 (48%)</td><td>190/75 = 2.5 genes</td></tr>
+  <tr><td>&gt; 0%</td><td>top 5 genes</td><td>47 out of 75 (62%)</td><td>287/75 = 3.8 genes</td></tr>
+  <tr><td>&gt; 0%</td><td>top 4 genes</td><td>44 out of 75 (59%)</td><td>239/75 = 3.2 genes</td></tr>
+  <tr><td>&gt; 0%</td><td>top 3 genes</td><td>42 out of 75 (56%)</td><td>186/75 = 2.5 genes</td></tr>
+  <tr><td>&gt; 0%</td><td>top 2 genes</td><td>40 out of 75 (53%)</td><td>129/75 = 1.7 genes</td></tr>
+  <tr><td>&gt; 0%</td><td>top 1 genes</td><td>29 out of 75 (39%)</td><td>&nbsp;68/75 = 0.9 genes</td></tr>
 </table>
 
 <p>Based on this, it's better to look at the top 3 genes with PTP &gt; 0% instead of the top 5 and PTP &gt; 1%.</p>
@@ -112,7 +112,10 @@ Would we get higher sensitivity/specificity if we used different thresholds? The
 <li>Yuan X, Wang J, Dai B, et al. Evaluation of phenotype-driven gene prioritization methods for Mendelian diseases. Brief Bioinform. 2022;23(2):bbac019. <a href="https://pubmed.ncbi.nlm.nih.gov/35134823/">doi:10.1093/bib/bbac019</a></li>
 </ol>
 <p><strong>Source code:</strong></p>
-<p><a href="https://hail.is/docs/batch/service.html">Hail Batch</a> LIRICAL pipeline: https://github.com/broadinstitute/phenotype-driven-analysis</p>
+<ul>
+<li><a href="https://hail.is/docs/batch/service.html">Hail Batch</a> LIRICAL pipeline: <br />
+<a href="https://github.com/broadinstitute/phenotype-driven-analysis">https://github.com/broadinstitute/phenotype-driven-analysis</a></li>
+</ul>
 
       <br />
       <center><img style="margin-left:25px;" width="586" alt="image" src="https://user-images.githubusercontent.com/6240170/167290392-8974f18a-af18-40c1-9f61-fbb6713fc8d0.png"></center>
