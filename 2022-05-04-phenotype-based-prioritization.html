@@ -78,7 +78,6 @@ list and it's post-test probability:</p>
 <p><strong>How many genes would someone need to look through for a typical case?</strong></p>
 <p>From the above plot, a conservative approach would be to only consider the top 5 results (x-axis cutoff) and only if they have a post-test probability (PTP) of 1% or higher (y-axis cutoff). This would give 3 results (or more percisely, 2.53 results) to look at on average, with 24% of cases having 5 or more results with PTP &gt; 1%:</p>
 <p><img width="500" alt="histogram: % of RGP cases that have 0, 1, 2, 3, 4, or 5 LIRICAL results with PTP > 1 and rank &lt;= 5" src="https://user-images.githubusercontent.com/6240170/169594097-7f9caeee-824c-4baf-b5d4-0992dfc70c56.png"&gt;</p>
-<p><strong>Conclusion:</strong>  3 genes per case when using cutoffs that would yield ~50% sensitivity.</p>
 <hr />
 <p><strong>What is the false-positive rate?</strong></p>
 <p>The above plot shows that, although LIRICAL reports the correct gene as #1 in the list in 23 out of 75 cases (31%), most of the time the 
@@ -88,7 +87,21 @@ correct gene is further down in the list. All genes except the correct gene can 
 <!-- img width="429" alt="image" src="https://user-images.githubusercontent.com/6240170/166864705-af5f4943-d41e-4416-967d-e6f16183c85a.png" -->
 <p><img width="500" alt="histogram: % of RGP cases that had 0, 1, 2, 3, 4, or 5 false-positive LIRICAL results with PTP > 1 and rank &lt;= 5" src="https://user-images.githubusercontent.com/6240170/166866744-55f075b5-08e5-4999-bbec-8bde066add03.png"&gt;</p>
 <p>For comparison, in the first analysis, 62 out of 75 cases (83%) had at least one result with a post-test probability &gt; 1%, so LIRICAL post-test probability is on average slightly lower for false-positive results. </p>
-<p><strong>Conclusion:</strong>  ~2 false-positive genes per case on average.</p>
+<hr />
+<p><strong>Can we do better by dropping the post-test probability threshold to 0%?</strong></p>
+<p>Previously we saw that for 36 out of 75 (48%) cases, the correct gene was ranked in the top 5 and had a post-test probability between 1% and 100%. 
+Would we get higher sensitivity/specificity if we used different thresholds? The answer is yes:</p>
+<table>
+  <tr><th>post-test probability threshold</td><th>top-k results</td><th># of true-positive genes <br />passing the thresholds</th><th>average # of other genes (per case)<br />passing the thresholds</td></tr>
+  <tr><td>&gt; 1%</td><td>top-5 genes</td><td>36 out of 75 (48%)</td><td>2.1 genes</td></tr>
+  <tr><td>&gt; 0%</td><td>top-5 genes</td><td>47 out of 75 (62%)</td><td>3.2 genes</td></tr>
+  <tr><td>&gt; 0%</td><td>top-4 genes</td><td>44 out of 75 (59%)</td><td>2.6 genes</td></tr>
+  <tr><td>&gt; 0%</td><td>top-3 genes</td><td>42 out of 75 (56%)</td><td>1.9 genes</td></tr>
+  <tr><td>&gt; 0%</td><td>top-2 genes</td><td>40 out of 75 (53%)</td><td>1.2 genes</td></tr>
+  <tr><td>&gt; 0%</td><td>top-1 genes</td><td>29 out of 75 (39%)</td><td>0.5 genes</td></tr>
+</table>
+
+<p>Based on this, it's better to look at the top 3 genes with PTP &gt; 0% instead of the top 5 and PTP &gt; 1%.</p>
 <hr />
 <p><strong>Can LIRICAL performance be improved further?</strong></p>
 <p>Yes - through additional prefiltering. For the tests above, I prefiltered each individual's variants to exclude variants that are common in the general population (keeping only variants with gnomAD v3 PopMax AF &lt; 0.01). Applying this prefilter didn't change the number of true positive results, but improved their average rank from 7.6 to 5.9. Adding further prefiltering - such as by inheritance mode for cases where parents' DNA is available - will almost certainly improve results further. </p>
