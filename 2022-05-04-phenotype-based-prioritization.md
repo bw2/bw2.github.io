@@ -81,8 +81,8 @@ Previously we saw that for 36 out of 75 (48%) cases, the correct gene was ranked
 Would we get higher sensitivity/specificity if we used different thresholds? The answer is yes:
   
   
-<table class="ui striped table">
-  <tr><th>post-test probability threshold</td><th>top-k results</td><th># of true-positive genes <br />passing the thresholds</th><th>average # of other genes (per case)<br />passing the thresholds</td></tr>
+<table class="ui striped center aligned table">
+  <tr><th>Post-test probability threshold</td><th>Top-k results</td><th># of true-positive genes <br />passing the thresholds</th><th>Average # of other genes (per case)<br />passing the thresholds</td></tr>
   <tr><td>&gt; 1%</td><td>top 5 genes</td><td>36 out of 75 (48%)</td><td>2.1 genes</td></tr>
   <tr><td>&gt; 0%</td><td>top 5 genes</td><td>47 out of 75 (62%)</td><td>3.2 genes</td></tr>
   <tr><td>&gt; 0%</td><td>top 4 genes</td><td>44 out of 75 (59%)</td><td>2.6 genes</td></tr>
