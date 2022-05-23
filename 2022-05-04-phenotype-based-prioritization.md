@@ -108,4 +108,7 @@ References:
 2. Yuan X, Wang J, Dai B, et al. Evaluation of phenotype-driven gene prioritization methods for Mendelian diseases. Brief Bioinform. 2022;23(2):bbac019. [doi:10.1093/bib/bbac019](https://pubmed.ncbi.nlm.nih.gov/35134823/)
 
 
+Source code:
+
+LIRICAL pipeline: https://github.com/broadinstitute/phenotype-driven-analysis
 
