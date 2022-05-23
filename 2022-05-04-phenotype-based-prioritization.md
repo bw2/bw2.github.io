@@ -102,7 +102,7 @@ Yes - through additional prefiltering. For the tests above, I prefiltered each i
 
 ---
 
-References:
+**References:**
 
 1. Robinson PN, Ravanmehr V, Jacobsen JOB, et al. Interpretable Clinical Genomics with a Likelihood Ratio Paradigm. Am J Hum Genet. 2020;107(3):403-417. [doi:10.1016/j.ajhg.2020.06.021](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7477017/)
 2. Yuan X, Wang J, Dai B, et al. Evaluation of phenotype-driven gene prioritization methods for Mendelian diseases. Brief Bioinform. 2022;23(2):bbac019. [doi:10.1093/bib/bbac019](https://pubmed.ncbi.nlm.nih.gov/35134823/)
@@ -110,5 +110,5 @@ References:
 
 Source code:
 
-LIRICAL pipeline: https://github.com/broadinstitute/phenotype-driven-analysis
+**[Hail Batch](https://hail.is/docs/batch/service.html) LIRICAL pipeline:** https://github.com/broadinstitute/phenotype-driven-analysis
 
