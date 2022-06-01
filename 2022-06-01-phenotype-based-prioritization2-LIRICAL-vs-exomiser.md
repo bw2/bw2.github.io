@@ -4,13 +4,12 @@ The [previous blog post](https://github.com/bw2/bw2.github.io/blob/master/2022-0
  on 75 previously solved phenotypically-heterogeneous cases from the [Rare Genomes Project](https://raregenomes.org/) (RGP). This blog post compares
 [LIRICAL](https://pubmed.ncbi.nlm.nih.gov/32755546/) to [Exomiser](https://www.nature.com/articles/nprot.2015.124) on the same set of cases and find that:
 1. Exomiser and LIRICAL top-5 accuracy is identical (65%), but LIRICAL has better top-3 accuracy (56%) than Exomiser (49%). 
-2. Exomiser and LIRICAL ranks are NOT well correlated (R<sup>2</sup>=0.14) and rare disease pipelines should consider top hits from both tools
+2. Exomiser and LIRICAL ranks are NOT well correlated (R<sup>2</sup>=0.05) and rare disease pipelines should consider top hits from both tools
 
 Exomiser [[Smedley, Robinson 2015](https://www.nature.com/articles/nprot.2015.124)] has been widely used for phenotype-based prioritzation 
 in rare disease cases. Five years after publishing Exomiser, the same authors created 
-LIRICAL [[Robinson, Smedley 2020](https://pubmed.ncbi.nlm.nih.gov/32755546/)] to give users a way to tell when the highest-ranked hits in a given case 
-are low-confidence and not worth evaluating. Unfortunately, based on the analysis in my [previous blog post](https://github.com/bw2/bw2.github.io/blob/master/2022-05-04-phenotype-based-prioritization.md), 
-this feature doesn't currently work well, and users are better off ignoring LIRICAL's post-test probability (except to check that it's > 0%).
+LIRICAL [[Robinson, Smedley 2020](https://pubmed.ncbi.nlm.nih.gov/32755546/)] to provide users a way to tell whether the highest-ranked hits in a given case are low confidence and not worth evaluating. Unfortunately, based on the analysis in my [previous blog post](https://github.com/bw2/bw2.github.io/blob/master/2022-05-04-phenotype-based-prioritization.md), 
+this feature doesn't currently work well, and users are better off ignoring LIRICAL's post-test probability (except to check that it's > 0).
 Just looking at the 3 top-ranked hits (or however many you have time for) provides better accuracy than thresholding on the post-test probability.
 
 ---
@@ -68,7 +67,7 @@ Also, the median and mean ranks of the correct gene differ between the 2 tools:
 
 **LIRICAL and Exomiser prioritize different genes**
 
-Interestingly, LIRICAL and Exomiser ranks aren't well correlated (R<sup>2</sup> is 0.14) as this plot shows. Here rank=200 is a special value that 
+Interestingly, LIRICAL and Exomiser ranks aren't well correlated (R<sup>2</sup> is 0.05) as this plot shows. Here rank=200 is a special value that 
 means the correct gene wasn't included at all in the results.  
 
 <img width="850" alt="image" src="https://user-images.githubusercontent.com/6240170/171471200-b78706fe-a26a-4eea-880d-5599523d45eb.png">
