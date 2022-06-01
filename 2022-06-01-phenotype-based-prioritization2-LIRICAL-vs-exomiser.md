@@ -29,4 +29,4 @@ The LIRICAL paper [[Robinson 2020](https://pubmed.ncbi.nlm.nih.gov/32755546/)] c
 
 **LIRICAL vs Exomiser on 75 RGP cases**
 
-<img width="850" alt="LIRICAL and Exomiser rank distributions" src="https://user-images.githubusercontent.com/6240170/171468691-21e68d42-4e9a-41d9-b7a0-27baaaa42e65.png">
+<img width="800" alt="LIRICAL and Exomiser rank distributions" src="https://user-images.githubusercontent.com/6240170/171468691-21e68d42-4e9a-41d9-b7a0-27baaaa42e65.png">
