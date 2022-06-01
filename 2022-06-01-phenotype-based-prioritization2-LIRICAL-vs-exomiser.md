@@ -15,7 +15,7 @@ this feature doesn't currently work well, so looking at the top-ranked genes reg
 
 ---
 
-**LIRICAL vs Exomiser comparison in [Robinson 2020]**  
+**LIRICAL vs Exomiser Comparison in [Robinson 2020]**  
 
 The LIRICAL paper [[Robinson 2020](https://pubmed.ncbi.nlm.nih.gov/32755546/)] compared performance on 116 previously-solved singleton cases from the 100,000 Genomes Project and showed Exomiser slightly out-performing LIRICAL:
 
@@ -28,7 +28,7 @@ The LIRICAL paper [[Robinson 2020](https://pubmed.ncbi.nlm.nih.gov/32755546/)] c
 
 ---
 
-**LIRICAL vs Exomiser on 75 cases from the Rare Genomes Project**
+**LIRICAL vs Exomiser on 75 Cases from the Rare Genomes Project**
 
 These distributions show the rank that each tool assigns to the correct gene in 75 RGP cases: 
 
@@ -67,7 +67,7 @@ Also, the median and mean ranks of the correct gene differ between the 2 tools:
 
 ---
 
-**LIRICAL and Exomiser prioritize different genes**
+**LIRICAL and Exomiser Prioritize Different Genes**
 
 Interestingly, LIRICAL and Exomiser ranks aren't well correlated (R<sup>2</sup> is 0.05) as this plot shows.  
 NOTE: Here rank=200 is again a special value that means the correct gene wasn't included at all in the results from that tool.  
@@ -95,7 +95,7 @@ would include 60 correct genes, while with top-10 results from only one tool it 
 
 ---
 
-**What explains the low concordance between LIRICAL and Exomiser?**
+**What Explains the Low Concordance Between LIRICAL and Exomiser?**
 
 It's likely due to how they handle phenotype prioritization. Exomiser uses model organism data (mouse & zebra fish) in addition to OMIM gene-disease associations. It also uses protein-protein interactions to check phenotype match scores of adjacent genes. All of these are combined into an Exomiser phenotype match score which is then combined with a variant pathogenicity score to get the final "exomiser score". 
 LIRICAL computes variant pathogenicity scores the same way as Exomiser (reusing its code and reference data), but does it's own thing for phenotypes - using only OMIM data and computing a post-test probability. 
@@ -127,7 +127,7 @@ java -jar LIRICAL.jar P -p *.phenopacket.json -e /exomiser-cli-13.0.0/2109_hg38 
 
 <a name="phenotypes" />
 
-**Phenotype Distribution:** 
+**RGP Phenotype Distribution:** 
 
 This shows HPO term categories for the 75 RGP cases analyzed above. 
 Cases with terms in multiple categories are counted once in each category:
