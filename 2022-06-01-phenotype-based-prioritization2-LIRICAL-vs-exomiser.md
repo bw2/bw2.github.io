@@ -67,7 +67,7 @@ Also, the median and mean ranks of the correct gene differ between the 2 tools:
 
 **LIRICAL and Exomiser prioritize different genes**
 
-Interestingly, LIRICAL and Exomiser ranks aren't well correlated (R<sup>2</sup> is 0.05) as this plot shows. Here rank=200 is a special value that 
+Interestingly, LIRICAL and Exomiser ranks aren't well correlated (R<sup>2</sup> is 0.05) as this plot shows. Here rank=200 is again a special value that 
 means the correct gene wasn't included at all in the results from that tool.  
 
 <img width="850" alt="image" src="https://user-images.githubusercontent.com/6240170/171471200-b78706fe-a26a-4eea-880d-5599523d45eb.png">
