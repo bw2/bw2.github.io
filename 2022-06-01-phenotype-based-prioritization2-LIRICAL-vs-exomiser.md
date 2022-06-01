@@ -12,4 +12,20 @@ are low-confidence and not worth evaluating. Unfortunately, based on the analysi
 this feature doesn't currently work well, and users are better off ignoring LIRICAL's post-test probability (except to check that it's > 0%).
 Just looking at the 3 top-ranked hits (or however many you have time for) provides better accuracy than thresholding on the post-test probability.
 
+---
 
+**LIRICAL vs Exomiser comparison in [Robinson 2020]**  
+
+The LIRICAL paper [[Robinson 2020](https://pubmed.ncbi.nlm.nih.gov/32755546/)] compared performance on 116 previously-solved singleton cases from the 100,000 Genomes Project.
+
+**Fig. 4** shows Exomiser slightly out-performing LIRICAL:
+
+<img src="https://user-images.githubusercontent.com/6240170/171466464-0a5a72e0-44d0-47a2-b512-61812f4b6641.png" width=500 />
+
+"Considering the 89 diagnoses where Exomiser was not utilized, Exomiser prioritized 57/89 (64%) in first place compared to 51/89 (57%) for LIRICAL."
+
+---
+
+**LIRICAL vs Exomiser on 75 RGP cases**
+
+<img width="971" alt="image" src="https://user-images.githubusercontent.com/6240170/171467645-a0b3bb12-2996-4adc-9216-85df3e7fbd43.png">
