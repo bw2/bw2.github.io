@@ -6,6 +6,8 @@ The [previous blog post](https://github.com/bw2/bw2.github.io/blob/master/2022-0
 1. Exomiser and LIRICAL top-5 accuracy is identical (65%), but LIRICAL has better top-3 accuracy (56%) than Exomiser (49%). 
 2. Exomiser and LIRICAL ranks are NOT well correlated (R<sup>2</sup>=0.05) and rare disease pipelines should consider top hits from both tools.
 
+See the <a href="#phenotypes">phenotype distribution plot</a> below for a summary of phenotypes. 
+
 Exomiser [[Smedley, Robinson 2015](https://www.nature.com/articles/nprot.2015.124)] has been widely used for phenotype-based prioritzation 
 in rare disease cases. Five years after publishing Exomiser, the same authors created 
 LIRICAL [[Robinson, Smedley 2020](https://pubmed.ncbi.nlm.nih.gov/32755546/)] to provide users a way to tell whether the highest-ranked results in a given case are low confidence and not worth evaluating. Unfortunately, based on the analysis in the [previous blog post](https://github.com/bw2/bw2.github.io/blob/master/2022-05-04-phenotype-based-prioritization.md), 
@@ -104,4 +106,18 @@ Interestingly, the number of HPO terms specified per case does not significantly
 NOTE: Here rank=200 is again a special value that means the correct gene wasn't included at all in the results from that tool.  
 
 <img width="850" alt="image" src="https://user-images.githubusercontent.com/6240170/171486870-6b25d874-a250-405b-984b-6bc289c16dfc.png">
+
+
+---
+
+<a name="phenotypes" />
+
+**Phenotype Distribution:** 
+
+This shows HPO term categories for the 75 RGP cases analyzed above. 
+Cases with terms in multiple categories are counted once in each category:
+
+<img width="800" alt="image" src="https://user-images.githubusercontent.com/6240170/171516499-4cc2e624-d101-49da-b24c-e3cb46a4b968.png">
+
+
 
