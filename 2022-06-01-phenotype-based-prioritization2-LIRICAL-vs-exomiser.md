@@ -17,7 +17,7 @@ this feature doesn't currently work well, so looking at the top-ranked hits rega
 
 The LIRICAL paper [[Robinson 2020](https://pubmed.ncbi.nlm.nih.gov/32755546/)] compared performance on 116 previously-solved singleton cases from the 100,000 Genomes Project.
 
-**Fig. 4** shows Exomiser slightly out-performing LIRICAL:
+**Fig. 4** "Performance of LIRICAL and Exomiser on 116 Solved Singleton Cases from the 100,000 Genomes Project The x axis shows the rank assigned by LIRICAL or Exomiser to the correct disease gene. The y axis shows the percentage of cases in which the given rank was achieved."
 
 <img alt="[Robinson 2020] Figure 4" src="https://user-images.githubusercontent.com/6240170/171466464-0a5a72e0-44d0-47a2-b512-61812f4b6641.png" width=500 />
 
