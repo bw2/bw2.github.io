@@ -27,6 +27,10 @@ The LIRICAL paper [[Robinson 2020](https://pubmed.ncbi.nlm.nih.gov/32755546/)] c
 ---
 
 
-**LIRICAL vs Exomiser on 75 RGP cases**
+**LIRICAL vs Exomiser on 75 cases from the Rare Genomes Project**
 
-<img width="800" alt="LIRICAL and Exomiser rank distributions" src="https://user-images.githubusercontent.com/6240170/171468691-21e68d42-4e9a-41d9-b7a0-27baaaa42e65.png">
+These distributions show what rank each tool assigns to the correct gene in 75 RGP cases: 
+
+<img width="800" alt="LIRICAL and Exomiser rank distributions" src="https://user-images.githubusercontent.com/6240170/171470046-0a114cbd-215d-404f-b526-d7f80d085d83.png">
+
+Both Exomiser and LIRICAL rank 49 genes 
