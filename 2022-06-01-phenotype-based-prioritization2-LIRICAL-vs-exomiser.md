@@ -73,10 +73,19 @@ means the correct gene wasn't included at all in the results.
 <img width="850" alt="image" src="https://user-images.githubusercontent.com/6240170/171471200-b78706fe-a26a-4eea-880d-5599523d45eb.png">
 
 This plot shows that:
-* For 38 out of 75 (50%) cases, the correct gene is in the top 5 results of both tools
-* For 11 out of 75 (15%) cases, the correct gene is in the top 5 results of Exomiser but not LIRICAL
-* For 11 out of 75 (15%) cases, the correct gene is in the top 5 results of LIRICAL but not Exomiser
-* For 15 out of 75 (20%) cases, the correct gene is not in the top 5 results of either LIRICAL or Exomiser
+
+<table class="ui striped center aligned table">
+  <tr><th></td><th>Correct genes in top-5</th><th>Quadrant</th></tr>
+  <tr><td>38 out of 75 (50%)</td><td>Both Exomiser and LIRICAL</td></tr>
+  <tr><td>11 out of 75 (15%)</td><td>Exomiser but not LIRICAL</td></tr>
+  <tr><td>11 out of 75 (15%)</td><td>LIRICAL but not Exomiser</td></tr>
+  <tr><td>15 out of 75 (20%)</td><td>neither tool's top-5</td></tr>
+</table>
+
+* For  cases, the correct gene is in the top 5 results of 
+* For  cases, the correct gene is in the top 5 results of 
+* For  cases, the correct gene is in the top 5 results of 
+* For cases, the correct gene is not in the top 5 results of either 
 
 Also, let's say users have time to evaluate 10 genes per case. They would get better sensitivity by evaluating top-5 from Exomiser and top-5 from LIRICAL instead of evaluating the top-10 results from only one tool. 
 In either case, users evaluating 75 cases would be looking at 750 total genes, but with top-5 results from Exomiser & LIRICAL, this set would include 60 correct genes, wihile with top-10 results from only one tool it would include only 54 correct genes.
