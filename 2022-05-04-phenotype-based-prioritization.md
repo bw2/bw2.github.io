@@ -84,8 +84,8 @@ Would we get higher sensitivity/specificity if we used different thresholds? The
 <table class="ui striped center aligned table">
   <tr><th>Post-test probability threshold</td><th>Top-k results</td><th># of true-positive genes <br />passing the thresholds</th><th># of genes (per case)<br />passing the thresholds</td></tr>
   <tr><td>&gt; 1%</td><td>top 5 genes</td><td>36 out of 75 (48%)</td><td>190/75 = 2.5 genes</td></tr>
-  <tr><td>&gt; 0%</td><td>top 5 genes</td><td>47 out of 75 (62%)</td><td>287/75 = 3.8 genes</td></tr>
-  <tr><td>&gt; 0%</td><td>top 4 genes</td><td>44 out of 75 (59%)</td><td>239/75 = 3.2 genes</td></tr>
+  <tr><td>&gt; 0%</td><td>top 5 genes</td><td>49 out of 75 (65%)</td><td>287/75 = 3.8 genes</td></tr>
+  <tr><td>&gt; 0%</td><td>top 4 genes</td><td>45 out of 75 (60%)</td><td>239/75 = 3.2 genes</td></tr>
   <tr><td>&gt; 0%</td><td>top 3 genes</td><td>42 out of 75 (56%)</td><td>186/75 = 2.5 genes</td></tr>
   <tr><td>&gt; 0%</td><td>top 2 genes</td><td>40 out of 75 (53%)</td><td>129/75 = 1.7 genes</td></tr>
   <tr><td>&gt; 0%</td><td>top 1 genes</td><td>29 out of 75 (39%)</td><td>&nbsp;68/75 = 0.9 genes</td></tr>
