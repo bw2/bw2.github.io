@@ -32,7 +32,7 @@ These distributions show the rank that each tool assigns to the correct gene in 
 
 <img width="800" alt="LIRICAL and Exomiser rank distributions" src="https://user-images.githubusercontent.com/6240170/171470046-0a114cbd-215d-404f-b526-d7f80d085d83.png">
 
-Both Exomiser and LIRICAL rank the correct gene among the top-5 results for 49 out of 75 (65%) of cases, so top-5 performance is identical. 
+To summarize these plots, both Exomiser and LIRICAL rank the correct gene among the top-5 results for 49 out of 75 (65%) of cases, so top-5 performance is identical. 
 Performance varies for other cut-offs:
 
 <table class="ui striped center aligned table">
