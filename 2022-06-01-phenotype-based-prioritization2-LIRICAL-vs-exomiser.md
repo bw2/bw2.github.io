@@ -9,8 +9,7 @@ The [previous blog post](https://github.com/bw2/bw2.github.io/blob/master/2022-0
 Exomiser [[Smedley, Robinson 2015](https://www.nature.com/articles/nprot.2015.124)] has been widely used for phenotype-based prioritzation 
 in rare disease cases. Five years after publishing Exomiser, the same authors created 
 LIRICAL [[Robinson, Smedley 2020](https://pubmed.ncbi.nlm.nih.gov/32755546/)] to provide users a way to tell whether the highest-ranked hits in a given case are low confidence and not worth evaluating. Unfortunately, based on the analysis in my [previous blog post](https://github.com/bw2/bw2.github.io/blob/master/2022-05-04-phenotype-based-prioritization.md), 
-this feature doesn't currently work well, and users are better off ignoring LIRICAL's post-test probability (except to check that it's > 0).
-Just looking at the 3 top-ranked hits (or however many you have time for) provides better accuracy than thresholding on the post-test probability.
+this feature doesn't currently work well, so looking at the 3 top-ranked hits (or however many you have time for) provides better accuracy than thresholding on the post-test probability.
 
 ---
 
