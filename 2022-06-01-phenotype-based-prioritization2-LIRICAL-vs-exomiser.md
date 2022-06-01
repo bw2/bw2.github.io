@@ -109,7 +109,7 @@ NOTE: Here rank=200 is again a special value that means the correct gene wasn't 
 
 ---
 
-**Analysis Methods:**
+**Analysis Methods**
 
 *Exomiser command-line* uses default settings (as defined in this [exome_analysis.yml](https://github.com/broadinstitute/phenotype-driven-analysis/blob/60813ce4a1dcdb87aa6f686338bdf56785118362/exomiser/docker/exome_analysis.yml)):
 
@@ -127,7 +127,7 @@ java -jar LIRICAL.jar P -p *.phenopacket.json -e /exomiser-cli-13.0.0/2109_hg38 
 
 <a name="phenotypes" />
 
-**RGP Phenotype Distribution:** 
+**RGP Phenotype Distribution** 
 
 This shows HPO term categories for the 75 RGP cases analyzed above. 
 Cases with terms in multiple categories are counted once in each category:
