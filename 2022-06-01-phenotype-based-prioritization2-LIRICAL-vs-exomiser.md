@@ -28,11 +28,12 @@ The LIRICAL paper [[Robinson 2020](https://pubmed.ncbi.nlm.nih.gov/32755546/)] c
 
 **LIRICAL vs Exomiser on 75 cases from the Rare Genomes Project**
 
-These distributions show what rank each tool assigns to the correct gene in 75 RGP cases: 
+These distributions show the rank that each tool assigns to the correct gene in 75 RGP cases: 
 
 <img width="800" alt="LIRICAL and Exomiser rank distributions" src="https://user-images.githubusercontent.com/6240170/171470046-0a114cbd-215d-404f-b526-d7f80d085d83.png">
 
-Both Exomiser and LIRICAL rank the correct gene among the top-5 results for 49 out of 75 (65%) of cases, so top-5 performance is identical. Performance varies for other cut-offs:
+Both Exomiser and LIRICAL rank the correct gene among the top-5 results for 49 out of 75 (65%) of cases, so top-5 performance is identical. 
+Performance varies for other cut-offs:
 
 <table class="ui striped center aligned table">
   <tr><th>Top-k results</td><th>Exomiser: correct genes</th><th>LIRICAL: correct genes</th></tr>
@@ -43,7 +44,7 @@ Both Exomiser and LIRICAL rank the correct gene among the top-5 results for 49 o
   <tr><td>top 1</td><td>12 out of 75 (16%)</td><td>29 out of 75 (39%)</td></tr>
 </table>
 
-Median and mean ranks of the correct gene:
+Also, the median and mean ranks of the correct gene differ between the 2 tools:
 
 <table class="ui striped center aligned table">
   <tr><th></td><th>Exomiser</th><th>LIRICAL</th></tr>
