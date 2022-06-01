@@ -33,4 +33,10 @@ These distributions show what rank each tool assigns to the correct gene in 75 R
 
 <img width="800" alt="LIRICAL and Exomiser rank distributions" src="https://user-images.githubusercontent.com/6240170/171470046-0a114cbd-215d-404f-b526-d7f80d085d83.png">
 
-Both Exomiser and LIRICAL rank 49 genes 
+Both Exomiser and LIRICAL rank the correct gene among the top 5 results for 49 out of 75 cases.
+
+Interestingly, LIRICAL and Exomiser ranks aren't well correlated (R^2 is 0.05) as this plot shows:
+
+<img width="850" alt="image" src="https://user-images.githubusercontent.com/6240170/171471200-b78706fe-a26a-4eea-880d-5599523d45eb.png">
+
+
