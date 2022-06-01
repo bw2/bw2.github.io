@@ -43,14 +43,14 @@ Both Exomiser and LIRICAL rank the correct gene among the top-5 results for 49 o
   <tr><td>top 1</td><td>12 out of 75 (16%)</td><td>29 out of 75 (39%)</td></tr>
 </table>
 
-Mean and median ranks of the correct gene:
+Median and mean ranks of the correct gene:
 
 <table class="ui striped center aligned table">
   <tr><th></td><th>Exomiser</th><th>LIRICAL</th></tr>
   <tr>
     <td>Median rank of correct gene</td>
-    <td>4</td>
-    <td>2</td>
+    <td>4 *</td>
+    <td>2 *</td>
   </tr>
   <tr>
     <td>Mean rank of correct gene</td>
@@ -59,7 +59,7 @@ Mean and median ranks of the correct gene:
   </tr>
 </table>
 
-* when the correct gene wasn't detected at all by a tool, it was arbitrarily set as having rank 200 before calculating the mean
+<pre>* For cases where the correct gene wasn't detected at all by a tool, its rank was arbitrarily set = 200 before calculating the median and mean</pre>
 
 
 ---
