@@ -111,7 +111,7 @@ NOTE: Here rank=200 is again a special value that means the correct gene wasn't 
 
 **Analysis Methods**
 
-*Exomiser command-line* uses default settings (as defined in this [exome_analysis.yml](https://github.com/broadinstitute/phenotype-driven-analysis/blob/60813ce4a1dcdb87aa6f686338bdf56785118362/exomiser/docker/exome_analysis.yml)):
+*Exomiser command-line* uses default settings as defined in this [exome_analysis.yml](https://github.com/broadinstitute/phenotype-driven-analysis/blob/60813ce4a1dcdb87aa6f686338bdf56785118362/exomiser/docker/exome_analysis.yml):
 
 ```
 java -jar exomiser-cli-13.0.1.jar --analysis exome_analysis.yml
