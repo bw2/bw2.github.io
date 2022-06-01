@@ -75,11 +75,11 @@ means the correct gene wasn't included at all in the results.
 This plot shows that:
 
 <table class="ui striped center aligned table">
-  <tr><th>Correct genes in top-5</th><th>Quadrant</th></tr>
-  <tr><td>38 out of 75 (50%)</td><td>Both Exomiser and LIRICAL</td></tr>
-  <tr><td>11 out of 75 (15%)</td><td>Exomiser but not LIRICAL</td></tr>
-  <tr><td>11 out of 75 (15%)</td><td>LIRICAL but not Exomiser</td></tr>
-  <tr><td>15 out of 75 (20%)</td><td>neither tool's top-5</td></tr>
+  <tr><th>Correct Genes in Top-5</th><th>Quadrant</th></tr>
+  <tr><td>38 out of 75 (50%)</td><td>bottom-left: Both Exomiser and LIRICAL</td></tr>
+  <tr><td>11 out of 75 (15%)</td><td>upper-left: Exomiser but not LIRICAL</td></tr>
+  <tr><td>11 out of 75 (15%)</td><td>bottom-right: LIRICAL but not Exomiser</td></tr>
+  <tr><td>15 out of 75 (20%)</td><td>upper-right: Neither tool's top-5</td></tr>
 </table>
 
 
