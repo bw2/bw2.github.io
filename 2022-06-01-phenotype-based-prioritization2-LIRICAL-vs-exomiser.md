@@ -59,7 +59,7 @@ Median and mean ranks of the correct gene:
   </tr>
 </table>
 
-<pre>* For cases where the correct gene wasn't detected at all by a tool, its rank was arbitrarily set = 200 before calculating the median and mean</pre>
+<i>*</i> For cases where the correct gene wasn't detected at all by a tool, its rank was arbitrarily set = 200 before calculating the median and mean
 
 
 ---
