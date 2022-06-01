@@ -36,7 +36,7 @@ Both Exomiser and LIRICAL rank the correct gene among the top-5 results for 49 o
 Performance varies for other cut-offs:
 
 <table class="ui striped center aligned table">
-  <tr><th>Top-k results</td><th>Exomiser: correct genes</th><th>LIRICAL: correct genes</th></tr>
+  <tr><th>Top-k results</th><th>Exomiser: correct genes</th><th>LIRICAL: correct genes</th></tr>
   <tr><td>top 5</td><td>49 out of 75 (65%)</td><td>49 out of 75 (65%)</td></tr>
   <tr><td>top 4</td><td>46 out of 75 (61%)</td><td>45 out of 75 (60%)</td></tr>
   <tr><td>top 3</td><td>37 out of 75 (49%)</td><td>42 out of 75 (56%)</td></tr>
@@ -47,7 +47,7 @@ Performance varies for other cut-offs:
 Also, the median and mean ranks of the correct gene differ between the 2 tools:
 
 <table class="ui striped center aligned table">
-  <tr><th></td><th>Exomiser</th><th>LIRICAL</th></tr>
+  <tr><th></th><th>Exomiser</th><th>LIRICAL</th></tr>
   <tr>
     <td>Median rank of correct gene</td>
     <td>4 *</td>
@@ -75,17 +75,13 @@ means the correct gene wasn't included at all in the results.
 This plot shows that:
 
 <table class="ui striped center aligned table">
-  <tr><th></td><th>Correct genes in top-5</th><th>Quadrant</th></tr>
+  <tr><th>Correct genes in top-5</th><th>Quadrant</th></tr>
   <tr><td>38 out of 75 (50%)</td><td>Both Exomiser and LIRICAL</td></tr>
   <tr><td>11 out of 75 (15%)</td><td>Exomiser but not LIRICAL</td></tr>
   <tr><td>11 out of 75 (15%)</td><td>LIRICAL but not Exomiser</td></tr>
   <tr><td>15 out of 75 (20%)</td><td>neither tool's top-5</td></tr>
 </table>
 
-* For  cases, the correct gene is in the top 5 results of 
-* For  cases, the correct gene is in the top 5 results of 
-* For  cases, the correct gene is in the top 5 results of 
-* For cases, the correct gene is not in the top 5 results of either 
 
 Also, let's say users have time to evaluate 10 genes per case. They would get better sensitivity by evaluating top-5 from Exomiser and top-5 from LIRICAL instead of evaluating the top-10 results from only one tool. 
 In either case, users evaluating 75 cases would be looking at 750 total genes, but with top-5 results from Exomiser & LIRICAL, this set would include 60 correct genes, wihile with top-10 results from only one tool it would include only 54 correct genes.
