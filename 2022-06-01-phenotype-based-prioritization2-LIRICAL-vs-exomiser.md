@@ -111,16 +111,16 @@ NOTE: Here rank=200 is again a special value that means the correct gene wasn't 
 
 **Analysis Methods:**
 
-*Exomiser command-line* uses default options (as defined in this [exome_analysis.yml](https://github.com/broadinstitute/phenotype-driven-analysis/blob/60813ce4a1dcdb87aa6f686338bdf56785118362/exomiser/docker/exome_analysis.yml)):
+*Exomiser command-line* uses default settings (as defined in this [exome_analysis.yml](https://github.com/broadinstitute/phenotype-driven-analysis/blob/60813ce4a1dcdb87aa6f686338bdf56785118362/exomiser/docker/exome_analysis.yml)):
 
 ```
 java -jar exomiser-cli-13.0.1.jar --analysis exome_analysis.yml
 ```
 
-*LIRICAL command-line* uses default options except --min-diff 200 tells LIRICAL to always output 200 results regardless of their post-test probability.
+*LIRICAL command-line* uses LIRICAL v1.3.4 with default settings except --min-diff 200 tells LIRICAL to always output 200 results regardless of their post-test probability.
 
 ```
-java -jar /LIRICAL.jar P -p *.phenopacket.json -e /exomiser-cli-13.0.0/2109_hg38 --tsv --mindiff 200
+java -jar LIRICAL.jar P -p *.phenopacket.json -e /exomiser-cli-13.0.0/2109_hg38 --tsv --mindiff 200
 ```
 
 ---
