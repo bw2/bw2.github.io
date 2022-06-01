@@ -2,7 +2,7 @@
 The [previous blog post](https://github.com/bw2/bw2.github.io/blob/master/2022-05-04-phenotype-based-prioritization.md) evaluated [LIRICAL](https://pubmed.ncbi.nlm.nih.gov/32755546/)
 performance on 75 previously solved phenotypically-heterogeneous cases from the [Rare Genomes Project](https://raregenomes.org/). Here, I compare
 [LIRICAL](https://pubmed.ncbi.nlm.nih.gov/32755546/) to [Exomiser](https://www.nature.com/articles/nprot.2015.124) on the same set of cases and find that:
-1. Exomiser performs slightly better than LIRICAL overall
+1. Exomiser and LIRICAL top-5 accuracy is identical
 2. Exomiser and LIRICAL ranks are NOT well correlated, so rare disease pipelines can benefit from evaluating the top hits of both tools
 
 Exomiser [[Smedley, Robinson 2015](https://www.nature.com/articles/nprot.2015.124)] has been widely used for phenotype-based prioritzation 
@@ -26,17 +26,59 @@ The LIRICAL paper [[Robinson 2020](https://pubmed.ncbi.nlm.nih.gov/32755546/)] c
 
 ---
 
-
 **LIRICAL vs Exomiser on 75 cases from the Rare Genomes Project**
 
 These distributions show what rank each tool assigns to the correct gene in 75 RGP cases: 
 
 <img width="800" alt="LIRICAL and Exomiser rank distributions" src="https://user-images.githubusercontent.com/6240170/171470046-0a114cbd-215d-404f-b526-d7f80d085d83.png">
 
-Both Exomiser and LIRICAL rank the correct gene among the top-5 results for 49 out of 75 (65%) of cases.
+Both Exomiser and LIRICAL rank the correct gene among the top-5 results for 49 out of 75 (65%) of cases, so top-5 performance is identical. Performance varies for other cut-offs:
 
-Interestingly, LIRICAL and Exomiser ranks aren't well correlated (R^2 is 0.05) as this plot shows:
+<table class="ui striped center aligned table">
+  <tr><th>Top-k results</td><th>Exomiser: correct genes</th><th>LIRICAL: correct genes</th></tr>
+  <tr><td>top 5</td><td>49 out of 75 (65%)</td><td>49 out of 75 (65%)</td></tr>
+  <tr><td>top 4</td><td>46 out of 75 (61%)</td><td>45 out of 75 (60%)</td></tr>
+  <tr><td>top 3</td><td>37 out of 75 (49%)</td><td>42 out of 75 (56%)</td></tr>
+  <tr><td>top 2</td><td>30 out of 75 (40%)</td><td>40 out of 75 (53%)</td></tr>
+  <tr><td>top 1</td><td>12 out of 75 (16%)</td><td>29 out of 75 (39%)</td></tr>
+</table>
+
+Mean and median ranks of the correct gene:
+
+<table class="ui striped center aligned table">
+  <tr><th></td><th>Exomiser</th><th>LIRICAL</th></tr>
+  <tr>
+    <td>Median rank of correct gene</td>
+    <td>4</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>Mean rank of correct gene</td>
+    <td>19 *</td>
+    <td>33 *</td>
+  </tr>
+</table>
+
+* when the correct gene wasn't detected at all by a tool, it was arbitrarily set as having rank 200 before calculating the mean
+
+
+---
+
+**LIRICAL and Exomiser prioritize different genes**
+
+Interestingly, LIRICAL and Exomiser ranks aren't well correlated (R^2 is 0.05) as this plot shows. Here rank=200 is a special value that 
+means the correct gene wasn't included at all in the results.  
 
 <img width="850" alt="image" src="https://user-images.githubusercontent.com/6240170/171471200-b78706fe-a26a-4eea-880d-5599523d45eb.png">
+
+This plot shows that:
+* For 38 out of 75 (50%) cases, the correct gene is in the top 5 results of both tools
+* For 11 out of 75 (15%) cases, the correct gene is in the top 5 results of Exomiser but not LIRICAL
+* For 11 out of 75 (15%) cases, the correct gene is in the top 5 results of LIRICAL but not Exomiser
+* For 15 out of 75 (20%) cases, the correct gene is not in the top 5 results of either LIRICAL or Exomiser
+
+Also, let's say users have time to evaluate 10 genes per case. They would get better sensitivity by evaluating top-5 from Exomiser and top-5 from LIRICAL instead of evaluating the top-10 results from only one tool. 
+In either case, users evaluating 75 cases would be looking at 750 total genes, but with top-5 results from Exomiser & LIRICAL, this set would include 60 correct genes, wihile with top-10 results from only one tool it would include only 54 correct genes.
+  
 
 
