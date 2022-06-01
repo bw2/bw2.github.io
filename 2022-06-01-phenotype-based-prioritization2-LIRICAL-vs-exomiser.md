@@ -2,7 +2,7 @@
 The [previous blog post](https://github.com/bw2/bw2.github.io/blob/master/2022-05-04-phenotype-based-prioritization.md) evaluated [LIRICAL](https://pubmed.ncbi.nlm.nih.gov/32755546/)
 performance on 75 previously solved phenotypically-heterogeneous cases from the [Rare Genomes Project](https://raregenomes.org/) (RGP). Here, I compare
 [LIRICAL](https://pubmed.ncbi.nlm.nih.gov/32755546/) to [Exomiser](https://www.nature.com/articles/nprot.2015.124) on the same set of cases and find that:
-1. Exomiser and LIRICAL top-5 accuracy is identical (65%), though LIRICAL has better top-3 accuracy (56%) than Exomiser (49%). 
+1. Exomiser and LIRICAL top-5 accuracy is identical (65%), but LIRICAL has better top-3 accuracy (56%) than Exomiser (49%). 
 2. Exomiser and LIRICAL ranks are NOT well correlated, so rare disease pipelines can benefit from evaluating the top hits of both tools
 
 Exomiser [[Smedley, Robinson 2015](https://www.nature.com/articles/nprot.2015.124)] has been widely used for phenotype-based prioritzation 
