@@ -20,7 +20,7 @@ The LIRICAL paper [[Robinson 2020](https://pubmed.ncbi.nlm.nih.gov/32755546/)] c
 
 **Fig. 4** shows Exomiser slightly out-performing LIRICAL:
 
-<img src="https://user-images.githubusercontent.com/6240170/171466464-0a5a72e0-44d0-47a2-b512-61812f4b6641.png" width=500 />
+<img alt="[Robinson 2020] Figure 4" src="https://user-images.githubusercontent.com/6240170/171466464-0a5a72e0-44d0-47a2-b512-61812f4b6641.png" width=500 />
 
 "Considering the 89 diagnoses where Exomiser was not utilized, Exomiser prioritized 57/89 (64%) in first place compared to 51/89 (57%) for LIRICAL."
 
@@ -29,4 +29,4 @@ The LIRICAL paper [[Robinson 2020](https://pubmed.ncbi.nlm.nih.gov/32755546/)] c
 
 **LIRICAL vs Exomiser on 75 RGP cases**
 
-<img width="800" alt="171467645-a0b3bb12-2996-4adc-9216-85df3e7fbd43" src="https://user-images.githubusercontent.com/6240170/171468691-21e68d42-4e9a-41d9-b7a0-27baaaa42e65.png">
+<img width="850" alt="LIRICAL and Exomiser rank distributions" src="https://user-images.githubusercontent.com/6240170/171468691-21e68d42-4e9a-41d9-b7a0-27baaaa42e65.png">
