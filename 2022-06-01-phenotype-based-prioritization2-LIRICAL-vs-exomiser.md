@@ -95,7 +95,7 @@ would include 60 correct genes, while with top-10 results from only one tool it 
 
 **What explains the low concordance between LIRICAL and Exomiser?**
 
-It's like due to how they handle phenotype prioritization. Exomiser uses model organism data (mouse & zebra fish) in addition to OMIM gene-disease associations. It also uses protein-protein interactions to check phenotype match scores of adjacent genes. All of these are combined into an Exomiser phenotype match score which is then combined with a variant pathogenicity score to get the final combined "exomiser score". 
+It's likely due to how they handle phenotype prioritization. Exomiser uses model organism data (mouse & zebra fish) in addition to OMIM gene-disease associations. It also uses protein-protein interactions to check phenotype match scores of adjacent genes. All of these are combined into an Exomiser phenotype match score which is then combined with a variant pathogenicity score to get the final combined "exomiser score". 
 LIRICAL computes variant pathogenicity scores the same way as Exomiser (reusing its code and reference data), but does it's own thing for phenotypes - using only OMIM data and computing a post-test probability. 
 Spot-checking one of the cases where Exomiser ranked the correct gene as #1 and LIRICAL ranked it as #5: 
 2 out of the 4 false-positive LIRICAL genes weren't in the Exomiser results at all, and 2 were quite far down in the list.
