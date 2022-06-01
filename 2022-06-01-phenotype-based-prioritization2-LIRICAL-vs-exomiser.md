@@ -99,3 +99,7 @@ It's like due to how they handle phenotype prioritization. Exomiser uses model o
 LIRICAL computes variant pathogenicity scores the same way as Exomiser (reusing its code and reference data), but does it's own thing for phenotypes - using only OMIM data and computing a post-test probability. 
 Spot-checking one of the cases where Exomiser ranked the correct gene as #1 and LIRICAL ranked it as #5: 
 2 out of the 4 false-positive LIRICAL genes weren't in the Exomiser results at all, and 2 were quite far down in the list.
+
+Interestingly, the number of HPO terms does not significantly differentiate the tools:
+
+<img width="850" alt="image" src="https://user-images.githubusercontent.com/6240170/171486870-6b25d874-a250-405b-984b-6bc289c16dfc.png">
