@@ -28,7 +28,7 @@ for markdown_file_path in glob.glob("*.md"):
     month = int(date_posted[1])
     date = int(date_posted[2])
 
-    markdown_html.replace("</h3>", f"""<div style="color:grey; position:relative; float:right; font-size:15px">{year}/{month}/{date}/</div></h3>""")
+    markdown_html.replace("</h2>", f"""<div style="color:grey; position:relative; float:right; font-size:15px">{year}/{month}/{date}/</div></h2>""")
     with open(output_html_path, "wt") as f:
         f.write(blog_post_template.render(markdown_html=markdown_html, title=title))
 
