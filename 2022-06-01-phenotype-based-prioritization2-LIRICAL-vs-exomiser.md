@@ -140,7 +140,8 @@ Cases with terms in multiple categories are counted once in each category:
 <img width="800" alt="image" src="https://user-images.githubusercontent.com/6240170/171529194-e7393ed0-3587-4d41-bab7-a9594479af90.png">
 
 
-**LIRICAL vs. Exomiser Total Number of Results per Case**: This is the total number of results reported by each tool *(running LIRICAL with `-mindiff 200`)*.
+**LIRICAL vs. Exomiser Total Number of Results per Case**: This is the total number of results reported by each tool.  
+NOTE: running LIRICAL with `-mindiff 200`
 
 <img width="800" alt="image" src="https://user-images.githubusercontent.com/6240170/171529646-c4b0c861-0f1c-40ea-8039-c02c1b3b314f.png">
 
