@@ -91,9 +91,9 @@ To summarize this plot:
 **Conclusion**: 
 
 Let's say users have time to evaluate 10 genes per case. They would get better sensitivity by evaluating 
-top-5 from Exomiser and top-5 from LIRICAL instead of the top-10 results from one of the tools. 
-In either case, users evaluating 75 cases would be looking at 750 total genes, but with top-5 results from Exomiser & LIRICAL this set 
-would include 60 correct genes, while with top-10 results from only one tool it would include only 54 correct genes.
+top-5 from Exomiser and top-5 from LIRICAL rather than the top-10 results from one of the tools. 
+In either case, users evaluating 75 cases would be looking at 750 results total, but the set of top-5 results from Exomiser and LIRICAL  
+would include 60 correct genes, while the top-10 results from only one of these tools would include 54 correct genes.
   
 
 ---
