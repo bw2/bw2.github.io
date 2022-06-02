@@ -1,6 +1,6 @@
 ## LIRICAL vs Exomiser Phenotype-based Prioritization In 75 Rare Disease Cases
 
-The [previous blog post](https://github.com/bw2/bw2.github.io/blob/master/2022-05-04-phenotype-based-prioritization.md) evaluated [LIRICAL](https://pubmed.ncbi.nlm.nih.gov/32755546/)
+The [previous blog post](https://bw2.github.io/2022-05-04-phenotype-based-prioritization.html) evaluated [LIRICAL](https://pubmed.ncbi.nlm.nih.gov/32755546/)
  on 75 previously solved phenotypically-heterogeneous cases from the [Rare Genomes Project](https://raregenomes.org/) (RGP). Their phenotypes are summarized in the <a href="#phenotypes">phenotype distribution plot</a> below. This blog post compares
 [LIRICAL](https://pubmed.ncbi.nlm.nih.gov/32755546/) to [Exomiser](https://www.nature.com/articles/nprot.2015.124) on the same set of cases and finds that:
  <ol>
@@ -10,7 +10,7 @@ The [previous blog post](https://github.com/bw2/bw2.github.io/blob/master/2022-0
 
 Exomiser [[Smedley, Robinson 2015](https://www.nature.com/articles/nprot.2015.124)] has been widely used for phenotype-based prioritzation 
 in rare disease cases. Five years after publishing Exomiser, the same authors created 
-LIRICAL [[Robinson, Smedley 2020](https://pubmed.ncbi.nlm.nih.gov/32755546/)] to provide users a way to tell whether the highest-ranked results in a given case are low confidence and not worth evaluating. Unfortunately, based on the analysis in the [previous blog post](https://github.com/bw2/bw2.github.io/blob/master/2022-05-04-phenotype-based-prioritization.md), 
+LIRICAL [[Robinson, Smedley 2020](https://pubmed.ncbi.nlm.nih.gov/32755546/)] to provide users a way to tell whether the highest-ranked results in a given case are low confidence and not worth evaluating. Unfortunately, based on the analysis in the [previous blog post](https://bw2.github.io/2022-05-04-phenotype-based-prioritization.html), 
 this feature doesn't currently work well, so looking at the top-ranked genes regardless of their post-test probability provides better accuracy than thresholding on the post-test probability.
 
 ---
