@@ -52,9 +52,10 @@ this feature doesn't currently work well, so looking at the top-ranked genes reg
 <hr />
 <p><strong>LIRICAL vs Exomiser Comparison in the LIRICAL Paper [Robinson 2020]</strong>  </p>
 <p>The LIRICAL paper [<a href="https://pubmed.ncbi.nlm.nih.gov/32755546/">Robinson 2020</a>] compared performance on 116 previously-solved singleton cases from the 100,000 Genomes Project and showed Exomiser slightly out-performing LIRICAL:</p>
-<p><img alt="[Robinson et al. 2020] Figure 4" src="https://user-images.githubusercontent.com/6240170/171466464-0a5a72e0-44d0-47a2-b512-61812f4b6641.png" width=500 /></p>
+<p><img align="left" alt="[Robinson et al. 2020] Figure 4" src="https://user-images.githubusercontent.com/6240170/171466464-0a5a72e0-44d0-47a2-b512-61812f4b6641.png" width=500 /></p>
 <p><strong>Figure 4</strong>: "The x axis shows the rank assigned by LIRICAL or Exomiser to the correct disease gene. The y axis shows the percentage of cases in which the given rank was achieved."</p>
 <p>"Considering the 89 diagnoses where Exomiser was not utilized, Exomiser prioritized 57/89 (64%) in first place compared to 51/89 (57%) for LIRICAL."</p>
+<p><br clear="left" /></p>
 <hr />
 <p><strong>LIRICAL vs Exomiser on 75 Cases from the Rare Genomes Project</strong></p>
 <p>These distributions show the rank that each tool assigns to the correct gene in 75 RGP cases: </p>
@@ -100,6 +101,7 @@ NOTE: Here rank=200 is again a special value that means the correct gene wasn't 
   <tr><td>15 out of 75 (20%)</td><td>upper-right: Neither tool's top-5</td></tr>
 </table>
 
+<p><br /></p>
 <p><strong>Conclusion</strong>: </p>
 <p>Let's say users have time to evaluate 10 genes per case. They would get better sensitivity by evaluating 
 top-5 from Exomiser and top-5 from LIRICAL instead of the top-10 results from one of the tools. 
