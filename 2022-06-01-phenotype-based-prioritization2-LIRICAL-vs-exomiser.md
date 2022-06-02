@@ -15,7 +15,7 @@ this feature doesn't currently work well, so looking at the top-ranked genes reg
 
 ---
 
-**LIRICAL vs Exomiser Comparison in the LIRICAL paper [Robinson 2020]**  
+**LIRICAL vs Exomiser Comparison in the LIRICAL paper**  
 
 The LIRICAL paper [[Robinson 2020](https://pubmed.ncbi.nlm.nih.gov/32755546/)] compared performance on 116 previously-solved singleton cases from the 100,000 Genomes Project and showed Exomiser slightly out-performing LIRICAL:
 
