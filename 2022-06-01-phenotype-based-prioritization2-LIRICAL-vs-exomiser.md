@@ -20,7 +20,7 @@ this feature doesn't currently work well, so looking at the top-ranked genes reg
 The LIRICAL paper [[Robinson 2020](https://pubmed.ncbi.nlm.nih.gov/32755546/)] compared performance on 116 previously-solved singleton cases from the 100,000 Genomes Project and showed Exomiser slightly out-performing LIRICAL:
 
 
-<img align="left" alt="[Robinson et al. 2020] Figure 4" src="https://user-images.githubusercontent.com/6240170/171466464-0a5a72e0-44d0-47a2-b512-61812f4b6641.png" width=500 />
+<img align="left" alt="[Robinson et al. 2020] Figure 4" style="padding-right:15px" src="https://user-images.githubusercontent.com/6240170/171466464-0a5a72e0-44d0-47a2-b512-61812f4b6641.png" width=500 />
 
 **Figure 4**: "The x axis shows the rank assigned by LIRICAL or Exomiser to the correct disease gene. The y axis shows the percentage of cases in which the given rank was achieved."
 
