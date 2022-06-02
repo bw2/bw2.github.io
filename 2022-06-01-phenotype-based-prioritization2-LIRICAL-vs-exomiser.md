@@ -1,4 +1,4 @@
-## LIRICAL vs Exomiser Phenotype-based Prioritization In 75 Rare Diseaes Cases
+## LIRICAL vs Exomiser Phenotype-based Prioritization In 75 Rare Disease Cases
 
 The [previous blog post](https://github.com/bw2/bw2.github.io/blob/master/2022-05-04-phenotype-based-prioritization.md) evaluated [LIRICAL](https://pubmed.ncbi.nlm.nih.gov/32755546/)
  on 75 previously solved phenotypically-heterogeneous cases from the [Rare Genomes Project](https://raregenomes.org/) (RGP). This blog post compares
