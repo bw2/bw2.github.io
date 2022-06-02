@@ -48,10 +48,8 @@
   <li> Exomiser and LIRICAL ranks are NOT well correlated (R<sup>2</sup>=0.05) and rare disease pipelines should consider top hits from both tools. </li>
  </ol>
 </p>
-<p>Exomiser [<a href="https://www.nature.com/articles/nprot.2015.124">Smedley, Robinson 2015</a>] has been widely used for phenotype-based prioritzation 
-in rare disease cases. Five years after publishing Exomiser, the same authors created 
-LIRICAL [<a href="https://pubmed.ncbi.nlm.nih.gov/32755546/">Robinson, Smedley 2020</a>] to provide users a way to tell whether the highest-ranked results in a given case are low confidence and not worth evaluating. Unfortunately, based on the analysis in the <a href="https://bw2.github.io/2022-05-04-phenotype-based-prioritization.html">previous blog post</a>, 
-this feature doesn't currently work well, so looking at the top-ranked genes regardless of their post-test probability provides better accuracy than thresholding on the post-test probability.</p>
+<p>Exomiser [<a href="https://www.nature.com/articles/nprot.2015.124">Smedley, Robinson 2015</a>] has been widely used for phenotype-based prioritzation. Five years after publishing Exomiser, the same authors created 
+LIRICAL [<a href="https://pubmed.ncbi.nlm.nih.gov/32755546/">Robinson, Smedley 2020</a>] to provide users a way to tell whether the highest-ranked results in a given case are low confidence and not worth evaluating. Unfortunately, based on the analysis in the <a href="https://bw2.github.io/2022-05-04-phenotype-based-prioritization.html">previous blog post</a>, this feature doesn't currently work well, and looking at the top-ranked genes regardless of their post-test probability provides better accuracy than thresholding on the post-test probability.</p>
 <hr />
 <p><strong>LIRICAL vs Exomiser Comparison in the LIRICAL Paper [Robinson 2020]</strong>  </p>
 <p>The LIRICAL paper [<a href="https://pubmed.ncbi.nlm.nih.gov/32755546/">Robinson 2020</a>] compared performance on 116 previously-solved singleton cases from the 100,000 Genomes Project and showed Exomiser slightly out-performing LIRICAL:</p>
@@ -107,9 +105,9 @@ NOTE: Here rank=200 is again a special value that means the correct gene wasn't 
 <p><br /></p>
 <p><strong>Conclusion</strong>: </p>
 <p>Let's say users have time to evaluate 10 genes per case. They would get better sensitivity by evaluating 
-top-5 from Exomiser and top-5 from LIRICAL instead of the top-10 results from one of the tools. 
-In either case, users evaluating 75 cases would be looking at 750 total genes, but with top-5 results from Exomiser &amp; LIRICAL this set 
-would include 60 correct genes, while with top-10 results from only one tool it would include only 54 correct genes.</p>
+top-5 from Exomiser and top-5 from LIRICAL rather than the top-10 results from one of the tools. 
+In either case, users evaluating 75 cases would be looking at 750 results total, but the set of top-5 results from Exomiser and LIRICAL<br />
+would include 60 correct genes, while the top-10 results from only one of these tools would include 54 correct genes.</p>
 <hr />
 <p><strong>What Explains the Low Concordance Between LIRICAL and Exomiser?</strong></p>
 <p>It's likely due to how they handle phenotype prioritization. Exomiser uses model organism data (mouse &amp; zebra fish) in addition to OMIM gene-disease associations. It also uses protein-protein interactions to check phenotype match scores of adjacent genes. All of these are combined into an Exomiser phenotype match score which is then combined with a variant pathogenicity score to get the final "exomiser score". 
