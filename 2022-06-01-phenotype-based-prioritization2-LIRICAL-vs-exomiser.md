@@ -77,11 +77,11 @@ NOTE: Here rank=200 is again a special value that means the correct gene wasn't 
 To summarize this plot:
 
 <table class="ui striped center aligned table">
-  <tr><th>The Correct Gene is in the Top-5 Results</th><th>Quadrant</th></tr>
-  <tr><td>38 out of 75 (50%) cases</td><td>bottom-left: Both Exomiser and LIRICAL</td></tr>
-  <tr><td>11 out of 75 (15%) cases</td><td>upper-left: Exomiser but not LIRICAL</td></tr>
-  <tr><td>11 out of 75 (15%) cases</td><td>bottom-right: LIRICAL but not Exomiser</td></tr>
-  <tr><td>15 out of 75 (20%) cases</td><td>upper-right: Neither tool's top-5</td></tr>
+  <tr><th>Quadrant</th><th>The Correct Gene is in the Top-5 Results</th></tr>
+  <tr><td>Bottom-Left: Both Exomiser and LIRICAL</td><td>38 out of 75 (50%) cases</td></tr>
+  <tr><td>Upper-Left: Exomiser but not LIRICAL</td><td>11 out of 75 (15%) cases</td></tr>
+  <tr><td>Bottom-Right: LIRICAL but not Exomiser</td><td>11 out of 75 (15%) cases</td></tr>
+  <tr><td>Upper-Right: Neither tool's top-5</td><td>15 out of 75 (20%) cases</td></tr>
 </table>
 
 <br />
