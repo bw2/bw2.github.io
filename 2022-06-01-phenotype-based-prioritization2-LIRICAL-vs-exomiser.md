@@ -70,7 +70,7 @@ Also, the median and mean ranks of the correct gene differ between the 2 tools:
 **LIRICAL and Exomiser Prioritize Different Genes**
 
 Interestingly, LIRICAL and Exomiser ranks aren't well correlated (R<sup>2</sup> is 0.05) as this plot shows.  
-NOTE: Here rank=200 is again a special value that means the correct gene wasn't included at all in the results from that tool.  
+NOTE: Here rank=200 is again a special value that means the correct gene wasn't in the results at all for that tool.  
 
 <img width="850" alt="image" src="https://user-images.githubusercontent.com/6240170/171471200-b78706fe-a26a-4eea-880d-5599523d45eb.png">
 
@@ -104,7 +104,7 @@ Spot-checking one of the cases where Exomiser ranked the correct gene as #1 and 
 2 out of the 4 false-positive LIRICAL genes weren't in the Exomiser results at all, and 2 were quite far down in the list.
 
 Interestingly, the number of HPO terms specified per case does not significantly differentiate the tools.  
-NOTE: Here rank=200 is again a special value that means the correct gene wasn't included at all in the results from that tool.  
+NOTE: Here rank=200 is again a special value that means the correct gene wasn't in the results at all for that tool.  
 
 <img width="850" alt="image" src="https://user-images.githubusercontent.com/6240170/171486870-6b25d874-a250-405b-984b-6bc289c16dfc.png">
 
