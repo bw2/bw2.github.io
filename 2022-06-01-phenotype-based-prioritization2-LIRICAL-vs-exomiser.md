@@ -15,7 +15,7 @@ LIRICAL [[Robinson, Smedley 2020](https://pubmed.ncbi.nlm.nih.gov/32755546/)] to
 
 **LIRICAL vs Exomiser Comparison in the LIRICAL Paper [Robinson 2020]**  
 
-The LIRICAL paper [[Robinson 2020](https://pubmed.ncbi.nlm.nih.gov/32755546/)] compared performance on 116 previously-solved singleton cases from the 100,000 Genomes Project and showed Exomiser slightly out-performing LIRICAL:
+The LIRICAL paper [[Robinson 2020](https://pubmed.ncbi.nlm.nih.gov/32755546/)] compared performance on 116 previously-solved singleton cases from the 100,000 Genomes Project and showed Exomiser slightly outperforms LIRICAL:
 
 
 <img align="left" alt="[Robinson et al. 2020] Figure 4" style="padding-right:15px" src="https://user-images.githubusercontent.com/6240170/171466464-0a5a72e0-44d0-47a2-b512-61812f4b6641.png" width=500 />
