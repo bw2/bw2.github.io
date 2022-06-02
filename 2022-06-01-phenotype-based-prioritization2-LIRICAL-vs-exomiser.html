@@ -40,11 +40,14 @@
 
       <h2>LIRICAL vs Exomiser Phenotype-based Prioritization In 75 Rare Disease Cases<div style="color:grey; position:relative; float:right; font-size:15px">6/1/2022</div></h2>
 <p>The <a href="https://github.com/bw2/bw2.github.io/blob/master/2022-05-04-phenotype-based-prioritization.md">previous blog post</a> evaluated <a href="https://pubmed.ncbi.nlm.nih.gov/32755546/">LIRICAL</a>
- on 75 previously solved phenotypically-heterogeneous cases from the <a href="https://raregenomes.org/">Rare Genomes Project</a> (RGP). This blog post compares
+ on 75 previously solved phenotypically-heterogeneous cases from the <a href="https://raregenomes.org/">Rare Genomes Project</a> (RGP). Their phenotypes are summarized in the <a href="#phenotypes">phenotype distribution plot</a> below. This blog post compares
 <a href="https://pubmed.ncbi.nlm.nih.gov/32755546/">LIRICAL</a> to <a href="https://www.nature.com/articles/nprot.2015.124">Exomiser</a> on the same set of cases and finds that:
-1. Exomiser and LIRICAL top-5 accuracy is identical (65%), but LIRICAL has better top-3 accuracy (56%) than Exomiser (49%). 
-2. Exomiser and LIRICAL ranks are NOT well correlated (R<sup>2</sup>=0.05) and rare disease pipelines should consider top hits from both tools.</p>
-<p>See the <a href="#phenotypes">phenotype distribution plot</a> below for a summary of phenotypes. </p>
+ 
+<ol>
+  <li> Exomiser and LIRICAL top-5 accuracy is identical (65%), but LIRICAL has better top-3 accuracy (56%) than Exomiser (49%). </li>
+  <li> Exomiser and LIRICAL ranks are NOT well correlated (R<sup>2</sup>=0.05) and rare disease pipelines should consider top hits from both tools. </li>
+ </ol>
+</p>
 <p>Exomiser [<a href="https://www.nature.com/articles/nprot.2015.124">Smedley, Robinson 2015</a>] has been widely used for phenotype-based prioritzation 
 in rare disease cases. Five years after publishing Exomiser, the same authors created 
 LIRICAL [<a href="https://pubmed.ncbi.nlm.nih.gov/32755546/">Robinson, Smedley 2020</a>] to provide users a way to tell whether the highest-ranked results in a given case are low confidence and not worth evaluating. Unfortunately, based on the analysis in the <a href="https://github.com/bw2/bw2.github.io/blob/master/2022-05-04-phenotype-based-prioritization.md">previous blog post</a>, 
