@@ -72,7 +72,7 @@ The x-axis represents # of cases: <br /> </p>
 <p>Another way to look at this is - for the 65 cases where LIRICAL found the correct gene, what was that gene's rank in the 
 list and it's post-test probability:</p>
 <p><img width="750" alt="Plot post-test probability vs LIRICAL rank" src="https://user-images.githubusercontent.com/6240170/166860896-d35babad-a1a5-4d20-a9b4-cc3f58dc8045.png"></p>
-<p>To summarize this plot, in 49 out of 75 cases (65%) the correct result was among the top 5 hits and for 36 out of 75 (48%) it also had a post-test probability between 1% and 100%. On the other hand, for 15 cases (20%) the correct result was below 5th in the list and had a post-test probability near 0. For another 10 cases (13%), the correct result was not in the list at all. </p>
+<p>To summarize this plot, in 49 out of 75 cases (65%) the correct result was among the top 5 hits and for 36 out of 75 (48%) it also had a post-test probability between 1% and 100%. On the other hand, for 16 cases (21%) the correct result was below 5th in the list and had a post-test probability near 0. For another 10 cases (13%), the correct result was not in the list at all. </p>
 <p><strong>Conclusion:</strong> LIRICAL shows relatively high sensitivity in finding the causal genes for rare disease cases from <a href="https://raregenomes.org/">RGP</a>. </p>
 <hr />
 <p><strong>How many genes would someone need to look through for a typical case?</strong></p>
@@ -94,8 +94,8 @@ Would we get higher sensitivity/specificity if we used different thresholds? The
 <table class="ui striped center aligned table">
   <tr><th>Post-test probability threshold</td><th>Top-k results</td><th># of true-positive genes <br />passing the thresholds</th><th># of genes (per case)<br />passing the thresholds</td></tr>
   <tr><td>&gt; 1%</td><td>top 5 genes</td><td>36 out of 75 (48%)</td><td>190/75 = 2.5 genes</td></tr>
-  <tr><td>&gt; 0%</td><td>top 5 genes</td><td>47 out of 75 (62%)</td><td>287/75 = 3.8 genes</td></tr>
-  <tr><td>&gt; 0%</td><td>top 4 genes</td><td>44 out of 75 (59%)</td><td>239/75 = 3.2 genes</td></tr>
+  <tr><td>&gt; 0%</td><td>top 5 genes</td><td>49 out of 75 (65%)</td><td>287/75 = 3.8 genes</td></tr>
+  <tr><td>&gt; 0%</td><td>top 4 genes</td><td>45 out of 75 (60%)</td><td>239/75 = 3.2 genes</td></tr>
   <tr><td>&gt; 0%</td><td>top 3 genes</td><td>42 out of 75 (56%)</td><td>186/75 = 2.5 genes</td></tr>
   <tr><td>&gt; 0%</td><td>top 2 genes</td><td>40 out of 75 (53%)</td><td>129/75 = 1.7 genes</td></tr>
   <tr><td>&gt; 0%</td><td>top 1 genes</td><td>29 out of 75 (39%)</td><td>&nbsp;68/75 = 0.9 genes</td></tr>
