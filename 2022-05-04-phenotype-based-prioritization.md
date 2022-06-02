@@ -1,4 +1,4 @@
-## Benchmarking LIRICAL for Phenotype-based Gene Prioritization In Rare Diseaes Cases
+## Benchmarking LIRICAL for Phenotype-based Prioritization In 75 Rare Diseaes Cases
 
 LIRICAL [[Robinson 2020](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7477017/)] is a phenotype-based gene & variant prioritization tool.
 
