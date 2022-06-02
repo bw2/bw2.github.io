@@ -30,7 +30,7 @@ for markdown_file_path in glob.glob("*.md"):
 
     markdown_html = markdown_html.replace(
         "</h2>",
-        f"""<div style="color:grey; position:relative; float:right; font-size:15px">{year}/{month}/{date}/</div></h2>"""
+        f"""<div style="color:grey; position:relative; float:right; font-size:15px">{year}/{month}/{date}</div></h2>"""
     )
 
     with open(output_html_path, "wt") as f:
