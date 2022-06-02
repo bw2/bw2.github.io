@@ -125,7 +125,7 @@ java -jar LIRICAL.jar P -p *.phenopacket.json -e /exomiser-cli-13.0.0/2109_hg38 
 
 ---
 
-<a name="phenotypes" />
+<a name="phenotypes"></a>
 
 **RGP Phenotype Distribution** 
 

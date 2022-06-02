@@ -32,7 +32,7 @@ for markdown_file_path in glob.glob("*.md"):
         "</h2>",
         f"""<div style="color:grey; position:relative; float:right; font-size:15px">{year}/{month}/{date}/</div></h2>"""
     )
-    
+
     with open(output_html_path, "wt") as f:
         f.write(blog_post_template.render(markdown_html=markdown_html, title=title))
 
