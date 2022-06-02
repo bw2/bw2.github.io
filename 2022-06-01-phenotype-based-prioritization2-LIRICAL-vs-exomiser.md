@@ -135,7 +135,7 @@ Cases with terms in multiple categories are counted once in each category:
 <img width="800" alt="image" src="https://user-images.githubusercontent.com/6240170/171516499-4cc2e624-d101-49da-b24c-e3cb46a4b968.png">
 
 
-**Exomiser Rank vs Exomiser Score**: The Exomiser score is correlated with rank (R<sup>2</sup>=0.32).
+**Exomiser Rank vs Exomiser Score**: The Exomiser rank and combined score reported for each correct gene are correlated (R<sup>2</sup>=0.32).
 
 <img width="800" alt="image" src="https://user-images.githubusercontent.com/6240170/171529194-e7393ed0-3587-4d41-bab7-a9594479af90.png">
 
