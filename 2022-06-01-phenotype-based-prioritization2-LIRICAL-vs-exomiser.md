@@ -62,7 +62,7 @@ Also, the median and mean ranks of the correct gene differ between the 2 tools:
   </tr>
 </table>
 
-<i>*</i> NOTE: For cases where the correct gene wasn't detected by a tool at all, its rank was arbitrarily set = 200 before calculating the median and mean
+<i>*</i> NOTE: For cases where the correct gene wasn't detected by a tool at all, its rank was arbitrarily set = 200 before calculating the median and mean ranks.
 
 
 ---
