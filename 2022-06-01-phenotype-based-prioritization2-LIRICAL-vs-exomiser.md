@@ -13,7 +13,7 @@ This blog post compares [LIRICAL](https://pubmed.ncbi.nlm.nih.gov/32755546/) to 
   <li> Exomiser and LIRICAL top-5 accuracy is identical (65%), but LIRICAL has better top-3 accuracy (56%) than Exomiser (49%). </li>
   <li> Exomiser and LIRICAL ranks are NOT well correlated (R<sup>2</sup>=0.05) and rare disease pipelines should consider top hits from both tools. </li>
   <li> Let's say users have time to evaluate 10 results per case. They would get better sensitivity by evaluating 
-top-5 from Exomiser and top-5 from LIRICAL than top-10 from just one of the tools. In either scenario, users evaluating 75 cases would be looking at 750 results total, but the set of top-5 results from Exomiser and LIRICAL would include 60 correct genes, while the top-10 results from only one of these tools would include 54 correct genes. </li>
+top-5 from Exomiser and top-5 from LIRICAL than top-10 from just one of the tools. In either scenario, users evaluating 75 cases would be looking at 750 results total, but the set of top-5 results from Exomiser and LIRICAL would include 80% of the true-positive genes, while the top-10 results from only one of these tools would include 72% of true-positive genes. </li>
  </ol>
 
 ---
