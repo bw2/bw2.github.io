@@ -98,10 +98,10 @@ NOTE: Here rank=200 is again a special value that means the correct gene wasn't 
 <p><img width="850" alt="image" src="https://user-images.githubusercontent.com/6240170/171471200-b78706fe-a26a-4eea-880d-5599523d45eb.png"></p>
 <p>To summarize this plot:</p>
 <table class="ui striped center aligned table">
-  <tr><th>Quadrant</th><th>The Correct Gene is in the Top-5 Results</th></tr>
-  <tr><td>Bottom-Left: Both Exomiser and LIRICAL</td><td>38 out of 75 (50%) cases</td></tr>
-  <tr><td>Upper-Left: Exomiser but not LIRICAL</td><td>11 out of 75 (15%) cases</td></tr>
-  <tr><td>Bottom-Right: LIRICAL but not Exomiser</td><td>11 out of 75 (15%) cases</td></tr>
+  <tr><th>Quadrant</th><th>The Correct Gene is in this Quadrant</th></tr>
+  <tr><td>Bottom-Left: Both Exomiser and LIRICAL top-5</td><td>38 out of 75 (50%) cases</td></tr>
+  <tr><td>Upper-Left: Exomiser but not LIRICAL top-5</td><td>11 out of 75 (15%) cases</td></tr>
+  <tr><td>Bottom-Right: LIRICAL but not Exomiser top-5</td><td>11 out of 75 (15%) cases</td></tr>
   <tr><td>Upper-Right: Neither tool's top-5</td><td>15 out of 75 (20%) cases</td></tr>
 </table>
 
@@ -109,7 +109,7 @@ NOTE: Here rank=200 is again a special value that means the correct gene wasn't 
 <p><strong>Conclusion</strong>: </p>
 <p>Let's say users have time to evaluate 10 genes per case. They would get better sensitivity by evaluating 
 top-5 from Exomiser and top-5 from LIRICAL rather than the top-10 results from one of the tools. 
-In either scenario, users evaluating 75 cases would be looking at 750 results total, but the set of top-5 results from Exomiser and LIRICAL<br />
+In either scenario, users evaluating 75 cases would be looking at 750 results total, but the set of top-5 results from Exomiser and LIRICAL 
 would include 60 correct genes, while the top-10 results from only one of these tools would include 54 correct genes.</p>
 <hr />
 <p><strong>What Explains the Low Concordance Between LIRICAL and Exomiser?</strong></p>
