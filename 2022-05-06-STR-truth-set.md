@@ -29,7 +29,7 @@ Of the 4.1 million high-confidence variants in the [SynDip VCF](https://github.c
    <tr>
       <th> </th>
       <th>Filter Step</th>
-      <th nowrap align="right"># of Passing Variants</th>
+      <th nowrap># of Variants<br />That Passed</th>
       <th nowrap align="right">%</th>
    </tr>
    <tr>
@@ -87,14 +87,14 @@ The SynDip benchmark is based on samples from two individuals: CHM1 and CHM13. O
    <tr>
       <th> </th>
       <th>Validation Step</th>
-      <th nowrap align="right"># of Failing Variants</th>
+      <th nowrap># of Variants<br />That Failed</th>
       <th nowrap align="right">%</th>
    </tr>
    <tr>
       <td><i>1</i></td>
       <td>Liftover to the T2T reference</td>
       <td nowrap align="right">1,507</td>
-      <td nowrap align="right">1 %</td>
+      <td nowrap align="right">1.0 %</td>
    </tr>
    
    <tr>
