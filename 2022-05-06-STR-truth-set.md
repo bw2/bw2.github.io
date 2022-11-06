@@ -48,7 +48,7 @@ Of the 4.1 million high-confidence variants in the [SynDip VCF](https://github.c
 
    <tr>
       <td><i>3</i></td>
-      <td>Identify the subset that are STR expansions or contractions (as long as they have ≥ 3 repeats, span ≥ 9bp, are pure (ie. no interuptions), and have motif size ≥ 2bp)</td>
+      <td>Identify the subset that are STR expansions or contractions (requiring that they have ≥ 3 repeats, span ≥ 9bp, are pure (ie. no interuptions), and have motif size ≥ 2bp)</td>
       <td nowrap align="right">146,618</td>
       <td nowrap align="right">3.6 %</td>
    </tr>
