@@ -79,9 +79,9 @@ This variant passes our thresholds for length ≥ 9bp and repeat count ≥ 3, so
 
 ### Validation
 
-The SynDip benchmark is based on samples from two individuals: CHM1 and CHM13. One of them (CHM13) is also the basis of the new [telomere-to-telomere](https://www.genome.gov/about-genomics/telomere-to-telomere) (T2T) reference genome, so we can validate one allele in each STR expansion by comparing it to the T2T reference.
+The SynDip benchmark is based on samples from two individuals: CHM1 and CHM13. One of them (CHM13) is also the basis of the new [telomere-to-telomere](https://www.genome.gov/about-genomics/telomere-to-telomere) (T2T) reference genome, so we can validate most STR variants by checking that at least one allele matches the T2T reference sequence.
 
-*NOTE*: Validation is only done for expansions but not contractions or multi-allelic variants due to technical issues with liftover - specifically, the  “IndelStraddlesMultipleIntevals” error.
+*NOTE*: STR contractions that failed hg38 ⇒ T2T liftover due to an  “IndelStraddlesMultipleIntevals” error were included in the truth set without these validation steps since it was deemed to be a technical problem with liftover rather than an issue with the variant itself. This applies to 60,590 (77%) of STR contractions.
 
 <table>
    <tr>
@@ -118,10 +118,15 @@ The SynDip benchmark is based on samples from two individuals: CHM1 and CHM13. O
       <td nowrap align="right">0 %</td>
    </tr>
 
-
 </table>
 
 ---
+
+The resulting truth set contains:
+
+144,773 STR variant loci and 175,372 alleles 
+
+21% of the loci have 2 non-reference alleles (ie. are multiallelic)
 
 
 ---
