@@ -19,7 +19,7 @@ In addition to tool evaluations, we can use this truth set to explore a few inte
 
 ---
 
-### Methods
+### Defining the STR truth set
 
 To generate an STR truth set, we start with the Synthetic Diploid Benchmark (SynDip) [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)]. This unique dataset uses haploid PacBio assemblies to identify all variants in the CHM1-CHM13 synthetic diploid sample. Because these variants are based on alignment of haploid assemblies (rather than individual reads) to the reference genome, the SynDip variants are more reliable than those produced by short-read or even ordinary long-read pipelines. 
 
