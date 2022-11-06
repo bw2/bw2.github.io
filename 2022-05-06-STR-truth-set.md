@@ -15,6 +15,7 @@ In addition to tool evaluations, we can use this truth set to explore a few inte
 - how many STR variants are novel relative to the hg38 reference (ie. different motif or locus)?
 - can we predict which loci are more likely to be mutated based on their sequence and reference context?
 
+*NOTE*: STRs are traditionally defined as repeats with motifs between 1 to 6bp long. For this truth set, we exclude 1bp (homopolymer) repeats but include motifs longer than 6bp since there's no reason to exclude them. 
 
 ---
 
@@ -53,22 +54,30 @@ We defined the STR truth by filtering the SynDip truth set using the following s
    <tr>
       <th> </th>
       <th>Filter Step</th>
-      <th># of Passing Variants</th>
-      <th>%</th>
+      <th align="right"># of Passing Variants</th>
+      <th align="right">%</th>
    </tr>
    <tr>
       <td><i>1</i></td>
       <td>Start with high-confidence variants provided by the SynDip Benchmark</td>
-      <td>4,081,549</td>
-      <td>100%</td>
+      <td align="right">4,081,549</td>
+      <td align="right">all</td>
    </tr>
    
    <tr>
       <td><i>2</i></td>
       <td>Keep only insertions and deletions</td>
-      <td>507,603</td>
-      <td>12.4%</td>
+      <td align="right">507,603</td>
+      <td align="right">12.4 %</td>
    </tr>
+
+   <tr>
+      <td><i>2</i></td>
+      <td>Identify the subset that are STR expansions or contractions with ≥ 3 repeats and spanning ≥ 9bp, excluding homopolymers</td>
+      <td align="right">144,773</td>
+      <td align="right">3.5 %</td>
+   </tr>
+
 </table>
 ---
 
