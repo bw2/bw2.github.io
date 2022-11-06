@@ -7,7 +7,7 @@ High-quality STR truth data is needed both for:
 2. comparing the accuracy of a single tool across different STR loci
 3. developing new tools such as post-genotype filters
  
-This post describes a new genome-wide truth set with ~150k STR genotypes in the CHM1-CHM13 synthetic diploid sample derived from the Synthetic Diploid Benchmark [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)].
+This post describes a new genome-wide truth set that has accurate genotypes for ~150k STR variants in a single human sample (CHM1-CHM13) derived from the Synthetic Diploid Benchmark [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)].
 
 In addition to tool evaluations, this dataset allows us to explore a few interesting questions related to STRs in general:
 - what is the distribution of STR variants in the human genome (ie. motif sizes, lengths, percent multiallelic, etc.)?
