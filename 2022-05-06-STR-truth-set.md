@@ -46,7 +46,9 @@ Here, the reference contains 9 additional GGC repeats so the variant can be repr
   
 This variant passes our thresholds for length ≥ 9bp and repeat count ≥ 3, so **we add it to STR truth set**.
 
-#### Defining the STR truth set
+----
+
+### Defining the STR truth set
 
 We defined the STR truth by filtering the SynDip truth set using the following steps. 
 
@@ -54,33 +56,80 @@ We defined the STR truth by filtering the SynDip truth set using the following s
    <tr>
       <th> </th>
       <th>Filter Step</th>
-      <th align="right"># of Passing Variants</th>
-      <th align="right">%</th>
+      <th nowrap align="right"># of Passing Variants</th>
+      <th nowrap align="right">%</th>
    </tr>
    <tr>
       <td><i>1</i></td>
       <td>Start with high-confidence variants provided by the SynDip Benchmark</td>
-      <td align="right">4,081,549</td>
-      <td align="right">all</td>
+      <td nowrap align="right">4,081,549</td>
+      <td nowrap align="right">all</td>
    </tr>
    
    <tr>
       <td><i>2</i></td>
       <td>Keep only insertions and deletions</td>
-      <td align="right">507,603</td>
-      <td align="right">12.4 %</td>
+      <td nowrap align="right">507,603</td>
+      <td nowrap align="right">12.4 %</td>
    </tr>
 
    <tr>
-      <td><i>2</i></td>
+      <td><i>3</i></td>
       <td>Identify the subset that are STR expansions or contractions with ≥ 3 repeats and spanning ≥ 9bp, excluding homopolymers</td>
-      <td align="right">144,773</td>
-      <td align="right">3.5 %</td>
+      <td nowrap align="right">146,618</td>
+      <td nowrap align="right">3.6 %</td>
    </tr>
 
 </table>
+
+### Validation
+
+The SynDip benchmark is based on samples from two individuals: CHM1 and CHM13. One of them (CHM13) is also the basis of the new [telomere-to-telomere](https://www.genome.gov/about-genomics/telomere-to-telomere) (T2T) reference genome, so we can validate one allele in each STR expansion by comparing it to the T2T reference.
+
+*NOTE*: Validation is only done for expansions but not contractions or multi-allelic variants due to technical issues with liftover - specifically, the  “IndelStraddlesMultipleIntevals” error.
+
+<table>
+   <tr>
+      <th> </th>
+      <th>Validation Step</th>
+      <th nowrap align="right"># of Failing Variants</th>
+      <th nowrap align="right">%</th>
+   </tr>
+   <tr>
+      <td><i>1</i></td>
+      <td>Liftover to the T2T reference</td>
+      <td nowrap align="right">1,507</td>
+      <td nowrap align="right">1 %</td>
+   </tr>
+   
+   <tr>
+      <td><i>2</i></td>
+      <td>Check that one allele exactly matches the T2T reference sequence</td>
+      <td nowrap align="right">295</td>
+      <td nowrap align="right">0.2 %</td>
+   </tr>
+
+   <tr>
+      <td><i>3</i></td>
+      <td>Lift back over to hg38</td>
+      <td nowrap align="right">43</td>
+      <td nowrap align="right">0.03 %</td>
+   </tr>
+   
+   <tr>
+      <td><i>3</i></td>
+      <td>Check if the variant position changed due to hg38 ⇒ T2T ⇒ hg38 liftover</td>
+      <td nowrap align="right">0</td>
+      <td nowrap align="right">0 %</td>
+   </tr>
+
+
+</table>
+
 ---
 
+
+---
 ### Results
 
 
