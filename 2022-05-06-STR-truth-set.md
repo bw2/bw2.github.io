@@ -53,7 +53,7 @@ We define the STR truth by filtering the SynDip truth set as follows:
 
    <tr>
       <td><i>3</i></td>
-      <td>Identify the subset that are STR expansions or contractions. <br />These must have ≥ 3 repeats, span ≥ 9bp, be pure (ie. no interuptions), and have motif size ≥ 2bp (ie. no homopolymers)</td>
+      <td>Identify the subset that are STR expansions or contractions (as long as they have ≥ 3 repeats, span ≥ 9bp, are pure (ie. no interuptions), and have motif size ≥ 2bp)</td>
       <td nowrap align="right">146,618</td>
       <td nowrap align="right">3.6 %</td>
    </tr>
@@ -63,7 +63,7 @@ We define the STR truth by filtering the SynDip truth set as follows:
 
 <img width="85" alt="image" src="https://user-images.githubusercontent.com/6240170/200182718-67b467b0-80a6-49ae-b147-56a8bb0cf655.png">
 
-Let's say the SynDip truth set contains this variant:   <img width="275" alt="image" src="https://user-images.githubusercontent.com/6240170/200183159-d42914b0-9636-4584-a593-dcb86463ff14.png">
+Let's say the SynDip truth set contains this insertion:   <img width="275" alt="image" src="https://user-images.githubusercontent.com/6240170/200183159-d42914b0-9636-4584-a593-dcb86463ff14.png">
 
 
 Should we include it in the STR truth set?  
