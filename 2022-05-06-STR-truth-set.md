@@ -11,7 +11,8 @@ This post describes a new genome-wide STR truth set with accurate genotypes for 
 
 In addition to tool evaluations, this dataset allows us to explore a few interesting questions related to STRs in general:
 - what is the distribution of STR variants in the human genome (ie. motif sizes, lengths, percent multiallelic, etc.)?
-- how many STR variants are novel relative to the hg38 human reference genome (ie. different motif or locus)?
+- how well do the existing catalogs of STR loci capture these variants?
+- how many STR variants are novel relative to the hg38 reference (ie. different motif or locus)?
 - can we predict which loci are more likely to be mutated based on their sequence and reference context?
 
 -------
