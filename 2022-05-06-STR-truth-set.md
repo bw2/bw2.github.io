@@ -1,13 +1,13 @@
 ## Genome-wide STR Truth Set for Tool Benchmarking and Development 
 
-Short tandem repeat (STR) expansions are associated with over 50 monogenic rare diseases [[Depienne 2021](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8205997/)] as well as common diseases such as autism [[Trost 2020](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9348607/)] [[Mitra 2021](https://www.nature.com/articles/s41586-020-03078-7)]. Improvements in STR genotyping tools like [ExpansionHunter](https://github.com/Illumina/ExpansionHunter) and [GangSTR](https://github.com/gymreklab/GangSTR) are generating new interest in studying STRs using short read sequencing data. 
+Short tandem repeat (STR) expansions are associated with over 50 monogenic rare diseases [[Depienne 2021](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8205997/)] as well as common diseases such as autism [[Trost 2020](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9348607/)] [[Mitra 2021](https://www.nature.com/articles/s41586-020-03078-7)]. Improvements in STR genotyping tools like [ExpansionHunter](https://github.com/Illumina/ExpansionHunter) and [GangSTR](https://github.com/gymreklab/GangSTR) have generated new interest in studying STRs using short read sequencing data. 
 
-Currently, there isn't enough good STR truth data for:
+One persistant challenge for the field has been a lack of samples with known STR expansions - aka. truth data - that can be used for:
 1. comparing existing STR genotyping tools 
-2. comparing the accuracy of a single tool across different STR loci
-3. developing new tools such as post-genotype filters
- 
-This post describes a new genome-wide STR truth set with accurate genotypes for ~150k STR variants in a single human sample (CHM1-CHM13) derived from the Synthetic Diploid Benchmark [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)].
+2. evaluatating how a given tool's performance varies across different kinds of STR loci
+3. developing additional tools such as genotype quality filters
+
+This blog post describes a new genome-wide STR truth set with accurate genotypes for ~150k STR variants in a single human sample (CHM1-CHM13).
 
 In addition to tool evaluations, this truth set allows us to explore a few interesting questions about STRs in general:
 - what is the distribution of STR variants in the human genome (ie. motif sizes, lengths, percent multiallelic, etc.)?
@@ -15,19 +15,27 @@ In addition to tool evaluations, this truth set allows us to explore a few inter
 - how many STR variants are novel relative to the hg38 reference (ie. different motif or locus)?
 - can we predict which loci are more likely to be mutated based on their sequence and reference context?
 
--------
+
+---
+
+### Methods
+To generate an STR truth set, we start with the Synthetic Diploid Benchmark (SynDip) [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)]. This unique dataset uses haploid PacBio assemblies to identify all variants in the CHM1-CHM13 synthetic diploid sample. Because these variants are based on alignment of haploid assemblies (rather than individual reads) to the reference genome, the SynDip variants are more reliable than those produced by short-read or even ordinary long-read pipelines. 
+
+Of the 4.1 million high-confidence variants in the [SynDip VCF](https://github.com/lh3/CHM-eval), 259k (6.3%) are insertions and 249k (6.1%) are deletions. To create the STR truth set, we filter these insertions and deletions to the subset that represents STR expansions or contractions.
+ 
+ 
+ 
+---
+
+### Results
 
 
-<!-- close the current gap in accuracy and compute costs between STR genotyping tools and tools for other variant classes like SNVs and InDels. --> 
+---
 
-To date, STR truth data has come from:
+A few words about the limitations of existing approaches to STR truth data:
 
-1. **simulated STRs:** using a tool like wgsim, it's possible to simulate STR expansions or contractions at any STR locus 
-   and generate an unlimited number of test cases. Benchmarking on simulated data can be useful for setting 
-   an upperbound on tool performance. However, simulated data lacks some of the complexities of real data like GC bias, 
-   adjacent variants not present in the reference genome, etc. so a tools performance on real-world data can be significantly worse. 
-2. **mendelian violations analysis:** large WGS datasets with trios are available, and can be used to compare the number of 
-   mendelian violations produced by different STR calling tools or filtering strategies. This produces a coarser  
+1. **simulated STRs:** we can generate an unlimited number of STR examples with known genotypes by using a tool like [wgsim](https://github.com/lh3/wgsim). However, simulated data doesn't capture the full complexity of real sequencing data (eg. adjacent variants not present in the reference genome, GC bias, and other sequencing artifacts). 
+2. **mendelian violations analysis:** trios can be used to check whether genotypes are consistant with Mendelian inheritance. However, This is informative about specificity but not sensitivity since a tool that misses all expansions will have zero mendelian violations. This produces a coarser  
    truthset since it's impossible to say whether any individual mendelian violation is error or truth - just that 
    overall, there should be no more than ~80 mendelian violations on average per trio (based on the estimated denovo rate for STR 
    variants [[Willems 2017](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5482724/?report=classic)]). Additionally, 
@@ -38,6 +46,9 @@ To date, STR truth data has come from:
    often give only approximate expansion sizes (eg. "greater than 150 repeats"). This is sufficient for determining 
    pathogenicity but not for evaluating tool accuracy.   
 4. **long read data:** This might be the ideal source of truth in the future, but currently suffers from a lack of well-validated STR calling tools. The most-recently published tool - Straglr [[Chiu 2021](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02447-3)] - reports 73% concordance between heterozygous STR expansions called from HiFi PacBio data vs truth data generated from the diploid assembly of HG00733 [[Kronenberg 2019](https://www.biorxiv.org/content/10.1101/327064v2.full)]. [[Chiu 2021](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02447-3)], [[Dashnow 2021](https://www.biorxiv.org/content/10.1101/2021.11.18.469113v1)] and other groups (unpublished) also raise concerns about diploid assemblies as a source of STR truth data since manual inspection of discordant loci often revealed that the assembly was not credible at those loci. 
+
+----
+Extra tables:
 
 The table below lists STR calling tools + the truth data used in their publications:  
 
