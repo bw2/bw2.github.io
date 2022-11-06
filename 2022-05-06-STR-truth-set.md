@@ -22,9 +22,28 @@ In addition to tool evaluations, we can use this truth set to explore a few inte
 To generate an STR truth set, we start with the Synthetic Diploid Benchmark (SynDip) [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)]. This unique dataset uses haploid PacBio assemblies to identify all variants in the CHM1-CHM13 synthetic diploid sample. Because these variants are based on alignment of haploid assemblies (rather than individual reads) to the reference genome, the SynDip variants are more reliable than those produced by short-read or even ordinary long-read pipelines. 
 
 Of the 4.1 million high-confidence variants in the [SynDip VCF](https://github.com/lh3/CHM-eval), 259k (6.3%) are insertions and 249k (6.1%) are deletions. To create the STR truth set, we filter these insertions and deletions to the subset that represents STR expansions or contractions.
- 
- 
- 
+
+   
+   
+<img width="85" alt="image" src="https://user-images.githubusercontent.com/6240170/200182718-67b467b0-80a6-49ae-b147-56a8bb0cf655.png">
+
+Let's say the SynDip truth set contains the following variant:   <img width="275" alt="image" src="https://user-images.githubusercontent.com/6240170/200183159-d42914b0-9636-4584-a593-dcb86463ff14.png">
+
+
+Should we include it in the STR truth set?  
+
+   *step 1*: find the minimal motif (**GGC**) in the inserted sequence (**GGCGGC**) by using brute force k-mer search similar to [STRling](https://www.biorxiv.org/content/10.1101/2021.11.18.469113v1).   
+   *step 2*: check the reference context for additional **GGC** repeats immediately to the left or right of the variant:  
+
+<p align="center"><img width="350" alt="image" src="https://user-images.githubusercontent.com/6240170/200182871-639e7282-07a1-4587-8592-453d68622383.png"></center></p>
+
+Here, the reference contains 9 additional GGC repeats so the variant can be represented as having  
+   
+**9 x GGC repeats in the reference allele**  
+**11 x GGC repeats in the alternate allele**   
+  
+This variant passes our thresholds for length ≥ 9bp and repeat count ≥ 3, so **we add it to STR truth set**.
+
 ---
 
 ### Results
