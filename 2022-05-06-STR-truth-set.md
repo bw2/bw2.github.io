@@ -9,7 +9,7 @@ High-quality STR truth data is needed both for:
  
 This post describes a new genome-wide STR truth set with accurate genotypes for ~150k STR variants in a single human sample (CHM1-CHM13) derived from the Synthetic Diploid Benchmark [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)].
 
-In addition to tool evaluations, this dataset allows us to explore a few interesting questions related to STRs in general:
+In addition to tool evaluations, this truth set allows us to explore a few interesting questions about STRs in general:
 - what is the distribution of STR variants in the human genome (ie. motif sizes, lengths, percent multiallelic, etc.)?
 - how well do the existing catalogs of STR loci capture these variants?
 - how many STR variants are novel relative to the hg38 reference (ie. different motif or locus)?
