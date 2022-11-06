@@ -1,10 +1,20 @@
-## CHM1_CHM13 Data as an STR Truthset for Tool Benchmarking and Development 
+## Genome-wide STR Truth Set for Tool Benchmarking and Development 
 
-STR genotyping tools from short-read whole genome sequencing (WGS) data have improved a lot over the past 10 years. 
+Short tandem repeat (STR) expansions are associated with over 50 monogenic rare diseases [[Depienne 2021](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8205997/)] as well as common diseases such as autism [[Trost 2020](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9348607/)] [[Mitra 2021](https://www.nature.com/articles/s41586-020-03078-7)]. Improvements in STR genotyping tools like ExpansionHunter and GangSTR are generating new interest in studying STRs using short read sequencing data. 
 
+High-quality STR truth data is needed both for:
+1. comparing the existing STR genotyping tools 
+2. comparing the accuracy of a single tool across different STR loci
+3. developing new tools such as post-genotype filters
+ 
+This post describes a new genome-wide truth set with ~150k STR genotypes in the CHM1-CHM13 synthetic diploid sample derived from the Synthetic Diploid Benchmark [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)].
 
-A high-quality STR truthset is key both for comparing existing tools and for driving new tool development.
+In addition to tool evaluations, this dataset allows us to explore a few interesting questions related to STRs in general:
+- what is the distribution of STR variants in the human genome (ie. motif sizes, lengths, percent multiallelic, etc.)?
+- how many STR variants are novel relative to the hg38 human reference genome (ie. different motif or locus)?
+- can we predict which loci are more likely to be mutated based on their sequence and reference context?
 
+-------
 
 
 <!-- close the current gap in accuracy and compute costs between STR genotyping tools and tools for other variant classes like SNVs and InDels. --> 
