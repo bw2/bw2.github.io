@@ -15,7 +15,7 @@ In addition to tool evaluations, we can use this truth set to explore a few inte
 - how many STR variants are novel relative to the hg38 reference (ie. different motif or locus)?
 - can we predict which loci are more likely to be mutated based on their sequence and reference context?
 
-*NOTE*: STRs are traditionally defined as repeats with motifs between 1 to 6bp long. For this truth set we exclude 1bp (homopolymer) repeats since they are uniquely error-prone, but include motifs longer than 6bp since the 6bp threshold is historical and we're also interested in longer motifs. 
+*NOTE*: STRs are traditionally defined as repeats with motifs between 1 to 6bp long. For this truth set we exclude 1bp (homopolymer) repeats since they are uniquely error-prone, but include motifs longer than 6bp since there's no reason to exclude them other than historical definitions. 
 
 ---
 
