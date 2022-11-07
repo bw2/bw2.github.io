@@ -120,17 +120,31 @@ The SynDip benchmark is based on samples from two individuals: CHM1 and CHM13. O
 
 </table>
 
----
-
-The resulting truth set contains:
-
-144,773 STR variant loci and 175,372 alleles 
-
-21% of the loci have 2 non-reference alleles (ie. are multiallelic)
 
 
 ---
-### Results
+### Results: Summary Stats
+
+The resulting STR truth set contains:
+
+- **144,773 STR variants**  
+- **175,372 STR alleles**   
+
+- 21% of variants are multiallelic (ie. have 2 non-reference alleles)
+
+
+#### Novel STR loci
+
+Unlike variant calling tools for SNVs and structural variants which just take read alignments (bam or cram) as input, nearly all STR genotyping tools (except for ExpansionHunterDenovo and STRling) currently require users to also provide the exact boundaries and motifs of all STR loci to genotype. For example, to genotype the Huntington's Disease locus, a user must specify the coordinates "chr4:3074876-3074933" and motif "CAG". The implicit assumption of this approach is that all STRs you would want to genotype are also present in the reference genome. The truth set allows us to check whether this assumption is true. It turns out that it is:
+
+- 144,158 out of 144,773 (99.6%) of STR variants in CHM1-CHM13 match repeats found in the hg38 reference immediately to the left or right of the variant.  Only 521 variants are novel STRs. This suggests that, for samples like CHM1-CHM13 that have European ancestry, nearly all true STR variants can be found by using a large enough STR catalog. 
+
+*NOTE*: The truth set doesn't include variants where a large inserted sequence contains more than one STR or an STR with flanking non-repetative sequence. Such variants, if they exist, are not counted in the stats above.
+
+
+####
+
+
 
 
 ---
