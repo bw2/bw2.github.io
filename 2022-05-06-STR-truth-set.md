@@ -174,7 +174,13 @@ Two popular apoproaches to defining these catalogs are:
    </tr>
 </table>
 
-The truth set allows us to ask - if we genotype all loci in one of these catalogs, how many STR variants are we guaranteed to miss because they fall outside the catalog? It turns out - a lot.
+The truth set allows us to ask: if we genotype all loci in one of these catalogs, how many of the CHM1-CHM13 STR variants are we guaranteed to miss because they fall outside the catalog? 
+
+It turns out - a lot of them.
+
+The take-away is that, if we want to have any hope of capturing more than 90% of STR variants, we need to use a catalog that includes all 9.4 million loci
+and . 
+
 
 
 ---
