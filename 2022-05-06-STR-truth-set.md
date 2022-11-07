@@ -163,7 +163,7 @@ Here we compare several approaches to defining catalogs:
       <th></th>
       <th>Description</th>
       <th>Example</th>
-      <th nowrap>Total # of STR Loci</th>
+      <th nowrap>Total # of<br />STR Loci</th>
       <th nowrap># of Variants<br/>Missed By Catalog</th>
       <th nowrap>% Missed</th>
    </tr>
