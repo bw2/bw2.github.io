@@ -155,17 +155,21 @@ The truth set allows us to check the degree to which this assumption is valid. I
 
 Ano important question for any genome-wide STR analysis is which STR catalog to genotype. 
 
-Two popular apoproaches to defining these catalogs are:
+The truth set allows us to ask: if we genotype all loci in a given catalogs, how many CHM1-CHM13 STR variants are we guaranteed to miss because they fall outside the catalog? 
+
+Here we evaluate two popular apoproaches to defining catalogs:
 <table>
    <tr>
       <th></th>
       <th>Description</th>
       <th>Example</th>
-      <th># of Loci</th>
+      <th nowrap>Total # of Loci</th>
+      <th nowrap># of CHM1-CHM13 Variants<br/>Missed by This Catalog</th>
+      <th nowrap>% Missed</th>
    </tr>
    <tr>
       <td rowspan=2>1</td>
-      <td rowspan=2>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) on the reference genome to identify all STR loci.</br>The result significantly depends on TRF input paramaters such as mismatch and indel penalties.</td>
+      <td rowspan=2>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) on the reference genome to identify all STR loci. The result will depend a lot on TRF input paramaters such as mismatch and indel penalties.</td>
       <td><a href="https://github.com/gymreklab/GangSTR#gangstr-reference-files">GangSTR v13 reference</a></td>
       <td nowrap align="right">832,380</td>
    </tr>
@@ -181,7 +185,7 @@ Two popular apoproaches to defining these catalogs are:
    </tr>
 </table>
 
-The truth set allows us to ask: if we genotype all loci in one of these catalogs, how many of the CHM1-CHM13 STR variants are we guaranteed to miss because they fall outside the catalog? 
+
 
 It turns out - a lot of them.
 
