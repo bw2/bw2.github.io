@@ -148,7 +148,7 @@ The truth set allows us to check the degree to which this assumption is valid. I
 
 An important question for any genome-wide STR analysis is which STR catalog to genotype. 
 
-Two popular options are:
+Two popular apoproaches to defining these catalogs are:
 <table>
    <tr>
       <th></th>
@@ -158,7 +158,7 @@ Two popular options are:
    </tr>
    <tr>
       <td rowspan=2>1</td>
-      <td rowspan=2>Catalog created by running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> on the reference genome using either default or non-default parameters.</td>
+      <td rowspan=2>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> on the reference genome using either default or non-default parameters</td>
       <td><a href="https://github.com/gymreklab/GangSTR#gangstr-reference-files">GangSTR v13 reference</a></td>
       <td>832,380</td>
    </tr>
@@ -168,7 +168,7 @@ Two popular options are:
    </tr>
    <tr>
       <td>2</td>
-      <td>Catalog of STRs that are polymorphic in 2,504 genome samples from 1kGP. </td>
+      <td>Identifying STRs that are polymorphic in population control samples </td>
       <td><a href="https://github.com/Illumina/RepeatCatalogs/blob/master/docs/str_generation.md">Illumina catalog</a></td>
       <td>174,300</td>
    </tr>
