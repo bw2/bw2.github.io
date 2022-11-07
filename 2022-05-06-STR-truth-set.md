@@ -153,11 +153,11 @@ The truth set allows us to check the degree to which this assumption is valid. I
 
 #### Limitations of existing STR catalogs
 
-Ano important question for any genome-wide STR analysis is which STR catalog to genotype. 
+An important question for any genome-wide STR analysis is which STR catalog to genotype. 
 
-The truth set allows us to ask: if we genotype all loci in a given catalogs, how many CHM1-CHM13 STR variants are we guaranteed to miss because they fall outside the catalog? 
+The truth set allows us to ask: if we genotype all loci in a given catalog, how many CHM1-CHM13 STR variants are we guaranteed to miss because they fall outside the catalog? 
 
-Here we evaluate several approaches to defining catalogs:
+Here we compare several approaches to defining catalogs:
 <table>
    <tr>
       <th></th>
@@ -178,6 +178,8 @@ Here we evaluate several approaches to defining catalogs:
    <tr>
       <td><a href="https://github.com/gymreklab/GangSTR#gangstr-reference-files">GangSTR v17 reference</a></td>
       <td nowrap align="right">1,340,266</td>
+      <td></td>
+      <td></td>      
    </tr>
    <tr>
       <td>2</td>
