@@ -157,7 +157,7 @@ Ano important question for any genome-wide STR analysis is which STR catalog to 
 
 The truth set allows us to ask: if we genotype all loci in a given catalogs, how many CHM1-CHM13 STR variants are we guaranteed to miss because they fall outside the catalog? 
 
-Here we evaluate two popular apoproaches to defining catalogs:
+Here we evaluate several approaches to defining catalogs:
 <table>
    <tr>
       <th></th>
@@ -169,9 +169,11 @@ Here we evaluate two popular apoproaches to defining catalogs:
    </tr>
    <tr>
       <td rowspan=2>1</td>
-      <td rowspan=2>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) on the reference genome to identify all STR loci. The result will depend a lot on TRF input paramaters such as mismatch and indel penalties.</td>
+      <td rowspan=2>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) on the reference genome and then doing a series of post-processing steps</td>
       <td><a href="https://github.com/gymreklab/GangSTR#gangstr-reference-files">GangSTR v13 reference</a></td>
       <td nowrap align="right">832,380</td>
+      <td></td>
+      <td></td>      
    </tr>
    <tr>
       <td><a href="https://github.com/gymreklab/GangSTR#gangstr-reference-files">GangSTR v17 reference</a></td>
@@ -179,9 +181,19 @@ Here we evaluate two popular apoproaches to defining catalogs:
    </tr>
    <tr>
       <td>2</td>
-      <td>Identifying STRs that are polymorphic in population control samples </td>
+      <td>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) on the reference genome with mismatch penalty = 7 repeats and indel penalty = 100000000 to allow mismatches but not indels in the repeat sesquence</td>
+      <td></td>
+      <td nowrap align="right">3.4 million loci</td>
+      <td></td>
+      <td></td>      
+   </tr>
+   <tr>
+      <td>3</td>
+      <td>Identifying STRs that are polymorphic in population control samples</td>
       <td><a href="https://github.com/Illumina/RepeatCatalogs/blob/master/docs/str_generation.md">Illumina catalog</a></td>
       <td nowrap align="right">174,300</td>
+      <td nowrap align="right">53,137 of 144,773</td>
+      <td nowrap align="right">36.7%</td>      
    </tr>
 </table>
 
