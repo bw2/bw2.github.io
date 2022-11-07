@@ -168,7 +168,15 @@ Here we compare several approaches to defining catalogs:
       <th nowrap>% Missed</th>
    </tr>
    <tr>
-      <td rowspan=2>1</td>
+      <td>1</td>
+      <td>Identifying STRs that are polymorphic in population control samples</td>
+      <td><a href="https://github.com/Illumina/RepeatCatalogs/blob/master/docs/str_generation.md">Illumina catalog</a></td>
+      <td nowrap align="right">174,300</td>
+      <td nowrap align="right">53,137 out of 144,773</td>
+      <td nowrap align="right">36.7%</td>      
+   </tr>
+   <tr>
+      <td rowspan=2>2</td>
       <td rowspan=2>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) on the reference genome and then doing a series of post-processing steps</td>
       <td><a href="https://github.com/gymreklab/GangSTR#gangstr-reference-files">GangSTR v13 reference</a></td>
       <td nowrap align="right">832,380</td>
@@ -182,20 +190,12 @@ Here we compare several approaches to defining catalogs:
       <td nowrap align="right">41.1%</td>
    </tr>
    <tr>
-      <td>2</td>
+      <td>3</td>
       <td>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) with very large mismatch and indel penalties to find all pure repeats in hg38 spanning at least 9bp</td>
       <td> </td>
       <td nowrap align="right">2,805,842</td>
       <td nowrap align="right">6,787 out of 144,773</td>
       <td nowrap align="right">4.7%</td>      
-   </tr>
-   <tr>
-      <td>3</td>
-      <td>Identifying STRs that are polymorphic in population control samples</td>
-      <td><a href="https://github.com/Illumina/RepeatCatalogs/blob/master/docs/str_generation.md">Illumina catalog</a></td>
-      <td nowrap align="right">174,300</td>
-      <td nowrap align="right">53,137 out of 144,773</td>
-      <td nowrap align="right">36.7%</td>      
    </tr>
 </table>
 
