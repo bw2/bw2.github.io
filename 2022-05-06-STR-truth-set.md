@@ -158,7 +158,7 @@ Two popular apoproaches to defining these catalogs are:
    </tr>
    <tr>
       <td rowspan=2>1</td>
-      <td rowspan=2>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> on the reference genome using either default or non-default parameters</td>
+      <td rowspan=2>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) on the reference genome to identify all STR loci.</br>The result significantly depends on TRF input paramaters such as mismatch and indel penalties.</td>
       <td><a href="https://github.com/gymreklab/GangSTR#gangstr-reference-files">GangSTR v13 reference</a></td>
       <td>832,380</td>
    </tr>
