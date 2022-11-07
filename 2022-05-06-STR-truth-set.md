@@ -1,15 +1,15 @@
 ## Genome-wide STR Truth Set for Tool Benchmarking and Development 
 
-Short tandem repeat (STR) expansions are associated with over 50 monogenic rare diseases [[Depienne 2021](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8205997/)] as well as common diseases such as autism [[Trost 2020](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9348607/)] [[Mitra 2021](https://www.nature.com/articles/s41586-020-03078-7)]. Improvements in STR genotyping tools like [ExpansionHunter](https://github.com/Illumina/ExpansionHunter) and [GangSTR](https://github.com/gymreklab/GangSTR) have generated new interest in studying STRs using short read sequencing data. 
+Short tandem repeat (STR) expansions are associated with over 50 monogenic diseases [[Depienne 2021](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8205997/)] as well as common diseases such as autism [[Trost 2020](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9348607/)] [[Mitra 2021](https://www.nature.com/articles/s41586-020-03078-7)]. Improvements in STR genotyping tools like [ExpansionHunter](https://github.com/Illumina/ExpansionHunter) and [GangSTR](https://github.com/gymreklab/GangSTR) have generated new interest in studying STRs using short read sequencing data. 
 
-One persistant challenge has been a lack of sufficient, high-quality truth data (ie. samples with known STR expansions) to use for:
+One challenge in the field is a scarcity of high-quality truth data (ie. samples with known STR expansions) for:
 1. comparing STR genotyping tools 
-2. evaluatating how a given tool's performance varies across different STR loci
+2. evaluatating how a given tool's performance varies across different loci
 3. developing additional tools such as genotype quality filters
 
-This blog post describes a new genome-wide STR truth set with accurate genotypes for ~150k STR variants in a single human sample (CHM1-CHM13).
+Here, I describe the project to develop a new genome-wide STR truth set based on the Synthetic Diploid Bechmark (SynDip) [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)]. The result is ~145k accurate STR genotypes in a single human sample (CHM1-CHM13) with publicly available short-read sequencing data. 
 
-In addition to tool evaluations, we can use this truth set to explore several interesting questions about STRs in general:
+In addition to tool evaluations, I use this truth set to explore several interesting questions about STRs in general:
 - what is the distribution of STR variants in the human genome (ie. motif sizes, lengths, percent multiallelic, etc.)?
 - how well do the existing catalogs of STR loci capture these variants?
 - how many STR variants are novel relative to the hg38 reference (ie. different motif or locus)?
