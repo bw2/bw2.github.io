@@ -201,9 +201,8 @@ Here we compare several approaches to defining catalogs:
 
 
 
-It turns out - a lot of them.
 
-The take-away is that, if we aim to capture more than 95% of STR variants, we need to genotype a TRF-derived STR catalog with over 2.8M loci. 
+One takeaway is that, if we aim to capture more than 95% of STR variants, we need to genotype a TRF-derived STR catalog with over 2.8M loci. 
 
 
 
