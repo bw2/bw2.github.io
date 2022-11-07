@@ -164,7 +164,7 @@ Here we compare several approaches to defining catalogs:
       <th>Description</th>
       <th>Example</th>
       <th nowrap>Total # of STR Loci</th>
-      <th nowrap># of CHM1-CHM13 Variants<br/>Missed By This Catalog</th>
+      <th nowrap># of Variants<br/>Missed By Catalog</th>
       <th nowrap>% Missed</th>
    </tr>
    <tr>
