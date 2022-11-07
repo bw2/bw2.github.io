@@ -163,7 +163,7 @@ Here we compare several approaches to defining catalogs:
       <th></th>
       <th>Description</th>
       <th>Example</th>
-      <th nowrap>Total # of Loci</th>
+      <th nowrap>Total # of STR Loci</th>
       <th nowrap># of CHM1-CHM13 Variants<br/>Missed By This Catalog</th>
       <th nowrap>% Missed</th>
    </tr>
@@ -183,11 +183,11 @@ Here we compare several approaches to defining catalogs:
    </tr>
    <tr>
       <td>2</td>
-      <td>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) on the reference genome with mismatch penalty = 7 repeats and indel penalty = 100000000 to allow mismatches but not indels in the repeat sesquence</td>
+      <td>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) with very large mismatch and indel penalties to find all pure repeats in hg38 spanning at least 9bp</td>
       <td></td>
-      <td nowrap align="right">3.4 million loci</td>
-      <td></td>
-      <td></td>      
+      <td nowrap align="right">2,805,842/td>
+      <td>6,787</td>
+      <td>4.7%</td>      
    </tr>
    <tr>
       <td>3</td>
