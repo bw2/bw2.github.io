@@ -177,7 +177,7 @@ Here we compare several approaches to defining catalogs:
    </tr>
    <tr>
       <td rowspan=2>2</td>
-      <td rowspan=2>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) on the reference genome and then doing a series of post-processing steps</td>
+      <td rowspan=2>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) on the reference genome and doing a series of post-processing steps</td>
       <td><a href="https://github.com/gymreklab/GangSTR#gangstr-reference-files">GangSTR v13 reference</a></td>
       <td nowrap align="right">832,380</td>
       <td nowrap align="right">79,397 out of 144,773</td>
@@ -191,7 +191,7 @@ Here we compare several approaches to defining catalogs:
    </tr>
    <tr>
       <td>3</td>
-      <td>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) with very large mismatch and indel penalties to find all pure repeats in hg38 that <b>span at least 6bp</b></td>
+      <td>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) with very large mismatch and indel penalties to find all pure repeats that <b>span at least 6bp</b> in the hg38 reference genome</td>
       <td> </td>
       <td nowrap align="right">4,880,610</td>
       <td nowrap align="right">5,423 out of 144,773</td>
@@ -199,7 +199,7 @@ Here we compare several approaches to defining catalogs:
    </tr>
    <tr>
       <td>4</td>
-      <td>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) with very large mismatch and indel penalties to find all pure repeats in hg38 that <b>span at least 9bp</b></td>
+      <td>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) with very large mismatch and indel penalties to find all pure repeats that <b>span at least 9bp</b> in the hg38 reference genome</td>
       <td> </td>
       <td nowrap align="right">2,805,842</td>
       <td nowrap align="right">6,787 out of 144,773</td>
@@ -207,15 +207,21 @@ Here we compare several approaches to defining catalogs:
    </tr>
    <tr>
       <td>4</td>
-      <td>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) with very large mismatch and indel penalties to find all pure repeats in hg38 that <b>span at least 12bp</b></td>
+      <td>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) with very large mismatch and indel penalties to find all pure repeats in hg38 that <b>span at least 12bp</b> in the hg38 reference genome</td>
       <td> </td>
       <td nowrap align="right">1,343,313</td>
       <td nowrap align="right">11,474 out of 144,773</td>
       <td nowrap align="right">7.9%</td>      
    </tr>
+   <tr>
+      <td>4</td>
+      <td>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) with very large mismatch and indel penalties to find all pure repeats that <b>span at least 15bp</b> in the hg38 reference genome</td>
+      <td> </td>
+      <td nowrap align="right">702,486</td>
+      <td nowrap align="right">22,830 out of 144,773</td>
+      <td nowrap align="right">15.8%</td>      
+   </tr>
 </table>
-
-
 
 
 One takeaway is that, if we aim to capture more than 95% of STR variants using a TRF-derived STR catalog, we need to genotype more than 2.8M loci genome-wide in each individual. 
