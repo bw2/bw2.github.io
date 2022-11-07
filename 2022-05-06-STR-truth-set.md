@@ -135,7 +135,14 @@ The resulting STR truth set contains:
 
 #### Novel STR loci
 
-Unlike variant calling tools for SNVs and structural variants which just take read alignments (bam or cram) as input, nearly all STR genotyping tools except [ExpansionHunterDenovo](https://github.com/Illumina/ExpansionHunterDenovo) and [STRling](https://github.com/quinlan-lab/STRling) require users to also provide the exact boundaries and motifs of the STR loci to genotype. For example, to genotype the Huntington's Disease locus, a user must specify the reference coordinates "chr4:3074876-3074933" and motif "CAG". The implicit assumption of these algorithms is that all STRs you might want to genotype are also present in the reference genome. 
+Unlike variant calling tools for SNVs and structural variants which just take read alignments (bam or cram) as input, nearly all STR genotyping tools except [ExpansionHunterDenovo](https://github.com/Illumina/ExpansionHunterDenovo) and [STRling](https://github.com/quinlan-lab/STRling) require users to also provide the exact boundaries and motifs of the STR loci to genotype. For example, to genotype the Huntington's Disease locus, a user must specify the reference coordinates "chr4:3074876-3074933" and motif "CAG". The implicit assumption of these algorithms is that all STRs you might want to genotype are also present in the reference genome - meaning that STR variants look like:
+
+<img width="642" alt="image" src="https://user-images.githubusercontent.com/6240170/200219094-78f3ad2f-bcba-4412-a5cb-098e8f6b56a8.png">
+
+rather than 
+
+<img width="640" alt="image" src="https://user-images.githubusercontent.com/6240170/200219024-2464a379-b1b9-4569-ba3d-d6a47583c357.png">
+
 
 The truth set allows us to check the degree to which this assumption is valid. It turns out that it is:
 
