@@ -207,7 +207,7 @@ Here we compare several approaches to defining catalogs:
    </tr>
    <tr>
       <td>4</td>
-      <td>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) with very large mismatch and indel penalties to find all pure repeats in hg38 that <b>span at least 12bp</b> in the hg38 reference genome</td>
+      <td>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) with very large mismatch and indel penalties to find all pure repeats that <b>span at least 12bp</b> in the hg38 reference genome</td>
       <td> </td>
       <td nowrap align="right">1,343,313</td>
       <td nowrap align="right">11,474 out of 144,773</td>
