@@ -164,7 +164,7 @@ Here we evaluate several approaches to defining catalogs:
       <th>Description</th>
       <th>Example</th>
       <th nowrap>Total # of Loci</th>
-      <th nowrap># of CHM1-CHM13 Variants<br/>Missed by This Catalog</th>
+      <th nowrap># of CHM1-CHM13 Variants<br/>Missed By This Catalog</th>
       <th nowrap>% Missed</th>
    </tr>
    <tr>
@@ -192,7 +192,7 @@ Here we evaluate several approaches to defining catalogs:
       <td>Identifying STRs that are polymorphic in population control samples</td>
       <td><a href="https://github.com/Illumina/RepeatCatalogs/blob/master/docs/str_generation.md">Illumina catalog</a></td>
       <td nowrap align="right">174,300</td>
-      <td nowrap align="right">53,137 of 144,773</td>
+      <td nowrap align="right">53,137 out of 144,773</td>
       <td nowrap align="right">36.7%</td>      
    </tr>
 </table>
