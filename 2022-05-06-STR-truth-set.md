@@ -148,12 +148,12 @@ The truth set allows us to check the degree to which this assumption is valid. I
 
 - 144,158 out of 144,773 (99.6%) of STR variants in CHM1-CHM13 match repeats found in the hg38 reference immediately to the left or right of the variant.  Only 521 variants are novel STRs. This suggests that, for samples like CHM1-CHM13 that have European ancestry, nearly all true STR variants can be found by using a large enough STR catalog. 
 
-*NOTE*: The truth set doesn't include variants where a large inserted sequence contains more than one STR or an STR with flanking non-repetative sequence. Such variants, if they exist, are not counted in the stats above.
+*NOTE*: The truth set doesn't include variants where a large inserted sequence contains more than one STR or an STR embedded in non-repetative sequence. Such variants, if they exist, are not counted in the stats above.
 
 
 #### Limitations of existing STR catalogs
 
-An important question for any genome-wide STR analysis is which STR catalog to genotype. 
+Ano important question for any genome-wide STR analysis is which STR catalog to genotype. 
 
 Two popular apoproaches to defining these catalogs are:
 <table>
@@ -184,6 +184,8 @@ Two popular apoproaches to defining these catalogs are:
 The truth set allows us to ask: if we genotype all loci in one of these catalogs, how many of the CHM1-CHM13 STR variants are we guaranteed to miss because they fall outside the catalog? 
 
 It turns out - a lot of them.
+
+
 
 The take-away is that, if we want to have any hope of capturing more than 90% of STR variants, we need to use a catalog that includes all 9.4 million loci
 and . 
