@@ -160,17 +160,17 @@ Two popular apoproaches to defining these catalogs are:
       <td rowspan=2>1</td>
       <td rowspan=2>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) on the reference genome to identify all STR loci.</br>The result significantly depends on TRF input paramaters such as mismatch and indel penalties.</td>
       <td><a href="https://github.com/gymreklab/GangSTR#gangstr-reference-files">GangSTR v13 reference</a></td>
-      <td>832,380</td>
+      <td nowrap align="right">832,380</td>
    </tr>
    <tr>
       <td><a href="https://github.com/gymreklab/GangSTR#gangstr-reference-files">GangSTR v17 reference</a></td>
-      <td>1,340,266</td>
+      <td nowrap align="right">1,340,266</td>
    </tr>
    <tr>
       <td>2</td>
       <td>Identifying STRs that are polymorphic in population control samples </td>
       <td><a href="https://github.com/Illumina/RepeatCatalogs/blob/master/docs/str_generation.md">Illumina catalog</a></td>
-      <td>174,300</td>
+      <td nowrap align="right">174,300</td>
    </tr>
 </table>
 
