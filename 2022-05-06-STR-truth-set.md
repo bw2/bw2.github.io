@@ -154,7 +154,7 @@ Although the 2 distributions are roughly similar, STR variants are clearly more 
 
 We can parse the truth set into several informative subsets:  
 
-30,599 out of 144,773 (21%) STR variants are multiallelic (ie. have 2 non-reference alleles). As we'll see later, this is also a crude proxy for mutability:
+30,599 out of 144,773 (21%) STR variants are multiallelic (ie. have 2 non-reference alleles). As we'll see, this can serve as a crude proxy for mutability:
 <div align=center>
 <img width=800 src="https://user-images.githubusercontent.com/6240170/200653796-e306beb1-7fdc-4c5c-811d-356e616dafd4.png">
 </div>
@@ -181,7 +181,9 @@ rather than
 
 The truth set allows us to check the degree to which this assumption is valid. It turns out that it is:
 
-- 144,158 out of 144,773 (99.6%) of STR variants in CHM1-CHM13 match repeats found in the hg38 reference immediately to the left or right of the variant.  Only 521 variants are novel STRs. This suggests that, for samples like CHM1-CHM13 that have European ancestry, nearly all true STR variants can be found by using a large enough STR catalog. 
+- 144,158 out of 144,773 (99.6%) of STR variants in CHM1-CHM13 match repeats found in hg38 immediately to the left or right of the variant.  Only 521 variants are novel STRs. 
+
+This suggests that, for samples like CHM1-CHM13 that have European ancestry, nearly all true STR variants can be found by using a large enough STR catalog. 
 
 *NOTE*: The truth set doesn't include variants where a large inserted sequence contains more than one STR or an STR embedded in non-repetative sequence. Such variants, if they exist, are not counted in the stats above.
 
