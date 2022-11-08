@@ -55,6 +55,7 @@ Of the 4.1 million high-confidence variants in the [SynDip VCF](https://github.c
 
 </table>
 
+<br />
 
 <img width="85" alt="image" src="https://user-images.githubusercontent.com/6240170/200182718-67b467b0-80a6-49ae-b147-56a8bb0cf655.png">
 
