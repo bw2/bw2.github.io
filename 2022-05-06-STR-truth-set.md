@@ -152,9 +152,9 @@ Although the 2 distributions are roughly similar, STR variants are clearly more 
 
 ### Additional Summary Stats
 
-We can split the truth set into several informative subsets:  
+30,599 out of 144,773 (21%) STR variants are multiallelic (ie. have 2 non-reference alleles).  
+As we'll see, this can serve as a crude proxy for mutability:
 
-30,599 out of 144,773 (21%) STR variants are multiallelic (ie. have 2 non-reference alleles). As we'll see, this can serve as a crude proxy for mutability:
 <div align=center>
 <img width=800 src="https://user-images.githubusercontent.com/6240170/200653796-e306beb1-7fdc-4c5c-811d-356e616dafd4.png">
 </div>
