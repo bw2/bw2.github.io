@@ -148,7 +148,7 @@ We can also look at the prevalence of STR variants with different motifs and com
 </div>
 
 Here the motifs are sorted by how common they are in hg38. 
-Although the 2 distributions are roughly similar, STR variants are clearly more likely for some motifs than for others.
+Although the 2 distributions are roughly similar, STR variants are clearly more likely for some motifs than for others. We examine this in more detail below. 
 
 
 ### Additional Summary Stats
