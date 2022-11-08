@@ -135,13 +135,29 @@ If we take all alleles and plot the number of repeats in CHM1-CHM13 minus the nu
 
 ![image](https://user-images.githubusercontent.com/6240170/200637637-32348eff-13bc-4c10-9cbb-c52304709859.png)
 
-This distribution matches expectation since there's no reason that STRs in hg38 should be systematically larger or smaller than repeats in random individuals from the  population (ie. CHM1 and CHM13). To take it a step further, the degree to which this distribution is symetrical around 0 further supports the truth set's accuracy since it rules out systematic bias toward expansions or contractions in the SynDip Benchmark. 
+This distribution matches expectation since there's no reason that STRs in hg38 should be systematically larger or smaller than repeats in random individuals from the  population (ie. CHM1 and CHM13). To take it a step further, the degree to which this distribution is symetrical around 0 further supports the truth set's accuracy since it rules out systematic bias toward expansions or contractions in the pipeline that produced the SynDip Benchmark. 
+
+
+We can also look at the prevalence of STR variants with different motifs and compare it to the distribution of pure STR repeats in hg38 (found using [TandemRepeatFinder](https://github.com/Benson-Genomics-Lab/TRF)):
+
+<div nowrap>
+<img width=400 src="https://user-images.githubusercontent.com/6240170/200648230-0d7b47eb-a0de-4a83-92f5-bbea13228ce2.png">
+vs 
+<img width=400 src="https://user-images.githubusercontent.com/6240170/200648172-3f286105-f351-4ee5-952d-1bf3e5fb9b88.png">
+
+</div>
+
+Here the motifs are sorted by how common they are in hg38. 
+Although the 2 distributions are roughly similar, STR variants are clearly more likely for some motifs than for others.
+
 
 ### Additional Summary Stats
 
 We can parse the truth set into various subsets and distributions:  
 
 30,599 out of 144,773 (21%) STR variants are multiallelic (ie. have 2 non-reference alleles). As we'll see later, this is also a crude proxy for mutability:
+
+
 
 218 out of 144,773   (0.2%) overlap coding regions in Gencode v40:
 
