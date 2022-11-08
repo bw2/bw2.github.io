@@ -183,7 +183,7 @@ The truth set allows us to check the degree to which this assumption is valid. I
 
 - 144,158 out of 144,773 (99.6%) of STR variants in CHM1-CHM13 match repeats found in hg38 immediately to the left or right of the variant.  Only 521 variants are novel STRs. 
 
-This suggests that, for samples like CHM1-CHM13 that have European ancestry, nearly all true STR variants can be found by using a large enough STR catalog. 
+This suggests that, for samples like CHM1-CHM13 that have European ancestry, nearly all true STR variants can be found by using a large enough STR catalog generated from the reference genome. 
 
 *NOTE*: The truth set doesn't include variants where a large inserted sequence contains more than one STR or an STR embedded in non-repetative sequence. Such variants, if they exist, are not counted in the stats above.
 
