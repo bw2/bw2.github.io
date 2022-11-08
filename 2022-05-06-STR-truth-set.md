@@ -2,7 +2,7 @@
 
 Short tandem repeat (STR) expansions are associated with over 50 monogenic diseases [[Depienne 2021](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8205997/)] as well as common diseases such as autism [[Trost 2020](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9348607/)] [[Mitra 2021](https://www.nature.com/articles/s41586-020-03078-7)]. Improvements in STR genotyping tools like [ExpansionHunter](https://github.com/Illumina/ExpansionHunter) and [GangSTR](https://github.com/gymreklab/GangSTR) have generated new interest in studying STRs using short read sequencing data. 
 
-One challenge in the field is a scarcity of high-quality truth data (ie. samples with known STR expansions) for:
+One persistant challenge is the scarcity of publicly available high-quality truth data (ie. samples with known STR expansions) for:
 1. comparing STR genotyping tools 
 2. evaluatating how a given tool's performance varies across different loci
 3. developing additional tools such as genotype quality filters
