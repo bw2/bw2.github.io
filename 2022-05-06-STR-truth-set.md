@@ -142,7 +142,7 @@ We can also look at the prevalence of STR variants with different motifs and com
 
 <div nowrap>
 <img width=400 src="https://user-images.githubusercontent.com/6240170/200648230-0d7b47eb-a0de-4a83-92f5-bbea13228ce2.png">
-vs 
+<img width="148" alt="image" src="https://user-images.githubusercontent.com/6240170/200648659-7b827c97-b95d-4713-947c-bca349cf36c4.png">
 <img width=400 src="https://user-images.githubusercontent.com/6240170/200648172-3f286105-f351-4ee5-952d-1bf3e5fb9b88.png">
 
 </div>
