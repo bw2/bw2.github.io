@@ -152,7 +152,7 @@ Although the 2 distributions are roughly similar, STR variants are clearly more 
 
 ### Additional Summary Stats
 
-We can parse the truth set into several informative subsets:  
+We can split the truth set into several informative subsets:  
 
 30,599 out of 144,773 (21%) STR variants are multiallelic (ie. have 2 non-reference alleles). As we'll see, this can serve as a crude proxy for mutability:
 <div align=center>
