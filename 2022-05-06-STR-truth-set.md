@@ -9,26 +9,26 @@ One persistant challenge for the field is the scarcity of publicly available hig
 
 Here, we describe a new genome-wide STR truth set based on the Synthetic Diploid Bechmark (SynDip) [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)]. The result is ~145k accurate STR genotypes in a single human sample (CHM1-CHM13) with publicly available short-read sequencing data. 
 
-In addition to tool evaluations, I use this truth set to explore several interesting questions about STRs in general:
+In addition to tool evaluations, we can use this truth set to explore some interesting questions about STRs in general, such as:
 - what is the distribution of STR variants in the human genome (ie. motif sizes, lengths, percent multiallelic, etc.)?
 - how well do the existing catalogs of STR loci capture these variants?
 - how many STR variants are novel relative to the hg38 reference (ie. different motif or locus)?
 - can we predict which loci are more likely to be mutated based on their sequence and reference context?
 
-*NOTE*: STRs are traditionally defined as repeating motifs that are between 1 to 6bp long. For this truth set we exclude 1bp (homopolymer) repeats since they are uniquely error-prone, but include motifs longer than 6bp so that users can choose to include them in their analyses.
+*NOTE*: STRs are traditionally defined as repeating motifs that are between 1 to 6bp long. For this truth set we exclude 1bp (homopolymer) repeats since they are uniquely error-prone, but include motifs longer than 6bp, allowing users to decide whether to include these in their analyses.
 
 ---
 
 ### Defining the STR truth set
 
-To generate an STR truth set, we start with the Synthetic Diploid Benchmark (SynDip) [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)]. This unique dataset uses haploid PacBio assemblies to identify all variants in the CHM1-CHM13 synthetic diploid sample. Because these variants are based on alignment of haploid assemblies (rather than individual reads) to the reference genome, the SynDip variants are more reliable than those produced by short-read or even ordinary long-read pipelines. 
+To generate an STR truth set, we start with the Synthetic Diploid Benchmark (SynDip) [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)]. This unique dataset uses haploid PacBio assemblies to identify all variants in the CHM1-CHM13 synthetic diploid sample. Because these variants are based on alignments of haploid assemblies (rather than individual reads) to the reference genome, the SynDip variants are more reliable than those produced by short-read or even ordinary long-read pipelines. 
 
-Of the 4.1 million high-confidence variants in the [SynDip VCF](https://github.com/lh3/CHM-eval), 259k (6.3%) are insertions and 249k (6.1%) are deletions. To create the STR truth set, we filter these insertions and deletions to the subset that represents STR expansions or contractions as follows:
+Of the 4.1 million high-confidence variants in the [SynDip VCF](https://github.com/lh3/CHM-eval), 259k (6.3%) are insertions and 249k (6.1%) are deletions. To create the STR truth set, we filter these insertions and deletions to the subset that represent STR expansions or contractions with the following steps:
 
 <table>
    <tr>
       <th> </th>
-      <th>Filter Step</th>
+      <th>Filtering Step</th>
       <th nowrap># of Variants<br />That Passed</th>
       <th nowrap align="right">%</th>
    </tr>
