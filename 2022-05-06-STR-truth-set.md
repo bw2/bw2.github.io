@@ -266,12 +266,11 @@ One takeaway is that, if we aim to capture more than 95% of STR variants using a
 
 
 ---
-
-A few words about the limitations of existing approaches to STR truth data:
+**Extra Section 1:** A few words about the limitations of existing approaches to STR truth data:
 
 1. **simulated STRs:** we can generate an unlimited number of STR examples with known genotypes by using a tool like [wgsim](https://github.com/lh3/wgsim). However, simulated data doesn't capture the full complexity of real sequencing data (eg. adjacent variants not present in the reference genome, GC bias, and other sequencing artifacts). 
 2. **mendelian violations analysis:** trios can be used to check whether genotypes are consistant with Mendelian inheritance. However, This is informative about specificity but not sensitivity since a tool that misses all expansions will have zero mendelian violations. This produces a coarser  
-   truthset since it's impossible to say whether any individual mendelian violation is error or truth - just that 
+   truth set since it's impossible to say whether any individual mendelian violation is error or truth - just that 
    overall, there should be no more than ~80 mendelian violations on average per trio (based on the estimated denovo rate for STR 
    variants [[Willems 2017](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5482724/?report=classic)]). Additionally, 
    mendelian violations are confounded by a tool's false-negative rate since a tool that consistently fails to detect 
@@ -283,9 +282,7 @@ A few words about the limitations of existing approaches to STR truth data:
 4. **long read data:** This might be the ideal source of truth in the future, but currently suffers from a lack of well-validated STR calling tools. The most-recently published tool - Straglr [[Chiu 2021](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02447-3)] - reports 73% concordance between heterozygous STR expansions called from HiFi PacBio data vs truth data generated from the diploid assembly of HG00733 [[Kronenberg 2019](https://www.biorxiv.org/content/10.1101/327064v2.full)]. [[Chiu 2021](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02447-3)], [[Dashnow 2021](https://www.biorxiv.org/content/10.1101/2021.11.18.469113v1)] and other groups (unpublished) also raise concerns about diploid assemblies as a source of STR truth data since manual inspection of discordant loci often revealed that the assembly was not credible at those loci. 
 
 ----
-Extra tables:
-
-The table below lists STR calling tools + the truth data used in their publications:  
+**Extra Section 2**: The table below lists STR calling tools + the truth data used in their publications.
 
 <br />
 <table class="ui striped table">
@@ -424,14 +421,14 @@ The table below lists STR calling tools + the truth data used in their publicati
 
 *NOTE:* [Table 1](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8351082#Tab1) in [[Rajan-Babu 2021](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8351082/)] provides additional comparisons of many of these tools. 
 
-The largest truthsets in this table are generated using diploid assemblies - as described in the Straglr paper - but the accuracy of these assemblies for STRs remains questionable. 
+The largest truth sets in this table are generated using diploid assemblies - as described in the Straglr paper - but the accuracy of these assemblies for STRs remains questionable. 
 
 Can we improve on this?
 
 ----
-**CHM1_CHM13_2 Synthetic Diploid Benchmark as an STR Truthset**
+**Extra section 3:** Synthetic Diploid Benchmark Overview
 
-[[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)] produced a high-qaulity truthset based on [Huddleston 2017](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5411763/) haploid assemblies of two individuals - CHM1 and CHM13. 
+[[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)] produced a high-qaulity truth set based on [Huddleston 2017](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5411763/) haploid assemblies of two individuals - CHM1 and CHM13. 
 
 To create the Synthetic Diploid Benchmark, [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)] generated variant calls by:
 
@@ -442,235 +439,8 @@ To create the Synthetic Diploid Benchmark, [[Li 2018](https://www.ncbi.nlm.nih.g
 
 ![image](https://user-images.githubusercontent.com/6240170/167907455-84baa96d-95ae-44bc-8471-c7769bd6474f.png)
 
-This yielded 5,362,620 variants of which 4,148,586 were in high-confidence regions:
-``` 
-   3585549  ( 86.4%) SNV
-    286568  (  6.9%) INS
-    276469  (  6.7%) DEL
-```
+This yielded 5,362,620 variants of which 4,148,586 were in high-confidence regions.
 
-Although [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)] used this data to evaluate SNV and INDEL calling tools, it can also serve as a high-quality SV and STR truthset since: 
-
-1. haploid assembly is more accurate than diploid assembly
-2. one of the two samples - CHM13 - is the basis of the new telomere-to-telomere (t2t) reference assembly, so we can further validate STR variants by lifting them over to t2tv2.0 and checking that at least one allele is concordant with the t2t reference.
-
----
-**Part 1: Check All CHM1_CHM13_2 Variants For Concordance with The CHM13 T2T Reference Genome Assembly**
-
-Below are the steps and how many variants pass each step:
-
-<br />
-
-<table class="ui striped table">
-<tr>
-   <th>Step</th>
-   <th>Description</th>
-   <th>Variants Filtered</th>
-   <th>% Filtered</th>
-   <th>Variants Remaining</th>
-   <th>% Remaining</th>
-</tr><tr>
-   <td>#1 </td>
-   <td>Start with all high-confidence, normal (ACGT) variants</td>
-   <td></td>
-   <td></td>
-   <td>4,129,390</td>
-   <td>100%</td>
-</tr><tr>
-   <td>#2 </td>
-   <td>Liftover variants to t2t-v2.0 reference genome (CHM13) using gatk LiftoverVcf. <br />
-      <br/>
-      These are the reasons variants failed this step: 
-      <ul>
-        <li>190,474 IndelStraddlesMultipleIntevals (these are all deletions)</li> 
-        <li> 23,158 NoTarget </li>
-        <li>10,297 MismatchedRefAllele </li>
-      </ul>
-   </td>
-   <td>223,929</td>
-   <td>5.4%</td>
-   <td>3,905,448</td>
-   <td>94.6%</td>
-</tr><tr>
-   <td>#3 </td>
-   <td>Since all valid variants should have at least 1 allele that matches the CHM13 T22 reference, filter out variants that are HOM-ALT after liftover: 
-      <ul>
-         <li>1026 (0.03%) SNVs</li>
-         <li>338 (0.01%) insertions</li>
-      </ul>
-   </td>
-   <td>1,364</td>
-   <td>0.0%</td>
-   <td>3,904,084</td>
-   <td>94.5%</td>
-</tr><tr>
-   <td>#4 </td>
-   <td>Liftover variants from t2t-v2.0 back to GRCh38 using gatk LiftoverVcf. </td>
-   <td>253</td>
-   <td>0.0%</td>
-   <td>3,903,831</td>
-   <td>94.5%</td>
-</tr><tr>
-   <td>#5</td>
-   <td>Restore the 190,474 deletions that were dropped in the 1st liftover (GRCh38 => CHM13) due to IndelStraddlesMultipleIntevals. I'm assuming this is an artifact of the liftover chain files and not a sufficient reason to discard these variants.</td>
-   <td></td>
-   <td></td>
-   <td>4,094,305</td>
-   <td>99.2%</td>
-</tr>
-</table>
-
----
-
-**Part 2: Filter CHM1_CHM13_2 Variants To STR Variants**
-
-To identify the INDELs that are actually STR variants, process each INDEL to:
-1. check if the inserted or deleted sequence is made up of some k-mer that covers at least 90% of the variant bases. 
-2. if yes, treat this k-mer as the STR repeat unit. Otherwise, treat the entire variant sequence as the repeat unit to allow detection of STR expansions or contractions that differ from the reference by only 1 repeat. 
-3. check the reference genome flanking sequence (immediately to the left and right of the variant) for additional repeats with the same repeat unit.
-
-Keep variants that have:
- - at least 3 repeats of some motif in the variant + flanking sequences.
- - the total repeat size is 9bp or longer.
-
-This is approach is implemented in the [filter_vcf_to_STR_variants.py](https://github.com/broadinstitute/str-analysis/blob/main/str_analysis/filter_vcf_to_STR_variants.py) script. 
-
-Limitations:  
-  * The current approach doesn't properly handle interruptions in the repeat sequence and will miss most STR variants that include interuptions. 
-  A future version of filter_vcf_to_STR_variants.py can avoid this limitation by integrating the TandemRepeatFinder [Benson 1999] algorithm.
- 
-
-Results:
-```
-Run filter_vcf_to_STR_variants.py --min-fraction-of-variant-covered-by-repeat 0.9 
-on all 4,094,305 variants in high-confidence regions.
-
-This yields 180,471 TOTAL STR variants (4.4%)
-
-Expansions vs. Contractions:
-      89,633  ( 49.7%) STR DEL
-      90,838  ( 50.3%) STR INS
-
-
-Motif Sizes:
-     106,969  ( 59.3%) STR motif size = 2 bp
-      14,884  (  8.2%) STR motif size = 3 bp
-      40,423  ( 22.4%) STR motif size = 4 bp
-       9,802  (  5.4%) STR motif size = 5 bp
-       2,667  (  1.5%) STR motif size = 6 bp
-         802  (  0.4%) STR motif size = 7 bp
-         565  (  0.3%) STR motif size = 8 bp
-       4,359  (  2.4%) STR motif size = 9+ bp
-
-Repeat Sizes (# of repeats):
-      94,148  ( 52.2%) STR delta 1 repeat
-      34,703  ( 19.2%) STR delta = 2 repeats
-      17,762  (  9.8%) STR delta = 3 repeats
-      10,413  (  5.8%) STR delta = 4 repeats
-       6,811  (  3.8%) STR delta = 5 repeats
-       4,435  (  2.5%) STR delta = 6 repeats
-       3,043  (  1.7%) STR delta = 7 repeats
-       2,123  (  1.2%) STR delta = 8 repeats
-       7,033  (  3.9%) STR delta = 9+ repeats
-  
-Repeat Sizes (# of base pairs):
-     173,749  ( 96.3%) STR size 0-25bp    *
-       5,010  (  2.8%) STR size 25-50bp   *
-         775  (  0.4%) STR size 50-75bp   *
-         255  (  0.1%) STR size 75-100bp  
-         157  (  0.1%) STR size 100-125bp
-         112  (  0.1%) STR size 125-150bp
-          76  (  0.0%) STR size 150-175bp
-          70  (  0.0%) STR size 175-200bp
-          51  (  0.0%) STR size 200-225bp
-          45  (  0.0%) STR size 225-250bp
-          29  (  0.0%) STR size 250-275bp
-          19  (  0.0%) STR size 275-300bp
-          16  (  0.0%) STR size 300-325bp
-          11  (  0.0%) STR size 325-350bp
-          17  (  0.0%) STR size 350-375bp
-          15  (  0.0%) STR size 375-400bp
-           5  (  0.0%) STR size 400-425bp
-          13  (  0.0%) STR size 425-450bp
-           9  (  0.0%) STR size 450-475bp
-          11  (  0.0%) STR size 475-500bp
-          26  (  0.0%) STR size 500+bp
-     
-HOM vs. HET:
-     39,492  ( 21.9%) genotype are homozygous
-
-de-novo:
-       1,015  (  0.6%) STRs with no matching repeat in the left or right reference genome flanking sequence
-
-```
-
-Switching to `--min-fraction-of-variant-covered-by-repeat 1.0` doesn't significantly change the results:
-
-```
-Run filter_vcf_to_STR_variants.py --min-fraction-of-variant-covered-by-repeat 1.0 
-on all 4,094,305 variants in high-confidence regions.
-
-This yields 177,826 TOTAL STR variants (4.3%)
-
-Expansions vs. Contractions:
-      89,188  ( 50.2%) STR DEL
-      88,638  ( 49.8%) STR INS
- 
-Motif Sizes:
-     105,483  ( 59.3%) STR motif size 2 bp
-      14,759  (  8.3%) STR motif size 3 bp
-      39,751  ( 22.4%) STR motif size 4 bp
-       9,597  (  5.4%) STR motif size 5 bp
-       2,598  (  1.5%) STR motif size 6 bp
-         728  (  0.4%) STR motif size 7 bp
-         547  (  0.3%) STR motif size 8 bp
-       4,363  (  2.5%) STR motif size 9+ bp
-
-Repeat Sizes (# of repeats):
-      94,238  ( 53.0%) STR delta 1 repeats
-      34,697  ( 19.5%) STR delta 2 repeats
-      17,499  (  9.8%) STR delta 3 repeats
-      10,298  (  5.8%) STR delta 4 repeats
-       6,540  (  3.7%) STR delta 5 repeats
-       4,257  (  2.4%) STR delta 6 repeats
-       2,887  (  1.6%) STR delta 7 repeats
-       2,008  (  1.1%) STR delta 8 repeats
-       5,402  (  3.0%) STR delta 9+ repeats
-    
-Repeat Sizes (# of base pairs):
-     172,447  ( 97.0%) STR size 0-25bp
-       4,036  (  2.3%) STR size 25-50bp
-         641  (  0.4%) STR size 50-75bp
-         236  (  0.1%) STR size 75-100bp
-         134  (  0.1%) STR size 100-125bp
-          87  (  0.0%) STR size 125-150bp
-          57  (  0.0%) STR size 150-175bp
-          37  (  0.0%) STR size 175-200bp
-          32  (  0.0%) STR size 200-225bp
-          27  (  0.0%) STR size 225-250bp
-          18  (  0.0%) STR size 250-275bp
-          13  (  0.0%) STR size 275-300bp
-           3  (  0.0%) STR size 300-325bp
-           6  (  0.0%) STR size 325-350bp
-          11  (  0.0%) STR size 350-375bp
-           7  (  0.0%) STR size 375-400bp
-           3  (  0.0%) STR size 400-425bp
-           9  (  0.0%) STR size 425-450bp
-           5  (  0.0%) STR size 450-475bp
-           3  (  0.0%) STR size 475-500bp
-          14  (  0.0%) STR size 500+bp
-     
-HOM vs. HET:
-      39,341  ( 22.1%) genotype are homozygous
-
-de-novo:
-         663  (  0.4%) STRs with no matching repeat in the left or right reference genome flanking sequence
-
-```
-
----
-
-
-
+Although [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)] used this data to evaluate SNV and INDEL calling tools, it can also serve as a high-quality SV and STR truth set.
 
 
