@@ -156,14 +156,16 @@ Although the 2 distributions are roughly similar, STR variants are clearly more 
 As we'll see, this can serve as a crude proxy for mutability:
 
 <div align=center>
-<img width=800 src="https://user-images.githubusercontent.com/6240170/200653796-e306beb1-7fdc-4c5c-811d-356e616dafd4.png">
+<img width=850 src="https://user-images.githubusercontent.com/6240170/200687200-b109d072-5b45-4157-9982-9afc5589c1cc.png">
 </div>
 
 
 3,121 out of 144,773 (2.2%) STR variants overlap segmental duplications (SegDups) in hg38:
 
+
+
 <div align=center>
-<img width=800 src="https://user-images.githubusercontent.com/6240170/200653953-d5a65421-9333-4b64-9330-5ccb0233662b.png">
+<img width=850 src="https://user-images.githubusercontent.com/6240170/200687262-dfe0b542-06f4-48a5-81f0-063dfa5386e7.png">
 </div>
   
   
