@@ -160,13 +160,13 @@ We can parse the truth set into several informative subsets:
 </div>
 
 218 out of 144,773   (0.2%) overlap coding regions in Gencode v40:
+
+
+3,121 out of 144,773 (2.2%) overlap segmental duplications (SegDups) in hg38:
+
 <div align=center>
 <img width=800 src="https://user-images.githubusercontent.com/6240170/200653953-d5a65421-9333-4b64-9330-5ccb0233662b.png">
 </div>
-   
-3,121 out of 144,773 (2.2%) overlap segmental duplications (SegDups) in hg38:
-
-
 
 #### Novel STR loci
 
