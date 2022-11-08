@@ -141,9 +141,9 @@ This distribution matches expectation since there's no reason that STRs in hg38 
 We can also look at the prevalence of STR variants with different motifs and compare it to the distribution of pure STR repeats in hg38 (found using [TandemRepeatFinder](https://github.com/Benson-Genomics-Lab/TRF)):
 
 <div nowrap>
-<img width=400 src="https://user-images.githubusercontent.com/6240170/200648230-0d7b47eb-a0de-4a83-92f5-bbea13228ce2.png">
+<img width=400 src="https://user-images.githubusercontent.com/6240170/200649579-5ba38d12-07e2-4c5d-acd0-c5c17a87a6bc.png">
 <img width="148" alt="image" src="https://user-images.githubusercontent.com/6240170/200648659-7b827c97-b95d-4713-947c-bca349cf36c4.png">
-<img width=400 src="https://user-images.githubusercontent.com/6240170/200648172-3f286105-f351-4ee5-952d-1bf3e5fb9b88.png">
+<img width=400 src="https://user-images.githubusercontent.com/6240170/200649509-d8a1fd0d-4dbc-4e4b-9ab4-82eb9566b5cb.png">
 
 </div>
 
