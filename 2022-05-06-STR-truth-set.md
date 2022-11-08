@@ -263,7 +263,8 @@ Here we compare several catalogs and approaches:
 
 One takeaway is that, if we aim to capture more than 95% of STR variants using a TRF-derived catalog, we need to genotype more than 2.8M loci genome-wide in each individual. 
 
-
+---
+### Extra Sections
 
 ---
 **Extra Section 1:** A few words about the limitations of existing approaches to STR truth data:
