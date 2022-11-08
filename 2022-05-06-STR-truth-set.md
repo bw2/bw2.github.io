@@ -159,14 +159,16 @@ As we'll see, this can serve as a crude proxy for mutability:
 <img width=800 src="https://user-images.githubusercontent.com/6240170/200653796-e306beb1-7fdc-4c5c-811d-356e616dafd4.png">
 </div>
 
-218 out of 144,773   (0.2%) overlap coding regions in Gencode v40:
 
-
-3,121 out of 144,773 (2.2%) overlap segmental duplications (SegDups) in hg38:
+3,121 out of 144,773 (2.2%) STR variants overlap segmental duplications (SegDups) in hg38:
 
 <div align=center>
 <img width=800 src="https://user-images.githubusercontent.com/6240170/200653953-d5a65421-9333-4b64-9330-5ccb0233662b.png">
 </div>
+  
+  
+218 out of 144,773 (0.2%) STR variants overlap coding regions in Gencode v40:
+
 
 #### Novel STR loci
 
