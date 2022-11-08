@@ -431,14 +431,14 @@ The largest truth sets in this table are generated using diploid assemblies - as
 Can we improve on this?
 
 ----
-**Extra section 3:** Synthetic Diploid Benchmark Overview
+**Extra Section 3:** Synthetic Diploid Benchmark Overview
 
 [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)] produced a high-qaulity truth set based on [Huddleston 2017](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5411763/) haploid assemblies of two individuals - CHM1 and CHM13. 
 
 To create the Synthetic Diploid Benchmark, [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)] generated variant calls by:
 
 1. Aligning each haploid assembly to GRCh37 or GRCh38 using minimap2
-2. Converting the differences revealed by these alignments to variant calls. 
+2. Converting the differences revealed by these alignments to variant calls directly from the CIGAR string. There was no need to run a separate variant calling tool downstream of the alignment step.
 
 **Li et al. 2018 Figure 1:** Constructing the Syndip benchmark dataset. 
 
@@ -446,6 +446,6 @@ To create the Synthetic Diploid Benchmark, [[Li 2018](https://www.ncbi.nlm.nih.g
 
 This yielded 5,362,620 variants of which 4,148,586 were in high-confidence regions.
 
-Although [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)] used this data to evaluate SNV and INDEL calling tools, it can also serve as a high-quality SV and STR truth set.
+[[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)] used this data to evaluate SNV and INDEL calling tools, but it can also serve as a high-quality truth set for STRs, as well as tandem repeats (TRs) and structural variants (SVs).
 
 
