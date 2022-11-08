@@ -7,7 +7,7 @@ One persistant challenge for the field is the scarcity of publicly available hig
 2. evaluatating how a given tool's performance varies across different loci
 3. developing additional tools such as genotype quality filters
 
-Here, I describe the project to develop a new genome-wide STR truth set based on the Synthetic Diploid Bechmark (SynDip) [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)]. The result is ~145k accurate STR genotypes in a single human sample (CHM1-CHM13) with publicly available short-read sequencing data. 
+Here, we describe a new genome-wide STR truth set based on the Synthetic Diploid Bechmark (SynDip) [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)]. The result is ~145k accurate STR genotypes in a single human sample (CHM1-CHM13) with publicly available short-read sequencing data. 
 
 In addition to tool evaluations, I use this truth set to explore several interesting questions about STRs in general:
 - what is the distribution of STR variants in the human genome (ie. motif sizes, lengths, percent multiallelic, etc.)?
