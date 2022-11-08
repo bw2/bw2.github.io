@@ -280,7 +280,7 @@ One takeaway is that, if we aim to capture more than 95% of STR variants using a
    variants [[Willems 2017](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5482724/?report=classic)]). Additionally, 
    mendelian violations are confounded by a tool's false-negative rate since a tool that consistently fails to detect 
    STR expansions at some loci will have fewer mendelian violations.
-3. **PCR-validated pathogenic expansions:** A small number of WGS samples with PCR-validated STR expansions are publicly available - including 9         
+3. **PCR-validated pathogenic expansions:** A small number of WGS samples with PCR-validated STR expansions are publicly available - including 9 
    samples from [[Dashnow 2018](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-018-1505-2)]. Typically only one locus is validated in        each sample, so there's too little data in this category to be useful for a genome-wide STR benchmark. Additionally, PCR and other related methods 
    often give only approximate expansion sizes (eg. "greater than 150 repeats"). This is sufficient for determining 
    pathogenicity but not for evaluating tool accuracy.   
