@@ -121,22 +121,38 @@ The SynDip benchmark is based on samples from two individuals: CHM1 and CHM13. O
 
 </table>
 
-Overall, 144,773 out of 146,618 (98.7%) of STRs pass the validation, underscoring the accuracy and relevance of this truth set. 
+Overall, of the 86,028 STRs that could be validated against T2T, 84,183 (97.9%) passed this validation, underscoring the accuracy and relevance of this truth set. 
 
 ---
-### Results: Summary Stats
+### Results:
 
 The resulting STR truth set contains:
 
 - **144,773 STR variants**  
 - **175,372 STR alleles**   
+ 
+If we take all alleles and plot the number of repeats in CHM1-CHM13 minus the number of repeats in hg38 at the same locus, the distribution is symmetrical around 0:
 
-- 21% of variants are multiallelic (ie. have 2 non-reference alleles)
+![image](https://user-images.githubusercontent.com/6240170/200637637-32348eff-13bc-4c10-9cbb-c52304709859.png)
+
+This distribution matches expectation since there's no reason that STRs in hg38 should be systematically larger or smaller than repeats in random individuals from the  population (ie. CHM1 and CHM13). To take it a step further, the degree to which this distribution is symetrical around 0 further supports the truth set's accuracy since it rules out systematic bias toward expansions or contractions in the SynDip Benchmark. 
+
+### Additional Summary Stats
+
+We can parse the truth set into various subsets and distributions:  
+
+30,599 out of 144,773 (21%) STR variants are multiallelic (ie. have 2 non-reference alleles). As we'll see later, this is also a crude proxy for mutability:
+
+218 out of 144,773   (0.2%) overlap coding regions in Gencode v40:
+
+
+3,121 out of 144,773 (2.2%) overlap segmental duplications (SegDups) in hg38:
+
 
 
 #### Novel STR loci
 
-Unlike variant calling tools for SNVs and structural variants which just take read alignments (bam or cram) as input, nearly all STR genotyping tools except [ExpansionHunterDenovo](https://github.com/Illumina/ExpansionHunterDenovo) and [STRling](https://github.com/quinlan-lab/STRling) require users to also provide the exact boundaries and motifs of the STR loci to genotype. For example, to genotype the Huntington's Disease locus, a user must specify the reference coordinates "chr4:3074876-3074933" and motif "CAG". The implicit assumption of these algorithms is that all STRs you might want to genotype are also present in the reference genome - meaning that STR variants look like:
+Unlike variant calling tools for SNVs and structural variants which just take read alignments (bam or cram) as input, nearly all STR genotyping tools except [ExpansionHunterDenovo](https://github.com/Illumina/ExpansionHunterDenovo) and [STRling](https://github.com/quinlan-lab/STRling) require users to also specify the exact boundaries and motifs of the STR loci to genotype. For example, to genotype the Huntington's Disease locus, a user must specify the reference coordinates "chr4:3074876-3074933" and motif "CAG". The implicit assumption of these algorithms is that all STRs you might want to genotype are also present in the reference genome - meaning that STR variants look like:
 
 <img width="452" alt="image" src="https://user-images.githubusercontent.com/6240170/200219094-78f3ad2f-bcba-4412-a5cb-098e8f6b56a8.png">
 
@@ -154,11 +170,11 @@ The truth set allows us to check the degree to which this assumption is valid. I
 
 #### Limitations of existing STR catalogs
 
-An important question for any genome-wide STR analysis is which STR catalog to genotype. 
+An important question for any genome-wide STR analysis using tools like ExpansionHunter or GangSTR is which STR catalog to genotype. 
 
-The truth set allows us to ask: if we genotype all loci in a given catalog, how many CHM1-CHM13 STR variants are we guaranteed to miss because they fall outside the catalog? 
+The truth set allows us to ask: if we genotype all loci in a given catalog, how many CHM1-CHM13 STR variants are we guaranteed to miss because they fall outside this catalog? 
 
-Here we compare several approaches to defining catalogs:
+Here we compare several catalogs and approaches:
 <table>
    <tr>
       <th></th>
