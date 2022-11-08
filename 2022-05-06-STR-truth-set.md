@@ -140,11 +140,10 @@ This distribution matches expectation since there's no reason that STRs in hg38 
 
 We can also look at the prevalence of STR variants with different motifs and compare it to the distribution of pure STR repeats in hg38 (found using [TandemRepeatFinder](https://github.com/Benson-Genomics-Lab/TRF)):
 
-<div nowrap>
+<div nowrap align=center>
 <img width=400 src="https://user-images.githubusercontent.com/6240170/200649782-9c128fa7-fe46-4593-bb54-5e42bb546217.png">
 <img width="148" alt="image" src="https://user-images.githubusercontent.com/6240170/200648659-7b827c97-b95d-4713-947c-bca349cf36c4.png">
 <img width=400 src="https://user-images.githubusercontent.com/6240170/200649509-d8a1fd0d-4dbc-4e4b-9ab4-82eb9566b5cb.png">
-
 </div>
 
 Here the motifs are sorted by how common they are in hg38. 
@@ -153,15 +152,18 @@ Although the 2 distributions are roughly similar, STR variants are clearly more 
 
 ### Additional Summary Stats
 
-We can parse the truth set into various subsets and distributions:  
+We can parse the truth set into several informative subsets:  
 
 30,599 out of 144,773 (21%) STR variants are multiallelic (ie. have 2 non-reference alleles). As we'll see later, this is also a crude proxy for mutability:
-
-
+<div align=center>
+<img width=800 src="https://user-images.githubusercontent.com/6240170/200653796-e306beb1-7fdc-4c5c-811d-356e616dafd4.png">
+</div>
 
 218 out of 144,773   (0.2%) overlap coding regions in Gencode v40:
-
-
+<div align=center>
+<img width=800 src="https://user-images.githubusercontent.com/6240170/200653953-d5a65421-9333-4b64-9330-5ccb0233662b.png">
+</div>
+   
 3,121 out of 144,773 (2.2%) overlap segmental duplications (SegDups) in hg38:
 
 
