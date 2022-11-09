@@ -317,6 +317,23 @@ Here we compare several catalogs and approaches:
 One takeaway is that, if we aim to capture more than 95% of STR variants using a TRF-derived catalog, we need to genotype more than 2.8M loci genome-wide in each individual. 
 
 ---
+### Tool Comparisons
+
+We downloaded Illumina paired-end short read data for CHM1-CHM13 from [EBI] and realigned it to hg38 using bwa. Then, we generated an STR catalog for the 144,000 (99%) of loci that had adjacent matching repeats in the hg38 reference (ie. were not novel). 
+We then ran ExpansionHunter, GangSTR, and HipSTR to genotype these loci while applying different downstream filters. We also ran STRling and ExpandionHunterDenovo, neither of which need an STR catalog.
+
+Below are results from comparing these tools on different loci.
+
+
+---
+### Inference
+
+The truth set and tool results provide an opportunity to identify features that can distinguish
+- STR loci that are variant in CHM1-CHM13 vs those that are not
+- STR loci where tools produce accurate genotypes vs those that are not
+- How to filter low quality STR genotypes
+
+---
 ### Extra Sections
 
 ---
