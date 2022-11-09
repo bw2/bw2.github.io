@@ -156,20 +156,37 @@ Although the 2 distributions are roughly similar, STR variants are clearly more 
 As we'll see, this can serve as a crude proxy for mutability:
 
 <div align=center>
-<img width=850 src="https://user-images.githubusercontent.com/6240170/200687200-b109d072-5b45-4157-9982-9afc5589c1cc.png">
+<img width=850 src="https://user-images.githubusercontent.com/6240170/200898063-bcdfdfe6-1496-4997-b95d-192f83e08ceb.png">
 </div>
 
 
 3,121 out of 144,773 (2.2%) STR variants overlap segmental duplications (SegDups) in hg38:
 
-
-
 <div align=center>
-<img width=850 src="https://user-images.githubusercontent.com/6240170/200687262-dfe0b542-06f4-48a5-81f0-063dfa5386e7.png">
+<img width=850 src="https://user-images.githubusercontent.com/6240170/200898172-0d04bc7c-269c-402b-b3c6-e1b2e6d86df6.png">
 </div>
   
-  
-218 out of 144,773 (0.2%) STR variants overlap coding regions in Gencode v40:
+
+We can also check where truth set STR variants fall relative to Gencode v42 genes.  
+
+- 218 out of 144,773 (0.2%) STR variants overlap coding regions
+- 218 out of 144,773 (0.2%) STR variants overlap 5' UTRs
+- 218 out of 144,773 (0.2%) STR variants overlap 3' UTRs
+- 218 out of 144,773 (0.2%) STR variants overlap exons of non-coding genes
+- 218 out of 144,773 (0.2%) STR variants overlap gene introns
+- 218 out of 144,773 (0.2%) STR variants overlap promoters (defined as a 1kb window upstream of the 5' start of any transcript)
+- 218 out of 144,773 (0.2%) STR variants are completely outside any genes or promoters
+
+Showing this is as a histogram:
+<div align=left>
+<img width="525" alt="image" src="https://user-images.githubusercontent.com/6240170/200899445-e47ca68b-3d80-43da-ab4f-3c562ba8a3c7.png">
+</div>
+
+If we look only at the very small fraction of STR variants that overlap either promoters, UTRs or coding regions, the histogram looks like:
+<div align=left>
+<img width=500 src="https://user-images.githubusercontent.com/6240170/200899334-703e84af-0b10-4c4c-9bb6-fa80efa8cf22.png">
+</div>
+
 
 
 #### Novel STR loci
