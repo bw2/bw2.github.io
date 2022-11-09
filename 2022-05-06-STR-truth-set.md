@@ -218,7 +218,7 @@ If we look only at the very small fraction of STR variants that overlap either p
 </div>
 
 This shows that nearly all STR variants in coding regions have motifs of sizes that are multiples of 3bp. 
-Looking more closely, 24 of the 242 coding STR variants in the truth set have motif sizes other than 3, 6, 9, etc. Of these, eight have dinucleotide motifs, six have 4bp motifs, and three have 5bp motifs. Only 12 of the 24 are actually frameshifts: five of these are dinucelotide motifs, four of them have 4bp motifs, and the remaining 3 are tandem repeats with motifs larger than 30bp. 
+Looking more closely, 24 of the 242 coding STR variants have motif sizes other than 3, 6, 9, etc. Of these, eight have dinucleotide motifs, six have 4bp motifs, and three have 5bp motifs. Only 12 of the 24 are actually frameshifts: five of these are dinucelotide motifs, four of them have 4bp motifs, and the remaining 3 are tandem repeats with motifs larger than 30bp. 
 
 
 #### Novel STR loci
