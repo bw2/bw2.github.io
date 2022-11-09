@@ -169,15 +169,45 @@ As we'll see, this can serve as a crude proxy for mutability:
 
 We can also check where truth set STR variants fall relative to Gencode v42 genes.  
 
-- 98,772 out of 144,773 (56%) STR variants overlap **introns**
-- 70,236 out of 144,773 (40%) STR variants are **intergenic** (not overlapping any genes or promoters)
--  &nbsp;&nbsp; 2,094 out of 144,773 (1.2%) STR variants overlap **exons of non-coding genes**
--  &nbsp;&nbsp; 1,869 out of 144,773 (1.1%) STR variants overlap **promoters** (defined as a 1kb window upstream of the 5' start of any transcript)
--  &nbsp;&nbsp; 1,667 out of 144,773 (1.0%) STR variants overlap **3' UTRs**
--  &nbsp; &nbsp; &nbsp;  492 out of 144,773 (0.3%) STR variants overlap **5' UTRs**
--  &nbsp; &nbsp; &nbsp;  218 out of 144,773 (0.2%) STR variants overlap **coding regions**
+<table>
+   <tr>
+      <th>Gene Region</th>
+      <th># of STR variants</th>
+      <th>%</th>
+   </tr><tr>
+      <td>intron</td>
+      <td align=right>98,772</td>
+      <td align=right>56 %</td>
+   </tr><tr>
+      <td>intergenic</td>
+      <td align=right>70,236</td>
+      <td align=right>40 %</td>
+   </tr><tr>
+      <td>exon of a non-coding gene</td>
+      <td align=right>2,094</td>
+      <td align=right>1.2 %</td>
+   </tr><tr>
+      <td>promoter</td>
+      <td align=right>1,869</td>
+      <td align=right>1.1 %</td>
+   </tr><tr>
+      <td>3' UTR</td>
+      <td align=right>1,667</td>
+      <td align=right>1.0 %</td>
+   </tr><tr>
+      <td>5' UTR</td>
+      <td align=right>492</td>
+      <td align=right>0.3 %</td>
+   </tr><tr>
+      <td>coding region</td>
+      <td align=right>218</td>
+      <td align=right>0.2 %</td>
+   </tr>
+</table>
 
-Showing this is as a histogram:
+*NOTE: promoters are defined as just a 1kb window upstream of the 5' start of any transcript*
+
+Showing the same data as a histogram stratified by motif sizes:
 <div align=left>
 <img width="525" alt="image" src="https://user-images.githubusercontent.com/6240170/200899445-e47ca68b-3d80-43da-ab4f-3c562ba8a3c7.png">
 </div>
@@ -187,6 +217,8 @@ If we look only at the very small fraction of STR variants that overlap either p
 <img width=500 src="https://user-images.githubusercontent.com/6240170/200899334-703e84af-0b10-4c4c-9bb6-fa80efa8cf22.png">
 </div>
 
+This shows that nearly all STR variants in coding regions have motifs of sizes that are multiples of 3bp. 
+Looking more closely, 24 of the 242 coding STR variants in the truth set have motif sizes other than 3, 6, 9, etc. Of these, eight have dinucleotide motifs, six have 4bp motifs, and three have 5bp motifs. Only 12 of the 24 are actually frameshifts - five of the repeats with dinucelotide motifs, and four of the repeats with 4bp motifs. 
 
 
 #### Novel STR loci
