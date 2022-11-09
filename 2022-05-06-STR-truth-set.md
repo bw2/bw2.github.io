@@ -169,13 +169,13 @@ As we'll see, this can serve as a crude proxy for mutability:
 
 We can also check where truth set STR variants fall relative to Gencode v42 genes.  
 
-- 218 out of 144,773 (0.2%) STR variants overlap coding regions
-- 218 out of 144,773 (0.2%) STR variants overlap 5' UTRs
-- 218 out of 144,773 (0.2%) STR variants overlap 3' UTRs
-- 218 out of 144,773 (0.2%) STR variants overlap exons of non-coding genes
-- 218 out of 144,773 (0.2%) STR variants overlap gene introns
-- 218 out of 144,773 (0.2%) STR variants overlap promoters (defined as a 1kb window upstream of the 5' start of any transcript)
-- 218 out of 144,773 (0.2%) STR variants are completely outside any genes or promoters
+- 98,772 out of 144,773 (56%) STR variants overlap **introns**
+- 70,236 out of 144,773 (40%) STR variants are **intergenic** (not overlapping any genes or promoters)
+-  &nbsp;&nbsp; 2,094 out of 144,773 (1.2%) STR variants overlap **exons of non-coding genes**
+-  &nbsp;&nbsp; 1,869 out of 144,773 (1.1%) STR variants overlap **promoters** (defined as a 1kb window upstream of the 5' start of any transcript)
+-  &nbsp;&nbsp; 1,667 out of 144,773 (1.0%) STR variants overlap **3' UTRs**
+-  &nbsp; &nbsp; &nbsp;  492 out of 144,773 (0.3%) STR variants overlap **5' UTRs**
+-  &nbsp; &nbsp; &nbsp;  218 out of 144,773 (0.2%) STR variants overlap **coding regions**
 
 Showing this is as a histogram:
 <div align=left>
