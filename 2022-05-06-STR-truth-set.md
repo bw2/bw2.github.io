@@ -133,10 +133,16 @@ The resulting STR truth set contains:
  
 If we take all alleles and plot the number of repeats in CHM1-CHM13 minus the number of repeats in hg38 at the same locus, the distribution is symmetrical around 0:
 
-![image](https://user-images.githubusercontent.com/6240170/200637637-32348eff-13bc-4c10-9cbb-c52304709859.png)
+<img width=500 src="https://user-images.githubusercontent.com/6240170/200637637-32348eff-13bc-4c10-9cbb-c52304709859.png">
+
 
 This distribution matches expectation since there's no reason that STRs in hg38 should be systematically larger or smaller than repeats in random individuals from the  population (ie. CHM1 and CHM13). To take it a step further, the degree to which this distribution is symetrical around 0 further supports the truth set's accuracy since it rules out systematic bias toward expansions or contractions in the pipeline that produced the SynDip Benchmark. 
 
+If we plot the same distribution but with size in base pairs instead of # of repeats on the x-axis, we see:
+
+<img width=500 src="https://user-images.githubusercontent.com/6240170/201500475-561acf00-3b52-43b6-9a27-b1846ce76ddd.png">
+
+To summarize this another way, only 3,037 STR alleles (1.7%) are more than 30bp different from the size of the STR in the reference genome, and only 849 (0.5%) are more than 60bp different - meaning it might not be possible to genotype them using spanning reads alone.
 
 We can also look at the prevalence of STR variants with different motifs and compare it to the distribution of pure STR repeats in hg38 (found using [TandemRepeatFinder](https://github.com/Benson-Genomics-Lab/TRF)):
 
