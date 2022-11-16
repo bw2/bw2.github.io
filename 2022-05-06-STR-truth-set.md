@@ -173,45 +173,73 @@ As we'll see, this can serve as a crude proxy for mutability:
 </div>
   
 
-We can also check where truth set STR variants fall relative to Gencode v42 genes.  
+We can also check where truth set STR variants fall relative to Gencode v42 and MANE v1 gene models:
 
 <table>
    <tr>
       <th>Gene Region</th>
-      <th># of STR variants</th>
-      <th>%</th>
+      <th># of STR variants<br>Gencode v42</th>
+      <th>%<br>Gencode v42</th>
+      <th></th>
+      <th># of STR variants<br>MANE v1</th>
+      <th>%<br>Gencode v42</th>
    </tr><tr>
       <td>intron</td>
       <td align=right>98,772</td>
       <td align=right>56 %</td>
+      <td></td>
+      <td align=right>61,529</td>
+      <td align=right>35 %</td>
    </tr><tr>
       <td>intergenic</td>
       <td align=right>70,236</td>
       <td align=right>40 %</td>
+      <td></td>
+      <td align=right>110,723</td>
+      <td align=right>63 %</td>
    </tr><tr>
       <td>exon of a non-coding gene</td>
       <td align=right>2,094</td>
       <td align=right>1.2 %</td>
+      <td></td>
+      <td align=right>0</td>
+      <td align=right>0 %</td>
    </tr><tr>
       <td>promoter</td>
       <td align=right>1,869</td>
       <td align=right>1.1 %</td>
+      <td></td>
+      <td align=right>1,214</td>
+      <td align=right>0.8 %</td>
    </tr><tr>
       <td>3' UTR</td>
       <td align=right>1,667</td>
       <td align=right>1.0 %</td>
+      <td></td>
+      <td align=right>1,404</td>
+      <td align=right>0.8 %</td>
    </tr><tr>
       <td>5' UTR</td>
       <td align=right>492</td>
       <td align=right>0.3 %</td>
+      <td></td>
+      <td align=right>299</td>
+      <td align=right>0.2 %</td>
    </tr><tr>
       <td>coding region</td>
-      <td align=right>218</td>
-      <td align=right>0.2 %</td>
+      <td align=right>242</td>
+      <td align=right>0.1 %</td>
+      <td></td>
+      <td align=right>203</td>
+      <td align=right>0.1 %</td>
    </tr>
 </table>
 
 *NOTE: promoters are defined as just a 1kb window upstream of the 5' start of any transcript*
+
+The counts are similar when using MANE v1 gene annotations instead of Gencode:
+
+
 
 Showing the same data as a histogram stratified by motif sizes:
 <div align=left>
@@ -223,7 +251,7 @@ If we look only at the very small fraction of STR variants that overlap either p
 <img width=500 src="https://user-images.githubusercontent.com/6240170/200899334-703e84af-0b10-4c4c-9bb6-fa80efa8cf22.png">
 </div>
 
-This shows that nearly all STR variants in coding regions have motifs of sizes that are multiples of 3bp. 
+This shows that nearly all STR variants in MANE v1 coding regions have motifs of sizes that are multiples of 3bp. 
 Looking more closely, 24 of the 242 coding STR variants have motif sizes other than 3, 6, 9, etc. Of these, eight have dinucleotide motifs, six have 4bp motifs, three have 5bp motifs, one has a 14bp motif, and the rest are tandem repeats with motifs larger than 30bp. Only 12 of the 24 STRs actually cause frameshifts: five of these are dinucelotide motifs, four of them have 4bp motifs, and the remaining 3 are tandem repeats with motifs larger than 30bp. 
 
 
