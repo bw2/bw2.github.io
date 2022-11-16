@@ -173,16 +173,20 @@ As we'll see, this can serve as a crude proxy for mutability:
 </div>
   
 
-We can also check where truth set STR variants fall relative to Gencode v42 and MANE v1 gene models:
+We can also check where truth set STR variants fall relative to Gencode v42 or MANE v1 gene annotations:
 
 <table>
    <tr>
-      <th>Gene Region</th>
-      <th># of STR variants<br>Gencode v42</th>
-      <th>%<br>Gencode v42</th>
+      <th rowspan=2>Gene Region</th>
+      <th colspan=2>Gencode v42</th>
       <th></th>
-      <th># of STR variants<br>MANE v1</th>
-      <th>%<br>Gencode v42</th>
+      <th colspan=2>MANE v1</th>
+   </tr><tr>
+      <th># of STR variants</th>
+      <th>%</th>
+      <th></th>
+      <th># of STR variants</th>
+      <th>%</th>
    </tr><tr>
       <td>intron</td>
       <td align=right>98,772</td>
@@ -237,21 +241,19 @@ We can also check where truth set STR variants fall relative to Gencode v42 and 
 
 *NOTE: promoters are defined as just a 1kb window upstream of the 5' start of any transcript*
 
-The counts are similar when using MANE v1 gene annotations instead of Gencode:
 
-
-
-Showing the same data as a histogram stratified by motif sizes:
+Showing the MANE v1 proportions as a histogram stratified by motif sizes:
 <div align=left>
-<img width="525" alt="image" src="https://user-images.githubusercontent.com/6240170/200899445-e47ca68b-3d80-43da-ab4f-3c562ba8a3c7.png">
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/6240170/202269863-abc40ef0-35c1-428a-8065-ccb37b29157c.png">
 </div>
+
 
 If we look only at the very small fraction of STR variants that overlap either promoters, UTRs or coding regions, the histogram looks like:
 <div align=left>
 <img width=500 src="https://user-images.githubusercontent.com/6240170/200899334-703e84af-0b10-4c4c-9bb6-fa80efa8cf22.png">
 </div>
 
-This shows that nearly all STR variants in MANE v1 coding regions have motifs of sizes that are multiples of 3bp. 
+This shows that nearly all STR variants in coding regions have motifs of sizes that are multiples of 3bp. 
 Looking more closely, 24 of the 242 coding STR variants have motif sizes other than 3, 6, 9, etc. Of these, eight have dinucleotide motifs, six have 4bp motifs, three have 5bp motifs, one has a 14bp motif, and the rest are tandem repeats with motifs larger than 30bp. Only 12 of the 24 STRs actually cause frameshifts: five of these are dinucelotide motifs, four of them have 4bp motifs, and the remaining 3 are tandem repeats with motifs larger than 30bp. 
 
 
