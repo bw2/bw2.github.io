@@ -259,7 +259,7 @@ We can also look at whether the 203 coding STR variants fall in LoF or missense 
 
 ![image](https://user-images.githubusercontent.com/6240170/202306770-ad9d07b8-159d-49a4-930d-ad0e72deae4e.png)
 
-From this, we can see that pathogenic STRs are much more likely to be in constrained genes, implying that both missense and LoF constraint computed from SNVs is also relevant for STRs. On the other hand, just because a gene is constrained doesn't mean that in-frame STR variants in that gene are pathogenic since many of the truth set STRs fall in high-constraint genes.
+From this, we can see that disease-associated STRs are much more likely to be in constrained genes, implying that both missense and LoF constraint computed from SNVs is also relevant for STRs. On the other hand, just because a gene is constrained doesn't mean that in-frame STR variants in that gene cause disease since many of the truth set STRs fall in high-constraint genes.
 
 #### Novel STR loci
 
