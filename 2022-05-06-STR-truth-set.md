@@ -461,9 +461,6 @@ The truth set and tool results provide an opportunity to identify features that 
    <td>ExpansionHunterDenovo</td>
    <td>[<a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02017-z">Dolzhenko 2020</a>]</td>
    <td>
-      <ul>
-         <li>91 WGS samples with confirmed HTT, FXN, DMPK, or FMR1 expansions</li>
-      </ul>
    </td>
 </tr><tr>
    <td>GangSTR</td>
