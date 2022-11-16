@@ -247,14 +247,17 @@ Showing the MANE v1 proportions as a histogram stratified by motif sizes:
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/6240170/202269863-abc40ef0-35c1-428a-8065-ccb37b29157c.png">
 </div>
 
-
 If we look only at the very small fraction of STR variants that overlap either promoters, UTRs or coding regions, the histogram looks like:
 <div align=left>
 <img width=500 src="https://user-images.githubusercontent.com/6240170/200899334-703e84af-0b10-4c4c-9bb6-fa80efa8cf22.png">
 </div>
 
-This shows that nearly all STR variants in coding regions have motifs of sizes that are multiples of 3bp. 
-Looking more closely, 24 of the 242 coding STR variants have motif sizes other than 3, 6, 9, etc. Of these, eight have dinucleotide motifs, six have 4bp motifs, three have 5bp motifs, one has a 14bp motif, and the rest are tandem repeats with motifs larger than 30bp. Only 12 of the 24 STRs actually cause frameshifts: five of these are dinucelotide motifs, four of them have 4bp motifs, and the remaining 3 are tandem repeats with motifs larger than 30bp. 
+This shows that nearly all - 198 out of 203 (97.5%) - of the STR variants in coding regions have motif sizes that are multiples of 3bp.  
+Of the 5 coding variants that are not in this category, 3 have large (> 50bp) motifs, 1 is an out-of-frame expansion of the rare 2bp "GC" motif, and the last one is an expansion of the 5bp "GGGGC" motif that adds 3 additional repeats relative to the reference and so remains in-frame. 
+
+We can also look at whether the 203 coding STR variants fall in LoF or missense constrained genes.
+
+
 
 
 #### Novel STR loci
@@ -466,9 +469,6 @@ The truth set and tool results provide an opportunity to identify features that 
    <td>GangSTR</td>
    <td>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6735967/">Mousavi 2019</a>]</td>
    <td>
-      <ul>
-         <li></li>
-      </ul>
    </td>
 </tr><tr>
    <td>ExpansionHunter</td>
@@ -477,25 +477,16 @@ The truth set and tool results provide an opportunity to identify features that 
       [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6853681/">Dolzhenko 2019</a>]
    </td>
    <td>
-      <ul>
-         <li></li>
-      </ul>
    </td>
 </tr><tr>
    <td>TredParse</td>
    <td>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5673627/">Tang 2017</a>]</td>
    <td>
-      <ul>
-         <li></li>
-      </ul>
    </td>
 </tr><tr>
    <td>STRetch</td>
    <td>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6102892/">Dashnow 2018</a>]</td>
    <td>
-      <ul>
-         <li></li>
-      </ul>
    </td>
 </tr><tr>
    <td>HipSTR</td>
