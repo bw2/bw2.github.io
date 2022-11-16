@@ -173,7 +173,7 @@ As we'll see, this can serve as a crude proxy for mutability:
 </div>
   
 
-We can also check where truth set STR variants fall relative to Gencode v42 or MANE v1 gene annotations:
+We can also check where truth set STRs fall relative to Gencode v42 or MANE v1 gene annotations:
 
 <table>
    <tr>
@@ -247,18 +247,19 @@ Showing the MANE v1 proportions as a histogram stratified by motif sizes:
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/6240170/202269863-abc40ef0-35c1-428a-8065-ccb37b29157c.png">
 </div>
 
-If we look only at the very small fraction of STR variants that overlap either promoters, UTRs or coding regions, the histogram looks like:
+If we look only at the very small fraction of STRs that overlap either promoters, UTRs or coding regions, the histogram looks like:
 <div align=left>
 <img width=500 src="https://user-images.githubusercontent.com/6240170/200899334-703e84af-0b10-4c4c-9bb6-fa80efa8cf22.png">
 </div>
 
-This shows that nearly all - 198 out of 203 (97.5%) - of the STR variants in coding regions have motif sizes that are multiples of 3bp.  
-Of the 5 coding variants that are not in this category, 3 have large (> 50bp) motifs, 1 is an out-of-frame expansion of the rare 2bp "GC" motif, and the last one is an expansion of the 5bp "GGGGC" motif that adds 3 additional repeats relative to the reference and so remains in-frame. 
+This shows that nearly all - 198 out of 203 (97.5%) - of the STR alleles in coding regions have motif sizes that are multiples of 3bp.  
+Of the 5 coding STRs that are not in this category, 3 have large (> 50bp) motifs, 1 is an out-of-frame expansion of the rare 2bp "GC" motif, and 1 is an expansion of a 5bp "GGGGC" motif that adds 3 additional repeats relative to the reference and so remains in-frame. 
 
-We can also look at whether the 203 coding STR variants fall in LoF or missense constrained genes.
+We can also look at whether the 203 coding STR variants fall in LoF or missense constrained genes and compare this to the gene constraint of 25 coding  disease-associated STR loci. 
 
+![image](https://user-images.githubusercontent.com/6240170/202306770-ad9d07b8-159d-49a4-930d-ad0e72deae4e.png)
 
-
+From this, we can see that pathogenic STRs are much more likely to be in constrained genes, implying that both missense and LoF constraint computed from SNVs is also relevant for STRs. On the other hand, just because a gene is constrained doesn't mean that in-frame STR variants in that gene are pathogenic since many of the truth set STRs fall in high-constraint genes.
 
 #### Novel STR loci
 
