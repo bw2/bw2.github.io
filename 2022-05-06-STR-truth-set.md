@@ -261,6 +261,11 @@ We can also look at whether the 203 coding STR variants fall in LoF or missense 
 
 From this, we can see that disease-associated STRs are much more likely to be in constrained genes, implying that both missense and LoF constraint computed from SNVs is also relevant for STRs. On the other hand, just because a gene is constrained doesn't mean that in-frame STR variants in that gene cause disease since many of the truth set STRs fall in high-constraint genes.
 
+Another way to look at this is whether larger STR variants are less likely to be in constrained genes, and the answer is yes - at least based on pLI and STR expansions (but not contractions). Other metrics don't separate as well by STR size, implying that pLI is the most useful metric.
+![image](https://user-images.githubusercontent.com/6240170/202331857-f5cf777c-37d5-4342-b3c7-60aab7e096a5.png)
+
+
+
 #### Novel STR loci
 
 Unlike variant calling tools for SNVs and structural variants which just take read alignments (bam or cram) as input, nearly all STR genotyping tools except [ExpansionHunterDenovo](https://github.com/Illumina/ExpansionHunterDenovo) and [STRling](https://github.com/quinlan-lab/STRling) require users to also specify the exact boundaries and motifs of the STR loci to genotype. For example, to genotype the Huntington's Disease locus, a user must specify the reference coordinates "chr4:3074876-3074933" and motif "CAG". The implicit assumption of these algorithms is that all STRs you might want to genotype are also present in the reference genome - meaning that STR variants look like:
