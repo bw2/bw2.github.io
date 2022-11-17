@@ -253,7 +253,7 @@ If we look only at the very small fraction of STRs that overlap either promoters
 </div>
 
 This shows that nearly all - 198 out of 203 (97.5%) - of the STR alleles in coding regions have motif sizes that are multiples of 3bp.  
-Of the 5 coding STRs that are not in this category, 3 have large (> 50bp) motifs, 1 is an out-of-frame expansion of the rare 2bp "GC" motif, and 1 is an expansion of a 5bp "GGGGC" motif that adds 3 additional repeats relative to the reference and so remains in-frame. 
+As for the 5 remaining STRs, 3 have motifs larger than 50bp, 1 is an out-of-frame expansion of the rare "GC" dinucleotide motif, and 1 is an expansion of a 5bp "GGGGC" motif that adds 3 additional repeats relative to the reference and so does not introduce a frameshift. 
 
 We can also look at whether the 203 coding STR variants fall in LoF or missense constrained genes and compare this to the gene constraint of 25 coding  disease-associated STR loci. 
 
