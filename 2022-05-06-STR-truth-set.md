@@ -153,18 +153,15 @@ We can also look at the prevalence of STR variants with different motifs and com
 </div>
 
 Here the motifs are sorted by how common they are in hg38. 
-Although the 2 distributions are roughly similar, STR variants are clearly more likely for some motifs than for others. We examine this in more detail below. 
+Although the 2 distributions are roughly similar, STR variants are clearly more likely for some motifs than for others. 
 
-
-### Additional Summary Stats
-
-30,599 out of 144,773 (21%) STR variants are multiallelic (ie. have 2 non-reference alleles).  
-As we'll see, this can serve as a crude proxy for mutability:
+30,599 out of 144,773 (21%) STR variants are multiallelic (ie. have 2 non-reference alleles), reflecting the high mutation rates of STR loci.
 
 <div align=center>
 <img width=850 src="https://user-images.githubusercontent.com/6240170/200898063-bcdfdfe6-1496-4997-b95d-192f83e08ceb.png">
 </div>
 
+### Genomic Regions
 
 3,121 out of 144,773 (2.2%) STR variants overlap segmental duplications (SegDups) in hg38:
 
