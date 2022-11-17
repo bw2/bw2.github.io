@@ -261,7 +261,7 @@ We can also look at whether the 203 coding STR variants fall in LoF or missense 
 
 From this, we can see that disease-associated STRs are much more likely to be in constrained genes, implying that both missense and LoF constraint computed from SNVs is also relevant for STRs. On the other hand, just because a gene is constrained doesn't mean that in-frame STR variants in that gene cause disease since many of the truth set STRs fall in high-constraint genes.
 
-Another way to look at this is whether larger STR variants are less likely to be in constrained genes, and the answer is yes - at least based on pLI and STR expansions (but not contractions). Other metrics don't separate as well by STR size, implying that pLI is the most useful metric.
+Another way to look at this is whether larger STR variants are less likely to be in constrained genes, and the answer is yes - at least based on pLI and STR expansions (but not contractions). Other metrics don't separate as well by STR size, implying that pLI is the most useful metric. Here, each dot represents a coding STR allele in the truth set:
 ![image](https://user-images.githubusercontent.com/6240170/202331857-f5cf777c-37d5-4342-b3c7-60aab7e096a5.png)
 
 
