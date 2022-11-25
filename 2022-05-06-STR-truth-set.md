@@ -2,28 +2,28 @@
 
 Short tandem repeat (STR) expansions are associated with over 50 monogenic diseases [[Depienne 2021](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8205997/)] as well as common diseases such as autism [[Trost 2020](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9348607/)] [[Mitra 2021](https://www.nature.com/articles/s41586-020-03078-7)]. Improvements in STR genotyping tools like [ExpansionHunter](https://github.com/Illumina/ExpansionHunter) and [GangSTR](https://github.com/gymreklab/GangSTR) have generated new interest in studying STRs using short read sequencing data. 
 
-One persistant challenge for the field has been the scarcity of publicly available high-quality truth data (ie. samples with known STR expansions) that can be used for:
+One persistant challenge has been a scarcity of publicly available high-quality truth data (ie. samples with known STR expansions) that can be used for:
 1. comparing STR genotyping tools 
 2. evaluatating how a given tool's performance varies across different loci
 3. developing additional tools such as genotype quality filters
 
-Here, we describe a new genome-wide STR truth set based on the Synthetic Diploid Bechmark (SynDip) [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)]. The result is ~145k accurate STR genotypes in a single human sample (CHM1-CHM13) with publicly available short-read sequencing data. 
+Here, I describe a new genome-wide STR truth set based on the Synthetic Diploid Bechmark (SynDip) [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)]. It contains accurate genotypes for 145k STR variants in a single human sample (CHM1-CHM13). 
+The PCR-free genome sequencing data for this sample can be downloaded from the [Short Read Archive (SRA)](https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&acc=ERR1341796&display=data-access). 
 
-In addition to tool evaluations, we can use this truth set to explore some interesting questions about STRs in general, such as:
+I use the truth set to compare tools and to explore interesting questions about STRs in general, such as:
 - what is the distribution of STR variants in the human genome (ie. motif sizes, lengths, percent multiallelic, etc.)?
 - how well do the existing catalogs of STR loci capture these variants?
-- how many STR variants are novel relative to the hg38 reference (ie. different motif or locus)?
-- can we predict which loci are more likely to be mutated based on their sequence and reference context?
+- how many STR variants are novel relative to the hg38 reference (ie. have a motif or repeat locus not present in the reference genome)?
 
-*NOTE*: STRs are traditionally defined as repeating motifs that are between 1 to 6bp long. For this truth set we exclude 1bp (homopolymer) repeats since they are uniquely error-prone, but include motifs longer than 6bp, allowing users to decide whether to include these in their analyses.
+*NOTE*: STRs are traditionally defined as repeating motifs that are between 1 to 6bp long. For this truth set I exclude 1bp (homopolymer) repeats since they are uniquely error-prone, but include motifs longer than 6bp and leave it to users to decide whether to include these in their analyses.
 
 ---
 
 ### Defining the STR truth set
 
-To generate an STR truth set, we start with the Synthetic Diploid Benchmark (SynDip) [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)]. This unique dataset uses haploid PacBio assemblies to identify all variants in the CHM1-CHM13 synthetic diploid sample. Because these variants are based on alignments of haploid assemblies (rather than individual reads) to the reference genome, the SynDip variants are more reliable than those produced by short-read or even ordinary long-read pipelines. 
+To generate an STR truth set, I started with the Synthetic Diploid Benchmark (SynDip) [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)]. This unique dataset uses haploid PacBio assemblies to identify all variants in the CHM1-CHM13 synthetic diploid sample. Because these variants are based on alignments of haploid assemblies (rather than individual reads) to the reference genome, the SynDip variants are more reliable than those produced by short-read or even ordinary long-read pipelines. 
 
-Of the 4.1 million high-confidence variants in the [SynDip VCF](https://github.com/lh3/CHM-eval), 259k (6.3%) are insertions and 249k (6.1%) are deletions. To create the STR truth set, we filter these insertions and deletions to the subset that represent STR expansions or contractions:
+Of the 4.1 million high-confidence variants in the [SynDip VCF](https://github.com/lh3/CHM-eval), 259k (6.3%) are insertions and 249k (6.1%) are deletions. To create the STR truth set, I filter these insertions and deletions to the subset that represent STR expansions or contractions:
 
 <table>
    <tr>
@@ -80,7 +80,7 @@ This variant passes our thresholds for length ≥ 9bp and repeat count ≥ 3, so
 
 ### Validation
 
-The SynDip benchmark is based on samples from two individuals: CHM1 and CHM13. One of them (CHM13) is also the basis of the new [telomere-to-telomere](https://www.genome.gov/about-genomics/telomere-to-telomere) (T2T) reference genome, so we can validate most STR variants by checking that at least one allele matches the T2T reference sequence.
+The SynDip benchmark is based on samples from two individuals: CHM1 and CHM13. One of them (CHM13) is also the basis of the new [telomere-to-telomere](https://www.genome.gov/about-genomics/telomere-to-telomere) (T2T) reference genome, so I can validate most STR variants by checking that at least one allele matches the T2T reference sequence.
 
 *NOTE*: STR contractions that failed hg38 ⇒ T2T liftover due to an  “IndelStraddlesMultipleIntevals” error were included in the truth set without these validation steps since it was deemed to be a technical problem with liftover rather than an issue with the variant itself. This applies to 60,590 (77%) of STR contractions.
 
@@ -131,7 +131,7 @@ The resulting STR truth set contains:
 - **144,773 STR variants**  
 - **175,372 STR alleles**   
  
-If we take all alleles and plot the number of repeats in CHM1-CHM13 minus the number of repeats in hg38 at the same locus, the distribution is symmetrical around 0:
+If I take all alleles and plot the number of repeats in CHM1-CHM13 minus the number of repeats in hg38 at the same locus, the distribution is symmetrical around 0:
 
 <img width=500 src="https://user-images.githubusercontent.com/6240170/200637637-32348eff-13bc-4c10-9cbb-c52304709859.png">
 
@@ -170,7 +170,7 @@ Although the 2 distributions are roughly similar, STR variants are clearly more 
 </div>
   
 
-We can also check where truth set STRs fall relative to Gencode v42 or MANE v1 gene annotations:
+I can also check where truth set STRs fall relative to Gencode v42 or MANE v1 gene annotations:
 
 <table>
    <tr>
@@ -256,7 +256,7 @@ We can also look at whether the 203 coding STR variants fall in LoF or missense 
 
 ![image](https://user-images.githubusercontent.com/6240170/202306770-ad9d07b8-159d-49a4-930d-ad0e72deae4e.png)
 
-From this, we can see that disease-associated STRs are much more likely to be in constrained genes, implying that both missense and LoF constraint computed from SNVs is also relevant for STRs. On the other hand, just because a gene is constrained doesn't mean that in-frame STR variants in that gene cause disease since many of the truth set STRs fall in high-constraint genes.
+From this, we see that disease-associated STRs are much more likely to be in constrained genes, implying that both missense and LoF constraint computed from SNVs is also relevant for STRs. On the other hand, just because a gene is constrained doesn't mean that in-frame STR variants in that gene cause disease since many of the truth set STRs fall in high-constraint genes.
 
 One more way to look at this is whether larger STR variants are less likely to be in constrained genes. This might not be enough data to say, but at least for larger expansions, pLI is more likely to be near 0. Here, each dot represents a coding STR allele in the truth set, and contractions relative to the reference are negative on the y-axis:
 ![image](https://user-images.githubusercontent.com/6240170/202331857-f5cf777c-37d5-4342-b3c7-60aab7e096a5.png)
@@ -289,7 +289,7 @@ An important question for any genome-wide STR analysis using tools like Expansio
 
 The truth set allows us to ask: if we genotype all loci in a given catalog, how many CHM1-CHM13 STR variants are we guaranteed to miss because they fall outside this catalog? 
 
-Here we compare several catalogs and approaches:
+Here I compare several catalogs and approaches:
 <table>
    <tr>
       <th></th>
@@ -379,7 +379,25 @@ The truth set and tool results provide an opportunity to identify features that 
 ### Extra Sections
 
 ---
-**Extra Section 1:** A few words about the limitations of existing approaches to STR truth data:
+**Extra Section 1:** Data details and availability
+
+CHM1-CHM13-2 read data is publicly available under run id ERR1341796: [[SRA](https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&acc=ERR1341796&display=data-access)]  [[EBI](https://www.ebi.ac.uk/ena/browser/view/ERR1341796)].
+
+Details:
+- Illumina HiSeq X Ten
+- PCR-Free protocol
+- Paired-end 151bp reads
+- 45x Depth of Coverage
+
+Further details are provided in [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)].  
+
+I used BWA-MEM v0.7.17 to realign the data to hg38.
+
+
+
+
+---
+**Extra Section 2:** A few words about the limitations of existing approaches to STR truth data:
 
 1. **simulated STRs:** we can generate an unlimited number of STR examples with known genotypes by using a tool like [wgsim](https://github.com/lh3/wgsim). However, simulated data doesn't capture the full complexity of real sequencing data (eg. adjacent variants not present in the reference genome, GC bias, and other sequencing artifacts). 
 2. **mendelian violations analysis:** trios can be used to check whether genotypes are consistant with Mendelian inheritance. However, This is informative about specificity but not sensitivity since a tool that misses all expansions will have zero mendelian violations. This produces a coarser  
@@ -395,7 +413,7 @@ The truth set and tool results provide an opportunity to identify features that 
 4. **long read data:** This might be the ideal source of truth in the future, but currently suffers from a lack of well-validated STR calling tools. The most-recently published tool - Straglr [[Chiu 2021](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02447-3)] - reports 73% concordance between heterozygous STR expansions called from HiFi PacBio data vs truth data generated from the diploid assembly of HG00733 [[Kronenberg 2019](https://www.biorxiv.org/content/10.1101/327064v2.full)]. [[Chiu 2021](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02447-3)], [[Dashnow 2021](https://www.biorxiv.org/content/10.1101/2021.11.18.469113v1)] and other groups (unpublished) also raise concerns about diploid assemblies as a source of STR truth data since manual inspection of discordant loci often revealed that the assembly was not credible at those loci. 
 
 ----
-**Extra Section 2**: The table below lists STR calling tools + the truth data used in their publications.
+**Extra Section 3**: The table below lists STR calling tools + the truth data used in their publications.
 
 <br />
 <table class="ui striped table">
@@ -522,7 +540,7 @@ The truth set and tool results provide an opportunity to identify features that 
 The largest truth sets in this table are generated using diploid assemblies - as described in the Straglr paper [<a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02447-3">Chiu 2021</a>] - but the accuracy of these assemblies for STRs remains questionable. 
 
 ----
-**Extra Section 3:** Synthetic Diploid Benchmark Overview
+**Extra Section 4:** Synthetic Diploid Benchmark Overview
 
 [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)] produced a high-qaulity truth set based on [Huddleston 2017](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5411763/) haploid assemblies of two individuals - CHM1 and CHM13. 
 
