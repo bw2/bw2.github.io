@@ -138,7 +138,7 @@ If I take all alleles and plot the number of repeats in CHM1-CHM13 minus the num
 
 This distribution matches expectation since there's no reason that STRs in hg38 should be systematically larger or smaller than repeats in random individuals from the  population (ie. CHM1 and CHM13). To take it a step further, the degree to which this distribution is symetrical around 0 further supports the truth set's accuracy since it rules out systematic bias toward expansions or contractions in the pipeline that produced the SynDip Benchmark. 
 
-If we plot the same distribution but with size in base pairs instead of # of repeats on the x-axis, we see:
+If I plot the same distribution but with size in base pairs instead of # of repeats on the x-axis, we see:
 
 <img width=500 src="https://user-images.githubusercontent.com/6240170/201500475-561acf00-3b52-43b6-9a27-b1846ce76ddd.png">
 
@@ -361,8 +361,12 @@ One takeaway is that, if we aim to capture more than 95% of STR variants using a
 ---
 ### Tool Comparisons
 
-We downloaded Illumina paired-end short read data for CHM1-CHM13 from [EBI] and realigned it to hg38 using bwa. Then, we generated an STR catalog for the 144,000 (99%) of loci that had adjacent matching repeats in the hg38 reference (ie. were not novel). 
-We then ran ExpansionHunter, GangSTR, and HipSTR to genotype these loci while applying different downstream filters. We also ran STRling and ExpandionHunterDenovo, neither of which need an STR catalog.
+To compare STR calling tools, I downloaded the CHM1-CHM13-2 sample read data from the [[SRA](https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&acc=ERR1341796&display=data-access)]. Thi is PCR-Free Illumina paire-end 151bp genome sequencing data with 45x depth of coverage.
+I used BWA-MEM v0.7.17 to realign it to hg38. Then, to run ExpansionHunter and GangSTR on this sample, I generated variant catalogs which contained 
+1) 144,158 loci (99%) of the truth set that had matching repeats in the hg38 reference genome
+2) 144,159 additional loci that are non-variant. 
+
+** Percent Correct**
 
 Below are results from comparing these tools on different loci.
 
@@ -392,8 +396,6 @@ Details:
 Further details are provided in [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)].  
 
 I used BWA-MEM v0.7.17 to realign the data to hg38.
-
-
 
 
 ---
