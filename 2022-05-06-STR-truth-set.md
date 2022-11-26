@@ -142,7 +142,7 @@ If I plot the same distribution but with size in base pairs instead of # of repe
 
 <img width=500 src="https://user-images.githubusercontent.com/6240170/201500475-561acf00-3b52-43b6-9a27-b1846ce76ddd.png">
 
-To summarize this another way, only 3,037 STR alleles (1.7%) are more than 30bp different from the size of the STR in the reference genome, and only 849 (0.5%) are more than 60bp different - meaning it might not be possible to genotype them using spanning reads alone.
+To summarize, only 3,037 STR alleles (1.7%) differ by more than 30bp from the reference genome, and only 849 (0.5%) differ by more than 60bp (so that it might not be possible to genotype them using spanning reads alone). Although there are many STR variants, the overwhelming majority add or subtract only a few repeats. 
 
 We can also look at the prevalence of STR variants with different motifs and compare it to the distribution of pure STR repeats in hg38 (found using [TandemRepeatFinder](https://github.com/Benson-Genomics-Lab/TRF)):
 
