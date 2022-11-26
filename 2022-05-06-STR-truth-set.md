@@ -2,28 +2,28 @@
 
 Short tandem repeat (STR) expansions are associated with over 50 monogenic diseases [[Depienne 2021](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8205997/)] as well as common diseases such as autism [[Trost 2020](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9348607/)] [[Mitra 2021](https://www.nature.com/articles/s41586-020-03078-7)]. Improvements in STR genotyping tools like [ExpansionHunter](https://github.com/Illumina/ExpansionHunter) and [GangSTR](https://github.com/gymreklab/GangSTR) have generated new interest in studying STRs using short read sequencing data. 
 
-One persistant challenge has been a scarcity of publicly available high-quality truth data (ie. samples with known STR expansions) that can be used for:
+One persistant challenge is the scarcity of publicly available high-quality truth data (ie. samples with known STR expansions) that can be used for:
 1. comparing STR genotyping tools 
 2. evaluatating how a given tool's performance varies across different loci
 3. developing additional tools such as genotype quality filters
 
-Here, I describe a new genome-wide STR truth set based on the Synthetic Diploid Bechmark (SynDip) [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)]. It contains accurate genotypes for 145k STR variants in a single human sample (CHM1-CHM13). 
+Here, I share a new genome-wide STR truth set based on the Synthetic Diploid Bechmark (SynDip) [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)]. It contains accurate genotypes for 145k STR variants in a single human sample (CHM1-CHM13). 
 The PCR-free genome sequencing data for this sample can be downloaded from the [Short Read Archive (SRA)](https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&acc=ERR1341796&display=data-access). 
 
-I use the truth set to compare tools and to explore interesting questions about STRs in general, such as:
+I use the truth set to compare tools as well as to explore questions about STRs in general, such as:
 - what is the distribution of STR variants in the human genome (ie. motif sizes, lengths, percent multiallelic, etc.)?
-- how well do the existing catalogs of STR loci capture these variants?
-- how many STR variants are novel relative to the hg38 reference (ie. have a motif or repeat locus not present in the reference genome)?
+- how well do widely-used catalogs of STR loci capture these variants?
+- how many STR variants are novel (ie. have a motif or repeat locus not present in the hg38 reference genome)?
 
-*NOTE*: STRs are traditionally defined as repeating motifs that are between 1 to 6bp long. For this truth set I exclude 1bp (homopolymer) repeats since they are uniquely error-prone, but include motifs longer than 6bp and leave it to users to decide whether to include these in their analyses.
+*NOTE*: STRs are traditionally defined as repeating motifs that are between 1 to 6bp long. For this truth set I exclude 1bp (homopolymer) repeats since they are uniquely error-prone, but include motifs longer than 6bp so that users can decide whether to include these in their analyses.
 
 ---
 
 ### Defining the STR truth set
 
-To generate an STR truth set, I started with the Synthetic Diploid Benchmark (SynDip) [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)]. This unique dataset uses haploid PacBio assemblies to identify all variants in the CHM1-CHM13 synthetic diploid sample. Because these variants are based on alignments of haploid assemblies (rather than individual reads) to the reference genome, the SynDip variants are more reliable than those produced by short-read or even ordinary long-read pipelines. 
+To generate an STR truth set, I started with the Synthetic Diploid Benchmark (SynDip) [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)]. This unique dataset used haploid PacBio assemblies to identify all variants in the CHM1-CHM13 synthetic diploid sample. Because these variants are based on alignments of haploid assemblies (rather than individual reads) to the reference genome, the SynDip variants are more reliable than those produced by short-read or even ordinary long-read pipelines. 
 
-Of the 4.1 million high-confidence variants in the [SynDip VCF](https://github.com/lh3/CHM-eval), 259k (6.3%) are insertions and 249k (6.1%) are deletions. To create the STR truth set, I filter these insertions and deletions to the subset that represent STR expansions or contractions:
+Of the 4.1 million high-confidence variants in the [SynDip VCF](https://github.com/lh3/CHM-eval), 259k (6.3%) are insertions and 249k (6.1%) are deletions. To create the STR truth set, I filtered these insertions and deletions to the subset that represent STR expansions or contractions:
 
 <table>
    <tr>
@@ -74,15 +74,15 @@ Here, the reference contains 9 additional GGC repeats so the variant can be repr
 **9 x GGC repeats in the reference allele**  
 **11 x GGC repeats in the alternate allele**   
   
-This variant passes our thresholds for length ≥ 9bp and repeat count ≥ 3, so **we add it to STR truth set**.
+This variant passes the thresholds for length ≥ 9bp and repeat count ≥ 3, so **we add it to STR truth set**.
 
 ----
 
 ### Validation
 
-The SynDip benchmark is based on samples from two individuals: CHM1 and CHM13. One of them (CHM13) is also the basis of the new [telomere-to-telomere](https://www.genome.gov/about-genomics/telomere-to-telomere) (T2T) reference genome, so I can validate most STR variants by checking that at least one allele matches the T2T reference sequence.
+The SynDip benchmark is based on samples from two individuals: CHM1 and CHM13. One of them (CHM13) is also the basis of the new [telomere-to-telomere](https://www.genome.gov/about-genomics/telomere-to-telomere) (T2T) reference genome, so it's possible to validate most STR variants in the truth set by checking that at least one allele matches the T2T reference sequence.
 
-*NOTE*: STR contractions that failed hg38 ⇒ T2T liftover due to an  “IndelStraddlesMultipleIntevals” error were included in the truth set without these validation steps since it was deemed to be a technical problem with liftover rather than an issue with the variant itself. This applies to 60,590 (77%) of STR contractions.
+*NOTE*: STR contractions that failed hg38 ⇒ T2T liftover due to an  “IndelStraddlesMultipleIntevals” error were included in the truth set without these validation steps as I consider this to be a technical issue with liftover rather than a problem with the variant itself. This applies to 60,590 (77%) of STR contractions.
 
 <table>
    <tr>
