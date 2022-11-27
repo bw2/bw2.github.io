@@ -368,7 +368,7 @@ One takeaway is that, if we aim to capture more than 95% of STR variants using a
 ---
 ### Tool Comparisons
 
-To compare STR calling tools, I downloaded the PCR-free genome sequencing data for CHM1-CHM13-2 from the [[SRA](https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&acc=ERR1341796&display=data-access)]. This is 151bp paired-end data with 45x depth of coverage.
+To compare STR calling tools, I downloaded the PCR-free genome sequencing data for CHM1-CHM13-2 from the [SRA](https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&acc=ERR1341796&display=data-access). This is 151bp paired-end data with 45x depth of coverage.
 
 I then realigned it to hg38 using BWA-MEM v0.7.17. 
 
