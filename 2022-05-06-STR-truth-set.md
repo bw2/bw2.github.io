@@ -399,9 +399,16 @@ Further details are provided in [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/arti
 
 I used BWA-MEM v0.7.17 to realign the data to hg38.
 
+---
+**Extra Section 4:** Genome-wide STR catalogs from running TandemRepeatFinder
+
+To generate comprehensive catalogs of pure repeats in hg38, I ran [TandemRepeatFinder](https://github.com/Benson-Genomics-Lab/TRF) with very mismatch and indel penalties. The resulting catalogs can be downloaded here:
+
+
+
 
 ---
-**Extra Section 2:** A few words about the limitations of existing approaches to STR truth data:
+**Extra Section 3:** A few words about the limitations of existing approaches to STR truth data:
 
 1. **simulated STRs:** we can generate an unlimited number of STR examples with known genotypes by using a tool like [wgsim](https://github.com/lh3/wgsim). However, simulated data doesn't capture the full complexity of real sequencing data (eg. adjacent variants not present in the reference genome, GC bias, and other sequencing artifacts). 
 2. **mendelian violations analysis:** trios can be used to check whether genotypes are consistant with Mendelian inheritance. However, This is informative about specificity but not sensitivity since a tool that misses all expansions will have zero mendelian violations. This produces a coarser  
@@ -417,7 +424,7 @@ I used BWA-MEM v0.7.17 to realign the data to hg38.
 4. **long read data:** This might be the ideal source of truth in the future, but currently suffers from a lack of well-validated STR calling tools. The most-recently published tool - Straglr [[Chiu 2021](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02447-3)] - reports 73% concordance between heterozygous STR expansions called from HiFi PacBio data vs truth data generated from the diploid assembly of HG00733 [[Kronenberg 2019](https://www.biorxiv.org/content/10.1101/327064v2.full)]. [[Chiu 2021](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02447-3)], [[Dashnow 2021](https://www.biorxiv.org/content/10.1101/2021.11.18.469113v1)] and other groups (unpublished) also raise concerns about diploid assemblies as a source of STR truth data since manual inspection of discordant loci often revealed that the assembly was not credible at those loci. 
 
 ----
-**Extra Section 3**: The table below lists STR calling tools + the truth data used in their publications.
+**Extra Section 4**: The table below lists STR calling tools + the truth data used in their publications.
 
 <br />
 <table class="ui striped table">
@@ -544,7 +551,7 @@ I used BWA-MEM v0.7.17 to realign the data to hg38.
 The largest truth sets in this table are generated using diploid assemblies - as described in the Straglr paper [<a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02447-3">Chiu 2021</a>] - but the accuracy of these assemblies for STRs remains questionable. 
 
 ----
-**Extra Section 4:** Synthetic Diploid Benchmark Overview
+**Extra Section 5:** Synthetic Diploid Benchmark Overview
 
 [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)] produced a high-qaulity truth set based on [Huddleston 2017](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5411763/) haploid assemblies of two individuals - CHM1 and CHM13. 
 
