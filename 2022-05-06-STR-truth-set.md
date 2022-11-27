@@ -280,7 +280,7 @@ The truth set allows us to check the degree to which this assumption is valid. I
 
 This suggests that, for samples like CHM1-CHM13 that have European ancestry, nearly all true STR variants can be found by using a large enough STR catalog generated from the reference genome. 
 
-*NOTE*: The truth set doesn't currently include STR variants where the inserted sequence contains interruptions (ie. is not a pure repeat), or where it has more than one STR or where it consists of an STR embedded within non-repetative sequence.
+*NOTE*: The truth set doesn't currently include STR variants where the inserted sequence contains interruptions (ie. is not a pure repeat).
 
 
 #### Limitations of existing STR catalogs
