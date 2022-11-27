@@ -400,7 +400,7 @@ Further details are provided in [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/arti
 I used BWA-MEM v0.7.17 to realign the data to hg38.
 
 ---
-**Extra Section 2:** Genome-wide STR catalogs from running TandemRepeatFinder
+**Extra Section 2:** Genome-wide STR catalogs via TandemRepeatFinder
 
 To generate a comprehensive catalog of pure repeats in hg38, I ran [TandemRepeatFinder](https://github.com/Benson-Genomics-Lab/TRF) with very large mismatch and indel penalties (=1000000) that basically disallow any mismatches or indels, and a small Minscore parameter to include even short stretches of repeats:
 
