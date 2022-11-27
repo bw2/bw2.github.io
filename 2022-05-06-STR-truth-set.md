@@ -382,7 +382,7 @@ Finally, I ran each of the tools on this data, and describe the results below.
 
 **Percent Correct**
 
-The first question to ask is - **what fraction of genotypes does each tool get right?**
+The first question to ask is - **what fraction of genotypes does each tool get right?**  
 Here "right" means that the allele size reported by the tool exactly matches the true allele size. 
 
 
