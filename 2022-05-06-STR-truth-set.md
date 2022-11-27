@@ -460,7 +460,7 @@ As before, I post-processed the output to discard homopolymers and loci than con
    </tr>
 </table>
 
-This catalog has fewer loci than the catalog of pure repeats because a number of adjacent pure repeat loci were merged into a single locus once mismatches were allowed. 
+This catalog has fewer loci than the catalog of pure repeats because a number of adjacent pure repeat loci were merged into single loci once mismatches were allowed. 
 
 ---
 
