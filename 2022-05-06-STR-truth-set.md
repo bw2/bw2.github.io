@@ -163,7 +163,7 @@ Although the 2 distributions are roughly similar, STR variants are clearly more 
 
 Finally, we can check the distribution of locus sizes in the reference genome:
 
-<img width=650 src="https://user-images.githubusercontent.com/6240170/204121334-d304c94c-59be-42ed-8d97-86b0e4ffe154.png">
+<img width=575 src="https://user-images.githubusercontent.com/6240170/204121334-d304c94c-59be-42ed-8d97-86b0e4ffe154.png">
 
 Unsurprisingly, truth set variants at loci where the reference sequence contains relatively few repeats are more likely to be expansions (relative to the reference), while loci that have many repeats in the reference are more likely to be contractions. 
 
