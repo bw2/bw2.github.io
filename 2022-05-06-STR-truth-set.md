@@ -170,7 +170,7 @@ Although the 2 distributions are roughly similar, STR variants are clearly more 
 </div>
   
 
-I can also check where truth set STRs fall relative to Gencode v42 or MANE v1 gene annotations:
+STR distributions relative to transcripts from [Gencode v42](https://www.gencodegenes.org/human/release_42.html) and [MANE v1](https://www.ncbi.nlm.nih.gov/refseq/MANE/) are as follows:
 
 <table>
    <tr>
