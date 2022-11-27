@@ -361,10 +361,16 @@ One takeaway is that, if we aim to capture more than 95% of STR variants using a
 ---
 ### Tool Comparisons
 
-To compare STR calling tools, I downloaded the CHM1-CHM13-2 sample read data from the [[SRA](https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&acc=ERR1341796&display=data-access)]. Thi is PCR-Free Illumina paire-end 151bp genome sequencing data with 45x depth of coverage.
-I used BWA-MEM v0.7.17 to realign it to hg38. Then, to run ExpansionHunter and GangSTR on this sample, I generated variant catalogs which contained 
-1) 144,158 loci (99%) of the truth set that had matching repeats in the hg38 reference genome
-2) 144,159 additional loci that are non-variant. 
+To compare STR calling tools, I downloaded the PCR-free genome sequencing data for CHM1-CHM13-2 from the [[SRA](https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&acc=ERR1341796&display=data-access)]. This is 151bp paired-end data with 45x depth of coverage.
+
+I then realigned it to hg38 using BWA-MEM v0.7.17. 
+
+Then, to run ExpansionHunter and GangSTR on this sample, I generated variant catalogs with
+1) 144,251 positive loci. These are all the loci in the truth set (excluding the 521 that don't have matching repeats in the reference genome). They represent true positive variants.
+2) 144,252 negative loci. These are repeat loci in hg38 that are not in the truth set (and therefore have a homozygous reference genotype). They represent true negatives. They were selected by taking the much larger set of all pure repeats in hg38 and selecting a random subset that has the same distribution of motif sizes as the set of positive loci. 
+
+[[source code](https://github.com/broadinstitute/str-truth-set/blob/main/tool_comparison/scripts/convert_truth_set_to_variant_catalogs.py)]
+
 
 **Percent Correct**
 
