@@ -325,7 +325,7 @@ Here I compare several widely-used catalogs and approaches:
       <td>3</td>
       <td>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) with very large mismatch and indel penalties to find all pure repeats that <b>span at least 6bp</b> in the hg38 reference genome</td>
       <td> </td>
-      <td nowrap align="right">4,880,610</td>
+      <td nowrap align="right">4,722,859</td>
       <td nowrap align="right">5,423 out of 144,773</td>
       <td nowrap align="right">3.7%</td>      
    </tr>
@@ -402,10 +402,21 @@ I used BWA-MEM v0.7.17 to realign the data to hg38.
 ---
 **Extra Section 4:** Genome-wide STR catalogs from running TandemRepeatFinder
 
-To generate comprehensive catalogs of pure repeats in hg38, I ran [TandemRepeatFinder](https://github.com/Benson-Genomics-Lab/TRF) with very mismatch and indel penalties. The resulting catalogs can be downloaded here:
+To generate a comprehensive catalog of pure repeats in hg38, I ran [TandemRepeatFinder](https://github.com/Benson-Genomics-Lab/TRF) with very large mismatch and indel penalties (1000000) that basically disallow any mismatches or indels, and a small Minscore parameter to include even short stretches of repeats:
+
+```
+trf catalog.txt 2 1000000 1000000 80 10 8 2000 -ngs -d
+```
+
+I then post-processed the output to discard homopolymers and loci than contain fewer than 3 repeats of a motif. The resulting catalog is available here:
 
 
-
+<table>
+   <tr>
+      <td></td>
+   </tr>
+   
+</table>
 
 ---
 **Extra Section 3:** A few words about the limitations of existing approaches to STR truth data:
