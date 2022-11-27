@@ -413,7 +413,7 @@ I then post-processed the output to discard homopolymers and loci than contained
 
 <table>
    <tr>
-      <td nowrap><b>Catalog</b></td>
+      <td nowrap><b>Catalog of Pure Repeats</b></td>
       <td nowrap><b># of STR Loci</b></td>
       <td nowrap><b>Download Link</b></td>
    </tr>
@@ -449,7 +449,7 @@ As before, I post-processed the output to discard homopolymers and loci than con
 
 <table>
    <tr>
-      <td nowrap><b>Catalog</b></td>
+      <td nowrap><b>Catalog Allowing Mismatches</b></td>
       <td nowrap><b># of STR Loci</b></td>
       <td nowrap><b>Download Link</b></td>
    </tr>
