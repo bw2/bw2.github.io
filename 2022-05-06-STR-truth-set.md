@@ -371,11 +371,33 @@ Then, to run ExpansionHunter and GangSTR on this sample, I generated variant cat
 
 [[source code](https://github.com/broadinstitute/str-truth-set/blob/main/tool_comparison/scripts/convert_truth_set_to_variant_catalogs.py)]
 
+The hg38-aligned BAM file and variant catalogs are publicly available in the [gs://str-truth-set](https://console.cloud.google.com/storage/browser/str-truth-set/hg38) Google Storage bucket, along with other files from this analysis. 
+
+Finally, I ran each of the tools on this data and describe hte results below.
 
 **Percent Correct**
 
-Below are results from comparing these tools on different loci.
+The first basic question to ask is - **what percent of results are correct for each tool?**
+Here "correct" means that the allele size reported by the tool exactly matches the true allele size. 
 
+
+**Confidence Intervals**
+
+ExpansionHunter and GangSTR report confidence intervals for each genotype, so we can also ask - **how often is the true genotype outside the confidence intervals?**
+
+
+**Over vs. Underestimate**
+
+For the genotypes that they get wrong, **do these tools tend to overestimate or underestimate the allele size?**
+
+**Negative Loci**
+
+The above analyses focused on different aspects of sensitivity. The negative loci allow us to also examine specificity. First, we can ask, 
+**what fraction of loci with a homozygous reference or heteoryzgous reference do the tools call as non-reference?** and then **how far off are they?**
+
+**Conclusion**
+
+The comparison shows that ExpansionHunter is more accurate than GangSTR for larger STR variants, but less accurate for small variants. 
 
 ---
 ### Next Steps
