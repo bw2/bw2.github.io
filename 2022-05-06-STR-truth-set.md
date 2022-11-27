@@ -378,13 +378,12 @@ Then, to run ExpansionHunter and GangSTR on this sample, I generated variant cat
 
 The hg38-aligned BAM file and variant catalogs are publicly available in the [gs://str-truth-set](https://console.cloud.google.com/storage/browser/str-truth-set/hg38) Google Storage bucket, along with other files from this analysis. 
 
-Finally, I ran each of the tools on this data, and describe the results below.
+After running each tool on these loci, I compared their performance in various ways. The results are below.
 
 **Percent Correct**
 
-The first question to ask is - **what fraction of genotypes does each tool get right?**  
+The first question we can ask is - **what fraction of genotypes does each tool get right?**  
 Here "right" means that the allele size reported by the tool exactly matches the true allele size. 
-
 
 **Confidence Intervals**
 
@@ -397,7 +396,7 @@ For the genotypes that they get wrong, **do the tools tend to overestimate or un
 
 **Negative Loci**
 
-The above analyses focused on different aspects of sensitivity. The negative loci allow us to also examine specificity. First, we can ask, **what fraction of loci with a homozygous reference or heteoryzgous reference do the tools call as non-reference?** and then **how far off are they?**
+The above analyses focused on sensitivity. The set of negative loci allows us to also examine specificity. First, we can ask, **what fraction of loci with a homozygous reference or heteoryzgous reference do the tools call as something other than reference?** and then **how far off are they?**
 
 **Conclusion**
 
