@@ -439,7 +439,6 @@ I then post-processed the output to discard homopolymers and loci than contained
    </tr>
 </table>
 
----
 
 Although it wasn't used in the truth set analyses, I also generated a repeat catalog by running [TandemRepeatFinder](https://github.com/Benson-Genomics-Lab/TRF) with a more permissive mismatch penalty (=7) to capture loci missed in the above catalog - such as known pathogenic loci that have interruptions in their reference repeat sequence. I kept the indel penalty very large (=1000000):
 
