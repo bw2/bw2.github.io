@@ -338,7 +338,7 @@ Here I compare several widely-used catalogs and approaches:
       <td nowrap align="right">4.7%</td>      
    </tr>
    <tr>
-      <td>4</td>
+      <td>5</td>
       <td>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) with very large mismatch and indel penalties to find all pure repeats that <b>span at least 12bp</b> in the hg38 reference genome</td>
       <td> </td>
       <td nowrap align="right">1,343,313</td>
@@ -346,7 +346,7 @@ Here I compare several widely-used catalogs and approaches:
       <td nowrap align="right">7.9%</td>      
    </tr>
    <tr>
-      <td>4</td>
+      <td>6</td>
       <td>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) with very large mismatch and indel penalties to find all pure repeats that <b>span at least 15bp</b> in the hg38 reference genome</td>
       <td> </td>
       <td nowrap align="right">702,486</td>
