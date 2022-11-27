@@ -391,7 +391,7 @@ Here "right" means that the allele size reported by the tool exactly matches the
 ExpansionHunter and GangSTR report confidence intervals for each genotype, so we can also ask - **how often is the true genotype outside the confidence intervals?**  
 
 
-**Over vs. Underestimate**
+**Over vs. Underestimates**
 
 For the genotypes that they get wrong, **do the tools tend to overestimate or underestimate the allele size?**  
 
