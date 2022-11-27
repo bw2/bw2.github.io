@@ -396,7 +396,7 @@ For the genotypes that they get wrong, **do the tools tend to overestimate or un
 
 **Negative Loci**
 
-The above analyses focused on sensitivity. The set of negative loci allows us to also examine specificity. First, we can ask, **what fraction of loci with a homozygous reference or heteoryzgous reference do the tools call as something other than reference?** and then **how far off are they?**
+The above analyses focused on sensitivity. The set of negative loci allows us to also examine specificity. First, we can ask, **what fraction of loci with a homozygous reference or heteoryzgous reference do the tools call as something other than reference?** and second, **how far off are they?**
 
 **Conclusion**
 
