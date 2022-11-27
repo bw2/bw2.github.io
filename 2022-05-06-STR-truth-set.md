@@ -244,7 +244,7 @@ Showing the MANE v1 proportions as a histogram stratified by motif sizes:
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/6240170/202269863-abc40ef0-35c1-428a-8065-ccb37b29157c.png">
 </div>
 
-If we look only at the very small fraction of STRs that overlap either promoters, UTRs or coding regions, the histogram looks like:
+If we filter out STRs that are intergenic, intronic or overlap non-coding exons, and look only at the small subset that overlap either promoters, UTRs or coding regions, the histogram looks like:
 <div align=left>
 <img width=500 src="https://user-images.githubusercontent.com/6240170/200899334-703e84af-0b10-4c4c-9bb6-fa80efa8cf22.png">
 </div>
