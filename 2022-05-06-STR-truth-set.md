@@ -326,8 +326,8 @@ Here I compare several widely-used catalogs and approaches:
       <td>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) with very large mismatch and indel penalties to find all pure repeats that <b>span at least 6bp</b> in the hg38 reference genome</td>
       <td><a href="https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#extra-sections">See extra section #2</a></td>
       <td nowrap align="right">4,722,859</td>
-      <td nowrap align="right">5,423 out of 144,773</td>
-      <td nowrap align="right">3.7%</td>      
+      <td nowrap align="right">5,434 out of 144,773</td>
+      <td nowrap align="right">3.8%</td>      
    </tr>
    <tr>
       <td>4</td>
