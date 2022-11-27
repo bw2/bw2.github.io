@@ -163,7 +163,8 @@ Although the 2 distributions are roughly similar, STR variants are clearly more 
 
 Finally, we can check the distribution of locus sizes in the reference genome:
 
-<img width=615 src="https://user-images.githubusercontent.com/6240170/204121724-4bd58105-a5c7-4985-9507-1d6f14ec283b.png">
+<img width=615 src="https://user-images.githubusercontent.com/6240170/204148709-ab45e9b2-e808-4daa-a089-107b3139811b.png">
+
 
 Unsurprisingly, truth set variants at loci where the reference sequence contains relatively few repeats are more likely to be expansions relative to the reference, while loci that have many repeats in the reference are more likely to have contractions in the truth set. 
 
@@ -638,6 +639,7 @@ This catalog has fewer loci than the catalog of pure repeats because a number of
 The largest truth sets in this table are generated using diploid assemblies - as described in the Straglr paper [<a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02447-3">Chiu 2021</a>] - but the accuracy of these assemblies for STRs remains questionable. 
 
 ----
+
 **Extra Section 5:** Synthetic Diploid Benchmark Overview
 
 [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)] produced a high-qaulity truth set based on [Huddleston 2017](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5411763/) haploid assemblies of two individuals - CHM1 and CHM13. 
