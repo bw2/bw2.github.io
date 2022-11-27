@@ -402,13 +402,13 @@ I used BWA-MEM v0.7.17 to realign the data to hg38.
 ---
 **Extra Section 2:** Genome-wide STR catalogs via TandemRepeatFinder
 
-To generate a comprehensive catalog of pure repeats in hg38, I ran [TandemRepeatFinder](https://github.com/Benson-Genomics-Lab/TRF) with very large mismatch and indel penalties (=1000000) that basically disallow any mismatches or indels, and a small Minscore parameter to include even short stretches of repeats:
+To generate a comprehensive catalog of pure repeats in hg38, I ran [TandemRepeatFinder](https://github.com/Benson-Genomics-Lab/TRF) with very large mismatch and indel penalties (=1000000) that basically disallow any mismatches or indels. I used a small Minscore value (=8) to include short stretches of repeats:
 
 ```
 trf catalog.txt 2 1000000 1000000 80 10 8 2000 -ngs -d
 ```
 
-I then post-processed the output to discard homopolymers and loci than contained fewer than 3 repeats of a motif. Also, I trimmed the loci so that the locus size was an exact multiple of the motif size. The resulting catalog is available here:
+I then post-processed the output to discard homopolymers and loci than contained fewer than 3 repeats of a motif. Also, I trimmed the loci so that the locus size was an exact multiple of the motif size. The resulting catalog is available here (filtered using different minimum locus size thresholds):
 
 
 <table>
