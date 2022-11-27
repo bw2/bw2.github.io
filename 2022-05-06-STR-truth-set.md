@@ -170,7 +170,7 @@ Although the 2 distributions are roughly similar, STR variants are clearly more 
 </div>
   
 
-STR distributions relative to transcripts from [Gencode v42](https://www.gencodegenes.org/human/release_42.html) and [MANE v1](https://www.ncbi.nlm.nih.gov/refseq/MANE/) are as follows:
+STRs overlap transcripts from [Gencode v42](https://www.gencodegenes.org/human/release_42.html) and [MANE v1](https://www.ncbi.nlm.nih.gov/refseq/MANE/) as follows:
 
 <table>
    <tr>
