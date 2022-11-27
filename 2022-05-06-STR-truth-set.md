@@ -408,7 +408,7 @@ To generate a comprehensive catalog of pure repeats in hg38, I ran [TandemRepeat
 trf catalog.txt 2 1000000 1000000 80 10 8 2000 -ngs -d
 ```
 
-I then post-processed the output to discard homopolymers and loci than contained fewer than 3 repeats of a motif. Also, I trimmed the loci so that the locus interval size was an exact multiple of the motif size. The resulting catalog is available here:
+I then post-processed the output to discard homopolymers and loci than contained fewer than 3 repeats of a motif. Also, I trimmed the loci so that the locus size was an exact multiple of the motif size. The resulting catalog is available here:
 
 
 <table>
