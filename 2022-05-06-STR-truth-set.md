@@ -113,7 +113,7 @@ The SynDip benchmark is based on samples from two individuals: CHM1 and CHM13. O
    </tr>
    
    <tr>
-      <td><i>3</i></td>
+      <td><i>4</i></td>
       <td>Check if the variant position changed due to hg38 ⇒ T2T ⇒ hg38 liftover</td>
       <td nowrap align="right">0</td>
       <td nowrap align="right">0 %</td>
