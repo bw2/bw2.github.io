@@ -161,7 +161,7 @@ Although the 2 distributions are roughly similar, STR variants are clearly more 
 <img width=850 src="https://user-images.githubusercontent.com/6240170/200898063-bcdfdfe6-1496-4997-b95d-192f83e08ceb.png">
 </div>
 
-Finally, we can check the distribution of locus sizes in the reference genome. 
+Finally, we can check the distribution of locus sizes in the reference genome:
 
 <img width=450 src="https://user-images.githubusercontent.com/6240170/204121334-d304c94c-59be-42ed-8d97-86b0e4ffe154.png">
 
