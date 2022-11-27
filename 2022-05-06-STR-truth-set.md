@@ -402,13 +402,13 @@ I used BWA-MEM v0.7.17 to realign the data to hg38.
 ---
 **Extra Section 2:** Genome-wide STR catalogs from running TandemRepeatFinder
 
-To generate a comprehensive catalog of pure repeats in hg38, I ran [TandemRepeatFinder](https://github.com/Benson-Genomics-Lab/TRF) with very large mismatch and indel penalties (1000000) that basically disallow any mismatches or indels, and a small Minscore parameter to include even short stretches of repeats:
+To generate a comprehensive catalog of pure repeats in hg38, I ran [TandemRepeatFinder](https://github.com/Benson-Genomics-Lab/TRF) with very large mismatch and indel penalties (=1000000) that basically disallow any mismatches or indels, and a small Minscore parameter to include even short stretches of repeats:
 
 ```
 trf catalog.txt 2 1000000 1000000 80 10 8 2000 -ngs -d
 ```
 
-I then post-processed the output to discard homopolymers and loci than contain fewer than 3 repeats of a motif. The resulting catalog is available here:
+I then post-processed the output to discard homopolymers and loci than contained fewer than 3 repeats of a motif. The resulting catalog is available here:
 
 
 <table>
@@ -420,24 +420,48 @@ I then post-processed the output to discard homopolymers and loci than contain f
    <tr>
       <td nowrap>Pure repeats that <b>span at least 6bp</b> in hg38</td>
       <td nowrap align="right">4,722,859</td>
-      <td nowrap>gs://str-truth-set/hg38/variant_catalogs/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_6bp.bed.gz</td>
+      <td nowrap><a href="https://storage.googleapis.com/str-truth-set/hg38/variant_catalogs/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_6bp.bed.gz">gs://str-truth-set/hg38/variant_catalogs/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_6bp.bed.gz</a></td>
    </tr>
    <tr>
       <td nowrap>Pure repeats that <b>span at least 9bp</b> in hg38</td>
       <td nowrap align="right">2,805,842</td>
-      <td nowrap>gs://str-truth-set/hg38/variant_catalogs/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_9bp.bed.gz</td>
+      <td nowrap><a href="https://storage.googleapis.com/str-truth-set/hg38/variant_catalogs/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_9bp.bed.gz">gs://str-truth-set/hg38/variant_catalogs/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_9bp.bed.gz</a></td>
    </tr>
    <tr>
       <td nowrap>Pure repeats that <b>span at least 12bp</b> in hg38</td>
       <td nowrap align="right">1,343,313</td>
-      <td nowrap>gs://str-truth-set/hg38/variant_catalogs/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_12bp.bed.gz</td>
+      <td nowrap><a href="https://storage.googleapis.com/str-truth-set/hg38/variant_catalogs/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_12bp.bed.gz">gs://str-truth-set/hg38/variant_catalogs/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_12bp.bed.gz</a></td>
    </tr>
    <tr>
       <td nowrap>Pure repeats that <b>span at least 15bp</b> in hg38</td>
       <td nowrap align="right">702,486</td>
-      <td nowrap>gs://str-truth-set/hg38/variant_catalogs/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_15bp.bed.gz</td>
+      <td nowrap><a href="https://storage.googleapis.com/str-truth-set/hg38/variant_catalogs/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_15bp.bed.gz">gs://str-truth-set/hg38/variant_catalogs/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_15bp.bed.gz</a></td>
    </tr>
 </table>
+
+---
+
+Although it wasn't used in the truth set analyses, I also generated a repeat catalog by running [TandemRepeatFinder](https://github.com/Benson-Genomics-Lab/TRF) with a more permissive mismatch penalty (=7) to capture loci missed in the above catalog - such as known pathogenic loci that have interruptions in their reference repeat sequence. I kept the indel penalty very large (=1000000):
+
+```
+trf catalog.txt 2 7 1000000 80 10 8 2000 -ngs -d
+```
+As before, I post-processed the output to discard homopolymers and loci than contained fewer than 3 repeats of a motif. The resulting catalog is available here:
+
+<table>
+   <tr>
+      <td nowrap><b>Catalog</b></td>
+      <td nowrap><b># of STR Loci</b></td>
+      <td nowrap><b>Download Link</b></td>
+   </tr>
+   <tr>
+      <td nowrap>Repeats that <b>span at least 6bp</b> in hg38</td>
+      <td nowrap align="right">4,655,977</td>
+      <td nowrap><a href="https://storage.googleapis.com/str-truth-set/hg38/variant_catalogs/repeat_specs_GRCh38_allowing_mismatches.sorted.trimmed.at_least_6bp.bed.gz">gs://str-truth-set/hg38/variant_catalogs/repeat_specs_GRCh38_allowing_mismatches.sorted.trimmed.at_least_6bp.bed.gz</a></td>
+   </tr>
+</table>
+
+This catalog has fewer loci than the catalog of pure repeats because a number of adjacent pure repeat loci were merged into a single locus once mismatches were allowed. 
 
 ---
 
