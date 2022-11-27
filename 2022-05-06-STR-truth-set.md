@@ -165,7 +165,7 @@ Finally, we can check the distribution of locus sizes in the reference genome:
 
 <img width=615 src="https://user-images.githubusercontent.com/6240170/204121724-4bd58105-a5c7-4985-9507-1d6f14ec283b.png">
 
-Unsurprisingly, truth set variants at loci where the reference sequence contains relatively few repeats are more likely to be expansions relative to the reference, while loci that have many repeats in the reference are more likely to be contractions. 
+Unsurprisingly, truth set variants at loci where the reference sequence contains relatively few repeats are more likely to be expansions relative to the reference, while loci that have many repeats in the reference are more likely to have contractions in the truth set. 
 
 
 ### Genomic Regions
