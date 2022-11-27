@@ -161,6 +161,13 @@ Although the 2 distributions are roughly similar, STR variants are clearly more 
 <img width=850 src="https://user-images.githubusercontent.com/6240170/200898063-bcdfdfe6-1496-4997-b95d-192f83e08ceb.png">
 </div>
 
+Finally, we can check the distribution of locus sizes in the reference genome. 
+
+<img width=450 src="https://user-images.githubusercontent.com/6240170/204121334-d304c94c-59be-42ed-8d97-86b0e4ffe154.png">
+
+Unsurprisingly, truth set variants at loci where the reference sequence contains relatively few repeats are more likely to be expansions (relative to the reference), while loci that have many repeats in the reference are more likely to be contractions. 
+
+
 ### Genomic Regions
 
 3,121 out of 144,773 (2.2%) STR variants overlap segmental duplications (SegDups) in hg38:
