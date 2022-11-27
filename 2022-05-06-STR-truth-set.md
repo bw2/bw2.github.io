@@ -373,7 +373,7 @@ Then, to run ExpansionHunter and GangSTR on this sample, I generated variant cat
 
 The hg38-aligned BAM file and variant catalogs are publicly available in the [gs://str-truth-set](https://console.cloud.google.com/storage/browser/str-truth-set/hg38) Google Storage bucket, along with other files from this analysis. 
 
-Finally, I ran each of the tools on this data and describe hte results below.
+Finally, I ran each of the tools on this data, and describe the results below.
 
 **Percent Correct**
 
