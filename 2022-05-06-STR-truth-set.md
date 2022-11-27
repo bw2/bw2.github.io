@@ -366,7 +366,7 @@ I used BWA-MEM v0.7.17 to realign it to hg38. Then, to run ExpansionHunter and G
 1) 144,158 loci (99%) of the truth set that had matching repeats in the hg38 reference genome
 2) 144,159 additional loci that are non-variant. 
 
-** Percent Correct**
+**Percent Correct**
 
 Below are results from comparing these tools on different loci.
 
@@ -379,7 +379,7 @@ The truth set and tool results provide an opportunity to identify features that 
 - STR loci where tools produce accurate genotypes
 - Filter false-positive STR genotypes
 
-A key next step is to use the truth set to train classifiers that can answer these questions. 
+A key next step is to use the truth set to train classifiers for these categories.
 
 ---
 ### Extra Sections
