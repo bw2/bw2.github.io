@@ -296,7 +296,7 @@ Here I compare several widely-used catalogs and approaches:
       <th>Description</th>
       <th>Example</th>
       <th nowrap>Total # of<br />STR Loci</th>
-      <th nowrap># of Variants<br/>Missed By Catalog</th>
+      <th nowrap># of Truth Set Variants<br/>Missed By Catalog</th>
       <th nowrap>% Missed</th>
    </tr>
    <tr>
@@ -310,13 +310,13 @@ Here I compare several widely-used catalogs and approaches:
    <tr>
       <td rowspan=2>2</td>
       <td rowspan=2>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) on the reference genome and doing a series of post-processing steps</td>
-      <td><a href="https://github.com/gymreklab/GangSTR#gangstr-reference-files">GangSTR v13 reference</a></td>
+      <td><a href="https://github.com/gymreklab/GangSTR#gangstr-reference-files">GangSTR v13 loci</a></td>
       <td nowrap align="right">832,380</td>
       <td nowrap align="right">79,397 out of 144,773</td>
       <td nowrap align="right">54.8%</td>      
    </tr>
    <tr>
-      <td><a href="https://github.com/gymreklab/GangSTR#gangstr-reference-files">GangSTR v17 reference</a></td>
+      <td><a href="https://github.com/gymreklab/GangSTR#gangstr-reference-files">GangSTR v17 loci</a></td>
       <td nowrap align="right">1,340,266</td>
       <td nowrap align="right">59,462 out of 144,773</td>
       <td nowrap align="right">41.1%</td>
