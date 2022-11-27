@@ -265,7 +265,7 @@ Another way to look at this is to see whether larger STR variants are less likel
 
 #### Novel STR loci
 
-Unlike variant calling tools for SNVs and structural variants which just take read alignments (bam or cram) as input, nearly all STR genotyping tools except [ExpansionHunterDenovo](https://github.com/Illumina/ExpansionHunterDenovo) and [STRling](https://github.com/quinlan-lab/STRling) require users to also specify the exact boundaries and motifs of the STR loci to genotype. For example, to genotype the Huntington's Disease locus, a user must specify the reference coordinates "chr4:3074876-3074933" and motif "CAG". The implicit assumption of these algorithms is that all STRs you might want to genotype are also present in the reference genome - meaning that STR variants look like:
+Unlike variant calling tools for SNVs and structural variants which take only read alignments (bam or cram) as input, nearly all STR genotyping tools besides [ExpansionHunterDenovo](https://github.com/Illumina/ExpansionHunterDenovo) and [STRling](https://github.com/quinlan-lab/STRling) require users to also provide the exact boundaries and motifs of the STR loci to genotype. For example, to genotype the Huntington's Disease locus, a user must specify the reference coordinates "chr4:3074876-3074933" and motif "CAG". The implicit assumption of these algorithms is that all STRs a user might want to genotype are also present in the reference genome - meaning that STR variants look like:
 
 <img width="452" alt="image" src="https://user-images.githubusercontent.com/6240170/200219094-78f3ad2f-bcba-4412-a5cb-098e8f6b56a8.png">
 
@@ -274,9 +274,9 @@ rather than
 <img width="450" alt="image" src="https://user-images.githubusercontent.com/6240170/200219024-2464a379-b1b9-4569-ba3d-d6a47583c357.png">
 
 
-The truth set allows us to check the degree to which this assumption is valid. It turns out that it is:
+The truth set allows us to check the degree to which this assumption is valid. It turns out that it is almost 100%:
 
-- 144,158 out of 144,773 (99.6%) of STR variants in CHM1-CHM13 match repeats found in hg38 immediately to the left or right of the variant.  Only 521 variants are novel STRs, and they are all intergenic (based on Gencode v42).
+- 144,158 out of 144,773 (99.6%) of STR variants in CHM1-CHM13 match repeats found in hg38 immediately to the left or right of the variant. Only 521 variants are novel STRs, and they are all intergenic (based on Gencode v42).
 
 This suggests that, for samples like CHM1-CHM13 that have European ancestry, nearly all true STR variants can be found by using a large enough STR catalog generated from the reference genome. 
 
@@ -287,9 +287,9 @@ This suggests that, for samples like CHM1-CHM13 that have European ancestry, nea
 
 An important question for any genome-wide STR analysis using tools like ExpansionHunter or GangSTR is which STR catalog to genotype. 
 
-The truth set allows us to ask: if we genotype all loci in a given catalog, how many CHM1-CHM13 STR variants are we guaranteed to miss because they fall outside this catalog? 
+The truth set allows us to ask: for a given catalog, how many CHM1-CHM13 STR variants would we miss because they occur at loci not in the catalog? 
 
-Here I compare several catalogs and approaches:
+Here I compare several widely-used catalogs and approaches:
 <table>
    <tr>
       <th></th>
