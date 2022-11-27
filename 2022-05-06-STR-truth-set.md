@@ -400,7 +400,7 @@ Further details are provided in [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/arti
 I used BWA-MEM v0.7.17 to realign the data to hg38.
 
 ---
-**Extra Section 4:** Genome-wide STR catalogs from running TandemRepeatFinder
+**Extra Section 2:** Genome-wide STR catalogs from running TandemRepeatFinder
 
 To generate a comprehensive catalog of pure repeats in hg38, I ran [TandemRepeatFinder](https://github.com/Benson-Genomics-Lab/TRF) with very large mismatch and indel penalties (1000000) that basically disallow any mismatches or indels, and a small Minscore parameter to include even short stretches of repeats:
 
@@ -413,12 +413,34 @@ I then post-processed the output to discard homopolymers and loci than contain f
 
 <table>
    <tr>
-      <td></td>
+      <td><b>Catalog</b></td>
+      <td><b># of STR Loci</b></td>
+      <td><b>Download Link</b></td>
    </tr>
-   
+   <tr>
+      <td>Pure repeats that <b>span at least 6bp</b> in hg38</td>
+      <td nowrap align="right">4,722,859</td>
+      <td nowrap>gs://str-truth-set/hg38/variant_catalogs/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_6bp.bed.gz</td>
+   </tr>
+   <tr>
+      <td>Pure repeats that <b>span at least 9bp</b> in hg38</td>
+      <td nowrap align="right">2,805,842</td>
+      <td nowrap>gs://str-truth-set/hg38/variant_catalogs/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_9bp.bed.gz</td>
+   </tr>
+   <tr>
+      <td>Pure repeats that <b>span at least 12bp</b> in hg38</td>
+      <td nowrap align="right">1,343,313</td>
+      <td nowrap>gs://str-truth-set/hg38/variant_catalogs/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_12bp.bed.gz</td>
+   </tr>
+   <tr>
+      <td>Pure repeats that <b>span at least 15bp</b> in hg38</td>
+      <td nowrap align="right">702,486</td>
+      <td nowrap>gs://str-truth-set/hg38/variant_catalogs/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_15bp.bed.gz</td>
+   </tr>
 </table>
 
 ---
+
 **Extra Section 3:** A few words about the limitations of existing approaches to STR truth data:
 
 1. **simulated STRs:** we can generate an unlimited number of STR examples with known genotypes by using a tool like [wgsim](https://github.com/lh3/wgsim). However, simulated data doesn't capture the full complexity of real sequencing data (eg. adjacent variants not present in the reference genome, GC bias, and other sequencing artifacts). 
