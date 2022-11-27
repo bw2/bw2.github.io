@@ -369,8 +369,6 @@ Then, to run ExpansionHunter and GangSTR on this sample, I generated variant cat
 1) 144,251 positive loci. These are all the loci in the truth set (excluding the 521 that don't have matching repeats in the reference genome). They represent true positive variants.
 2) 144,252 negative loci. These are repeat loci in hg38 that are not in the truth set (and therefore have a homozygous reference genotype). They represent true negatives. They were selected by taking the much larger set of all pure repeats in hg38 and selecting a random subset that has the same distribution of motif sizes as the set of positive loci. 
 
-[[source code](https://github.com/broadinstitute/str-truth-set/blob/main/tool_comparison/scripts/convert_truth_set_to_variant_catalogs.py)]
-
 The hg38-aligned BAM file and variant catalogs are publicly available in the [gs://str-truth-set](https://console.cloud.google.com/storage/browser/str-truth-set/hg38) Google Storage bucket, along with other files from this analysis. 
 
 Finally, I ran each of the tools on this data, and describe the results below.
@@ -652,4 +650,13 @@ This yielded 5,362,620 variants of which 4,148,586 were in high-confidence regio
 
 [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)] used this data to evaluate SNV and INDEL calling tools, but it can also serve as a high-quality truth set for STRs, as well as tandem repeats (TRs) and structural variants (SVs).
 
+
+**Extra Section 6:** Source code
+
+The source code for all aspects of this analysis is available at [https://github.com/broadinstitute/str-truth-set](https://github.com/broadinstitute/str-truth-set). It includes the following scripts:
+
+* [tool_comparison/scripts/convert_truth_set_to_variant_catalogs.py](https://github.com/broadinstitute/str-truth-set/blob/main/tool_comparison/scripts/convert_truth_set_to_variant_catalogs.py) - a script that converts the truth set into ExpansionHunter and GangSTR input catalogs and also generates the set of true negative loci with a matching distribution of motif sizes. 
+
+
+**Extra Section 7:** Data
 
