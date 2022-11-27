@@ -651,12 +651,15 @@ This yielded 5,362,620 variants of which 4,148,586 were in high-confidence regio
 [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)] used this data to evaluate SNV and INDEL calling tools, but it can also serve as a high-quality truth set for STRs, as well as tandem repeats (TRs) and structural variants (SVs).
 
 
+---
+
 **Extra Section 6:** Source code
 
 The source code for all aspects of this analysis is available at [https://github.com/broadinstitute/str-truth-set](https://github.com/broadinstitute/str-truth-set). It includes the following scripts:
 
 * [tool_comparison/scripts/convert_truth_set_to_variant_catalogs.py](https://github.com/broadinstitute/str-truth-set/blob/main/tool_comparison/scripts/convert_truth_set_to_variant_catalogs.py) - a script that converts the truth set into ExpansionHunter and GangSTR input catalogs and also generates the set of true negative loci with a matching distribution of motif sizes. 
 
+---
 
 **Extra Section 7:** Data
 
