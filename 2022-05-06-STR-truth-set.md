@@ -420,22 +420,22 @@ I then post-processed the output to discard homopolymers and loci than contain f
    <tr>
       <td>Pure repeats that <b>span at least 6bp</b> in hg38</td>
       <td nowrap align="right">4,722,859</td>
-      <td nowrap>gs://str-truth-set/hg38/variant_catalogs/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_6bp.bed.gz</td>
+      <td>gs://str-truth-set/hg38/variant_catalogs/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_6bp.bed.gz</td>
    </tr>
    <tr>
       <td>Pure repeats that <b>span at least 9bp</b> in hg38</td>
       <td nowrap align="right">2,805,842</td>
-      <td nowrap>gs://str-truth-set/hg38/variant_catalogs/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_9bp.bed.gz</td>
+      <td>gs://str-truth-set/hg38/variant_catalogs/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_9bp.bed.gz</td>
    </tr>
    <tr>
       <td>Pure repeats that <b>span at least 12bp</b> in hg38</td>
       <td nowrap align="right">1,343,313</td>
-      <td nowrap>gs://str-truth-set/hg38/variant_catalogs/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_12bp.bed.gz</td>
+      <td>gs://str-truth-set/hg38/variant_catalogs/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_12bp.bed.gz</td>
    </tr>
    <tr>
       <td>Pure repeats that <b>span at least 15bp</b> in hg38</td>
       <td nowrap align="right">702,486</td>
-      <td nowrap>gs://str-truth-set/hg38/variant_catalogs/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_15bp.bed.gz</td>
+      <td>gs://str-truth-set/hg38/variant_catalogs/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_15bp.bed.gz</td>
    </tr>
 </table>
 
