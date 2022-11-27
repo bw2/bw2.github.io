@@ -660,3 +660,4 @@ The source code for all aspects of this analysis is available at [https://github
 
 **Extra Section 7:** Data
 
+All data from this analysis is in the [gs://str-truth-set](https://console.cloud.google.com/storage/browser/str-truth-set/hg38) Google Storage bucket and on the [Releases page](https://github.com/broadinstitute/str-truth-set/releases) of the [str-truth-set github repo](https://github.com/broadinstitute/str-truth-set).
