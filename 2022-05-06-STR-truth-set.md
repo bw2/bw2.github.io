@@ -382,22 +382,25 @@ Finally, I ran each of the tools on this data, and describe the results below.
 
 **Percent Correct**
 
-The first question to ask is - **what fraction of genotypes does each tool get right?**  
+The first question to ask is  
+**what fraction of genotypes does each tool get right?**  
 Here "right" means that the allele size reported by the tool exactly matches the true allele size. 
 
 
 **Confidence Intervals**
 
-ExpansionHunter and GangSTR report confidence intervals for each genotype, so we can also ask - **how often is the true genotype outside the confidence intervals?**
+ExpansionHunter and GangSTR report confidence intervals for each genotype, so we can also ask  
+**how often is the true genotype outside the confidence intervals?**  
 
 
 **Over vs. Underestimate**
 
-For the genotypes that they get wrong, **do these tools tend to overestimate or underestimate the allele size?**
+For the genotypes that they get wrong, 
+**do the tools tend to overestimate or underestimate the allele size?**  
 
 **Negative Loci**
 
-The above analyses focused on different aspects of sensitivity. The negative loci allow us to also examine specificity. First, we can ask, 
+The above analyses focused on different aspects of sensitivity. The negative loci allow us to also examine specificity. First, we can ask,  
 **what fraction of loci with a homozygous reference or heteoryzgous reference do the tools call as non-reference?** and then **how far off are they?**
 
 **Conclusion**
