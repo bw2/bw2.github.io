@@ -332,7 +332,7 @@ Here I compare several widely-used catalogs and approaches:
    </tr>
    <tr>
       <td>3</td>
-      <td><a href="https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#extra-sections">Pure Repeats Catalog</a></td>
+      <td nowrap><a href="https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#extra-sections">Pure Repeats Catalog</a></td>
       <td>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) with very large mismatch and indel penalties to find all pure repeats that <b>span at least 6bp</b> in the hg38 reference genome</td>
       <td nowrap align="right">4,722,859</td>
       <td nowrap align="right">5,434 out of 144,773</td>
@@ -340,7 +340,7 @@ Here I compare several widely-used catalogs and approaches:
    </tr>
    <tr>
       <td>4</td>
-      <td><a href="https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#extra-sections">Pure Repeats Catalog<br/>Subset ≥ 9bp</a></td>
+      <td nowrap><a href="https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#extra-sections">Pure Repeats Catalog<br/>Subset ≥ 9bp</a></td>
       <td>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) with very large mismatch and indel penalties to find all pure repeats that <b>span at least 9bp</b> in the hg38 reference genome</td>
       <td nowrap align="right">2,805,842</td>
       <td nowrap align="right">6,787 out of 144,773</td>
@@ -348,7 +348,7 @@ Here I compare several widely-used catalogs and approaches:
    </tr>
    <tr>
       <td>5</td>
-      <td><a href="https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#extra-sections">Pure Repeats Catalog<br/>Subset ≥ 12bp</a></td>
+      <td nowrap><a href="https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#extra-sections">Pure Repeats Catalog<br/>Subset ≥ 12bp</a></td>
       <td>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) with very large mismatch and indel penalties to find all pure repeats that <b>span at least 12bp</b> in the hg38 reference genome</td>
       <td nowrap align="right">1,343,313</td>
       <td nowrap align="right">11,474 out of 144,773</td>
@@ -356,7 +356,7 @@ Here I compare several widely-used catalogs and approaches:
    </tr>
    <tr>
       <td>6</td>
-      <td><a href="https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#extra-sections">Pure Repeats Catalog<br/>Subset ≥ 15bp</a></td>
+      <td nowrap><a href="https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#extra-sections">Pure Repeats Catalog<br/>Subset ≥ 15bp</a></td>
       <td>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) with very large mismatch and indel penalties to find all pure repeats that <b>span at least 15bp</b> in the hg38 reference genome</td>
       <td nowrap align="right">702,486</td>
       <td nowrap align="right">22,830 out of 144,773</td>
