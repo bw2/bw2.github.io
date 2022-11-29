@@ -310,7 +310,7 @@ Here I compare several widely-used catalogs and approaches:
    <tr>
       <td>1</td>
       <td><a href="https://github.com/Illumina/RepeatCatalogs/blob/master/docs/str_generation.md">Illumina catalog</a></td>
-      <td>Identifying STRs that are polymorphic in population control samples</td>
+      <td>Identifying STRs that are polymorphic in 2,504 individuals from the 1000 genomes project.</td>
       <td nowrap align="right">174,300</td>
       <td nowrap align="right">53,137 out of 144,773</td>
       <td nowrap align="right">36.7%</td>      
