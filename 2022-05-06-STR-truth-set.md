@@ -319,7 +319,7 @@ Here I compare several widely-used catalogs and approaches:
       <td rowspan=2>2</td>
       <td><a href="https://github.com/gymreklab/GangSTR#gangstr-reference-files">GangSTR v13 loci</a></td>
       <td rowspan=2>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) on the reference genome 
-         using a mismatch penalty = 5 and an indel penalty = 17. Loci had to <b>span at least 12bp</b> in the hg38 reference genome. Multiple additional filters and post-processing steps were applied as described in [<a href="https://academic.oup.com/nar/article/47/15/e90/5518310?login=true">Mousavi 2019</a>]</td>
+         using a mismatch penalty = 5 and an indel penalty = 17. Loci had to <b>span at least 12bp</b> in the hg38 reference genome. Multiple additional filters and post-processing steps were applied as described in [<a href="https://academic.oup.com/nar/article/47/15/e90/5518310?login=true">Mousavi 2019</a>].</td>
       <td nowrap align="right">832,380</td>
       <td nowrap align="right">79,397 out of 144,773</td>
       <td nowrap align="right">54.8%</td>      
