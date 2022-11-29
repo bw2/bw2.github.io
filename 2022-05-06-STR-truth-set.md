@@ -301,24 +301,25 @@ Here I compare several widely-used catalogs and approaches:
 <table>
    <tr>
       <th></th>
-      <th>Description</th>
-      <th>Example</th>
+      <th>Name</th>
+      <th>How It Was Created</th>
       <th nowrap>Total # of<br />STR Loci</th>
       <th nowrap># of Truth Set Variants<br/>Missed By Catalog</th>
       <th nowrap>% Missed</th>
    </tr>
    <tr>
       <td>1</td>
-      <td>Identifying STRs that are polymorphic in population control samples</td>
       <td><a href="https://github.com/Illumina/RepeatCatalogs/blob/master/docs/str_generation.md">Illumina catalog</a></td>
+      <td>Identifying STRs that are polymorphic in population control samples</td>
       <td nowrap align="right">174,300</td>
       <td nowrap align="right">53,137 out of 144,773</td>
       <td nowrap align="right">36.7%</td>      
    </tr>
    <tr>
       <td rowspan=2>2</td>
-      <td rowspan=2>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) on the reference genome and doing a series of post-processing steps</td>
       <td><a href="https://github.com/gymreklab/GangSTR#gangstr-reference-files">GangSTR v13 loci</a></td>
+      <td rowspan=2>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) on the reference genome 
+         using a mismatch penalty = 5 and an indel penalty = 17. Loci had to <b>span at least 12bp</b> in the hg38 reference genome. Multiple additional filters and post-processing steps were applied as described in [<a href="https://academic.oup.com/nar/article/47/15/e90/5518310?login=true">Mousavi 2019</a>]</td>
       <td nowrap align="right">832,380</td>
       <td nowrap align="right">79,397 out of 144,773</td>
       <td nowrap align="right">54.8%</td>      
@@ -331,32 +332,32 @@ Here I compare several widely-used catalogs and approaches:
    </tr>
    <tr>
       <td>3</td>
+      <td><a href="https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#extra-sections">Pure Repeats Catalog</a></td>
       <td>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) with very large mismatch and indel penalties to find all pure repeats that <b>span at least 6bp</b> in the hg38 reference genome</td>
-      <td><a href="https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#extra-sections">See extra section #2</a></td>
       <td nowrap align="right">4,722,859</td>
       <td nowrap align="right">5,434 out of 144,773</td>
       <td nowrap align="right">3.8%</td>      
    </tr>
    <tr>
       <td>4</td>
+      <td><a href="https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#extra-sections">Pure Repeats Catalog<br/>Subset ≥ 9bp</a></td>
       <td>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) with very large mismatch and indel penalties to find all pure repeats that <b>span at least 9bp</b> in the hg38 reference genome</td>
-      <td><a href="https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#extra-sections">See extra section #2</a></td>
       <td nowrap align="right">2,805,842</td>
       <td nowrap align="right">6,787 out of 144,773</td>
       <td nowrap align="right">4.7%</td>      
    </tr>
    <tr>
       <td>5</td>
+      <td><a href="https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#extra-sections">Pure Repeats Catalog<br/>Subset ≥ 12bp</a></td>
       <td>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) with very large mismatch and indel penalties to find all pure repeats that <b>span at least 12bp</b> in the hg38 reference genome</td>
-      <td><a href="https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#extra-sections">See extra section #2</a></td>
       <td nowrap align="right">1,343,313</td>
       <td nowrap align="right">11,474 out of 144,773</td>
       <td nowrap align="right">7.9%</td>      
    </tr>
    <tr>
       <td>6</td>
+      <td><a href="https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#extra-sections">Pure Repeats Catalog<br/>Subset ≥ 15bp</a></td>
       <td>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) with very large mismatch and indel penalties to find all pure repeats that <b>span at least 15bp</b> in the hg38 reference genome</td>
-      <td><a href="https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#extra-sections">See extra section #2</a></td>
       <td nowrap align="right">702,486</td>
       <td nowrap align="right">22,830 out of 144,773</td>
       <td nowrap align="right">15.8%</td>      
