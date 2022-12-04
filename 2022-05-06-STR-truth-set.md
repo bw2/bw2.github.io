@@ -301,9 +301,9 @@ Here I compare several widely-used catalogs and approaches:
 <table>
    <tr>
       <th></th>
-      <th>Name</th>
+      <th>Catalog Name</th>
       <th>How It Was Created</th>
-      <th nowrap>Total # of<br />STR Loci</th>
+      <th nowrap>Catalog Size:<br /># of STR Loci</th>
       <th nowrap># of Truth Set Variants<br/>Missed By Catalog</th>
       <th nowrap>% Missed</th>
    </tr>
