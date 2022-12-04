@@ -369,7 +369,7 @@ One takeaway is that, if we aim to capture more than 95% of STR variants using a
 
 This takeaway is based on the entire truth set - but does it hold if we focus on just the 89,622 (62%) of loci where the reference locus spans at least 24bp? Yes - the conclusion remains - both the GangSTR and Illumina catalogs miss ~30% or more of the loci in these subsets.
 
-Still, one can say that a large fraction of truth set STRs are not significant or interesting since they only add or subtract a few repeats. However, if you filter the truth set to the 1,702 (1%) of STRs that represent expansions by 10 or more repeats relative to the reference, the percenages of missed loci remain large - ??% are missed by the GangSTR v17 catalog, and ??% are missed by the Illumina catalog. 
+Still, one can say that a large fraction of truth set STRs are not significant or interesting since they only add or subtract a few repeats. However, if you filter the truth set to the 1,702 (1%) of STRs that represent expansions by 10 or more repeats relative to the reference, the percenages of missed loci remain large - with ??% missed by the GangSTR v17 catalog and ??% missed by the Illumina catalog. 
 
 ---
 ### Tool Comparisons
