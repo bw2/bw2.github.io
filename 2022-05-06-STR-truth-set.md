@@ -367,6 +367,8 @@ Here I compare several widely-used catalogs and approaches:
 
 One takeaway is that, if we aim to capture more than 95% of STR variants using a TRF-derived catalog, we need to genotype more than 2.8M loci genome-wide in each individual. 
 
+One may argue that a large fraction of the STRs in the truth set are not significant or interesting because they either represent short STR loci in the reference and/or are small variations in the number of repeats - only adding or subtracting a few repeats. However, filtering the truth set either to the 1,702 (1%) of STRs that represent expansions by 10+ repeats relative to the reference locus, or to the 89,622 (62%) of STRs where the reference locus spans at least 24bp, yields the same conclusion - both the GangSTR and Illumina catalogs miss ~30% or more of these loci. 
+
 ---
 ### Tool Comparisons
 
