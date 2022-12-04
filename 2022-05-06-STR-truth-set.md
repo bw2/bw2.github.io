@@ -367,7 +367,9 @@ Here I compare several widely-used catalogs and approaches:
 
 One takeaway is that, if we aim to capture more than 95% of STR variants using a TRF-derived catalog, we need to genotype more than 2.8M loci genome-wide in each individual. 
 
-One may argue that a large fraction of the STRs in the truth set are not significant or interesting because they either represent short STR loci in the reference and/or are small variations that only add or subtract a few repeats. However, filtering the truth set either to the 1,702 (1%) of STRs that represent expansions by 10+ repeats relative to the reference locus, or to the 89,622 (62%) of STRs where the reference locus spans at least 24bp, leads to the same conclusion - both the GangSTR and Illumina catalogs miss ~30% or more of the loci in these subsets.
+This takeaway is based on the entire truth set - but does it hold if we focus on just the 89,622 (62%) of loci where the reference locus spans at least 24bp? Yes - the conclusion remains - both the GangSTR and Illumina catalogs miss ~30% or more of the loci in these subsets.
+
+Still, one can say that a large fraction of truth set STRs are not significant or interesting since they only add or subtract a few repeats. However, if you filter the truth set to the 1,702 (1%) of STRs that represent expansions by 10 or more repeats relative to the reference, the percenages of missed loci remain large - ??% are missed by the GangSTR v17 catalog, and ??% are missed by the Illumina catalog. 
 
 ---
 ### Tool Comparisons
