@@ -370,7 +370,7 @@ One takeaway is that, if we aim to capture more than 95% of STR variants using a
 ---
 ### Tool Comparisons
 
-To compare STR calling tools, I downloaded the PCR-free genome sequencing data for CHM1-CHM13-2 from the [SRA](https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&acc=ERR1341796&display=data-access). This is 151bp paired-end data with 45x depth of coverage.
+To compare STR calling tools, I downloaded the PCR-free genome sequencing data for CHM1-CHM13-2 from the [SRA](https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&acc=ERR1341796&display=data-access). This is 151bp paired-end data with 40x depth of coverage.
 
 I then realigned it to hg38 using BWA-MEM v0.7.17. 
 
@@ -420,17 +420,25 @@ A key next step is to use the truth set to train classifiers for these categorie
 ---
 **Extra Section 1:** Data details and availability
 
-CHM1-CHM13-2 read data is publicly available under run id ERR1341796: [[SRA](https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&acc=ERR1341796&display=data-access)]  [[EBI](https://www.ebi.ac.uk/ena/browser/view/ERR1341796)].
+CHM1-CHM13-2 WGS read data is publicly available under run id ERR1341796: [[SRA](https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&acc=ERR1341796&display=data-access)]  [[EBI](https://www.ebi.ac.uk/ena/browser/view/ERR1341796)].
 
 Details:
 - Illumina HiSeq X Ten
 - PCR-Free protocol
 - Paired-end 151bp reads
-- 45x Depth of Coverage
+- 40x Depth of Coverage
 
 Further details are provided in [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)].  
 
-I used BWA-MEM v0.7.17 to realign the data to hg38.
+I used BWA-MEM v0.7.17 to realign this data to hg38.
+
+
+CHM1-CHM13 exome sequencing data was generated at the Broad Institute:
+
+- Illumina HiSeq X Ten
+- Paired-end 151bp reads
+- 85x mean target coverage (based on Picard metrics).
+
 
 ---
 **Extra Section 2:** Genome-wide STR catalogs via TandemRepeatFinder
