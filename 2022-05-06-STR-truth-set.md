@@ -295,7 +295,7 @@ This suggests that, for samples like CHM1-CHM13 that have European ancestry, nea
 
 An important question for any genome-wide STR analysis using tools like ExpansionHunter or GangSTR is which STR catalog to genotype. 
 
-The truth set allows us to ask: for a given catalog, how many CHM1-CHM13 STR variants would we miss because they occur at loci not in the catalog? 
+The truth set allows us to ask: for a given catalog, how many CHM1-CHM13 STR variants would be missed because they occur at loci that are not in the catalog? 
 
 Here I compare several widely-used catalogs and approaches:
 <table>
@@ -365,11 +365,11 @@ Here I compare several widely-used catalogs and approaches:
 </table>
 
 
-One takeaway is that, if we aim to capture more than 95% of STR variants using a TRF-derived catalog, we need to genotype more than 2.8M loci genome-wide in each individual. 
+One takeaway is that, if we want to capture more than 95% of STR variants using a TRF-derived catalog, we need to genotype more than 2.8M loci genome-wide in each individual. 
 
-This takeaway is based on the entire truth set - but does it hold if we focus on just the 89,622 (62%) of loci where the reference locus spans at least 24bp? Yes - the conclusion remains - both the GangSTR and Illumina catalogs miss ~30% or more of the loci in these subsets.
+This takeaway is based on the entire truth set - but does is it still true for larger loci - for example the 89,622 (62%) of loci where the reference locus spans at least 24bp? Yes - both the GangSTR and Illumina catalogs would miss 30% to 45% of these variants.
 
-Still, one can say that a large fraction of truth set STRs are not significant or interesting since they only add or subtract a few repeats. However, if you filter the truth set to the 1,702 (1%) of STRs that represent expansions by 10 or more repeats relative to the reference, the percenages of missed loci remain large - with ??% missed by the GangSTR v17 catalog and ??% missed by the Illumina catalog. 
+What about loci with relatively large expansions? Arguably these are the loci we're most interested in. If you filter the truth set to the 1,702 (1%) of STR expansions that add 10 or more repeats to the reference repeat count, the percenages of missed loci remain large - with 30% missed by the GangSTR v17 catalog and 45% missed by the Illumina catalog. The 19/20xTCT expansion @ [chr1:18341013-18341042](https://tgg-viewer.broadinstitute.org/#locus=chr1:18341013-18341042&show=~(~'bed~'gtf~'vcf~'alignment)&selectedRows=~(Tool*20Results~(~)~Mappability*20Tracks~(~)~Truth*20Set~(~'Truth*20Set*20BED~'Truth*20Set*20VCF)~CHM1-CHM13~(~'SynDip*20full*20truth*20set*20VCF)~Other*20STR*20Catalogs~(~'Illumina*20Catalog~'GangSTR*20v17*20catalog))&selectedSamples=~()&order=~(~'Truth*20Set*20BED*20~'SynDip*20full*20truth*20set*20VCF*20vcf~'Truth*20Set*20VCF*20vcf~'Illumina*20Catalog*20~'GangSTR*20v17*20catalog*20~'Refseq*20Genes)&sjOptions=~(bounceHeightBasedOn~'random~colorBy~'isAnnotatedJunction~colorByNumReadsThreshold~5~hideAnnotated~false~hideUnannotated~false~labelAnnotatedJunction~false~labelAnnotatedJunctionValue~'*20*5bA*5d~labelMotif~false~labelMultiMappedReadCount~false~labelTotalReadCount~false~labelUniqueReadCount~true~maxFractionMultiMappedReads~1~minSplicedAlignmentOverhang~0~minTotalReads~1~minUniquelyMappedReads~0~showOnlyMinusStrand~false~showOnlyPlusStrand~false~thicknessBasedOn~'numUniqueReads~trackHeight~170~minJunctionEndsVisible~1~labelWithInParen~null~labelWith~'totalReadCount)&vcfOptions=~(displayMode~'EXPANDED)&bamOptions=~(alignmentShading~'strand~showSoftClips~true~trackHeight~400~viewAsPairs~true~showInsertionText~true~showDeletionText~true)&gcnvOptions=~(trackHeight~200~trackMin~0~trackMax~5~autoscale~false~onlyHandleClicksForHighlightedSamples~true)&settingsUrl=~'https*3a*2f*2fstr-truth-set.storage.googleapis.com*2fhg38*2ftgg-viewer-config.json*3fnocache17) is one example that would be missed by both the GangSTR v17 and the Illumina catalogs. 
 
 ---
 ### Tool Comparisons
