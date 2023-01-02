@@ -2,10 +2,10 @@
 
 Short tandem repeat (STR) expansions are associated with over 50 monogenic diseases [[Depienne 2021](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8205997/)] as well as common diseases such as autism [[Trost 2020](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9348607/)] [[Mitra 2021](https://www.nature.com/articles/s41586-020-03078-7)]. Over the past 5 years, improvements in STR genotyping tools such as [ExpansionHunter](https://github.com/Illumina/ExpansionHunter) and [GangSTR](https://github.com/gymreklab/GangSTR) have generated new interest in studying STRs using short read sequencing data. 
 
-However, one persistant challenge with genotyping STR loci is the scarcity of publicly available high-quality truth data (ie. samples with known STR expansions) that can be used for:
-1. comparing STR genotyping tools 
-2. evaluatating how a given tool's performance varies across different loci
-3. developing additional tools such as genotype quality filters
+However, one persistant challenge with applying these tools is the scarcity of publicly available high-quality truth data (ie. samples with known STR expansions) that can be used for:
+1. comparing tools
+2. evaluatating tool accuracy beyond the ~50 known disease-associated loci
+3. further tool development, including genotype quality filters
 
 In this blog post, I share a new genome-wide STR truth set that addresses this challenge. It is based on the Synthetic Diploid Bechmark (SynDip) [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)] and contains accurate genotypes for ~150,000 STR variants in a single human sample (CHM1-CHM13).  The PCR-free genome sequencing data for this sample is publicly available on the [Short Read Archive (SRA)](https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&acc=ERR1341796&display=data-access) and from the Broad Institute [[TODO: add links]]
 
