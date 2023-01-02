@@ -171,7 +171,7 @@ These plots address those questions:
 Unsurprisingly, truth set variants at loci where the reference sequence contains relatively few repeats are more likely to be expanded, while loci that have many repeats in the reference are more likely to be contracted in the truth set. 
 
 
-### Genomic Regions
+### Genomic regions
 
 How are truth set STR variants distributed across various annotated regions of the genome?
 
@@ -374,8 +374,46 @@ This takeaway is based on the entire truth set - but does is it still true for l
 What about loci with relatively large expansions? Arguably these are the loci we're most interested in. If you filter the truth set to the 1,702 (1%) of STR expansions that add 10 or more repeats to the reference repeat count, the percenages of missed loci remain large - with 30% missed by the GangSTR v17 catalog and 45% missed by the Illumina catalog. The 19/20xTCT expansion @ [chr1:18341013-18341042](https://tgg-viewer.broadinstitute.org/#locus=chr1:18341013-18341042&show=~(~'bed~'gtf~'vcf~'alignment)&selectedRows=~(Tool*20Results~(~)~Mappability*20Tracks~(~)~Truth*20Set~(~'Truth*20Set*20BED~'Truth*20Set*20VCF)~CHM1-CHM13~(~'SynDip*20full*20truth*20set*20VCF)~Other*20STR*20Catalogs~(~'Illumina*20Catalog~'GangSTR*20v17*20catalog))&selectedSamples=~()&order=~(~'Truth*20Set*20BED*20~'SynDip*20full*20truth*20set*20VCF*20vcf~'Truth*20Set*20VCF*20vcf~'Illumina*20Catalog*20~'GangSTR*20v17*20catalog*20~'Refseq*20Genes)&sjOptions=~(bounceHeightBasedOn~'random~colorBy~'isAnnotatedJunction~colorByNumReadsThreshold~5~hideAnnotated~false~hideUnannotated~false~labelAnnotatedJunction~false~labelAnnotatedJunctionValue~'*20*5bA*5d~labelMotif~false~labelMultiMappedReadCount~false~labelTotalReadCount~false~labelUniqueReadCount~true~maxFractionMultiMappedReads~1~minSplicedAlignmentOverhang~0~minTotalReads~1~minUniquelyMappedReads~0~showOnlyMinusStrand~false~showOnlyPlusStrand~false~thicknessBasedOn~'numUniqueReads~trackHeight~170~minJunctionEndsVisible~1~labelWithInParen~null~labelWith~'totalReadCount)&vcfOptions=~(displayMode~'EXPANDED)&bamOptions=~(alignmentShading~'strand~showSoftClips~true~trackHeight~400~viewAsPairs~true~showInsertionText~true~showDeletionText~true)&gcnvOptions=~(trackHeight~200~trackMin~0~trackMax~5~autoscale~false~onlyHandleClicksForHighlightedSamples~true)&settingsUrl=~'https*3a*2f*2fstr-truth-set.storage.googleapis.com*2fhg38*2ftgg-viewer-config.json*3fnocache17) is one example truth set variant that's missed by both the GangSTR v17 and the Illumina catalogs. 
 
 ---
-### Tool Comparisons
+### Tool comparisons
 
+We can use the truth set to evaluate the accuracy of existing STR calling tools, but first we need to define what we mean by accuracy. 
+For variant types such as SNVs and InDels, the definition is relatively straight-forward - a tool will either call a variant or not, and then it might get the zygosity right or wrong, but that's about it. Although these metrics are also important for STRs, the additional aspect of number of repeats introduces room for more nuance. For a given STR locus, a tool may get the number of repeats exactly right, or it may be off by +/-1, or off by many. It might even call an expansion where the true genotype is a contraction. To avoid getting bogged down with finding the right definition, we can just begin with the simplest one and then build for there. 
+
+Also, to keep the analysis manageable, we will focus on the widely-used tools: ExpansionHunter, GangSTR and HipSTR, and later also look at ExpansionHunterDenovo.
+
+#### Exact Accuracy
+
+The simplest definition of accuracy is - how many STR genotypes did a tool get exactly right? ie. what fraction of allele sizes reported by the tool exactly match the corresponding allele size in the truth set. When we run ExpansionHunter, GangSTR and HipSTR on the 139,244 (96%) truth set loci that have 2bp to 6bp motifs and that are present in the reference genome, we find that accuracy varies as follows: 
+
+<table>
+   <tr>
+      <th>Tool</th>
+      <th>Accuracy @ 40x coverage</th>
+      <th>Accuracy @ 20x coverage</th>
+      <th>Accuracy @ 10x coverage</th>
+   </tr>
+   <tr>
+      <td>ExpansionHunter v5</td>
+      <td>92.6%</td>
+      <td>90.9%</td>
+      <td>83.3%</td>
+   </tr>
+   <tr>
+      <td>GangSTR v2.5</td>
+      <td>91.0%</td>
+      <td>87.1%</td>
+      <td>76.1%</td>
+   </tr>
+   <tr>
+      <td>HipSTR v0.6.2</td>
+      <td>74.0%</td>
+      <td>72.9%</td>
+      <td>65.9%</td>
+   </tr>
+</table>
+
+
+----
 To compare STR calling tools, I downloaded the PCR-free genome sequencing data for CHM1-CHM13-2 from the [SRA](https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&acc=ERR1341796&display=data-access). This is 151bp paired-end data with 40x depth of coverage.
 
 I then realigned it to hg38 using BWA-MEM v0.7.17. 
