@@ -90,7 +90,7 @@ The SynDip benchmark is based on samples from two individuals: CHM1 and CHM13. O
    </tr>
    <tr>
       <td><i>1</i></td>
-      <td>Liftover to the T2T reference</td>
+      <td>Lift over STR variant to the T2T reference</td>
       <td nowrap align="right">1,507</td>
       <td nowrap align="right">1.0 %</td>
    </tr>
