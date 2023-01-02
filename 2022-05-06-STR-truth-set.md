@@ -426,7 +426,7 @@ However, as we saw [previously](https://github.com/bw2/bw2.github.io/blob/master
 
 <div align="center"><img src="https://user-images.githubusercontent.com/6240170/210284643-9e99df88-3e18-4937-b12a-530dedfa0965.png" width=800></div>
 
-This plot represents results @ 40x coverage, and shows how accuracy drop for larger expansions (positive x-axis) and contractions (negative x-axis), with ExpansionHunter retaining higher accuracy across all bins.
+This plot represents results @ 40x coverage, and shows how accuracy drops for larger expansions (positive x-axis) but remains steady for contractions (negative x-axis), with ExpansionHunter retaining higher accuracy across all bins.
 
 
 ----
