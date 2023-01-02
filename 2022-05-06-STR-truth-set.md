@@ -381,7 +381,7 @@ For variant types such as SNVs and InDels, the definition is relatively straight
 
 Also, to keep the analysis manageable, we focus on current widely-used tools - ExpansionHunter, GangSTR and HipSTR, and later also look at ExpansionHunterDenovo.
 
-#### Exact Accuracy
+#### Exact accuracy
 
 The simplest definition of STR calling accuracy is - how many genotypes did a tool get exactly right? ie. what fraction of called allele sizes exactly match the corresponding allele size in the truth set. When we run ExpansionHunter, GangSTR and HipSTR on the 139,244 (96%) truth set loci that have 2bp to 6bp motifs and that are present in the reference genome, we find the accuracy varies as follows: 
 
@@ -415,6 +415,15 @@ The simplest definition of STR calling accuracy is - how many genotypes did a to
       <td>42.5%</td>
    </tr>
 </table>
+
+
+#### Exact accuracy by number of repeats
+
+For most STR analyses, we care more about large expansions than about variants that add or subtract a few repeats relative to the reference genome. 
+However, as we saw [previously](https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#results), the overwhelming majority of STR variants in the truth set only differ from the reference genome by 1 or 2 repeats, which means that the simple accuracy metric above is dominated by variants we don't care as much about. To improve on this, we can look at how accuracy varies across different true allele size bins at 40x genome coverage:
+
+<div align="center"><img src="https://user-images.githubusercontent.com/6240170/210284643-9e99df88-3e18-4937-b12a-530dedfa0965.png" width=800></div>
+
 
 
 ----
