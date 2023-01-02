@@ -264,7 +264,7 @@ If we filter out STRs that are intergenic, intronic or overlap non-coding exons,
 This shows that nearly all - 198 out of 203 (97.5%) - of the STR alleles in coding regions have motif sizes that are multiples of 3bp.  
 As for the 5 loci that don't fit this pattern, 3 have very large motifs - larger than 50bp, 1 is an out-of-frame expansion of the rare "GC" dinucleotide motif, and 1 is an expansion of a 5bp "GGGGC" motif that adds 3 additional repeats relative to the reference and so does not introduce a frameshift. 
 
-We can also look at whether the 203 coding STR variants fall in LoF or missense constrained genes and compare this to the gene constraint of 25 coding  disease-associated loci. 
+We can also look at whether the 203 coding STR alleles fall within LoF or missense constrained genes and compare this to the gene constraint of the 25 known disease-associated loci that are within coding regions. 
 
 ![image](https://user-images.githubusercontent.com/6240170/202306770-ad9d07b8-159d-49a4-930d-ad0e72deae4e.png)
 
