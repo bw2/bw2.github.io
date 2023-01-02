@@ -256,13 +256,13 @@ Showing the MANE v1 proportions as a histogram stratified by motif sizes:
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/6240170/202269863-abc40ef0-35c1-428a-8065-ccb37b29157c.png">
 </div>
 
-If we filter out STRs that are intergenic, intronic or overlap non-coding exons, and look only at the small subset that overlap either promoters, UTRs or coding regions, the histogram looks like:
+If we filter out STRs that are intergenic, intronic or overlap non-coding exons, and look only at the small subset that overlap either promoters, UTRs or coding regions (CDS), the histogram looks like:
 <div align=left>
 <img width=500 src="https://user-images.githubusercontent.com/6240170/200899334-703e84af-0b10-4c4c-9bb6-fa80efa8cf22.png">
 </div>
 
 This shows that nearly all - 198 out of 203 (97.5%) - of the STR alleles in coding regions have motif sizes that are multiples of 3bp.  
-As for the 5 remaining loci, 3 have motifs larger than 50bp, 1 is an out-of-frame expansion of the rare "GC" dinucleotide motif, and 1 is an expansion of a 5bp "GGGGC" motif that adds 3 additional repeats relative to the reference and so does not introduce a frameshift. 
+As for the 5 loci that don't fit this pattern, 3 have motifs larger than 50bp, 1 is an out-of-frame expansion of the rare "GC" dinucleotide motif, and 1 is an expansion of a 5bp "GGGGC" motif that adds 3 additional repeats relative to the reference and so does not introduce a frameshift. 
 
 We can also look at whether the 203 coding STR variants fall in LoF or missense constrained genes and compare this to the gene constraint of 25 coding  disease-associated loci. 
 
