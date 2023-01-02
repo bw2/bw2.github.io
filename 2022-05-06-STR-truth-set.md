@@ -422,10 +422,11 @@ We can see that ExpansionHunter slightly outperforms GangSTR, and both tools out
 #### Exact accuracy by number of repeats
 
 For most STR analyses, we care more about large expansions than about variants that only add or subtract a few repeats. 
-However, as we saw [previously](https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#results), the overwhelming majority of truth set variants only differ from the reference genome by 1 or 2 repeats, which means the simple accuracy metric above is dominated by variants we don't care as much about. To improve on this, we can look at how accuracy varies across different true allele size bins at 40x genome coverage:
+However, as we saw [previously](https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#results), the overwhelming majority of truth set variants only differ from the reference genome by 1 or 2 repeats, which means the simple accuracy metric above is dominated by variants we don't care as much about. To improve on this, we can look at how accuracy varies across different true allele size bins:
 
 <div align="center"><img src="https://user-images.githubusercontent.com/6240170/210284643-9e99df88-3e18-4937-b12a-530dedfa0965.png" width=800></div>
 
+This plot represents results @ 40x coverage, and shows how accuracy decreases for larger expansions or contractions.
 
 
 ----
