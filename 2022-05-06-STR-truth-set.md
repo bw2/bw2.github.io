@@ -416,6 +416,8 @@ The simplest definition of STR calling accuracy is - how many genotypes did a to
    </tr>
 </table>
 
+We can see that ExpansionHunter slightly outperforms GangSTR, and both tools outperform HipSTR. Accuracy unsurprisingly decreases when the original data with 40x genome-wide coverage is downsampled to lower read depths.
+
 
 #### Exact accuracy by number of repeats
 
