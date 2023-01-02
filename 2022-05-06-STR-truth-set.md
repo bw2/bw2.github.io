@@ -388,10 +388,10 @@ The simplest definition of STR calling accuracy is - how many genotypes did a to
 <table>
    <tr>
       <th>Tool</th>
-      <th>Accuracy @ 40x genome coverage</th>
-      <th>Accuracy @ 20x genome coverage</th>
-      <th>Accuracy @ 10x genome coverage</th>
-      <th>Accuracy @ 5x genome coverage</th>
+      <th>Accuracy @ 40x <br />genome coverage</th>
+      <th>Accuracy @ 20x <br />genome coverage</th>
+      <th>Accuracy @ 10x <br />genome coverage</th>
+      <th>Accuracy @ 5x  <br />genome coverage</th>
    </tr>
    <tr>
       <td nowrap>ExpansionHunter v5</td>
