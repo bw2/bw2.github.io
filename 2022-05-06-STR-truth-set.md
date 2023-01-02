@@ -120,7 +120,7 @@ The SynDip benchmark is based on samples from two individuals: CHM1 and CHM13. O
 
 Overall, of the 86,028 STRs that could be validated <sup>‡</sup> against T2T, 84,183 (97.9%) passed this validation, underscoring the accuracy and relevance of this truth set. 
 
-‡ *NOTE*: STR contractions that failed hg38 ⇒ T2T liftover due to an  “IndelStraddlesMultipleIntevals” error were included in the truth set without these validation steps as I consider this to be a technical issue with liftover rather than a problem with the variant itself. This applies to 60,590 (77%) of STR contractions.
+‡ *NOTE*: STR contractions that failed hg38 ⇒ T2T liftover due to an  “IndelStraddlesMultipleIntevals” error were included in the truth set without these validation steps as I consider this to be a technical issue with liftover rather than a problem with genotype accuracy. This applies to 60,590 (77%) of STR contractions.
 
 
 ---
