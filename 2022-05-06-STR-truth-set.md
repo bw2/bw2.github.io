@@ -376,14 +376,14 @@ What about loci with relatively large expansions? Arguably these are the loci we
 ---
 ### Tool comparisons
 
-We can use the truth set to evaluate the accuracy of existing STR calling tools, but first we need to define what we mean by accuracy. 
-For variant types such as SNVs and InDels, the definition is relatively straight-forward - a tool will either call a variant or not, and then it might get the zygosity right or wrong, but that's about it. Although these metrics are also important for STRs, the additional aspect of number of repeats introduces room for more nuance. For a given STR locus, a tool may get the number of repeats exactly right, or it may be off by +/-1, or off by many. It might even call an expansion where the true genotype is a contraction. To avoid getting bogged down with finding the right definition, we can just begin with the simplest one and then build for there. 
+To use the truth set for comparing the accuracy of existing STR calling tools we first need to define what we mean by accuracy. 
+For variant types such as SNVs and InDels, the definition is relatively straight-forward - a tool will either call a variant or not, and then it might get the zygosity right or wrong, but that's about it. Although these metrics are also important for STRs, the additional aspect of number of repeats introduces a lot more nuance. For a given STR locus, a tool may get the number of repeats exactly right, or it may be off by +/-1, or off by many. It might even call an expansion where the true genotype is a contraction. To avoid getting bogged down around the right definition, we can just begin with the simplest definition and build from there. 
 
-Also, to keep the analysis manageable, we will focus on the widely-used tools: ExpansionHunter, GangSTR and HipSTR, and later also look at ExpansionHunterDenovo.
+Also, to keep the analysis manageable, we focus on current widely-used tools - ExpansionHunter, GangSTR and HipSTR, and later also look at ExpansionHunterDenovo.
 
 #### Exact Accuracy
 
-The simplest definition of accuracy is - how many STR genotypes did a tool get exactly right? ie. what fraction of allele sizes reported by the tool exactly match the corresponding allele size in the truth set. When we run ExpansionHunter, GangSTR and HipSTR on the 139,244 (96%) truth set loci that have 2bp to 6bp motifs and that are present in the reference genome, we find that accuracy varies as follows: 
+The simplest definition of STR calling accuracy is - how many genotypes did a tool get exactly right? ie. what fraction of called allele sizes exactly match the corresponding allele size in the truth set. When we run ExpansionHunter, GangSTR and HipSTR on the 139,244 (96%) truth set loci that have 2bp to 6bp motifs and that are present in the reference genome, we find the accuracy varies as follows: 
 
 <table>
    <tr>
