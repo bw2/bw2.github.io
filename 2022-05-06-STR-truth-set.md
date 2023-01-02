@@ -20,7 +20,7 @@ I use the truth set to evaluate widely-used STR calling tools - ExpansionHunter,
 
 ### Defining the STR truth set
 
-To generate an STR truth set, I started with the Synthetic Diploid Benchmark (SynDip) [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)]. This unique dataset used haploid PacBio assemblies to identify all variants in the CHM1-CHM13 synthetic diploid sample. Because these variants are based on alignments of haploid assemblies (rather than individual reads) to the reference genome, the SynDip variants are more reliable than those produced by short-read or even ordinary long-read pipelines. 
+To generate an STR truth set, I started with the Synthetic Diploid Benchmark (SynDip) [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)] which is a unique dataset that uses haploid PacBio assemblies to identify all variants in the CHM1-CHM13 synthetic diploid sample. Because these variants are based on alignments of haploid assemblies (rather than individual reads) to the reference genome, the SynDip genotypes are more reliable than those produced by short-read or even ordinary long-read pipelines. 
 
 Of the 4.1 million high-confidence variants in the [SynDip VCF](https://github.com/lh3/CHM-eval), 259k (6.3%) are insertions and 249k (6.1%) are deletions. To create the STR truth set, I filtered these insertions and deletions to the subset that represent STR expansions or contractions by following these steps:
 
@@ -81,8 +81,6 @@ This variant passes the thresholds for length ≥ 9bp and repeat count ≥ 3, so
 
 The SynDip benchmark is based on samples from two individuals: CHM1 and CHM13. One of them (CHM13) is also the basis of the new [telomere-to-telomere](https://www.genome.gov/about-genomics/telomere-to-telomere) (T2T) reference genome, so it's possible to validate most STR variants in the truth set by checking that at least one allele matches the T2T reference sequence.
 
-*NOTE*: STR contractions that failed hg38 ⇒ T2T liftover due to an  “IndelStraddlesMultipleIntevals” error were included in the truth set without these validation steps as I consider this to be a technical issue with liftover rather than a problem with the variant itself. This applies to 60,590 (77%) of STR contractions.
-
 <table>
    <tr>
       <th> </th>
@@ -120,7 +118,10 @@ The SynDip benchmark is based on samples from two individuals: CHM1 and CHM13. O
 
 </table>
 
-Overall, of the 86,028 STRs that could be validated against T2T, 84,183 (97.9%) passed this validation, underscoring the accuracy and relevance of this truth set. 
+Overall, of the 86,028 STRs that could be validated <sup>‡</sup> against T2T, 84,183 (97.9%) passed this validation, underscoring the accuracy and relevance of this truth set. 
+
+‡ *NOTE*: STR contractions that failed hg38 ⇒ T2T liftover due to an  “IndelStraddlesMultipleIntevals” error were included in the truth set without these validation steps as I consider this to be a technical issue with liftover rather than a problem with the variant itself. This applies to 60,590 (77%) of STR contractions.
+
 
 ---
 ### Results:
