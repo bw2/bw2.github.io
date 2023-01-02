@@ -168,7 +168,7 @@ These plots address those questions:
 
 
 
-Unsurprisingly, truth set variants at loci where the reference sequence contains relatively few repeats are more likely to be expansions relative to the reference, while loci that have many repeats in the reference are more likely to have contractions in the truth set. 
+Unsurprisingly, truth set variants at loci where the reference sequence contains relatively few repeats are more likely to be expanded, while loci that have many repeats in the reference are more likely to be contracted in the truth set. 
 
 
 ### Genomic Regions
