@@ -388,31 +388,31 @@ The simplest definition of STR calling accuracy is - how many genotypes did a to
 <table>
    <tr>
       <th>Tool</th>
-      <th>Accuracy @ 40x coverage</th>
-      <th>Accuracy @ 20x coverage</th>
-      <th>Accuracy @ 10x coverage</th>
-      <th>Accuracy @ 5x coverage</th>
+      <th>Accuracy @ 40x genome coverage</th>
+      <th>Accuracy @ 20x genome coverage</th>
+      <th>Accuracy @ 10x genome coverage</th>
+      <th>Accuracy @ 5x genome coverage</th>
    </tr>
    <tr>
-      <td>ExpansionHunter v5</td>
+      <td nowrap>ExpansionHunter v5</td>
       <td>92.6%</td>
       <td>90.9%</td>
       <td>83.3%</td>
-      <td>0%</td>
+      <td>0.1%</td>
    </tr>
    <tr>
-      <td>GangSTR v2.5</td>
+      <td nowrap>GangSTR v2.5</td>
       <td>91.0%</td>
       <td>87.1%</td>
       <td>76.1%</td>
-      <td>0%</td>
+      <td>53.5%</td>
    </tr>
    <tr>
-      <td>HipSTR v0.6.2</td>
+      <td nowrap>HipSTR v0.6.2</td>
       <td>74.0%</td>
       <td>72.9%</td>
       <td>65.9%</td>
-      <td>0%</td>
+      <td>42.5%</td>
    </tr>
 </table>
 
