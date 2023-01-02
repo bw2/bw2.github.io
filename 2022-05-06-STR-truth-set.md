@@ -173,6 +173,8 @@ Unsurprisingly, truth set variants at loci where the reference sequence contains
 
 ### Genomic Regions
 
+How are truth set STR variants distributed across various annotated regions of the genome?
+
 3,121 out of 144,773 (2.2%) STR variants overlap segmental duplications (SegDups) in hg38:
 
 <div align=center>
