@@ -137,7 +137,7 @@ First, let's plot the size of STR expansions and contractions in the truth set:
 
 Here, the x-axis represents the STR allele size in CHM1-CHM13 minus the number of repeats at that locus in the hg38 reference genome. The distribution is symmetric around 0 - which is as expected since there's no reason for STRs in hg38 to be systematically larger or smaller than repeats in random individuals from the  population (ie. CHM1 and CHM13). To take it a step further, this symmetry provides further support for the truth set's accuracy since it rules out systematic bias toward expansions or contractions in the pipeline that produced the SynDip Benchmark. 
 
-If I plot the same distribution but with size in base pairs instead of # of repeats on the x-axis, we see:
+If I plot the same distribution but with size in base pairs rather than # of repeats on the x-axis, it looks like:
 
 <img width=500 src="https://user-images.githubusercontent.com/6240170/201500475-561acf00-3b52-43b6-9a27-b1846ce76ddd.png">
 
