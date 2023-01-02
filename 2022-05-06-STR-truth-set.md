@@ -161,7 +161,8 @@ Although the 2 distributions are roughly similar, some motifs clearly have more 
 </div>
 
 Finally, we can also ask - for STR variants in the truth set, how large are the corresponding loci in the hg38 reference genome? 
-and also, if a locus has many repeats in the reference genome, is it more likely to be expanded or contracted in CHM1-CHM13?
+and also, if a locus has many repeats in the reference genome, is it more likely to be expanded or contracted in CHM1-CHM13? 
+These plots address these questions:
 
 <img width=615 src="https://user-images.githubusercontent.com/6240170/204148709-ab45e9b2-e808-4daa-a089-107b3139811b.png">
 
