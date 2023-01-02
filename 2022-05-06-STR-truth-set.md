@@ -7,7 +7,7 @@ However, one persistant challenge with applying these tools is the scarcity of p
 2. evaluatating tool accuracy beyond the ~50 known disease-associated loci
 3. further tool development, including genotype quality filters
 
-In this blog post, I share a new genome-wide STR truth set that aims to address this challenge. It is based on the Synthetic Diploid Bechmark (SynDip) [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)] and contains accurate genotypes for ~150,000 STR variants in a single human sample (CHM1-CHM13).  The PCR-free genome sequencing data for this sample is publicly available on the [Short Read Archive (SRA)](https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&acc=ERR1341796&display=data-access) and from the Broad Institute [[TODO: add links]]
+In this blog post, I share a new genome-wide STR truth set that aims to address this challenge. It is based on the Synthetic Diploid Bechmark (SynDip) [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)] and contains accurate genotypes for ~150,000 STR variants in a single human sample (CHM1-CHM13). The PCR-free genome sequencing data for this sample is publicly available from the [Short Read Archive (SRA)](https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&acc=ERR1341796&display=data-access) and also from the Broad Institute which has both [genome data](https://console.cloud.google.com/storage/browser/broad-public-datasets/CHM1_CHM13_WGS2) and [exome data](https://console.cloud.google.com/storage/browser/broad-public-datasets/CHM1_CHM13_WES).
 
 I then use the truth set to evaluate the widely-used STR calling tools - ExpansionHunter, GangSTR, HipSTR and ExpansionHunter Denovo, and also use it to explore relevant questions such as:
 - what is the distribution of STR variants in the human genome (ie. motif sizes, lengths, percent multiallelic, etc.)?
@@ -135,7 +135,7 @@ If I take all alleles and plot the number of repeats in CHM1-CHM13 minus the num
 <img width=500 src="https://user-images.githubusercontent.com/6240170/200637637-32348eff-13bc-4c10-9cbb-c52304709859.png">
 
 
-This distribution matches expectation since there's no reason that STRs in hg38 should be systematically larger or smaller than repeats in random individuals from the  population (ie. CHM1 and CHM13). To take it a step further, the degree to which this distribution is symetrical around 0 further supports the truth set's accuracy since it rules out systematic bias toward expansions or contractions in the pipeline that produced the SynDip Benchmark. 
+This distribution matches expectation since there's no reason that STRs in hg38 should be systematically larger or smaller than repeats in random individuals from the  population (ie. CHM1 and CHM13). To take it a step further, the degree to which this distribution is symetric around 0 further supports the truth set's accuracy since it rules out systematic bias toward expansions or contractions in the pipeline that produced the SynDip Benchmark. 
 
 If I plot the same distribution but with size in base pairs instead of # of repeats on the x-axis, we see:
 
