@@ -428,6 +428,15 @@ However, as we saw [previously](https://github.com/bw2/bw2.github.io/blob/master
 
 This plot represents results @ 40x coverage, and shows how accuracy drops for larger expansions (positive x-axis) but remains steady for contractions (negative x-axis), with ExpansionHunter retaining higher accuracy across all bins.
 
+We can also see how the accuracy varies for different read depths, showing only ExpansionHunter and GangSTR for clarity:
+
+<div align="center"><img src="https://user-images.githubusercontent.com/6240170/210285501-e10be5f6-847d-4c59-b88f-9009c02ce1a2.png" width=800></div>
+
+
+#### Accuracy and error size
+
+When a tool doesn't get the genotype exactly right, it matters whether it's off by 1 or by 20 repeats, and whether it tends to overestimate or underestimate the true genotype. This is especially important for rare disease research where underestimates at disease-associated loci can lead to missed diagnoses. We can use different colors to layer in the error 
+
 
 ----
 To compare STR calling tools, I downloaded the PCR-free genome sequencing data for CHM1-CHM13-2 from the [SRA](https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&acc=ERR1341796&display=data-access). This is 151bp paired-end data with 40x depth of coverage.
