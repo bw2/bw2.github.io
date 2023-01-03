@@ -422,7 +422,10 @@ We can see that ExpansionHunter slightly outperforms GangSTR, and both tools out
 #### Exact accuracy by number of repeats
 
 For most STR analyses, we care more about large expansions than about variants that only add or remove a few repeats. 
-However, as we saw [previously](https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#results), the overwhelming majority of truth set variants only differ from the reference genome by 1 or 2 repeats. This means the accuracy metric defined above is dominated by variants we don't care as much about. To improve on this, we can look at how accuracy varies across different true allele size bins:
+However, as we saw [previously](https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#results), the overwhelming majority of truth set variants only differ from the reference genome by 1 or 2 repeats. This means the accuracy metric defined above is dominated by variants we don't care as much about. To improve on this, we can look at how accuracy varies across different true allele size bins. 
+
+First though, a technical note about comparing STR genotypes. For a given locus, there are 5 numbers to consider - the number of repeats in the reference genome, the size of the short allele and the long allele in the true genotype, and finally the short and long allele as called by the given tool. 
+For the analyses below, comparing the truth set allele sizes to the number of repeats in the reference gives me the x-axis values. Then I compare the short allele of the true genotype to the short allele as called by the tool, and separately do the same for the long alleles. The plots below are based on these allele counts. 
 
 <div align="center"><img src="https://user-images.githubusercontent.com/6240170/210284643-9e99df88-3e18-4937-b12a-530dedfa0965.png" width=800></div>
 
