@@ -131,7 +131,7 @@ The resulting STR truth set contains:
 - **144,773 STR variants**  
 - **175,372 STR alleles**   
 
-The size distribution of STR expansions and contractions is as follows:
+The size distribution of these variants is as follows:
 
 <img width=500 src="https://user-images.githubusercontent.com/6240170/200637637-32348eff-13bc-4c10-9cbb-c52304709859.png">
 
