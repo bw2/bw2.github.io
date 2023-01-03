@@ -18,8 +18,9 @@ I apply this truth set to evaluate widely-used STR calling tools - ExpansionHunt
 
 Some of the interesting and/or surprising results from the truth set analysis below are:
 
+- A typical individual's genome differs from the reference at ~150,000 STR loci, but 98% of these alleles differ by less than 30bp. On average, only several thousand STR loci differ from the reference by more than 30bp.
 - ExpansionHunter has better accuracy than other tools for all STR allele sizes
-- widely-used STR catalogs miss 40 to 60% of the variant loci in the truth set
+- widely-used STR catalogs miss 35% to 40% of the STR variants in the truth set
 - pLI gene constraint is useful but insufficient for identifing genes that are intolerant of STR variation
 - ... TODO
 
