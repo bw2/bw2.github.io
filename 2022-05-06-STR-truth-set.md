@@ -16,12 +16,12 @@ I apply this truth set to evaluate widely-used STR calling tools - ExpansionHunt
 
 **Key Findings**
 
-Several take-aways from this analysis are interesting and/or surprising:
+Some of the interesting and/or surprising results from the truth set analysis below are:
 
 - ExpansionHunter has better accuracy than other tools for all STR sizes
 - widely-used STR catalogs miss 40 to 60% of the variant loci in the truth set
 - pLI gene constraint is useful but insufficient for identifing genes that are intolerant of STR variation
-- TODO add several more
+- ... TODO
 
 *NOTE*: STRs are traditionally defined as repeating motifs that are between 1 to 6bp long. For this truth set I exclude 1bp (homopolymer) repeats since they are uniquely error-prone, but include motifs longer than 6bp so that users can decide whether to include these in their analyses.
 
