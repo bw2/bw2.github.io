@@ -508,7 +508,7 @@ Details:
 
 ---
 
-**Extra Section 3:** Code and other data availability
+**Extra Section 2:** Code and other data availability
 
 The source code for all aspects of the truth set analysis is available at [https://github.com/broadinstitute/str-truth-set](https://github.com/broadinstitute/str-truth-set). It includes the following scripts:
 
