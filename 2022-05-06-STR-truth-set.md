@@ -449,43 +449,15 @@ We can compare this to other tools:
 
 This shows that both GangSTR and HipSTR underestimate (blue) or entirely miss (red) more expansions than ExpansionHunter. Additionally, HipSTR simply doesn't call a sizeable fraction of loci (gray), and instead outputs this error message: "Aborting genotyping of the locus as the sequence upstream/downstream of the repeat is too repetitive for accurate genotyping".
 
-#### Methods
-
-Here I describe some technical details of the tool comparisons.
-
-To compare STR calling tools, I downloaded the PCR-free genome sequencing data for CHM1-CHM13-2 from the Broad Institute's public storage. 
-This is 151bp paired-end data with 40x depth of coverage.
-
-Then, to run ExpansionHunter, GangSTR, and HipSTR on this sample, I generated variant catalogs with
-1) 144,251 positive loci. These are all the loci in the truth set (excluding the 521 that don't have matching repeats in the reference genome). They represent true positive variants.
-2) 144,252 negative loci. These are repeat loci in hg38 that are not in the truth set (and therefore have a homozygous reference genotype). They represent true negatives. They were selected by taking the much larger set of all pure repeats in hg38 and selecting a random subset that has the same distribution of motif sizes as the set of positive loci. 
-
-These variant catalogs and other files used in the analysis are publicly available in the [gs://str-truth-set](https://console.cloud.google.com/storage/browser/str-truth-set/hg38) Google Storage bucket. 
-
-All code used to perform the analysis and generate the figures is available in https://github.com/broadinstitute/str-truth-set
-
-
-**Negative Loci**
-
-The above analyses focused on sensitivity. The set of negative loci allows us to also examine specificity and to ask **what fraction of non-variant loci do the tools incorrectly call as having a non-reference genotype?** 
-
-**Larger Motif Sizes**
+#### ExpansionHunterDenovo
 
 TODO describe results
 
-**Exome Data**
-
-TODO describe results 
-
-**ExpansionHunterDenovo**
+#### Interruptions
 
 TODO describe results
 
-**Interruptions**
-
-TODO describe results
-
-**Runtime and cost**
+#### Runtime and cost
 
 TODO describe results
 
@@ -507,6 +479,8 @@ A key next step is to use the truth set to train classifiers for these categorie
 
 CHM1-CHM13-2 WGS read data is publicly available under run id ERR1341796: [[SRA](https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&acc=ERR1341796&display=data-access)]  [[EBI](https://www.ebi.ac.uk/ena/browser/view/ERR1341796)].
 
+Since it was more convenient, I downloaded the genome data from the Broad Institute @  TODO add link
+
 Details:
 - Illumina HiSeq X Ten
 - PCR-Free protocol
@@ -515,8 +489,9 @@ Details:
 
 Further details are provided in [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)].  
 
-CHM1-CHM13 exome sequencing data is available from the Broad Institute:
+CHM1-CHM13 exome sequencing data is available from the Broad Institute @ TODO add link
 
+Details:
 - Illumina HiSeq X Ten
 - Paired-end 151bp reads
 - 85x mean target coverage (based on Picard metrics).
@@ -587,7 +562,22 @@ This catalog has fewer loci than the catalog of pure repeats because a number of
 
 ---
 
-**Extra Section 3:** A few words about the limitations of existing approaches to STR truth data:
+**Extra Section 3:** Code and data availability
+
+To run ExpansionHunter, GangSTR, and HipSTR on this sample, I generated variant catalogs with
+1) 144,251 positive loci. These are all the loci in the truth set (excluding the 521 that don't have matching repeats in the reference genome). They represent true positive variants.
+2) 144,252 negative loci. These are repeat loci in hg38 that are not in the truth set (and therefore have a homozygous reference genotype). They represent true negatives. They were selected by taking the much larger set of all pure repeats in hg38 and selecting a random subset that has the same distribution of motif sizes as the set of positive loci. 
+
+These variant catalogs and other files used in the analysis are publicly available in the [gs://str-truth-set](https://console.cloud.google.com/storage/browser/str-truth-set/hg38) Google Storage bucket. Many of the smaller files are also available on the [Releases page](https://github.com/broadinstitute/str-truth-set/releases) of the [str-truth-set github repo](https://github.com/broadinstitute/str-truth-set).
+
+The source code for all aspects of this analysis is available at [https://github.com/broadinstitute/str-truth-set](https://github.com/broadinstitute/str-truth-set). It includes the following scripts:
+
+* [tool_comparison/scripts/convert_truth_set_to_variant_catalogs.py](https://github.com/broadinstitute/str-truth-set/blob/main/tool_comparison/scripts/convert_truth_set_to_variant_catalogs.py) - a script that converts the truth set into ExpansionHunter and GangSTR input catalogs and also generates the set of true negative loci with a matching distribution of motif sizes. 
+
+
+---
+
+**Extra Section 4:** A few words about the limitations of existing approaches to STR truth data:
 
 1. **simulated STRs:** we can generate an unlimited number of STR examples with known genotypes by using a tool like [wgsim](https://github.com/lh3/wgsim). However, simulated data doesn't capture the full complexity of real sequencing data (eg. adjacent variants not present in the reference genome, GC bias, and other sequencing artifacts). 
 2. **mendelian violations analysis:** trios can be used to check whether genotypes are consistant with Mendelian inheritance. However, This is informative about specificity but not sensitivity since a tool that misses all expansions will have zero mendelian violations. This produces a coarser  
@@ -603,7 +593,7 @@ This catalog has fewer loci than the catalog of pure repeats because a number of
 4. **long read data:** This might be the ideal source of truth in the future, but currently suffers from a lack of well-validated STR calling tools. The most-recently published tool - Straglr [[Chiu 2021](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02447-3)] - reports 73% concordance between heterozygous STR expansions called from HiFi PacBio data vs truth data generated from the diploid assembly of HG00733 [[Kronenberg 2019](https://www.biorxiv.org/content/10.1101/327064v2.full)]. [[Chiu 2021](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02447-3)], [[Dashnow 2021](https://www.biorxiv.org/content/10.1101/2021.11.18.469113v1)] and other groups (unpublished) also raise concerns about diploid assemblies as a source of STR truth data since manual inspection of discordant loci often revealed that the assembly was not credible at those loci. 
 
 ----
-**Extra Section 4**: The table below lists STR calling tools + the truth data used in their publications.
+**Extra Section 5**: The table below lists STR calling tools + the truth data used in their publications.
 
 <br />
 <table class="ui striped table">
@@ -731,7 +721,7 @@ The largest truth sets in this table are generated using diploid assemblies - as
 
 ----
 
-**Extra Section 5:** Synthetic Diploid Benchmark Overview
+**Extra Section 6:** Synthetic Diploid Benchmark Overview
 
 [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)] produced a high-qaulity truth set based on [Huddleston 2017](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5411763/) haploid assemblies of two individuals - CHM1 and CHM13. 
 
@@ -749,16 +739,3 @@ This yielded 5,362,620 variants of which 4,148,586 were in high-confidence regio
 [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)] used this data to evaluate SNV and INDEL calling tools, but it can also serve as a high-quality truth set for STRs, as well as tandem repeats (TRs) and structural variants (SVs).
 
 
----
-
-**Extra Section 6:** Source code
-
-The source code for all aspects of this analysis is available at [https://github.com/broadinstitute/str-truth-set](https://github.com/broadinstitute/str-truth-set). It includes the following scripts:
-
-* [tool_comparison/scripts/convert_truth_set_to_variant_catalogs.py](https://github.com/broadinstitute/str-truth-set/blob/main/tool_comparison/scripts/convert_truth_set_to_variant_catalogs.py) - a script that converts the truth set into ExpansionHunter and GangSTR input catalogs and also generates the set of true negative loci with a matching distribution of motif sizes. 
-
----
-
-**Extra Section 7:** Data
-
-All data from this analysis is in the [gs://str-truth-set](https://console.cloud.google.com/storage/browser/str-truth-set/hg38) Google Storage bucket and on the [Releases page](https://github.com/broadinstitute/str-truth-set/releases) of the [str-truth-set github repo](https://github.com/broadinstitute/str-truth-set).
