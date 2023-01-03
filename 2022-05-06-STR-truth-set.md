@@ -489,7 +489,7 @@ A key next step is to use the truth set to train classifiers for these categorie
 
 CHM1-CHM13-2 WGS read data is publicly available under run id ERR1341796: [[SRA](https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&acc=ERR1341796&display=data-access)]  [[EBI](https://www.ebi.ac.uk/ena/browser/view/ERR1341796)].
 
-CHM1-CHM13-2 WGS read data is also publicly available from the Broad Institute here: [genome data](https://console.cloud.google.com/storage/browser/broad-public-datasets/CHM1_CHM13_WGS2).
+CHM1-CHM13-2 WGS read data is also publicly available from the Broad Institute here: [genome data](https://console.cloud.google.com/storage/browser/broad-public-datasets/CHM1_CHM13_WGS2)
 
 Details:
 - Illumina HiSeq X Ten
