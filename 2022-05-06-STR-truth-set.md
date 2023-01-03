@@ -485,11 +485,11 @@ A key next step is to use the truth set to train classifiers for these categorie
 ### Extra Sections
 
 ---
-**Extra Section 1:** Data details and availability
+**Extra Section 1:** Data availability and details
 
 CHM1-CHM13-2 WGS read data is publicly available under run id ERR1341796: [[SRA](https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&acc=ERR1341796&display=data-access)]  [[EBI](https://www.ebi.ac.uk/ena/browser/view/ERR1341796)].
 
-Since it was more convenient, I downloaded the genome data from the Broad Institute @  TODO add link
+CHM1-CHM13-2 WGS read data is also publicly available from the Broad Institute here: [genome data](https://console.cloud.google.com/storage/browser/broad-public-datasets/CHM1_CHM13_WGS2).
 
 Details:
 - Illumina HiSeq X Ten
@@ -499,16 +499,32 @@ Details:
 
 Further details are provided in [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)].  
 
-CHM1-CHM13 exome sequencing data is available from the Broad Institute @ TODO add link
+CHM1-CHM13 exome sequencing data is also available from the Broad Institute here: [exome data](https://console.cloud.google.com/storage/browser/broad-public-datasets/CHM1_CHM13_WES)
 
 Details:
 - Illumina HiSeq X Ten
 - Paired-end 151bp reads
 - 85x mean target coverage (based on Picard metrics).
 
+---
+
+**Extra Section 3:** Code and other data availability
+
+The source code for all aspects of the truth set analysis is available at [https://github.com/broadinstitute/str-truth-set](https://github.com/broadinstitute/str-truth-set). It includes the following scripts:
+
+* [tool_comparison/scripts/convert_truth_set_to_variant_catalogs.py](https://github.com/broadinstitute/str-truth-set/blob/main/tool_comparison/scripts/convert_truth_set_to_variant_catalogs.py) - a script that converts the truth set into ExpansionHunter and GangSTR input catalogs and also generates the set of true negative loci with a matching distribution of motif sizes. 
+
+TODO describe other scripts here
+
+To run ExpansionHunter, GangSTR, and HipSTR on this sample, I generated variant catalogs with
+1) 144,251 positive loci. These are all the loci in the truth set (excluding the 521 that don't have matching repeats in the reference genome). They represent true positive variants.
+2) 144,252 negative loci. These are repeat loci in hg38 that are not in the truth set (and therefore have a homozygous reference genotype). They represent true negatives. They were selected by taking the much larger set of all pure repeats in hg38 and selecting a random subset that has the same distribution of motif sizes as the set of positive loci. 
+
+These variant catalogs and other files used in the analysis are publicly available in the [gs://str-truth-set](https://console.cloud.google.com/storage/browser/str-truth-set/hg38) Google Storage bucket. Many of the smaller files are also available on the [Releases page](https://github.com/broadinstitute/str-truth-set/releases) of the [str-truth-set github repo](https://github.com/broadinstitute/str-truth-set).
 
 ---
-**Extra Section 2:** Genome-wide STR catalogs via TandemRepeatFinder
+
+**Extra Section 3:** Genome-wide STR catalogs via TandemRepeatFinder
 
 To generate a comprehensive catalog of pure repeats in hg38, I ran [TandemRepeatFinder](https://github.com/Benson-Genomics-Lab/TRF) with very large mismatch and indel penalties (=1000000) that basically disallow any mismatches or indels. I used a small Minscore value (=8) to include short stretches of repeats:
 
@@ -569,21 +585,6 @@ As before, I post-processed the output to discard homopolymers and loci than con
 </table>
 
 This catalog has fewer loci than the catalog of pure repeats because a number of adjacent pure repeat loci were merged into single loci once mismatches were allowed. 
-
----
-
-**Extra Section 3:** Code and data availability
-
-To run ExpansionHunter, GangSTR, and HipSTR on this sample, I generated variant catalogs with
-1) 144,251 positive loci. These are all the loci in the truth set (excluding the 521 that don't have matching repeats in the reference genome). They represent true positive variants.
-2) 144,252 negative loci. These are repeat loci in hg38 that are not in the truth set (and therefore have a homozygous reference genotype). They represent true negatives. They were selected by taking the much larger set of all pure repeats in hg38 and selecting a random subset that has the same distribution of motif sizes as the set of positive loci. 
-
-These variant catalogs and other files used in the analysis are publicly available in the [gs://str-truth-set](https://console.cloud.google.com/storage/browser/str-truth-set/hg38) Google Storage bucket. Many of the smaller files are also available on the [Releases page](https://github.com/broadinstitute/str-truth-set/releases) of the [str-truth-set github repo](https://github.com/broadinstitute/str-truth-set).
-
-The source code for all aspects of this analysis is available at [https://github.com/broadinstitute/str-truth-set](https://github.com/broadinstitute/str-truth-set). It includes the following scripts:
-
-* [tool_comparison/scripts/convert_truth_set_to_variant_catalogs.py](https://github.com/broadinstitute/str-truth-set/blob/main/tool_comparison/scripts/convert_truth_set_to_variant_catalogs.py) - a script that converts the truth set into ExpansionHunter and GangSTR input catalogs and also generates the set of true negative loci with a matching distribution of motif sizes. 
-
 
 ---
 
