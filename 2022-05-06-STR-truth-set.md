@@ -448,7 +448,7 @@ We can now compare this to the same plot for other tools:
 <img src="https://user-images.githubusercontent.com/6240170/210287979-4753df79-81a7-446c-9fd2-34abe2bcda4b.png" width="100%">
 <img src="https://user-images.githubusercontent.com/6240170/210287997-8c837077-f169-400e-986b-e81bacd50e45.png" width="100%">
 
-This shows that both GangSTR and HipSTR underestimate (blue) or entirely miss (red) more expansions than ExpansionHunter. Additionally, HipSTR simply doesn't call a sizeable fraction of loci, and instead outputs this error message: "Aborting genotyping of the locus as the sequence upstream/downstream of the repeat is too repetitive for accurate genotyping".
+This shows that both GangSTR and HipSTR underestimate (blue) or entirely miss (red) more expansions than ExpansionHunter. Additionally, HipSTR simply doesn't call a sizeable fraction of loci (gray), and instead outputs this error message: "Aborting genotyping of the locus as the sequence upstream/downstream of the repeat is too repetitive for accurate genotyping".
 
 ----
 To compare STR calling tools, I downloaded the PCR-free genome sequencing data for CHM1-CHM13-2 from the [SRA](https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&acc=ERR1341796&display=data-access). This is 151bp paired-end data with 40x depth of coverage.
