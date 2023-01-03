@@ -437,53 +437,57 @@ We can also see how the accuracy varies for different read depths, showing only 
 
 When a tool doesn't get the genotype exactly right, it matters whether it's off by 1 or by 20 repeats, and whether it tends to overestimate or underestimate the true genotype. This is especially important for rare disease cases where underestimating expansions can lead to missed diagnoses. We can use different colors to add information about the size and direction of errors:
 
-
 <img src="https://user-images.githubusercontent.com/6240170/210287962-b90dda84-d988-4c69-af3d-8f2d05c37b2c.png" width="100%">
 
-Here, green shows allele sizes that ExpansionHunter got exactly right and so represents the same fraction as the plots in the previous section. Orange represents alleles that ExpansionHunter overestimated (with darker orange meaning a bigger overestimate), while blue represents alleles that ExpansionHunter underestimated (with darker blues representing larger errors). Additional colors include gray for the few loci where ExpansionHunter didn't produce a genotype (for example due to insufficient coverage), red represents loci where ExpansionHunter reported a homozygous reference genotype and so entirely missed the variant, brown represents ExpansionHunter incorrectly saying that a heterozygous allele has the same number of repeats as the reference, and teal represents alleles where ExpansionHunter called a contraction when the true allele size is an expansion or vice versa.
+Here, green shows allele sizes that ExpansionHunter got exactly right and so represents the same fraction of calls as the plots in the previous section. Orange represents alleles that ExpansionHunter overestimated (with darker orange meaning a bigger overestimate), while blue represents alleles that ExpansionHunter underestimated (with darker blues representing larger errors). Additional colors include gray for the few loci where ExpansionHunter didn't produce a genotype (such as due to insufficient coverage), red represents the loci that ExpansionHunter called as homozygous reference and so entirely missed the variant, brown is where ExpansionHunter incorrectly called an allele as being heterozygous reference, and teal is for alleles where ExpansionHunter called a contraction but the true allele size was an expansion or vice versa.
 The plot shows that ExpansionHunter errs in both directions - overestimating some expansions and underestimating others.   
 
-We can now compare this to the same plot for other tools:
+We can compare this to other tools:
 
 <img src="https://user-images.githubusercontent.com/6240170/210287979-4753df79-81a7-446c-9fd2-34abe2bcda4b.png" width="100%">
 <img src="https://user-images.githubusercontent.com/6240170/210287997-8c837077-f169-400e-986b-e81bacd50e45.png" width="100%">
 
 This shows that both GangSTR and HipSTR underestimate (blue) or entirely miss (red) more expansions than ExpansionHunter. Additionally, HipSTR simply doesn't call a sizeable fraction of loci (gray), and instead outputs this error message: "Aborting genotyping of the locus as the sequence upstream/downstream of the repeat is too repetitive for accurate genotyping".
 
-----
-To compare STR calling tools, I downloaded the PCR-free genome sequencing data for CHM1-CHM13-2 from the [SRA](https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&acc=ERR1341796&display=data-access). This is 151bp paired-end data with 40x depth of coverage.
+#### Methods
 
-I then realigned it to hg38 using BWA-MEM v0.7.17. 
+Here I describe some technical details of the tool comparisons.
 
-Then, to run ExpansionHunter and GangSTR on this sample, I generated variant catalogs with
+To compare STR calling tools, I downloaded the PCR-free genome sequencing data for CHM1-CHM13-2 from the Broad Institute's public storage. 
+This is 151bp paired-end data with 40x depth of coverage.
+
+Then, to run ExpansionHunter, GangSTR, and HipSTR on this sample, I generated variant catalogs with
 1) 144,251 positive loci. These are all the loci in the truth set (excluding the 521 that don't have matching repeats in the reference genome). They represent true positive variants.
 2) 144,252 negative loci. These are repeat loci in hg38 that are not in the truth set (and therefore have a homozygous reference genotype). They represent true negatives. They were selected by taking the much larger set of all pure repeats in hg38 and selecting a random subset that has the same distribution of motif sizes as the set of positive loci. 
 
-The hg38-aligned BAM file and variant catalogs are publicly available in the [gs://str-truth-set](https://console.cloud.google.com/storage/browser/str-truth-set/hg38) Google Storage bucket, along with other files from this analysis. 
+These variant catalogs and other files used in the analysis are publicly available in the [gs://str-truth-set](https://console.cloud.google.com/storage/browser/str-truth-set/hg38) Google Storage bucket. 
 
-After running each tool on these loci, I compared their performance in various ways. The results are below.
+All code used to perform the analysis and generate the figures is available in https://github.com/broadinstitute/str-truth-set
 
-**Percent Correct**
-
-The first question we can ask is - **what fraction of genotypes does each tool get right?**  
-Here "right" means that the allele size reported by the tool exactly matches the true allele size. 
-
-**Confidence Intervals**
-
-ExpansionHunter and GangSTR report confidence intervals for each genotype, so we can also ask - **how often is the true genotype outside the confidence intervals?**  
-
-
-**Over vs. Underestimates**
-
-For the genotypes that they get wrong, **do the tools tend to overestimate or underestimate the allele size?**  
 
 **Negative Loci**
 
-The above analyses focused on sensitivity. The set of negative loci allows us to also examine specificity. First, we can ask, **what fraction of loci with a homozygous reference or heteoryzgous reference do the tools call as something other than reference?** and second, **how far off are they?**
+The above analyses focused on sensitivity. The set of negative loci allows us to also examine specificity and to ask **what fraction of non-variant loci do the tools incorrectly call as having a non-reference genotype?** 
 
-**Conclusion**
+**Larger Motif Sizes**
 
-The comparison shows that ExpansionHunter is more accurate than GangSTR for larger STR variants, but less accurate for small variants. 
+TODO describe results
+
+**Exome Data**
+
+TODO describe results 
+
+**ExpansionHunterDenovo**
+
+TODO describe results
+
+**Interruptions**
+
+TODO describe results
+
+**Runtime and cost**
+
+TODO describe results
 
 ---
 ### Next Steps
@@ -511,10 +515,7 @@ Details:
 
 Further details are provided in [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)].  
 
-I used BWA-MEM v0.7.17 to realign this data to hg38.
-
-
-CHM1-CHM13 exome sequencing data was generated at the Broad Institute:
+CHM1-CHM13 exome sequencing data is available from the Broad Institute:
 
 - Illumina HiSeq X Ten
 - Paired-end 151bp reads
