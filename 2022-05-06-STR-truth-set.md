@@ -18,7 +18,7 @@ I apply this truth set to evaluate widely-used STR calling tools - ExpansionHunt
 
 Some of the interesting and/or surprising results from the truth set analysis below are:
 
-- ExpansionHunter has better accuracy than other tools for all STR sizes
+- ExpansionHunter has better accuracy than other tools for all STR allele sizes
 - widely-used STR catalogs miss 40 to 60% of the variant loci in the truth set
 - pLI gene constraint is useful but insufficient for identifing genes that are intolerant of STR variation
 - ... TODO
