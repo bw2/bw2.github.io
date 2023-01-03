@@ -438,9 +438,9 @@ We can also see how the accuracy varies for different read depths, showing only 
 When a tool doesn't get the genotype exactly right, it matters whether it's off by 1 or by 20 repeats, and whether it tends to overestimate or underestimate the true genotype. This is especially important for rare disease research where underestimating expansions at disease-associated loci can lead to missed diagnoses. We can use different colors to add information about the size and direction of errors:
 
 
-<div align="center"><img src="https://user-images.githubusercontent.com/6240170/210287962-b90dda84-d988-4c69-af3d-8f2d05c37b2c.png" width=700></div>
-<div align="center"><img src="https://user-images.githubusercontent.com/6240170/210287979-4753df79-81a7-446c-9fd2-34abe2bcda4b.png" width=700></div>
-<div align="center"><img src="https://user-images.githubusercontent.com/6240170/210287997-8c837077-f169-400e-986b-e81bacd50e45.png" width=700></div>
+<img border=1 src="https://user-images.githubusercontent.com/6240170/210287962-b90dda84-d988-4c69-af3d-8f2d05c37b2c.png" width="100%"></div>
+<img border=1 src="https://user-images.githubusercontent.com/6240170/210287979-4753df79-81a7-446c-9fd2-34abe2bcda4b.png" width="100%"></div>
+<img border=1 src="https://user-images.githubusercontent.com/6240170/210287997-8c837077-f169-400e-986b-e81bacd50e45.png" width="100%"></div>
 
 
 ----
