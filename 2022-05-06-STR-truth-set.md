@@ -438,10 +438,16 @@ We can also see how the accuracy varies for different read depths, showing only 
 When a tool doesn't get the genotype exactly right, it matters whether it's off by 1 or by 20 repeats, and whether it tends to overestimate or underestimate the true genotype. This is especially important for rare disease cases where underestimating expansions can lead to missed diagnoses. We can use different colors to add information about the size and direction of errors:
 
 
-<img src="https://user-images.githubusercontent.com/6240170/210287962-b90dda84-d988-4c69-af3d-8f2d05c37b2c.png" width="100%"></div>
-<img src="https://user-images.githubusercontent.com/6240170/210287979-4753df79-81a7-446c-9fd2-34abe2bcda4b.png" width="100%"></div>
-<img src="https://user-images.githubusercontent.com/6240170/210287997-8c837077-f169-400e-986b-e81bacd50e45.png" width="100%"></div>
+<img src="https://user-images.githubusercontent.com/6240170/210287962-b90dda84-d988-4c69-af3d-8f2d05c37b2c.png" width="100%">
 
+Here, green shows allele sizes that ExpansionHunter got exactly right and so represents the same fraction as the plots in the previous section. Orange represents alleles that ExpansionHunter overestimated (with darker orange meaning a bigger overestimate), while blue represents alleles that ExpansionHunter underestimated (with darker blues representing larger errors). Additional colors include gray for the few loci where ExpansionHunter didn't produce a genotype (for example due to insufficient coverage), red represents loci where ExpansionHunter reported a homozygous reference genotype and so entirely missed the variant, brown represents ExpansionHunter incorrectly saying that a heterozygous allele has the same number of repeats as the reference, and teal represents alleles where ExpansionHunter called a contraction when the true allele size is an expansion or vice versa.
+The plot shows that ExpansionHunter errs in both directions - overestimating some expansions and underestimating others.  
+We can compare this to the same plot for other tools:
+
+<img src="https://user-images.githubusercontent.com/6240170/210287979-4753df79-81a7-446c-9fd2-34abe2bcda4b.png" width="100%">
+<img src="https://user-images.githubusercontent.com/6240170/210287997-8c837077-f169-400e-986b-e81bacd50e45.png" width="100%">
+
+This shows that both GangSTR and HipSTR predominantly underestimate alleles compared to ExpansionHunter.
 
 ----
 To compare STR calling tools, I downloaded the PCR-free genome sequencing data for CHM1-CHM13-2 from the [SRA](https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&acc=ERR1341796&display=data-access). This is 151bp paired-end data with 40x depth of coverage.
