@@ -376,14 +376,14 @@ What about loci with relatively large expansions? Arguably these are the loci we
 ---
 ### Tool comparisons
 
-To use the truth set for comparing the accuracy of existing STR calling tools we first need to define what we mean by accuracy. 
-For variant types such as SNVs and InDels, the definition is relatively straight-forward - a tool will either call a variant or not, and then it might get the zygosity right or wrong, but that's about it. Although these metrics are also important for STRs, the additional aspect of number of repeats introduces a lot more nuance. For a given STR locus, a tool may get the number of repeats exactly right, or it may be off by +/-1, or off by many. It might even call an expansion where the true genotype is a contraction. To avoid getting bogged down around the right definition, we can just begin with the simplest definition and build from there. 
+Using the truth set to compare accuracy of existing STR callers requires us to first define what we mean by accuracy. 
+For other variant types such as SNVs and InDels, the definition is relatively straight-forward - a tool will either call a variant or not, and then it might get the zygosity right or wrong, but that's about it. These metrics are also important for STRs, but the additional aspect of number of repeats introduces a lot more nuance. For example, for a given STR locus, a tool may get the number of repeats exactly right, or it may be off by +/-1, or off by many repeats. It might even call an expansion where the true genotype is a contraction. To avoid getting bogged down in finding the right definition, we can begin with the simplest definition and build from there. 
 
-Also, to keep the analysis manageable, we focus on current widely-used tools - ExpansionHunter, GangSTR and HipSTR, and later also look at ExpansionHunterDenovo.
+Also, to keep the analysis manageable, we focus on several widely-used tools - ExpansionHunter, GangSTR and HipSTR, and later also look at ExpansionHunterDenovo.
 
 #### Exact accuracy
 
-The simplest definition of STR calling accuracy is - how many genotypes did a tool get exactly right? ie. what fraction of called allele sizes exactly match the corresponding allele size in the truth set. When we run ExpansionHunter, GangSTR and HipSTR on the 139,244 (96%) truth set loci that have 2bp to 6bp motifs and that are present in the reference genome, we find the accuracy varies as follows: 
+The simplest definition of STR calling accuracy is - how many genotypes did a tool get exactly right? ie. what fraction of called allele sizes exactly match the corresponding allele size in the truth set. When we run ExpansionHunter, GangSTR and HipSTR on the 139,244 (96%) truth set loci that have 2bp to 6bp motifs and that are present in the reference genome, we find that accuracy varies as follows: 
 
 <table>
    <tr>
@@ -416,17 +416,17 @@ The simplest definition of STR calling accuracy is - how many genotypes did a to
    </tr>
 </table>
 
-We can see that ExpansionHunter slightly outperforms GangSTR, and both tools outperform HipSTR. Accuracy unsurprisingly decreases when the original data with 40x genome-wide coverage is downsampled to lower read depths.
+We can see that ExpansionHunter slightly outperforms GangSTR, and both tools outperform HipSTR. Unsurprisingly, accuracy decreases when the original data (which has 40x genome-wide coverage) is downsampled to lower read depths.
 
 
 #### Exact accuracy by number of repeats
 
-For most STR analyses, we care more about large expansions than about variants that only add or subtract a few repeats. 
-However, as we saw [previously](https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#results), the overwhelming majority of truth set variants only differ from the reference genome by 1 or 2 repeats, which means the simple accuracy metric above is dominated by variants we don't care as much about. To improve on this, we can look at how accuracy varies across different true allele size bins:
+For most STR analyses, we care more about large expansions than about variants that only add or remove a few repeats. 
+However, as we saw [previously](https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#results), the overwhelming majority of truth set variants only differ from the reference genome by 1 or 2 repeats. This means the accuracy metric defined above is dominated by variants we don't care as much about. To improve on this, we can look at how accuracy varies across different true allele size bins:
 
 <div align="center"><img src="https://user-images.githubusercontent.com/6240170/210284643-9e99df88-3e18-4937-b12a-530dedfa0965.png" width=800></div>
 
-This plot represents results @ 40x coverage, and shows how accuracy drops for larger expansions (positive x-axis) but remains steady for contractions (negative x-axis), with ExpansionHunter retaining higher accuracy across all bins.
+This plot represents calls @ 40x coverage, and shows how accuracy drops for larger expansions (positive x-axis) but remains steady for contractions (negative x-axis), with ExpansionHunter retaining higher accuracy across all bins.
 
 We can also see how the accuracy varies for different read depths, showing only ExpansionHunter and GangSTR for clarity:
 
@@ -435,7 +435,12 @@ We can also see how the accuracy varies for different read depths, showing only 
 
 #### Accuracy and error size
 
-When a tool doesn't get the genotype exactly right, it matters whether it's off by 1 or by 20 repeats, and whether it tends to overestimate or underestimate the true genotype. This is especially important for rare disease research where underestimates at disease-associated loci can lead to missed diagnoses. We can use different colors to layer in the error 
+When a tool doesn't get the genotype exactly right, it matters whether it's off by 1 or by 20 repeats, and whether it tends to overestimate or underestimate the true genotype. This is especially important for rare disease research where underestimating expansions at disease-associated loci can lead to missed diagnoses. We can use different colors to add information about the size and direction of errors:
+
+
+<div align="center"><img src="https://user-images.githubusercontent.com/6240170/210287962-b90dda84-d988-4c69-af3d-8f2d05c37b2c.png" width=700></div>
+<div align="center"><img src="https://user-images.githubusercontent.com/6240170/210287979-4753df79-81a7-446c-9fd2-34abe2bcda4b.png" width=700></div>
+<div align="center"><img src="https://user-images.githubusercontent.com/6240170/210287997-8c837077-f169-400e-986b-e81bacd50e45.png" width=700></div>
 
 
 ----
