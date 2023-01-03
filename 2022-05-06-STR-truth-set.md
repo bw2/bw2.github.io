@@ -16,13 +16,13 @@ I apply this truth set to evaluate widely-used STR calling tools - ExpansionHunt
 
 **Key Findings**
 
-Some of the interesting and/or surprising results from the truth set analysis below are:
+Some of the most interesting and/or surprising results from the truth set analysis are listed here. These are based on a survey of all STR variants in a single human genome of european ancestry - the CHM1-CHM13 synthetic diploid sample from [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)], and so can be considered an n=1 case study. 
 
-- A typical individual's genome differs from the reference at ~150,000 STR loci, but 98% of these alleles differ by less than 30bp. On average, only several thousand STR loci differ from the reference by more than 30bp.
-- ExpansionHunter has better accuracy than other tools for all STR allele sizes
-- widely-used STR catalogs miss 35% to 40% of the STR variants in the truth set
-- pLI gene constraint is useful but insufficient for identifing genes that are intolerant of STR variation
-- ... TODO
+- An individual's genome differs from the reference at ~150,000 STR loci, but 98% of these alleles differ by less than 30bp. On average, only several thousand STR loci differ from the reference by more than 30bp.
+- 99.6% of STR variants occured at STR loci in the reference genome. Only 521 STR variants had novel motifs that were entirely different from the adjacent motifs or refence sequence context.
+- ExpansionHunter has better accuracy than GangSTR or HipSTR across the entire range of STR allele sizes.
+- widely-used STR catalogs would miss 35% to 40% of the STR variants in the truth set.
+- pLI gene constraint is useful but insufficient for identifing genes that are intolerant of STR variation.
 
 *NOTE*: STRs are traditionally defined as repeating motifs that are between 1 to 6bp long. For this truth set I exclude 1bp (homopolymer) repeats since they are uniquely error-prone, but include motifs longer than 6bp so that users can decide whether to include these in their analyses.
 
