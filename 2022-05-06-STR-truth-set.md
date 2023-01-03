@@ -14,6 +14,15 @@ I apply this truth set to evaluate widely-used STR calling tools - ExpansionHunt
 - how well do widely-used catalogs of STR loci capture these variants?
 - how many STR variants are novel (ie. have a motif or repeat locus not present in the hg38 reference genome)?
 
+**Key Findings**
+
+Several take-aways from this analysis are interesting and/or surprising:
+
+- ExpansionHunter has better accuracy than other tools for all STR sizes
+- widely-used STR catalogs miss 40 to 60% of the variant loci in the truth set
+- pLI gene constraint is useful but insufficient for identifing genes that are intolerant of STR variation
+- TODO add several more
+
 *NOTE*: STRs are traditionally defined as repeating motifs that are between 1 to 6bp long. For this truth set I exclude 1bp (homopolymer) repeats since they are uniquely error-prone, but include motifs longer than 6bp so that users can decide whether to include these in their analyses.
 
 ---
