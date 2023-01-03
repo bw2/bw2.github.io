@@ -447,7 +447,17 @@ We can compare this to other tools:
 <img src="https://user-images.githubusercontent.com/6240170/210287979-4753df79-81a7-446c-9fd2-34abe2bcda4b.png" width="100%">
 <img src="https://user-images.githubusercontent.com/6240170/210287997-8c837077-f169-400e-986b-e81bacd50e45.png" width="100%">
 
-This shows that both GangSTR and HipSTR underestimate (blue) or entirely miss (red) more expansions than ExpansionHunter. Additionally, HipSTR simply doesn't call a sizeable fraction of loci (gray), and instead outputs this error message: "Aborting genotyping of the locus as the sequence upstream/downstream of the repeat is too repetitive for accurate genotyping".
+This shows that both GangSTR and HipSTR underestimate (blue) or entirely miss (red) more expansions than ExpansionHunter. Additionally, HipSTR simply doesn't call a sizeable fraction of loci (gray), and instead outputs this error message: "Aborting genotyping of the locus as the sequence upstream/downstream of the repeat is too repetitive for accurate genotyping". Based on this, I exclude HipSTR from subsequent analyses.
+
+#### Exome data
+
+Since exome sequencing data is available for the CHM1-CHM13 sample, we can check what fraction of the truth set can be called in an exome:
+
+<img src="https://user-images.githubusercontent.com/6240170/210300290-a6df46f2-66c2-44d2-b99c-28aa6dcc4393.png" width="100%">
+<img src="https://user-images.githubusercontent.com/6240170/210300313-4c698feb-d5ee-45e1-964f-0817ec9ed161.png" width="100%">
+
+As exepcted, exome data only allows us to call 1,766 of the 139,244 (1.3%) truth set loci with 2 to 6bp motifs. Even for this small subset, more than half of the genotype calls are inaccurate. 
+
 
 #### ExpansionHunterDenovo
 
