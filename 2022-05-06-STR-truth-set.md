@@ -72,10 +72,9 @@ This example walks through how to determine whether an InDel actually represents
 
 Let's say the SynDip truth set contains this insertion:   <img width="275" alt="image" src="https://user-images.githubusercontent.com/6240170/200183159-d42914b0-9636-4584-a593-dcb86463ff14.png">
 
-
 Should we include it in the STR truth set?  
 
-   *step 1*: find the minimal motif (**GGC**) in the inserted sequence (**GGCGGC**) by using brute force k-mer search similar to [STRling](https://www.biorxiv.org/content/10.1101/2021.11.18.469113v1).  
+   *step 1*: find the minimal motif (**GGC**) in the inserted sequence (**GGCGGC**) by using brute force k-mer search similar to [STRling](https://www.biorxiv.org/content/10.1101/2021.11.18.469113v1). 
    *step 2*: check the reference context for additional **GGC** repeats immediately to the left or right of the variant:  
 
 <p align="center"><img width="350" alt="image" src="https://user-images.githubusercontent.com/6240170/200182871-639e7282-07a1-4587-8592-453d68622383.png"></center></p>
