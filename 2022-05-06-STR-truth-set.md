@@ -437,7 +437,7 @@ However, as we saw [previously](https://github.com/bw2/bw2.github.io/blob/master
 First though, a technical note about comparing STR genotypes. For a given locus, there are 5 numbers to consider - the number of repeats in the reference genome, the true size of the short allele and the long allele, and finally the short and long allele as called by the given tool. 
 For the analyses below, the x-axis values come from comparing the true allele sizes to the number of repeats in the reference. Then, to determine tool accuracy at a locus, the true genotype as well as the tool's reported genotype can be split into a short allele and a long allele. The short alleles can be compared, and then, separately, the long alleles:
 
-<img width="900" alt="image" src="https://user-images.githubusercontent.com/6240170/211434305-9bb85e64-43b5-4aea-8df3-8bafd4265ade.png">
+<img width="900" alt="image" src="https://user-images.githubusercontent.com/6240170/211456139-701c7509-07a1-4ee8-accf-809b47631973.png">
 
 The plots below are based on this approach, so each locus contributes 2 separate counts to the plot - one for the short alleles and one for the long alleles. 
 
