@@ -447,7 +447,7 @@ Now, we can look at the fraction of alleles that each tool gets exactly right:
 
 This plot represents calls @ 40x coverage, and shows how accuracy drops for larger expansions (positive x-axis) but remains steady for contractions (negative x-axis), with ExpansionHunter retaining higher accuracy across all bins.
 
-HipSTR shows poor accuracy largely because it refuses to call many loci, instead outputing the error message: "Aborting genotyping of the locus as the sequence upstream/downstream of the repeat is too repetitive for accurate genotyping". If we exclude these loci for all tools, this discards (24.8%) of truth set loci (meaning if we use HipSTR, we are guaranteed to miss those variants), and the plot then looks like:
+HipSTR shows poor accuracy largely because it refuses to call many loci, instead outputing the following error message: "Aborting genotyping of the locus as the sequence upstream/downstream of the repeat is too repetitive for accurate genotyping". If we exclude these loci for all tools, this discards 30,394 out of 139,244 (21.8%) of truth set loci with 2 to 6bp motifs (meaning if we use HipSTR, we are guaranteed to miss those variants), and the plot then looks like:
 
 <div align="center"><img src="https://user-images.githubusercontent.com/6240170/211458163-14a24f96-cca9-4a52-9d42-a927cdefc898.png" width=800></div>
 
