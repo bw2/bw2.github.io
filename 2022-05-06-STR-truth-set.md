@@ -12,7 +12,7 @@ In this blog post, I share a new genome-wide STR truth set that partially addres
 I apply this truth set to evaluate widely-used STR calling tools - ExpansionHunter, GangSTR, HipSTR and ExpansionHunter Denovo, and also use it to explore relevant questions about STRs in general such as:
 - what is the distribution of STR variants in the human genome (ie. motif sizes, lengths, percent multiallelic, etc.)?
 - how well do widely-used catalogs of STR loci capture these variants?
-- how many STR variants are novel (ie. have a motif or repeat locus not present in the hg38 reference genome)?
+- how many STR variants in an average human genome are expected to be novel (ie. have a motif or repeat locus not present in the hg38 reference genome)?
 
 **Key Findings**
 
