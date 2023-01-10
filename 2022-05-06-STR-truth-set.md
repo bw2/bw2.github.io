@@ -32,7 +32,7 @@ Some of the most interesting and/or surprising results from the truth set analys
 
 To generate an STR truth set, I started with the Synthetic Diploid Benchmark (SynDip) [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)] which is a unique dataset that uses haploid PacBio assemblies to identify all variants in the CHM1-CHM13 synthetic diploid sample. Because these variants are based on alignments of haploid assemblies (rather than individual reads) to the reference genome, the SynDip genotypes are more reliable than those produced by short-read or even ordinary long-read pipelines. 
 
-Of the 4.1 million high-confidence variants in the [SynDip VCF](https://github.com/lh3/CHM-eval), 259k (6.3%) are insertions and 249k (6.1%) are deletions. To create the STR truth set, I filtered these insertions and deletions to the subset that represent STR expansions or contractions by following these steps:
+Of the 4.1 million high-confidence variants in the [SynDip VCF](https://github.com/lh3/CHM-eval), 259k (6.3%) are insertions and 249k (6.1%) are deletions. To create the STR truth set, I filtered these insertions and deletions to the subset that represents STR expansions or contractions by following these steps:
 
 <table>
    <tr>
