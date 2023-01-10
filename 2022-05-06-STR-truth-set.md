@@ -492,9 +492,11 @@ ExpansionHunterDenovo [<a href="https://genomebiology.biomedcentral.com/articles
 
 The analyses above are all based on pure repeats. To see how allowing interruptions may affect the results, 
 
-#### Runtime and cost
+#### Runtime comparison
 
-TODO describe results
+I also creatd a modififed version of ExpansionHunter which, by using an additional read cache, runs 2 to 3x faster than the original 
+while producing the same output. 
+
 
 ---
 ### Next Steps
