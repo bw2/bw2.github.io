@@ -477,7 +477,7 @@ This shows that both GangSTR and HipSTR underestimate (blue) or entirely miss (r
 
 #### Exome data
 
-Since exome sequencing data is available for the CHM1-CHM13 sample, we can check what fraction of the truth set can be called in an exome. To exclude off-target regions that accidentally got some read coverage, we prefilter loci to exclude those that are intergenic, intronic or in promoters (based on Gencode v42 annotations), and also exclude loci where neither ExpansionHunter nor GangSTR produced a genotype. Out of the 139,244 truth set loci with 2 to 6bp motifs, only 1,766 (1.3%) pass these filters. Even for this small subset, more than half of the genotype calls are inaccurate. 
+Since exome sequencing data is available for the CHM1-CHM13 sample, we can check what fraction of the truth set can be called in an exome. To exclude off-target regions that accidentally had some read coverage, we prefilter loci to exclude those that are intergenic, intronic or in promoters (based on Gencode v42 annotations), and also exclude loci where neither ExpansionHunter nor GangSTR produced a genotype. Out of the 139,244 truth set loci with 2 to 6bp motifs, only 1,766 (1.3%) pass these filters. Even for this small subset, more than half of the genotype calls are inaccurate. 
 
 <img src="https://user-images.githubusercontent.com/6240170/210300290-a6df46f2-66c2-44d2-b99c-28aa6dcc4393.png" width="100%">
 <img src="https://user-images.githubusercontent.com/6240170/210300313-4c698feb-d5ee-45e1-964f-0817ec9ed161.png" width="100%">
