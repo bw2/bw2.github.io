@@ -451,6 +451,8 @@ HipSTR shows poor accuracy largely because it refuses to call many loci, instead
 
 <div align="center"><img src="https://user-images.githubusercontent.com/6240170/211458163-14a24f96-cca9-4a52-9d42-a927cdefc898.png" width=800></div>
 
+This shows that, even on the subset of loci that HipSTR does genotype, it's accuracy is approximately the same as GangSTR's but worse than ExpansionHunter's. 
+
 We can also see how the accuracy varies for different read depths, showing only ExpansionHunter and GangSTR for clarity:
 
 <div align="center"><img src="https://user-images.githubusercontent.com/6240170/210285501-e10be5f6-847d-4c59-b88f-9009c02ce1a2.png" width=800></div>
