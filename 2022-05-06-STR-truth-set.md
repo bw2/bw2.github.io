@@ -434,10 +434,14 @@ We can see that ExpansionHunter slightly outperforms GangSTR, and both tools out
 For most STR analyses, we care more about large expansions than about variants that only add or remove a few repeats. 
 However, as we saw [previously](https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#results), the overwhelming majority of truth set variants only differ from the reference genome by 1 or 2 repeats. This means the accuracy metric defined above is dominated by variants we don't care as much about. To improve on this, we can look at how accuracy varies across different true allele size bins. 
 
-First though, a technical note about comparing STR genotypes. For a given locus, there are 5 numbers to consider - the number of repeats in the reference genome, the size of the short allele and the long allele in the true genotype, and finally the short and long allele as called by the given tool: 
+First though, a technical note about comparing STR genotypes. For a given locus, there are 5 numbers to consider - the number of repeats in the reference genome, the true size of the short allele and the long allele, and finally the short and long allele as called by the given tool. 
+For the analyses below, the x-axis values come from comparing the true allele sizes to the number of repeats in the reference. Then, to determine tool accuracy at a locus, the true genotype as well as the tool's reported genotype can be split into a short allele and a long allele. The short alleles can be compared, and then, separately, the long alleles:
 
+<img width="900" alt="image" src="https://user-images.githubusercontent.com/6240170/211434305-9bb85e64-43b5-4aea-8df3-8bafd4265ade.png">
 
-For the analyses below, the x-axis values come from comparing the truth set allele sizes to the number of repeats in the reference. Then, to determine tool accuracy at a locus, the true genotype as well as the tool's called genotype can each be split into a short allele and a long allele. The short alleles can be compared, and then, separately, the long alleles. The plots below are based on these allele counts, so each locus contributes 2 separate counts to the plot - one for the short alleles and one for the long alleles.
+The plots below are based on this approach, so each locus contributes 2 separate counts to the plot - one for the short alleles and one for the long alleles. 
+
+Now, we can look at the fraction of alleles that each tool gets exactly right:
 
 <div align="center"><img src="https://user-images.githubusercontent.com/6240170/210284643-9e99df88-3e18-4937-b12a-530dedfa0965.png" width=800></div>
 
