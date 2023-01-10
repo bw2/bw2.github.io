@@ -501,7 +501,7 @@ TODO describe results
 The truth set and tool results provide an opportunity to identify features that distinguish
 - STR loci that are variant in CHM1-CHM13 vs those that are not
 - STR loci where tools produce accurate genotypes
-- Filter false-positive STR genotypes
+- False-positive STR genotypes
 
 A key next step is to use the truth set to train classifiers for these categories.
 
