@@ -447,6 +447,10 @@ Now, we can look at the fraction of alleles that each tool gets exactly right:
 
 This plot represents calls @ 40x coverage, and shows how accuracy drops for larger expansions (positive x-axis) but remains steady for contractions (negative x-axis), with ExpansionHunter retaining higher accuracy across all bins.
 
+HipSTR shows poor accuracy largely because it refuses to call many loci, outputing the error message: "Aborting genotyping of the locus as the sequence upstream/downstream of the repeat is too repetitive for accurate genotyping". If we exclude these loci from the comparison, the plot looks like:
+
+
+
 We can also see how the accuracy varies for different read depths, showing only ExpansionHunter and GangSTR for clarity:
 
 <div align="center"><img src="https://user-images.githubusercontent.com/6240170/210285501-e10be5f6-847d-4c59-b88f-9009c02ce1a2.png" width=800></div>
@@ -466,7 +470,8 @@ We can compare this to other tools:
 <img src="https://user-images.githubusercontent.com/6240170/210287979-4753df79-81a7-446c-9fd2-34abe2bcda4b.png" width="100%">
 <img src="https://user-images.githubusercontent.com/6240170/210287997-8c837077-f169-400e-986b-e81bacd50e45.png" width="100%">
 
-This shows that both GangSTR and HipSTR underestimate (blue) or entirely miss (red) more expansions than ExpansionHunter. Additionally, HipSTR simply doesn't call a sizeable fraction of loci (gray), and instead outputs this error message: "Aborting genotyping of the locus as the sequence upstream/downstream of the repeat is too repetitive for accurate genotyping". Based on this, I exclude HipSTR from subsequent analyses.
+This shows that both GangSTR and HipSTR underestimate (blue) or entirely miss (red) more expansions than ExpansionHunter. 
+
 
 #### Exome data
 
