@@ -486,11 +486,11 @@ Since exome sequencing data is available for the CHM1-CHM13 sample, we can check
 
 #### ExpansionHunterDenovo
 
-TODO describe results
+ExpansionHunterDenovo [<a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02017-z">Dolzhenko 2020</a>] is a tool 
 
 #### Interruptions
 
-TODO describe results
+The analyses above are all based on pure repeats. To see how allowing interruptions may affect the results, 
 
 #### Runtime and cost
 
