@@ -442,8 +442,7 @@ For the analyses below, the x-axis values come from comparing the true allele si
 <img width="900" alt="image" src="https://user-images.githubusercontent.com/6240170/211596717-1fba3b72-2549-46b2-9f04-da96cb868f50.png">
 
   
-The plots below are based on this approach, so each locus contributes 2 separate counts to the plot - one for the short alleles and one for the long alleles. 
-
+  
 Now, we can look at the fraction of alleles that each tool gets exactly right:
 
 <div align="center"><img src="https://user-images.githubusercontent.com/6240170/210284643-9e99df88-3e18-4937-b12a-530dedfa0965.png" width=800></div>
