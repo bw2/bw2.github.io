@@ -612,7 +612,7 @@ This catalog has fewer loci than the catalog of pure repeats because a number of
 
 ---
 
-**Extra Section 4:** A few words about the limitations of existing approaches to STR truth data:
+**Extra Section 4:** This section summarizes the limitations of other ways to estimate STR tool accuracy:
 
 1. **simulated STRs:** we can generate an unlimited number of STR examples with known genotypes by using a tool like [wgsim](https://github.com/lh3/wgsim). However, simulated data doesn't capture the full complexity of real sequencing data (eg. adjacent variants not present in the reference genome, GC bias, and other sequencing artifacts). 
 2. **mendelian violations analysis:** trios can be used to check whether genotypes are consistant with Mendelian inheritance. However, This is informative about specificity but not sensitivity since a tool that misses all expansions will have zero mendelian violations. This produces a coarser  
