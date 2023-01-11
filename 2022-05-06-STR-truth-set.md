@@ -440,24 +440,24 @@ For the analyses below, the x-axis values come from comparing the true allele si
 
   
 <img width="900" alt="image" src="https://user-images.githubusercontent.com/6240170/211596717-1fba3b72-2549-46b2-9f04-da96cb868f50.png">
-
-  
+<br />
+<br />
   
 Now, we can look at the fraction of alleles that each tool gets exactly right:
 
-<div align="center"><img src="https://user-images.githubusercontent.com/6240170/210284643-9e99df88-3e18-4937-b12a-530dedfa0965.png" width=800></div>
+<div align="center"><img src="https://user-images.githubusercontent.com/6240170/211717620-48e83eb2-dcb3-4b81-8fe6-16658552b022.png" width=800></div>
 
-This plot represents calls @ 40x coverage, and shows how accuracy drops for larger expansions (positive x-axis) but remains steady for contractions (negative x-axis), with ExpansionHunter retaining higher accuracy across all bins.
+This plot represents calls @ 40x coverage, and shows how accuracy drops for larger expansions (positive x-axis) as well as large contractions (negative x-axis), with ExpansionHunter retaining higher accuracy across all bins.
 
-HipSTR shows poor accuracy largely because it refuses to call many loci, instead outputing the following error message: "Aborting genotyping of the locus as the sequence upstream/downstream of the repeat is too repetitive for accurate genotyping". If we take the loci where HipSTR has "No Call" and exclude them from the comparison for all tools, this discards 25,257 out of 139,244 (18.1%) truth set loci that have 2 to 6bp motifs, and the plot then looks like:
+HipSTR shows poor accuracy largely because it refuses to call many loci, instead outputting the error message: "Aborting genotyping of the locus as the sequence upstream/downstream of the repeat is too repetitive for accurate genotyping". If we exclude these loci from the analysis for all tools - thereby discarding 25,257 out of 139,244 (18.1%) of truth set loci that have 2 to 6bp motifs - the above plot then looks like:
 
-<div align="center"><img src="https://user-images.githubusercontent.com/6240170/211458163-14a24f96-cca9-4a52-9d42-a927cdefc898.png" width=800></div>
+<div align="center"><img src="https://user-images.githubusercontent.com/6240170/211717395-b8ff12d9-a80e-45e3-8a8a-36a83de5845e.png" width=800></div>
 
 This shows that, even on the subset of loci that HipSTR can genotype, its accuracy is roughly the same as GangSTR's and worse than ExpansionHunter's. 
 
 Next, we can look at how accuracy varies for different sequencing coverage depths, showing only ExpansionHunter and GangSTR for clarity:
 
-<div align="center"><img src="https://user-images.githubusercontent.com/6240170/210285501-e10be5f6-847d-4c59-b88f-9009c02ce1a2.png" width=800></div>
+<div align="center"><img src="https://user-images.githubusercontent.com/6240170/211717485-6d2bda31-221d-4560-b164-106deaf65d17.png" width=800></div>
 
 
 #### Accuracy and error size
