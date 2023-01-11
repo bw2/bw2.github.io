@@ -464,15 +464,15 @@ Next, we can look at how accuracy varies for different sequencing coverage depth
 
 When a tool doesn't get the genotype exactly right, it matters whether it's off by 1 or by 20 repeats, and whether it tends to overestimate or underestimate the true genotype. This is especially important for rare disease cases where underestimating expansions can lead to missed diagnoses. We can use different colors to add information about the size and direction of errors:
 
-<img src="https://user-images.githubusercontent.com/6240170/210287962-b90dda84-d988-4c69-af3d-8f2d05c37b2c.png" width="100%">
+<img src="https://user-images.githubusercontent.com/6240170/211718144-989a08dd-d9d9-49ce-abe8-9f60b30c8edb.png" width="100%">
 
 Here, green shows allele sizes that ExpansionHunter got exactly right and so represents the same fraction of calls as the plots in the previous section. Orange represents alleles that ExpansionHunter overestimated (with darker orange meaning a bigger overestimate), while blue represents alleles that ExpansionHunter underestimated (with darker blues representing larger errors). Additional colors include gray for the few loci where ExpansionHunter didn't produce a genotype (such as due to insufficient coverage), red represents the loci that ExpansionHunter called as homozygous reference and so entirely missed the variant, brown is where ExpansionHunter incorrectly called an allele as being heterozygous reference, and teal is for alleles where ExpansionHunter called a contraction but the true allele size was an expansion or vice versa.
 The plot shows that ExpansionHunter errs in both directions - overestimating some expansions and underestimating others.   
 
 We can compare this to other tools:
 
-<img src="https://user-images.githubusercontent.com/6240170/210287979-4753df79-81a7-446c-9fd2-34abe2bcda4b.png" width="100%">
-<img src="https://user-images.githubusercontent.com/6240170/210287997-8c837077-f169-400e-986b-e81bacd50e45.png" width="100%">
+<img src="https://user-images.githubusercontent.com/6240170/211718101-f96f615f-0189-40e4-bf3a-24c1b4924c63.png" width="100%">
+<img src="https://user-images.githubusercontent.com/6240170/211718053-77ed9a3f-b708-458a-984d-3bdee3a716c5.png" width="100%">
 
 This shows that both GangSTR and HipSTR underestimate (blue) or entirely miss (red) more expansions than ExpansionHunter. 
 
@@ -481,8 +481,8 @@ This shows that both GangSTR and HipSTR underestimate (blue) or entirely miss (r
 
 Since exome sequencing data is available for the CHM1-CHM13 sample, we can check what fraction of the truth set can be called in an exome. To exclude off-target regions that accidentally had some read coverage, we prefilter loci to exclude those that are intergenic, intronic or in promoters (based on Gencode v42 annotations), and also exclude loci where neither ExpansionHunter nor GangSTR produced a genotype. Out of the 139,244 truth set loci with 2 to 6bp motifs, only 1,766 (1.3%) pass these filters. Even for this small subset, more than half of the genotype calls are inaccurate. 
 
-<img src="https://user-images.githubusercontent.com/6240170/210300290-a6df46f2-66c2-44d2-b99c-28aa6dcc4393.png" width="100%">
-<img src="https://user-images.githubusercontent.com/6240170/210300313-4c698feb-d5ee-45e1-964f-0817ec9ed161.png" width="100%">
+<img src="https://user-images.githubusercontent.com/6240170/211717914-551d32b6-7407-4470-aff3-85c190569f6b.png" width="100%">
+<img src="https://user-images.githubusercontent.com/6240170/211717960-7d5aeda2-0a54-4389-976b-9273eda8fe00.png" width="100%">
 
 
 #### ExpansionHunterDenovo
