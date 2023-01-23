@@ -521,28 +521,30 @@ A key next step is to use the truth set to train classifiers for these categorie
 ### Extra Sections
 
 ---
-**Extra Section 1:** Data availability and details
+**Extra Section 1:** Data availability and QC metrics
 
-CHM1-CHM13-2 WGS read data is publicly available under run id ERR1341796: [[SRA](https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&acc=ERR1341796&display=data-access)]  [[EBI](https://www.ebi.ac.uk/ena/browser/view/ERR1341796)].
+CHM1-CHM13-2 WGS read data is publicly available under run id ERR1341796: [[SRA](https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&acc=ERR1341796&display=data-access)]  [[EBI](https://www.ebi.ac.uk/ena/browser/view/ERR1341796)]. 
+
 
 CHM1-CHM13-2 WGS read data is also publicly available from the Broad Institute here: [genome data](https://console.cloud.google.com/storage/browser/broad-public-datasets/CHM1_CHM13_WGS2)
 
-Details:
+WGS read data summary:
 - Illumina HiSeq X Ten
 - PCR-Free protocol
 - Paired-end 151bp reads
 - 40x Depth of Coverage
-- Median DNA Fragment Length (aka. Insert Size): 327bp (+/- 67 MAD)
+- DNA Fragment Length (aka. Insert Size) has median = 327bp (+/- 67 MAD) and distribution:   
+  <img width="225" alt="image" src="https://user-images.githubusercontent.com/6240170/213969693-572b733e-2b6a-4180-a4d0-7ed622cfd3ed.png">
 
-Further details are provided in [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)].  
 
 CHM1-CHM13 exome sequencing data is also available from the Broad Institute here: [exome data](https://console.cloud.google.com/storage/browser/broad-public-datasets/CHM1_CHM13_WES)
 
-Details:
+Exome read data summary:
 - Illumina HiSeq X Ten
 - Paired-end 151bp reads
 - 85x mean target coverage (based on Picard metrics).
-- Median DNA Fragment Length (aka. Insert Size): 393bp (+/- 87 MAD)
+- DNA Fragment Length (aka. Insert Size) has median = 393bp (+/- 87 MAD) and distribution:  
+  <img width="225" alt="image" src="https://user-images.githubusercontent.com/6240170/213969786-c879b865-155b-49ed-8e00-9a832b3f6c8b.png">
 
 ---
 
