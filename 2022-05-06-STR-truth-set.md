@@ -14,9 +14,11 @@ I apply this truth set to evaluate widely-used STR calling tools - ExpansionHunt
 - how well do widely-used catalogs of STR loci capture these variants?
 - how many STR variants in an average human genome are expected to be novel (ie. have a motif or repeat locus not present in the hg38 reference genome)?
 
-**Key Findings**
+---
 
-Some of the most interesting and/or surprising results from the truth set analysis are listed below. These are based on a survey of all STR variants in a single human genome of european ancestry - the CHM1-CHM13 synthetic diploid sample from [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)]. They can be considered as findings from an n=1 case study. 
+#### Summary of Findings
+
+Some of the more interesting and/or surprising results from the truth set analysis are listed below. These are based on a survey of all STR variants in a single human genome of european ancestry - the CHM1-CHM13 synthetic diploid sample from [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)]. They can be considered as findings from an n=1 case study. 
 
 - An individual's genome differs from the reference at ~150,000 STR loci, but 98% of these alleles are within +/-30bp of the reference locus size. On average, only several thousand STR loci differ from the reference by more than 30bp.
 - 99.6% of STR variants occured at STR loci in the reference genome. Only 521 STR variants had novel motifs that were entirely different from the adjacent motifs or refence sequence context.
@@ -35,13 +37,13 @@ These plots compare tool performance for various subsets of loci from the truth 
 
 ##### Accuracy
 
-Tool:  * ExpansionHunter   * GangSTR    * HipSTR
+**Tool:**  * ExpansionHunter   * GangSTR    * HipSTR
 
-Motif Size:  * 2-6bp   * 7-24bp  
+**Motif Size:**  * 2-6bp   * 7-24bp  
 
-Coverage:   * 40x genome  * 30x genome (downsampled)   * 20x genome (downsampled)  * 10x genome (downsampled)   * 5x genome (downsampled)   * exome (85x)
+**Coverage:***  * 40x genome (original)  * 30x genome (downsampled)   * 20x genome (downsampled)  * 10x genome (downsampled)   * 5x genome (downsampled)   * exome (85x)
 
-Interruptions:  * No: only pure repeats  * Yes: only interrupted repeats (not pure repeats) 
+**Repeats with Interruptions:**  * No: only pure repeats   * Yes: only interrupted repeats
 
 
 ##### Run time and memory usage
