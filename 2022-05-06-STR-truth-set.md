@@ -30,11 +30,11 @@ The sections below describe these findings in detail.
 
 ---
 
-### Tool Comparison Plots
+#### Key Tool Comparison Plots
 
-This section displays the main plots that compare tool performance for various subsets of loci from the truth set. Detailed discussion of these plots and parameters can be found in the sections below. 
+These plots compare tool performance for various subsets of loci from the truth set. Detailed discussion of these plots and parameters can be found in the sections below. 
 
-#### Accuracy
+##### Accuracy
 
 Tool:  * ExpansionHunter   * GangSTR    * HipSTR
 
@@ -45,9 +45,9 @@ Coverage:   * 40x genome  * 30x genome (downsampled)   * 20x genome (downsampled
 Interruptions:  * No: only pure repeats  * Yes: only interrupted repeats (not pure repeats) 
 
 
-#### Run time and memory usage
+##### Run time and memory usage
 
-#### ExpansionHunterDenovo
+##### ExpansionHunterDenovo
 
 
 ---
