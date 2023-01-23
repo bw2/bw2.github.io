@@ -18,64 +18,53 @@
 
     gtag('config', 'G-G7WEXHL9KW');
   </script>
-  <style>
-    .article {
-      font-family: "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-      font-size: 16px;
-      line-height: 1.5;
-      color: #24292f;
-      max-width: 1012px;
-      margin-left: 60px;
-      margin-right: 60px;
-    }
-  </style>
 </head>
 <body>
 
-  <div class="ui fixed menu" style="padding: 10px 0px">
-    <div class="ui grid" style="width:100%; font-size:16px; color: rgba(0,0,0,.87); font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif">
-      <div class="ui three wide column"></div>
-      <div class="ui ten wide column">
-        <div style="font-weight:800; padding-right:10px; display:inline-block"><a href="/">Project Notes</a></div>
-        <div style="font-weight:500; color:#555555; display:inline-block"> - Ben Weisburd</div>
-      </div>
-      <!--div class="ui one wide column" style="text-align: right">[<a href="/">Home</a>]</div-->
-      <div class="ui three wide column"></div>
-    </div>
-  </div>
-
-  <div style="padding-top:75px"></div>
-  <div class="ui grid">
+<div class="ui fixed menu" style="padding: 10px 0px">
+  <div class="ui grid" style="width:100%; font-size:16px; color: rgba(0,0,0,.87); font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif">
     <div class="ui three wide column"></div>
-    <div class="ui ten wide column article">
-
-      {{ markdown_html }}
-
-      <br />
-      <center><img style="margin-left:25px;" width="586" alt="image" src="https://user-images.githubusercontent.com/6240170/167290392-8974f18a-af18-40c1-9f61-fbb6713fc8d0.png"></center>
-      
-      <!-- https://giscus.app/ -->
-      <div class="container giscus" style="width:100%; margin:50px 10px">
-        <script src="https://giscus.app/client.js"
-                data-repo="bw2/bw2.github.io"
-                data-repo-id="MDEwOlJlcG9zaXRvcnkzNTU2OTQ0OA=="
-                data-category="Announcements"
-                data-category-id="DIC_kwDOAh6_KM4CO_Vz"
-                data-mapping="pathname"
-                data-reactions-enabled="1"
-                data-emit-metadata="0"
-                data-input-position="bottom"
-                data-theme="light"
-                data-lang="en"
-                crossorigin="anonymous"
-                async>
-        </script>
-      </div>
+    <div class="ui ten wide column">
+      <div style="font-weight:800; padding-right:10px; display:inline-block"><a href="/">Project Notes</a></div>
+      <div style="font-weight:500; color:#555555; display:inline-block"> - Ben Weisburd</div>
     </div>
+    <!--div class="ui one wide column" style="text-align: right">[<a href="/">Home</a>]</div-->
     <div class="ui three wide column"></div>
   </div>
+</div>
 
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js"  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<div style="padding-top:75px"></div>
+<div class="ui grid">
+  <div class="ui three wide column"></div>
+  <div class="ui ten wide column" style="font-size:16px; color: rgba(0,0,0,.87); font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif">
+
+    {{ markdown_html }}
+
+    <br />
+    <center><img style="margin-left:25px;" width="586" alt="image" src="https://user-images.githubusercontent.com/6240170/167290392-8974f18a-af18-40c1-9f61-fbb6713fc8d0.png"></center>
+
+    <!-- https://giscus.app/ -->
+    <div class="container giscus" style="width:100%; margin:50px 10px">
+      <script src="https://giscus.app/client.js"
+              data-repo="bw2/bw2.github.io"
+              data-repo-id="MDEwOlJlcG9zaXRvcnkzNTU2OTQ0OA=="
+              data-category="Announcements"
+              data-category-id="DIC_kwDOAh6_KM4CO_Vz"
+              data-mapping="pathname"
+              data-reactions-enabled="1"
+              data-emit-metadata="0"
+              data-input-position="bottom"
+              data-theme="light"
+              data-lang="en"
+              crossorigin="anonymous"
+              async>
+      </script>
+    </div>
+  </div>
+  <div class="ui three wide column"></div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>
