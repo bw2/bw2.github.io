@@ -511,11 +511,11 @@ while producing the same output.
 ### Next Steps
 
 The truth set and tool results provide an opportunity to identify features that distinguish
-- STR loci that are variant in CHM1-CHM13 vs those that are not
-- STR loci where tools produce accurate genotypes
-- False-positive STR genotypes
+- True positive genotypes vs. false-positive STR genotypes
+- STR loci where tools tend to produce accurate vs. inaccurate genotypes
+- STR loci that are mutated in CHM1-CHM13 vs those that are not
 
-A key next step is to use the truth set to train classifiers for these categories.
+A key next step is to train classifiers for these categories.
 
 ---
 ### Extra Sections
