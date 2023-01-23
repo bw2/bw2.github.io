@@ -30,7 +30,7 @@ Some of the most interesting and/or surprising results from the truth set analys
 
 ### Tool Comparison Plot Selector
 
-This section contains the key plots that compare tool performance under various circumstances. Detailed discussion of these plots and the different parameters can be found in the sections below. 
+This section contains the key plots that compare tool performance under various circumstances. Detailed discussion of these plots and parameters can be found in the sections below. 
 
 
 ---
