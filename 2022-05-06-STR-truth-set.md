@@ -37,18 +37,21 @@ These plots compare tool performance for various subsets of loci from the truth 
 
 ##### Accuracy
 
-**Tool:**  * ExpansionHunter   * GangSTR    * HipSTR
+* Tool:  * ExpansionHunter   * GangSTR    * HipSTR      * ExpansionHunterDenovo profile
 
-**Motif Size:**  * 2-6bp   * 7-24bp  
+* Motif Size:   * 2-6bp   * 7-24bp  
 
-**Coverage:***  * 40x genome (original)  * 30x genome (downsampled)   * 20x genome (downsampled)  * 10x genome (downsampled)   * 5x genome (downsampled)   * exome (85x)
+* Coverage:   * 40x genome (original)  * 30x genome (downsampled)   * 20x genome (downsampled)  * 10x genome (downsampled)   * 5x genome (downsampled)   * exome (85x)
 
-**Repeats with Interruptions:**  * No: only pure repeats   * Yes: only interrupted repeats
+* Repeats with Interruptions:    * No: only pure repeats   * Yes: only interrupted repeats
 
 
 ##### Run time and memory usage
 
-##### ExpansionHunterDenovo
+
+* Tool:   * ExpansionHunter   * GangSTR    * HipSTR
+* Coverage:   * 40x genome (original)  * 30x genome (downsampled)   * 20x genome (downsampled)  * 10x genome (downsampled)   * 5x genome (downsampled)   * exome (85x)
+
 
 
 ---
