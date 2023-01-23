@@ -532,6 +532,7 @@ Details:
 - PCR-Free protocol
 - Paired-end 151bp reads
 - 40x Depth of Coverage
+- Median Fragment Length (aka. Insert Size): 327bp (+/- 67 MAD)
 
 Further details are provided in [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)].  
 
@@ -541,6 +542,7 @@ Details:
 - Illumina HiSeq X Ten
 - Paired-end 151bp reads
 - 85x mean target coverage (based on Picard metrics).
+- Median Fragment Length (aka. Insert Size): 393bp (+/- 87 MAD)
 
 ---
 
