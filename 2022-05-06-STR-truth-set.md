@@ -28,9 +28,8 @@ The sections below describe these findings in detail.
 
 *NOTE*: STRs are traditionally defined as repeating motifs that are between 1 to 6bp long. For this truth set I exclude 1bp (homopolymer) repeats since they are uniquely error-prone, but include motifs longer than 6bp so that users can decide whether to include these in their analyses.
 
----
 
-#### Key Tool Comparison Plots
+#### Tool Comparison Plots
 
 These plots compare tool performance for various subsets of loci from the truth set. Detailed discussion of these plots and parameters can be found in the sections below. 
 
