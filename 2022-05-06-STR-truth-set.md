@@ -38,6 +38,12 @@ Motif Size:  * 2-6bp   * 7-24bp
 
 Coverage:   * 40x genome  * 30x genome (downsampled)   * 20x genome (downsampled)  * 10x genome (downsampled)   * 5x genome (downsampled)   * exome (85x)
 
+Interruptions:  * No: only pure repeats  * Yes: only interrupted repeats (not pure repeats) 
+
+Tool:  * ExpansionHunter   * GangSTR    * HipSTR
+
+
+
 #### ExpansionHunterDenovo
 
 #### ExpansionHunter, GangSTR, HipSTR run time and memory usage
