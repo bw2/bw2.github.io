@@ -28,6 +28,13 @@ Some of the most interesting and/or surprising results from the truth set analys
 
 ---
 
+### Tool Comparison Plot Selector
+
+This section contains the key plots that compare tool performance under various circumstances. Detailed discussion of these plots and the different parameters can be found in the sections below. 
+
+
+---
+
 ### Defining the STR truth set
 
 To generate an STR truth set, I started with the Synthetic Diploid Benchmark (SynDip) [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)] which is a unique dataset that uses haploid PacBio assemblies to identify all variants in the CHM1-CHM13 synthetic diploid sample. Because these variants are based on alignments of haploid assemblies (rather than individual reads) to the reference genome, the SynDip genotypes are more reliable than those produced by short-read or even ordinary long-read pipelines. 
@@ -534,7 +541,7 @@ WGS read data summary:
 - PCR-Free protocol
 - Paired-end 151bp reads
 - 40x Depth of Coverage
-- DNA Fragment Length (aka. Insert Size) has median = 327bp (+/- 67 MAD) and distribution:   
+- DNA Fragment Length (aka. Insert Size) has median = 327bp (+/- 67 MAD) and distribution:  <br /><br />
   <img width="225" alt="image" src="https://user-images.githubusercontent.com/6240170/213969693-572b733e-2b6a-4180-a4d0-7ed622cfd3ed.png">
 
 
@@ -544,7 +551,7 @@ Exome read data summary:
 - Illumina HiSeq X Ten
 - Paired-end 151bp reads
 - 85x mean target coverage (based on Picard metrics).
-- DNA Fragment Length (aka. Insert Size) has median = 393bp (+/- 87 MAD) and distribution:  
+- DNA Fragment Length (aka. Insert Size) has median = 393bp (+/- 87 MAD) and distribution:  <br /><br />
   <img width="225" alt="image" src="https://user-images.githubusercontent.com/6240170/213969786-c879b865-155b-49ed-8e00-9a832b3f6c8b.png">
 
 ---
