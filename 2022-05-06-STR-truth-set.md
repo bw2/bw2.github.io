@@ -32,7 +32,9 @@ Some of the most interesting and/or surprising results from the truth set analys
 
 This section displays the main plots that compare tool performance for various subsets of loci from the truth set. Detailed discussion of these plots and parameters can be found in the sections below. 
 
-#### ExpansionHunter, GangSTR, HipSTR accuracy
+#### Accuracy
+
+Tool:  * ExpansionHunter   * GangSTR    * HipSTR
 
 Motif Size:  * 2-6bp   * 7-24bp  
 
@@ -40,13 +42,11 @@ Coverage:   * 40x genome  * 30x genome (downsampled)   * 20x genome (downsampled
 
 Interruptions:  * No: only pure repeats  * Yes: only interrupted repeats (not pure repeats) 
 
-Tool:  * ExpansionHunter   * GangSTR    * HipSTR
 
-
+#### Run time and memory usage
 
 #### ExpansionHunterDenovo
 
-#### ExpansionHunter, GangSTR, HipSTR run time and memory usage
 
 ---
 
