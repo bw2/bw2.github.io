@@ -533,7 +533,9 @@ For genome-wide STR analyses that involve many loci and many samples, tool runti
 To reduce the costs of genome-wide analysis, as well as eliminate some pain points, I developed an optimized version of ExpansionHunter which has the following features:
 * runs 2x to 3x faster than the original while producing exactly the same output for all loci. This is achieved by reducing disk access operations through the use of read caching. 
 * optionally outputs a table with per-locus timing information to make it easier to exclude loci that take the longest to genotype. 
-* prints a warning and moves on to the next locus instead of exiting with an error when it encounters a locus that triggers ExpansionHunter's error about Ns in adjacent regions. This helps reduce the time needed to troubleshoot large variant catalogs. An example of the error message is: "Error on locus spec 20-36315046-36315048-TG: Error loading locus 20-36315046-36315048-TG: Flanks can contain at most 5 characters N but found 348 Ns". Out of all loci in the truth set, 24 trigger this kind of error and so make it impossible to run the original ExpansionHunter on the full truth set variant catalog.
+* prints a warning and moves on to the next locus instead of exiting with an error when it encounters a locus that triggers ExpansionHunter's error about Ns in adjacent regions. An example of the error message is: "Error on locus spec 20-36315046-36315048-TG: Error loading locus 20-36315046-36315048-TG: Flanks can contain at most 5 characters N but found 348 Ns". 
+
+This last feature make it easier to troubleshoot large variant catalogs. Out of all loci in the truth set, 24 trigger this kind of error and so make it impossible to run the original ExpansionHunter on the full truth set variant catalog without first going through an iterative process to find and exclude all 24 loci. 
 
 This optimized version was used for all analyses above. It is publicly available @ https://github.com/bw2/ExpansionHunter
 
