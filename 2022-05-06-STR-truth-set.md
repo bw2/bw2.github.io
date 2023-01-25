@@ -12,7 +12,7 @@ In this blog post, I share a new genome-wide STR truth set that partially addres
 I apply this truth set to evaluate widely-used STR calling tools - ExpansionHunter, GangSTR, HipSTR and ExpansionHunter Denovo, and also use it to explore relevant questions about STRs in general such as:
 - what is the distribution of STR variants in the human genome (ie. motif sizes, lengths, percent multiallelic, etc.)?
 - how well do widely-used catalogs of STR loci capture these variants?
-- how many STR variants in an average human genome are expected to be novel (ie. have a motif or repeat locus not present in the hg38 reference genome)?
+- how many STR loci can we expect to be novel (ie. absent from the hg38 reference genome) in randomly-selected individuals of European ancestry?
 
 ---
 
@@ -44,14 +44,6 @@ These plots compare tool performance for various subsets of loci from the truth 
 * Coverage:   * 40x genome (original)  * 30x genome (downsampled)   * 20x genome (downsampled)  * 10x genome (downsampled)   * 5x genome (downsampled)   * exome (85x)
 
 * Repeats with Interruptions:    * No: only pure repeats   * Yes: only interrupted repeats
-
-
-##### Run time and memory usage
-
-
-* Tool:   * ExpansionHunter   * GangSTR    * HipSTR
-* Coverage:   * 40x genome (original)  * 30x genome (downsampled)   * 20x genome (downsampled)  * 10x genome (downsampled)   * 5x genome (downsampled)   * exome (85x)
-
 
 
 ---
@@ -531,6 +523,9 @@ Specificity is harder to estimate. We can look at the distribution of loci that 
 The analyses above are all based on pure repeats. To see how allowing interruptions may affect the results, 
 
 #### Runtime comparison
+
+
+
 
 I also creatd a modififed version of ExpansionHunter which, by using an additional read cache, runs 2 to 3x faster than the original 
 while producing the same output. 
