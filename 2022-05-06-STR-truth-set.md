@@ -531,7 +531,7 @@ Red lines represent (and are labeled with) the median value for the given tool.
 To get the 8 data points shown for each tool, the truth set was split into 8 non-overlapping sets of loci and each one was measured independently. Two versions of ExpansionHunter are compared - the last release from Illumina (v5), and an optimized version of it described below.  When running ExpansionHunter, I split the variant catalog into batches of 500 loci to be processed in parallel. For GangSTR and HipSTR, because they are faster, I processed batches of 10,000 loci at a time. All tests were performed using the [Hail Batch service](https://hail.is/docs/batch/service.html) on Google Cloud VMs. 
 
 The main conclusions are that:
-**ExpansionHunter v5 is 2.8x slower than its optimized version** which is then **3.9x slower than GangSTR** which is **2.1x slower than HipSTR**. The optimized version of ExpansionHunter uses more memory than the other tools, but the memory needed remains small in absolute terms. 
+**ExpansionHunter v5 is 2.8x slower than its optimized version** which is then **3.9x slower than GangSTR** which is **2.1x slower than HipSTR**. The optimized version of ExpansionHunter achieves faster run time at the expense of using more memory. 
 
 
 ##### Optimized ExpansionHunter
@@ -543,9 +543,9 @@ To reduce the costs of genome-wide analyses and eliminate some pain points, I de
 
 This last feature make it easier to troubleshoot large variant catalogs. Out of all loci in the truth set, 24 trigger this kind of error and so make it impossible to run the original ExpansionHunter on the full truth set variant catalog without first going through an iterative process to find and exclude all 24 loci. 
 
-The read cache optimization increases the tool's memory requirements, but these typically remain small in absolute terms and grow linearly with the number of loci being genotyped (data not shown). This means that maximum memory requirements, if they become problematic, can be reduced by genotyping fewer loci per batch. 
+The read cache optimization increases the tool's memory requirements. The extra memory needed is proportional to the number of loci being genotyped (data not shown). For typical batch sizes, it remains below the several gigabytes of RAM usually available per CPU on current machines. Still, if the increased memory requirements becomes problematic, they can always be mitigated by genotyping fewer loci per batch. 
 
-This optimized version is the one used for all analyses above. It is publicly available @ https://github.com/bw2/ExpansionHunter
+This optimized version of ExpansionHunter is the one used for all analyses above. It is publicly available @ https://github.com/bw2/ExpansionHunter
 
 ---
 ### Next Steps
