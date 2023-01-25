@@ -535,7 +535,7 @@ To reduce the costs of genome-wide analysis, as well as eliminate some pain poin
 * prints a warning and moves on to the next locus instead of exiting with an error when it encounters a locus that triggers ExpansionHunter's error about Ns in adjacent regions. This reduces the time needed to troubleshoot large variant catalogs. An example of this error message: "Error loading locus 2-238902660-238902670-TG: Flanks can contain at most 5 characters N but found 11 Ns". 
 * optionally outputs a table with per-locus timing information to make it easier to exclude loci that take the longest to genotype. 
 
-This optimized version was used for analyses above, and is freely available @ https://github.com/bw2/ExpansionHunter
+This optimized version was used for analyses above, and is publicly available @ https://github.com/bw2/ExpansionHunter
 
 ---
 ### Next Steps
