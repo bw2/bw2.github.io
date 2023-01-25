@@ -523,7 +523,8 @@ The analyses above are all based on pure repeats. To see how allowing interrupti
 
 #### Tool runtime and memory use comparison
 
-For genome-wide STR analyses that involve many loci and many samples, tool runtime and memory use become important factors - particularly in cloud  environments where they directly increase costs. For ExpansionHunter, GangSTR, HipSTR, and most other existing STR callers, the tools' runtime is proportional not just to the number of samples, but also the number of loci being genotyped. Due to this, I compare tool run times per 10,000 loci: 
+For genome-wide STR analyses that involve many loci and many samples, tool runtime and memory use become important factors - particularly in cloud  environments where they directly increase costs. For ExpansionHunter, GangSTR, HipSTR, and most other existing STR callers, the tools' runtime is proportional not just to the number of samples, but also the number of loci being genotyped. Due to this, I compare tool run times per 10,000 loci. 
+Red lines represent (and are labeled with) the median values in each bin.
 
 ![image](https://user-images.githubusercontent.com/6240170/214486093-88a0dfb5-edf2-4760-bc9c-299ef4fa9b87.png)
 
