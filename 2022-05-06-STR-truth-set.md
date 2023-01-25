@@ -523,17 +523,17 @@ The analyses above are all based on pure repeats. To see how allowing interrupti
 
 #### Tool runtime and memory use comparison
 
-For genome-wide STR analyses that involve many loci and many samples, tool runtime and memory use become important factors - particularly in cloud  environments where they directly increase costs. For ExpansionHunter, GangSTR, HipSTR, and most other existing STR callers, the tools' runtime is proportional not just to the number of samples, but also the number of loci being genotyped. Due to this, I compare tool running times per 10,000 loci.
+For genome-wide STR analyses that involve many loci and many samples, tool runtime and memory use become important factors - particularly in cloud  environments where they directly increase costs. For ExpansionHunter, GangSTR, HipSTR, and most other existing STR callers, the tools' runtime is proportional not just to the number of samples, but also the number of loci being genotyped. Due to this, I compare tool running times per 10,000 loci: 
 
-This plot shows results for the truth set:
+
 
 
 ##### Optimized ExpansionHunter
 
 To reduce the costs of genome-wide analysis, as well as eliminate some pain points, I developed an optimized version of ExpansionHunter which has the following features:
 * runs 2x to 3x faster than the original while producing exactly the same output for all loci. This is achieved by reducing disk access operations through the use of read caching. 
-* prints a warning and moves on to the next locus instead of exiting with an error when it encounters a locus that triggers ExpansionHunter's error about Ns in adjacent regions. This helps reduce the time needed to troubleshoot large variant catalogs. An example of the error message is: "Error loading locus 2-238902660-238902670-TG: Flanks can contain at most 5 characters N but found 11 Ns". 
 * optionally outputs a table with per-locus timing information to make it easier to exclude loci that take the longest to genotype. 
+* prints a warning and moves on to the next locus instead of exiting with an error when it encounters a locus that triggers ExpansionHunter's error about Ns in adjacent regions. This helps reduce the time needed to troubleshoot large variant catalogs. An example of the error message is: "Error on locus spec 20-36315046-36315048-TG: Error loading locus 20-36315046-36315048-TG: Flanks can contain at most 5 characters N but found 348 Ns". Out of all loci in the truth set, 24 trigger this kind of error and so make it impossible to run the original ExpansionHunter on the full truth set variant catalog.
 
 This optimized version was used for all analyses above. It is publicly available @ https://github.com/bw2/ExpansionHunter
 
