@@ -523,9 +523,16 @@ The analyses above are all based on pure repeats. To see how allowing interrupti
 
 #### Tool runtime and memory use comparison
 
-For genome-wide STR analyses that involve many loci and many samples, tool runtime and memory use become important factors - particularly in cloud  environments where they directly increase costs. For ExpansionHunter, GangSTR, HipSTR, and most other existing STR callers, the tools' runtime is proportional not just to the number of samples, but also the number of loci being genotyped. Due to this, I compare tool running times per 10,000 loci: 
+For genome-wide STR analyses that involve many loci and many samples, tool runtime and memory use become important factors - particularly in cloud  environments where they directly increase costs. For ExpansionHunter, GangSTR, HipSTR, and most other existing STR callers, the tools' runtime is proportional not just to the number of samples, but also the number of loci being genotyped. Due to this, I compare tool run times per 10,000 loci: 
+
+![image](https://user-images.githubusercontent.com/6240170/214486093-88a0dfb5-edf2-4760-bc9c-299ef4fa9b87.png)
 
 
+These measurements are based on running each tool on all loci in the truth set. To get the 8 measurements shown in each bin, the truth set was split into 8 non-overlapping sets of loci and each one was measured independently. Two versions of ExpansionHunter are compared - the last release from Illumina (v5), and an optimized version of it described below. 
+The main conclusions are that:
+ExpansionHunter v5 is **2.8x slower than the optimized version** of Expansion Hunter v5 which is **3.9x slower than GangSTR** which is **2.1x slower than HipSTR**. The optimized version of ExpansionHunter uses more memory than the other tools, but the memory needed remains small in absolute terms. 
+
+When running ExpansionHunter, I split the variant catalog into batches of 500 loci to be processed in parallel. For GangSTR and HipSTR, because they are faster, I processed batches of 10,000 loci at a time.
 
 
 ##### Optimized ExpansionHunter
@@ -536,6 +543,8 @@ To reduce the costs of genome-wide analyses and eliminate some pain points, I de
 * prints a warning and moves on to the next locus instead of exiting with an error when it encounters a locus that triggers ExpansionHunter's error about Ns in adjacent regions. An example of the error message is: "Error on locus spec 20-36315046-36315048-TG: Error loading locus 20-36315046-36315048-TG: Flanks can contain at most 5 characters N but found 348 Ns". 
 
 This last feature make it easier to troubleshoot large variant catalogs. Out of all loci in the truth set, 24 trigger this kind of error and so make it impossible to run the original ExpansionHunter on the full truth set variant catalog without first going through an iterative process to find and exclude all 24 loci. 
+
+The read cache optimization increases the tool's memory requirements, but these typically remain small in absolute terms and grow linearly with the number of loci being genotyped (data not shown). This means that maximum memory requirements, if they become problematic, can be reduced by genotyping fewer loci per batch. 
 
 This optimized version is the one used for all analyses above. It is publicly available @ https://github.com/bw2/ExpansionHunter
 
