@@ -532,7 +532,7 @@ This plot shows results for the truth set:
 
 To reduce the costs of genome-wide analysis, as well as eliminate some pain points, I developed an optimized version of ExpansionHunter which has the following features:
 * runs 2x to 3x faster than the original while producing exactly the same output for all loci. This is achieved by reducing disk access operations through the use of read caching. 
-* prints a warning and moves on to the next locus instead of exiting with an error when it encounters a locus that triggers ExpansionHunter's error about Ns in adjacent regions. This reduces the time needed to troubleshoot large variant catalogs. An example of this error message: "Error loading locus 2-238902660-238902670-TG: Flanks can contain at most 5 characters N but found 11 Ns". 
+* prints a warning and moves on to the next locus instead of exiting with an error when it encounters a locus that triggers ExpansionHunter's error about Ns in adjacent regions. This helps reduce the time needed to troubleshoot large variant catalogs. An example of the error message is: "Error loading locus 2-238902660-238902670-TG: Flanks can contain at most 5 characters N but found 11 Ns". 
 * optionally outputs a table with per-locus timing information to make it easier to exclude loci that take the longest to genotype. 
 
 This optimized version was used for analyses above, and is publicly available @ https://github.com/bw2/ExpansionHunter
