@@ -537,7 +537,7 @@ To reduce the costs of genome-wide analysis, as well as eliminate some pain poin
 
 This last feature make it easier to troubleshoot large variant catalogs. Out of all loci in the truth set, 24 trigger this kind of error and so make it impossible to run the original ExpansionHunter on the full truth set variant catalog without first going through an iterative process to find and exclude all 24 loci. 
 
-This optimized version was used for all analyses above. It is publicly available @ https://github.com/bw2/ExpansionHunter
+This optimized version is the one used for all analyses above. It is publicly available @ https://github.com/bw2/ExpansionHunter
 
 ---
 ### Next Steps
