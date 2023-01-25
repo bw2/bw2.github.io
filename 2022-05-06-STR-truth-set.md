@@ -530,7 +530,7 @@ For genome-wide STR analyses that involve many loci and many samples, tool runti
 
 ##### Optimized ExpansionHunter
 
-To reduce the costs of genome-wide analysis, as well as eliminate some pain points, I developed an optimized version of ExpansionHunter which has the following features:
+To reduce the costs of genome-wide analyses and eliminate some pain points, I developed an optimized version of ExpansionHunter which has the following features:
 * runs 2x to 3x faster than the original while producing exactly the same output for all loci. This is achieved by reducing disk access operations through the use of read caching. 
 * optionally outputs a table with per-locus timing information to make it easier to exclude loci that take the longest to genotype. 
 * prints a warning and moves on to the next locus instead of exiting with an error when it encounters a locus that triggers ExpansionHunter's error about Ns in adjacent regions. An example of the error message is: "Error on locus spec 20-36315046-36315048-TG: Error loading locus 20-36315046-36315048-TG: Flanks can contain at most 5 characters N but found 348 Ns". 
