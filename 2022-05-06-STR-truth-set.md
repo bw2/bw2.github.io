@@ -528,11 +528,10 @@ For genome-wide STR analyses that involve many loci and many samples, tool runti
 ![image](https://user-images.githubusercontent.com/6240170/214486093-88a0dfb5-edf2-4760-bc9c-299ef4fa9b87.png)
 
 
-These measurements are based on running each tool on all loci in the truth set. To get the 8 measurements shown in each bin, the truth set was split into 8 non-overlapping sets of loci and each one was measured independently. Two versions of ExpansionHunter are compared - the last release from Illumina (v5), and an optimized version of it described below. 
-The main conclusions are that:
-ExpansionHunter v5 is **2.8x slower than the optimized version** of Expansion Hunter v5 which is **3.9x slower than GangSTR** which is **2.1x slower than HipSTR**. The optimized version of ExpansionHunter uses more memory than the other tools, but the memory needed remains small in absolute terms. 
+These measurements are based on running each tool on all loci in the truth set. To get the 8 measurements shown in each bin, the truth set was split into 8 non-overlapping sets of loci and each one was measured independently. Two versions of ExpansionHunter are compared - the last release from Illumina (v5), and an optimized version of it described below.  When running ExpansionHunter, I split the variant catalog into batches of 500 loci to be processed in parallel. For GangSTR and HipSTR, because they are faster, I processed batches of 10,000 loci at a time. All tests were performed using the [Hail Batch service](https://hail.is/docs/batch/service.html) on Google Cloud VMs with the reference genome and read data files on SSD disk. 
 
-When running ExpansionHunter, I split the variant catalog into batches of 500 loci to be processed in parallel. For GangSTR and HipSTR, because they are faster, I processed batches of 10,000 loci at a time.
+The main conclusions are that:
+**ExpansionHunter v5 is 2.8x slower than the optimized version** of Expansion Hunter v5 which is **3.9x slower than GangSTR** which is **2.1x slower than HipSTR**. The optimized version of ExpansionHunter uses more memory than the other tools, but the memory needed remains small in absolute terms. 
 
 
 ##### Optimized ExpansionHunter
