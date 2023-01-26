@@ -523,7 +523,7 @@ Although they are not highlighted in the plot, 10 out of the 247 alleles that ex
 
 ExpansionHunterDenovo specificity is harder to estimate. We can check what fraction of ExpansionHunterDenovo calls have no matching truth set locus anywhere near them (+/-600bp), but there is a key limitation which prevents us from calling these false positives. While the truth set anlaysis only includes pure repeats, ExpansionHunterDenovo allows interruptions in the repeat sequence. When detecting whether a given read is fully repetative, ExpansionHunterDenovo uses a heuristic that allows up to 15% of the read's sequence to deviate from pure repeats. This means that some subset of the loci it outputs may be accurate detections but are not in the truth set because they contain interruptions. 
 
-Regardless, this plot helps shed light on how ExpansionHunterDenovo output is distributed across different motif sizes:
+Regardless, this plot helps shed light on how ExpansionHunterDenovo output is distributed across different motif sizes and the degree to which it matches expansions in the truth set as well as repeats present in the reference genome:
 
 <img width="763" alt="image" src="https://user-images.githubusercontent.com/6240170/214731482-1028d76f-f927-4c9b-bc3a-c33f5a405ac1.png">
 
