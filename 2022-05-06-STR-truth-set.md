@@ -530,7 +530,9 @@ Regardless, this plot helps shed light on how ExpansionHunterDenovo output is di
 
 #### Interruptions
 
-The analyses above are all based on pure repeats. To see how allowing interruptions may affect the results, 
+The analyses above are all based on pure repeats. Allowing interruptions introduces complexity since the boundary between interrupted repeats and non-repetative loci is ambiguous - how many interruptions do you allow before you no longer consider the locus a simple repeat? 
+This section takes a step toward analyzing interrupted loci. It goes back to the original set of insertions and deletions in the SynDip truth set and - for the ones that didn't make it into the STR truth set based on pure repeat filters - checks whether a given insertion or deletion can be considered a repeat of some motif (between 3 and 24bp) where 1 base in the motif is allowed to vary across consecutive repeats at the locus. For example, this allows a sequence like `CAGG.CATG.CAGG` to be treated as repeats with a 4bp motif in which the 3rd base is allowed to vary. 
+
 
 #### Tool runtime and memory use comparison
 
