@@ -517,18 +517,48 @@ Since the outlier detection step depends entirely on the sensitivity and specifi
 
 This plot shows that the ExpansionHunterDenovo "profile" step has high sensitivity for pure repeat loci where the overall allele size exceed 150bp. 
 
-For the 247 truth set loci where the allele size exceeds 150bp, ExpansionHunterDenovo detects 231 out of 247 (93.5%) of them - meaning there is an ExpansionHunterDenovo call with the same motif within +/-600bp of the truth set locus. This includes:
+For the 247 truth set loci where the allele size exceeds 150bp, ExpansionHunterDenovo detects 231 out of 247 (93.5%) of them (meaning than an ExpansionHunterDenovo call with the same motif occurs within +/-600bp of the truth set locus). This includes:
 * 7 out of 7 (100%) truth set loci with short motifs (2 to 6bp)
 * 18 out of 19 (94.7%) truth set loci with medium-sized motifs (7 to 24bp)
 * 206 out of 221 (93.2%) truth set loci with large motifs (25 to 50bp)
 
-Although they are not highlighted in the plot, 10 out of the 247 alleles that exceed 150bp represent novel loci - meaning they have no matching repeats in the hg38 reference. ExpansionHunterDenovo is able to detect all 10 of them. 
+Although they are not highlighted in the plot, 10 out of the 247 alleles that exceed 150bp represent novel loci (ie. ones that have no matching repeats in the hg38 reference). ExpansionHunterDenovo is able to detect all 10 of them. 
 
-ExpansionHunterDenovo specificity is harder to estimate. We can check what fraction of ExpansionHunterDenovo calls have no matching truth set locus anywhere near them (+/-600bp), but there is a key limitation which prevents us from calling these false positives. While the truth set anlaysis only includes pure repeats, ExpansionHunterDenovo allows interruptions in the repeat sequence. When detecting whether a given read is fully repetative, ExpansionHunterDenovo uses a heuristic that allows up to 15% of the read's sequence to deviate from pure repeats. This means that some subset of the loci it outputs may be accurate detections but are not in the truth set because they contain interruptions. 
+ExpansionHunterDenovo specificity is harder to estimate. We can look at the fraction of ExpansionHunterDenovo calls that have no matching truth set loci  anywhere near them (+/-600bp). However, there is a key issue which prevents us from concluding that these are false positives. While the truth set anlaysis only includes pure repeats, ExpansionHunterDenovo allows interruptions in the repeat sequence. When detecting whether a given read is fully repetative, ExpansionHunterDenovo uses a heuristic approach that allows up to 15% of the read's sequence to deviate from pure repeats. This means that some subset of the loci it outputs may be accurate detections but are not in the truth set because they contain interruptions. 
 
-Regardless, this plot helps shed light on how ExpansionHunterDenovo output is distributed across different motif sizes and the degree to which it matches expansions in the truth set as well as repeats present in the reference genome:
+Regardless, this plot helps show how ExpansionHunterDenovo output is distributed across different motif sizes and the degree to which it matches expansions in the truth set or repeats in the reference genome:
 
 <img width="763" alt="image" src="https://user-images.githubusercontent.com/6240170/214731482-1028d76f-f927-4c9b-bc3a-c33f5a405ac1.png">
+
+This table summarizes the data in the plot:
+<table>
+   <tr>
+      <th>Motif Sizes</th>
+      <th>Total EHdn calls</th>
+      <th>Have matching reference repeat locus (+/- 600bp)</th>
+      <th>Have matching expansion in truth set (+/- 600bp)</th>
+   </tr>
+   <tr>
+      <td>2-6bp</td>
+      <td> 1,353</td>
+      <td> 1,223 (90%)</td>
+      <td>   348 (26%)</td>
+   </tr>
+   <tr>
+      <td>7-24bp</td>
+      <td> 3,225</td>
+      <td>   858 (27%)</td>
+      <td>   121 (4%)</td>
+   </tr>
+   <tr>
+      <td>25-50bp</td>
+      <td>52,650</td>
+      <td> 4,550 (9%)</td>
+      <td>   446 (1%)</td>
+   </tr>
+</table>
+
+The 600bp window size was chosen to significantly exceed the median fragment length of the sample. 
 
 
 #### Interruptions
@@ -555,7 +585,7 @@ The allele size and motif size distributions of these interrupted repeats are as
 <img src="https://user-images.githubusercontent.com/6240170/214751753-d4ff1609-1597-4eac-be84-4b933b72c46f.png" width=400> <img src="https://user-images.githubusercontent.com/6240170/214747495-64f84c9c-59a2-4756-919c-1f72a238b78e.png" width=400> 
 </div>
 
-There are many questions one can ask about interrupted repeats and how they differ from pure repeats. I will only mention one question -  why the allele size distribution appears to have more loci with -2/+2 events than -1/+1. The most frequent motifs in the -2/+2 bins are "ACAC", "ATAT", etc. which turn out to be dinucleotide repeats with interruptions that are getting around the dinucleotide filter (#3 above) by pretending to be 4bp motifs. These obfuscated dinucleotide motifs are not present in -1 and +1 bins. This has to do with the relative improbablity of a double dinucleotide insertion (eg. "C > CACAC" which would be counted in the +1 bin here as a 4bp motif expansion) failing the pure repeat filters but then passing the interrupted repeat filters, and the much higher odds of this happening with 4 dinucleotide repeats (eg. "C > CACACATAC" which would be counted in the +2 bin here as a 2 x CACA motif expansion).
+There are many questions one can ask about interrupted repeats and how they differ from pure repeats. I will only mention one question -  why the allele size distribution appears to have more loci with -2/+2 events than -1/+1. The most frequent motifs in the -2/+2 bins are "ACAC", "ATAT", etc. which turn out to be dinucleotide repeats with interruptions that are getting around the dinucleotide filter (#3 above) by pretending to be 4bp motifs. These obfuscated dinucleotide motifs are not present in -1 and +1 bins. This has to do with the relative improbablity of a double dinucleotide insertion (eg. "C > CACAC" which would be counted in the +1 bin here as a 4bp motif expansion) failing the pure repeat filters but then passing the interrupted repeat filters, and the much higher odds of this happening with 4 dinucleotide repeats (eg. "C > CACACATAC" which would be counted in the +2 bin here as a 2 x CACA motif expansion). 
 
 
 #### Tool runtime and memory use comparison
