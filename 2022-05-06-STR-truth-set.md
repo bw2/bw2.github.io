@@ -526,7 +526,7 @@ For the 247 truth set loci where the allele size exceeds 150bp, ExpansionHunterD
 
 Although they are not highlighted in the plot, 10 out of the 247 alleles that exceed 150bp represent novel loci (ie. ones that have no matching repeats in the hg38 reference). ExpansionHunterDenovo is able to detect all 10 of them. 
 
-ExpansionHunterDenovo specificity is harder to estimate. We can look at the fraction of ExpansionHunterDenovo calls that have no matching truth set loci  anywhere near them (+/-600bp). However, there is a key issue which prevents us from concluding that these are false positives. While the truth set anlaysis only includes pure repeats, ExpansionHunterDenovo allows interruptions in the repeat sequence. When detecting whether a given read is fully repetative, ExpansionHunterDenovo uses a heuristic approach that allows up to 15% of the read's sequence to deviate from pure repeats. This means that some subset of the loci it outputs may be accurate detections but are not in the truth set because they contain interruptions.  
+ExpansionHunterDenovo specificity is harder to estimate. We can look at the fraction of calls that have no matching truth set loci anywhere near them. However, there is a key issue which prevents us from concluding that these are false positives. While the truth set anlaysis only includes pure repeats, ExpansionHunterDenovo allows interruptions in the repeat sequence. To detect whether a given read is fully repetative, it uses a heuristic that allows up to 15% of the read's sequence to deviate from pure repeats. This means that some subset of its calls may be accurate detections but are not in the truth set because they contain interruptions.  
 
 Regardless, this plot helps show how ExpansionHunterDenovo output is distributed across different motif sizes and the degree to which it matches expansions in the truth set or repeats in the reference genome:
 
@@ -560,7 +560,7 @@ This table summarizes the data in the plot:
    </tr>
 </table>
 
-An additional reason why ExpansionHunterDenovo "profile" outputs so many calls that are absent from the truth set is that the truth set only includes variant loci, while the EHdn algorithm reports all loci where fully-repetative reads align - regardless of whether this is due to a large expansion there, or just due to a large stretch of repeats being present in the reference genome. 
+An additional reason why ExpansionHunterDenovo "profile" may be outputing so many calls that are absent from the truth set is that the truth set only includes variant loci, while the EHdn algorithm reports all loci where fully-repetative reads align - regardless of whether this is due to a large expansion there, or just due to a large stretch of repeats being present in the reference genome. 
 
 *NOTE:* The 600bp window size was chosen to significantly exceed the median fragment length of the sample. 
 
