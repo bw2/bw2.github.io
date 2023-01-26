@@ -560,7 +560,7 @@ This table summarizes the data in the plot:
 
 An additional reason why ExpansionHunterDenovo "profile" outputs so many calls that are absent from the truth set is that the truth set only includes variant loci, while the EHdn algorithm reports all loci where fully-repetative reads align - regardless of whether this is due to a large expansion there, or just due to a large stretch of repeats being present in the reference genome. 
 
-NOTE: The 600bp window size was chosen to significantly exceed the median fragment length of the sample. 
+*NOTE:* The 600bp window size was chosen to significantly exceed the median fragment length of the sample. 
 
 
 #### Interruptions
