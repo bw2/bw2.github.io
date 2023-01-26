@@ -614,7 +614,9 @@ To reduce the costs of genome-wide analyses and eliminate some pain points, I de
 
 The read cache optimization increases the tool's memory requirements. The extra memory needed is proportional to the number of loci being genotyped (data not shown). For typical batch sizes, this remains well below the 3 to 5 gigabytes of RAM available per CPU on current machines. Still, if the increased memory requirements become problematic, they can always be mitigated by genotyping fewer loci per batch. 
 
-This optimized version of ExpansionHunter is the one used for all analyses above. It is publicly available @ https://github.com/bw2/ExpansionHunter
+This optimized version of ExpansionHunter is the one used for all analyses above.   
+  
+It is publicly available @ https://github.com/bw2/ExpansionHunter
 
 ---
 ### Interactive TGG-viewer for truth set results
