@@ -535,26 +535,26 @@ This table summarizes the data in the plot:
    <tr>
       <th>Motif Sizes</th>
       <th>Total EHdn calls</th>
-      <th>Have matching reference repeat locus (+/- 600bp)</th>
-      <th>Have matching expansion in truth set (+/- 600bp)</th>
+      <th>Have matching <br>reference repeat locus (+/- 600bp)</th>
+      <th>Have matching <br>expansion in truth set (+/- 600bp)</th>
    </tr>
    <tr>
       <td>2-6bp</td>
-      <td> 1,353</td>
-      <td> 1,223 (90%)</td>
-      <td>   348 (26%)</td>
+      <td align="right"> 1,353</td>
+      <td align="right"> 1,223 (90%)</td>
+      <td align="right">   348 (26%)</td>
    </tr>
    <tr>
       <td>7-24bp</td>
-      <td> 3,225</td>
-      <td>   858 (27%)</td>
-      <td>   121 (4%)</td>
+      <td align="right"> 3,225</td>
+      <td align="right">   858 (27%)</td>
+      <td align="right">   121 ( 4%)</td>
    </tr>
    <tr>
       <td>25-50bp</td>
-      <td>52,650</td>
-      <td> 4,550 (9%)</td>
-      <td>   446 (1%)</td>
+      <td align="right">52,650</td>
+      <td align="right"> 4,550 ( 9%)</td>
+      <td align="right">   446 ( 1%)</td>
    </tr>
 </table>
 
