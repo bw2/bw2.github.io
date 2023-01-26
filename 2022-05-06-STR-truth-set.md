@@ -510,11 +510,22 @@ ExpansionHunterDenovo [<a href="https://genomebiology.biomedcentral.com/articles
 
 Since the outlier detection step depends entirely on the sensitivity and specificity of the "profile" step, I use the truth set to check how well the  "profile" step picks up large expansions in CHM1-CHM13-2:
 
+<img width="794" alt="image" src="https://user-images.githubusercontent.com/6240170/214714305-33517ef0-8d16-48cc-8709-3e24ccd07e85.png">
 
-This plot confirms that the ExpansionHunterDenovo "profile" step has high sensitivity for pure repeat loci that exceed 150bp. It also shows that ExpansionHunterDenovo detects novel expansions - those that have no matching repeats in the reference genome.  
+This plot shows that the ExpansionHunterDenovo "profile" step has high sensitivity for pure repeat loci where the overall allele size exceed 150bp. 
 
-ExpansionHunterDenovo specificity is harder to estimate. We can look at the distribution of loci that ExpansionHunterDenovo's "profile" step outputs even though there is no pure STR expansion anywhere near that location according to the truth set. There are two important caveats to this analysis. First, while the truth set (for now) only includes pure repeats, ExpansionHunterDenovo allows interruptions in the repeat sequence - when detecting which reads are repetative, it uses a heuristic algorithm that requires at least 85% of a read's sequence to be consistant with a pure repeat of some motif. This means that a subset of the loci it outputs are not in the truth set because they contain interruptions. Second, while the truth set only includes loci with STR variants, the "profile" step doesn't distinguish between loci where the sample differs from the reference vs loci where there is simply a long (longer than 150bp) repeat in the reference genome. Despite these limitations, a comparison of ExpansionHunterDenovo "profile" results vs the truth set helps to build intuition about which loci  ExpansionHunterDenovo focuses on:
+For the 247 truth set loci where the allele size exceeds 150bp, ExpansionHunterDenovo detects 231 out of 247 (93.5%) of them - meaning there is an ExpansionHunterDenovo call with the same motif within +/-600bp of the truth set locus. This includes:
+* 7 out of 7 (100%) truth set loci with short motifs (2 to 6bp)
+* 18 out of 19 (94.7%) truth set loci with medium-sized motifs (7 to 24bp)
+* 206 out of 221 (93.2%) truth set loci with large motifs (25 to 50bp)
 
+Although they are not highlighted in the plot, 10 out of the 247 alleles that exceed 150bp represent novel loci - meaning they have no matching repeats in the hg38 reference. ExpansionHunterDenovo is able to detect all 10 of them. 
+
+ExpansionHunterDenovo specificity is harder to estimate. We can check what fraction of ExpansionHunterDenovo calls have no matching truth set locus anywhere near them (+/-600bp), but there is a key limitation which prevents us from calling these false positives. While the truth set anlaysis only includes pure repeats, ExpansionHunterDenovo allows interruptions in the repeat sequence. When detecting whether a given read is fully repetative, ExpansionHunterDenovo uses a heuristic that allows up to 15% of the read's sequence to deviate from pure repeats. This means that some subset of the loci it outputs may be accurate detections but are not in the truth set because they contain interruptions. 
+
+Regardless, this plot helps shed light on how ExpansionHunterDenovo output is distributed across different motif sizes:
+
+<img width="763" alt="image" src="https://user-images.githubusercontent.com/6240170/214731482-1028d76f-f927-4c9b-bc3a-c33f5a405ac1.png">
 
 
 #### Interruptions
