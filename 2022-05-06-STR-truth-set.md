@@ -548,7 +548,7 @@ If we go back to the SynDip insertions and deletions that didn't pass our origin
 The allele size and motif size distributions of these interrupted repeats are as follows:
 
 <div>
-<img src="https://user-images.githubusercontent.com/6240170/214751614-12c7eec6-bb56-4598-b095-8d274b4b6139.png" width=400> <img src="https://user-images.githubusercontent.com/6240170/214747495-64f84c9c-59a2-4756-919c-1f72a238b78e.png" width=400> 
+<img src="https://user-images.githubusercontent.com/6240170/214751753-d4ff1609-1597-4eac-be84-4b933b72c46f.png" width=400> <img src="https://user-images.githubusercontent.com/6240170/214747495-64f84c9c-59a2-4756-919c-1f72a238b78e.png" width=400> 
 </div>
 
 
