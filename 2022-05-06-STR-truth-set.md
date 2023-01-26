@@ -599,7 +599,7 @@ Red lines represent (and are labeled with) the median value for the given tool.
 
 ![image](https://user-images.githubusercontent.com/6240170/214594037-2b7c9ab4-3745-4209-ba54-01412d1773d1.png)
 
-To get the 8 data points shown for each tool, the truth set was split into 8 non-overlapping sets of loci and each one was measured independently. Two versions of ExpansionHunter are compared - the last release from Illumina (v5), and an optimized version of it described below.  When running ExpansionHunter, I split the variant catalog into batches of 500 loci to be processed in parallel. For GangSTR and HipSTR, because they are faster, I processed batches of 10,000 loci at a time. All tests were performed using the [Hail Batch service](https://hail.is/docs/batch/service.html) on Google Cloud VMs. 
+To get the 8 data points shown for each tool, the truth set was split into 8 non-overlapping sets of loci and each one was measured independently. Two versions of ExpansionHunter are compared - the last release from Illumina (v5), and an optimized version of it described below.  When running ExpansionHunter, I split the variant catalog into batches of 500 loci to be processed in parallel. For GangSTR and HipSTR, I processed batches of 10,000 loci at a time. All tests were performed using the [Hail Batch service](https://hail.is/docs/batch/service.html) on Google Cloud VMs. 
 
 The main conclusions are that:
 **ExpansionHunter v5 is 2.8x slower than its optimized version** which is then **3.9x slower than GangSTR** which is **2.1x slower than HipSTR**. The optimized version of ExpansionHunter achieves faster run time at the expense of using more memory. 
