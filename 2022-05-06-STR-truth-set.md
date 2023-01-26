@@ -766,28 +766,6 @@ This catalog has fewer loci than the catalog of pure repeats because a number of
    <th>Paper</th>
    <th>Data Used For Benchmarking</th>
 </tr><tr>
-   <td>ExpansionHunter</td>
-   <td>
-      [<a href="https://genome.cshlp.org/content/early/2017/09/08/gr.225672.117">Dolzhenko 2017</a>],
-      [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6853681/">Dolzhenko 2019</a>]
-   </td>
-   <td>
-   </td>
-</tr><tr>
-   <td>GangSTR</td>
-   <td>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6735967/">Mousavi 2019</a>]</td>
-   <td>
-   </td>
-</tr><tr>
-   <td>HipSTR</td>
-   <td>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5482724/">Willems 2017</a>]</td>
-   <td></td>
-</tr><tr>
-   <td>ExpansionHunterDenovo</td>
-   <td>[<a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02017-z">Dolzhenko 2020</a>]</td>
-   <td>
-   </td>
-</tr><tr>
    <td rowspan="3">Long Read</td>
    <td>Straglr</td>
    <td>[<a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02447-3">Chiu 2021</a>]</td>
@@ -825,6 +803,28 @@ This catalog has fewer loci than the catalog of pure repeats because a number of
    </td>
 </tr><tr>
    <td rowspan="100">Short Read</td>
+   <td>ExpansionHunter</td>
+   <td>
+      [<a href="https://genome.cshlp.org/content/early/2017/09/08/gr.225672.117">Dolzhenko 2017</a>],
+      [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6853681/">Dolzhenko 2019</a>]
+   </td>
+   <td>
+   </td>
+</tr><tr>
+   <td>GangSTR</td>
+   <td>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6735967/">Mousavi 2019</a>]</td>
+   <td>
+   </td>
+</tr><tr>
+   <td>HipSTR</td>
+   <td>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5482724/">Willems 2017</a>]</td>
+   <td></td>
+</tr><tr>
+   <td>ExpansionHunterDenovo</td>
+   <td>[<a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02017-z">Dolzhenko 2020</a>]</td>
+   <td>
+   </td>
+</tr><tr>
    <td>STRling</td>
    <td>[<a href="https://www.biorxiv.org/content/10.1101/2021.11.18.469113v1">Dashnow 2021</a>]</td>
    <td>
