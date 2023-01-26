@@ -517,7 +517,7 @@ Since the outlier detection step depends entirely on the sensitivity and specifi
 
 <img width="794" alt="image" src="https://user-images.githubusercontent.com/6240170/214714305-33517ef0-8d16-48cc-8709-3e24ccd07e85.png">
 
-This plot shows that the ExpansionHunterDenovo "profile" step has high sensitivity for pure repeat loci where the overall allele size exceed 150bp. 
+This plot shows that the ExpansionHunterDenovo "profile" step has high sensitivity for pure repeat loci in the truth set where allele size exceeds 150bp. 
 
 For the 247 truth set loci where the allele size exceeds 150bp, ExpansionHunterDenovo detects 231 out of 247 (93.5%) of them (meaning than an ExpansionHunterDenovo call with the same motif occurs within +/-600bp of the truth set locus). This includes:
 * 7 out of 7 (100%) truth set loci with short motifs (2 to 6bp)
