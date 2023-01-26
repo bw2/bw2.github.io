@@ -621,7 +621,10 @@ It is publicly available @ https://github.com/bw2/ExpansionHunter
 ---
 ### Interactive TGG-viewer for truth set results
 
-TODO embed tgg-viewer with tracks for the truth set, tool results, etc. 
+TODO embed tgg-viewer with tracks for the truth set, tool results, etc. from:
+
+https://broadinstitute.github.io/str-truth-set/html/tgg_viewer.html
+
 
 ---
 ### Acknowledgements
