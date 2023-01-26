@@ -535,19 +535,19 @@ Regardless, this plot helps shed light on how ExpansionHunterDenovo output is di
 
 The analyses above are all based on pure repeats. Allowing interruptions introduces complexity since the boundary between interrupted repeats and non-repetative loci is ambiguous - how many interruptions do you allow before you no longer consider the locus a simple repeat? 
 
-This section takes a cautious step toward analyzing interrupted loci by generalizing the interruption patterns seen in some of the known pathogenic loci such as PHOX2B, FOXL2, and RFC1. Specifically, we allow one position in the motif to vary among consecutive repeats in a sequence as long as:
-1. it's the same position 
-2. the interruption doesn't convert any of the repeats in the sequence into homopolymers
-3. the motif size is between 3bp and 24bp (since allowing 1 of the 2 positions to vary in a dinucleotide motif would be too permissive)
+This section takes a cautious step toward analyzing interrupted loci by generalizing the interruption patterns seen in some of the known pathogenic loci such as PHOX2B, ATXN3, and a subset of the variation seen in RFC1. Specifically, we allow one position in the motif to vary among consecutive repeats in a sequence as long as:
+1. it's the same position in each repeat
+2. the interruption doesn't convert any of the repeats to homopolymers
+3. the motif size is between 3bp and 24bp (excluding dinucelotides because allowing 1 of the 2 positions to vary is too permissive)
 4. the overall sequence contains at least 3 repeats and spans at least 9bp (same as for pure repeats)
 
-For example: 
-* `CAGG.CATG.CAGG.CACG` would pass because it consists of a 4bp motif in which the 3rd base is allowed to vary. 
+Some examples: 
+* `CAGG.CATG.CAGG.CACG` would pass these rules because it consists of a 4bp motif in which the 3rd base is allowed to vary. 
 * `CAT.AAT.GAT` would also pass, since only the 1st base varies.
 * `CTT.CGG.CAT` would not pass, because both the 2nd and 3rd base vary across repeats.
 * `AAG.AAA.AAG.AAA.AAT` would not pass even though only the 3rd base is changing because the 2nd and 4th repeats have become `AAA` homopolymers.
 
-If we apply this logic to the SynDip insertions and deletions that didn't pass our original pure repeat filters, we find 9,970 additional loci (4,644 insertions and 4,973 deletions) that are repeats with interruptions. This is an increase of 7% over the 144,773 pure loci. 
+If we go back and apply this logic to SynDip insertions and deletions that didn't pass our original pure repeat filters, we find 9,970 additional loci (4,644 insertions and 4,973 deletions) that are repeats with interruptions. This is an increase of 7% over the 144,773 pure loci. 
 
 The allele size and motif size distributions of these interrupted repeats are as follows:
 
@@ -555,8 +555,8 @@ The allele size and motif size distributions of these interrupted repeats are as
 <img src="https://user-images.githubusercontent.com/6240170/214751753-d4ff1609-1597-4eac-be84-4b933b72c46f.png" width=400> <img src="https://user-images.githubusercontent.com/6240170/214747495-64f84c9c-59a2-4756-919c-1f72a238b78e.png" width=400> 
 </div>
 
-There are many possible questions one could ask about interrupted repeats and how they differ from pure repeats. The only one I can address for now is 
-why the allele size distribution appears to have more -2/+2 events than -1/+1. The reason has to do with interrupted repeats that are actually dinucleotide motifs pretending to be 4bp motifs (eg. "ACACACACATAC") because simple dinucleotide motifs are disallowed by the motif size filter (#3) defined above. These obfuscated dinucleotide motifs are not present in -1 and +1 bins. This is due to the relative improbablity of there being a locus that has a 4bp "ACAC" insertion next to a reference sequence that has at least 1 interruption in the 5 base pairs adjacent to the insertion point (otherwise this locus would have passed the original filters as a pure dinucleotide repeat) followed by a resumption of "ACAC" repeats in the reference sequence.
+There are many questions one can ask about interrupted repeats and how they differ from pure repeats. I will only mention one question -  why the allele size distribution appears to have more loci with -2/+2 events than -1/+1. The most frequent motifs in the -2/+2 bins are "ACAC", "ATAT", etc. which turn out to be dinucleotide repeats with interruptions that are getting around the dinucleotide filter (#3 above) by pretending to be 4bp motifs. These obfuscated dinucleotide motifs are not present in -1 and +1 bins. This has to do with the relative improbablity of a double dinucleotide insertion (eg. "C > CACAC" which would be counted in the +1 bin here as a 4bp motif expansion) failing the pure repeat filters but then passing the interrupted repeat filters, and the much higher odds of this happening with 4 dinucleotide repeats (eg. "C > CACACATAC" which would be counted in the +2 bin here as a 2 x CACA motif expansion).
+
 
 #### Tool runtime and memory use comparison
 
@@ -585,7 +585,14 @@ This optimized version of ExpansionHunter is the one used for all analyses above
 ---
 ### Interactive TGG-viewer for truth set results
 
-TODO embed tgg-viewer
+TODO embed tgg-viewer with tracks for the truth set, tool results, etc. 
+
+---
+### Acknowledgements
+
+Thank you to Grace Tiao and Heidi Rehm for supporting this work.  
+  
+Thanks to the Hail Team - Jackie Goldstein, Dan King, Daniel Goldstein, Cotton Seed, and others - for the next-level computational infrastructure they've developed. [Hail Batch](https://hail.is/docs/batch/service.html) made these analyses not only possible, but a lot easier to do than they would have been otherwise.  
 
 ---
 ### Extra Sections
