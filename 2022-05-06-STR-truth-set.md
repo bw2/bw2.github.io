@@ -48,7 +48,7 @@ TODO: insert interactive plot selector that changes the graph based on which par
 
 ![image](https://user-images.githubusercontent.com/6240170/214753910-6bee8fbc-199a-491c-9a75-bf6d97cccd0a.png)
 
-Here, the x-axis represents the true allele size - with expansions as positive and contractions as negative. Green represents alleles where the tool's output genotype exactly matched the true allele size. Orange is for alleles that the tool overestimated (with darker orange meaning a bigger overestimate), while blue is underestimated alleles (with darker blues representing larger errors). Gray represents loci where the tool didn't produce a genotype (ie. due to an error or insufficient coverage), red is loci that the tool called as homozygous reference and so entirely missed the variant, brown is when the tool incorrectly called an allele as being heterozygous reference, and teal is when the tool called a contraction but the true allele is an expansion or vice versa. 
+Here, the x-axis represents the true allele size - with expansions as positive and contractions as negative. Green represents alleles where the tool's output genotype exactly matched the true allele size. Orange is for alleles that the tool overestimated (with darker orange meaning a bigger overestimate), while blue is underestimated alleles (with darker blues representing larger errors). Gray represents loci where the tool didn't produce a genotype (ie. due to an error or insufficient coverage), red is loci that the tool called as homozygous reference and so entirely missed the variant, brown is when the tool incorrectly called an allele as being heterozygous reference, and teal is where it called a contraction when the true allele is an expansion or vice versa. 
 
 ---
 
