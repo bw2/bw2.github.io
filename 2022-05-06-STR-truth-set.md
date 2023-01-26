@@ -555,8 +555,8 @@ The allele size and motif size distributions of these interrupted repeats are as
 <img src="https://user-images.githubusercontent.com/6240170/214751753-d4ff1609-1597-4eac-be84-4b933b72c46f.png" width=400> <img src="https://user-images.githubusercontent.com/6240170/214747495-64f84c9c-59a2-4756-919c-1f72a238b78e.png" width=400> 
 </div>
 
-There are many possible questions about interrupted repeats and how they differ from pure repeats. The only one that I will address for now is 
-why the allele size distribution has more +2/-2 events than +1/-1. The reason is that the +2/-2 bins are dominated by repeats which are actually dinucleotide motifs sneaking in as 4bp motifs (eg. "ACAC") since simple dinucleotide motifs are disallowed by the motif size filter (#3) defined above.
+There are many possible questions one could ask about interrupted repeats and how they differ from pure repeats. The only one I can address for now is 
+why the allele size distribution appears to have more -2/+2 events than -1/+1. The reason has to do with interrupted repeats that are actually dinucleotide motifs pretending to be 4bp motifs (eg. "ACACACACATAC") because simple dinucleotide motifs are disallowed by the motif size filter (#3) defined above. These obfuscated dinucleotide motifs are not present in -1 and +1 bins. This is due to the relative improbablity of there being a locus that has a 4bp "ACAC" insertion next to a reference sequence that has at least 1 interruption in the 5 base pairs adjacent to the insertion point (otherwise this locus would have passed the original filters as a pure dinucleotide repeat) followed by a resumption of "ACAC" repeats in the reference sequence.
 
 #### Tool runtime and memory use comparison
 
