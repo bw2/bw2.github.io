@@ -839,9 +839,6 @@ This catalog has fewer loci than the catalog of pure repeats because a number of
       [<a href="https://genome.cshlp.org/content/28/11/1709.full">Bakhtiari 2018</a>], 
       [<a href="https://www.nature.com/articles/s41467-021-22206-z">Bakhtiari 2020</a>]</td>
    <td>
-      <ul>
-         <li>91 WGS samples with confirmed HTT, FXN, DMPK, or FMR1 expansions</li>
-      </ul>
    </td>
 </tr><tr>
    <td>TredParse</td>
