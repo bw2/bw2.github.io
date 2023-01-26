@@ -532,20 +532,24 @@ Regardless, this plot helps shed light on how ExpansionHunterDenovo output is di
 
 The analyses above are all based on pure repeats. Allowing interruptions introduces complexity since the boundary between interrupted repeats and non-repetative loci is ambiguous - how many interruptions do you allow before you no longer consider the locus a simple repeat? 
 
-This section takes a cautious step toward analyzing interrupted loci by generalizing the interruption patterns seen in known pathogenic loci such as PHOX2B, FOXL2, RFC1 and others. Specifically, for motifs between 3bp and 24bp, we allow one position in the motif to vary among consecutive repeats in a sequence as long as:
-1. it's the same position
+This section takes a cautious step toward analyzing interrupted loci by generalizing the interruption patterns seen in some of the known pathogenic loci such as PHOX2B, FOXL2, and RFC1. Specifically, we allow one position in the motif to vary among consecutive repeats in a sequence as long as:
+1. it's the same position 
 2. the interruption doesn't convert any of the repeats in the sequence into homopolymers
-3. the sequence contains at least 3 repeats and spans at least 9bp (same as for pure repeats)
-For example, a sequence like `CAGG.CATG.CAGG` can be considered a repeat of a 4bp motif in which the 3rd base is allowed to vary. 
+3. the motif size is between 3bp and 24bp
+4. the overall sequence contains at least 3 repeats and spans at least 9bp (same as for pure repeats)
 
-When we go back to the original set of insertions and deletions in the SynDip truth set and - for the ones that didn't make it into the STR truth set based on pure repeat filters - check whether a given insertion or deletion passes  a repeat of some motif (between ) where 1 base in the motif is allowed to vary across consecutive repeats at the locus. 
+For example: 
+* `CAGG.CATG.CAGG.CACG` would pass because it consists of a 4bp motif in which the 3rd base is allowed to vary. 
+* `CAT.AAT.GAT` would also pass, since only the 1st base varies.
+* `AAG.AAA.AAG.AAA.AAT` would not pass even though only the 3rd base is changing because the 2nd and 4th repeats have become homopolymers.
 
-Applying this logic adds 9,970 more loci to the truth set. This is an increase of 7% over the 144,773 original pure loci. 
-The allele size and motif size distributions are as follows:
+If we go back to the SynDip insertions and deletions that didn't pass our original pure repeat filters, and check whether they pass these new filters that allow for interruptions, we find 9,970 new loci (4,644 insertions and 4,973 deletions) that are actually repeats with interruptions. This is an increase of 7% over the 144,773 pure loci. 
 
-![image](https://user-images.githubusercontent.com/6240170/214747477-17385d78-3985-4ccd-8043-3f46a6fbf7d1.png)
+The allele size and motif size distributions of these interrupted repeats are as follows:
 
-![image](https://user-images.githubusercontent.com/6240170/214747495-64f84c9c-59a2-4756-919c-1f72a238b78e.png)
+<img src="https://user-images.githubusercontent.com/6240170/214747477-17385d78-3985-4ccd-8043-3f46a6fbf7d1.png" width=400> 
+
+<img src="https://user-images.githubusercontent.com/6240170/214747495-64f84c9c-59a2-4756-919c-1f72a238b78e.png" width=400> 
 
 
 
