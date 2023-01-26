@@ -625,8 +625,6 @@ TODO embed tgg-viewer with tracks for the truth set, tool results, etc.
 
 ---
 ### Acknowledgements
-
-Thank you to Grace Tiao and Heidi Rehm for supporting this work.  
   
 Thanks to the Hail Team - Jackie Goldstein, Dan King, Daniel Goldstein, Cotton Seed, and others - for the next-level computational infrastructure they've developed. [Hail Batch](https://hail.is/docs/batch/service.html) made these analyses not only possible, but a lot easier to do than they would have been otherwise.  
 
