@@ -36,7 +36,7 @@ The sections below describe these findings in detail.
 These plots compare tool performance for various subsets of loci from the truth set. Detailed descriptions of these plots and parameters can be found in the sections below. 
 
 
-* Tool:  * ExpansionHunter   * GangSTR    * HipSTR      * ExpansionHunterDenovo profile
+* Tool:  * ExpansionHunter   * GangSTR    * HipSTR     
 
 * Motif Size:   * 2-6bp   * 7-24bp  
 
