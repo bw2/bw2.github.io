@@ -542,7 +542,7 @@ For example:
 * `CAGG.CATG.CAGG.CACG` would pass because it consists of a 4bp motif in which the 3rd base is allowed to vary. 
 * `CAT.AAT.GAT` would also pass, since only the 1st base varies.
 * `CTT.CGG.CAT` would not pass, because both the 2nd and 3rd base vary across repeats.
-* `AAG.AAA.AAG.AAA.AAT` would not pass even though only the 3rd base is changing because the 2nd and 4th repeats have become homopolymers.
+* `AAG.AAA.AAG.AAA.AAT` would not pass even though only the 3rd base is changing because the 2nd and 4th repeats have become `AAA` homopolymers.
 
 If we apply this logic to the SynDip insertions and deletions that didn't pass our original pure repeat filters, we find 9,970 additional loci (4,644 insertions and 4,973 deletions) that are repeats with interruptions. This is an increase of 7% over the 144,773 pure loci. 
 
