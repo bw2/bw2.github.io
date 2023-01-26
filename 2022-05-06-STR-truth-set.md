@@ -538,7 +538,7 @@ The analyses above are all based on pure repeats. Allowing interruptions introdu
 This section takes a cautious step toward analyzing interrupted loci by generalizing the interruption patterns seen in some of the known pathogenic loci such as PHOX2B, FOXL2, and RFC1. Specifically, we allow one position in the motif to vary among consecutive repeats in a sequence as long as:
 1. it's the same position 
 2. the interruption doesn't convert any of the repeats in the sequence into homopolymers
-3. the motif size is between 3bp and 24bp
+3. the motif size is between 3bp and 24bp (since allowing 1 of the 2 positions to vary in a dinucleotide motif would be too permissive)
 4. the overall sequence contains at least 3 repeats and spans at least 9bp (same as for pure repeats)
 
 For example: 
@@ -556,7 +556,7 @@ The allele size and motif size distributions of these interrupted repeats are as
 </div>
 
 There are many possible questions about interrupted repeats and how they differ from pure repeats. The only one that I will address for now is 
-why the allele size distribution has more +2/-2 events than +1/-1. The reason is that the +2/-2 bins are dominated by repeats which are actually dinucleotide motifs sneaking in as 4bp motifs (eg. "ACAC") since dinucleotide motifs are excluded by the motif size filter (#3) defined above.
+why the allele size distribution has more +2/-2 events than +1/-1. The reason is that the +2/-2 bins are dominated by repeats which are actually dinucleotide motifs sneaking in as 4bp motifs (eg. "ACAC") since simple dinucleotide motifs are disallowed by the motif size filter (#3) defined above.
 
 #### Tool runtime and memory use comparison
 
