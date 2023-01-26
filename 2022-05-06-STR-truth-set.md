@@ -35,12 +35,15 @@ The sections below describe these findings in detail.
 
 These plots compare tool performance for various subsets of loci from the truth set. Detailed descriptions of these plots and parameters can be found in the sections below. 
 
+![image](https://user-images.githubusercontent.com/6240170/214753910-6bee8fbc-199a-491c-9a75-bf6d97cccd0a.png)
+
+TODO: insert interactive plot selector that changes the graph based on which parameters the user selected from:
 
 * Tool:  * ExpansionHunter   * GangSTR    * HipSTR     
 
 * Motif Size:   * 2-6bp   * 7-24bp  
 
-* Coverage:   * 40x genome (original)  * 30x genome (downsampled)   * 20x genome (downsampled)  * 10x genome (downsampled)   * 5x genome (downsampled)   * exome (85x)
+* Coverage:   * 40x genome (original)  * 30x genome (downsampled)   * 20x genome (downsampled)  * 10x genome (downsampled)   * 5x genome (downsampled)   * 85x exome 
 
 * Repeats with Interruptions:    * No: only pure repeats   * Yes: only interrupted repeats
 
