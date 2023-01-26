@@ -583,14 +583,9 @@ The read cache optimization increases the tool's memory requirements. The extra 
 This optimized version of ExpansionHunter is the one used for all analyses above. It is publicly available @ https://github.com/bw2/ExpansionHunter
 
 ---
-### Next Steps
+### Interactive TGG-viewer for truth set results
 
-The truth set and tool results provide an opportunity to identify features that distinguish
-- True positive genotypes vs. false-positive STR genotypes
-- STR loci where tools tend to produce accurate vs. inaccurate genotypes
-- STR loci that are mutated in CHM1-CHM13 vs those that are not
-
-A key next step is to train classifiers for these categories.
+TODO embed tgg-viewer
 
 ---
 ### Extra Sections
