@@ -634,10 +634,7 @@ Thanks to the Hail Team - Jackie Goldstein, Dan King, Daniel Goldstein, Cotton S
 ---
 **Extra Section 1:** Data availability and QC metrics
 
-CHM1-CHM13-2 WGS read data is publicly available under run id ERR1341796: [[SRA](https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&acc=ERR1341796&display=data-access)]  [[EBI](https://www.ebi.ac.uk/ena/browser/view/ERR1341796)]. 
-
-
-CHM1-CHM13-2 WGS read data is also publicly available from the Broad Institute here: [genome data](https://console.cloud.google.com/storage/browser/broad-public-datasets/CHM1_CHM13_WGS2)
+CHM1-CHM13-2 WGS read data is publicly available under run id ERR1341796: [[SRA](https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&acc=ERR1341796&display=data-access)]  [[EBI](https://www.ebi.ac.uk/ena/browser/view/ERR1341796)] and also from the Broad Institute here: [genome data](https://console.cloud.google.com/storage/browser/broad-public-datasets/CHM1_CHM13_WGS2)
 
 WGS read data summary:
 - Illumina HiSeq X Ten
@@ -661,15 +658,19 @@ Exome read data summary:
 
 **Extra Section 2:** Code and other data availability
 
-The source code for all aspects of the truth set analysis is available at [https://github.com/broadinstitute/str-truth-set](https://github.com/broadinstitute/str-truth-set). It includes the following scripts:
+The source code for all parts of the truth set analysis is available on github @ [https://github.com/broadinstitute/str-truth-set](https://github.com/broadinstitute/str-truth-set) and [https://github.com/broadinstitute/str-analysis](https://github.com/broadinstitute/str-analysis). It includes the following scripts:
 
+* [filter_vcf_to_STR_variants.py](https://github.com/broadinstitute/str-analysis/blob/main/str_analysis/filter_vcf_to_STR_variants.py) - the script used to identify which insertions & deletions in a VCF are actually STR expansions or contractions.
+* [step1__create_STR_truth_set.sh](https://github.com/broadinstitute/str-truth-set/blob/main/step1__create_STR_truth_set.sh) - automates all steps around creating the truth set by running `filter_vcf_to_STR_varaints.py` on the SynDip truth set vcf and then validating the results against the T2T genome.
+* [step2__upload_files_to_STR_truth_set_bucket.sh](https://github.com/broadinstitute/str-truth-set/blob/main/step2__upload_files_to_STR_truth_set_bucket.sh) - utility script for uploading files to the public bucket
+* [step3__run_tool_pipelines.sh](https://github.com/broadinstitute/str-truth-set/blob/main/step3__run_tool_pipelines.sh) - automates running ExpansionHunter, GangSTR, HipSTR and ExpansionHunterDenovo on the genome and exome data using Hail Batch
+* [step4__combine_tool_results.sh](https://github.com/broadinstitute/str-truth-set/blob/main/step4__combine_tool_results.sh) - combines tool outputs into tables that can be used for plotting 
+* [step5__generate_plots_and_figures.sh](https://github.com/broadinstitute/str-truth-set/blob/main/step5__generate_plots_and_figures.sh) - generates publication figures
 * [tool_comparison/scripts/convert_truth_set_to_variant_catalogs.py](https://github.com/broadinstitute/str-truth-set/blob/main/tool_comparison/scripts/convert_truth_set_to_variant_catalogs.py) - a script that converts the truth set into ExpansionHunter and GangSTR input catalogs and also generates the set of true negative loci with a matching distribution of motif sizes. 
-
-TODO describe other scripts here
 
 To run ExpansionHunter, GangSTR, and HipSTR on this sample, I generated variant catalogs with
 1) 144,251 positive loci. These are all the loci in the truth set (excluding the 521 that don't have matching repeats in the reference genome). They represent true positive variants.
-2) 144,252 negative loci. These are repeat loci in hg38 that are not in the truth set (and therefore have a homozygous reference genotype). They represent true negatives. They were selected by taking the much larger set of all pure repeats in hg38 and selecting a random subset that has the same distribution of motif sizes as the set of positive loci. 
+2) 144,252 negative loci. These are repeat loci in hg38 that are not in the truth set (and therefore have a homozygous reference genotype). They represent true negatives. They were selected by taking the much larger set of all pure repeats in hg38 and selecting a random subset that has the same distribution of motif sizes as the set of positive loci. These loci are not used in analyses described in this blog post.
 
 These variant catalogs and other files used in the analysis are publicly available in the [gs://str-truth-set](https://console.cloud.google.com/storage/browser/str-truth-set/hg38) Google Storage bucket. Many of the smaller files are also available on the [Releases page](https://github.com/broadinstitute/str-truth-set/releases) of the [str-truth-set github repo](https://github.com/broadinstitute/str-truth-set).
 
