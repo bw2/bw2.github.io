@@ -35,7 +35,7 @@ The sections below describe these findings in detail.
 
 These plots show ExpansionHunter, GangSTR, and HipSTR accuracy for expansions and contractions of different sizes. Detailed discussion of these plots and parameters can be found in the sections below.
 
-TODO: insert interactive plot selector that changes the graph based on which parameters the user selected:
+TODO: insert interactive plot selector that changes the graph based on user selection from these options:
 
 * Tool:  * ExpansionHunter   * GangSTR    * HipSTR     
 
