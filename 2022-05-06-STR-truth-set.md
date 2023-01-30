@@ -908,7 +908,7 @@ This yielded 5,362,620 variants of which 4,148,586 were in high-confidence regio
 
 This is the size distribution of all deletions and insertions within high-confidence regions:
 
-![image](https://user-images.githubusercontent.com/6240170/215507615-02495262-73e0-400e-be83-54f0b220ea39.png)
+![image](https://user-images.githubusercontent.com/6240170/215531247-1b4b489a-cb89-440f-8aad-6eb35b14ee99.png)
 
 There are a total of 279,126 deletions, and 287,482 insertions.   
 The largest deletion is -18,268 bp, while the largest insertion is 15,193 bp.
