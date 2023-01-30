@@ -906,4 +906,9 @@ This yielded 5,362,620 variants of which 4,148,586 were in high-confidence regio
 
 [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)] used this data to evaluate SNV and INDEL calling tools, but it can also serve as a high-quality truth set for STRs, as well as tandem repeats (TRs) and structural variants (SVs).
 
+This is the size distribution of all deletions and insertions within high-confidence regions:
 
+![image](https://user-images.githubusercontent.com/6240170/215507615-02495262-73e0-400e-be83-54f0b220ea39.png)
+
+There are a total of 300,854 deletions, and 287,821 insertions.   
+The largest deletion is -18,268 bp, while the largest insertion is 15,193 bp.
