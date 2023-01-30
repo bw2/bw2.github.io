@@ -62,7 +62,7 @@ There are 4.09 million high-confidence variants in the [SynDip VCF](https://gith
    <tr>
       <th> </th>
       <th>Filtering Step</th>
-      <th nowrap># of Variants<br />That Passed</th>
+      <th nowrap># of Alleles<br />That Passed</th>
       <th nowrap align="right">%</th>
    </tr>
    <tr>
@@ -82,8 +82,8 @@ There are 4.09 million high-confidence variants in the [SynDip VCF](https://gith
    <tr>
       <td><i>3</i></td>
       <td>Identify the subset that are STR expansions or contractions (requiring that they have ≥ 3 repeats, span ≥ 9bp, are pure (i.e. no interruptions), and have motif size ≥ 2bp)</td>
-      <td nowrap align="right">146,618</td>
-      <td nowrap align="right">3.6 %</td>
+      <td nowrap align="right">181,064</td>
+      <td nowrap align="right">4.3 %</td>
    </tr>
 
 </table>
