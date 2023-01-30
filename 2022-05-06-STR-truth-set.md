@@ -613,8 +613,8 @@ Additionally, for all tools, run time decreases linearly as the sample's depth o
 
 ![image](https://user-images.githubusercontent.com/6240170/215609814-ef15b8f5-b9af-4bd3-9608-0bef96b3c195.png)
 
-
-##### Optimized ExpansionHunter
+---
+### Optimized ExpansionHunter
 
 To reduce the costs of genome-wide analyses and eliminate some pain points, I developed an optimized version of ExpansionHunter which has the following features:
 * runs 2x to 3x faster than the original while producing exactly the same output for all loci (confirmed on all truth set loci as well as other datasets). This is achieved by reducing disk access operations through the use of read caching. 
