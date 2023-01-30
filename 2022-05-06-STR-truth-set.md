@@ -910,5 +910,5 @@ This is the size distribution of all deletions and insertions within high-confid
 
 ![image](https://user-images.githubusercontent.com/6240170/215507615-02495262-73e0-400e-be83-54f0b220ea39.png)
 
-There are a total of 300,854 deletions, and 287,821 insertions.   
+There are a total of 279,126 deletions, and 287,482 insertions.   
 The largest deletion is -18,268 bp, while the largest insertion is 15,193 bp.
