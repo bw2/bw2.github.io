@@ -82,7 +82,7 @@ There are 4.09 million high-confidence variants in the [SynDip VCF](https://gith
    <tr>
       <td><i>3</i></td>
       <td>Identify the subset that are STR expansions or contractions (requiring that they have ≥ 3 repeats, span ≥ 9bp, are pure (i.e. no interruptions), and have motif size ≥ 2bp)</td>
-      <td nowrap align="right">181,064</td>
+      <td nowrap align="right">177,455</td>
       <td nowrap align="right">4.3 %</td>
    </tr>
 
