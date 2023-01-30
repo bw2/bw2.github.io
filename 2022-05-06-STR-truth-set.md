@@ -56,7 +56,7 @@ Here, the x-axis represents the true allele size - with expansions represented a
 
 To generate an STR truth set, I started with the Synthetic Diploid Benchmark (SynDip) [[Li 2018](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/)] which is a unique dataset that uses haploid PacBio assemblies to identify all variants in the CHM1-CHM13 synthetic diploid sample. Because these variants are based on alignments of haploid assemblies (rather than individual reads) to the reference genome, the SynDip genotypes are more reliable than those produced by short-read or even ordinary long-read pipelines. 
 
-Of the 4.1 million high-confidence variants in the [SynDip VCF](https://github.com/lh3/CHM-eval), 259k (6.3%) are insertions and 249k (6.1%) are deletions. To create the STR truth set, I filtered these insertions and deletions to the subset that represents STR expansions or contractions by using the following steps:
+There are 4.09 million high-confidence variants in the [SynDip VCF](https://github.com/lh3/CHM-eval). Some of these are multi-allelic (meaning both alleles differ from the reference genome). There are 4.15 million alleles. Of these, 287k (6.9%) are insertions and 279k (6.7%) are deletions. To create the STR truth set, I filtered these insertion and deletion alleles to the subset that represents STR expansions or contractions by using the following steps:
 
 <table>
    <tr>
@@ -67,16 +67,16 @@ Of the 4.1 million high-confidence variants in the [SynDip VCF](https://github.c
    </tr>
    <tr>
       <td><i>1</i></td>
-      <td>Start with high-confidence variants provided by the SynDip Benchmark</td>
-      <td nowrap align="right">4,081,549</td>
+      <td>Start with high-confidence alleles provided by the SynDip Benchmark</td>
+      <td nowrap align="right">4,152,492</td>
       <td nowrap align="right">all</td>
    </tr>
    
    <tr>
       <td><i>2</i></td>
       <td>Keep only insertions and deletions</td>
-      <td nowrap align="right">507,603</td>
-      <td nowrap align="right">12.4 %</td>
+      <td nowrap align="right">566,608</td>
+      <td nowrap align="right">13.6 %</td>
    </tr>
 
    <tr>
