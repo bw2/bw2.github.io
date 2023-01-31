@@ -180,8 +180,7 @@ To summarize, only 3,037 STR alleles (1.7%) differ by more than 30bp from the re
 
 Splitting this distribution by motif size bins (2-6bp, 7-24bp and 25-50bp) shows that most of the large expansions involve large motifs:
 
-![image](https://user-images.githubusercontent.com/6240170/215887256-187d6b76-139b-4941-8e1c-3319667432e3.png)
-
+![image](https://user-images.githubusercontent.com/6240170/215888369-966aa1c8-982e-4536-8c1a-b0344d640a4a.png)
 
 
 We can also look at the prevalence of STR variants with different motifs and compare it to the distribution of pure STR repeats in hg38 (found using [TandemRepeatFinder](https://github.com/Benson-Genomics-Lab/TRF)):
