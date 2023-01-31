@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>2022-05-06-STR-truth-set</title>
+  <title>Genome-wide STR Truth Set for Tool Benchmarking and Development</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -18,15 +18,39 @@
 
     gtag('config', 'G-G7WEXHL9KW');
   </script>
+  <style>
+    .header-section {
+      font-weight: 500;
+      color: #555555;
+      display: inline-block;
+    }
+    .fade-in-section-is-visible {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.6s ease-out, transform 0.8s ease-out;
+      will-change: opacity, visibility;
+    }
+    .fade-in-section {
+      opacity: 1;
+      transform: none;
+      visibility: visible;
+    }
+  </style>
 </head>
 <body>
 
 <div class="ui fixed menu" style="padding: 10px 0px">
   <div class="ui grid" style="width:100%; font-size:16px; color: rgba(0,0,0,.87); font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif">
     <div class="ui three wide column"></div>
-    <div class="ui ten wide column">
+    <div class="ui three wide column">
       <div style="font-weight:800; padding-right:10px; display:inline-block"><a href="/">Project Notes</a></div>
-      <div style="font-weight:500; color:#555555; display:inline-block"> - Ben Weisburd</div>
+      <div class="header-section"> - Ben Weisburd</div>
+    </div>
+    <div class="ui six wide column">
+      <div id="header-title-section" class="header-section fade-in-section" style="color: black; display: none;">Genome-wide STR Truth Set for Tool Benchmarking and Development</div>
+    </div>
+    <div class="ui one wide column">
+      <div class="header-section" style="float: right;">1/31/2023</div>
     </div>
     <!--div class="ui one wide column" style="text-align: right">[<a href="/">Home</a>]</div-->
     <div class="ui three wide column"></div>
@@ -797,5 +821,15 @@ The largest deletion is -18,268 bp, while the largest insertion is 15,193 bp.</p
 
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+  $( window ).scroll(() => {
+    console.log(window.scrollY)
+    if (window.scrollY > 75) {
+      $("#header-title-section").fadeIn("slow");
+    } else {
+      $("#header-title-section").fadeOut("slow");
+    }
+  })
+</script>
 </body>
 </html>
