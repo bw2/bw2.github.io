@@ -24,6 +24,12 @@
       color: #555555;
       display: inline-block;
     }
+
+    /* used by anchor-js */
+    :target {
+      scroll-margin-top: 70px;
+    }
+
   </style>
 </head>
 <body>
@@ -177,9 +183,23 @@ Partly because of this, I don't include exomiser scores in the above analysis.
   <div class="ui three wide column"></div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
+  const headingAnchors = new AnchorJS({
+    visible: 'always',
+    placement: 'left'
+  });
+  headingAnchors.add('h3, h4');
+
+  const paragraphAnchors = new AnchorJS({
+    visible: 'hover',
+    placement: 'left',
+    icon: '¶'
+  });
+  paragraphAnchors.add('p');
+
   $( window ).scroll(() => {
     if (window.scrollY > 75) {
       $("#header-title-section").fadeIn("slow");
