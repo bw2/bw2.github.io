@@ -44,15 +44,14 @@
       <div class="header-section"> - Ben Weisburd</div>
     </div>
     <div class="ui six wide column">
-      <div id="header-title-section" class="header-section" style="color: black; display: none; width:100%">Benchmarking LIRICAL for Phenotype-based Prioritization In Rare Disease Cases
-        <div style="display: inline-block; float: right;">[<a href="#body-top">Jump to top</a>]</div>
-      </div>
+      <div class="header-section, header-section-fade-in" style="color: black; display: none; width:100%">Benchmarking LIRICAL for Phenotype-based Prioritization In Rare Disease Cases</div>
     </div>
     <div class="ui one wide column">
       <div class="header-section" style="float: right;">5/4/2022</div>
     </div>
-    <!--div class="ui one wide column" style="text-align: right">[<a href="/">Home</a>]</div-->
-    <div class="ui three wide column"></div>
+    <div class="ui three wide column">
+      <div class="header-section, header-section-fade-in">[<a href="#body-top">Jump to top</a>]</div>
+    </div>
   </div>
 </div>
 
@@ -182,9 +181,9 @@ Would we get higher sensitivity/specificity if we used different thresholds? The
 
   $( window ).scroll(() => {
     if (window.scrollY > 75) {
-      $("#header-title-section").fadeIn("slow");
+      $(".header-section-fade-in").fadeIn("slow");
     } else {
-      $("#header-title-section").fadeOut("slow");
+      $(".header-section-fade-in").fadeOut("slow");
     }
   })
 </script>

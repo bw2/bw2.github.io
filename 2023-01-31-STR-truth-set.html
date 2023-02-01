@@ -51,15 +51,14 @@
       <div class="header-section"> - Ben Weisburd</div>
     </div>
     <div class="ui six wide column">
-      <div id="header-title-section" class="header-section" style="color: black; display: none; width:100%">Genome-wide STR Truth Set
-         <div style="display: inline-block; float: right;">[<a href="#body-top">Jump to top</a>]</div>
-      </div>
+      <div class="header-section, header-section-fade-in" style="color: black; display: none; width: 100%">Genome-wide STR Truth Set</div>
     </div>
     <div class="ui one wide column">
       <div class="header-section" style="float: right;">1/31/2023</div>
     </div>
-    <!--div class="ui one wide column" style="text-align: right">[<a href="/">Home</a>]</div-->
-    <div class="ui three wide column"></div>
+    <div class="ui three wide column">
+       <div class="header-section, header-section-fade-in">[<a href="#body-top">Jump to top</a>]</div>
+    </div>
   </div>
 </div>
 
@@ -900,9 +899,9 @@ The largest deletion is -18,268 bp, while the largest insertion is 15,193 bp.</p
 
    $( window ).scroll(() => {
     if (window.scrollY > 75) {
-      $("#header-title-section").fadeIn("slow");
+      $(".header-section-fade-in").fadeIn("slow");
     } else {
-      $("#header-title-section").fadeOut("slow");
+      $(".header-section-fade-in").fadeOut("slow");
     }
   })
 </script>
