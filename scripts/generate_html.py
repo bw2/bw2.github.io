@@ -4,9 +4,11 @@ import markdown
 import os
 import re
 
-
 with open("scripts/blog_post_template.html", "rt") as f:
-    blog_post_template = jinja2.Template(f.read())
+    blog_post_template1 = jinja2.Template(f.read())
+
+with open("scripts/blog_post_template2.html", "rt") as f:
+    blog_post_template2 = jinja2.Template(f.read())
 
 for markdown_file_path in glob.glob("*.md"):
     if markdown_file_path == "README.md":
@@ -21,7 +23,6 @@ for markdown_file_path in glob.glob("*.md"):
     date = int(date_posted[2])
 
     output_html_path = f"{output_prefix}.html"
-    #title = os.path.basename(output_prefix)
 
     with open(markdown_file_path, "rt") as f:
         markdown_file_contents = f.read()
@@ -34,6 +35,8 @@ for markdown_file_path in glob.glob("*.md"):
         raise ValueError(f"Title not found in {markdown_file_path}. No line starts with '## '")
 
     markdown_html = markdown.markdown(markdown_file_contents)
+
+    blog_post_template = blog_post_template2 if year > 2022 else blog_post_template1
 
     output_html = blog_post_template.render(
         markdown_html=markdown_html,
