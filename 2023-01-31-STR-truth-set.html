@@ -24,6 +24,19 @@
       color: #555555;
       display: inline-block;
     }
+
+    /* used by anchor-js */
+    :target {
+       scroll-margin-top: 70px;
+    }
+
+    /* tool comparison plot viewer */
+    .ui.form {
+       font-size: 16px;
+    }
+    .ui.form label {
+       font-size: 16px;
+    }
   </style>
 </head>
 <body>
@@ -74,16 +87,16 @@
 </ul>
 <p>The sections below describe these findings in detail. </p>
 <p><em>NOTE</em>: STRs are traditionally defined as repeating motifs that are between 1 to 6bp long. For this truth set I exclude 1bp (homopolymer) repeats since they are uniquely error-prone, but include motifs longer than 6bp so that users can decide whether to include these in their analyses.</p>
-<h4>Tool Comparison Plots</h4>
-<p>These plots show ExpansionHunter, GangSTR, and HipSTR accuracy for expansions and contractions of different sizes. Detailed discussion of these plots and parameters can be found in the sections below.</p>
-<ul>
+<h4>Interactive Tool Comparison Plot Viewer:</h4>
+<p>These plots show ExpansionHunter, GangSTR, and HipSTR accuracy for expansions and contractions of different sizes: </p>
+<ul style="border-top: 1px solid #eaeaea; padding-top: 20px; margin-top: 10px; border-bottom: 1px solid #eaeaea; padding-bottom: 20px; margin-bottom: 10px; ">
 <li>
    <div class="ui form">
       <div class="inline fields">
          <label>Tool:</label>
-         <div class="field"><div class="ui radio checkbox"><input type="radio" name="tool" checked="checked"><label>ExpansionHunter</label></div></div>
-         <div class="field"><div class="ui radio checkbox"><input type="radio" name="tool"><label>GangSTR</label></div></div>
-         <div class="field"><div class="ui radio checkbox"><input type="radio" name="tool"><label>HipSTR</label></div></div>
+         <div class="field"><div class="ui radio checkbox"><input type="radio" value="ExpansionHunter" name="tool" checked="checked"><label>ExpansionHunter</label></div></div>
+         <div class="field"><div class="ui radio checkbox"><input type="radio" value="GangSTR" name="tool"><label>GangSTR</label></div></div>
+         <div class="field"><div class="ui radio checkbox"><input type="radio" value="HipSTR" name="tool"><label>HipSTR</label></div></div>
       </div>
    </div>
 </li>
@@ -91,9 +104,9 @@
    <div class="ui form">
       <div class="inline fields">
          <label>Motif Size:</label>
-         <div class="field"><div class="ui radio checkbox"><input type="radio" name="motif-size" checked="checked"><label>2-6bp</label></div></div>
-         <div class="field"><div class="ui radio checkbox"><input type="radio" name="motif-size"><label>7-24bp</label></div></div>
-         <div class="field"><div class="ui radio checkbox"><input type="radio" name="motif-size"><label>25-50bp</label></div></div>
+         <div class="field"><div class="ui radio checkbox"><input type="radio" value="2to6bp_motifs" name="motif-size" checked="checked"><label>2-6bp</label></div></div>
+         <div class="field"><div class="ui radio checkbox"><input type="radio" value="7to24bp_motifs" name="motif-size"><label>7-24bp</label></div></div>
+         <div class="field"><div class="ui radio checkbox"><input type="radio" value="25to50bp_motifs" name="motif-size"><label>25-50bp</label></div></div>
       </div>
    </div>
 </li>
@@ -101,12 +114,12 @@
    <div class="ui form">
       <div class="inline fields">
          <label>Coverage:</label>
-         <div class="field"><div class="ui radio checkbox"><input type="radio" name="coverage" checked="checked"><label>40x genome</label></div></div>
-         <div class="field"><div class="ui radio checkbox"><input type="radio" name="coverage"><label>30x genome</label></div></div>
-         <div class="field"><div class="ui radio checkbox"><input type="radio" name="coverage"><label>20x genome</label></div></div>
-         <div class="field"><div class="ui radio checkbox"><input type="radio" name="coverage"><label>10x genome</label></div></div>
-         <div class="field"><div class="ui radio checkbox"><input type="radio" name="coverage"><label>5x genome</label></div></div>
-         <div class="field" style="padding-left: 50px"><div class="ui radio checkbox"><input type="radio" name="coverage"><label>exome (85x)</label></div></div>
+         <div class="field"><div class="ui radio checkbox"><input type="radio" value="40x" name="coverage" checked="checked"><label>40x genome</label></div></div>
+         <div class="field"><div class="ui radio checkbox"><input type="radio" value="30x" name="coverage"><label>30x genome</label></div></div>
+         <div class="field"><div class="ui radio checkbox"><input type="radio" value="20x" name="coverage"><label>20x genome</label></div></div>
+         <div class="field"><div class="ui radio checkbox"><input type="radio" value="10x" name="coverage"><label>10x genome</label></div></div>
+         <div class="field"><div class="ui radio checkbox"><input type="radio" value="05x" name="coverage"><label>5x genome</label></div></div>
+         <div class="field" style="padding-left: 50px"><div class="ui radio checkbox"><input type="radio" value="exome" name="coverage"><label>exome (85x)</label></div></div>
       </div>
    </div>
 </li>
@@ -114,14 +127,16 @@
    <div class="ui form">
       <div class="inline fields">
          <label>Allow Interruptions:</label>
-         <div class="field"><div class="ui radio checkbox"><input type="radio" name="interruptions" checked="checked"><label>No: only pure repeats</label></div></div>
-         <div class="field"><div class="ui radio checkbox"><input type="radio" name="interruptions"><label>Yes: only interrupted repeats</label></div></div>
+         <div class="field"><div class="ui radio checkbox"><input type="radio" value="pure_repeats" name="interruptions" checked="checked"><label>No: only pure repeats</label></div></div>
+         <div class="field"><div class="ui radio checkbox"><input type="radio" value="with_interruptions" name="interruptions"><label>Yes: only interrupted repeats</label></div></div>
       </div>
    </div>
 </li>
 </ul>
-<p><img alt="image" src="https://user-images.githubusercontent.com/6240170/214753910-6bee8fbc-199a-491c-9a75-bf6d97cccd0a.png" /></p>
-<p>Here, the x-axis represents the true allele size - with expansions represented as positive values and contractions as negative. Green represents alleles where the tool's output genotype exactly matched the true allele size. Orange is for alleles that the tool overestimated (with darker orange meaning a larger overestimate), while blue is underestimated alleles (with darker blues representing larger errors). Gray represents loci where the tool didn't produce a genotype (i.e. due to an error or insufficient coverage), red is loci that the tool called as homozygous reference and so entirely missed the variant, brown is when the tool incorrectly called an allele as being heterozygous reference, and teal is where it called a contraction when the true allele is an expansion or vice versa. </p>
+<p><img style="padding-top:30px" alt="image" id="tool-comparison-plot-viewer" src="https://broadinstitute.github.io/str-truth-set/tool_comparison/figures/tool_accuracy_by_true_allele_size.2to6bp_motifs.pure_repeats.40x.ExpansionHunter.svg" /></p>
+<p>Here, the x-axis represents the true allele size - with expansions represented as positive values and contractions as negative. Green represents alleles where the tool's output genotype exactly matched the true allele size. Orange is for alleles that the tool overestimated (with darker orange meaning a larger overestimate), while blue is underestimated alleles (with darker blues representing larger errors). Gray represents loci where the tool didn't produce a genotype (i.e. due to an error or insufficient coverage), red is loci that the tool called as homozygous reference and so entirely missed the variant, brown is when the tool incorrectly called an allele as being heterozygous reference, and teal is where it called a contraction when the true allele is an expansion or vice versa.
+   Further discussion of these plots can be found in the sections below.
+</p>
 <hr />
 <h3>Defining the STR truth set</h3>
 <p>To generate an STR truth set, I started with the Synthetic Diploid Benchmark (SynDip) [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/">Li 2018</a>] which is a unique dataset that uses haploid PacBio assemblies to identify all variants in the CHM1-CHM13 synthetic diploid sample. Because these variants are based on alignments of haploid assemblies (rather than individual reads) to the reference genome, the SynDip genotypes are more reliable than those produced by short-read or even ordinary long-read pipelines. </p>
@@ -832,14 +847,38 @@ The largest deletion is -18,268 bp, while the largest insertion is 15,193 bp.</p
   </div>
   <div class="ui three wide column"></div>
 </div>
-<h3>Interactive TGG-viewer for truth set results</h3>
 
-<iframe src="https://broadinstitute.github.io/str-truth-set/html/tgg_viewer.html" width="100%" height="900px" style="padding:0px; margin:0px 0px 10px 0px;"></iframe>
+<br>
+<br>
 
+<h3>Interactive IGV viewer for all truth set results:</h3>
+
+[<a href="https://broadinstitute.github.io/str-truth-set/html/tgg_viewer.html" target="_blank">Open in new window</a>]<br />
+<br />
+<iframe src="https://broadinstitute.github.io/str-truth-set/html/tgg_viewer.html" width="100%" height="3000px" frameBorder="0" style="padding:0px; margin:0px 0px 10px 0px;"></iframe>
+<script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
+   anchors.options.placement = 'left';
+   anchors.options.visible = 'always';
+   anchors.add('h3, h4');
    $('.ui.checkbox').checkbox();
+
+   let update_tool_comparison_plot_viewer_image_url = () => {
+      const tool = $('input[name="tool"]:checked').val()
+      const motif_size = $('input[name="motif-size"]:checked').val()
+      const coverage = $('input[name="coverage"]:checked').val()
+      const interruptions = $('input[name="interruptions"]:checked').val()
+
+
+      let img_url = "https://broadinstitute.github.io/str-truth-set/tool_comparison/figures/"
+      img_url += `tool_accuracy_by_true_allele_size.${motif_size}.${interruptions}.${coverage}.${tool}.svg`
+
+      $('#tool-comparison-plot-viewer').attr("src", img_url)
+   }
+
+   $('input[type="radio"]').on("change", update_tool_comparison_plot_viewer_image_url);
 
    $( window ).scroll(() => {
     if (window.scrollY > 75) {
