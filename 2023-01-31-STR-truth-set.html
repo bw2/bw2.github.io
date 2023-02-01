@@ -76,19 +76,48 @@
 <p><em>NOTE</em>: STRs are traditionally defined as repeating motifs that are between 1 to 6bp long. For this truth set I exclude 1bp (homopolymer) repeats since they are uniquely error-prone, but include motifs longer than 6bp so that users can decide whether to include these in their analyses.</p>
 <h4>Tool Comparison Plots</h4>
 <p>These plots show ExpansionHunter, GangSTR, and HipSTR accuracy for expansions and contractions of different sizes. Detailed discussion of these plots and parameters can be found in the sections below.</p>
-<p>TODO: insert interactive plot selector that changes the graph based on user selection from these options:</p>
 <ul>
 <li>
-<p>Tool:  * ExpansionHunter   * GangSTR    * HipSTR     </p>
+   <div class="ui form">
+      <div class="inline fields">
+         <label>Tool:</label>
+         <div class="field"><div class="ui radio checkbox"><input type="radio" name="tool" checked="checked"><label>ExpansionHunter</label></div></div>
+         <div class="field"><div class="ui radio checkbox"><input type="radio" name="tool"><label>GangSTR</label></div></div>
+         <div class="field"><div class="ui radio checkbox"><input type="radio" name="tool"><label>HipSTR</label></div></div>
+      </div>
+   </div>
 </li>
 <li>
-<p>Motif Size:   * 2-6bp   * 7-24bp  </p>
+   <div class="ui form">
+      <div class="inline fields">
+         <label>Motif Size:</label>
+         <div class="field"><div class="ui radio checkbox"><input type="radio" name="motif-size" checked="checked"><label>2-6bp</label></div></div>
+         <div class="field"><div class="ui radio checkbox"><input type="radio" name="motif-size"><label>7-24bp</label></div></div>
+         <div class="field"><div class="ui radio checkbox"><input type="radio" name="motif-size"><label>25-50bp</label></div></div>
+      </div>
+   </div>
 </li>
 <li>
-<p>Coverage:   * 40x genome (original)  * 30x genome (downsampled)   * 20x genome (downsampled)  * 10x genome (downsampled)   * 5x genome (downsampled)   * 85x exome </p>
+   <div class="ui form">
+      <div class="inline fields">
+         <label>Coverage:</label>
+         <div class="field"><div class="ui radio checkbox"><input type="radio" name="coverage" checked="checked"><label>40x genome</label></div></div>
+         <div class="field"><div class="ui radio checkbox"><input type="radio" name="coverage"><label>30x genome</label></div></div>
+         <div class="field"><div class="ui radio checkbox"><input type="radio" name="coverage"><label>20x genome</label></div></div>
+         <div class="field"><div class="ui radio checkbox"><input type="radio" name="coverage"><label>10x genome</label></div></div>
+         <div class="field"><div class="ui radio checkbox"><input type="radio" name="coverage"><label>5x genome</label></div></div>
+         <div class="field" style="padding-left: 50px"><div class="ui radio checkbox"><input type="radio" name="coverage"><label>exome (85x)</label></div></div>
+      </div>
+   </div>
 </li>
 <li>
-<p>Repeats with Interruptions:    * No: only pure repeats   * Yes: only interrupted repeats</p>
+   <div class="ui form">
+      <div class="inline fields">
+         <label>Allow Interruptions:</label>
+         <div class="field"><div class="ui radio checkbox"><input type="radio" name="interruptions" checked="checked"><label>No: only pure repeats</label></div></div>
+         <div class="field"><div class="ui radio checkbox"><input type="radio" name="interruptions"><label>Yes: only interrupted repeats</label></div></div>
+      </div>
+   </div>
 </li>
 </ul>
 <p><img alt="image" src="https://user-images.githubusercontent.com/6240170/214753910-6bee8fbc-199a-491c-9a75-bf6d97cccd0a.png" /></p>
@@ -810,7 +839,9 @@ The largest deletion is -18,268 bp, while the largest insertion is 15,193 bp.</p
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
-  $( window ).scroll(() => {
+   $('.ui.checkbox').checkbox();
+
+   $( window ).scroll(() => {
     if (window.scrollY > 75) {
       $("#header-title-section").fadeIn("slow");
     } else {
