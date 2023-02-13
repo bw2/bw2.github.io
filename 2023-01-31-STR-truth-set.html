@@ -506,6 +506,31 @@ The plot shows that ExpansionHunter errs in both directions - overestimating som
 <p>Since exome sequencing data is available for the CHM1-CHM13 sample, we can check what fraction of the truth set can be called in an exome. To exclude off-target capture regions that accidentally got some read coverage, we prefilter loci to exclude intergenic, intronic or promoter regions (based on Gencode v42), and also exclude loci where neither ExpansionHunter nor GangSTR produced a genotype. Out of the 139,244 truth set loci with 2 to 6bp motifs, only 1,766 (1.3%) pass these filters. Even for this small subset, more than half of the genotype calls are inaccurate:  </p>
 <p><img src="https://broadinstitute.github.io/str-truth-set/tool_comparison/figures/tool_accuracy_by_true_allele_size.2to6bp_motifs.pure_repeats.exome.ExpansionHunter.svg" width="100%">
 <img src="https://broadinstitute.github.io/str-truth-set/tool_comparison/figures/tool_accuracy_by_true_allele_size.2to6bp_motifs.pure_repeats.exome.GangSTR.svg" width="100%"></p>
+
+<h4>Tool Concordance</h4>
+So far, we've compared each tool's output to the truth set individually. We can also check how correlated the tools are and whether they make mistakes on the same or on different loci. 
+This heat map compares ExpansionHunter and GangSTR genotypes for 2-6bp motif STR loci where one or both tools differ from the true allele size:
+<img width="1300" alt="image" src="https://user-images.githubusercontent.com/6240170/218565720-4ecb3c21-cd0d-4763-84e7-a88b3f24a1ee.png">
+
+It shows the following distribution:
+ 
+ <table>
+   <tr>
+     <td>Plot Region</td>
+     <td>Description</td>
+     <td># of Alleles</td>
+     <td>% of Alleles</td>
+   </tr>
+   <tr>
+     <td>(0,0) point</td>
+     <td>represents alleles that both ExpansionHunter and GangSTR got exactly right</td>
+     <td></td>
+     <td></td>
+   </tr>
+   <br />
+  TODO: complete this table.<br/>
+   <br />
+    
 <h4>ExpansionHunterDenovo</h4>
 <p>ExpansionHunterDenovo [<a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02017-z">Dolzhenko 2020</a>] is a widely used tool that differs from  ExpansionHunter, GangSTR and most other STR callers in several significant ways. First, it looks for STR expansions genome-wide, without requiring users to pre-specify which loci to call. Second, it does not detect small expansions - it can only detect loci where the combined length of the repeat sequence in the reference genome + the STR variant exceeds ~150bp (or whatever the read length is in the input sample). Finally, for the loci it does detect, it only outputs a rough estimate of the repeat size and approximate genomic coordinates (+/- several hundred base pairs). These estimates are produced by ExpansionHunterDenovo's initial "profile" step, and are not meant to be used directly. Instead they are used as input to the second step - outlier tests that look for unusually large expansions in each sample relative to other samples in the cohort. </p>
 <p>Since the outlier detection step depends entirely on the sensitivity and specificity of the "profile" step, I use the truth set to check how well the  "profile" step picks up large expansions in CHM1-CHM13-2:</p>
