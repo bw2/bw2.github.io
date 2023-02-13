@@ -510,7 +510,8 @@ The plot shows that ExpansionHunter errs in both directions - overestimating som
 <h4>Tool Concordance</h4>
 So far, we've compared each tool's output to the truth set individually. We can also check how correlated the tools are and whether they make mistakes on the same or on different loci. 
 This heat map compares ExpansionHunter and GangSTR genotypes for 2-6bp motif STR loci where one or both tools differ from the true allele size:
-<img width="1300" alt="image" src="https://user-images.githubusercontent.com/6240170/218565720-4ecb3c21-cd0d-4763-84e7-a88b3f24a1ee.png"> <br />
+<img width="1300" alt="image" src="https://user-images.githubusercontent.com/6240170/218594775-4615928f-aa8d-4c6b-9e97-fe2fa7f0f1e5.png"><br />
+
 <br />
 The distribution shown in the plot contains the following subsets:
  
@@ -528,32 +529,32 @@ The distribution shown in the plot contains the following subsets:
      <td>87.3%</td>
    </tr>
    <tr>
-     <td>2x2 middle square</td>
+     <td>2x2 square around (0,0) </td>
      <td>Both ExpansionHunter and GangSTR were within +/-2 repeats of the true allele size</td>
      <td></td>
      <td></td>
    </tr>
    <tr>
      <td>top right quadrant</td>
-     <td>ExpansionHunter and GangSTR both overestimated the allele size by 2 or more repeats</td>
+     <td>ExpansionHunter and GangSTR overestimated the allele size by ≥ 2 repeats</td>
      <td></td>
      <td></td>
    </tr>
    <tr>
      <td>bottom left quadrant</td>
-     <td>ExpansionHunter and GangSTR both underestimated the allele size by 2 or more repeats</td>
+     <td>ExpansionHunter and GangSTR underestimated the allele size by ≥ 2 repeats</td>
      <td></td>
      <td></td>
    </tr>
    <tr>
      <td>top left quadrant</td>
-     <td>ExpansionHunter underestimated, while GangSTR overestimated the allele size by 2 or more repeats</td>
+     <td>ExpansionHunter underestimated, while GangSTR overestimated the allele size by ≥ 2 repeats</td>
      <td></td>
      <td></td>
    </tr>
    <tr>
      <td>bottom right quadrant</td>
-     <td>ExpansionHunter overestimated, while GangSTR underestimated the allele size by 2 or more repeats</td>
+     <td>ExpansionHunter overestimated, while GangSTR underestimated the allele size by ≥ 2 repeats</td>
      <td></td>
      <td></td>
    </tr>
