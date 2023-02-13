@@ -510,7 +510,7 @@ The plot shows that ExpansionHunter errs in both directions - overestimating som
 <h4>Tool Concordance</h4>
 So far, we've compared each tool's output to the truth set individually. We can also check how correlated the tools are and whether they make mistakes on the same or on different loci. 
 This heat map compares ExpansionHunter and GangSTR genotypes for 2-6bp motif STR loci where one or both tools differ from the true allele size:
-<img width="1300" alt="image" src="https://user-images.githubusercontent.com/6240170/218594775-4615928f-aa8d-4c6b-9e97-fe2fa7f0f1e5.png"><br />
+<img width="1300" alt="image" src="https://user-images.githubusercontent.com/6240170/218597326-2ee6656a-6652-4fca-80ff-c7ebe2b59872.png"><br />
 
 <br />
 The distribution shown in the plot contains the following subsets:
@@ -531,36 +531,46 @@ The distribution shown in the plot contains the following subsets:
    <tr>
      <td>2x2 square around (0,0) </td>
      <td>Both ExpansionHunter and GangSTR were within +/-2 repeats of the true allele size</td>
-     <td></td>
-     <td></td>
+     <td>264,194</td>
+     <td>95.0%</td>
    </tr>
    <tr>
-     <td>top right quadrant</td>
+     <td>top right (TR) quadrant</td>
      <td>ExpansionHunter and GangSTR overestimated the allele size by ≥ 2 repeats</td>
-     <td></td>
-     <td></td>
+     <td>1,487</td>
+     <td>0.5%</td>
    </tr>
    <tr>
-     <td>bottom left quadrant</td>
+     <td>bottom left (BL) quadrant</td>
      <td>ExpansionHunter and GangSTR underestimated the allele size by ≥ 2 repeats</td>
      <td></td>
      <td></td>
    </tr>
    <tr>
-     <td>top left quadrant</td>
+     <td>top left (TL) quadrant</td>
      <td>ExpansionHunter underestimated, while GangSTR overestimated the allele size by ≥ 2 repeats</td>
-     <td></td>
-     <td></td>
+     <td>37</td>
+     <td>0.0%</td>
    </tr>
    <tr>
-     <td>bottom right quadrant</td>
+     <td>bottom right (BR) quadrant</td>
      <td>ExpansionHunter overestimated, while GangSTR underestimated the allele size by ≥ 2 repeats</td>
-     <td></td>
-     <td></td>
+     <td>785</td>
+     <td>0.3%</td>
    </tr>
+   <tr>
+     <td>top (T) and bottom (B) sections</td>
+     <td>ExpansionHunter was within 2 repeats of the true allele size, while GangSTR was off by ≥ 2 repeats</td>
+     <td>5,628</td>
+     <td>2.0%</td>
+   </tr>
+   <tr>
+     <td>right (R) and left (L) sections</td>
+     <td>ExpansionHunter was off by ≥ 2 repeats, while GangSTR was within 2 repeats of the true allele size</td>
+     <td>4,521</td>
+     <td>1.6%</td>
+   </tr>   
 </table>
-<br />
-TODO: complete this table.<br/>
 <br />
     
 <h4>ExpansionHunterDenovo</h4>
