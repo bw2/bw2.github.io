@@ -97,6 +97,7 @@ Table of Contents: <br />
           <li><a href="#tool-comparisons">ExpansionHunter, GangSTR, HipSTR accuracy</a></li>
           <li><a href="#tool-concordance">ExpansionHunter, GangSTR concordance</a></li>
           <li><a href="#tool-runtime-and-memory-use-comparison">ExpansionHunter, GangSTR, HipSTR runtime and memory usage</a></li>
+          <li><a href="#optimized-expansionhunter">Optimized ExpansionHunter</a></li>
           <li><a href="#expansionhunterdenovo">ExpansionHunterDenovo accuracy</a></li>
         </ul>
       </li>
@@ -602,6 +603,26 @@ The plot shows n=278,246 total alleles and consists of the following subsets:
 </table>
 <br />
     
+<h4>Tool runtime and memory use comparison</h4>
+<p>For genome-wide STR analyses that involve many loci and many samples, tool runtime and memory use become important factors - particularly in cloud  environments where they directly increase costs. For ExpansionHunter, GangSTR, HipSTR, and most other existing STR callers, the tools' runtime is proportional not just to the number of samples, but also the number of loci being genotyped. Due to this, I compare tool run times per 10,000 loci. 
+Red lines represent (and are labeled with) the median value for the given tool.</p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/6240170/214594037-2b7c9ab4-3745-4209-ba54-01412d1773d1.png" /></p>
+<p>To get the 8 data points shown for each tool, the truth set was split into 8 non-overlapping sets of loci and each one was measured independently. Two versions of ExpansionHunter are compared - the last release from Illumina (v5), and an optimized version of it described below.  When running ExpansionHunter, I split the variant catalog into batches of 500 loci to be processed in parallel. For GangSTR and HipSTR, I processed batches of 10,000 loci at a time. All tests were performed using the <a href="https://hail.is/docs/batch/service.html">Hail Batch service</a> on Google Cloud VMs. </p>
+<p>The main conclusions are that, at 40x coverage, 
+<strong>ExpansionHunter v5 is 2.8x slower than its optimized version</strong> which is then <strong>3.9x slower than GangSTR</strong> which is <strong>2.1x slower than HipSTR</strong>. Also, the optimized version of ExpansionHunter achieves faster run time at the expense of using more memory. </p>
+<p>Additionally, for all tools, run time decreases linearly as the sample's depth of coverage is reduced from 40x to 10x:</p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/6240170/215609814-ef15b8f5-b9af-4bd3-9608-0bef96b3c195.png" /></p>
+
+<h4>Optimized ExpansionHunter</h4>
+<p>To reduce the costs of genome-wide analyses and eliminate some pain points, I developed an optimized version of ExpansionHunter which has the following features:
+* runs 2x to 3x faster than the original while producing exactly the same output for all loci (confirmed on all truth set loci as well as other datasets). This is achieved by reducing disk access operations through the use of read caching. 
+* optionally outputs a table with per-locus timing information to make it easier to exclude loci that take the longest to genotype. 
+* prints a warning and moves on to the next locus instead of exiting with an error when it encounters a locus that triggers ExpansionHunter's error about Ns in adjacent regions. An example of the error message is: "Error on locus spec 20-36315046-36315048-TG: Error loading locus 20-36315046-36315048-TG: Flanks can contain at most 5 characters N but found 348 Ns". Out of all loci in the truth set, 24 trigger this error and so make it impossible to run the original ExpansionHunter on the full truth set variant catalog without first finding and excluding the 24 loci. This feature eliminates the need to identify these loci since it allows ExpansionHunter to run to completion regardless. </p>
+<p>The read cache optimization increases the tool's memory requirements. The extra memory needed is proportional to the number of loci being genotyped (data not shown). For typical batch sizes, this remains well below the 3 to 5 gigabytes of RAM available per CPU on current machines. Still, if the increased memory requirements become problematic, they can always be mitigated by genotyping fewer loci per batch. </p>
+<p>This optimized version of ExpansionHunter is the one used for all analyses above.   </p>
+<p>It is publicly available @ https://github.com/bw2/ExpansionHunter</p>
+<hr />
+    
 <h4>ExpansionHunterDenovo</h4>
 <p>ExpansionHunterDenovo [<a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02017-z">Dolzhenko 2020</a>] is a widely used tool that differs from  ExpansionHunter, GangSTR and most other STR callers in several significant ways. First, it looks for STR expansions genome-wide, without requiring users to pre-specify which loci to call. Second, it does not detect small expansions - it can only detect loci where the combined length of the repeat sequence in the reference genome + the STR variant exceeds ~150bp (or whatever the read length is in the input sample). Finally, for the loci it does detect, it only outputs a rough estimate of the repeat size and approximate genomic coordinates (+/- several hundred base pairs). These estimates are produced by ExpansionHunterDenovo's initial "profile" step, and are not meant to be used directly. Instead they are used as input to the second step - outlier tests that look for unusually large expansions in each sample relative to other samples in the cohort. </p>
 <p>Since the outlier detection step depends entirely on the sensitivity and specificity of the "profile" step, I use the truth set to check how well the  "profile" step picks up large expansions in CHM1-CHM13-2:</p>
@@ -664,24 +685,10 @@ The plot shows n=278,246 total alleles and consists of the following subsets:
 </div>
 
 <p>There are many questions one can ask about interrupted repeats and how they differ from pure repeats. I will only mention one question -  why the allele size distribution appears to have more loci with -2/+2 events than -1/+1. The most frequent motifs in the -2/+2 bins are "ACAC", "ATAT", etc. These turn out to be di-nucleotide repeats that are getting around the di-nucleotide filter (#3 above) by pretending to be 4bp motifs. These obfuscated di-nucleotide motifs are not present in -1 and +1 bins while being overrepresented in the -2/+2 bins. The reason has to do with the relative improbability of a double di-nucleotide insertion (e.g. "C &gt; CACAC" which would be counted in the +1 bin here as a 4bp motif expansion) failing the pure repeat filters but then passing the interrupted repeat filters, and the much higher odds of this happening with 4 di-nucleotide repeats (e.g. "C &gt; CACACATAC" which would be counted in the +2 bin here as a 2 x CACA motif expansion). </p>
-<h4>Tool runtime and memory use comparison</h4>
-<p>For genome-wide STR analyses that involve many loci and many samples, tool runtime and memory use become important factors - particularly in cloud  environments where they directly increase costs. For ExpansionHunter, GangSTR, HipSTR, and most other existing STR callers, the tools' runtime is proportional not just to the number of samples, but also the number of loci being genotyped. Due to this, I compare tool run times per 10,000 loci. 
-Red lines represent (and are labeled with) the median value for the given tool.</p>
-<p><img alt="image" src="https://user-images.githubusercontent.com/6240170/214594037-2b7c9ab4-3745-4209-ba54-01412d1773d1.png" /></p>
-<p>To get the 8 data points shown for each tool, the truth set was split into 8 non-overlapping sets of loci and each one was measured independently. Two versions of ExpansionHunter are compared - the last release from Illumina (v5), and an optimized version of it described below.  When running ExpansionHunter, I split the variant catalog into batches of 500 loci to be processed in parallel. For GangSTR and HipSTR, I processed batches of 10,000 loci at a time. All tests were performed using the <a href="https://hail.is/docs/batch/service.html">Hail Batch service</a> on Google Cloud VMs. </p>
-<p>The main conclusions are that, at 40x coverage, 
-<strong>ExpansionHunter v5 is 2.8x slower than its optimized version</strong> which is then <strong>3.9x slower than GangSTR</strong> which is <strong>2.1x slower than HipSTR</strong>. Also, the optimized version of ExpansionHunter achieves faster run time at the expense of using more memory. </p>
-<p>Additionally, for all tools, run time decreases linearly as the sample's depth of coverage is reduced from 40x to 10x:</p>
-<p><img alt="image" src="https://user-images.githubusercontent.com/6240170/215609814-ef15b8f5-b9af-4bd3-9608-0bef96b3c195.png" /></p>
-<h4>Optimized ExpansionHunter</h4>
-<p>To reduce the costs of genome-wide analyses and eliminate some pain points, I developed an optimized version of ExpansionHunter which has the following features:
-* runs 2x to 3x faster than the original while producing exactly the same output for all loci (confirmed on all truth set loci as well as other datasets). This is achieved by reducing disk access operations through the use of read caching. 
-* optionally outputs a table with per-locus timing information to make it easier to exclude loci that take the longest to genotype. 
-* prints a warning and moves on to the next locus instead of exiting with an error when it encounters a locus that triggers ExpansionHunter's error about Ns in adjacent regions. An example of the error message is: "Error on locus spec 20-36315046-36315048-TG: Error loading locus 20-36315046-36315048-TG: Flanks can contain at most 5 characters N but found 348 Ns". Out of all loci in the truth set, 24 trigger this error and so make it impossible to run the original ExpansionHunter on the full truth set variant catalog without first finding and excluding the 24 loci. This feature eliminates the need to identify these loci since it allows ExpansionHunter to run to completion regardless. </p>
-<p>The read cache optimization increases the tool's memory requirements. The extra memory needed is proportional to the number of loci being genotyped (data not shown). For typical batch sizes, this remains well below the 3 to 5 gigabytes of RAM available per CPU on current machines. Still, if the increased memory requirements become problematic, they can always be mitigated by genotyping fewer loci per batch. </p>
-<p>This optimized version of ExpansionHunter is the one used for all analyses above.   </p>
-<p>It is publicly available @ https://github.com/bw2/ExpansionHunter</p>
+
+    
 <hr />
+
 <h3>Acknowledgements</h3>
 <p>Thanks to the Hail Team - Jackie Goldstein, Dan King, Daniel Goldstein, Cotton Seed, and others - for the next-level computational infrastructure they've developed. <a href="https://hail.is/docs/batch/service.html">Hail Batch</a> made these analyses not only possible, but a lot easier to do than they would have been otherwise.  </p>
 <hr />
