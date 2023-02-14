@@ -85,7 +85,7 @@
   <li><a href="#interactive-tool-comparison-plot-viewer">Interactive tool comparison plot viewer</a></li>
   <li><a href="#interactive-igv-viewer-for-truth-set-data">Interactive IGV viewer for truth set loci</a></li>
   <li><a href="#defining-the-str-truth-set">Defining the STR truth set & validating it against the T2T reference genome</a></li>
-  <li>STR truth set
+  <li><span style="margin-bottom:7px">STR truth set</span>
     <ul>
       <li><a href="#basic-summary-statistics">Basic summary statistics</a></li>
       <li><a href="#genomic-regions">Genomic regions</a></li>
@@ -93,7 +93,7 @@
     </ul>
   </li>
   <li><a href="#limitations-of-existing-str-catalogs">Limitations of existing STR catalogs</a></li>
-  <li>Tool comparisons
+  <li><span style="margin-bottom:7px">Tool comparisons</span>
     <ul>
       <li><a href="#tool-comparisons">Accuracy of ExpansionHunter, GangSTR, HipSTR</a></li>
       <li><a href="#tool-concordance">Concordance between ExpansionHunter & GangSTR</a></li>
@@ -670,11 +670,12 @@ Red lines represent (and are labeled with) the median value for the given tool.<
 <p><em>NOTE:</em> The 600bp window size was chosen to significantly exceed the median fragment length of the sample. </p>
 <h4>Interruptions</h4>
 <p>The analyses above are all based on pure repeats. Allowing interruptions introduces complexity since the boundary between interrupted repeats and non-repetitive loci is ambiguous - how many interruptions do you allow before you no longer consider the locus a simple repeat? </p>
-<p>This section takes a cautious step toward analyzing interrupted loci by generalizing the interruption patterns seen in some of the known pathogenic loci such as PHOX2B, ATXN3, and a subset of the variation seen in RFC1. Specifically, we allow one position in the motif to vary among consecutive repeats in a sequence as long as:
-1. it's the same position in each repeat
-2. the interruption doesn't convert any of the repeats to homopolymers
-3. the motif size is between 3bp and 24bp (excluding di-nucleotides because allowing 1 of the 2 positions to vary is too permissive)
-4. the overall sequence contains at least 3 repeats and spans at least 9bp (same as for pure repeats)</p>
+<p>This section takes a cautious step toward analyzing interrupted loci by generalizing the interruption patterns seen in some of the known pathogenic loci such as PHOX2B, ATXN3, and a subset of the variation seen in RFC1. Specifically, we allow one position in the motif to vary among consecutive repeats in a sequence as long as: <br />
+1. it's the same position in each repeat <br/>
+2. the interruption doesn't convert any of the repeats to homopolymers <br/>
+3. the motif size is between 3bp and 24bp (excluding di-nucleotides because allowing 1 of the 2 positions to vary is too permissive) <br />
+4. the overall sequence contains at least 3 repeats and spans at least 9bp (same as for pure repeats)</p> <br />
+<br />
 <p>Some examples: 
 <ul>
   <li> <code>CAGG.CATG.CAGG.CACG</code> would pass these rules because it consists of a 4bp motif in which the 3rd base is allowed to vary. </li>
