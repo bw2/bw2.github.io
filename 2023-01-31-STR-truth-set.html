@@ -68,9 +68,9 @@
 
     <h2>Genome-wide STR Truth Set</h2>
 <p>Short tandem repeat (STR) expansions are associated with over 50 monogenic diseases [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8205997/">Depienne 2021</a>] as well as common diseases such as autism [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9348607/">Trost 2020</a>] [<a href="https://www.nature.com/articles/s41586-020-03078-7">Mitra 2021</a>]. Over the past 5 years, improvements in STR genotyping tools such as <a href="https://github.com/Illumina/ExpansionHunter">ExpansionHunter</a> and <a href="https://github.com/gymreklab/GangSTR">GangSTR</a> have generated new interest in studying STRs using short read sequencing data. </p>
-<p>However, one persistent challenge with designing and scaling up STR analyses is the scarcity of publicly available high-quality truth data (i.e. samples with known STR expansions) that can be used for:
-1. comparing tools
-2. evaluating tool accuracy beyond the ~50 known disease-associated loci
+<p>However, one persistent challenge with designing and scaling up STR analyses is the scarcity of publicly available high-quality truth data (i.e. samples with known STR expansions) that can be used for:<br />
+1. comparing tools<br />
+2. evaluating tool accuracy beyond the ~50 known disease-associated loci<br />
 3. further tool development, including genotype quality filters</p>
 <p>In this blog post, I share a new genome-wide STR truth set that partially addresses this challenge. It is based on the Synthetic Diploid Benchmark (SynDip) [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/">Li 2018</a>] and contains accurate genotypes for ~150,000 STR variants in a single human sample (CHM1-CHM13). The PCR-free genome sequencing data for this sample is publicly available from the <a href="https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&amp;acc=ERR1341796&amp;display=data-access">Short Read Archive (SRA)</a> and also from the Broad Institute - including both <a href="https://console.cloud.google.com/storage/browser/broad-public-datasets/CHM1_CHM13_WGS2">genome data</a> and <a href="https://console.cloud.google.com/storage/browser/broad-public-datasets/CHM1_CHM13_WES">exome data</a>.</p>
 <p>I apply this truth set to evaluate widely-used STR calling tools - ExpansionHunter, GangSTR, HipSTR and ExpansionHunter Denovo, and also use it to explore relevant questions about STRs in general such as:<br />
