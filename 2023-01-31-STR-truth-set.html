@@ -78,6 +78,34 @@
 - how well do widely-used catalogs of STR loci capture these variants?
 - how many STR loci can we expect to be novel (i.e. absent from the hg38 reference genome) in randomly selected individuals of European ancestry?</p>
 <hr />
+<br/>
+Table of Contents: <br />
+    <ol>
+      <li><a href="#summary-of-findings">Summary of findings</a></li>
+      <li><a href="#interactive-tool-comparison-plot-viewer">Interactive tool comparison plot viewer</a></li>
+      <li><a href="#defining-the-str-truth-set">Defining the STR truth set & validating it against the T2T reference genome</a></li>
+      <li>Summary of truth set loci
+        <ul>
+          <li><a href="#results">Basic summary statistics</a></li>
+          <li><a href="#genomic-regions">Genomic regions</a></li>
+          <li><a href="#novel-str-locis">Novel STR loci not found in the hg38 reference</a></li>
+        </li>
+      </li>
+      <li><a href="#limitations-of-existing-str-catalogs">Limitations of existing STR catalogs</a></li>
+      <li>Tool comparisons
+        <ul>
+          <li><a href="#tool-comparisons">ExpansionHunter, GangSTR, HipSTR accuracy</a></li>
+          <li><a href="#tool-concordance">ExpansionHunter, GangSTR concordance</a></li>
+          <li><a href="#tool-runtime-and-memory-use-comparison">ExpansionHunter, GangSTR, HipSTR runtime and memory usage</a></li>
+          <li><a href="#expansionhunterdenovo">ExpansionHunterDenovo accuracy</a></li>
+        </ul>
+      </li>
+      <li><a href="#interruptions">STR loci with interruptions</a></li>
+      <li><a href="#extra-section-1-data-availability-and-qc-metrics">Extra section 1: data download links & QC metrics</a></li>
+      <li><a href="#extra-section-2-code-and-other-data-availability">Extra section 2: code summary and download links</a></li>
+      <li><a href="#extra-section-3-genome-wide-str-catalogs-via-tandemrepeatfinder">Extra section 3: genome-wide STR catalog download links</a></li>
+    </ol>
+<hr />
 <h4>Summary of Findings</h4>
 <p>Some of the more interesting or surprising results from the truth set analysis are listed below. These are based on a survey of all STR variants in a single human genome of european ancestry - the CHM1-CHM13 synthetic diploid sample from [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/">Li 2018</a>]. They can be considered as findings from an n=1 case study. </p>
 <ul>
@@ -229,7 +257,7 @@
 <p>Overall, of the 86,028 STRs that could be validated <sup>‡</sup> against T2T, 84,183 (97.9%) passed this validation, underscoring the accuracy and relevance of this truth set. </p>
 <p>‡ <em>NOTE</em>: STR contractions that failed hg38 ⇒ T2T liftover due to an  “IndelStraddlesMultipleIntevals” error were included in the truth set without these validation steps as I consider this to be a technical issue with liftover rather than a problem with genotype accuracy. This applies to 60,590 (77%) of STR contractions.</p>
 <hr />
-<h3>Results:</h3>
+<h3>Basic Summary Statistics:</h3>
 <p>The resulting STR truth set contains:</p>
 <ul>
 <li><strong>144,773 STR variants</strong>  </li>
