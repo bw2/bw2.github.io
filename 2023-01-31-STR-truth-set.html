@@ -675,7 +675,7 @@ Red lines represent (and are labeled with) the median value for the given tool.<
 1. it's the same position in each repeat <br/>
 2. the interruption doesn't convert any of the repeats to homopolymers <br/>
 3. the motif size is between 3bp and 24bp (excluding di-nucleotides because allowing 1 of the 2 positions to vary is too permissive) <br />
-4. the overall sequence contains at least 3 repeats and spans at least 9bp (same as for pure repeats)</p> <br />
+4. the overall sequence contains at least 3 repeats and spans at least 9bp (same as for pure repeats) <br />
 <br />
 Some examples: 
 <ul>
@@ -683,7 +683,7 @@ Some examples:
   <li> <code>CAT.AAT.GAT</code> would also pass, since only the 1st base varies.</li>
   <li> <code>CTT.CGG.CAT</code> would not pass, because both the 2nd and 3rd base vary across repeats.</li>
   <li> <code>AAG.AAA.AAG.AAA.AAT</code> would not pass even though only the 3rd base is changing because the 2nd and 4th repeats have become <code>AAA</code> homopolymers.</p></li>
-</ul>
+</ul></p>
 <p>If we go back and apply this logic to SynDip insertions and deletions that didn't pass our original pure repeat filters, we find 9,970 additional loci (4,644 insertions and 4,973 deletions) that are repeats with interruptions. This is an increase of 7% over the 144,773 pure loci. </p>
 <p>The allele size and motif size distributions of these interrupted repeats are as follows:</p>
 <div>
