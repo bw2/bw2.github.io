@@ -179,27 +179,27 @@
       <th> </th>
       <th>Filtering Step</th>
       <th nowrap># of Alleles<br />That Passed</th>
-      <th nowrap align="right">%</th>
+      <th nowrap style="text-align: right">%</th>
    </tr>
    <tr>
       <td><i>1</i></td>
       <td>Start with high-confidence alleles provided by the SynDip Benchmark</td>
-      <td nowrap align="right">4,152,492</td>
-      <td nowrap align="right">all</td>
+      <td nowrap style="text-align: right">4,152,492</td>
+      <td nowrap style="text-align: right">all</td>
    </tr>
 
    <tr>
       <td><i>2</i></td>
       <td>Keep only insertions and deletions</td>
-      <td nowrap align="right">566,608</td>
-      <td nowrap align="right">13.6 %</td>
+      <td nowrap style="text-align: right">566,608</td>
+      <td nowrap style="text-align: right">13.6 %</td>
    </tr>
 
    <tr>
       <td><i>3</i></td>
       <td>Identify the subset that are STR expansions or contractions (requiring that they have ≥ 3 repeats, span ≥ 9bp, are pure (i.e. no interruptions), and have motif size ≥ 2bp)</td>
-      <td nowrap align="right">177,455</td>
-      <td nowrap align="right">4.3 %</td>
+      <td nowrap style="text-align: right">177,455</td>
+      <td nowrap style="text-align: right">4.3 %</td>
    </tr>
 
 </table>
@@ -225,34 +225,34 @@
       <th> </th>
       <th>Validation Step</th>
       <th nowrap># of Variants<br />That Failed</th>
-      <th nowrap align="right">% Failed</th>
+      <th nowrap style="text-align: right">% Failed</th>
    </tr>
    <tr>
       <td><i>1</i></td>
       <td>Lift over STR variant to the T2T reference</td>
-      <td nowrap align="right">1,507</td>
-      <td nowrap align="right">1.0 %</td>
+      <td nowrap style="text-align: right">1,507</td>
+      <td nowrap style="text-align: right">1.0 %</td>
    </tr>
 
    <tr>
       <td><i>2</i></td>
       <td>Check that one allele exactly matches the T2T reference sequence</td>
-      <td nowrap align="right">295</td>
-      <td nowrap align="right">0.2 %</td>
+      <td nowrap style="text-align: right">295</td>
+      <td nowrap style="text-align: right">0.2 %</td>
    </tr>
 
    <tr>
       <td><i>3</i></td>
       <td>Lift back over to hg38</td>
-      <td nowrap align="right">43</td>
-      <td nowrap align="right">0.03 %</td>
+      <td nowrap style="text-align: right">43</td>
+      <td nowrap style="text-align: right">0.03 %</td>
    </tr>
 
    <tr>
       <td><i>4</i></td>
       <td>Check if the variant position changed due to hg38 ⇒ T2T ⇒ hg38 liftover</td>
-      <td nowrap align="right">0</td>
-      <td nowrap align="right">0 %</td>
+      <td nowrap style="text-align: right">0</td>
+      <td nowrap style="text-align: right">0 %</td>
    </tr>
 
 </table>
@@ -410,56 +410,56 @@ As for the 5 loci that don't fit this pattern, 3 have very large motifs - larger
       <td>1</td>
       <td><a href="https://github.com/Illumina/RepeatCatalogs/blob/master/docs/str_generation.md">Illumina catalog</a></td>
       <td>Identifying STRs that are polymorphic in 2,504 individuals from the 1000 genomes project.</td>
-      <td nowrap align="right">174,300</td>
-      <td nowrap align="right">53,137 out of 144,773</td>
-      <td nowrap align="right">36.7%</td>      
+      <td nowrap style="text-align: right">174,300</td>
+      <td nowrap style="text-align: right">53,137 out of 144,773</td>
+      <td nowrap style="text-align: right">36.7%</td>
    </tr>
    <tr>
       <td rowspan=2>2</td>
       <td><a href="https://github.com/gymreklab/GangSTR#gangstr-reference-files">GangSTR v13 loci</a></td>
       <td rowspan=2>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) on the reference genome 
          using a mismatch penalty = 5 and an indel penalty = 17. Loci had to <b>span at least 12bp</b> in the hg38 reference genome. Multiple additional filters and post-processing steps were applied as described in [<a href="https://academic.oup.com/nar/article/47/15/e90/5518310?login=true">Mousavi 2019</a>].</td>
-      <td nowrap align="right">832,380</td>
-      <td nowrap align="right">79,397 out of 144,773</td>
-      <td nowrap align="right">54.8%</td>      
+      <td nowrap style="text-align: right">832,380</td>
+      <td nowrap style="text-align: right">79,397 out of 144,773</td>
+      <td nowrap style="text-align: right">54.8%</td>
    </tr>
    <tr>
       <td><a href="https://github.com/gymreklab/GangSTR#gangstr-reference-files">GangSTR v17 loci</a></td>
-      <td nowrap align="right">1,340,266</td>
-      <td nowrap align="right">59,462 out of 144,773</td>
-      <td nowrap align="right">41.1%</td>
+      <td nowrap style="text-align: right">1,340,266</td>
+      <td nowrap style="text-align: right">59,462 out of 144,773</td>
+      <td nowrap style="text-align: right">41.1%</td>
    </tr>
    <tr>
       <td>3</td>
       <td nowrap><a href="https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#extra-sections">Pure Repeats Catalog</a></td>
       <td>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) with very large mismatch and indel penalties to find all pure repeats that <b>span at least 6bp</b> in the hg38 reference genome</td>
-      <td nowrap align="right">4,722,859</td>
-      <td nowrap align="right">5,434 out of 144,773</td>
-      <td nowrap align="right">3.8%</td>      
+      <td nowrap style="text-align: right">4,722,859</td>
+      <td nowrap style="text-align: right">5,434 out of 144,773</td>
+      <td nowrap style="text-align: right">3.8%</td>
    </tr>
    <tr>
       <td>4</td>
       <td nowrap><a href="https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#extra-sections">Pure Repeats Catalog<br/>Subset ≥ 9bp</a></td>
       <td>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) with very large mismatch and indel penalties to find all pure repeats that <b>span at least 9bp</b> in the hg38 reference genome</td>
-      <td nowrap align="right">2,805,842</td>
-      <td nowrap align="right">6,787 out of 144,773</td>
-      <td nowrap align="right">4.7%</td>      
+      <td nowrap style="text-align: right">2,805,842</td>
+      <td nowrap style="text-align: right">6,787 out of 144,773</td>
+      <td nowrap style="text-align: right">4.7%</td>
    </tr>
    <tr>
       <td>5</td>
       <td nowrap><a href="https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#extra-sections">Pure Repeats Catalog<br/>Subset ≥ 12bp</a></td>
       <td>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) with very large mismatch and indel penalties to find all pure repeats that <b>span at least 12bp</b> in the hg38 reference genome</td>
-      <td nowrap align="right">1,343,313</td>
-      <td nowrap align="right">11,474 out of 144,773</td>
-      <td nowrap align="right">7.9%</td>      
+      <td nowrap style="text-align: right">1,343,313</td>
+      <td nowrap style="text-align: right">11,474 out of 144,773</td>
+      <td nowrap style="text-align: right">7.9%</td>
    </tr>
    <tr>
       <td>6</td>
       <td nowrap><a href="https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#extra-sections">Pure Repeats Catalog<br/>Subset ≥ 15bp</a></td>
       <td>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) with very large mismatch and indel penalties to find all pure repeats that <b>span at least 15bp</b> in the hg38 reference genome</td>
-      <td nowrap align="right">702,486</td>
-      <td nowrap align="right">22,830 out of 144,773</td>
-      <td nowrap align="right">15.8%</td>      
+      <td nowrap style="text-align: right">702,486</td>
+      <td nowrap style="text-align: right">22,830 out of 144,773</td>
+      <td nowrap style="text-align: right">15.8%</td>
    </tr>
 </table>
 
@@ -648,21 +648,21 @@ Red lines represent (and are labeled with) the median value for the given tool.<
    </tr>
    <tr>
       <td>2-6bp</td>
-      <td align="right"> 1,353</td>
-      <td align="right"> 1,223 (90%)</td>
-      <td align="right">   348 (26%)</td>
+      <td style="text-align: right"> 1,353</td>
+      <td style="text-align: right"> 1,223 (90%)</td>
+      <td style="text-align: right">   348 (26%)</td>
    </tr>
    <tr>
       <td>7-24bp</td>
-      <td align="right"> 3,225</td>
-      <td align="right">   858 (27%)</td>
-      <td align="right">   121 ( 4%)</td>
+      <td style="text-align: right"> 3,225</td>
+      <td style="text-align: right">   858 (27%)</td>
+      <td style="text-align: right">   121 ( 4%)</td>
    </tr>
    <tr>
       <td>25-50bp</td>
-      <td align="right">52,650</td>
-      <td align="right"> 4,550 ( 9%)</td>
-      <td align="right">   446 ( 1%)</td>
+      <td style="text-align: right">52,650</td>
+      <td style="text-align: right"> 4,550 ( 9%)</td>
+      <td style="text-align: right">   446 ( 1%)</td>
    </tr>
 </table>
 
@@ -745,22 +745,22 @@ Some examples:
    </tr>
    <tr>
       <td nowrap>Pure repeats that <b>span at least 6bp</b> in hg38</td>
-      <td nowrap align="right">4,722,859</td>
+      <td nowrap style="text-align: right">4,722,859</td>
       <td nowrap><a href="https://storage.googleapis.com/str-truth-set/hg38/ref/other/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_6bp.bed.gz">gs://str-truth-set/hg38/ref/other/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_6bp.bed.gz</a></td>
    </tr>
    <tr>
       <td nowrap>Pure repeats that <b>span at least 9bp</b> in hg38</td>
-      <td nowrap align="right">2,805,842</td>
+      <td nowrap style="text-align: right">2,805,842</td>
       <td nowrap><a href="https://storage.googleapis.com/str-truth-set/hg38/ref/other/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_9bp.bed.gz">gs://str-truth-set/hg38/ref/other/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_9bp.bed.gz</a></td>
    </tr>
    <tr>
       <td nowrap>Pure repeats that <b>span at least 12bp</b> in hg38</td>
-      <td nowrap align="right">1,343,313</td>
+      <td nowrap style="text-align: right">1,343,313</td>
       <td nowrap><a href="https://storage.googleapis.com/str-truth-set/hg38/ref/other/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_12bp.bed.gz">gs://str-truth-set/hg38/ref/other/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_12bp.bed.gz</a></td>
    </tr>
    <tr>
       <td nowrap>Pure repeats that <b>span at least 15bp</b> in hg38</td>
-      <td nowrap align="right">702,486</td>
+      <td nowrap style="text-align: right">702,486</td>
       <td nowrap><a href="https://storage.googleapis.com/str-truth-set/hg38/ref/other/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_15bp.bed.gz">gs://str-truth-set/hg38/ref/other/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_15bp.bed.gz</a></td>
    </tr>
 </table>
@@ -776,7 +776,7 @@ As before, I post-processed the output to discard homopolymers and loci than con
    </tr>
    <tr>
       <td nowrap>Repeats that <b>span at least 6bp</b> in hg38</td>
-      <td nowrap align="right">4,655,977</td>
+      <td nowrap style="text-align: right">4,655,977</td>
       <td nowrap><a href="https://storage.googleapis.com/str-truth-set/hg38/ref/other/repeat_specs_GRCh38_allowing_mismatches.sorted.trimmed.at_least_6bp.bed.gz">gs://str-truth-set/hg38/ref/other/repeat_specs_GRCh38_allowing_mismatches.sorted.trimmed.at_least_6bp.bed.gz</a></td>
    </tr>
 </table>
