@@ -378,7 +378,7 @@ These plots address those questions:</p>
 
 <p>This shows that nearly all - 198 out of 203 (97.5%) - of the STR alleles in coding regions have motif sizes that are multiples of 3bp.<br />
 As for the 5 loci that don't fit this pattern, 3 have very large motifs - larger than 50bp, 1 is an out-of-frame expansion of the rare "GC" di-nucleotide motif, and 1 is an expansion of a 5bp "GGGGC" motif that adds 3 additional repeats relative to the reference and so does not introduce a frameshift. </p>
-<p>We can also look at whether the 203 coding STR alleles fall within LoF or missense constrained genes and compare this to the gene constraint of the 25 known disease-associated loci that are within coding regions. </p>
+<p>We can also look at whether the 203 coding STR alleles fall within LoF- or missense-constrained genes and compare this to constraint scores of genes that harbor the 25 known coding disease-associated STR loci. In the plots below each point is a gene from the set described on the y-axis.</p>
 <p><img alt="image" src="https://user-images.githubusercontent.com/6240170/202306770-ad9d07b8-159d-49a4-930d-ad0e72deae4e.png" /></p>
 <p>From this, we see that disease-associated STRs are much more likely to be in constrained genes, implying that both missense and LoF constraint computed from SNVs is also relevant for STRs. On the other hand, just because a gene is constrained doesn't mean that in-frame STR variants in that gene cause disease since many of the truth set STRs fall in highly constrained genes.</p>
 <p>Another way to look at this is to see whether larger STR variants are less likely to be in constrained genes. This might not be enough data to say, but at least for larger expansions, pLI is more likely to be near 0. Here, each dot represents a coding STR allele in the truth set, and contractions relative to the reference are negative on the y-axis:
@@ -581,26 +581,26 @@ The plot shows n=278,246 total alleles and consists of the following subsets:
    <tr>
      <td nowrap>Top Left (TL)</td>
      <td>ExpansionHunter underestimated, while GangSTR overestimated the true allele size by ≥ 2 repeats</td>
-     <td>37</td>
-     <td>0.0 %</td>
+     <td style="text-align: right">37</td>
+     <td style="text-align: right">0.0 %</td>
    </tr>
    <tr>
      <td nowrap>Bottom Right (BR)</td>
      <td>ExpansionHunter overestimated, while GangSTR underestimated the true allele size by ≥ 2 repeats</td>
-     <td>785</td>
-     <td>0.3 %</td>
+     <td style="text-align: right">785</td>
+     <td style="text-align: right">0.3 %</td>
    </tr>
    <tr>
      <td nowrap>Top (T) + Bottom (B)</td>
      <td>ExpansionHunter was within 2 repeats of the true allele size, while GangSTR was off by ≥ 2 repeats</td>
-     <td>5,628</td>
-     <td>2.0 %</td>
+     <td style="text-align: right">5,628</td>
+     <td style="text-align: right">2.0 %</td>
    </tr>
    <tr>
      <td nowrap>Right (R) + Left (L)</td>
      <td>ExpansionHunter was off by ≥ 2 repeats, while GangSTR was within 2 repeats of the true allele size</td>
-     <td>4,521</td>
-     <td>1.6 %</td>
+     <td style="text-align: right">4,521</td>
+     <td style="text-align: right">1.6 %</td>
    </tr>   
 </table>
 <br />
