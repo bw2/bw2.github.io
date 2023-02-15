@@ -617,9 +617,12 @@ Red lines represent (and are labeled with) the median value for the given tool.<
 
 <h4>Optimized ExpansionHunter</h4>
 <p>To reduce the costs of genome-wide analyses and eliminate some pain points, I developed an optimized version of ExpansionHunter which has the following features:
-* runs 2x to 3x faster than the original while producing exactly the same output for all loci (confirmed on all truth set loci as well as other datasets). This is achieved by reducing disk access operations through the use of read caching. 
-* optionally outputs a table with per-locus timing information to make it easier to exclude loci that take the longest to genotype. 
-* prints a warning and moves on to the next locus instead of exiting with an error when it encounters a locus that triggers ExpansionHunter's error about Ns in adjacent regions. An example of the error message is: "Error on locus spec 20-36315046-36315048-TG: Error loading locus 20-36315046-36315048-TG: Flanks can contain at most 5 characters N but found 348 Ns". Out of all loci in the truth set, 24 trigger this error and so make it impossible to run the original ExpansionHunter on the full truth set variant catalog without first finding and excluding the 24 loci. This feature eliminates the need to identify these loci since it allows ExpansionHunter to run to completion regardless. </p>
+    <ul>
+      <li> runs 2x to 3x faster than the original while producing exactly the same output for all loci (confirmed on all truth set loci as well as other datasets). This is achieved by reducing disk access operations through the use of read caching.</li>
+      <li> optionally outputs a table with per-locus timing information to make it easier to exclude loci that take the longest to genotype.</li>
+      <li> prints a warning and moves on to the next locus instead of exiting with an error when it encounters a locus that triggers ExpansionHunter's error about Ns in adjacent regions. An example of the error message is: "Error on locus spec 20-36315046-36315048-TG: Error loading locus 20-36315046-36315048-TG: Flanks can contain at most 5 characters N but found 348 Ns". Out of all loci in the truth set, 24 trigger this error and so make it impossible to run the original ExpansionHunter on the full truth set variant catalog without first finding and excluding the 24 loci. This feature eliminates the need to identify these loci since it allows ExpansionHunter to run to completion regardless.</li>
+    </ul>
+</p>
 <p>The read cache optimization increases the tool's memory requirements. The extra memory needed is proportional to the number of loci being genotyped (data not shown). For typical batch sizes, this remains well below the 3 to 5 gigabytes of RAM available per CPU on current machines. Still, if the increased memory requirements become problematic, they can always be mitigated by genotyping fewer loci per batch. </p>
 <p>This optimized version of ExpansionHunter is the one used for all analyses above.   </p>
 <p>It is publicly available @ https://github.com/bw2/ExpansionHunter</p>
@@ -631,9 +634,12 @@ Red lines represent (and are labeled with) the median value for the given tool.<
 <p><img width="794" alt="image" src="https://user-images.githubusercontent.com/6240170/214714305-33517ef0-8d16-48cc-8709-3e24ccd07e85.png"></p>
 <p>This plot shows that the ExpansionHunterDenovo "profile" step has high sensitivity for pure repeat loci in the truth set where allele size exceeds 150bp. </p>
 <p>For the 247 truth set loci where the allele size exceeds 150bp, ExpansionHunterDenovo detects 231 out of 247 (93.5%) of them (meaning than an ExpansionHunterDenovo call with the same motif occurs within +/-600bp of the truth set locus). This includes:
-* 7 out of 7 (100%) truth set loci with short motifs (2 to 6bp)
-* 18 out of 19 (94.7%) truth set loci with medium-sized motifs (7 to 24bp)
-* 206 out of 221 (93.2%) truth set loci with large motifs (25 to 50bp)</p>
+<ul>
+    <li> 7 out of 7 (100%) truth set loci with short motifs (2 to 6bp)</li>
+    <li> 18 out of 19 (94.7%) truth set loci with medium-sized motifs (7 to 24bp)</li>
+    <li> 206 out of 221 (93.2%) truth set loci with large motifs (25 to 50bp)</li>
+</ul>
+</p>
 <p>Although they are not highlighted in the plot, 10 out of the 247 alleles that exceed 150bp represent novel loci (i.e. ones that have no matching repeats in the hg38 reference). ExpansionHunterDenovo is able to detect all 10 of them. </p>
 <p>ExpansionHunterDenovo specificity is harder to estimate. We can look at the fraction of calls that have no matching truth set loci anywhere near them. However, there is a key issue which prevents us from concluding that these are false positives. While the truth set analysis only includes pure repeats, ExpansionHunterDenovo allows interruptions in the repeat sequence. To detect whether a given read is fully repetitive, it uses a heuristic that allows up to 15% of the read's sequence to deviate from pure repeats. This means that some subset of its calls may be accurate detections but are not in the truth set because they contain interruptions.  </p>
 <p>Regardless, this plot helps show how ExpansionHunterDenovo output is distributed across different motif sizes and the degree to which it matches expansions in the truth set or repeats in the reference genome:</p>
