@@ -67,11 +67,25 @@
   <div class="ui ten wide column" style="font-size:16px; color: rgba(0,0,0,.87); padding-top:35px">
 
     <h2>Genome-wide STR Truth Set</h2>
-<p>Short tandem repeat (STR) expansions are associated with over 50 monogenic diseases [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8205997/">Depienne 2021</a>] as well as common diseases such as autism [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9348607/">Trost 2020</a>] [<a href="https://www.nature.com/articles/s41586-020-03078-7">Mitra 2021</a>]. Improvements in STR genotyping tools such as <a href="https://github.com/Illumina/ExpansionHunter">ExpansionHunter</a> and <a href="https://github.com/gymreklab/GangSTR">GangSTR</a> have generated new interest in studying STRs using short read sequencing data.
-    However, one persistent challenge has been the scarcity of publicly available high-quality truth data (i.e. samples with known STR expansions) that can be used for comparing tools
+<p>Short tandem repeat (STR) expansions are associated with over 50 monogenic diseases
+    [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8205997/">Depienne 2021</a>] as well as common diseases such as autism
+    [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9348607/">Trost 2020</a>]
+    [<a href="https://www.nature.com/articles/s41586-020-03078-7">Mitra 2021</a>].
+    Improvements in STR genotyping tools such as <a href="https://github.com/Illumina/ExpansionHunter">ExpansionHunter</a>
+    and <a href="https://github.com/gymreklab/GangSTR">GangSTR</a> have generated new interest in studying STRs
+    using short read sequencing data. However, one persistent challenge has been the scarcity of publicly available
+    high-quality truth data (i.e. samples with validated STR expansions) that can be used for comparing tools
     and evaluating tool accuracy beyond the ~50 known disease-associated loci.</p>
-<p>This blog post describes a new genome-wide STR truth set that partially addresses this challenge. It is based on the Synthetic Diploid Benchmark (SynDip) [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/">Li 2018</a>] and contains accurate genotypes for ~150,000 STR variants in a single human sample (CHM1-CHM13). The PCR-free genome sequencing data for this sample is publicly available from the <a href="https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&amp;acc=ERR1341796&amp;display=data-access">Short Read Archive (SRA)</a> and also from the Broad Institute - including both <a href="https://console.cloud.google.com/storage/browser/broad-public-datasets/CHM1_CHM13_WGS2">genome data</a> and <a href="https://console.cloud.google.com/storage/browser/broad-public-datasets/CHM1_CHM13_WES">exome data</a>.</p>
-<p>I then apply this truth set to evaluate widely-used tools - ExpansionHunter, GangSTR, HipSTR and ExpansionHunter Denovo, and also use it to explore relevant questions about STRs in general such as:<br />
+<p>This blog post describes a new genome-wide STR truth set that partially addresses this challenge. It is based on the Synthetic
+    Diploid Benchmark (SynDip) [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/">Li 2018</a>] and contains accurate
+    genotypes for 144,773 STR variants in a single human sample (CHM1-CHM13). Short read sequencing data for CHM1-CHM13
+    is publicly available from the
+    <a href="https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&amp;acc=ERR1341796&amp;display=data-access">SRA</a>
+    and also from the Broad Institute - including both
+    <a href="https://console.cloud.google.com/storage/browser/broad-public-datasets/CHM1_CHM13_WGS2">genome data</a> and
+    <a href="https://console.cloud.google.com/storage/browser/broad-public-datasets/CHM1_CHM13_WES">exome data</a>.</p>
+<p>Below, I apply this truth set to evaluate widely-used tools - ExpansionHunter, GangSTR, HipSTR and ExpansionHunter
+    Denovo - and also use it to explore relevant questions about STRs in general such as:<br />
 - what is the distribution of STR variants in the human genome (i.e. motif sizes, lengths, percent multi-allelic, etc.)? <br />
 - how well do widely-used catalogs of STR loci capture these variants? <br />
 - how many STR loci can we expect to be novel (i.e. absent from the hg38 reference genome) in randomly selected individuals of European ancestry?</p>
@@ -108,70 +122,33 @@
     
 <hr />
 <h4>Summary of Findings</h4>
-<p>Some of the more interesting or surprising results from the truth set analysis are listed below. These are based on a survey of all STR variants in a single human genome of european ancestry - the CHM1-CHM13 synthetic diploid sample from [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/">Li 2018</a>]. They can be considered as findings from an n=1 case study. </p>
+<p>Some of the more interesting and surprising results from the truth set analysis are listed below. These are based on a
+    survey of all STR variants in a single human genome of european ancestry - the CHM1-CHM13 synthetic diploid sample
+    from [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/">Li 2018</a>]. They can be considered as
+    findings from an n=1 case study. </p>
 <ul>
-<li>An individual's genome differs from the reference at ~150,000 STR loci, but 98% of these alleles are within +/-30bp of the reference locus size. On average, only several thousand STR loci differ from the reference by more than 30bp.</li>
-<li>99.6% of STR variants occurred at STR loci in the reference genome. Only 521 STR variants had novel motifs that were entirely different from the adjacent motifs or reference sequence context.</li>
+<li>An individual's genome differs from the reference at ~150,000 STR loci, but 98% of STR alleles are within +/-30bp
+    of the reference locus size. On average, only several thousand STR loci differ from the reference by more than 30bp.</li>
+<li>99.6% of STR variants occurred at STR loci that are also present in the reference genome. Only 521 STR variants
+    had novel motifs that were entirely different from the adjacent motifs or reference sequence context.</li>
 <li>ExpansionHunter has better accuracy than GangSTR or HipSTR across the entire range of STR allele sizes.</li>
-<li>widely-used STR catalogs would miss 35% to 40% of the STR variants in the truth set. To capture more than 95% of these STR variants using a catalog generated by TandemRepeatFinder, we find we need to start with a catalog that contains 2.8 million STR loci. </li>
+<li>Widely-used STR catalogs would miss 37% to 41% of the STR variants in the truth set. To capture more than 95% of
+    these variants using a catalog of STRs from the reference genome, you need to start with a catalog of
+    2.8 million STR loci. We share this catalog below.</li>
 <li>pLI gene constraint is useful but insufficient for identifying genes that are intolerant of STR variation.</li>
 </ul>
-<p>The sections below describe these findings in detail. </p>
-<p><em>NOTE</em>: STRs are traditionally defined as repeating motifs that are between 1 to 6bp long. For this truth set I exclude 1bp (homopolymer) repeats since they are uniquely error-prone, but include motifs longer than 6bp so that users can decide whether to include these in their analyses.</p>
-<h4>Interactive Tool Comparison Plot Viewer:</h4>
-<p>These plots show ExpansionHunter, GangSTR, and HipSTR accuracy for expansions and contractions of different sizes: </p>
-<ul style="border-top: 1px solid #eaeaea; padding-top: 20px; margin-top: 10px; border-bottom: 1px solid #eaeaea; padding-bottom: 20px; margin-bottom: 10px; ">
-<li>
-   <div class="ui form">
-      <div class="inline fields">
-         <label>Tool:</label>
-         <div class="field"><div class="ui radio checkbox"><input type="radio" value="ExpansionHunter" name="tool" checked="checked"><label>ExpansionHunter</label></div></div>
-         <div class="field"><div class="ui radio checkbox"><input type="radio" value="GangSTR" name="tool"><label>GangSTR</label></div></div>
-         <div class="field"><div class="ui radio checkbox"><input type="radio" value="HipSTR" name="tool"><label>HipSTR</label></div></div>
-      </div>
-   </div>
-</li>
-<li>
-   <div class="ui form">
-      <div class="inline fields">
-         <label>Motif Size:</label>
-         <div class="field"><div class="ui radio checkbox"><input type="radio" value="2to6bp_motifs" name="motif-size" checked="checked"><label>2-6bp</label></div></div>
-         <div class="field"><div class="ui radio checkbox"><input type="radio" value="7to24bp_motifs" name="motif-size"><label>7-24bp</label></div></div>
-         <div class="field"><div class="ui radio checkbox"><input type="radio" value="25to50bp_motifs" name="motif-size"><label>25-50bp</label></div></div>
-      </div>
-   </div>
-</li>
-<li>
-   <div class="ui form">
-      <div class="inline fields">
-         <label>Coverage:</label>
-         <div class="field"><div class="ui radio checkbox"><input type="radio" value="40x" name="coverage" checked="checked"><label>40x genome</label></div></div>
-         <div class="field"><div class="ui radio checkbox"><input type="radio" value="30x" name="coverage"><label>30x genome</label></div></div>
-         <div class="field"><div class="ui radio checkbox"><input type="radio" value="20x" name="coverage"><label>20x genome</label></div></div>
-         <div class="field"><div class="ui radio checkbox"><input type="radio" value="10x" name="coverage"><label>10x genome</label></div></div>
-         <div class="field"><div class="ui radio checkbox"><input type="radio" value="05x" name="coverage"><label>5x genome</label></div></div>
-         <div class="field" style="padding-left: 50px"><div class="ui radio checkbox"><input type="radio" value="exome" name="coverage"><label>exome (85x)</label></div></div>
-      </div>
-   </div>
-</li>
-<li>
-   <div class="ui form">
-      <div class="inline fields">
-         <label>Allow Interruptions:</label>
-         <div class="field"><div class="ui radio checkbox"><input type="radio" value="pure_repeats" name="interruptions" checked="checked"><label>No: only pure repeats</label></div></div>
-         <div class="field"><div class="ui radio checkbox"><input type="radio" value="with_interruptions" name="interruptions"><label>Yes: only interrupted repeats</label></div></div>
-      </div>
-   </div>
-</li>
-</ul>
-<p>
-    <a target="_blank" id="tool-comparison-plot-viewer-url" alt="click here to open this image in a new tab" href="https://broadinstitute.github.io/str-truth-set/tool_comparison/figures/tool_accuracy_by_true_allele_size.2to6bp_motifs.pure_repeats.40x.ExpansionHunter.svg">
-        <img style="padding-top:30px" alt="image" id="tool-comparison-plot-viewer" src="https://broadinstitute.github.io/str-truth-set/tool_comparison/figures/tool_accuracy_by_true_allele_size.2to6bp_motifs.pure_repeats.40x.ExpansionHunter.svg" />
-    </a>
+<p><em>NOTE</em>: STRs are traditionally defined as repeating motifs that are between 1 to 6bp long. For this truth
+    set I exclude 1bp (homopolymer) repeats since they are uniquely error-prone, but include motifs longer than 6bp
+    so that users can decide whether to include these in their analyses.</p>
+
+<h4>Tool Comparison Plot Viewer:</h4>
+<p>The plots show ExpansionHunter, GangSTR, and HipSTR accuracy for expansions and contractions in the STR truth set.
+<div>[<a href="https://broadinstitute.github.io/str-truth-set/html/tool_comparison_viewer.html" target="_blank">Open in new window</a>]</div>
 </p>
-<p>Here, the x-axis represents the true allele size - with expansions represented as positive values and contractions as negative. Green represents alleles where the tool exactly matched the true allele size. Orange is for alleles that the tool overestimated (with darker orange meaning a larger overestimate), while blue is for underestimated alleles (with darker blues representing larger errors). Gray represents loci where the tool didn't produce a genotype (i.e. due to an error or insufficient coverage), red is loci that the tool called as homozygous reference and so entirely missed the variant, brown is when the tool incorrectly called an allele as being heterozygous reference, and teal is where it called a contraction when the true allele is an expansion or vice versa.
-   Further discussion of these plots can be found in the sections below.
-</p>
+
+<iframe src="https://broadinstitute.github.io/str-truth-set/html/tool_comparison_viewer.html" width="100%" height="1050px" frameBorder="0" style="padding:0px; margin:0px 0px 10px 0px;"></iframe>
+
+
 <hr />
 <h3>Defining the STR truth set</h3>
 <p>To generate an STR truth set, I started with the Synthetic Diploid Benchmark (SynDip) [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/">Li 2018</a>] which is a unique dataset that uses haploid PacBio assemblies to identify all variants in the CHM1-CHM13 synthetic diploid sample. Because these variants are based on alignments of haploid assemblies (rather than individual reads) to the reference genome, the SynDip genotypes are more reliable than those produced by short-read or even ordinary long-read pipelines. </p>
@@ -180,13 +157,13 @@
    <tr>
       <th> </th>
       <th>Filtering Step</th>
-       <th nowrap># of Variant Loci<br />That Passed</th>
-      <th nowrap># of Alleles<br />That Passed</th>
+      <th nowrap># of Variant Loci</th>
+      <th nowrap># of Alleles</th>
       <th nowrap style="text-align: right">% of Alleles</th>
    </tr>
    <tr>
       <td><i>1</i></td>
-      <td>Start with high-confidence alleles provided by the SynDip Benchmark</td>
+      <td>Start with all high-confidence variants in the SynDip Benchmark</td>
       <td nowrap style="text-align: right">4,085,178</td>
       <td nowrap style="text-align: right">4,152,492</td>
       <td nowrap style="text-align: right">all</td>
@@ -277,8 +254,11 @@
 
 </table>
 
-<p>Overall, of the 86,028 STRs that could be validated <sup>‡</sup> against T2T, 84,183 (97.9%) passed this validation, underscoring the accuracy and relevance of this truth set. </p>
-<p>‡ <em>NOTE</em>: STR contractions that failed hg38 ⇒ T2T liftover due to an  “IndelStraddlesMultipleIntevals” error were included in the truth set without these validation steps as I consider this to be a technical issue with liftover rather than a problem with genotype accuracy. This applies to 60,590 (77%) of STR contractions.</p>
+<p>Overall, of the 86,028 STRs that could be validated <sup>‡</sup> against T2T, 84,183 (97.9%) passed this validation,
+    underscoring the accuracy and relevance of this truth set. </p>
+<p>‡ <em>NOTE</em>: STR contractions that failed hg38 ⇒ T2T liftover due to an  “IndelStraddlesMultipleIntevals” error
+    were included in the truth set without these validation steps as I consider this to be a technical issue with
+    liftover rather than a problem with genotype accuracy. This applies to 60,590 (77%) of STR contractions.</p>
 <hr />
 <h3>Basic Summary Statistics:</h3>
 <p>The resulting STR truth set contains:</p>
@@ -488,7 +468,8 @@ As for the 5 loci that don't fit this pattern, 3 have very large motifs - larger
 <p>What about loci with relatively large expansions? Arguably these are the loci we're most interested in. If you filter the truth set to the 1,702 (1%) of STR expansions that add 10 or more repeats to the reference repeat count, the percentages of missed loci remain large - with 30% missed by the GangSTR v17 catalog and 45% missed by the Illumina catalog. The 19/20xTCT expansion @ <a target="_blank" href="https://tgg-viewer.broadinstitute.org/#locus=chr1:18341013-18341042&show=~(~'bed~'gtf~'vcf~'alignment)&selectedRows=~(Tool*20Results~(~)~Mappability*20Tracks~(~)~Truth*20Set~(~'Truth*20Set*20BED~'Truth*20Set*20VCF)~CHM1-CHM13~(~'SynDip*20full*20truth*20set*20VCF)~Other*20STR*20Catalogs~(~'Illumina*20Catalog~'GangSTR*20v17*20catalog)~STR*20Truth*20Set~(~'STR*20Truth*20Set*20VCF~'STR*20Truth*20Set*20BED))&selectedSamples=~()&order=~(~'STR*20Truth*20Set*20VCF*20vcf~'STR*20Truth*20Set*20BED*20~'Illumina*20Catalog*20~'GangSTR*20v17*20catalog*20~'Refseq*20Genes~'Gencode*20v32*20Genes)&sjOptions=~(bounceHeightBasedOn~'random~colorBy~'isAnnotatedJunction~colorByNumReadsThreshold~5~hideAnnotated~false~hideUnannotated~false~labelAnnotatedJunction~false~labelAnnotatedJunctionValue~'*20*5bA*5d~labelMotif~false~labelMultiMappedReadCount~false~labelTotalReadCount~false~labelUniqueReadCount~true~maxFractionMultiMappedReads~1~minSplicedAlignmentOverhang~0~minTotalReads~1~minUniquelyMappedReads~0~showOnlyMinusStrand~false~showOnlyPlusStrand~false~thicknessBasedOn~'numUniqueReads~trackHeight~170~minJunctionEndsVisible~1~labelWithInParen~null~labelWith~'totalReadCount)&vcfOptions=~(displayMode~'EXPANDED)&bamOptions=~(alignmentShading~'strand~showSoftClips~true~trackHeight~400~viewAsPairs~true~showInsertionText~true~showDeletionText~true)&gcnvOptions=~(trackHeight~200~trackMin~0~trackMax~5~autoscale~false~onlyHandleClicksForHighlightedSamples~true)&settingsUrl=~'https*3a*2f*2fstr-truth-set.storage.googleapis.com*2fhg38*2ftgg-viewer-config.json*3fnocache17">chr1:18341013-18341042</a> is one example of a truth set variant that's not covered by either the GangSTR v17 or the Illumina catalog.</p>
 <hr />
 <h3>Tool comparisons</h3>
-<p>Using the truth set to compare accuracy of existing STR callers requires us to first define what we mean by accuracy. 
+
+<p>Using the truth set to compare accuracy of existing STR callers requires us to first define what we mean by accuracy.
 For other variant types such as SNVs and InDels, the definition is relatively straight-forward - a tool will either call a variant or not, and then it might get the zygosity right or wrong, but that's about it. These metrics are also important for STRs, but the additional aspect of number of repeats introduces a lot more nuance. For example, for a given STR locus, a tool may get the number of repeats exactly right, or it may be off by +/-1, or off by many repeats. It might even call an expansion where the true genotype is a contraction. To avoid getting bogged down in finding the right definition, we can begin with the simplest definition and build from there. </p>
 <p>Also, to keep the analysis manageable, we focus on several widely-used tools - ExpansionHunter, GangSTR and HipSTR, and later also look at ExpansionHunterDenovo.</p>
 <h4>Exact accuracy</h4>
@@ -1024,7 +1005,8 @@ The largest deletion is -18,268 bp, while the largest insertion is 15,193 bp.</p
       const interruptions = $('input[name="interruptions"]:checked').val()
 
 
-      let img_url = "https://broadinstitute.github.io/str-truth-set/tool_comparison/figures/"
+      //let img_url = "https://broadinstitute.github.io/str-truth-set/tool_comparison/figures/"
+      let img_url = "https://console.cloud.google.com/storage/browser/str-truth-set/hg38/figures/"
       img_url += `tool_accuracy_by_true_allele_size.${motif_size}.${interruptions}.${coverage}.${tool}.svg`
 
       $('#tool-comparison-plot-viewer-url').attr("href", img_url)
