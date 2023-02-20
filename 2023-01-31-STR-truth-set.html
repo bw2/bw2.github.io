@@ -146,12 +146,12 @@
 <div>[<a href="https://broadinstitute.github.io/str-truth-set/html/tool_comparison_viewer.html" target="_blank">Open in new window</a>]</div>
 </p>
 
-<iframe src="https://broadinstitute.github.io/str-truth-set/html/tool_comparison_viewer.html" width="100%" height="1050px" frameBorder="0" style="padding:0px; margin:0px 0px 10px 0px;"></iframe>
+<iframe src="https://broadinstitute.github.io/str-truth-set/html/tool_comparison_viewer.html" width="100%" height="850px" frameBorder="0" style="padding:0px; margin:0px 0px 10px 0px;"></iframe>
 
 
 <hr />
 <h3>Defining the STR truth set</h3>
-<p>To generate an STR truth set, I started with the Synthetic Diploid Benchmark (SynDip) [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/">Li 2018</a>] which is a unique dataset that uses haploid PacBio assemblies to identify all variants in the CHM1-CHM13 synthetic diploid sample. Because these variants are based on alignments of haploid assemblies (rather than individual reads) to the reference genome, the SynDip genotypes are more reliable than those produced by short-read or even ordinary long-read pipelines. </p>
+<p>To generate an STR truth set, I started with the Synthetic Diploid Benchmark (SynDip) [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/">Li 2018</a>]. This is a unique dataset that uses haploid PacBio assemblies to identify all variants in the CHM1-CHM13 synthetic diploid sample. Because these variants are based on alignments of haploid assemblies (rather than individual reads) to the reference genome, the SynDip genotypes are more reliable than those produced by short-read or even ordinary long-read pipelines. </p>
 <p>There are 4.09 million high-confidence variants in the <a href="https://github.com/lh3/CHM-eval">SynDip VCF</a>. Some of these are multi-allelic (meaning both alleles differ from the reference genome) so there are more alleles than variant loci. For the 4.09 million variants, there are 4.15 million alleles. Of these alleles, 287k (6.9%) are insertions and 279k (6.7%) are deletions. To create the STR truth set, I filtered these insertion and deletion alleles to the subset that represents STR expansions or contractions by using the following steps:</p>
 <table>
    <tr>
