@@ -291,12 +291,9 @@
         <hr/>
         <h3>Validation</h3>
         <p>The SynDip benchmark is based on samples from two individuals: CHM1 and CHM13. One of them (CHM13) is also
-            the basis
-            of the new <a href="https://www.genome.gov/about-genomics/telomere-to-telomere">telomere-to-telomere</a>
-            (T2T)
-            reference genome, so it's possible to validate most STR variants in the truth set by checking that at least
-            one
-            allele matches the T2T reference sequence.</p>
+            the basis of the new <a href="https://www.genome.gov/about-genomics/telomere-to-telomere">telomere-to-telomere</a>
+            (T2T) reference genome, so it's possible to validate truth set variants by lifting them over to T2T and
+            checking that, in each variant, at least one allele exactly matches the T2T reference sequence.</p>
 
         <table>
             <tr style="margin-bottom: 30px;">
@@ -1292,7 +1289,7 @@
 
         <p><strong>Extra Section 5</strong>: Truth set genotype validation steps<br/>
             <br/>
-            This flow diagram describes the steps used to validate truth set STRs by comparing them to the
+            This flow diagram describes the steps used to validate truth set STRs by lifting them over to the
             telomere-to-telomere (T2T) reference genome: <br/>
             <br/>
             <a target=_blank
