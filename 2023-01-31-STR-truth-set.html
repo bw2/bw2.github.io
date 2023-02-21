@@ -146,7 +146,9 @@
                 STR catalog download links</a></li>
             <li><a href="#extra-section-4-limitations-of-different-approaches-to-estimatin">Extra section 4: limitations
                 of different approaches to estimating STR caller accuracy</a></li>
-            <li><a href="#extra-section-5-truth-set-genotype-validation-steps-this-flow-di">Extra section 5: truth set
+            <li><a href="#extra-section-5-examples-illustrating-how-the-str-truth-set-is-d">Extra section 5: examples
+                illustrating how the STR truth set is defined</a></li>
+            <li><a href="#extra-section-6-truth-set-genotype-validation-steps-this-flow-di">Extra section 6: truth set
                 genotype validation steps</a></li>
 
         </ol>
@@ -255,7 +257,7 @@
             </tr>
 
         </table>
-        The following example demonstrates how we filter insertions and deletions to the subset that represents STR
+        The following example demonstrates how step 3 filters insertions and deletions to the subset that are STR
         expansions or contractions:<br/>
         <p><div style="font-size:18px; color:#006CB6; font-weight: bold">Example</div></p>
         <p>Let's say the SynDip truth set contains this heterozygous insertion:
@@ -264,8 +266,9 @@
         </p>
         <p><b>Should we include it in the STR truth set?</b> To answer this, let's look at the inserted sequence along
             with its hg38 reference context:
-        <p align="center"><img width="350" alt="image"
-                               src="https://user-images.githubusercontent.com/6240170/200182871-639e7282-07a1-4587-8592-453d68622383.png">
+        <p align="center">
+            <img width="350" alt="image"
+                src="https://user-images.githubusercontent.com/6240170/200182871-639e7282-07a1-4587-8592-453d68622383.png">
         </p>
         <p>
             <em>step 1</em>: find the minimal motif (<strong>GGC</strong>) in the inserted sequence
@@ -283,6 +286,13 @@
             <strong>11 x GGC repeats in the alternate allele</strong></p>
         <p>This variant passes the thresholds for length ≥ 9bp and repeat count ≥ 3, so <strong>we add it to STR truth
             set</strong>.</p>
+
+        <br />
+        Additional examples shown in <a href="#extra-section-5-examples-illustrating-how-the-str-truth-set-is-d">Extra Section 5</a>
+        illustrate several edge cases.
+
+        <br />
+
         <hr/>
         <h3>Validation</h3>
         <p>The SynDip benchmark is based on samples from two individuals: CHM1 and CHM13. One of them (CHM13) is also
@@ -340,7 +350,7 @@
             validation,
             underscoring the accuracy and relevance of the truth set. </p>
 
-        <p><a href="#extra-section-5-truth-set-genotype-validation-steps-this-flow-di">Extra Section 5</a>
+        <p><a href="#extra-section-6-truth-set-genotype-validation-steps-this-flow-di">Extra Section 6</a>
             shows a flow diagram with additional details about these validation steps.</p>
 
         <p>‡ <em>NOTE</em>: STR contractions that failed hg38 ⇒ T2T liftover due to an “IndelStraddlesMultipleIntevals”
@@ -707,7 +717,7 @@
             definition and build from there. </p>
         <p>Also, to keep the analysis manageable, we focus on several widely-used tools - ExpansionHunter, GangSTR and
             HipSTR, and later also look at ExpansionHunterDenovo.</p>
-        <h4>Exact accuracy</h4>
+        <h4>Strict accuracy</h4>
         <p>The simplest definition of STR calling accuracy is - how many genotypes did a tool get exactly right? i.e.
             what fraction of called allele sizes exactly match the corresponding allele size in the truth set. When we
             run ExpansionHunter, GangSTR and HipSTR on the 139,244 (96%) truth set loci that have 2bp to 6bp motifs and
@@ -746,7 +756,7 @@
         <p>We can see that ExpansionHunter slightly outperforms GangSTR, and both tools outperform HipSTR.
             Unsurprisingly, accuracy decreases when the original data (which has 40x genome-wide coverage) is
             downsampled to lower read depths.</p>
-        <h4>Exact accuracy by number of repeats</h4>
+        <h4>Strict accuracy by number of repeats</h4>
         <p>For most STR analyses, we care more about large expansions than about variants that only add or remove a few
             repeats.
             However, as we saw <a
@@ -841,8 +851,9 @@
         This heat map compares ExpansionHunter and GangSTR genotypes at loci that have 2-6bp motifs and where one or
         both tools differ from the true allele size:<br/>
         <br/>
+
         <img width="1300" alt="image"
-             src="https://user-images.githubusercontent.com/6240170/219206966-75e89eb2-2d74-4362-9af5-2543aac4440e.png"><br/>
+             src="https://user-images.githubusercontent.com/6240170/220439789-5284bcce-a5cd-40d2-ab2e-7c9fe8b68c3e.png"><br/>
 
         <br/>
         The plot shows n=278,246 total alleles and consists of the following subsets:
@@ -1289,7 +1300,23 @@
         </ol>
         <hr/>
 
-        <p><strong>Extra Section 5</strong>: Truth set genotype validation steps<br/>
+        <p><strong>Extra Section 5</strong>: Examples illustrating how the STR truth set is defined<br/>
+            <br />
+            The following 4 examples illustrate how insertions and deletions in the SynDip truth set are filtered to the
+            subset that represent STR expansions or contractions. Each example deals with a different edge case.<br />
+            <br />
+
+            <img style="border: 1px solid black" src="https://broadinstitute.github.io/str-truth-set/figures_and_tables/figure__filter_to_STRs_example1.png"><br/>
+            <br/>
+            <img style="border: 1px solid black" src="https://broadinstitute.github.io/str-truth-set/figures_and_tables/figure__filter_to_STRs_example2.png"><br />
+            <br/>
+            <img style="border: 1px solid black" src="https://broadinstitute.github.io/str-truth-set/figures_and_tables/figure__filter_to_STRs_example3.png"><br />
+            <br/>
+            <img style="border: 1px solid black" src="https://broadinstitute.github.io/str-truth-set/figures_and_tables/figure__filter_to_STRs_example4.png"><br />
+
+        <hr />
+
+        <p><strong>Extra Section 6</strong>: Truth set genotype validation steps<br/>
             <br/>
             This flow diagram describes the steps used to validate truth set STRs by lifting them over to the
             telomere-to-telomere (T2T) reference genome: <br/>
@@ -1302,8 +1329,11 @@
         </p>
         <hr/>
 
-        <p><strong>Extra Section 6</strong>: The table below lists STR calling tools + the truth data used in their
-            publications.</p>
+        <p><strong>Extra Section 7</strong>: STR calling tools and the data they used to show accuracy <Br/>
+            <br />
+            This table lists STR calling tools + the truth data used in their
+            publications:
+        </p>
         <p><br/></p>
         <table class="ui striped table">
             <tr>
@@ -1454,7 +1484,7 @@
             paper [<a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02447-3">Chiu 2021</a>]
             - but the accuracy of these assemblies for STRs remains questionable. </p>
         <hr/>
-        <p><strong>Extra Section 7:</strong> Synthetic Diploid Benchmark Overview</p>
+        <p><strong>Extra Section 8:</strong> Synthetic Diploid Benchmark Overview</p>
         <p>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/">Li 2018</a>] produced a high-quality truth
             set based on <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5411763/">Huddleston 2017</a> haploid
             assemblies of two individuals - CHM1 and CHM13. </p>
@@ -1466,7 +1496,8 @@
                 There was no need to run a separate variant calling tool downstream of the alignment step.
             </li>
         </ol>
-        <p><strong>Li et al. 2018 Figure 1:</strong> Constructing the Syndip benchmark dataset. </p>
+        <br />
+        <p><b>Figure 1 from Li et al. 2018:</b> Constructing the Syndip benchmark dataset. </p>
         <p><img alt="image"
                 src="https://user-images.githubusercontent.com/6240170/167907455-84baa96d-95ae-44bc-8471-c7769bd6474f.png"/>
         </p>
