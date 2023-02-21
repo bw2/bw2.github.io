@@ -118,6 +118,9 @@
   <li><a href="#extra-section-1-data-availability-and-qc-metrics">Extra section 1: data download links & QC metrics</a></li>
   <li><a href="#extra-section-2-code-and-other-data-availability">Extra section 2: code summary and download links</a></li>
   <li><a href="#extra-section-3-genome-wide-str-catalogs-via-tandemrepeatfinder">Extra section 3: genome-wide STR catalog download links</a></li>
+  <li><a href="#extra-section-4-limitations-of-different-approaches-to-estimatin">Extra section 4: limitations of different approaches to estimating STR caller accuracy</a></li>
+  <li><a href="#extra-section-5-truth-set-genotype-validation-steps-this-flow-di">Extra section 5: truth set genotype validation steps</a></li>
+
 </ol>
     
 <hr />
@@ -182,8 +185,8 @@
       <td>Identify the subset that are STR expansions or contractions (requiring that they have ≥ 3 repeats, span ≥ 9bp,
           are pure (i.e. no interruptions), and have motif size ≥ 2bp)
       </td>
-      <td nowrap style="text-align: right">146,703</td>
-      <td nowrap style="text-align: right">177,455</td>
+      <td nowrap style="text-align: right">146,618</td>
+      <td nowrap style="text-align: right">177,369</td>
       <td nowrap style="text-align: right">4.3 %</td>
    </tr>
 
@@ -191,8 +194,11 @@
 
 <p><br /></p>
 <p><img width="85" alt="image" src="https://user-images.githubusercontent.com/6240170/200182718-67b467b0-80a6-49ae-b147-56a8bb0cf655.png"></p>
-<p>This example walks through how to determine whether an InDel actually represents an STR expansion or contraction. </p>
-<p>Let's say the SynDip truth set contains this insertion:   <img width="275" alt="image" src="https://user-images.githubusercontent.com/6240170/200183159-d42914b0-9636-4584-a593-dcb86463ff14.png"></p>
+<p>This example walks through how to determine whether an InDel actually represents an STR expansion or contraction.
+The following examples demonstrate how this works.
+</p>
+<p>Let's say the SynDip truth set contains this insertion:
+<img width="275" alt="image" src="https://user-images.githubusercontent.com/6240170/200183159-d42914b0-9636-4584-a593-dcb86463ff14.png"></p>
 <p>Should we include it in the STR truth set?  </p>
 <p><em>step 1</em>: find the minimal motif (<strong>GGC</strong>) in the inserted sequence (<strong>GGCGGC</strong>) by using brute force k-mer search similar to <a href="https://www.biorxiv.org/content/10.1101/2021.11.18.469113v1">STRling</a>.<br />
 <em>step 2</em>: check the reference context for additional <strong>GGC</strong> repeats immediately to the left or right of the variant:  </p>
@@ -220,7 +226,7 @@
     <tr>
         <td><i>1</i></td>
         <td>Start with all STR expansions and contractions found in SynDip</td>
-        <td nowrap style="text-align: right">146,703</td>
+        <td nowrap style="text-align: right">146,618</td>
         <td nowrap style="text-align: right">all</td>
     </tr>
 
@@ -256,9 +262,13 @@
 
 <p>Overall, of the 86,028 STRs that could be validated <sup>‡</sup> against T2T, 84,183 (97.9%) passed this validation,
     underscoring the accuracy and relevance of this truth set. </p>
+
+<p><a href="#extra-section-5-str-validation-flow-diagram-this-flow-diagram-de">Extra Section 5</a> provides additional details about the validation steps.</p>
+
 <p>‡ <em>NOTE</em>: STR contractions that failed hg38 ⇒ T2T liftover due to an  “IndelStraddlesMultipleIntevals” error
     were included in the truth set without these validation steps as I consider this to be a technical issue with
     liftover rather than a problem with genotype accuracy. This applies to 60,590 (77%) of STR contractions.</p>
+
 <hr />
 <h3>Basic Summary Statistics:</h3>
 <p>The resulting STR truth set contains:</p>
@@ -790,7 +800,8 @@ As before, I post-processed the output to discard homopolymers and loci than con
 
 <p>This catalog has fewer loci than the catalog of pure repeats because a number of adjacent pure repeat loci were merged into single loci once mismatches were allowed. </p>
 <hr />
-<p><strong>Extra Section 4:</strong> This section summarizes the limitations of other ways to estimate STR tool accuracy:</p>
+<p><strong>Extra Section 4:</strong> Limitations of different approaches to estimating STR caller accuracy
+</p>
 <ol>
 <li><strong>simulated STRs:</strong> we can generate an unlimited number of STR examples with known genotypes by using a tool like <a href="https://github.com/lh3/wgsim">wgsim</a>. However, simulated data doesn't capture the full complexity of real sequencing data (e.g. adjacent variants not present in the reference genome, GC bias, and other sequencing artifacts). </li>
 <li><strong>mendelian violations analysis:</strong> trios can be used to check whether genotypes are consistent with Mendelian inheritance. However, This is informative about specificity but not sensitivity since a tool that misses all expansions will have zero mendelian violations. This produces a coarser<br />
@@ -806,7 +817,19 @@ As before, I post-processed the output to discard homopolymers and loci than con
 <li><strong>long read data:</strong> This might be the ideal source of truth in the future, but currently suffers from a lack of well-validated STR calling tools. The most-recently published tool - Straglr [<a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02447-3">Chiu 2021</a>] - reports 73% concordance between heterozygous STR expansions called from HiFi PacBio data vs truth data generated from the diploid assembly of HG00733 [<a href="https://www.biorxiv.org/content/10.1101/327064v2.full">Kronenberg 2019</a>]. [<a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02447-3">Chiu 2021</a>], [<a href="https://www.biorxiv.org/content/10.1101/2021.11.18.469113v1">Dashnow 2021</a>] and other groups (unpublished) also raise concerns about diploid assemblies as a source of STR truth data since manual inspection of discordant loci often revealed that the assembly was not credible at those loci. </li>
 </ol>
 <hr />
-<p><strong>Extra Section 5</strong>: The table below lists STR calling tools + the truth data used in their publications.</p>
+
+<p><strong>Extra Section 5</strong>: Truth set genotype validation steps<br />
+    <br />
+    This flow diagram describes the steps used to validate truth set STRs by comparing them to the telomere-to-telomere (T2T) reference genome: <br />
+    <br />
+    <a target=_blank href="https://broadinstitute.github.io/str-truth-set/figures_and_tables/figure__validation_flow_diagram.png">
+        <img src="https://broadinstitute.github.io/str-truth-set/figures_and_tables/figure__validation_flow_diagram.png">
+    </a>
+    <br />
+</p>
+<hr />
+
+<p><strong>Extra Section 6</strong>: The table below lists STR calling tools + the truth data used in their publications.</p>
 <p><br /></p>
 <table class="ui striped table">
 <tr>
@@ -926,7 +949,7 @@ As before, I post-processed the output to discard homopolymers and loci than con
 <p><em>NOTE:</em> <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8351082#Tab1">Table 1</a> in [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8351082/">Rajan-Babu 2021</a>] provides additional comparisons of many of these tools. </p>
 <p>The largest truth sets in this table are generated using diploid assemblies - as described in the Straglr paper [<a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02447-3">Chiu 2021</a>] - but the accuracy of these assemblies for STRs remains questionable. </p>
 <hr />
-<p><strong>Extra Section 6:</strong> Synthetic Diploid Benchmark Overview</p>
+<p><strong>Extra Section 7:</strong> Synthetic Diploid Benchmark Overview</p>
 <p>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/">Li 2018</a>] produced a high-quality truth set based on <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5411763/">Huddleston 2017</a> haploid assemblies of two individuals - CHM1 and CHM13. </p>
 <p>To create the Synthetic Diploid Benchmark, [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/">Li 2018</a>] generated variant calls by:</p>
 <ol>
