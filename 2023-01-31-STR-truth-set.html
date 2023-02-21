@@ -1,1050 +1,1574 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!-- Standard Meta -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <!-- Standard Meta -->
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Genome-wide STR Truth Set</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="./github-css.css" />
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G7WEXHL9KW"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    <title>Genome-wide STR Truth Set</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+          integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="./github-css.css"/>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G7WEXHL9KW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-    gtag('config', 'G-G7WEXHL9KW');
-  </script>
-  <style>
-    .header-section {
-      font-weight: 500;
-      color: #555555;
-      display: inline-block;
-    }
+        function gtag() {
+            dataLayer.push(arguments);
+        }
 
-    /* used by anchor-js */
-    :target {
-       scroll-margin-top: 70px;
-    }
+        gtag('js', new Date());
 
-    /* tool comparison plot viewer */
-    .ui.form {
-       font-size: 16px;
-    }
-    .ui.form label {
-       font-size: 16px;
-    }
-  </style>
+        gtag('config', 'G-G7WEXHL9KW');
+    </script>
+    <style>
+        .header-section {
+            font-weight: 500;
+            color: #555555;
+            display: inline-block;
+        }
+
+        /* used by anchor-js */
+        :target {
+            scroll-margin-top: 70px;
+        }
+
+        /* tool comparison plot viewer */
+        .ui.form {
+            font-size: 16px;
+        }
+
+        .ui.form label {
+            font-size: 16px;
+        }
+    </style>
 </head>
 <body>
 
 <a name="top"></a>
 
 <div class="ui fixed menu" style="padding: 10px 0px">
-  <div class="ui grid" style="width:100%; font-size:16px; color: rgba(0,0,0,.87)">
-    <div class="ui three wide column"></div>
-    <div class="ui three wide column">
-      <div style="font-weight:800; padding-right:10px; display:inline-block"><a href="/">Project Notes</a></div>
-      <div class="header-section"> - Ben Weisburd</div>
+    <div class="ui grid" style="width:100%; font-size:16px; color: rgba(0,0,0,.87)">
+        <div class="ui three wide column"></div>
+        <div class="ui three wide column">
+            <div style="font-weight:800; padding-right:10px; display:inline-block"><a href="/">Project Notes</a></div>
+            <div class="header-section"> - Ben Weisburd</div>
+        </div>
+        <div class="ui six wide column">
+            <div class="header-section, header-section-fade-in" style="color: black; display: none; width: 100%">
+                Genome-wide STR Truth Set
+            </div>
+        </div>
+        <div class="ui one wide column">
+            <div class="header-section" style="float: right;">1/31/2023</div>
+        </div>
+        <div class="ui three wide column">
+            <div class="header-section, header-section-fade-in" style="display: none;">[<a href="#table-of-contents">Jump
+                to top</a>]
+            </div>
+        </div>
     </div>
-    <div class="ui six wide column">
-      <div class="header-section, header-section-fade-in" style="color: black; display: none; width: 100%">Genome-wide STR Truth Set</div>
-    </div>
-    <div class="ui one wide column">
-      <div class="header-section" style="float: right;">1/31/2023</div>
-    </div>
-    <div class="ui three wide column">
-       <div class="header-section, header-section-fade-in" style="display: none;">[<a href="#table-of-contents">Jump to top</a>]</div>
-    </div>
-  </div>
 </div>
 
 <div class="ui grid">
-  <div class="ui three wide column"></div>
-  <div class="ui ten wide column" style="font-size:16px; color: rgba(0,0,0,.87); padding-top:35px">
+    <div class="ui three wide column"></div>
+    <div class="ui ten wide column" style="font-size:16px; color: rgba(0,0,0,.87); padding-top:35px">
 
-    <h2>Genome-wide STR Truth Set</h2>
-<p>Short tandem repeat (STR) expansions are associated with over 50 monogenic diseases
-    [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8205997/">Depienne 2021</a>] as well as common diseases such as autism
-    [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9348607/">Trost 2020</a>]
-    [<a href="https://www.nature.com/articles/s41586-020-03078-7">Mitra 2021</a>].
-    Improvements in STR genotyping tools such as <a href="https://github.com/Illumina/ExpansionHunter">ExpansionHunter</a>
-    and <a href="https://github.com/gymreklab/GangSTR">GangSTR</a> have generated new interest in studying STRs
-    using short read sequencing data. However, one persistent challenge has been the scarcity of publicly available
-    high-quality truth data (i.e. samples with validated STR expansions) that can be used for comparing tools
-    and evaluating tool accuracy beyond the ~50 known disease-associated loci.</p>
-<p>This blog post describes a new genome-wide STR truth set that partially addresses this challenge. It is based on the Synthetic
-    Diploid Benchmark (SynDip) [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/">Li 2018</a>] and contains accurate
-    genotypes for 144,773 STR variants in a single human sample (CHM1-CHM13). Short read sequencing data for CHM1-CHM13
-    is publicly available from the
-    <a href="https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&amp;acc=ERR1341796&amp;display=data-access">SRA</a>
-    and also from the Broad Institute - including both
-    <a href="https://console.cloud.google.com/storage/browser/broad-public-datasets/CHM1_CHM13_WGS2">genome data</a> and
-    <a href="https://console.cloud.google.com/storage/browser/broad-public-datasets/CHM1_CHM13_WES">exome data</a>.</p>
-<p>Below, I apply this truth set to evaluate widely-used tools - ExpansionHunter, GangSTR, HipSTR and ExpansionHunter
-    Denovo - and also use it to explore relevant questions about STRs in general such as:<br />
-- what is the distribution of STR variants in the human genome (i.e. motif sizes, lengths, percent multi-allelic, etc.)? <br />
-- how well do widely-used catalogs of STR loci capture these variants? <br />
-- how many STR loci can we expect to be novel (i.e. absent from the hg38 reference genome) in randomly selected individuals of European ancestry?</p>
-<hr />
-    
-<h4>Table of Contents:</h4>
-<ol>
-  <li><a href="#summary-of-findings">Key findings</a></li>
-  <li><a href="#interactive-tool-comparison-plot-viewer">Interactive tool comparison plot viewer</a></li>
-  <li><a href="#interactive-igv-viewer-for-truth-set-data">Interactive IGV viewer for truth set loci</a></li>
-  <li><a href="#defining-the-str-truth-set">Defining the STR truth set & validating it against the T2T reference genome</a></li>
-  <li><span style="margin-bottom:7px">STR truth set</span>
-    <ul>
-      <li><a href="#basic-summary-statistics">Basic summary statistics</a></li>
-      <li><a href="#genomic-regions">Genomic regions</a></li>
-      <li><a href="#novel-str-loci">Novel STR loci not found in the hg38 reference</a></li>
-    </ul>
-  </li>
-  <li><a href="#limitations-of-existing-str-catalogs">Limitations of existing STR catalogs</a></li>
-  <li><span style="margin-bottom:7px">Tool comparisons</span>
-    <ul>
-      <li><a href="#tool-comparisons">Accuracy of ExpansionHunter, GangSTR, HipSTR</a></li>
-      <li><a href="#tool-concordance">Concordance between ExpansionHunter & GangSTR</a></li>
-      <li><a href="#tool-runtime-and-memory-use-comparison">Running time and memory usage of ExpansionHunter, GangSTR, HipSTR</a></li>
-      <li><a href="#optimized-expansionhunter">Optimized ExpansionHunter</a></li>
-      <li><a href="#expansionhunterdenovo">Accuracy of ExpansionHunterDenovo</a></li>
-    </ul>
-  </li>
-  <li><a href="#interruptions">STR loci with interruptions</a></li>
-  <li><a href="#extra-section-1-data-availability-and-qc-metrics">Extra section 1: data download links & QC metrics</a></li>
-  <li><a href="#extra-section-2-code-and-other-data-availability">Extra section 2: code summary and download links</a></li>
-  <li><a href="#extra-section-3-genome-wide-str-catalogs-via-tandemrepeatfinder">Extra section 3: genome-wide STR catalog download links</a></li>
-  <li><a href="#extra-section-4-limitations-of-different-approaches-to-estimatin">Extra section 4: limitations of different approaches to estimating STR caller accuracy</a></li>
-  <li><a href="#extra-section-5-truth-set-genotype-validation-steps-this-flow-di">Extra section 5: truth set genotype validation steps</a></li>
+        <h2>Genome-wide STR Truth Set</h2>
+        <p>Short tandem repeat (STR) expansions are associated with over 50 monogenic diseases
+            [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8205997/">Depienne 2021</a>] as well as common
+            diseases such as autism
+            [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9348607/">Trost 2020</a>]
+            [<a href="https://www.nature.com/articles/s41586-020-03078-7">Mitra 2021</a>].
+            Improvements in STR genotyping tools such as <a href="https://github.com/Illumina/ExpansionHunter">ExpansionHunter</a>
+            and <a href="https://github.com/gymreklab/GangSTR">GangSTR</a> have generated new interest in studying STRs
+            using short read sequencing data. However, one persistent challenge has been the scarcity of publicly
+            available
+            high-quality truth data (i.e. samples with validated STR expansions) that can be used for comparing tools
+            and evaluating tool accuracy beyond the ~50 known disease-associated loci.</p>
+        <p>This blog post describes a new genome-wide STR truth set that partially addresses this challenge. It is based
+            on the Synthetic
+            Diploid Benchmark (SynDip) [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/">Li 2018</a>] and
+            contains accurate
+            genotypes for 144,773 STR variants in a single human sample (CHM1-CHM13). Short read sequencing data for
+            CHM1-CHM13
+            is publicly available from the
+            <a href="https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&amp;acc=ERR1341796&amp;display=data-access">SRA</a>
+            and also from the Broad Institute - including both
+            <a href="https://console.cloud.google.com/storage/browser/broad-public-datasets/CHM1_CHM13_WGS2">genome
+                data</a> and
+            <a href="https://console.cloud.google.com/storage/browser/broad-public-datasets/CHM1_CHM13_WES">exome
+                data</a>.</p>
+        <p>Below, I apply this truth set to evaluate widely-used tools - ExpansionHunter, GangSTR, HipSTR and
+            ExpansionHunter
+            Denovo - and also use it to explore relevant questions about STRs in general such as:<br/>
+            - what is the distribution of STR variants in the human genome (i.e. motif sizes, lengths, percent
+            multi-allelic, etc.)? <br/>
+            - how well do widely-used catalogs of STR loci capture these variants? <br/>
+            - how many STR loci can we expect to be novel (i.e. absent from the hg38 reference genome) in randomly
+            selected individuals of European ancestry?</p>
+        <hr/>
 
-</ol>
-    
-<hr />
-<h4>Summary of Findings</h4>
-<p>Some of the more interesting and surprising results from the truth set analysis are listed below. These are based on a
-    survey of all STR variants in a single human genome of european ancestry - the CHM1-CHM13 synthetic diploid sample
-    from [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/">Li 2018</a>]. They can be considered as
-    findings from an n=1 case study. </p>
-<ul>
-<li>An individual's genome differs from the reference at ~150,000 STR loci, but 98% of STR alleles are within +/-30bp
-    of the reference locus size. On average, only several thousand STR loci differ from the reference by more than 30bp.</li>
-<li>99.6% of STR variants occurred at STR loci that are also present in the reference genome. Only 521 STR variants
-    had novel motifs that were entirely different from the adjacent motifs or reference sequence context.</li>
-<li>ExpansionHunter has better accuracy than GangSTR or HipSTR across the entire range of STR allele sizes.</li>
-<li>Widely-used STR catalogs would miss 37% to 41% of the STR variants in the truth set. To capture more than 95% of
-    these variants using a catalog of STRs from the reference genome, you need to start with a catalog of
-    2.8 million STR loci. We share this catalog below.</li>
-<li>pLI gene constraint is useful but insufficient for identifying genes that are intolerant of STR variation.</li>
-</ul>
-<p><em>NOTE</em>: STRs are traditionally defined as repeating motifs that are between 1 to 6bp long. For this truth
-    set I exclude 1bp (homopolymer) repeats since they are uniquely error-prone, but include motifs longer than 6bp
-    so that users can decide whether to include these in their analyses.</p>
+        <h4>Table of Contents:</h4>
+        <ol>
+            <li><a href="#summary-of-findings">Key findings</a></li>
+            <li><a href="#interactive-tool-comparison-plot-viewer">Interactive tool comparison plot viewer</a></li>
+            <li><a href="#interactive-igv-viewer-for-truth-set-data">Interactive IGV viewer for truth set loci</a></li>
+            <li><a href="#defining-the-str-truth-set">Defining the STR truth set & validating it against the T2T
+                reference genome</a></li>
+            <li><span style="margin-bottom:7px">STR truth set</span>
+                <ul>
+                    <li><a href="#basic-summary-statistics">Basic summary statistics</a></li>
+                    <li><a href="#genomic-regions">Genomic regions</a></li>
+                    <li><a href="#novel-str-loci">Novel STR loci not found in the hg38 reference</a></li>
+                </ul>
+            </li>
+            <li><a href="#limitations-of-existing-str-catalogs">Limitations of existing STR catalogs</a></li>
+            <li><span style="margin-bottom:7px">Tool comparisons</span>
+                <ul>
+                    <li><a href="#tool-comparisons">Accuracy of ExpansionHunter, GangSTR, HipSTR</a></li>
+                    <li><a href="#tool-concordance">Concordance between ExpansionHunter & GangSTR</a></li>
+                    <li><a href="#tool-runtime-and-memory-use-comparison">Running time and memory usage of
+                        ExpansionHunter, GangSTR, HipSTR</a></li>
+                    <li><a href="#optimized-expansionhunter">Optimized ExpansionHunter</a></li>
+                    <li><a href="#expansionhunterdenovo">Accuracy of ExpansionHunterDenovo</a></li>
+                </ul>
+            </li>
+            <li><a href="#interruptions">STR loci with interruptions</a></li>
+            <li><a href="#extra-section-1-data-availability-and-qc-metrics">Extra section 1: data download links & QC
+                metrics</a></li>
+            <li><a href="#extra-section-2-code-and-other-data-availability">Extra section 2: code summary and download
+                links</a></li>
+            <li><a href="#extra-section-3-genome-wide-str-catalogs-via-tandemrepeatfinder">Extra section 3: genome-wide
+                STR catalog download links</a></li>
+            <li><a href="#extra-section-4-limitations-of-different-approaches-to-estimatin">Extra section 4: limitations
+                of different approaches to estimating STR caller accuracy</a></li>
+            <li><a href="#extra-section-5-truth-set-genotype-validation-steps-this-flow-di">Extra section 5: truth set
+                genotype validation steps</a></li>
 
-<h4>Tool Comparison Plot Viewer:</h4>
-<p>The plots show ExpansionHunter, GangSTR, and HipSTR accuracy for expansions and contractions in the STR truth set.
-<div>[<a href="https://broadinstitute.github.io/str-truth-set/html/tool_comparison_viewer.html" target="_blank">Open in new window</a>]</div>
-</p>
+        </ol>
 
-<iframe src="https://broadinstitute.github.io/str-truth-set/html/tool_comparison_viewer.html" width="100%" height="850px" frameBorder="0" style="padding:0px; margin:0px 0px 10px 0px;"></iframe>
+        <hr/>
+        <h4>Summary of Findings</h4>
+        <p>Some of the more interesting and surprising results from the truth set analysis are listed below. These are
+            based on a
+            survey of all STR variants in a single human genome of european ancestry - the CHM1-CHM13 synthetic diploid
+            sample
+            from [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/">Li 2018</a>]. They can be considered
+            as
+            findings from an n=1 case study. </p>
+        <ul>
+            <li>An individual's genome differs from the reference at ~150,000 STR loci, but 98% of STR alleles are
+                within +/-30bp
+                of the reference locus size. On average, only several thousand STR loci differ from the reference by
+                more than 30bp.
+            </li>
+            <li>99.6% of STR variants occurred at STR loci that are also present in the reference genome. Only 521 STR
+                variants
+                had novel motifs that were entirely different from the adjacent motifs or reference sequence context.
+            </li>
+            <li>ExpansionHunter has better accuracy than GangSTR or HipSTR across the entire range of STR allele
+                sizes.
+            </li>
+            <li>Widely-used STR catalogs would miss 37% to 41% of the STR variants in the truth set. To capture more
+                than 95% of
+                these variants using a catalog of STRs from the reference genome, you need to start with a catalog of
+                2.8 million STR loci. We share this catalog below.
+            </li>
+            <li>pLI gene constraint is useful but insufficient for identifying genes that are intolerant of STR
+                variation.
+            </li>
+        </ul>
+        <p><em>NOTE</em>: STRs are traditionally defined as repeating motifs that are between 1 to 6bp long. For this
+            truth
+            set I exclude 1bp (homopolymer) repeats since they are uniquely error-prone, but include motifs longer than
+            6bp
+            so that users can decide whether to include these in their analyses.</p>
+
+        <h4>Tool Comparison Plot Viewer:</h4>
+        <p>The plots show ExpansionHunter, GangSTR, and HipSTR accuracy for expansions and contractions in the STR truth
+            set.
+        <div>[<a href="https://broadinstitute.github.io/str-truth-set/html/tool_comparison_viewer.html" target="_blank">Open
+            in new window</a>]
+        </div>
+        </p>
+
+        <iframe src="https://broadinstitute.github.io/str-truth-set/html/tool_comparison_viewer.html" width="100%"
+                height="850px" frameBorder="0" style="padding:0px; margin:0px 0px 10px 0px;"></iframe>
 
 
-<hr />
-<h3>Defining the STR truth set</h3>
-<p>To generate an STR truth set, I started with the Synthetic Diploid Benchmark (SynDip) [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/">Li 2018</a>]. This is a unique dataset that uses haploid PacBio assemblies to identify all variants in the CHM1-CHM13 synthetic diploid sample. Because these variants are based on alignments of haploid assemblies (rather than individual reads) to the reference genome, the SynDip genotypes are more reliable than those produced by short-read or even ordinary long-read pipelines. </p>
-<p>There are 4.09 million high-confidence variants in the <a href="https://github.com/lh3/CHM-eval">SynDip VCF</a>. Some of these are multi-allelic (meaning both alleles differ from the reference genome) so there are more alleles than variant loci. For the 4.09 million variants, there are 4.15 million alleles. Of these alleles, 287k (6.9%) are insertions and 279k (6.7%) are deletions. To create the STR truth set, I filtered these insertion and deletion alleles to the subset that represents STR expansions or contractions by using the following steps:</p>
-<table>
-   <tr>
-      <th> </th>
-      <th>Filtering Step</th>
-      <th nowrap># of Variant Loci</th>
-      <th nowrap># of Alleles</th>
-      <th nowrap style="text-align: right">% of Alleles</th>
-   </tr>
-   <tr>
-      <td><i>1</i></td>
-      <td>Start with all high-confidence variants in the SynDip Benchmark</td>
-      <td nowrap style="text-align: right">4,085,178</td>
-      <td nowrap style="text-align: right">4,152,492</td>
-      <td nowrap style="text-align: right">all</td>
-   </tr>
+        <hr/>
+        <h3>Defining the STR truth set</h3>
+        <p>To generate an STR truth set, I started with the Synthetic Diploid Benchmark (SynDip)
+            [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/">Li 2018</a>]. This is a unique dataset that
+            uses
+            haploid PacBio assemblies to identify all variants in the CHM1-CHM13 synthetic diploid sample. Because these
+            variants are based on alignments of haploid assemblies (rather than individual reads) to the reference
+            genome,
+            the SynDip genotypes are more reliable than those produced by short-read or even ordinary long-read
+            pipelines.</p>
+        <p>There are 4.09 million high-confidence variants in the <a href="https://github.com/lh3/CHM-eval">SynDip
+            VCF</a>.
+            Since many of these are multi-allelic (meaning both alleles differ from the reference genome) so there are
+            more alleles
+            than variant loci. For the 4.09 million variants, there are 4.15 million alleles. Of these alleles, 287k
+            (6.9%) are
+            insertions and 279k (6.7%) are deletions. To create the STR truth set, I filtered these insertion and
+            deletion
+            alleles to the subset that represents STR expansions or contractions:</p>
+        <table>
+            <tr>
+                <th></th>
+                <th>Filtering Step</th>
+                <th nowrap># of Variant Loci</th>
+                <th nowrap># of Alleles</th>
+                <th nowrap style="text-align: right">% of Alleles</th>
+            </tr>
+            <tr>
+                <td><i>1</i></td>
+                <td>Start with all high-confidence variants in the SynDip Benchmark</td>
+                <td nowrap style="text-align: right">4,085,178</td>
+                <td nowrap style="text-align: right">4,152,492</td>
+                <td nowrap style="text-align: right">all</td>
+            </tr>
 
-   <tr>
-      <td><i>2</i></td>
-      <td>Keep only insertions and deletions</td>
-      <td nowrap style="text-align: right">537,520</td>
-      <td nowrap style="text-align: right">566,608</td>
-      <td nowrap style="text-align: right">13.6 %</td>
-   </tr>
+            <tr>
+                <td><i>2</i></td>
+                <td>Keep only insertions and deletions</td>
+                <td nowrap style="text-align: right">537,520</td>
+                <td nowrap style="text-align: right">566,608</td>
+                <td nowrap style="text-align: right">13.6 %</td>
+            </tr>
 
-   <tr>
-      <td><i>3</i></td>
-      <td>Identify the subset that are STR expansions or contractions (requiring that they have ≥ 3 repeats, span ≥ 9bp,
-          are pure (i.e. no interruptions), and have motif size ≥ 2bp)
-      </td>
-      <td nowrap style="text-align: right">146,618</td>
-      <td nowrap style="text-align: right">177,369</td>
-      <td nowrap style="text-align: right">4.3 %</td>
-   </tr>
+            <tr>
+                <td><i>3</i></td>
+                <td>Identify the subset that are STR expansions or contractions (requiring that they have ≥ 3 repeats,
+                    span ≥ 9bp,
+                    are pure (i.e. no interruptions), and have motif size ≥ 2bp)
+                </td>
+                <td nowrap style="text-align: right">146,618</td>
+                <td nowrap style="text-align: right">177,369</td>
+                <td nowrap style="text-align: right">4.3 %</td>
+            </tr>
 
-</table>
+        </table>
+        The following example demonstrates how we filter insertions and deletions to the subset that represents STR
+        expansions
+        or contractions:<br/>
+        <br/>
 
-<p><br /></p>
-<p><img width="85" alt="image" src="https://user-images.githubusercontent.com/6240170/200182718-67b467b0-80a6-49ae-b147-56a8bb0cf655.png"></p>
-<p>This example walks through how to determine whether an InDel actually represents an STR expansion or contraction.
-The following examples demonstrate how this works.
-</p>
-<p>Let's say the SynDip truth set contains this insertion:
-<img width="275" alt="image" src="https://user-images.githubusercontent.com/6240170/200183159-d42914b0-9636-4584-a593-dcb86463ff14.png"></p>
-<p>Should we include it in the STR truth set?  </p>
-<p><em>step 1</em>: find the minimal motif (<strong>GGC</strong>) in the inserted sequence (<strong>GGCGGC</strong>) by using brute force k-mer search similar to <a href="https://www.biorxiv.org/content/10.1101/2021.11.18.469113v1">STRling</a>.<br />
-<em>step 2</em>: check the reference context for additional <strong>GGC</strong> repeats immediately to the left or right of the variant:  </p>
-<p align="center"><img width="350" alt="image" src="https://user-images.githubusercontent.com/6240170/200182871-639e7282-07a1-4587-8592-453d68622383.png"></p>
+        <p>
+        <div style="font-size:18px; color:#006CB6; font-weight: bold">Example 1</div>
+        </p>
+        <p>Let's say the SynDip truth set contains this heterozygous insertion:
+            <img width="275" alt="image"
+                 src="https://user-images.githubusercontent.com/6240170/200183159-d42914b0-9636-4584-a593-dcb86463ff14.png">
+        </p>
+        <p><b>Should we include it in the STR truth set?</b> To answer this, let's look at the inserted sequence along
+            with its hg38 reference context:
+        <p align="center"><img width="350" alt="image"
+                               src="https://user-images.githubusercontent.com/6240170/200182871-639e7282-07a1-4587-8592-453d68622383.png">
+        </p>
+        <p>
+            <em>step 1</em>: find the minimal motif (<strong>GGC</strong>) in the inserted sequence
+            (<strong>GGCGGC</strong>) by using brute force k-mer search:<br/>
 
-<p>Here, the reference contains 9 additional GGC repeats so the variant can be represented as having  </p>
-<p><strong>9 x GGC repeats in the reference allele</strong><br />
-<strong>11 x GGC repeats in the alternate allele</strong>   </p>
-<p>This variant passes the thresholds for length ≥ 9bp and repeat count ≥ 3, so <strong>we add it to STR truth set</strong>.</p>
-<hr />
-<h3>Validation</h3>
-<p>The SynDip benchmark is based on samples from two individuals: CHM1 and CHM13. One of them (CHM13) is also the basis
-    of the new <a href="https://www.genome.gov/about-genomics/telomere-to-telomere">telomere-to-telomere</a> (T2T)
-    reference genome, so it's possible to validate most STR variants in the truth set by checking that at least one
-    allele matches the T2T reference sequence.</p>
+            <em>step 2</em>: check the reference context for additional <strong>GGC</strong> repeats immediately to the
+            left or right of the variant: </p>
+        <p align="center"><img width="350" alt="image"
+                               src="https://user-images.githubusercontent.com/6240170/200182871-639e7282-07a1-4587-8592-453d68622383.png">
+        </p>
 
-<table>
-   <tr>
-      <th> </th>
-      <th>Validation Step</th>
-      <th nowrap># of Variant Loci<br />That Failed</th>
-      <th nowrap style="text-align: right">% Failed</th>
-   </tr>
+        <p>Here, the variant sequence consists of 2 <strong>GGC</strong> repeats, and the reference contains 9
+            additional <strong>GGC</strong> repeats so the variant can be represented as having </p>
+        <p><strong>9 x GGC repeats in the reference allele</strong><br/>
+            <strong>11 x GGC repeats in the alternate allele</strong></p>
+        <p>This variant passes the thresholds for length ≥ 9bp and repeat count ≥ 3, so <strong>we add it to STR truth
+            set</strong>.</p>
+        <hr/>
+        <h3>Validation</h3>
+        <p>The SynDip benchmark is based on samples from two individuals: CHM1 and CHM13. One of them (CHM13) is also
+            the basis
+            of the new <a href="https://www.genome.gov/about-genomics/telomere-to-telomere">telomere-to-telomere</a>
+            (T2T)
+            reference genome, so it's possible to validate most STR variants in the truth set by checking that at least
+            one
+            allele matches the T2T reference sequence.</p>
 
-    <tr>
-        <td><i>1</i></td>
-        <td>Start with all STR expansions and contractions found in SynDip</td>
-        <td nowrap style="text-align: right">146,618</td>
-        <td nowrap style="text-align: right">all</td>
-    </tr>
+        <table>
+            <tr style="margin-bottom: 30px;">
+                <td><i>1</i></td>
+                <td>Start with all STR variants found in SynDip</td>
+                <td nowrap style="text-align: right">146,618</td>
+                <td nowrap style="text-align: right"></td>
+            </tr>
+            <tr>
+                <td colspan="4"></td>
+            </tr>
+            <tr>
+                <th></th>
+                <th>Validation Step</th>
+                <th nowrap># Failed</th>
+                <th nowrap style="text-align: right">% Failed</th>
+            </tr>
 
-   <tr>
-      <td><i>2</i></td>
-      <td>Lift over STR variant to the T2T reference</td>
-      <td nowrap style="text-align: right">1,507</td>
-      <td nowrap style="text-align: right">1.0 %</td>
-   </tr>
+            <tr>
+                <td><i>2</i></td>
+                <td>Lift over STR variant to the CHM13 telomere-to-telomere (T2T) reference</td>
+                <td nowrap style="text-align: right">1,507</td>
+                <td nowrap style="text-align: right">1.0 %</td>
+            </tr>
 
-   <tr>
-      <td><i>3</i></td>
-      <td>Check that one allele exactly matches the T2T reference sequence</td>
-      <td nowrap style="text-align: right">295</td>
-      <td nowrap style="text-align: right">0.2 %</td>
-   </tr>
+            <tr>
+                <td><i>3</i></td>
+                <td>Check that at least one allele exactly matches the T2T reference sequence</td>
+                <td nowrap style="text-align: right">295</td>
+                <td nowrap style="text-align: right">0.2 %</td>
+            </tr>
 
-   <tr>
-      <td><i>4</i></td>
-      <td>Lift back over to hg38</td>
-      <td nowrap style="text-align: right">43</td>
-      <td nowrap style="text-align: right">0.03 %</td>
-   </tr>
+            <tr>
+                <td><i>4</i></td>
+                <td>Lift back over to hg38</td>
+                <td nowrap style="text-align: right">43</td>
+                <td nowrap style="text-align: right">0.03 %</td>
+            </tr>
 
-   <tr>
-      <td><i>5</i></td>
-      <td>Check if the variant position changed due to hg38 ⇒ T2T ⇒ hg38 liftover</td>
-      <td nowrap style="text-align: right">0</td>
-      <td nowrap style="text-align: right">0 %</td>
-   </tr>
+            <tr>
+                <td><i>5</i></td>
+                <td>Check that the variant's position didn't change after hg38 ⇒ T2T ⇒ hg38 liftover</td>
+                <td nowrap style="text-align: right">0</td>
+                <td nowrap style="text-align: right">0 %</td>
+            </tr>
+        </table>
 
-</table>
+        <p>Overall, of the 86,028 STRs that could be validated <sup>‡</sup> against T2T, 84,183 (97.9%) passed this
+            validation,
+            underscoring the accuracy and relevance of this truth set. </p>
 
-<p>Overall, of the 86,028 STRs that could be validated <sup>‡</sup> against T2T, 84,183 (97.9%) passed this validation,
-    underscoring the accuracy and relevance of this truth set. </p>
+        <p><a href="#extra-section-5-truth-set-genotype-validation-steps-this-flow-di">Extra Section 5</a>
+            shows a flow diagram with additional details about these validation steps.</p>
 
-<p><a href="#extra-section-5-str-validation-flow-diagram-this-flow-diagram-de">Extra Section 5</a> provides additional details about the validation steps.</p>
+        <p>‡ <em>NOTE</em>: STR contractions that failed hg38 ⇒ T2T liftover due to an “IndelStraddlesMultipleIntevals”
+            error
+            were included in the truth set without these validation steps as I consider this to be a technical issue
+            with
+            liftover rather than a problem with genotype accuracy. This applies to 60,590 (77%) of STR contractions.</p>
 
-<p>‡ <em>NOTE</em>: STR contractions that failed hg38 ⇒ T2T liftover due to an  “IndelStraddlesMultipleIntevals” error
-    were included in the truth set without these validation steps as I consider this to be a technical issue with
-    liftover rather than a problem with genotype accuracy. This applies to 60,590 (77%) of STR contractions.</p>
+        <hr/>
+        <h3>Basic Summary Statistics:</h3>
+        <p>The resulting STR truth set contains:</p>
+        <ul>
+            <li><strong>144,773 STR variants</strong></li>
+            <li><strong>175,372 STR alleles</strong></li>
+        </ul>
+        <p>The size distribution of these alleles is as follows:</p>
+        <p><img width=500
+                src="https://user-images.githubusercontent.com/6240170/200637637-32348eff-13bc-4c10-9cbb-c52304709859.png">
+        </p>
+        <p>Here, the x-axis represents the STR allele size in CHM1-CHM13 minus the number of repeats at that locus in
+            the
+            hg38 reference genome. The distribution is symmetric around 0 - which is as expected since there's no reason
+            for
+            STRs in hg38 to be systematically larger or smaller than repeats in random individuals from the population
+            (i.e. CHM1 and CHM13). To take it a step further, this symmetry provides further support for the truth set's
+            accuracy since it rules out systematic bias toward expansions or contractions in the pipeline that produced
+            the
+            SynDip Benchmark. </p>
+        <p>If I plot the same distribution but with size in base pairs rather than # of repeats on the x-axis, it looks
+            like:</p>
+        <p><img width=500
+                src="https://user-images.githubusercontent.com/6240170/201500475-561acf00-3b52-43b6-9a27-b1846ce76ddd.png">
+        </p>
+        <p>To summarize, only 3,037 STR alleles (1.7%) differ by more than 30bp from the reference genome, and only 849
+            (0.5%)
+            differ by more than 60bp. Although there are many STR variants, the overwhelming majority add or subtract
+            only a
+            few repeats. </p>
+        <p>Splitting this distribution by motif size bins (2-6bp, 7-24bp and 25-50bp) shows that most of the large
+            expansions
+            involve large motifs:</p>
+        <p><img alt="image"
+                src="https://user-images.githubusercontent.com/6240170/215888369-966aa1c8-982e-4536-8c1a-b0344d640a4a.png"/>
+        </p>
+        <p>We can also look at the prevalence of STR variants with different motifs and compare it to the distribution
+            of pure
+            STR repeats in hg38 (found using <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a>):
+        </p>
+        <div nowrap align=center>
+            <img width=400
+                 src="https://user-images.githubusercontent.com/6240170/200649782-9c128fa7-fe46-4593-bb54-5e42bb546217.png">
+            <img width="148" alt="image"
+                 src="https://user-images.githubusercontent.com/6240170/200648659-7b827c97-b95d-4713-947c-bca349cf36c4.png">
+            <img width=400
+                 src="https://user-images.githubusercontent.com/6240170/200649509-d8a1fd0d-4dbc-4e4b-9ab4-82eb9566b5cb.png">
+        </div>
 
-<hr />
-<h3>Basic Summary Statistics:</h3>
-<p>The resulting STR truth set contains:</p>
-<ul>
-<li><strong>144,773 STR variants</strong>  </li>
-<li><strong>175,372 STR alleles</strong>   </li>
-</ul>
-<p>The size distribution of these alleles is as follows:</p>
-<p><img width=500 src="https://user-images.githubusercontent.com/6240170/200637637-32348eff-13bc-4c10-9cbb-c52304709859.png"></p>
-<p>Here, the x-axis represents the STR allele size in CHM1-CHM13 minus the number of repeats at that locus in the hg38 reference genome. The distribution is symmetric around 0 - which is as expected since there's no reason for STRs in hg38 to be systematically larger or smaller than repeats in random individuals from the  population (i.e. CHM1 and CHM13). To take it a step further, this symmetry provides further support for the truth set's accuracy since it rules out systematic bias toward expansions or contractions in the pipeline that produced the SynDip Benchmark. </p>
-<p>If I plot the same distribution but with size in base pairs rather than # of repeats on the x-axis, it looks like:</p>
-<p><img width=500 src="https://user-images.githubusercontent.com/6240170/201500475-561acf00-3b52-43b6-9a27-b1846ce76ddd.png"></p>
-<p>To summarize, only 3,037 STR alleles (1.7%) differ by more than 30bp from the reference genome, and only 849 (0.5%) differ by more than 60bp. Although there are many STR variants, the overwhelming majority add or subtract only a few repeats. </p>
-<p>Splitting this distribution by motif size bins (2-6bp, 7-24bp and 25-50bp) shows that most of the large expansions involve large motifs:</p>
-<p><img alt="image" src="https://user-images.githubusercontent.com/6240170/215888369-966aa1c8-982e-4536-8c1a-b0344d640a4a.png" /></p>
-<p>We can also look at the prevalence of STR variants with different motifs and compare it to the distribution of pure STR repeats in hg38 (found using <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a>):</p>
-<div nowrap align=center>
-<img width=400 src="https://user-images.githubusercontent.com/6240170/200649782-9c128fa7-fe46-4593-bb54-5e42bb546217.png">
-<img width="148" alt="image" src="https://user-images.githubusercontent.com/6240170/200648659-7b827c97-b95d-4713-947c-bca349cf36c4.png">
-<img width=400 src="https://user-images.githubusercontent.com/6240170/200649509-d8a1fd0d-4dbc-4e4b-9ab4-82eb9566b5cb.png">
-</div>
+        <p>Here the motifs are sorted by how common they are in hg38.
+            Although the 2 distributions are roughly similar, some motifs clearly have more STR variants than
+            others. </p>
+        <p>30,599 out of 144,773 (21%) STR variants are multi-allelic (i.e. have 2 non-reference alleles), reflecting
+            the high
+            mutation rates of STR loci.</p>
+        <div align=center>
+            <img width=850
+                 src="https://user-images.githubusercontent.com/6240170/200898063-bcdfdfe6-1496-4997-b95d-192f83e08ceb.png">
+        </div>
 
-<p>Here the motifs are sorted by how common they are in hg38. 
-Although the 2 distributions are roughly similar, some motifs clearly have more STR variants than others. </p>
-<p>30,599 out of 144,773 (21%) STR variants are multi-allelic (i.e. have 2 non-reference alleles), reflecting the high mutation rates of STR loci.</p>
-<div align=center>
-<img width=850 src="https://user-images.githubusercontent.com/6240170/200898063-bcdfdfe6-1496-4997-b95d-192f83e08ceb.png">
-</div>
+        <p>Finally, we can also ask - for STR variants in the truth set, how large are the corresponding loci in the
+            hg38
+            reference genome?
+            and also, if a locus has many repeats in the reference genome, is it more likely to be expanded or
+            contracted in CHM1-CHM13?<br/>
+            These plots address those questions:</p>
+        <p><img width=615
+                src="https://user-images.githubusercontent.com/6240170/204148709-ab45e9b2-e808-4daa-a089-107b3139811b.png">
+        </p>
+        <p>Unsurprisingly, truth set variants at loci where the reference sequence contains relatively few repeats are
+            more
+            likely to be expanded, while loci that have many repeats in the reference are more likely to be contracted
+            in
+            the truth set. </p>
+        <h3>Genomic regions</h3>
+        <p>How are truth set STR variants distributed across various annotated regions of the genome?</p>
+        <p>3,121 out of 144,773 (2.2%) STR variants overlap segmental duplications (SegDups) in hg38:</p>
+        <div align=center>
+            <img width=850
+                 src="https://user-images.githubusercontent.com/6240170/200898172-0d04bc7c-269c-402b-b3c6-e1b2e6d86df6.png">
+        </div>
 
-<p>Finally, we can also ask - for STR variants in the truth set, how large are the corresponding loci in the hg38 reference genome? 
-and also, if a locus has many repeats in the reference genome, is it more likely to be expanded or contracted in CHM1-CHM13?<br />
-These plots address those questions:</p>
-<p><img width=615 src="https://user-images.githubusercontent.com/6240170/204148709-ab45e9b2-e808-4daa-a089-107b3139811b.png"></p>
-<p>Unsurprisingly, truth set variants at loci where the reference sequence contains relatively few repeats are more likely to be expanded, while loci that have many repeats in the reference are more likely to be contracted in the truth set. </p>
-<h3>Genomic regions</h3>
-<p>How are truth set STR variants distributed across various annotated regions of the genome?</p>
-<p>3,121 out of 144,773 (2.2%) STR variants overlap segmental duplications (SegDups) in hg38:</p>
-<div align=center>
-<img width=850 src="https://user-images.githubusercontent.com/6240170/200898172-0d04bc7c-269c-402b-b3c6-e1b2e6d86df6.png">
-</div>
+        <p>STRs overlap transcripts from <a href="https://www.gencodegenes.org/human/release_42.html">Gencode v42</a>
+            and <a href="https://www.ncbi.nlm.nih.gov/refseq/MANE/">MANE v1</a> as follows:</p>
+        <table>
+            <tr>
+                <th rowspan=2>Gene Region</th>
+                <th colspan=2>Gencode v42</th>
+                <th></th>
+                <th colspan=2>MANE v1</th>
+            </tr>
+            <tr>
+                <th># of STR variants</th>
+                <th>%</th>
+                <th></th>
+                <th># of STR variants</th>
+                <th>%</th>
+            </tr>
+            <tr>
+                <td>intron</td>
+                <td style="text-align: right">98,772</td>
+                <td style="text-align: right">56 %</td>
+                <td></td>
+                <td style="text-align: right">61,529</td>
+                <td style="text-align: right">35 %</td>
+            </tr>
+            <tr>
+                <td>intergenic</td>
+                <td style="text-align: right">70,236</td>
+                <td style="text-align: right">40 %</td>
+                <td></td>
+                <td style="text-align: right">110,723</td>
+                <td style="text-align: right">63 %</td>
+            </tr>
+            <tr>
+                <td>exon of a non-coding gene</td>
+                <td style="text-align: right">2,094</td>
+                <td style="text-align: right">1.2 %</td>
+                <td></td>
+                <td style="text-align: right">0</td>
+                <td style="text-align: right">0 %</td>
+            </tr>
+            <tr>
+                <td>promoter</td>
+                <td style="text-align: right">1,869</td>
+                <td style="text-align: right">1.1 %</td>
+                <td></td>
+                <td style="text-align: right">1,214</td>
+                <td style="text-align: right">0.8 %</td>
+            </tr>
+            <tr>
+                <td>3' UTR</td>
+                <td style="text-align: right">1,667</td>
+                <td style="text-align: right">1.0 %</td>
+                <td></td>
+                <td style="text-align: right">1,404</td>
+                <td style="text-align: right">0.8 %</td>
+            </tr>
+            <tr>
+                <td>5' UTR</td>
+                <td style="text-align: right">492</td>
+                <td style="text-align: right">0.3 %</td>
+                <td></td>
+                <td style="text-align: right">299</td>
+                <td style="text-align: right">0.2 %</td>
+            </tr>
+            <tr>
+                <td>coding region</td>
+                <td style="text-align: right">242</td>
+                <td style="text-align: right">0.1 %</td>
+                <td></td>
+                <td style="text-align: right">203</td>
+                <td style="text-align: right">0.1 %</td>
+            </tr>
+        </table>
 
-<p>STRs overlap transcripts from <a href="https://www.gencodegenes.org/human/release_42.html">Gencode v42</a> and <a href="https://www.ncbi.nlm.nih.gov/refseq/MANE/">MANE v1</a> as follows:</p>
-<table>
-   <tr>
-      <th rowspan=2>Gene Region</th>
-      <th colspan=2>Gencode v42</th>
-      <th></th>
-      <th colspan=2>MANE v1</th>
-   </tr><tr>
-      <th># of STR variants</th>
-      <th>%</th>
-      <th></th>
-      <th># of STR variants</th>
-      <th>%</th>
-   </tr><tr>
-      <td>intron</td>
-      <td style="text-align: right">98,772</td>
-      <td style="text-align: right">56 %</td>
-      <td></td>
-      <td style="text-align: right">61,529</td>
-      <td style="text-align: right">35 %</td>
-   </tr><tr>
-      <td>intergenic</td>
-      <td style="text-align: right">70,236</td>
-      <td style="text-align: right">40 %</td>
-      <td></td>
-      <td style="text-align: right">110,723</td>
-      <td style="text-align: right">63 %</td>
-   </tr><tr>
-      <td>exon of a non-coding gene</td>
-      <td style="text-align: right">2,094</td>
-      <td style="text-align: right">1.2 %</td>
-      <td></td>
-      <td style="text-align: right">0</td>
-      <td style="text-align: right">0 %</td>
-   </tr><tr>
-      <td>promoter</td>
-      <td style="text-align: right">1,869</td>
-      <td style="text-align: right">1.1 %</td>
-      <td></td>
-      <td style="text-align: right">1,214</td>
-      <td style="text-align: right">0.8 %</td>
-   </tr><tr>
-      <td>3' UTR</td>
-      <td style="text-align: right">1,667</td>
-      <td style="text-align: right">1.0 %</td>
-      <td></td>
-      <td style="text-align: right">1,404</td>
-      <td style="text-align: right">0.8 %</td>
-   </tr><tr>
-      <td>5' UTR</td>
-      <td style="text-align: right">492</td>
-      <td style="text-align: right">0.3 %</td>
-      <td></td>
-      <td style="text-align: right">299</td>
-      <td style="text-align: right">0.2 %</td>
-   </tr><tr>
-      <td>coding region</td>
-      <td style="text-align: right">242</td>
-      <td style="text-align: right">0.1 %</td>
-      <td></td>
-      <td style="text-align: right">203</td>
-      <td style="text-align: right">0.1 %</td>
-   </tr>
-</table>
+        <p><em>NOTE: promoters are defined as just a 1kb window upstream of the 5' start of any transcript</em></p>
+        <p>Showing the MANE v1 proportions as a histogram stratified by motif sizes:</p>
+        <div align=left>
+            <img width="500" alt="image"
+                 src="https://user-images.githubusercontent.com/6240170/202269863-abc40ef0-35c1-428a-8065-ccb37b29157c.png">
+        </div>
 
-<p><em>NOTE: promoters are defined as just a 1kb window upstream of the 5' start of any transcript</em></p>
-<p>Showing the MANE v1 proportions as a histogram stratified by motif sizes:</p>
-<div align=left>
-<img width="500" alt="image" src="https://user-images.githubusercontent.com/6240170/202269863-abc40ef0-35c1-428a-8065-ccb37b29157c.png">
-</div>
+        <p>If we filter out STRs that are intergenic, intronic or overlap non-coding exons, and look only at the small
+            subset
+            that overlap either promoters, UTRs or coding regions (CDS), the histogram looks like:</p>
+        <div align=left>
+            <img width=500
+                 src="https://user-images.githubusercontent.com/6240170/200899334-703e84af-0b10-4c4c-9bb6-fa80efa8cf22.png">
+        </div>
 
-<p>If we filter out STRs that are intergenic, intronic or overlap non-coding exons, and look only at the small subset that overlap either promoters, UTRs or coding regions (CDS), the histogram looks like:</p>
-<div align=left>
-<img width=500 src="https://user-images.githubusercontent.com/6240170/200899334-703e84af-0b10-4c4c-9bb6-fa80efa8cf22.png">
-</div>
+        <p>This shows that nearly all - 198 out of 203 (97.5%) - of the STR alleles in coding regions have motif sizes
+            that
+            are multiples of 3bp.<br/>
+            As for the 5 loci that don't fit this pattern, 3 have very large motifs - larger than 50bp, 1 is an
+            out-of-frame
+            expansion of the rare "GC" di-nucleotide motif, and 1 is an expansion of a 5bp "GGGGC" motif that adds 3
+            additional
+            repeats relative to the reference and so does not introduce a frameshift. </p>
+        <p>We can also look at whether the 203 coding STR alleles fall within LoF- or missense-constrained genes and
+            compare
+            this to constraint scores of genes that harbor the 25 known coding disease-associated STR loci. In the plots
+            below
+            each point is a gene from the set described on the y-axis.</p>
+        <p><img alt="image"
+                src="https://user-images.githubusercontent.com/6240170/202306770-ad9d07b8-159d-49a4-930d-ad0e72deae4e.png"/>
+        </p>
+        <p>From this, we see that disease-associated STRs are much more likely to be in constrained genes, implying that
+            both
+            missense and LoF constraint computed from SNVs is also relevant for STRs. On the other hand, just because a
+            gene
+            is constrained doesn't mean that in-frame STR variants in that gene cause disease since many of the truth
+            set STRs
+            fall in highly constrained genes.</p>
+        <p>Another way to look at this is to see whether larger STR variants are less likely to be in constrained genes.
+            This
+            might not be enough data to say, but at least for larger expansions, pLI is more likely to be near 0. Here,
+            each
+            dot represents a coding STR allele in the truth set, and contractions relative to the reference are negative
+            on the y-axis:
+            <img alt="image"
+                 src="https://user-images.githubusercontent.com/6240170/202331857-f5cf777c-37d5-4342-b3c7-60aab7e096a5.png"/>
+        </p>
+        <h4>Novel STR loci</h4>
+        <p>Unlike variant calling tools for SNVs and structural variants which take only read alignments (bam or cram)
+            as
+            input, nearly all STR genotyping tools besides <a href="https://github.com/Illumina/ExpansionHunterDenovo">
+                ExpansionHunterDenovo</a> and <a href="https://github.com/quinlan-lab/STRling">STRling</a> require users
+            to
+            also provide the exact boundaries and motifs of the STR loci to genotype. For example, to genotype the
+            Huntington's
+            Disease locus, a user must specify the reference coordinates "chr4:3074876-3074933" and motif "CAG". The
+            implicit
+            assumption of these algorithms is that all STRs a user might want to genotype are also present in the
+            reference
+            genome - meaning that STR variants look like:</p>
+        <p><img width="452" alt="image"
+                src="https://user-images.githubusercontent.com/6240170/200219094-78f3ad2f-bcba-4412-a5cb-098e8f6b56a8.png">
+        </p>
+        <p>rather than </p>
+        <p><img width="450" alt="image"
+                src="https://user-images.githubusercontent.com/6240170/200219024-2464a379-b1b9-4569-ba3d-d6a47583c357.png">
+        </p>
+        <p>The truth set allows us to check the degree to which this assumption is valid. It turns out that it is almost
+            100%:</p>
+        <ul>
+            <li>144,158 out of 144,773 (99.6%) of STR variants in CHM1-CHM13 match repeats found in hg38 immediately to
+                the
+                left or right of the variant. Only 521 variants are novel STRs, and they are all intergenic (based on
+                Gencode v42).
+            </li>
+        </ul>
+        <p>This suggests that, for samples like CHM1-CHM13 that have European ancestry, nearly all true STR variants can
+            be found by using a large enough STR catalog generated from the reference genome. </p>
+        <h4>Limitations of existing STR catalogs</h4>
+        <p>An important question for any genome-wide STR analysis using tools like ExpansionHunter or GangSTR is which
+            STR catalog to genotype. </p>
+        <p>The truth set allows us to ask: for a given catalog, how many CHM1-CHM13 STR variants would be missed because
+            they occur at loci that are not in the catalog? </p>
+        <p>Here I compare several widely-used catalogs and approaches:</p>
+        <table>
+            <tr>
+                <th></th>
+                <th>Catalog Name</th>
+                <th>How It Was Created</th>
+                <th nowrap>Catalog Size:<br/># of STR Loci</th>
+                <th nowrap># of Truth Set Variants<br/>Missed By Catalog</th>
+                <th nowrap>% Missed</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><a href="https://github.com/Illumina/RepeatCatalogs/blob/master/docs/str_generation.md">Illumina
+                    catalog</a></td>
+                <td>Identifying STRs that are polymorphic in 2,504 individuals from the 1000 genomes project.</td>
+                <td nowrap style="text-align: right">174,300</td>
+                <td nowrap style="text-align: right">53,137 out of 144,773</td>
+                <td nowrap style="text-align: right">36.7 %</td>
+            </tr>
+            <tr>
+                <td rowspan=2>2</td>
+                <td><a href="https://github.com/gymreklab/GangSTR#gangstr-reference-files">GangSTR v13 loci</a></td>
+                <td rowspan=2>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF)
+                    on the reference genome
+                    using a mismatch penalty = 5 and an indel penalty = 17. Loci had to <b>span at least 12bp</b> in the
+                    hg38 reference genome. Multiple additional filters and post-processing steps were applied as
+                    described in [<a href="https://academic.oup.com/nar/article/47/15/e90/5518310?login=true">Mousavi
+                        2019</a>].
+                </td>
+                <td nowrap style="text-align: right">832,380</td>
+                <td nowrap style="text-align: right">79,397 out of 144,773</td>
+                <td nowrap style="text-align: right">54.8 %</td>
+            </tr>
+            <tr>
+                <td><a href="https://github.com/gymreklab/GangSTR#gangstr-reference-files">GangSTR v17 loci</a></td>
+                <td nowrap style="text-align: right">1,340,266</td>
+                <td nowrap style="text-align: right">59,462 out of 144,773</td>
+                <td nowrap style="text-align: right">41.1 %</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td nowrap><a
+                        href="https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#extra-sections">Pure
+                    Repeats Catalog</a></td>
+                <td>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) with very
+                    large mismatch and indel penalties to find all pure repeats that <b>span at least 6bp</b> in the
+                    hg38 reference genome
+                </td>
+                <td nowrap style="text-align: right">4,722,859</td>
+                <td nowrap style="text-align: right">5,434 out of 144,773</td>
+                <td nowrap style="text-align: right">3.8 %</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td nowrap><a
+                        href="https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#extra-sections">Pure
+                    Repeats Catalog<br/>Subset ≥ 9bp</a></td>
+                <td>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) with very
+                    large mismatch and indel penalties to find all pure repeats that <b>span at least 9bp</b> in the
+                    hg38 reference genome
+                </td>
+                <td nowrap style="text-align: right">2,805,842</td>
+                <td nowrap style="text-align: right">6,787 out of 144,773</td>
+                <td nowrap style="text-align: right">4.7 %</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td nowrap><a
+                        href="https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#extra-sections">Pure
+                    Repeats Catalog<br/>Subset ≥ 12bp</a></td>
+                <td>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) with very
+                    large mismatch and indel penalties to find all pure repeats that <b>span at least 12bp</b> in the
+                    hg38 reference genome
+                </td>
+                <td nowrap style="text-align: right">1,343,313</td>
+                <td nowrap style="text-align: right">11,474 out of 144,773</td>
+                <td nowrap style="text-align: right">7.9 %</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td nowrap><a
+                        href="https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#extra-sections">Pure
+                    Repeats Catalog<br/>Subset ≥ 15bp</a></td>
+                <td>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) with very
+                    large mismatch and indel penalties to find all pure repeats that <b>span at least 15bp</b> in the
+                    hg38 reference genome
+                </td>
+                <td nowrap style="text-align: right">702,486</td>
+                <td nowrap style="text-align: right">22,830 out of 144,773</td>
+                <td nowrap style="text-align: right">15.8 %</td>
+            </tr>
+        </table>
 
-<p>This shows that nearly all - 198 out of 203 (97.5%) - of the STR alleles in coding regions have motif sizes that are multiples of 3bp.<br />
-As for the 5 loci that don't fit this pattern, 3 have very large motifs - larger than 50bp, 1 is an out-of-frame expansion of the rare "GC" di-nucleotide motif, and 1 is an expansion of a 5bp "GGGGC" motif that adds 3 additional repeats relative to the reference and so does not introduce a frameshift. </p>
-<p>We can also look at whether the 203 coding STR alleles fall within LoF- or missense-constrained genes and compare this to constraint scores of genes that harbor the 25 known coding disease-associated STR loci. In the plots below each point is a gene from the set described on the y-axis.</p>
-<p><img alt="image" src="https://user-images.githubusercontent.com/6240170/202306770-ad9d07b8-159d-49a4-930d-ad0e72deae4e.png" /></p>
-<p>From this, we see that disease-associated STRs are much more likely to be in constrained genes, implying that both missense and LoF constraint computed from SNVs is also relevant for STRs. On the other hand, just because a gene is constrained doesn't mean that in-frame STR variants in that gene cause disease since many of the truth set STRs fall in highly constrained genes.</p>
-<p>Another way to look at this is to see whether larger STR variants are less likely to be in constrained genes. This might not be enough data to say, but at least for larger expansions, pLI is more likely to be near 0. Here, each dot represents a coding STR allele in the truth set, and contractions relative to the reference are negative on the y-axis:
-<img alt="image" src="https://user-images.githubusercontent.com/6240170/202331857-f5cf777c-37d5-4342-b3c7-60aab7e096a5.png" /></p>
-<h4>Novel STR loci</h4>
-<p>Unlike variant calling tools for SNVs and structural variants which take only read alignments (bam or cram) as input, nearly all STR genotyping tools besides <a href="https://github.com/Illumina/ExpansionHunterDenovo">ExpansionHunterDenovo</a> and <a href="https://github.com/quinlan-lab/STRling">STRling</a> require users to also provide the exact boundaries and motifs of the STR loci to genotype. For example, to genotype the Huntington's Disease locus, a user must specify the reference coordinates "chr4:3074876-3074933" and motif "CAG". The implicit assumption of these algorithms is that all STRs a user might want to genotype are also present in the reference genome - meaning that STR variants look like:</p>
-<p><img width="452" alt="image" src="https://user-images.githubusercontent.com/6240170/200219094-78f3ad2f-bcba-4412-a5cb-098e8f6b56a8.png"></p>
-<p>rather than </p>
-<p><img width="450" alt="image" src="https://user-images.githubusercontent.com/6240170/200219024-2464a379-b1b9-4569-ba3d-d6a47583c357.png"></p>
-<p>The truth set allows us to check the degree to which this assumption is valid. It turns out that it is almost 100%:</p>
-<ul>
-<li>144,158 out of 144,773 (99.6%) of STR variants in CHM1-CHM13 match repeats found in hg38 immediately to the left or right of the variant. Only 521 variants are novel STRs, and they are all intergenic (based on Gencode v42).</li>
-</ul>
-<p>This suggests that, for samples like CHM1-CHM13 that have European ancestry, nearly all true STR variants can be found by using a large enough STR catalog generated from the reference genome. </p>
-<h4>Limitations of existing STR catalogs</h4>
-<p>An important question for any genome-wide STR analysis using tools like ExpansionHunter or GangSTR is which STR catalog to genotype. </p>
-<p>The truth set allows us to ask: for a given catalog, how many CHM1-CHM13 STR variants would be missed because they occur at loci that are not in the catalog? </p>
-<p>Here I compare several widely-used catalogs and approaches:</p>
-<table>
-   <tr>
-      <th></th>
-      <th>Catalog Name</th>
-      <th>How It Was Created</th>
-      <th nowrap>Catalog Size:<br /># of STR Loci</th>
-      <th nowrap># of Truth Set Variants<br/>Missed By Catalog</th>
-      <th nowrap>% Missed</th>
-   </tr>
-   <tr>
-      <td>1</td>
-      <td><a href="https://github.com/Illumina/RepeatCatalogs/blob/master/docs/str_generation.md">Illumina catalog</a></td>
-      <td>Identifying STRs that are polymorphic in 2,504 individuals from the 1000 genomes project.</td>
-      <td nowrap style="text-align: right">174,300</td>
-      <td nowrap style="text-align: right">53,137 out of 144,773</td>
-      <td nowrap style="text-align: right">36.7 %</td>
-   </tr>
-   <tr>
-      <td rowspan=2>2</td>
-      <td><a href="https://github.com/gymreklab/GangSTR#gangstr-reference-files">GangSTR v13 loci</a></td>
-      <td rowspan=2>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) on the reference genome 
-         using a mismatch penalty = 5 and an indel penalty = 17. Loci had to <b>span at least 12bp</b> in the hg38 reference genome. Multiple additional filters and post-processing steps were applied as described in [<a href="https://academic.oup.com/nar/article/47/15/e90/5518310?login=true">Mousavi 2019</a>].</td>
-      <td nowrap style="text-align: right">832,380</td>
-      <td nowrap style="text-align: right">79,397 out of 144,773</td>
-      <td nowrap style="text-align: right">54.8 %</td>
-   </tr>
-   <tr>
-      <td><a href="https://github.com/gymreklab/GangSTR#gangstr-reference-files">GangSTR v17 loci</a></td>
-      <td nowrap style="text-align: right">1,340,266</td>
-      <td nowrap style="text-align: right">59,462 out of 144,773</td>
-      <td nowrap style="text-align: right">41.1 %</td>
-   </tr>
-   <tr>
-      <td>3</td>
-      <td nowrap><a href="https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#extra-sections">Pure Repeats Catalog</a></td>
-      <td>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) with very large mismatch and indel penalties to find all pure repeats that <b>span at least 6bp</b> in the hg38 reference genome</td>
-      <td nowrap style="text-align: right">4,722,859</td>
-      <td nowrap style="text-align: right">5,434 out of 144,773</td>
-      <td nowrap style="text-align: right">3.8 %</td>
-   </tr>
-   <tr>
-      <td>4</td>
-      <td nowrap><a href="https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#extra-sections">Pure Repeats Catalog<br/>Subset ≥ 9bp</a></td>
-      <td>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) with very large mismatch and indel penalties to find all pure repeats that <b>span at least 9bp</b> in the hg38 reference genome</td>
-      <td nowrap style="text-align: right">2,805,842</td>
-      <td nowrap style="text-align: right">6,787 out of 144,773</td>
-      <td nowrap style="text-align: right">4.7 %</td>
-   </tr>
-   <tr>
-      <td>5</td>
-      <td nowrap><a href="https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#extra-sections">Pure Repeats Catalog<br/>Subset ≥ 12bp</a></td>
-      <td>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) with very large mismatch and indel penalties to find all pure repeats that <b>span at least 12bp</b> in the hg38 reference genome</td>
-      <td nowrap style="text-align: right">1,343,313</td>
-      <td nowrap style="text-align: right">11,474 out of 144,773</td>
-      <td nowrap style="text-align: right">7.9 %</td>
-   </tr>
-   <tr>
-      <td>6</td>
-      <td nowrap><a href="https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#extra-sections">Pure Repeats Catalog<br/>Subset ≥ 15bp</a></td>
-      <td>Running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) with very large mismatch and indel penalties to find all pure repeats that <b>span at least 15bp</b> in the hg38 reference genome</td>
-      <td nowrap style="text-align: right">702,486</td>
-      <td nowrap style="text-align: right">22,830 out of 144,773</td>
-      <td nowrap style="text-align: right">15.8 %</td>
-   </tr>
-</table>
+        <p>One takeaway is that, if we want to capture more than 95% of STR variants using a TRF-derived catalog, we
+            need to genotype more than 2.8M loci genome-wide in each individual. </p>
+        <p>This takeaway is based on the entire truth set - but does is it hold true for larger loci - for example the
+            89,622 (62%) of loci where the reference locus spans at least 24bp? Yes - both the GangSTR and Illumina
+            catalogs would miss 30% to 45% of these variants.</p>
+        <p>What about loci with relatively large expansions? Arguably these are the loci we're most interested in. If
+            you filter the truth set to the 1,702 (1%) of STR expansions that add 10 or more repeats to the reference
+            repeat count, the percentages of missed loci remain large - with 30% missed by the GangSTR v17 catalog and
+            45% missed by the Illumina catalog. The 19/20xTCT expansion @
+            <a target="_blank" href="https://tgg-viewer.broadinstitute.org/#locus=chr1:18341013-18341042&show=~(~'bed~'gtf~'vcf~'alignment)&selectedRows=~(Tool*20Results~(~)~Mappability*20Tracks~(~)~Truth*20Set~(~'Truth*20Set*20BED~'Truth*20Set*20VCF)~CHM1-CHM13~(~'SynDip*20full*20truth*20set*20VCF)~Other*20STR*20Catalogs~(~'Illumina*20Catalog~'GangSTR*20v17*20catalog)~STR*20Truth*20Set~(~'STR*20Truth*20Set*20VCF~'STR*20Truth*20Set*20BED))&selectedSamples=~()&order=~(~'STR*20Truth*20Set*20VCF*20vcf~'STR*20Truth*20Set*20BED*20~'Illumina*20Catalog*20~'GangSTR*20v17*20catalog*20~'Refseq*20Genes~'Gencode*20v32*20Genes)&sjOptions=~(bounceHeightBasedOn~'random~colorBy~'isAnnotatedJunction~colorByNumReadsThreshold~5~hideAnnotated~false~hideUnannotated~false~labelAnnotatedJunction~false~labelAnnotatedJunctionValue~'*20*5bA*5d~labelMotif~false~labelMultiMappedReadCount~false~labelTotalReadCount~false~labelUniqueReadCount~true~maxFractionMultiMappedReads~1~minSplicedAlignmentOverhang~0~minTotalReads~1~minUniquelyMappedReads~0~showOnlyMinusStrand~false~showOnlyPlusStrand~false~thicknessBasedOn~'numUniqueReads~trackHeight~170~minJunctionEndsVisible~1~labelWithInParen~null~labelWith~'totalReadCount)&vcfOptions=~(displayMode~'EXPANDED)&bamOptions=~(alignmentShading~'strand~showSoftClips~true~trackHeight~400~viewAsPairs~true~showInsertionText~true~showDeletionText~true)&gcnvOptions=~(trackHeight~200~trackMin~0~trackMax~5~autoscale~false~onlyHandleClicksForHighlightedSamples~true)&settingsUrl=~'https*3a*2f*2fstr-truth-set.storage.googleapis.com*2fhg38*2ftgg-viewer-config.json*3fnocache17">chr1:18341013-18341042</a>
+            is one example of a truth set variant that's not covered by either the GangSTR v17 or the Illumina catalog.
+        </p>
+        <hr/>
+        <h3>Tool comparisons</h3>
 
-<p>One takeaway is that, if we want to capture more than 95% of STR variants using a TRF-derived catalog, we need to genotype more than 2.8M loci genome-wide in each individual. </p>
-<p>This takeaway is based on the entire truth set - but does is it hold true for larger loci - for example the 89,622 (62%) of loci where the reference locus spans at least 24bp? Yes - both the GangSTR and Illumina catalogs would miss 30% to 45% of these variants.</p>
-<p>What about loci with relatively large expansions? Arguably these are the loci we're most interested in. If you filter the truth set to the 1,702 (1%) of STR expansions that add 10 or more repeats to the reference repeat count, the percentages of missed loci remain large - with 30% missed by the GangSTR v17 catalog and 45% missed by the Illumina catalog. The 19/20xTCT expansion @ <a target="_blank" href="https://tgg-viewer.broadinstitute.org/#locus=chr1:18341013-18341042&show=~(~'bed~'gtf~'vcf~'alignment)&selectedRows=~(Tool*20Results~(~)~Mappability*20Tracks~(~)~Truth*20Set~(~'Truth*20Set*20BED~'Truth*20Set*20VCF)~CHM1-CHM13~(~'SynDip*20full*20truth*20set*20VCF)~Other*20STR*20Catalogs~(~'Illumina*20Catalog~'GangSTR*20v17*20catalog)~STR*20Truth*20Set~(~'STR*20Truth*20Set*20VCF~'STR*20Truth*20Set*20BED))&selectedSamples=~()&order=~(~'STR*20Truth*20Set*20VCF*20vcf~'STR*20Truth*20Set*20BED*20~'Illumina*20Catalog*20~'GangSTR*20v17*20catalog*20~'Refseq*20Genes~'Gencode*20v32*20Genes)&sjOptions=~(bounceHeightBasedOn~'random~colorBy~'isAnnotatedJunction~colorByNumReadsThreshold~5~hideAnnotated~false~hideUnannotated~false~labelAnnotatedJunction~false~labelAnnotatedJunctionValue~'*20*5bA*5d~labelMotif~false~labelMultiMappedReadCount~false~labelTotalReadCount~false~labelUniqueReadCount~true~maxFractionMultiMappedReads~1~minSplicedAlignmentOverhang~0~minTotalReads~1~minUniquelyMappedReads~0~showOnlyMinusStrand~false~showOnlyPlusStrand~false~thicknessBasedOn~'numUniqueReads~trackHeight~170~minJunctionEndsVisible~1~labelWithInParen~null~labelWith~'totalReadCount)&vcfOptions=~(displayMode~'EXPANDED)&bamOptions=~(alignmentShading~'strand~showSoftClips~true~trackHeight~400~viewAsPairs~true~showInsertionText~true~showDeletionText~true)&gcnvOptions=~(trackHeight~200~trackMin~0~trackMax~5~autoscale~false~onlyHandleClicksForHighlightedSamples~true)&settingsUrl=~'https*3a*2f*2fstr-truth-set.storage.googleapis.com*2fhg38*2ftgg-viewer-config.json*3fnocache17">chr1:18341013-18341042</a> is one example of a truth set variant that's not covered by either the GangSTR v17 or the Illumina catalog.</p>
-<hr />
-<h3>Tool comparisons</h3>
+        <p>Using the truth set to compare accuracy of existing STR callers requires us to first define what we mean by
+            accuracy.
+            For other variant types such as SNVs and InDels, the definition is relatively straight-forward - a tool will
+            either call a variant or not, and then it might get the zygosity right or wrong, but that's about it. These
+            metrics are also important for STRs, but the additional aspect of number of repeats introduces a lot more
+            nuance. For example, for a given STR locus, a tool may get the number of repeats exactly right, or it may be
+            off by +/-1, or off by many repeats. It might even call an expansion where the true genotype is a
+            contraction. To avoid getting bogged down in finding the right definition, we can begin with the simplest
+            definition and build from there. </p>
+        <p>Also, to keep the analysis manageable, we focus on several widely-used tools - ExpansionHunter, GangSTR and
+            HipSTR, and later also look at ExpansionHunterDenovo.</p>
+        <h4>Exact accuracy</h4>
+        <p>The simplest definition of STR calling accuracy is - how many genotypes did a tool get exactly right? i.e.
+            what fraction of called allele sizes exactly match the corresponding allele size in the truth set. When we
+            run ExpansionHunter, GangSTR and HipSTR on the 139,244 (96%) truth set loci that have 2bp to 6bp motifs and
+            that are present in the reference genome, we find that accuracy varies as follows: </p>
+        <table>
+            <tr>
+                <th>Tool</th>
+                <th>Accuracy @ 40x <br/>genome coverage</th>
+                <th>Accuracy @ 20x <br/>genome coverage</th>
+                <th>Accuracy @ 10x <br/>genome coverage</th>
+                <th>Accuracy @ 5x <br/>genome coverage</th>
+            </tr>
+            <tr>
+                <td nowrap>ExpansionHunter v5</td>
+                <td>92.6 %</td>
+                <td>90.9 %</td>
+                <td>83.3 %</td>
+                <td>0.1 %</td>
+            </tr>
+            <tr>
+                <td nowrap>GangSTR v2.5</td>
+                <td>91.0 %</td>
+                <td>87.1 %</td>
+                <td>76.1 %</td>
+                <td>53.5 %</td>
+            </tr>
+            <tr>
+                <td nowrap>HipSTR v0.6.2</td>
+                <td>74.0 %</td>
+                <td>72.9 %</td>
+                <td>65.9 %</td>
+                <td>42.5 %</td>
+            </tr>
+        </table>
 
-<p>Using the truth set to compare accuracy of existing STR callers requires us to first define what we mean by accuracy.
-For other variant types such as SNVs and InDels, the definition is relatively straight-forward - a tool will either call a variant or not, and then it might get the zygosity right or wrong, but that's about it. These metrics are also important for STRs, but the additional aspect of number of repeats introduces a lot more nuance. For example, for a given STR locus, a tool may get the number of repeats exactly right, or it may be off by +/-1, or off by many repeats. It might even call an expansion where the true genotype is a contraction. To avoid getting bogged down in finding the right definition, we can begin with the simplest definition and build from there. </p>
-<p>Also, to keep the analysis manageable, we focus on several widely-used tools - ExpansionHunter, GangSTR and HipSTR, and later also look at ExpansionHunterDenovo.</p>
-<h4>Exact accuracy</h4>
-<p>The simplest definition of STR calling accuracy is - how many genotypes did a tool get exactly right? i.e. what fraction of called allele sizes exactly match the corresponding allele size in the truth set. When we run ExpansionHunter, GangSTR and HipSTR on the 139,244 (96%) truth set loci that have 2bp to 6bp motifs and that are present in the reference genome, we find that accuracy varies as follows: </p>
-<table>
-   <tr>
-      <th>Tool</th>
-      <th>Accuracy @ 40x <br />genome coverage</th>
-      <th>Accuracy @ 20x <br />genome coverage</th>
-      <th>Accuracy @ 10x <br />genome coverage</th>
-      <th>Accuracy @ 5x  <br />genome coverage</th>
-   </tr>
-   <tr>
-      <td nowrap>ExpansionHunter v5</td>
-      <td>92.6 %</td>
-      <td>90.9 %</td>
-      <td>83.3 %</td>
-      <td>0.1 %</td>
-   </tr>
-   <tr>
-      <td nowrap>GangSTR v2.5</td>
-      <td>91.0 %</td>
-      <td>87.1 %</td>
-      <td>76.1 %</td>
-      <td>53.5 %</td>
-   </tr>
-   <tr>
-      <td nowrap>HipSTR v0.6.2</td>
-      <td>74.0 %</td>
-      <td>72.9 %</td>
-      <td>65.9 %</td>
-      <td>42.5 %</td>
-   </tr>
-</table>
+        <p>We can see that ExpansionHunter slightly outperforms GangSTR, and both tools outperform HipSTR.
+            Unsurprisingly, accuracy decreases when the original data (which has 40x genome-wide coverage) is
+            downsampled to lower read depths.</p>
+        <h4>Exact accuracy by number of repeats</h4>
+        <p>For most STR analyses, we care more about large expansions than about variants that only add or remove a few
+            repeats.
+            However, as we saw <a
+                    href="https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#results">previously</a>,
+            the overwhelming majority of truth set variants only differ from the reference genome by 1 or 2 repeats.
+            This means the accuracy metric defined above is dominated by variants we don't care as much about. To
+            improve on this, we can look at how accuracy varies across different true allele size bins. </p>
+        <p><em>NOTE:</em> First though, a technical note about comparing STR genotypes. For a given locus, there are 5
+            numbers to consider - the number of repeats in the reference genome, the true size of the short allele and
+            the long allele, and finally the short and long allele as called by the given tool.
+            For the analyses below, the x-axis values come from comparing the true allele sizes to the number of repeats
+            in the reference. Then, to determine tool accuracy at a locus, the true genotype as well as the tool's
+            reported genotype can be split into a short allele and a long allele. The short alleles can be compared, and
+            then, separately, the long alleles:<br/></p>
+        <p><img width="900" alt="image"
+                src="https://user-images.githubusercontent.com/6240170/219420647-4bd5edc9-788f-4f8a-8a6b-6625c13b267a.png">
+            <br/>
+            <br/></p>
+        <p>Now, we can look at the fraction of alleles that each tool gets exactly right:</p>
+        <div align="center"><img
+                src="https://user-images.githubusercontent.com/6240170/211717620-48e83eb2-dcb3-4b81-8fe6-16658552b022.png"
+                width=800></div>
 
-<p>We can see that ExpansionHunter slightly outperforms GangSTR, and both tools outperform HipSTR. Unsurprisingly, accuracy decreases when the original data (which has 40x genome-wide coverage) is downsampled to lower read depths.</p>
-<h4>Exact accuracy by number of repeats</h4>
-<p>For most STR analyses, we care more about large expansions than about variants that only add or remove a few repeats. 
-However, as we saw <a href="https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#results">previously</a>, the overwhelming majority of truth set variants only differ from the reference genome by 1 or 2 repeats. This means the accuracy metric defined above is dominated by variants we don't care as much about. To improve on this, we can look at how accuracy varies across different true allele size bins. </p>
-<p><em>NOTE:</em> First though, a technical note about comparing STR genotypes. For a given locus, there are 5 numbers to consider - the number of repeats in the reference genome, the true size of the short allele and the long allele, and finally the short and long allele as called by the given tool. 
-For the analyses below, the x-axis values come from comparing the true allele sizes to the number of repeats in the reference. Then, to determine tool accuracy at a locus, the true genotype as well as the tool's reported genotype can be split into a short allele and a long allele. The short alleles can be compared, and then, separately, the long alleles:<br /></p>
-<p><img width="900" alt="image" src="https://user-images.githubusercontent.com/6240170/219420647-4bd5edc9-788f-4f8a-8a6b-6625c13b267a.png">
-<br />
-<br /></p>
-<p>Now, we can look at the fraction of alleles that each tool gets exactly right:</p>
-<div align="center"><img src="https://user-images.githubusercontent.com/6240170/211717620-48e83eb2-dcb3-4b81-8fe6-16658552b022.png" width=800></div>
+        <p>This plot represents calls @ 40x coverage, and shows how accuracy drops for larger expansions (positive
+            x-axis) as well as large contractions (negative x-axis), with ExpansionHunter retaining higher accuracy
+            across all bins.</p>
+        <p>HipSTR shows poor accuracy largely because it refuses to call many loci and outputs the error message:
+            "Aborting genotyping of the locus as the sequence upstream/downstream of the repeat is too repetitive for
+            accurate genotyping". If we exclude these loci from the analysis for all tools - thereby discarding 25,257
+            out of 139,244 (18.1%) of truth set loci that have 2 to 6bp motifs - the above plot then looks like:</p>
+        <div align="center"><img
+                src="https://user-images.githubusercontent.com/6240170/211717395-b8ff12d9-a80e-45e3-8a8a-36a83de5845e.png"
+                width=800></div>
 
-<p>This plot represents calls @ 40x coverage, and shows how accuracy drops for larger expansions (positive x-axis) as well as large contractions (negative x-axis), with ExpansionHunter retaining higher accuracy across all bins.</p>
-<p>HipSTR shows poor accuracy largely because it refuses to call many loci and outputs the error message: "Aborting genotyping of the locus as the sequence upstream/downstream of the repeat is too repetitive for accurate genotyping". If we exclude these loci from the analysis for all tools - thereby discarding 25,257 out of 139,244 (18.1%) of truth set loci that have 2 to 6bp motifs - the above plot then looks like:</p>
-<div align="center"><img src="https://user-images.githubusercontent.com/6240170/211717395-b8ff12d9-a80e-45e3-8a8a-36a83de5845e.png" width=800></div>
+        <p>This shows that, even on the subset of loci that HipSTR can genotype, its accuracy is roughly the same as
+            GangSTR's and worse than ExpansionHunter's. </p>
+        <p>Next, we can look at how accuracy varies for different sequencing coverage depths, showing only
+            ExpansionHunter and GangSTR for clarity:</p>
+        <div align="center"><img
+                src="https://user-images.githubusercontent.com/6240170/211717485-6d2bda31-221d-4560-b164-106deaf65d17.png"
+                width=800></div>
 
-<p>This shows that, even on the subset of loci that HipSTR can genotype, its accuracy is roughly the same as GangSTR's and worse than ExpansionHunter's. </p>
-<p>Next, we can look at how accuracy varies for different sequencing coverage depths, showing only ExpansionHunter and GangSTR for clarity:</p>
-<div align="center"><img src="https://user-images.githubusercontent.com/6240170/211717485-6d2bda31-221d-4560-b164-106deaf65d17.png" width=800></div>
+        <h4>Accuracy and error size</h4>
+        <p>When a tool doesn't get the genotype exactly right, it matters whether it's off by 1 or by 20 repeats, and
+            whether it tends to overestimate or underestimate the true genotype. This is especially important for rare
+            disease cases where underestimating expansions can lead to missed diagnoses. We can use different colors to
+            add information about the size and direction of errors:</p>
+        <p>
+            <img src="https://broadinstitute.github.io/str-truth-set/tool_comparison/figures/tool_accuracy_by_true_allele_size.2to6bp_motifs.pure_repeats.40x.ExpansionHunter.svg"
+                 width="100%"></p>
+        <p>Here, green shows allele sizes that ExpansionHunter got exactly right and so represents the same fraction of
+            calls as the plots in the previous section. Orange represents alleles that ExpansionHunter overestimated
+            (with darker orange meaning a larger overestimate), while blue represents alleles that ExpansionHunter
+            underestimated (with darker blues representing larger errors). Additional colors include gray for the few
+            loci where ExpansionHunter didn't produce a genotype (such as due to insufficient coverage), red represents
+            the loci that ExpansionHunter called as homozygous reference and so entirely missed the variant, brown is
+            where ExpansionHunter incorrectly called an allele as being heterozygous reference, and teal is for alleles
+            where ExpansionHunter called a contraction but the true allele size was an expansion or vice versa.
+            The plot shows that ExpansionHunter errs in both directions - overestimating some expansions and
+            underestimating others. </p>
+        <p>We can compare this to other tools:</p>
+        <p>
+            <img src="https://broadinstitute.github.io/str-truth-set/tool_comparison/figures/tool_accuracy_by_true_allele_size.2to6bp_motifs.pure_repeats.40x.GangSTR.svg"
+                 width="100%">
+            <img src="https://broadinstitute.github.io/str-truth-set/tool_comparison/figures/tool_accuracy_by_true_allele_size.2to6bp_motifs.pure_repeats.40x.HipSTR.svg"
+                 width="100%"></p>
+        <p>This shows that both GangSTR and HipSTR underestimate (blue) or entirely miss (red) more expansions than
+            ExpansionHunter. </p>
+        <h4>Exome data</h4>
+        <p>Since exome sequencing data is available for the CHM1-CHM13 sample, we can check what fraction of the truth
+            set can be called in an exome. To exclude off-target capture regions that accidentally got some read
+            coverage, we prefilter loci to exclude intergenic, intronic or promoter regions (based on Gencode v42), and
+            also exclude loci where neither ExpansionHunter nor GangSTR produced a genotype. Out of the 139,244 truth
+            set loci with 2 to 6bp motifs, only 1,766 (1.3%) pass these filters. Even for this small subset, more than
+            half of the genotype calls are inaccurate: </p>
+        <p>
+            <img src="https://broadinstitute.github.io/str-truth-set/tool_comparison/figures/tool_accuracy_by_true_allele_size.2to6bp_motifs.pure_repeats.exome.ExpansionHunter.svg"
+                 width="100%">
+            <img src="https://broadinstitute.github.io/str-truth-set/tool_comparison/figures/tool_accuracy_by_true_allele_size.2to6bp_motifs.pure_repeats.exome.GangSTR.svg"
+                 width="100%"></p>
 
-<h4>Accuracy and error size</h4>
-<p>When a tool doesn't get the genotype exactly right, it matters whether it's off by 1 or by 20 repeats, and whether it tends to overestimate or underestimate the true genotype. This is especially important for rare disease cases where underestimating expansions can lead to missed diagnoses. We can use different colors to add information about the size and direction of errors:</p>
-<p><img src="https://broadinstitute.github.io/str-truth-set/tool_comparison/figures/tool_accuracy_by_true_allele_size.2to6bp_motifs.pure_repeats.40x.ExpansionHunter.svg" width="100%"></p>
-<p>Here, green shows allele sizes that ExpansionHunter got exactly right and so represents the same fraction of calls as the plots in the previous section. Orange represents alleles that ExpansionHunter overestimated (with darker orange meaning a larger overestimate), while blue represents alleles that ExpansionHunter underestimated (with darker blues representing larger errors). Additional colors include gray for the few loci where ExpansionHunter didn't produce a genotype (such as due to insufficient coverage), red represents the loci that ExpansionHunter called as homozygous reference and so entirely missed the variant, brown is where ExpansionHunter incorrectly called an allele as being heterozygous reference, and teal is for alleles where ExpansionHunter called a contraction but the true allele size was an expansion or vice versa.
-The plot shows that ExpansionHunter errs in both directions - overestimating some expansions and underestimating others.   </p>
-<p>We can compare this to other tools:</p>
-<p><img src="https://broadinstitute.github.io/str-truth-set/tool_comparison/figures/tool_accuracy_by_true_allele_size.2to6bp_motifs.pure_repeats.40x.GangSTR.svg" width="100%">
-<img src="https://broadinstitute.github.io/str-truth-set/tool_comparison/figures/tool_accuracy_by_true_allele_size.2to6bp_motifs.pure_repeats.40x.HipSTR.svg" width="100%"></p>
-<p>This shows that both GangSTR and HipSTR underestimate (blue) or entirely miss (red) more expansions than ExpansionHunter. </p>
-<h4>Exome data</h4>
-<p>Since exome sequencing data is available for the CHM1-CHM13 sample, we can check what fraction of the truth set can be called in an exome. To exclude off-target capture regions that accidentally got some read coverage, we prefilter loci to exclude intergenic, intronic or promoter regions (based on Gencode v42), and also exclude loci where neither ExpansionHunter nor GangSTR produced a genotype. Out of the 139,244 truth set loci with 2 to 6bp motifs, only 1,766 (1.3%) pass these filters. Even for this small subset, more than half of the genotype calls are inaccurate:  </p>
-<p><img src="https://broadinstitute.github.io/str-truth-set/tool_comparison/figures/tool_accuracy_by_true_allele_size.2to6bp_motifs.pure_repeats.exome.ExpansionHunter.svg" width="100%">
-<img src="https://broadinstitute.github.io/str-truth-set/tool_comparison/figures/tool_accuracy_by_true_allele_size.2to6bp_motifs.pure_repeats.exome.GangSTR.svg" width="100%"></p>
+        <h4>Tool Concordance</h4>
+        So far, we've compared each tool's output to the truth set, but's it also worth checking how correlated the
+        tools are and whether they tend to make mistakes on the same or on different loci.
+        This heat map compares ExpansionHunter and GangSTR genotypes at loci that have 2-6bp motifs and where one or
+        both tools differ from the true allele size:<br/>
+        <br/>
+        <img width="1300" alt="image"
+             src="https://user-images.githubusercontent.com/6240170/219206966-75e89eb2-2d74-4362-9af5-2543aac4440e.png"><br/>
 
-<h4>Tool Concordance</h4>
-So far, we've compared each tool's output to the truth set, but's it also worth checking how correlated the tools are and whether they tend to make mistakes on the same or on different loci. 
-This heat map compares ExpansionHunter and GangSTR genotypes at loci that have 2-6bp motifs and where one or both tools differ from the true allele size:<br />
-<br />
-<img width="1300" alt="image" src="https://user-images.githubusercontent.com/6240170/219206966-75e89eb2-2d74-4362-9af5-2543aac4440e.png"><br />
+        <br/>
+        The plot shows n=278,246 total alleles and consists of the following subsets:
 
-<br />
-The plot shows n=278,246 total alleles and consists of the following subsets:
- 
- <table>
-   <tr>
-     <td nowrap><b>Plot Region</b></td>
-     <td><b>Description</b></td>
-     <td><b># of Alleles</b></td>
-     <td><b>% of Alleles</b></td>
-   </tr>
-   <tr>
-     <td nowrap>(0,0) point</td>
-     <td>Represents alleles that both ExpansionHunter and GangSTR got exactly right</td>
-     <td style="text-align: right">243,006</td>
-     <td style="text-align: right">87.3 %</td>
-   </tr>
-   <tr>
-     <td nowrap>2x2 center square<br />excluding (0,0) point</td>
-     <td>Both ExpansionHunter and GangSTR were within +/-2 repeats of the true allele size</td>
-     <td style="text-align: right">21,188</td>
-     <td style="text-align: right">7.7 %</td>
-   </tr>
-   <tr>
-     <td nowrap>Top Right (TR)</td>
-     <td>ExpansionHunter and GangSTR overestimated the true allele size by ≥ 2 repeats</td>
-     <td style="text-align: right">1,487</td>
-     <td style="text-align: right">0.5 %</td>
-   </tr>
-   <tr>
-     <td nowrap>Bottom Left (BL)</td>
-     <td>ExpansionHunter and GangSTR underestimated the true allele size by ≥ 2 repeats</td>
-     <td style="text-align: right">1,594</td>
-     <td style="text-align: right">0.6 %</td>
-   </tr>
-   <tr>
-     <td nowrap>Top Left (TL)</td>
-     <td>ExpansionHunter underestimated, while GangSTR overestimated the true allele size by ≥ 2 repeats</td>
-     <td style="text-align: right">37</td>
-     <td style="text-align: right">0.0 %</td>
-   </tr>
-   <tr>
-     <td nowrap>Bottom Right (BR)</td>
-     <td>ExpansionHunter overestimated, while GangSTR underestimated the true allele size by ≥ 2 repeats</td>
-     <td style="text-align: right">785</td>
-     <td style="text-align: right">0.3 %</td>
-   </tr>
-   <tr>
-     <td nowrap>Top (T) + Bottom (B)</td>
-     <td>ExpansionHunter was within 2 repeats of the true allele size, while GangSTR was off by ≥ 2 repeats</td>
-     <td style="text-align: right">5,628</td>
-     <td style="text-align: right">2.0 %</td>
-   </tr>
-   <tr>
-     <td nowrap>Right (R) + Left (L)</td>
-     <td>ExpansionHunter was off by ≥ 2 repeats, while GangSTR was within 2 repeats of the true allele size</td>
-     <td style="text-align: right">4,521</td>
-     <td style="text-align: right">1.6 %</td>
-   </tr>   
-</table>
-<br />
-    
-<h4>Tool runtime and memory use comparison</h4>
-<p>For genome-wide STR analyses that involve many loci and many samples, tool runtime and memory use become important factors - particularly in cloud  environments where they directly increase costs. For ExpansionHunter, GangSTR, HipSTR, and most other existing STR callers, the tools' runtime is proportional not just to the number of samples, but also the number of loci being genotyped. Due to this, I compare tool run times per 10,000 loci. 
-Red lines represent (and are labeled with) the median value for the given tool.</p>
-<p><img alt="image" src="https://user-images.githubusercontent.com/6240170/214594037-2b7c9ab4-3745-4209-ba54-01412d1773d1.png" /></p>
-<p>To get the 8 data points shown for each tool, the truth set was split into 8 non-overlapping sets of loci and each one was measured independently. Two versions of ExpansionHunter are compared - the last release from Illumina (v5), and an optimized version of it described below.  When running ExpansionHunter, I split the variant catalog into batches of 500 loci to be processed in parallel. For GangSTR and HipSTR, I processed batches of 10,000 loci at a time. All tests were performed using the <a href="https://hail.is/docs/batch/service.html">Hail Batch service</a> on Google Cloud VMs. </p>
-<p>The main conclusions are that, at 40x coverage, 
-<strong>ExpansionHunter v5 is 2.8x slower than its optimized version</strong> which is then <strong>3.9x slower than GangSTR</strong> which is <strong>2.1x slower than HipSTR</strong>. Also, the optimized version of ExpansionHunter achieves faster run time at the expense of using more memory. </p>
-<p>Additionally, for all tools, run time decreases linearly as the sample's depth of coverage is reduced from 40x to 10x:</p>
-<p><img alt="image" src="https://user-images.githubusercontent.com/6240170/215609814-ef15b8f5-b9af-4bd3-9608-0bef96b3c195.png" /></p>
+        <table>
+            <tr>
+                <td nowrap><b>Plot Region</b></td>
+                <td><b>Description</b></td>
+                <td><b># of Alleles</b></td>
+                <td><b>% of Alleles</b></td>
+            </tr>
+            <tr>
+                <td nowrap>(0,0) point</td>
+                <td>Represents alleles that both ExpansionHunter and GangSTR got exactly right</td>
+                <td style="text-align: right">243,006</td>
+                <td style="text-align: right">87.3 %</td>
+            </tr>
+            <tr>
+                <td nowrap>2x2 center square<br/>excluding (0,0) point</td>
+                <td>Both ExpansionHunter and GangSTR were within +/-2 repeats of the true allele size</td>
+                <td style="text-align: right">21,188</td>
+                <td style="text-align: right">7.7 %</td>
+            </tr>
+            <tr>
+                <td nowrap>Top Right (TR)</td>
+                <td>ExpansionHunter and GangSTR overestimated the true allele size by ≥ 2 repeats</td>
+                <td style="text-align: right">1,487</td>
+                <td style="text-align: right">0.5 %</td>
+            </tr>
+            <tr>
+                <td nowrap>Bottom Left (BL)</td>
+                <td>ExpansionHunter and GangSTR underestimated the true allele size by ≥ 2 repeats</td>
+                <td style="text-align: right">1,594</td>
+                <td style="text-align: right">0.6 %</td>
+            </tr>
+            <tr>
+                <td nowrap>Top Left (TL)</td>
+                <td>ExpansionHunter underestimated, while GangSTR overestimated the true allele size by ≥ 2 repeats</td>
+                <td style="text-align: right">37</td>
+                <td style="text-align: right">0.0 %</td>
+            </tr>
+            <tr>
+                <td nowrap>Bottom Right (BR)</td>
+                <td>ExpansionHunter overestimated, while GangSTR underestimated the true allele size by ≥ 2 repeats</td>
+                <td style="text-align: right">785</td>
+                <td style="text-align: right">0.3 %</td>
+            </tr>
+            <tr>
+                <td nowrap>Top (T) + Bottom (B)</td>
+                <td>ExpansionHunter was within 2 repeats of the true allele size, while GangSTR was off by ≥ 2 repeats
+                </td>
+                <td style="text-align: right">5,628</td>
+                <td style="text-align: right">2.0 %</td>
+            </tr>
+            <tr>
+                <td nowrap>Right (R) + Left (L)</td>
+                <td>ExpansionHunter was off by ≥ 2 repeats, while GangSTR was within 2 repeats of the true allele size
+                </td>
+                <td style="text-align: right">4,521</td>
+                <td style="text-align: right">1.6 %</td>
+            </tr>
+        </table>
+        <br/>
 
-<h4>Optimized ExpansionHunter</h4>
-<p>To reduce the costs of genome-wide analyses and eliminate some pain points, I developed an optimized version of ExpansionHunter which has the following features:
-    <ul>
-      <li> runs 2x to 3x faster than the original while producing exactly the same output for all loci (confirmed on all truth set loci as well as other datasets). This is achieved by reducing disk access operations through the use of read caching.</li>
-      <li> optionally outputs a table with per-locus timing information to make it easier to exclude loci that take the longest to genotype.</li>
-      <li> prints a warning and moves on to the next locus instead of exiting with an error when it encounters a locus that triggers ExpansionHunter's error about Ns in adjacent regions. An example of the error message is: "Error on locus spec 20-36315046-36315048-TG: Error loading locus 20-36315046-36315048-TG: Flanks can contain at most 5 characters N but found 348 Ns". Out of all loci in the truth set, 24 trigger this error and so make it impossible to run the original ExpansionHunter on the full truth set variant catalog without first finding and excluding the 24 loci. This feature eliminates the need to identify these loci since it allows ExpansionHunter to run to completion regardless.</li>
-    </ul>
-</p>
-<p>The read cache optimization increases the tool's memory requirements. The extra memory needed is proportional to the number of loci being genotyped (data not shown). For typical batch sizes, this remains well below the 3 to 5 gigabytes of RAM available per CPU on current machines. Still, if the increased memory requirements become problematic, they can always be mitigated by genotyping fewer loci per batch. </p>
-<p>This optimized version of ExpansionHunter is the one used for all analyses above.   </p>
-<p>It is publicly available @ https://github.com/bw2/ExpansionHunter</p>
-<hr />
-    
-<h4>ExpansionHunterDenovo</h4>
-<p>ExpansionHunterDenovo [<a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02017-z">Dolzhenko 2020</a>] is a widely used tool that differs from  ExpansionHunter, GangSTR and most other STR callers in several significant ways. First, it looks for STR expansions genome-wide, without requiring users to pre-specify which loci to call. Second, it does not detect small expansions - it can only detect loci where the combined length of the repeat sequence in the reference genome + the STR variant exceeds ~150bp (or whatever the read length is in the input sample). Finally, for the loci it does detect, it only outputs a rough estimate of the repeat size and approximate genomic coordinates (+/- several hundred base pairs). These estimates are produced by ExpansionHunterDenovo's initial "profile" step, and are not meant to be used directly. Instead they are used as input to the second step - outlier tests that look for unusually large expansions in each sample relative to other samples in the cohort. </p>
-<p>Since the outlier detection step depends entirely on the sensitivity and specificity of the "profile" step, I use the truth set to check how well the  "profile" step picks up large expansions in CHM1-CHM13-2:</p>
-<p><img width="794" alt="image" src="https://user-images.githubusercontent.com/6240170/214714305-33517ef0-8d16-48cc-8709-3e24ccd07e85.png"></p>
-<p>This plot shows that the ExpansionHunterDenovo "profile" step has high sensitivity for pure repeat loci in the truth set where allele size exceeds 150bp. </p>
-<p>For the 247 truth set loci where the allele size exceeds 150bp, ExpansionHunterDenovo detects 231 out of 247 (93.5%) of them (meaning than an ExpansionHunterDenovo call with the same motif occurs within +/-600bp of the truth set locus). This includes:
-<ul>
-    <li> 7 out of 7 (100%) truth set loci with short motifs (2 to 6bp)</li>
-    <li> 18 out of 19 (94.7%) truth set loci with medium-sized motifs (7 to 24bp)</li>
-    <li> 206 out of 221 (93.2%) truth set loci with large motifs (25 to 50bp)</li>
-</ul>
-</p>
-<p>Although they are not highlighted in the plot, 10 out of the 247 alleles that exceed 150bp represent novel loci (i.e. ones that have no matching repeats in the hg38 reference). ExpansionHunterDenovo is able to detect all 10 of them. </p>
-<p>ExpansionHunterDenovo specificity is harder to estimate. We can look at the fraction of calls that have no matching truth set loci anywhere near them. However, there is a key issue which prevents us from concluding that these are false positives. While the truth set analysis only includes pure repeats, ExpansionHunterDenovo allows interruptions in the repeat sequence. To detect whether a given read is fully repetitive, it uses a heuristic that allows up to 15% of the read's sequence to deviate from pure repeats. This means that some subset of its calls may be accurate detections but are not in the truth set because they contain interruptions.  </p>
-<p>Regardless, this plot helps show how ExpansionHunterDenovo output is distributed across different motif sizes and the degree to which it matches expansions in the truth set or repeats in the reference genome:</p>
-<p><img width="763" alt="image" src="https://user-images.githubusercontent.com/6240170/214731482-1028d76f-f927-4c9b-bc3a-c33f5a405ac1.png"></p>
-<p>This table summarizes the data in the plot:</p>
-<table>
-   <tr>
-      <th>Motif Sizes</th>
-      <th>Total EHdn calls</th>
-      <th>EHdn calls with matching <br>pure repeat locus in hg38 (+/- 600bp)</th>
-      <th>EHdn calls with matching <br>expansion in truth set (+/- 600bp)</th>
-   </tr>
-   <tr>
-      <td>2-6bp</td>
-      <td style="text-align: right"> 1,353</td>
-      <td style="text-align: right"> 1,223 (90%)</td>
-      <td style="text-align: right">   348 (26%)</td>
-   </tr>
-   <tr>
-      <td>7-24bp</td>
-      <td style="text-align: right"> 3,225</td>
-      <td style="text-align: right">   858 (27%)</td>
-      <td style="text-align: right">   121 ( 4%)</td>
-   </tr>
-   <tr>
-      <td>25-50bp</td>
-      <td style="text-align: right">52,650</td>
-      <td style="text-align: right"> 4,550 ( 9%)</td>
-      <td style="text-align: right">   446 ( 1%)</td>
-   </tr>
-</table>
+        <h4>Tool runtime and memory use comparison</h4>
+        <p>For genome-wide STR analyses that involve many loci and many samples, tool runtime and memory use become
+            important factors - particularly in cloud environments where they directly increase costs. For
+            ExpansionHunter, GangSTR, HipSTR, and most other existing STR callers, the tools' runtime is proportional
+            not just to the number of samples, but also the number of loci being genotyped. Due to this, I compare tool
+            run times per 10,000 loci.
+            Red lines represent (and are labeled with) the median value for the given tool.</p>
+        <p><img alt="image"
+                src="https://user-images.githubusercontent.com/6240170/214594037-2b7c9ab4-3745-4209-ba54-01412d1773d1.png"/>
+        </p>
+        <p>To get the 8 data points shown for each tool, the truth set was split into 8 non-overlapping sets of loci and
+            each one was measured independently. Two versions of ExpansionHunter are compared - the last release from
+            Illumina (v5), and an optimized version of it described below. When running ExpansionHunter, I split the
+            variant catalog into batches of 500 loci to be processed in parallel. For GangSTR and HipSTR, I processed
+            batches of 10,000 loci at a time. All tests were performed using the <a
+                    href="https://hail.is/docs/batch/service.html">Hail Batch service</a> on Google Cloud VMs. </p>
+        <p>The main conclusions are that, at 40x coverage,
+            <strong>ExpansionHunter v5 is 2.8x slower than its optimized version</strong> which is then <strong>3.9x
+                slower than GangSTR</strong> which is <strong>2.1x slower than HipSTR</strong>. Also, the optimized
+            version of ExpansionHunter achieves faster run time at the expense of using more memory. </p>
+        <p>Additionally, for all tools, run time decreases linearly as the sample's depth of coverage is reduced from
+            40x to 10x:</p>
+        <p><img alt="image"
+                src="https://user-images.githubusercontent.com/6240170/215609814-ef15b8f5-b9af-4bd3-9608-0bef96b3c195.png"/>
+        </p>
 
-<p>An additional reason why ExpansionHunterDenovo "profile" may be outputting so many calls that are absent from the truth set is that the truth set only includes variant loci, while the EHdn algorithm reports all loci where fully-repetitive reads align - regardless of whether this is due to a large expansion there, or just due to a large stretch of repeats being present in the reference genome. </p>
-<p><em>NOTE:</em> The 600bp window size was chosen to significantly exceed the median fragment length of the sample. </p>
-<h4>Interruptions</h4>
-<p>The analyses above are all based on pure repeats. Allowing interruptions introduces complexity since the boundary between interrupted repeats and non-repetitive loci is ambiguous - how many interruptions do you allow before you no longer consider the locus a simple repeat? </p>
-<p>This section takes a cautious step toward analyzing interrupted loci by generalizing the interruption patterns seen in some of the known pathogenic loci such as PHOX2B, ATXN3, and a subset of the variation seen in RFC1. Specifically, we allow one position in the motif to vary among consecutive repeats in a sequence as long as: <br />
-<br />
-1. it's the same position in each repeat <br/>
-2. the interruption doesn't convert any of the repeats to homopolymers <br/>
-3. the motif size is between 3bp and 24bp (excluding di-nucleotides because allowing 1 of the 2 positions to vary is too permissive) <br />
-4. the overall sequence contains at least 3 repeats and spans at least 9bp (same as for pure repeats) <br />
-<br />
-Some examples: 
-<ul>
-  <li> <code>CAGG.CATG.CAGG.CACG</code> would pass these rules because it consists of a 4bp motif in which the 3rd base is allowed to vary. </li>
-  <li> <code>CAT.AAT.GAT</code> would also pass, since only the 1st base varies.</li>
-  <li> <code>CTT.CGG.CAT</code> would not pass, because both the 2nd and 3rd base vary across repeats.</li>
-  <li> <code>AAG.AAA.AAG.AAA.AAT</code> would not pass even though only the 3rd base is changing because the 2nd and 4th repeats have become <code>AAA</code> homopolymers.</p></li>
-</ul></p>
-<p>If we go back and apply this logic to SynDip insertions and deletions that didn't pass our original pure repeat filters, we find 9,970 additional loci (4,644 insertions and 4,973 deletions) that are repeats with interruptions. This is an increase of 7% over the 144,773 pure loci. </p>
-<p>The allele size and motif size distributions of these interrupted repeats are as follows:</p>
-<div>
-<img src="https://user-images.githubusercontent.com/6240170/214751753-d4ff1609-1597-4eac-be84-4b933b72c46f.png" width=400> <img src="https://user-images.githubusercontent.com/6240170/214747495-64f84c9c-59a2-4756-919c-1f72a238b78e.png" width=400> 
-</div>
+        <h4>Optimized ExpansionHunter</h4>
+        <p>To reduce the costs of genome-wide analyses and eliminate some pain points, I developed an optimized version
+            of ExpansionHunter which has the following features:
+        <ul>
+            <li> runs 2x to 3x faster than the original while producing exactly the same output for all loci (confirmed
+                on all truth set loci as well as other datasets). This is achieved by reducing disk access operations
+                through the use of read caching.
+            </li>
+            <li> optionally outputs a table with per-locus timing information to make it easier to exclude loci that
+                take the longest to genotype.
+            </li>
+            <li> prints a warning and moves on to the next locus instead of exiting with an error when it encounters a
+                locus that triggers ExpansionHunter's error about Ns in adjacent regions. An example of the error
+                message is: "Error on locus spec 20-36315046-36315048-TG: Error loading locus 20-36315046-36315048-TG:
+                Flanks can contain at most 5 characters N but found 348 Ns". Out of all loci in the truth set, 24
+                trigger this error and so make it impossible to run the original ExpansionHunter on the full truth set
+                variant catalog without first finding and excluding the 24 loci. This feature eliminates the need to
+                identify these loci since it allows ExpansionHunter to run to completion regardless.
+            </li>
+        </ul>
+        </p>
+        <p>The read cache optimization increases the tool's memory requirements. The extra memory needed is proportional
+            to the number of loci being genotyped (data not shown). For typical batch sizes, this remains well below the
+            3 to 5 gigabytes of RAM available per CPU on current machines. Still, if the increased memory requirements
+            become problematic, they can always be mitigated by genotyping fewer loci per batch. </p>
+        <p>This optimized version of ExpansionHunter is the one used for all analyses above. </p>
+        <p>It is publicly available @ https://github.com/bw2/ExpansionHunter</p>
+        <hr/>
 
-<p>There are many questions one can ask about interrupted repeats and how they differ from pure repeats. Since this blog post is already long, I will only mention one here -  why the allele size distribution appears to have more loci with -2/+2 events than -1/+1. The most frequent motifs in the -2/+2 bins are "ACAC", "ATAT", etc. These turn out to be di-nucleotide repeats that are getting around the dinucleotide filter (filter #3 above) by pretending to be 4bp motifs. These obfuscated di-nucleotide motifs are not present in -1 and +1 bins while being overrepresented in the -2/+2 bins. The reason has to do with the relative improbability of a double di-nucleotide insertion (e.g. "C &gt; CACAC" which would be counted in the +1 bin here as a 4bp motif expansion) failing the pure repeat filters but then passing the interrupted repeat filters, and the much higher odds of this happening with 4 di-nucleotide repeats (e.g. "C &gt; CACACATAC" which would be counted in the +2 bin here as a 2 x CACA motif expansion). </p>
+        <h4>ExpansionHunterDenovo</h4>
+        <p>ExpansionHunterDenovo [<a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02017-z">Dolzhenko
+            2020</a>] is a widely used tool that differs from ExpansionHunter, GangSTR and most other STR callers in
+            several significant ways. First, it looks for STR expansions genome-wide, without requiring users to
+            pre-specify which loci to call. Second, it does not detect small expansions - it can only detect loci where
+            the combined length of the repeat sequence in the reference genome + the STR variant exceeds ~150bp (or
+            whatever the read length is in the input sample). Finally, for the loci it does detect, it only outputs a
+            rough estimate of the repeat size and approximate genomic coordinates (+/- several hundred base pairs).
+            These estimates are produced by ExpansionHunterDenovo's initial "profile" step, and are not meant to be used
+            directly. Instead they are used as input to the second step - outlier tests that look for unusually large
+            expansions in each sample relative to other samples in the cohort. </p>
+        <p>Since the outlier detection step depends entirely on the sensitivity and specificity of the "profile" step, I
+            use the truth set to check how well the "profile" step picks up large expansions in CHM1-CHM13-2:</p>
+        <p><img width="794" alt="image"
+                src="https://user-images.githubusercontent.com/6240170/214714305-33517ef0-8d16-48cc-8709-3e24ccd07e85.png">
+        </p>
+        <p>This plot shows that the ExpansionHunterDenovo "profile" step has high sensitivity for pure repeat loci in
+            the truth set where allele size exceeds 150bp. </p>
+        <p>For the 247 truth set loci where the allele size exceeds 150bp, ExpansionHunterDenovo detects 231 out of 247
+            (93.5%) of them (meaning than an ExpansionHunterDenovo call with the same motif occurs within +/-600bp of
+            the truth set locus). This includes:
+        <ul>
+            <li> 7 out of 7 (100%) truth set loci with short motifs (2 to 6bp)</li>
+            <li> 18 out of 19 (94.7%) truth set loci with medium-sized motifs (7 to 24bp)</li>
+            <li> 206 out of 221 (93.2%) truth set loci with large motifs (25 to 50bp)</li>
+        </ul>
+        </p>
+        <p>Although they are not highlighted in the plot, 10 out of the 247 alleles that exceed 150bp represent novel
+            loci (i.e. ones that have no matching repeats in the hg38 reference). ExpansionHunterDenovo is able to
+            detect all 10 of them. </p>
+        <p>ExpansionHunterDenovo specificity is harder to estimate. We can look at the fraction of calls that have no
+            matching truth set loci anywhere near them. However, there is a key issue which prevents us from concluding
+            that these are false positives. While the truth set analysis only includes pure repeats,
+            ExpansionHunterDenovo allows interruptions in the repeat sequence. To detect whether a given read is fully
+            repetitive, it uses a heuristic that allows up to 15% of the read's sequence to deviate from pure repeats.
+            This means that some subset of its calls may be accurate detections but are not in the truth set because
+            they contain interruptions. </p>
+        <p>Regardless, this plot helps show how ExpansionHunterDenovo output is distributed across different motif sizes
+            and the degree to which it matches expansions in the truth set or repeats in the reference genome:</p>
+        <p><img width="763" alt="image"
+                src="https://user-images.githubusercontent.com/6240170/214731482-1028d76f-f927-4c9b-bc3a-c33f5a405ac1.png">
+        </p>
+        <p>This table summarizes the data in the plot:</p>
+        <table>
+            <tr>
+                <th>Motif Sizes</th>
+                <th>Total EHdn calls</th>
+                <th>EHdn calls with matching <br>pure repeat locus in hg38 (+/- 600bp)</th>
+                <th>EHdn calls with matching <br>expansion in truth set (+/- 600bp)</th>
+            </tr>
+            <tr>
+                <td>2-6bp</td>
+                <td style="text-align: right"> 1,353</td>
+                <td style="text-align: right"> 1,223 (90%)</td>
+                <td style="text-align: right"> 348 (26%)</td>
+            </tr>
+            <tr>
+                <td>7-24bp</td>
+                <td style="text-align: right"> 3,225</td>
+                <td style="text-align: right"> 858 (27%)</td>
+                <td style="text-align: right"> 121 ( 4%)</td>
+            </tr>
+            <tr>
+                <td>25-50bp</td>
+                <td style="text-align: right">52,650</td>
+                <td style="text-align: right"> 4,550 ( 9%)</td>
+                <td style="text-align: right"> 446 ( 1%)</td>
+            </tr>
+        </table>
 
-    
-<hr />
+        <p>An additional reason why ExpansionHunterDenovo "profile" may be outputting so many calls that are absent from
+            the truth set is that the truth set only includes variant loci, while the EHdn algorithm reports all loci
+            where fully-repetitive reads align - regardless of whether this is due to a large expansion there, or just
+            due to a large stretch of repeats being present in the reference genome. </p>
+        <p><em>NOTE:</em> The 600bp window size was chosen to significantly exceed the median fragment length of the
+            sample. </p>
+        <h4>Interruptions</h4>
+        <p>The analyses above are all based on pure repeats. Allowing interruptions introduces complexity since the
+            boundary between interrupted repeats and non-repetitive loci is ambiguous - how many interruptions do you
+            allow before you no longer consider the locus a simple repeat? </p>
+        <p>This section takes a cautious step toward analyzing interrupted loci by generalizing the interruption
+            patterns seen in some of the known pathogenic loci such as PHOX2B, ATXN3, and a subset of the variation seen
+            in RFC1. Specifically, we allow one position in the motif to vary among consecutive repeats in a sequence as
+            long as: <br/>
+            <br/>
+            1. it's the same position in each repeat <br/>
+            2. the interruption doesn't convert any of the repeats to homopolymers <br/>
+            3. the motif size is between 3bp and 24bp (excluding di-nucleotides because allowing 1 of the 2 positions to
+            vary is too permissive) <br/>
+            4. the overall sequence contains at least 3 repeats and spans at least 9bp (same as for pure repeats) <br/>
+            <br/>
+            Some examples:
+        <ul>
+            <li><code>CAGG.CATG.CAGG.CACG</code> would pass these rules because it consists of a 4bp motif in which the
+                3rd base is allowed to vary.
+            </li>
+            <li><code>CAT.AAT.GAT</code> would also pass, since only the 1st base varies.</li>
+            <li><code>CTT.CGG.CAT</code> would not pass, because both the 2nd and 3rd base vary across repeats.</li>
+            <li><code>AAG.AAA.AAG.AAA.AAT</code> would not pass even though only the 3rd base is changing because the
+                2nd and 4th repeats have become <code>AAA</code> homopolymers.</p></li>
+        </ul>
+        </p>
+        <p>If we go back and apply this logic to SynDip insertions and deletions that didn't pass our original pure
+            repeat filters, we find 9,970 additional loci (4,644 insertions and 4,973 deletions) that are repeats with
+            interruptions. This is an increase of 7% over the 144,773 pure loci. </p>
+        <p>The allele size and motif size distributions of these interrupted repeats are as follows:</p>
+        <div>
+            <img src="https://user-images.githubusercontent.com/6240170/214751753-d4ff1609-1597-4eac-be84-4b933b72c46f.png"
+                 width=400> <img
+                src="https://user-images.githubusercontent.com/6240170/214747495-64f84c9c-59a2-4756-919c-1f72a238b78e.png"
+                width=400>
+        </div>
 
-<h3>Acknowledgements</h3>
-<p>Thank you to the Hail Team - Jackie Goldstein, Dan King, Daniel Goldstein, Cotton Seed, and others. <a href="https://hail.is/docs/batch/service.html">Hail Batch</a> and the other systems you are building have made these analyses not only possible, but a lot easier to do than they would have been otherwise.  </p>
-<hr />
-<h3>Extra Sections</h3>
-<hr />
-<p><strong>Extra Section 1:</strong> Data availability and QC metrics</p>
-<p>CHM1-CHM13-2 WGS read data is publicly available under run id ERR1341796: [<a href="https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&amp;acc=ERR1341796&amp;display=data-access">SRA</a>]  [<a href="https://www.ebi.ac.uk/ena/browser/view/ERR1341796">EBI</a>] and also from the Broad Institute here: <a href="https://console.cloud.google.com/storage/browser/broad-public-datasets/CHM1_CHM13_WGS2">genome data</a></p>
-<p>WGS read data summary:
-- Illumina HiSeq X Ten
-- PCR-Free protocol
-- Paired-end 151bp reads
-- 40x Depth of Coverage
-- DNA Fragment Length (aka. Insert Size) has median = 327bp (+/- 67 MAD) and distribution:  <br /><br />
-  <img width="225" alt="image" src="https://user-images.githubusercontent.com/6240170/213969693-572b733e-2b6a-4180-a4d0-7ed622cfd3ed.png"></p>
-<p>CHM1-CHM13 exome sequencing data is also available from the Broad Institute here: <a href="https://console.cloud.google.com/storage/browser/broad-public-datasets/CHM1_CHM13_WES">exome data</a></p>
-<p>Exome read data summary:
-- Illumina HiSeq X Ten
-- Paired-end 151bp reads
-- 85x mean target coverage (based on Picard metrics).
-- DNA Fragment Length (aka. Insert Size) has median = 393bp (+/- 87 MAD) and distribution:  <br /><br />
-  <img width="225" alt="image" src="https://user-images.githubusercontent.com/6240170/213969786-c879b865-155b-49ed-8e00-9a832b3f6c8b.png"></p>
-<hr />
-<p><strong>Extra Section 2:</strong> Code and other data availability</p>
-<p>The source code for all parts of the truth set analysis is available on github @ <a href="https://github.com/broadinstitute/str-truth-set">https://github.com/broadinstitute/str-truth-set</a> and <a href="https://github.com/broadinstitute/str-analysis">https://github.com/broadinstitute/str-analysis</a>. It includes the following scripts:</p>
-<ul>
-<li><a href="https://github.com/broadinstitute/str-analysis/blob/main/str_analysis/filter_vcf_to_STR_variants.py">filter_vcf_to_STR_variants.py</a> - the script used to identify which insertions &amp; deletions in a VCF are actually STR expansions or contractions.</li>
-<li><a href="https://github.com/broadinstitute/str-truth-set/blob/main/step1__create_STR_truth_set.sh">step1__create_STR_truth_set.sh</a> - automates all steps around creating the truth set by running <code>filter_vcf_to_STR_varaints.py</code> on the SynDip truth set vcf and then validating the results against the T2T genome.</li>
-<li><a href="https://github.com/broadinstitute/str-truth-set/blob/main/step2__upload_files_to_STR_truth_set_bucket.sh">step2__upload_files_to_STR_truth_set_bucket.sh</a> - utility script for uploading files to the public bucket</li>
-<li><a href="https://github.com/broadinstitute/str-truth-set/blob/main/step3__run_tool_pipelines.sh">step3__run_tool_pipelines.sh</a> - automates running ExpansionHunter, GangSTR, HipSTR and ExpansionHunterDenovo on the genome and exome data using Hail Batch</li>
-<li><a href="https://github.com/broadinstitute/str-truth-set/blob/main/step4__combine_tool_results.sh">step4__combine_tool_results.sh</a> - combines tool outputs into tables that can be used for plotting </li>
-<li><a href="https://github.com/broadinstitute/str-truth-set/blob/main/step5__generate_plots_and_figures.sh">step5__generate_plots_and_figures.sh</a> - generates publication figures</li>
-<li><a href="https://github.com/broadinstitute/str-truth-set/blob/main/tool_comparison/scripts/convert_truth_set_to_variant_catalogs.py">tool_comparison/scripts/convert_truth_set_to_variant_catalogs.py</a> - a script that converts the truth set into ExpansionHunter and GangSTR input catalogs and also generates the set of true negative loci with a matching distribution of motif sizes. </li>
-</ul>
-<p>To run ExpansionHunter, GangSTR, and HipSTR on this sample, I generated variant catalogs with
-1) 144,251 positive loci. These are all the loci in the truth set (excluding the 521 that don't have matching repeats in the reference genome). They represent true positive variants.
-2) 144,252 negative loci. These are repeat loci in hg38 that are not in the truth set (and therefore have a homozygous reference genotype). They represent true negatives. They were selected by taking the much larger set of all pure repeats in hg38 and selecting a random subset that has the same distribution of motif sizes as the set of positive loci. These loci are not used in analyses described in this blog post.</p>
-<p>These variant catalogs and other files used in the analysis are publicly available in the <a href="https://console.cloud.google.com/storage/browser/str-truth-set/hg38">gs://str-truth-set</a> Google Storage bucket. Many of the smaller files are also available on the <a href="https://github.com/broadinstitute/str-truth-set/releases">Releases page</a> of the <a href="https://github.com/broadinstitute/str-truth-set">str-truth-set github repo</a>.</p>
-<hr />
-<p><strong>Extra Section 3:</strong> Genome-wide STR catalogs via TandemRepeatFinder</p>
-<p>To generate a comprehensive catalog of pure repeats in hg38, I ran <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> with very large mismatch and indel penalties (=1000000) that basically disallow any mismatches or indels. I used a small Minscore value (=8) to include short stretches of repeats:</p>
-<p><code>trf catalog.txt 2 1000000 1000000 80 10 8 2000 -ngs -d</code></p>
-<p>I then post-processed the output to discard homopolymers and loci than contained fewer than 3 repeats of a motif. Also, I trimmed the loci so that the locus size was an exact multiple of the motif size. These are the results (filtered to different minimum locus size thresholds):</p>
-<table>
-   <tr>
-      <td nowrap><b>Catalog of Pure Repeats</b></td>
-      <td nowrap><b># of STR Loci</b></td>
-      <td nowrap><b>Download Link</b></td>
-   </tr>
-   <tr>
-      <td nowrap>Pure repeats that <b>span at least 6bp</b> in hg38</td>
-      <td nowrap style="text-align: right">4,722,859</td>
-      <td nowrap><a href="https://storage.googleapis.com/str-truth-set/hg38/ref/other/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_6bp.bed.gz">gs://str-truth-set/hg38/ref/other/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_6bp.bed.gz</a></td>
-   </tr>
-   <tr>
-      <td nowrap>Pure repeats that <b>span at least 9bp</b> in hg38</td>
-      <td nowrap style="text-align: right">2,805,842</td>
-      <td nowrap><a href="https://storage.googleapis.com/str-truth-set/hg38/ref/other/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_9bp.bed.gz">gs://str-truth-set/hg38/ref/other/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_9bp.bed.gz</a></td>
-   </tr>
-   <tr>
-      <td nowrap>Pure repeats that <b>span at least 12bp</b> in hg38</td>
-      <td nowrap style="text-align: right">1,343,313</td>
-      <td nowrap><a href="https://storage.googleapis.com/str-truth-set/hg38/ref/other/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_12bp.bed.gz">gs://str-truth-set/hg38/ref/other/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_12bp.bed.gz</a></td>
-   </tr>
-   <tr>
-      <td nowrap>Pure repeats that <b>span at least 15bp</b> in hg38</td>
-      <td nowrap style="text-align: right">702,486</td>
-      <td nowrap><a href="https://storage.googleapis.com/str-truth-set/hg38/ref/other/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_15bp.bed.gz">gs://str-truth-set/hg38/ref/other/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_15bp.bed.gz</a></td>
-   </tr>
-</table>
+        <p>There are many questions one can ask about interrupted repeats and how they differ from pure repeats. Since
+            this blog post is already long, I will only mention one here - why the allele size distribution appears to
+            have more loci with -2/+2 events than -1/+1. The most frequent motifs in the -2/+2 bins are "ACAC", "ATAT",
+            etc. These turn out to be di-nucleotide repeats that are getting around the dinucleotide filter (filter #3
+            above) by pretending to be 4bp motifs. These obfuscated di-nucleotide motifs are not present in -1 and +1
+            bins while being overrepresented in the -2/+2 bins. The reason has to do with the relative improbability of
+            a double di-nucleotide insertion (e.g. "C &gt; CACAC" which would be counted in the +1 bin here as a 4bp
+            motif expansion) failing the pure repeat filters but then passing the interrupted repeat filters, and the
+            much higher odds of this happening with 4 di-nucleotide repeats (e.g. "C &gt; CACACATAC" which would be
+            counted in the +2 bin here as a 2 x CACA motif expansion). </p>
 
-<p>Although it wasn't used in the truth set analyses, I also generated a repeat catalog by running <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> with a more permissive mismatch penalty (=7) to capture some of the loci missed in the above catalog - such as known pathogenic loci that have interruptions in their reference repeat sequence. I kept the indel penalty very large (=1000000):</p>
-<p><code>trf catalog.txt 2 7 1000000 80 10 8 2000 -ngs -d</code>
-As before, I post-processed the output to discard homopolymers and loci than contained fewer than 3 repeats of a motif. The resulting catalog is available here:</p>
-<table>
-   <tr>
-      <td nowrap><b>Catalog Allowing Mismatches</b></td>
-      <td nowrap><b># of STR Loci</b></td>
-      <td nowrap><b>Download Link</b></td>
-   </tr>
-   <tr>
-      <td nowrap>Repeats that <b>span at least 6bp</b> in hg38</td>
-      <td nowrap style="text-align: right">4,655,977</td>
-      <td nowrap><a href="https://storage.googleapis.com/str-truth-set/hg38/ref/other/repeat_specs_GRCh38_allowing_mismatches.sorted.trimmed.at_least_6bp.bed.gz">gs://str-truth-set/hg38/ref/other/repeat_specs_GRCh38_allowing_mismatches.sorted.trimmed.at_least_6bp.bed.gz</a></td>
-   </tr>
-</table>
 
-<p>This catalog has fewer loci than the catalog of pure repeats because a number of adjacent pure repeat loci were merged into single loci once mismatches were allowed. </p>
-<hr />
-<p><strong>Extra Section 4:</strong> Limitations of different approaches to estimating STR caller accuracy
-</p>
-<ol>
-<li><strong>simulated STRs:</strong> we can generate an unlimited number of STR examples with known genotypes by using a tool like <a href="https://github.com/lh3/wgsim">wgsim</a>. However, simulated data doesn't capture the full complexity of real sequencing data (e.g. adjacent variants not present in the reference genome, GC bias, and other sequencing artifacts). </li>
-<li><strong>mendelian violations analysis:</strong> trios can be used to check whether genotypes are consistent with Mendelian inheritance. However, This is informative about specificity but not sensitivity since a tool that misses all expansions will have zero mendelian violations. This produces a coarser<br />
-   truth set since it's impossible to say whether any individual mendelian violation is error or truth - just that 
-   overall, there should be no more than ~80 mendelian violations on average per trio (based on the estimated denovo rate for STR 
-   variants [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5482724/?report=classic">Willems 2017</a>]). Additionally, 
-   mendelian violations are confounded by a tool's false-negative rate since a tool that consistently fails to detect 
-   STR expansions at some loci will have fewer mendelian violations.</li>
-<li><strong>PCR-validated pathogenic expansions:</strong> A small number of WGS samples with PCR-validated STR expansions are publicly available - including 9 
-   samples from [<a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-018-1505-2">Dashnow 2018</a>]. Typically only one locus is validated in        each sample, so there's too little data in this category to be useful for a genome-wide STR benchmark. Additionally, PCR and other related methods 
-   often give only approximate expansion sizes (e.g. "greater than 150 repeats"). This is sufficient for determining 
-   pathogenicity but not for evaluating tool accuracy.   </li>
-<li><strong>long read data:</strong> This might be the ideal source of truth in the future, but currently suffers from a lack of well-validated STR calling tools. The most-recently published tool - Straglr [<a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02447-3">Chiu 2021</a>] - reports 73% concordance between heterozygous STR expansions called from HiFi PacBio data vs truth data generated from the diploid assembly of HG00733 [<a href="https://www.biorxiv.org/content/10.1101/327064v2.full">Kronenberg 2019</a>]. [<a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02447-3">Chiu 2021</a>], [<a href="https://www.biorxiv.org/content/10.1101/2021.11.18.469113v1">Dashnow 2021</a>] and other groups (unpublished) also raise concerns about diploid assemblies as a source of STR truth data since manual inspection of discordant loci often revealed that the assembly was not credible at those loci. </li>
-</ol>
-<hr />
+        <hr/>
 
-<p><strong>Extra Section 5</strong>: Truth set genotype validation steps<br />
-    <br />
-    This flow diagram describes the steps used to validate truth set STRs by comparing them to the telomere-to-telomere (T2T) reference genome: <br />
-    <br />
-    <a target=_blank href="https://broadinstitute.github.io/str-truth-set/figures_and_tables/figure__validation_flow_diagram.png">
-        <img src="https://broadinstitute.github.io/str-truth-set/figures_and_tables/figure__validation_flow_diagram.png">
-    </a>
-    <br />
-</p>
-<hr />
+        <h3>Acknowledgements</h3>
+        <p>Thank you to the Hail Team - Jackie Goldstein, Dan King, Daniel Goldstein, Cotton Seed, and others. <a
+                href="https://hail.is/docs/batch/service.html">Hail Batch</a> and the other systems you are building
+            have made these analyses not only possible, but a lot easier to do than they would have been otherwise. </p>
+        <hr/>
+        <h3>Extra Sections</h3>
+        <hr/>
+        <p><strong>Extra Section 1:</strong> Data availability and QC metrics</p>
+        <p>CHM1-CHM13-2 WGS read data is publicly available under run id ERR1341796: [<a
+                href="https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&amp;acc=ERR1341796&amp;display=data-access">SRA</a>]
+            [<a href="https://www.ebi.ac.uk/ena/browser/view/ERR1341796">EBI</a>] and also from the Broad Institute
+            here: <a href="https://console.cloud.google.com/storage/browser/broad-public-datasets/CHM1_CHM13_WGS2">genome
+                data</a></p>
+        <p>WGS read data summary:
+            - Illumina HiSeq X Ten
+            - PCR-Free protocol
+            - Paired-end 151bp reads
+            - 40x Depth of Coverage
+            - DNA Fragment Length (aka. Insert Size) has median = 327bp (+/- 67 MAD) and distribution: <br/><br/>
+            <img width="225" alt="image"
+                 src="https://user-images.githubusercontent.com/6240170/213969693-572b733e-2b6a-4180-a4d0-7ed622cfd3ed.png">
+        </p>
+        <p>CHM1-CHM13 exome sequencing data is also available from the Broad Institute here: <a
+                href="https://console.cloud.google.com/storage/browser/broad-public-datasets/CHM1_CHM13_WES">exome
+            data</a></p>
+        <p>Exome read data summary:
+            - Illumina HiSeq X Ten
+            - Paired-end 151bp reads
+            - 85x mean target coverage (based on Picard metrics).
+            - DNA Fragment Length (aka. Insert Size) has median = 393bp (+/- 87 MAD) and distribution: <br/><br/>
+            <img width="225" alt="image"
+                 src="https://user-images.githubusercontent.com/6240170/213969786-c879b865-155b-49ed-8e00-9a832b3f6c8b.png">
+        </p>
+        <hr/>
+        <p><strong>Extra Section 2:</strong> Code and other data availability</p>
+        <p>The source code for all parts of the truth set analysis is available on github @ <a
+                href="https://github.com/broadinstitute/str-truth-set">https://github.com/broadinstitute/str-truth-set</a>
+            and
+            <a href="https://github.com/broadinstitute/str-analysis">https://github.com/broadinstitute/str-analysis</a>.
+            It includes the following scripts:</p>
+        <ul>
+            <li>
+                <a href="https://github.com/broadinstitute/str-analysis/blob/main/str_analysis/filter_vcf_to_STR_variants.py">filter_vcf_to_STR_variants.py</a>
+                - the script used to identify which insertions &amp; deletions in a VCF are actually STR expansions or
+                contractions.
+            </li>
+            <li><a href="https://github.com/broadinstitute/str-truth-set/blob/main/step1__create_STR_truth_set.sh">step1__create_STR_truth_set.sh</a>
+                - automates all steps around creating the truth set by running
+                <code>filter_vcf_to_STR_varaints.py</code> on the SynDip truth set vcf and then validating the results
+                against the T2T genome.
+            </li>
+            <li>
+                <a href="https://github.com/broadinstitute/str-truth-set/blob/main/step2__upload_files_to_STR_truth_set_bucket.sh">step2__upload_files_to_STR_truth_set_bucket.sh</a>
+                - utility script for uploading files to the public bucket
+            </li>
+            <li><a href="https://github.com/broadinstitute/str-truth-set/blob/main/step3__run_tool_pipelines.sh">step3__run_tool_pipelines.sh</a>
+                - automates running ExpansionHunter, GangSTR, HipSTR and ExpansionHunterDenovo on the genome and exome
+                data using Hail Batch
+            </li>
+            <li><a href="https://github.com/broadinstitute/str-truth-set/blob/main/step4__combine_tool_results.sh">step4__combine_tool_results.sh</a>
+                - combines tool outputs into tables that can be used for plotting
+            </li>
+            <li>
+                <a href="https://github.com/broadinstitute/str-truth-set/blob/main/step5__generate_plots_and_figures.sh">step5__generate_plots_and_figures.sh</a>
+                - generates publication figures
+            </li>
+            <li>
+                <a href="https://github.com/broadinstitute/str-truth-set/blob/main/tool_comparison/scripts/convert_truth_set_to_variant_catalogs.py">tool_comparison/scripts/convert_truth_set_to_variant_catalogs.py</a>
+                - a script that converts the truth set into ExpansionHunter and GangSTR input catalogs and also
+                generates the set of true negative loci with a matching distribution of motif sizes.
+            </li>
+        </ul>
+        <p>To run ExpansionHunter, GangSTR, and HipSTR on this sample, I generated variant catalogs with
+            1) 144,251 positive loci. These are all the loci in the truth set (excluding the 521 that don't have
+            matching repeats in the reference genome). They represent true positive variants.
+            2) 144,252 negative loci. These are repeat loci in hg38 that are not in the truth set (and therefore have a
+            homozygous reference genotype). They represent true negatives. They were selected by taking the much larger
+            set of all pure repeats in hg38 and selecting a random subset that has the same distribution of motif sizes
+            as the set of positive loci. These loci are not used in analyses described in this blog post.</p>
+        <p>These variant catalogs and other files used in the analysis are publicly available in the <a
+                href="https://console.cloud.google.com/storage/browser/str-truth-set/hg38">gs://str-truth-set</a> Google
+            Storage bucket. Many of the smaller files are also available on the <a
+                    href="https://github.com/broadinstitute/str-truth-set/releases">Releases page</a> of the <a
+                    href="https://github.com/broadinstitute/str-truth-set">str-truth-set github repo</a>.</p>
+        <hr/>
+        <p><strong>Extra Section 3:</strong> Genome-wide STR catalogs via TandemRepeatFinder</p>
+        <p>To generate a comprehensive catalog of pure repeats in hg38, I ran <a
+                href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> with very large mismatch and
+            indel penalties (=1000000) that basically disallow any mismatches or indels. I used a small Minscore value
+            (=8) to include short stretches of repeats:</p>
+        <p><code>trf catalog.txt 2 1000000 1000000 80 10 8 2000 -ngs -d</code></p>
+        <p>I then post-processed the output to discard homopolymers and loci than contained fewer than 3 repeats of a
+            motif. Also, I trimmed the loci so that the locus size was an exact multiple of the motif size. These are
+            the results (filtered to different minimum locus size thresholds):</p>
+        <table>
+            <tr>
+                <td nowrap><b>Catalog of Pure Repeats</b></td>
+                <td nowrap><b># of STR Loci</b></td>
+                <td nowrap><b>Download Link</b></td>
+            </tr>
+            <tr>
+                <td nowrap>Pure repeats that <b>span at least 6bp</b> in hg38</td>
+                <td nowrap style="text-align: right">4,722,859</td>
+                <td nowrap><a
+                        href="https://storage.googleapis.com/str-truth-set/hg38/ref/other/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_6bp.bed.gz">gs://str-truth-set/hg38/ref/other/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_6bp.bed.gz</a>
+                </td>
+            </tr>
+            <tr>
+                <td nowrap>Pure repeats that <b>span at least 9bp</b> in hg38</td>
+                <td nowrap style="text-align: right">2,805,842</td>
+                <td nowrap><a
+                        href="https://storage.googleapis.com/str-truth-set/hg38/ref/other/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_9bp.bed.gz">gs://str-truth-set/hg38/ref/other/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_9bp.bed.gz</a>
+                </td>
+            </tr>
+            <tr>
+                <td nowrap>Pure repeats that <b>span at least 12bp</b> in hg38</td>
+                <td nowrap style="text-align: right">1,343,313</td>
+                <td nowrap><a
+                        href="https://storage.googleapis.com/str-truth-set/hg38/ref/other/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_12bp.bed.gz">gs://str-truth-set/hg38/ref/other/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_12bp.bed.gz</a>
+                </td>
+            </tr>
+            <tr>
+                <td nowrap>Pure repeats that <b>span at least 15bp</b> in hg38</td>
+                <td nowrap style="text-align: right">702,486</td>
+                <td nowrap><a
+                        href="https://storage.googleapis.com/str-truth-set/hg38/ref/other/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_15bp.bed.gz">gs://str-truth-set/hg38/ref/other/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_15bp.bed.gz</a>
+                </td>
+            </tr>
+        </table>
 
-<p><strong>Extra Section 6</strong>: The table below lists STR calling tools + the truth data used in their publications.</p>
-<p><br /></p>
-<table class="ui striped table">
-<tr>
-   <th>Data Type</th>
-   <th>Tool Name</th>
-   <th>Paper</th>
-   <th>Data Used For Benchmarking</th>
-</tr><tr>
-   <td rowspan="3">Long Read</td>
-   <td>Straglr</td>
-   <td>[<a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02447-3">Chiu 2021</a>]</td>
-   <td>
-      <ul>
-         <li>Simulated data using <a href="https://academic.oup.com/gigascience/article/6/4/gix010/3051934">NanoSim</a></li>
-         <li>4 WGS samples with HTT, 3 WGS samples with FMR1</li>
-         <li>Phased diploid assembly of HG00733 based on PacBio CLR + HiC data from [<a href="https://www.biorxiv.org/content/10.1101/327064v2.full">Kronenberg 2019</a>]
-            <ul>
-               <li>215,894 STR loci</li>
-               <li>2,992 expansions were 200bp to 4,000bp</li>
-               <li>418 HET expansions with >= 100bp difference between long and short allele</li>
-            </ul>
-         </li>
-      </ul>
-   </td>
-</tr><tr>
-   <td>tandem-genotypes </td>
-   <td>[<a href="https://doi.org/10.1186/s13059-019-1667-6">Mitsuhashi 2019</a>]</td>
-   <td>
-      <ul>
-         <li>Long read data from Plasmids with engineered expansions of 4 motifs (CAG, CAA, GGGGCC, and iCCTG)</li>
-         <li>3 WGS samples with ATXN10 expansions</li>
-         <li>NA12878 short-read calls at known pathogenic loci</li>
-      </ul>
-   </td>
-</tr><tr>
-   <td>RepeatHMM</td>
-   <td>[<a href="https://doi.org/10.1186/s13073-017-0456-7">Liu 2017</a>]</td>
-   <td>
-      <ul>
-         <li>20 WGS samples with ATXN3, 3 WGS samples with ATXN10 expansions</li>
-         <li>NA12878 short-read calls at known pathogenic loci</li>
-      </ul>
-   </td>
-</tr><tr>
-   <td rowspan="100">Short Read</td>
-   <td>ExpansionHunter</td>
-   <td>
-      [<a href="https://genome.cshlp.org/content/early/2017/09/08/gr.225672.117">Dolzhenko 2017</a>],
-      [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6853681/">Dolzhenko 2019</a>]
-   </td>
-   <td>
-   </td>
-</tr><tr>
-   <td>GangSTR</td>
-   <td>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6735967/">Mousavi 2019</a>]</td>
-   <td>
-   </td>
-</tr><tr>
-   <td>HipSTR</td>
-   <td>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5482724/">Willems 2017</a>]</td>
-   <td></td>
-</tr><tr>
-   <td>ExpansionHunterDenovo</td>
-   <td>[<a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02017-z">Dolzhenko 2020</a>]</td>
-   <td>
-   </td>
-</tr><tr>
-   <td>STRling</td>
-   <td>[<a href="https://www.biorxiv.org/content/10.1101/2021.11.18.469113v1">Dashnow 2021</a>]</td>
-   <td>
-      <ul>
-         <li>134 WGS samples with expansions at 14 known pathogenic STR loci</li>
-         <li>Diploid assemblies of Ashkenazi trio using HiFi PacBio. Assembled using PacBio Improved Phased Assembler (IPA), aligned to GRCh38 using pbmm2, variant calling using bcftools mpileup</li>
-      </ul>
-   </td>
-</tr><tr>
-   <td>adVNTR</td>
-   <td>
-      [<a href="https://genome.cshlp.org/content/28/11/1709.full">Bakhtiari 2018</a>], 
-      [<a href="https://www.nature.com/articles/s41467-021-22206-z">Bakhtiari 2020</a>]</td>
-   <td>
-   </td>
-</tr><tr>
-   <td>TredParse</td>
-   <td>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5673627/">Tang 2017</a>]</td>
-   <td>
-   </td>
-</tr><tr>
-   <td>STRetch</td>
-   <td>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6102892/">Dashnow 2018</a>]</td>
-   <td>
-   </td>
-</tr><tr>
-   <td>PopSTR2</td>
-   <td>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7141861/">Kristmundsdottir 2020</a>]</td>
-   <td></td>
-</tr><tr>
-   <td>LobSTR</td>
-   <td>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3371701/">Gymrek 2012</a>]</td>
-   <td></td>
-</tr><tr>
-   <td>ExSTRa</td>
-   <td>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6288141/">Tankard 2018</a>]</td>
-   <td></td>
-</tr><tr>
-   <td>TRhist</td>
-   <td>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3957077/">Doi 2014</a>]</td>
-   <td></td>
-</tr><tr>
-   <td>SuperSTR</td>
-   <td>[<a href="https://www.biorxiv.org/content/10.1101/2021.04.05.438449v2">Fearnley 2021</a>]</td>
-   <td></td>
-</tr>
-</table>
+        <p>Although it wasn't used in the truth set analyses, I also generated a repeat catalog by running <a
+                href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> with a more permissive mismatch
+            penalty (=7) to capture some of the loci missed in the above catalog - such as known pathogenic loci that
+            have interruptions in their reference repeat sequence. I kept the indel penalty very large (=1000000):</p>
+        <p><code>trf catalog.txt 2 7 1000000 80 10 8 2000 -ngs -d</code>
+            As before, I post-processed the output to discard homopolymers and loci than contained fewer than 3 repeats
+            of a motif. The resulting catalog is available here:</p>
+        <table>
+            <tr>
+                <td nowrap><b>Catalog Allowing Mismatches</b></td>
+                <td nowrap><b># of STR Loci</b></td>
+                <td nowrap><b>Download Link</b></td>
+            </tr>
+            <tr>
+                <td nowrap>Repeats that <b>span at least 6bp</b> in hg38</td>
+                <td nowrap style="text-align: right">4,655,977</td>
+                <td nowrap><a
+                        href="https://storage.googleapis.com/str-truth-set/hg38/ref/other/repeat_specs_GRCh38_allowing_mismatches.sorted.trimmed.at_least_6bp.bed.gz">gs://str-truth-set/hg38/ref/other/repeat_specs_GRCh38_allowing_mismatches.sorted.trimmed.at_least_6bp.bed.gz</a>
+                </td>
+            </tr>
+        </table>
 
-<p><br /></p>
-<p><em>NOTE:</em> <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8351082#Tab1">Table 1</a> in [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8351082/">Rajan-Babu 2021</a>] provides additional comparisons of many of these tools. </p>
-<p>The largest truth sets in this table are generated using diploid assemblies - as described in the Straglr paper [<a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02447-3">Chiu 2021</a>] - but the accuracy of these assemblies for STRs remains questionable. </p>
-<hr />
-<p><strong>Extra Section 7:</strong> Synthetic Diploid Benchmark Overview</p>
-<p>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/">Li 2018</a>] produced a high-quality truth set based on <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5411763/">Huddleston 2017</a> haploid assemblies of two individuals - CHM1 and CHM13. </p>
-<p>To create the Synthetic Diploid Benchmark, [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/">Li 2018</a>] generated variant calls by:</p>
-<ol>
-<li>Aligning each haploid assembly to GRCh37 or GRCh38 using minimap2</li>
-<li>Converting the differences revealed by these alignments to variant calls directly from the CIGAR string. There was no need to run a separate variant calling tool downstream of the alignment step.</li>
-</ol>
-<p><strong>Li et al. 2018 Figure 1:</strong> Constructing the Syndip benchmark dataset. </p>
-<p><img alt="image" src="https://user-images.githubusercontent.com/6240170/167907455-84baa96d-95ae-44bc-8471-c7769bd6474f.png" /></p>
-<p>This yielded 5,362,620 variants of which 4,148,586 were in high-confidence regions.</p>
-<p>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/">Li 2018</a>] used this data to evaluate SNV and INDEL calling tools, but it can also serve as a high-quality truth set for STRs, as well as tandem repeats (TRs) and structural variants (SVs).</p>
-<p>This is the size distribution of all deletions and insertions within high-confidence regions:</p>
-<p><img alt="image" src="https://user-images.githubusercontent.com/6240170/215531247-1b4b489a-cb89-440f-8aad-6eb35b14ee99.png" /></p>
-<p>There are a total of 279,126 deletions, and 287,482 insertions. <br />
-The largest deletion is -18,268 bp, while the largest insertion is 15,193 bp.</p>
+        <p>This catalog has fewer loci than the catalog of pure repeats because a number of adjacent pure repeat loci
+            were merged into single loci once mismatches were allowed. </p>
+        <hr/>
+        <p><strong>Extra Section 4:</strong> Limitations of different approaches to estimating STR caller accuracy
+        </p>
+        <ol>
+            <li><strong>simulated STRs:</strong> we can generate an unlimited number of STR examples with known
+                genotypes by using a tool like <a href="https://github.com/lh3/wgsim">wgsim</a>. However, simulated data
+                doesn't capture the full complexity of real sequencing data (e.g. adjacent variants not present in the
+                reference genome, GC bias, and other sequencing artifacts).
+            </li>
+            <li><strong>mendelian violations analysis:</strong> trios can be used to check whether genotypes are
+                consistent with Mendelian inheritance. However, This is informative about specificity but not
+                sensitivity since a tool that misses all expansions will have zero mendelian violations. This produces a
+                coarser<br/>
+                truth set since it's impossible to say whether any individual mendelian violation is error or truth -
+                just that
+                overall, there should be no more than ~80 mendelian violations on average per trio (based on the
+                estimated denovo rate for STR
+                variants [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5482724/?report=classic">Willems
+                    2017</a>]). Additionally,
+                mendelian violations are confounded by a tool's false-negative rate since a tool that consistently fails
+                to detect
+                STR expansions at some loci will have fewer mendelian violations.
+            </li>
+            <li><strong>PCR-validated pathogenic expansions:</strong> A small number of WGS samples with PCR-validated
+                STR expansions are publicly available - including 9
+                samples from [<a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-018-1505-2">Dashnow
+                    2018</a>]. Typically only one locus is validated in each sample, so there's too little data in this
+                category to be useful for a genome-wide STR benchmark. Additionally, PCR and other related methods
+                often give only approximate expansion sizes (e.g. "greater than 150 repeats"). This is sufficient for
+                determining
+                pathogenicity but not for evaluating tool accuracy.
+            </li>
+            <li><strong>long read data:</strong> This might be the ideal source of truth in the future, but currently
+                suffers from a lack of well-validated STR calling tools. The most-recently published tool - Straglr [<a
+                        href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02447-3">Chiu 2021</a>]
+                - reports 73% concordance between heterozygous STR expansions called from HiFi PacBio data vs truth data
+                generated from the diploid assembly of HG00733 [<a
+                        href="https://www.biorxiv.org/content/10.1101/327064v2.full">Kronenberg 2019</a>]. [<a
+                        href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02447-3">Chiu 2021</a>],
+                [<a href="https://www.biorxiv.org/content/10.1101/2021.11.18.469113v1">Dashnow 2021</a>] and other
+                groups (unpublished) also raise concerns about diploid assemblies as a source of STR truth data since
+                manual inspection of discordant loci often revealed that the assembly was not credible at those loci.
+            </li>
+        </ol>
+        <hr/>
 
-    <br />
-    <center><img style="margin-left:25px;" width="586" alt="image" src="https://user-images.githubusercontent.com/6240170/167290392-8974f18a-af18-40c1-9f61-fbb6713fc8d0.png"></center>
+        <p><strong>Extra Section 5</strong>: Truth set genotype validation steps<br/>
+            <br/>
+            This flow diagram describes the steps used to validate truth set STRs by comparing them to the
+            telomere-to-telomere (T2T) reference genome: <br/>
+            <br/>
+            <a target=_blank
+               href="https://broadinstitute.github.io/str-truth-set/figures_and_tables/figure__validation_flow_diagram.png">
+                <img src="https://broadinstitute.github.io/str-truth-set/figures_and_tables/figure__validation_flow_diagram.png">
+            </a>
+            <br/>
+        </p>
+        <hr/>
 
-    <!-- https://giscus.app/ -->
-    <div class="container giscus" style="width:100%; margin:50px 10px">
-      <script src="https://giscus.app/client.js"
-              data-repo="bw2/bw2.github.io"
-              data-repo-id="MDEwOlJlcG9zaXRvcnkzNTU2OTQ0OA=="
-              data-category="Announcements"
-              data-category-id="DIC_kwDOAh6_KM4CO_Vz"
-              data-mapping="pathname"
-              data-reactions-enabled="1"
-              data-emit-metadata="0"
-              data-input-position="bottom"
-              data-theme="light"
-              data-lang="en"
-              crossorigin="anonymous"
-              async>
-      </script>
+        <p><strong>Extra Section 6</strong>: The table below lists STR calling tools + the truth data used in their
+            publications.</p>
+        <p><br/></p>
+        <table class="ui striped table">
+            <tr>
+                <th>Data Type</th>
+                <th>Tool Name</th>
+                <th>Paper</th>
+                <th>Data Used For Benchmarking</th>
+            </tr>
+            <tr>
+                <td rowspan="3">Long Read</td>
+                <td>Straglr</td>
+                <td>[<a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02447-3">Chiu 2021</a>]
+                </td>
+                <td>
+                    <ul>
+                        <li>Simulated data using <a
+                                href="https://academic.oup.com/gigascience/article/6/4/gix010/3051934">NanoSim</a></li>
+                        <li>4 WGS samples with HTT, 3 WGS samples with FMR1</li>
+                        <li>Phased diploid assembly of HG00733 based on PacBio CLR + HiC data from [<a
+                                href="https://www.biorxiv.org/content/10.1101/327064v2.full">Kronenberg 2019</a>]
+                            <ul>
+                                <li>215,894 STR loci</li>
+                                <li>2,992 expansions were 200bp to 4,000bp</li>
+                                <li>418 HET expansions with >= 100bp difference between long and short allele</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>tandem-genotypes</td>
+                <td>[<a href="https://doi.org/10.1186/s13059-019-1667-6">Mitsuhashi 2019</a>]</td>
+                <td>
+                    <ul>
+                        <li>Long read data from Plasmids with engineered expansions of 4 motifs (CAG, CAA, GGGGCC, and
+                            iCCTG)
+                        </li>
+                        <li>3 WGS samples with ATXN10 expansions</li>
+                        <li>NA12878 short-read calls at known pathogenic loci</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>RepeatHMM</td>
+                <td>[<a href="https://doi.org/10.1186/s13073-017-0456-7">Liu 2017</a>]</td>
+                <td>
+                    <ul>
+                        <li>20 WGS samples with ATXN3, 3 WGS samples with ATXN10 expansions</li>
+                        <li>NA12878 short-read calls at known pathogenic loci</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="100">Short Read</td>
+                <td>ExpansionHunter</td>
+                <td>
+                    [<a href="https://genome.cshlp.org/content/early/2017/09/08/gr.225672.117">Dolzhenko 2017</a>],
+                    [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6853681/">Dolzhenko 2019</a>]
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>GangSTR</td>
+                <td>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6735967/">Mousavi 2019</a>]</td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>HipSTR</td>
+                <td>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5482724/">Willems 2017</a>]</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>ExpansionHunterDenovo</td>
+                <td>[<a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-020-02017-z">Dolzhenko
+                    2020</a>]
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>STRling</td>
+                <td>[<a href="https://www.biorxiv.org/content/10.1101/2021.11.18.469113v1">Dashnow 2021</a>]</td>
+                <td>
+                    <ul>
+                        <li>134 WGS samples with expansions at 14 known pathogenic STR loci</li>
+                        <li>Diploid assemblies of Ashkenazi trio using HiFi PacBio. Assembled using PacBio Improved
+                            Phased Assembler (IPA), aligned to GRCh38 using pbmm2, variant calling using bcftools
+                            mpileup
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>adVNTR</td>
+                <td>
+                    [<a href="https://genome.cshlp.org/content/28/11/1709.full">Bakhtiari 2018</a>],
+                    [<a href="https://www.nature.com/articles/s41467-021-22206-z">Bakhtiari 2020</a>]
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>TredParse</td>
+                <td>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5673627/">Tang 2017</a>]</td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>STRetch</td>
+                <td>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6102892/">Dashnow 2018</a>]</td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>PopSTR2</td>
+                <td>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7141861/">Kristmundsdottir 2020</a>]</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>LobSTR</td>
+                <td>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3371701/">Gymrek 2012</a>]</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>ExSTRa</td>
+                <td>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6288141/">Tankard 2018</a>]</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>TRhist</td>
+                <td>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3957077/">Doi 2014</a>]</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>SuperSTR</td>
+                <td>[<a href="https://www.biorxiv.org/content/10.1101/2021.04.05.438449v2">Fearnley 2021</a>]</td>
+                <td></td>
+            </tr>
+        </table>
+
+        <p><br/></p>
+        <p><em>NOTE:</em> <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8351082#Tab1">Table 1</a> in [<a
+                href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8351082/">Rajan-Babu 2021</a>] provides additional
+            comparisons of many of these tools. </p>
+        <p>The largest truth sets in this table are generated using diploid assemblies - as described in the Straglr
+            paper [<a href="https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02447-3">Chiu 2021</a>]
+            - but the accuracy of these assemblies for STRs remains questionable. </p>
+        <hr/>
+        <p><strong>Extra Section 7:</strong> Synthetic Diploid Benchmark Overview</p>
+        <p>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/">Li 2018</a>] produced a high-quality truth
+            set based on <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5411763/">Huddleston 2017</a> haploid
+            assemblies of two individuals - CHM1 and CHM13. </p>
+        <p>To create the Synthetic Diploid Benchmark, [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/">Li
+            2018</a>] generated variant calls by:</p>
+        <ol>
+            <li>Aligning each haploid assembly to GRCh37 or GRCh38 using minimap2</li>
+            <li>Converting the differences revealed by these alignments to variant calls directly from the CIGAR string.
+                There was no need to run a separate variant calling tool downstream of the alignment step.
+            </li>
+        </ol>
+        <p><strong>Li et al. 2018 Figure 1:</strong> Constructing the Syndip benchmark dataset. </p>
+        <p><img alt="image"
+                src="https://user-images.githubusercontent.com/6240170/167907455-84baa96d-95ae-44bc-8471-c7769bd6474f.png"/>
+        </p>
+        <p>This yielded 5,362,620 variants of which 4,148,586 were in high-confidence regions.</p>
+        <p>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/">Li 2018</a>] used this data to evaluate SNV
+            and INDEL calling tools, but it can also serve as a high-quality truth set for STRs, as well as tandem
+            repeats (TRs) and structural variants (SVs).</p>
+        <p>This is the size distribution of all deletions and insertions within high-confidence regions:</p>
+        <p><img alt="image"
+                src="https://user-images.githubusercontent.com/6240170/215531247-1b4b489a-cb89-440f-8aad-6eb35b14ee99.png"/>
+        </p>
+        <p>There are a total of 279,126 deletions, and 287,482 insertions. <br/>
+            The largest deletion is -18,268 bp, while the largest insertion is 15,193 bp.</p>
+
+        <br/>
+        <center><img style="margin-left:25px;" width="586" alt="image"
+                     src="https://user-images.githubusercontent.com/6240170/167290392-8974f18a-af18-40c1-9f61-fbb6713fc8d0.png">
+        </center>
+
+        <!-- https://giscus.app/ -->
+        <div class="container giscus" style="width:100%; margin:50px 10px">
+            <script src="https://giscus.app/client.js"
+                    data-repo="bw2/bw2.github.io"
+                    data-repo-id="MDEwOlJlcG9zaXRvcnkzNTU2OTQ0OA=="
+                    data-category="Announcements"
+                    data-category-id="DIC_kwDOAh6_KM4CO_Vz"
+                    data-mapping="pathname"
+                    data-reactions-enabled="1"
+                    data-emit-metadata="0"
+                    data-input-position="bottom"
+                    data-theme="light"
+                    data-lang="en"
+                    crossorigin="anonymous"
+                    async>
+            </script>
+        </div>
+
+        <br>
+        <br>
+        <h3>Interactive IGV viewer for truth set data:</h3>
+
+        [<a href="https://broadinstitute.github.io/str-truth-set/html/tgg_viewer.html" target="_blank">Open in new
+        window</a>]<br/>
+
     </div>
-
-     <br>
-     <br>
-     <h3>Interactive IGV viewer for truth set data:</h3>
-
-     [<a href="https://broadinstitute.github.io/str-truth-set/html/tgg_viewer.html" target="_blank">Open in new window</a>]<br />
-
-  </div>
-  <div class="ui three wide column"></div>
+    <div class="ui three wide column"></div>
 </div>
 
 
-<br />
-<iframe src="https://broadinstitute.github.io/str-truth-set/html/tgg_viewer.html" width="100%" height="1500px" frameBorder="0" style="padding:0px; margin:0px 0px 10px 0px;"></iframe>
+<br/>
+<iframe src="https://broadinstitute.github.io/str-truth-set/html/tgg_viewer.html" width="100%" height="1500px"
+        frameBorder="0" style="padding:0px; margin:0px 0px 10px 0px;"></iframe>
 
 
 <!-- script section -->
 <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"
+        integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
-   const headingAnchors = new AnchorJS({
-    visible: 'hover',
-      placement: 'left'
-   });
-  headingAnchors.add('h2, h3, h4');
+    const headingAnchors = new AnchorJS({
+        visible: 'hover',
+        placement: 'left'
+    });
+    headingAnchors.add('h2, h3, h4');
 
-   const paragraphAnchors = new AnchorJS({
-      visible: 'hover',
-      placement: 'left',
-      icon: '¶'
-   });
-   paragraphAnchors.add('p');
+    const paragraphAnchors = new AnchorJS({
+        visible: 'hover',
+        placement: 'left',
+        icon: '¶'
+    });
+    paragraphAnchors.add('p');
 
-   $('.ui.checkbox').checkbox();
+    $('.ui.checkbox').checkbox();
 
-   let update_tool_comparison_plot_viewer_image_url = () => {
-      const tool = $('input[name="tool"]:checked').val()
-      const motif_size = $('input[name="motif-size"]:checked').val()
-      const coverage = $('input[name="coverage"]:checked').val()
-      const interruptions = $('input[name="interruptions"]:checked').val()
+    let update_tool_comparison_plot_viewer_image_url = () => {
+        const tool = $('input[name="tool"]:checked').val()
+        const motif_size = $('input[name="motif-size"]:checked').val()
+        const coverage = $('input[name="coverage"]:checked').val()
+        const interruptions = $('input[name="interruptions"]:checked').val()
 
 
-      //let img_url = "https://broadinstitute.github.io/str-truth-set/tool_comparison/figures/"
-      let img_url = "https://console.cloud.google.com/storage/browser/str-truth-set/hg38/figures/"
-      img_url += `tool_accuracy_by_true_allele_size.${motif_size}.${interruptions}.${coverage}.${tool}.svg`
+        //let img_url = "https://broadinstitute.github.io/str-truth-set/tool_comparison/figures/"
+        let img_url = "https://console.cloud.google.com/storage/browser/str-truth-set/hg38/figures/"
+        img_url += `tool_accuracy_by_true_allele_size.${motif_size}.${interruptions}.${coverage}.${tool}.svg`
 
-      $('#tool-comparison-plot-viewer-url').attr("href", img_url)
-      $('#tool-comparison-plot-viewer').attr("src", img_url)
-   }
-
-   $('input[type="radio"]').on("change", update_tool_comparison_plot_viewer_image_url);
-
-   $( window ).scroll(() => {
-    if (window.scrollY > 75) {
-      $(".header-section-fade-in").fadeIn("slow");
-    } else {
-      $(".header-section-fade-in").fadeOut("slow");
+        $('#tool-comparison-plot-viewer-url').attr("href", img_url)
+        $('#tool-comparison-plot-viewer').attr("src", img_url)
     }
-  })
+
+    $('input[type="radio"]').on("change", update_tool_comparison_plot_viewer_image_url);
+
+    $(window).scroll(() => {
+        if (window.scrollY > 75) {
+            $(".header-section-fade-in").fadeIn("slow");
+        } else {
+            $(".header-section-fade-in").fadeOut("slow");
+        }
+    })
 </script>
 </body>
 </html>
