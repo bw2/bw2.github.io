@@ -766,9 +766,11 @@
             <br/>
             <br/></p>
         <p>Now, we can look at the fraction of alleles that each tool gets exactly right:</p>
-        <div align="center"><img
+        <div align="center"><!--img
                 src="https://user-images.githubusercontent.com/6240170/211717620-48e83eb2-dcb3-4b81-8fe6-16658552b022.png"
-                width=800></div>
+                width=800 -->
+            <img width=800 src="https://storage.googleapis.com/str-truth-set/hg38/figures/tool_accuracy_by_true_allele_size_exactly_matching_calls.2to6bp_motifs.pure_repeats.40x_coverage.svg" />
+        </div>
 
         <p>This plot represents calls @ 40x coverage, and shows how accuracy drops for larger expansions (positive
             x-axis) as well as large contractions (negative x-axis), with ExpansionHunter retaining higher accuracy
@@ -777,17 +779,22 @@
             "Aborting genotyping of the locus as the sequence upstream/downstream of the repeat is too repetitive for
             accurate genotyping". If we exclude these loci from the analysis for all tools - thereby discarding 25,257
             out of 139,244 (18.1%) of truth set loci that have 2 to 6bp motifs - the above plot then looks like:</p>
-        <div align="center"><img
+        <div align="center"><!-- img
                 src="https://user-images.githubusercontent.com/6240170/211717395-b8ff12d9-a80e-45e3-8a8a-36a83de5845e.png"
-                width=800></div>
+                width=800 -->
+            <img width=800 src="https://storage.googleapis.com/str-truth-set/hg38/figures/tool_accuracy_by_true_allele_size_exactly_matching_calls.2to6bp_motifs.pure_repeats.40x_coverage.excluding_hipstr_no_call_loci.svg" />
+        </div>
+
 
         <p>This shows that, even on the subset of loci that HipSTR can genotype, its accuracy is roughly the same as
             GangSTR's and worse than ExpansionHunter's. </p>
         <p>Next, we can look at how accuracy varies for different sequencing coverage depths, showing only
             ExpansionHunter and GangSTR for clarity:</p>
-        <div align="center"><img
+        <div align="center"><!-- img
                 src="https://user-images.githubusercontent.com/6240170/211717485-6d2bda31-221d-4560-b164-106deaf65d17.png"
-                width=800></div>
+                width=800 -->
+            <img width=800 src="https://storage.googleapis.com/str-truth-set/hg38/figures/tool_accuracy_by_true_allele_size_exactly_matching_calls.2to6bp_motifs.pure_repeats.compare_different_coverages.svg" />
+        </div>
 
         <h4>Accuracy and error size</h4>
         <p>When a tool doesn't get the genotype exactly right, it matters whether it's off by 1 or by 20 repeats, and
