@@ -368,7 +368,7 @@
         </ul>
         <p>The size distribution of these alleles is as follows:</p>
         <p><img width=500
-                src="https://user-images.githubusercontent.com/6240170/200637637-32348eff-13bc-4c10-9cbb-c52304709859.png">
+                src="https://storage.googleapis.com/str-truth-set/hg38/figures/allele_size_distribution_by_number_of_repeats.png">
         </p>
         <p>Here, the x-axis represents the STR allele size in CHM1-CHM13 minus the number of repeats at that locus in
             the
@@ -381,7 +381,7 @@
             SynDip Benchmark. </p>
         <p>If I plot the same distribution but with size in base pairs rather than # of repeats on the x-axis, it looks
             like:</p>
-        <p><img width=500
+        <p><img width=500 style="border: 1px solid red"
                 src="https://user-images.githubusercontent.com/6240170/201500475-561acf00-3b52-43b6-9a27-b1846ce76ddd.png">
         </p>
         <p>To summarize, only 3,037 STR alleles (1.7%) differ by more than 30bp from the reference genome, and only 849
@@ -392,7 +392,7 @@
         <p>Splitting this distribution by motif size bins (2-6bp, 7-24bp and 25-50bp) shows that most of the large
             expansions
             involve large motifs:</p>
-        <p><img alt="image"
+        <p><img alt="image" style="border: 1px solid red"
                 src="https://user-images.githubusercontent.com/6240170/215888369-966aa1c8-982e-4536-8c1a-b0344d640a4a.png"/>
         </p>
         <p>We can also look at the prevalence of STR variants with different motifs and compare it to the distribution
@@ -400,11 +400,11 @@
             STR repeats in hg38 (found using <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a>):
         </p>
         <div nowrap align=center>
-            <img width=400
+            <img width=400 style="border: 1px solid red"
                  src="https://user-images.githubusercontent.com/6240170/200649782-9c128fa7-fe46-4593-bb54-5e42bb546217.png">
-            <img width="148" alt="image"
+            <img width=148 alt="image"
                  src="https://user-images.githubusercontent.com/6240170/200648659-7b827c97-b95d-4713-947c-bca349cf36c4.png">
-            <img width=400
+            <img width=400 style="border: 1px solid red"
                  src="https://user-images.githubusercontent.com/6240170/200649509-d8a1fd0d-4dbc-4e4b-9ab4-82eb9566b5cb.png">
         </div>
 
@@ -415,7 +415,7 @@
             the high
             mutation rates of STR loci.</p>
         <div align=center>
-            <img width=850
+            <img width=850 style="border: 1px solid red"
                  src="https://user-images.githubusercontent.com/6240170/200898063-bcdfdfe6-1496-4997-b95d-192f83e08ceb.png">
         </div>
 
@@ -425,7 +425,7 @@
             and also, if a locus has many repeats in the reference genome, is it more likely to be expanded or
             contracted in CHM1-CHM13?<br/>
             These plots address those questions:</p>
-        <p><img width=615
+        <p><img width=615 style="border: 1px solid red"
                 src="https://user-images.githubusercontent.com/6240170/204148709-ab45e9b2-e808-4daa-a089-107b3139811b.png">
         </p>
         <p>Unsurprisingly, truth set variants at loci where the reference sequence contains relatively few repeats are
@@ -437,7 +437,7 @@
         <p>How are truth set STR variants distributed across various annotated regions of the genome?</p>
         <p>3,121 out of 144,773 (2.2%) STR variants overlap segmental duplications (SegDups) in hg38:</p>
         <div align=center>
-            <img width=850
+            <img width=850 style="border: 1px solid red"
                  src="https://user-images.githubusercontent.com/6240170/200898172-0d04bc7c-269c-402b-b3c6-e1b2e6d86df6.png">
         </div>
 
@@ -518,7 +518,7 @@
         <p><em>NOTE: promoters are defined as just a 1kb window upstream of the 5' start of any transcript</em></p>
         <p>Showing the MANE v1 proportions as a histogram stratified by motif sizes:</p>
         <div align=left>
-            <img width="500" alt="image"
+            <img width="500" alt="image" style="border: 1px solid red"
                  src="https://user-images.githubusercontent.com/6240170/202269863-abc40ef0-35c1-428a-8065-ccb37b29157c.png">
         </div>
 
@@ -526,7 +526,7 @@
             subset
             that overlap either promoters, UTRs or coding regions (CDS), the histogram looks like:</p>
         <div align=left>
-            <img width=500
+            <img width=500 style="border: 1px solid red"
                  src="https://user-images.githubusercontent.com/6240170/200899334-703e84af-0b10-4c4c-9bb6-fa80efa8cf22.png">
         </div>
 
@@ -543,7 +543,7 @@
             this to constraint scores of genes that harbor the 25 known coding disease-associated STR loci. In the plots
             below
             each point is a gene from the set described on the y-axis.</p>
-        <p><img alt="image"
+        <p><img alt="image" style="border: 1px solid red"
                 src="https://user-images.githubusercontent.com/6240170/202306770-ad9d07b8-159d-49a4-930d-ad0e72deae4e.png"/>
         </p>
         <p>From this, we see that disease-associated STRs are much more likely to be in constrained genes, implying that
@@ -559,7 +559,7 @@
             each
             dot represents a coding STR allele in the truth set, and contractions relative to the reference are negative
             on the y-axis:
-            <img alt="image"
+            <img alt="image" style="border: 1px solid red"
                  src="https://user-images.githubusercontent.com/6240170/202331857-f5cf777c-37d5-4342-b3c7-60aab7e096a5.png"/>
         </p>
         <h4>Novel STR loci</h4>
@@ -771,10 +771,14 @@
             in the reference. Then, to determine tool accuracy at a locus, the true genotype as well as the tool's
             reported genotype can be split into a short allele and a long allele. The short alleles can be compared, and
             then, separately, the long alleles:<br/></p>
+        <br />
+        <center>
+        <div style="padding-right:100px"><b>Example: computing accuracy at a multi-allelic locus:</b></div>
         <p><img width="900" alt="image"
-                src="https://user-images.githubusercontent.com/6240170/219420647-4bd5edc9-788f-4f8a-8a6b-6625c13b267a.png">
+                src="https://broadinstitute.github.io/str-truth-set/figures_and_tables/figure__tool_allele_comparison_diagram.png">
             <br/>
             <br/></p>
+        </center>
         <p>Now, we can look at the fraction of alleles that each tool gets exactly right:</p>
         <div align="center"><!--img
                 src="https://user-images.githubusercontent.com/6240170/211717620-48e83eb2-dcb3-4b81-8fe6-16658552b022.png"
@@ -853,7 +857,7 @@
         <br/>
 
         <img width="1300" alt="image"
-             src="https://user-images.githubusercontent.com/6240170/220439789-5284bcce-a5cd-40d2-ab2e-7c9fe8b68c3e.png"><br/>
+             src="https://broadinstitute.github.io/str-truth-set/figures_and_tables/figure__tool_concordance_heatmap__ExpansionHunter_vs_GangSTR.png"><br/>
 
         <br/>
         The plot shows n=278,246 total alleles and consists of the following subsets:
@@ -925,7 +929,7 @@
             not just to the number of samples, but also the number of loci being genotyped. Due to this, I compare tool
             run times per 10,000 loci.
             Red lines represent (and are labeled with) the median value for the given tool.</p>
-        <p><img alt="image"
+        <p><img alt="image" style="border: 1px solid red"
                 src="https://user-images.githubusercontent.com/6240170/214594037-2b7c9ab4-3745-4209-ba54-01412d1773d1.png"/>
         </p>
         <p>To get the 8 data points shown for each tool, the truth set was split into 8 non-overlapping sets of loci and
@@ -940,7 +944,7 @@
             version of ExpansionHunter achieves faster run time at the expense of using more memory. </p>
         <p>Additionally, for all tools, run time decreases linearly as the sample's depth of coverage is reduced from
             40x to 10x:</p>
-        <p><img alt="image"
+        <p><img alt="image" style="border: 1px solid red"
                 src="https://user-images.githubusercontent.com/6240170/215609814-ef15b8f5-b9af-4bd3-9608-0bef96b3c195.png"/>
         </p>
 
@@ -986,7 +990,7 @@
             expansions in each sample relative to other samples in the cohort. </p>
         <p>Since the outlier detection step depends entirely on the sensitivity and specificity of the "profile" step, I
             use the truth set to check how well the "profile" step picks up large expansions in CHM1-CHM13-2:</p>
-        <p><img width="794" alt="image"
+        <p><img width="794" alt="image" style="border: 1px solid red"
                 src="https://user-images.githubusercontent.com/6240170/214714305-33517ef0-8d16-48cc-8709-3e24ccd07e85.png">
         </p>
         <p>This plot shows that the ExpansionHunterDenovo "profile" step has high sensitivity for pure repeat loci in
@@ -1012,7 +1016,7 @@
             they contain interruptions. </p>
         <p>Regardless, this plot helps show how ExpansionHunterDenovo output is distributed across different motif sizes
             and the degree to which it matches expansions in the truth set or repeats in the reference genome:</p>
-        <p><img width="763" alt="image"
+        <p><img width="763" alt="image" style="border: 1px solid red"
                 src="https://user-images.githubusercontent.com/6240170/214731482-1028d76f-f927-4c9b-bc3a-c33f5a405ac1.png">
         </p>
         <p>This table summarizes the data in the plot:</p>
@@ -1080,9 +1084,9 @@
             interruptions. This is an increase of 7% over the 144,773 pure loci. </p>
         <p>The allele size and motif size distributions of these interrupted repeats are as follows:</p>
         <div>
-            <img src="https://user-images.githubusercontent.com/6240170/214751753-d4ff1609-1597-4eac-be84-4b933b72c46f.png"
-                 width=400> <img
-                src="https://user-images.githubusercontent.com/6240170/214747495-64f84c9c-59a2-4756-919c-1f72a238b78e.png"
+            <img style="border: 1px solid red" src="https://user-images.githubusercontent.com/6240170/214751753-d4ff1609-1597-4eac-be84-4b933b72c46f.png"
+                 width=400 >
+            <img style="border: 1px solid red" src="https://user-images.githubusercontent.com/6240170/214747495-64f84c9c-59a2-4756-919c-1f72a238b78e.png"
                 width=400>
         </div>
 
@@ -1119,7 +1123,7 @@
             - Paired-end 151bp reads
             - 40x Depth of Coverage
             - DNA Fragment Length (aka. Insert Size) has median = 327bp (+/- 67 MAD) and distribution: <br/><br/>
-            <img width="225" alt="image"
+            <img width="225" alt="image" style="border: 1px solid red"
                  src="https://user-images.githubusercontent.com/6240170/213969693-572b733e-2b6a-4180-a4d0-7ed622cfd3ed.png">
         </p>
         <p>CHM1-CHM13 exome sequencing data is also available from the Broad Institute here: <a
@@ -1130,7 +1134,7 @@
             - Paired-end 151bp reads
             - 85x mean target coverage (based on Picard metrics).
             - DNA Fragment Length (aka. Insert Size) has median = 393bp (+/- 87 MAD) and distribution: <br/><br/>
-            <img width="225" alt="image"
+            <img width="225" alt="image" style="border: 1px solid red"
                  src="https://user-images.githubusercontent.com/6240170/213969786-c879b865-155b-49ed-8e00-9a832b3f6c8b.png">
         </p>
         <hr/>
@@ -1498,7 +1502,7 @@
         </ol>
         <br />
         <p><b>Figure 1 from Li et al. 2018:</b> Constructing the Syndip benchmark dataset. </p>
-        <p><img alt="image"
+        <p><img alt="image" style="border: 1px solid red"
                 src="https://user-images.githubusercontent.com/6240170/167907455-84baa96d-95ae-44bc-8471-c7769bd6474f.png"/>
         </p>
         <p>This yielded 5,362,620 variants of which 4,148,586 were in high-confidence regions.</p>
@@ -1506,7 +1510,7 @@
             and INDEL calling tools, but it can also serve as a high-quality truth set for STRs, as well as tandem
             repeats (TRs) and structural variants (SVs).</p>
         <p>This is the size distribution of all deletions and insertions within high-confidence regions:</p>
-        <p><img alt="image"
+        <p><img alt="image" style="border: 1px solid red"
                 src="https://user-images.githubusercontent.com/6240170/215531247-1b4b489a-cb89-440f-8aad-6eb35b14ee99.png"/>
         </p>
         <p>There are a total of 279,126 deletions, and 287,482 insertions. <br/>
