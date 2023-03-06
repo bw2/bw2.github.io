@@ -535,9 +535,7 @@
             on the y-axis:
             <img width=1100 src="https://storage.googleapis.com/str-truth-set/hg38/figures/gene_constraint_metrics_vs_STR_allele_size.svg"/>
         </p>
-
-
-
+        
         <h4>Novel STR loci</h4>
         <p>Unlike variant calling tools for SNVs and structural variants which take only read alignments (bam or cram)
             as
@@ -553,15 +551,17 @@
         <p><img width="450" src="https://user-images.githubusercontent.com/6240170/200219024-2464a379-b1b9-4569-ba3d-d6a47583c357.png">
         </p>
         <p>The truth set allows us to check the degree to which this assumption is valid. It turns out that it is almost
-            100%:</p>
+            100% of the time:</p>
         <ul>
-            <li>144,158 out of 144,735 (99.6%) of STR variants in CHM1-CHM13 match repeats found in hg38 immediately to
+            <li>144,215 out of 144,735 (99.6%) of STR variants in CHM1-CHM13 match repeats found in hg38 immediately to
                 the left or right of the variant. Only 520 variants are novel STRs, and they are all intergenic (based on
                 Gencode v42).
             </li>
         </ul>
         <p>This suggests that, for samples like CHM1-CHM13 that have European ancestry, nearly all true STR variants can
             be found by using a large enough STR catalog generated from the reference genome. </p>
+
+
         <h4>Limitations of existing STR catalogs</h4>
         <p>An important question for any genome-wide STR analysis using tools like ExpansionHunter or GangSTR is which
             STR catalog to genotype. </p>
