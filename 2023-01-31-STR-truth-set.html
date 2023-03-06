@@ -83,7 +83,7 @@
             diseases such as autism
             [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9348607/">Trost 2020</a>]
             [<a href="https://www.nature.com/articles/s41586-020-03078-7">Mitra 2021</a>].
-            Improvements in STR genotyping tools such as <a href="https://github.com/Illumina/ExpansionHunter">ExpansionHunter</a>
+            Improvements in STR genotyping tools like <a href="https://github.com/Illumina/ExpansionHunter">ExpansionHunter</a>
             and <a href="https://github.com/gymreklab/GangSTR">GangSTR</a> have generated new interest in studying STRs
             using short read sequencing data. However, one persistent challenge has been the scarcity of publicly
             available
@@ -93,7 +93,7 @@
             on the Synthetic
             Diploid Benchmark (SynDip) [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/">Li 2018</a>] and
             contains accurate
-            genotypes for 144,773 STR variants in a single human sample (CHM1-CHM13). Short read sequencing data for
+            genotypes for 144,735 STR variants in a single human sample (CHM1-CHM13). Short read sequencing data for
             CHM1-CHM13
             is publicly available from the
             <a href="https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&amp;acc=ERR1341796&amp;display=data-access">SRA</a>
@@ -155,44 +155,37 @@
 
         <hr/>
         <h4>Summary of Findings</h4>
-        <p>Some of the more interesting and surprising results from the truth set analysis are listed below. These are
-            based on a
-            survey of all STR variants in a single human genome of european ancestry - the CHM1-CHM13 synthetic diploid
-            sample
-            from [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/">Li 2018</a>]. They can be considered
-            as
-            findings from an n=1 case study. </p>
         <ul>
             <li>An individual's genome differs from the reference at ~150,000 STR loci, but 98% of STR alleles are
                 within +/-30bp
                 of the reference locus size. On average, only several thousand STR loci differ from the reference by
                 more than 30bp.
             </li>
-            <li>99.6% of STR variants occurred at STR loci that are also present in the reference genome. Only 521 STR
+            <li>99.6% of STR variants occurred at STR loci that are also present in the reference genome. Only 520 STR
                 variants
                 had novel motifs that were entirely different from the adjacent motifs or reference sequence context.
             </li>
             <li>ExpansionHunter has better accuracy than GangSTR or HipSTR across the entire range of STR allele
                 sizes.
             </li>
-            <li>Widely-used STR catalogs would miss 37% to 41% of the STR variants in the truth set. To capture more
-                than 95% of
-                these variants using a catalog of STRs from the reference genome, you need to start with a catalog of
-                2.8 million STR loci. We share this catalog below.
+            <li>Widely-used STR catalogs would miss 37% to 41% of the STR variants in the truth set. A new catalog of
+                2.8 million STR loci found in the hg38 reference (shared below) would capture more than
+                95% of these variants.
             </li>
             <li>pLI gene constraint is useful but insufficient for identifying genes that are intolerant of STR
                 variation.
             </li>
         </ul>
-        <p><em>NOTE</em>: STRs are traditionally defined as repeating motifs that are between 1 to 6bp long. For this
-            truth
-            set I exclude 1bp (homopolymer) repeats since they are uniquely error-prone, but include motifs longer than
-            6bp
-            so that users can decide whether to include these in their analyses.</p>
+        <p><em>NOTE 1</em>: These findings are based on data from a single human genome of european ancestry -
+            the CHM1-CHM13 synthetic diploid sample from [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/">Li 2018</a>] - so should be
+            treated as findings from an n=1 case study. </p>
+
+        <p><em>NOTE 2</em>: STRs are traditionally defined as repeating motifs that are between 1 to 6bp long. For this
+            truth set I exclude 1bp (homopolymer) repeats since they are uniquely error-prone, but include motifs
+            longer than 6bp, leaving it to readers to decide of whether to include these in their analyses.</p>
 
         <h4>Tool Comparison Plot Viewer:</h4>
-        <p>The plots show ExpansionHunter, GangSTR, and HipSTR accuracy for expansions and contractions in the STR truth
-            set.
+        <p>These plots show ExpansionHunter, GangSTR, and HipSTR accuracy for expansions and contractions in the STR truth set.
         <div>[<a href="https://broadinstitute.github.io/str-truth-set/html/tool_comparison_viewer.html" target="_blank">Open
             in new window</a>]
         </div>
@@ -201,26 +194,23 @@
         <iframe src="https://broadinstitute.github.io/str-truth-set/html/tool_comparison_viewer.html" width="100%"
                 height="850px" frameBorder="0" style="padding:0px; margin:0px 0px 10px 0px;"></iframe>
 
-
         <hr/>
         <h3>Defining the STR truth set</h3>
         <p>To generate an STR truth set, I started with the Synthetic Diploid Benchmark (SynDip)
             [<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/">Li 2018</a>]. This is a unique dataset that
-            uses
-            haploid PacBio assemblies to identify all variants in the CHM1-CHM13 synthetic diploid sample. Because these
-            variants are based on alignments of haploid assemblies (rather than individual reads) to the reference
-            genome,
-            the SynDip genotypes are more reliable than those produced by short-read or even ordinary long-read
-            pipelines.</p>
-        <p>There are 4.09 million high-confidence variants in the <a href="https://github.com/lh3/CHM-eval">SynDip
-            VCF</a>.
-            Since many of these are multi-allelic (meaning both alleles differ from the reference genome), there are
-            more alleles
-            than variant loci. For the 4.09 million variants, there are 4.15 million alleles. Of these alleles, 287k
-            (6.9%) are
-            insertions and 279k (6.7%) are deletions. To create the STR truth set, I filtered these insertion and
-            deletion
-            alleles to the subset that represents STR expansions or contractions:</p>
+            uses haploid PacBio assemblies to identify all variants in the CHM1-CHM13 synthetic diploid sample.
+            Because these variants are based on alignments of haploid assemblies (rather than individual reads) to the
+            reference genome, the SynDip genotypes are more reliable than those produced by short-read or even
+            ordinary long-read pipelines. Conveniently, the authors made these genotypes
+            <a href="https://github.com/lh3/CHM-eval" target="_blank">publicly available</a> in
+            <a href="https://en.wikipedia.org/wiki/Variant_Call_Format" target="_blank">VCF format</a>.</p>
+
+            <p>The SynDip dataset contains 4.09 million variants and 4.15 million alleles. The number of alleles is
+            higher because 66,868 (1.6%) of the variants are multi-allelic, meaning both alleles in differ from the
+            reference genome.
+            The alleles include 287k (6.9%) insertions and 279k (6.7%) deletions. To create the STR truth set, I
+            filtered these insertion and deletion alleles to the subset that represents STR expansions or contractions:
+        </p>
         <table>
             <tr>
                 <th></th>
@@ -247,12 +237,16 @@
 
             <tr>
                 <td><i>3</i></td>
-                <td>Identify the subset that are STR expansions or contractions (requiring that they have ≥ 3 repeats,
-                    span ≥ 9bp,
-                    are pure (i.e. no interruptions), and have motif size ≥ 2bp)
+                <td>Identify the subset that are STR expansions or contractions - requiring that they:
+                    <ul>
+                        <li style="margin: 2px">have ≥ 3 repeats</li>
+                        <li style="margin: 2px">are pure (i.e. no interruptions)</li>
+                        <li style="margin: 2px">have motif size ≥ 2bp</li>
+                        <li style="margin: 2px">span ≥ 9 base pairs</li>
+                    </ul>
                 </td>
-                <td nowrap style="text-align: right">146,618</td>
-                <td nowrap style="text-align: right">177,369</td>
+                <td nowrap style="text-align: right">146,566</td>
+                <td nowrap style="text-align: right">177,320</td>
                 <td nowrap style="text-align: right">4.3 %</td>
             </tr>
 
@@ -260,29 +254,34 @@
         The following example demonstrates how step 3 filters insertions and deletions to the subset that are STR
         expansions or contractions:<br/>
         <p><div style="font-size:18px; color:#006CB6; font-weight: bold">Example</div></p>
-        <p>Let's say the SynDip truth set contains this heterozygous insertion:
+        <p>Let's say the SynDip dataset contains this heterozygous insertion:
             <img width="275" src="https://user-images.githubusercontent.com/6240170/200183159-d42914b0-9636-4584-a593-dcb86463ff14.png">
         </p>
-        <p><b>Should we include it in the STR truth set?</b> To answer this, let's look at the inserted sequence along
-            with its hg38 reference context:
+        <p><b>Should we include it in the STR truth set?</b> <br /><br />
+            To answer this, let's look at the inserted sequence along with its hg38 reference context:
         <p align="center">
-            <img width="350" src="https://user-images.githubusercontent.com/6240170/200182871-639e7282-07a1-4587-8592-453d68622383.png">
+        <img width="350" src="https://user-images.githubusercontent.com/6240170/222997577-96324bcb-2b1b-4753-82a7-a594a0ab65f1.png">
         </p>
         <p>
             <em>step 1</em>: find the minimal motif (<strong>GGC</strong>) in the inserted sequence
             (<strong>GGCGGC</strong>) by using brute force k-mer search:<br/>
-
+        <p align="center">
+        <img width="350" src="https://user-images.githubusercontent.com/6240170/222997598-c4bb52b7-b0d1-4da4-8478-ed1c6d2d5f87.png">
+        </p>
             <em>step 2</em>: check the reference context for additional <strong>GGC</strong> repeats immediately to the
             left or right of the variant: </p>
-        <p align="center"><img width="350" src="https://user-images.githubusercontent.com/6240170/200182871-639e7282-07a1-4587-8592-453d68622383.png">
+        <p align="center">
+            <img width="350" src="https://user-images.githubusercontent.com/6240170/222997631-8aeb5941-dc35-4239-aeec-9d4fb65e4832.png">
+
         </p>
 
-        <p>Here, the variant sequence consists of 2 <strong>GGC</strong> repeats, and the reference contains 9
-            additional <strong>GGC</strong> repeats so the variant can be represented as having </p>
+        <p>Here, the variant sequence consists of 2 <strong>GGC</strong> repeats and the reference contains 9
+            additional repeats so the variant can be represented as having </p>
         <p><strong>9 x GGC repeats in the reference allele</strong><br/>
             <strong>11 x GGC repeats in the alternate allele</strong></p>
-        <p>This variant passes the thresholds for length ≥ 9bp and repeat count ≥ 3, so <strong>we add it to STR truth
-            set</strong>.</p>
+        <p>This variant passes the thresholds for length ≥ 9bp and repeat count ≥ 3, so <strong>we add it to the STR
+            truth set</strong>.
+        </p>
 
         <br />
         <a href="#extra-section-5-examples-illustrating-how-the-str-truth-set-is-d">Extra Section 5</a>
@@ -301,7 +300,7 @@
             <tr style="margin-bottom: 30px;">
                 <td></td>
                 <td>Start with all STR variants found in SynDip</td>
-                <td nowrap style="text-align: right">146,618</td>
+                <td nowrap style="text-align: right">146,566</td>
                 <td nowrap style="text-align: right"></td>
             </tr>
             <tr>
@@ -360,8 +359,8 @@
         <h3>Basic Summary Statistics:</h3>
         <p>The resulting STR truth set contains:</p>
         <ul>
-            <li><strong>144,773 STR variants</strong></li>
-            <li><strong>175,372 STR alleles</strong></li>
+            <li><strong>144,735 STR variants</strong></li>
+            <li><strong>175,338 STR alleles</strong></li>
         </ul>
         <p>The size distribution of these alleles is as follows:</p>
         <p><img width=500
@@ -381,11 +380,10 @@
         <p><img width=500
                 src="https://storage.googleapis.com/str-truth-set/hg38/figures/allele_size_distribution_in_base_pairs.pure_repeats.svg">
         </p>
-        <p>To summarize, only 3,037 STR alleles (1.7%) differ by more than 30bp from the reference genome, and only 849
+        <p>To summarize, only 3,028 STR alleles (1.7%) differ by more than 30bp from the reference genome, and only 845
             (0.5%)
             differ by more than 60bp. Although there are many STR variants, the overwhelming majority add or subtract
-            only a
-            few repeats. </p>
+            only a few repeats. </p>
         <p>Splitting this distribution by motif size bins (2-6bp, 7-24bp and 25-50bp) shows that most of the large
             expansions
             involve large motifs:</p>
@@ -408,7 +406,7 @@
         <p>Here the motifs are sorted by how common they are in hg38.
             Although the 2 distributions are roughly similar, some motifs clearly have a higher mutation rate than
             others. </p>
-        <p>30,599 out of 144,773 (21%) STR variants are multi-allelic (i.e. have 2 non-reference alleles), reflecting
+        <p>30,599 out of 144,735 (21%) STR variants are multi-allelic (i.e. have 2 non-reference alleles), reflecting
             the high mutation rates of STR loci.</p>
         <div align=center>
             <img width=1000 src="https://storage.googleapis.com/str-truth-set/hg38/figures/allele_size_distribution_by_number_of_repeats_and_motif_size.pure_repeats.color_by_multiallelic.svg">
@@ -430,7 +428,7 @@
             the truth set. </p>
         <h3>Genomic regions</h3>
         <p>How are truth set STR variants distributed across various annotated regions of the genome?</p>
-        <p>3,121 out of 144,773 (2.2%) STR variants overlap segmental duplications (SegDups) in hg38:</p>
+        <p>3,121 out of 144,735 (2.2%) STR variants overlap segmental duplications (SegDups) in hg38:</p>
         <div align=center>
             <img width=1000 src="https://storage.googleapis.com/str-truth-set/hg38/figures/allele_size_distribution_by_number_of_repeats_and_motif_size.pure_repeats.color_by_overlapssegdupintervals.svg">
         </div>
@@ -574,9 +572,9 @@
         <p>The truth set allows us to check the degree to which this assumption is valid. It turns out that it is almost
             100%:</p>
         <ul>
-            <li>144,158 out of 144,773 (99.6%) of STR variants in CHM1-CHM13 match repeats found in hg38 immediately to
+            <li>144,158 out of 144,735 (99.6%) of STR variants in CHM1-CHM13 match repeats found in hg38 immediately to
                 the
-                left or right of the variant. Only 521 variants are novel STRs, and they are all intergenic (based on
+                left or right of the variant. Only 520 variants are novel STRs, and they are all intergenic (based on
                 Gencode v42).
             </li>
         </ul>
@@ -603,7 +601,7 @@
                     catalog</a></td>
                 <td>Identifying STRs that are polymorphic in 2,504 individuals from the 1000 genomes project.</td>
                 <td nowrap style="text-align: right">174,300</td>
-                <td nowrap style="text-align: right">53,137 out of 144,773</td>
+                <td nowrap style="text-align: right">53,137 out of 144,735</td>
                 <td nowrap style="text-align: right">36.7 %</td>
             </tr>
             <tr>
@@ -617,13 +615,13 @@
                         2019</a>].
                 </td>
                 <td nowrap style="text-align: right">832,380</td>
-                <td nowrap style="text-align: right">79,397 out of 144,773</td>
+                <td nowrap style="text-align: right">79,397 out of 144,735</td>
                 <td nowrap style="text-align: right">54.8 %</td>
             </tr>
             <tr>
                 <td><a href="https://github.com/gymreklab/GangSTR#gangstr-reference-files">GangSTR v17 loci</a></td>
                 <td nowrap style="text-align: right">1,340,266</td>
-                <td nowrap style="text-align: right">59,462 out of 144,773</td>
+                <td nowrap style="text-align: right">59,462 out of 144,735</td>
                 <td nowrap style="text-align: right">41.1 %</td>
             </tr>
             <tr>
@@ -636,7 +634,7 @@
                     hg38 reference genome
                 </td>
                 <td nowrap style="text-align: right">4,722,859</td>
-                <td nowrap style="text-align: right">5,434 out of 144,773</td>
+                <td nowrap style="text-align: right">5,434 out of 144,735</td>
                 <td nowrap style="text-align: right">3.8 %</td>
             </tr>
             <tr>
@@ -649,7 +647,7 @@
                     hg38 reference genome
                 </td>
                 <td nowrap style="text-align: right">2,805,842</td>
-                <td nowrap style="text-align: right">6,787 out of 144,773</td>
+                <td nowrap style="text-align: right">6,787 out of 144,735</td>
                 <td nowrap style="text-align: right">4.7 %</td>
             </tr>
             <tr>
@@ -662,7 +660,7 @@
                     hg38 reference genome
                 </td>
                 <td nowrap style="text-align: right">1,343,313</td>
-                <td nowrap style="text-align: right">11,474 out of 144,773</td>
+                <td nowrap style="text-align: right">11,474 out of 144,735</td>
                 <td nowrap style="text-align: right">7.9 %</td>
             </tr>
             <tr>
@@ -675,7 +673,7 @@
                     hg38 reference genome
                 </td>
                 <td nowrap style="text-align: right">702,486</td>
-                <td nowrap style="text-align: right">22,830 out of 144,773</td>
+                <td nowrap style="text-align: right">22,830 out of 144,735</td>
                 <td nowrap style="text-align: right">15.8 %</td>
             </tr>
         </table>
@@ -845,7 +843,6 @@
         <br/>
 
         <img width="1300" src="https://broadinstitute.github.io/str-truth-set/figures_and_tables/figure__tool_concordance_heatmap__ExpansionHunter_vs_GangSTR.png"><br/>
-
         <br/>
         The plot shows n=278,246 total alleles and consists of the following subsets:
 
@@ -1062,7 +1059,7 @@
         </p>
         <p>If we go back and apply this logic to SynDip insertions and deletions that didn't pass our original pure
             repeat filters, we find 9,970 additional loci (4,644 insertions and 4,973 deletions) that are repeats with
-            interruptions. This is an increase of 7% over the 144,773 pure loci. </p>
+            interruptions. This is an increase of 7% over the 144,735 pure loci. </p>
         <p>The allele size and motif size distributions of these interrupted repeats are as follows:</p>
         <div>
             <img width=400 src="https://storage.googleapis.com/str-truth-set/hg38/figures/allele_size_distribution_by_number_of_repeats.with_interruptions.svg">
@@ -1129,7 +1126,7 @@
             </li>
             <li><a href="https://github.com/broadinstitute/str-truth-set/blob/main/step1__create_STR_truth_set.sh">step1__create_STR_truth_set.sh</a>
                 - automates all steps around creating the truth set by running
-                <code>filter_vcf_to_STR_varaints.py</code> on the SynDip truth set vcf and then validating the results
+                <code>filter_vcf_to_STR_varaints.py</code> on the SynDip vcf and then validating the results
                 against the T2T genome.
             </li>
             <li>
@@ -1154,7 +1151,7 @@
             </li>
         </ul>
         <p>To run ExpansionHunter, GangSTR, and HipSTR on this sample, I generated variant catalogs with
-            1) 144,251 positive loci. These are all the loci in the truth set (excluding the 521 that don't have
+            1) 144,251 positive loci. These are all the loci in the truth set (excluding the 520 that don't have
             matching repeats in the reference genome). They represent true positive variants.
             2) 144,252 negative loci. These are repeat loci in hg38 that are not in the truth set (and therefore have a
             homozygous reference genotype). They represent true negatives. They were selected by taking the much larger
@@ -1283,7 +1280,7 @@
 
         <p><strong>Extra Section 5</strong>: Examples illustrating how the STR truth set is defined<br/>
             <br />
-            The following 4 examples illustrate how insertions and deletions in the SynDip truth set are filtered to the
+            The following 4 examples illustrate how insertions and deletions in the SynDip vcf are filtered to the
             subset that represent STR expansions or contractions. Each example deals with a different edge case.<br />
             <br />
 
