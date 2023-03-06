@@ -106,7 +106,7 @@
             ExpansionHunter
             Denovo - and also use it to explore relevant questions about STRs in general such as:<br/>
             - what is the distribution of STR variants in the human genome (i.e. motif sizes, lengths, percent
-            multi-allelic, etc.)? <br/>
+            multiallelic, etc.)? <br/>
             - how well do widely-used catalogs of STR loci capture these variants? <br/>
             - how many STR loci can we expect to be novel (i.e. absent from the hg38 reference genome) in randomly
             selected individuals of European ancestry?</p>
@@ -205,10 +205,10 @@
             <a href="https://github.com/lh3/CHM-eval" target="_blank">publicly available</a> in
             <a href="https://en.wikipedia.org/wiki/Variant_Call_Format" target="_blank">VCF format</a>.</p>
 
-            <p>The SynDip dataset contains 4.09 million variants and 4.15 million alleles. The number of alleles is
-            higher because 66,868 (1.6%) of the variants are multi-allelic, meaning both alleles in differ from the
-            reference genome.
-            The alleles include 287k (6.9%) insertions and 279k (6.7%) deletions. To create the STR truth set, I
+            <p>The SynDip dataset contains 4.08 million variants and 4.15 million alleles. The number of alleles is
+            higher because 66,868 (1.6%) of the variants are multiallelic, meaning the variant consists of two different
+            alleles which both differ from the reference genome.
+            The alleles include 286k (6.9%) insertions and 276k (6.7%) deletions. To create the STR truth set, I
             filtered these insertion and deletion alleles to the subset that represents STR expansions or contractions:
         </p>
         <table>
@@ -222,16 +222,16 @@
             <tr>
                 <td><i>1</i></td>
                 <td>Start with all high-confidence variants in the SynDip Benchmark</td>
-                <td nowrap style="text-align: right">4,085,178</td>
-                <td nowrap style="text-align: right">4,152,492</td>
+                <td nowrap style="text-align: right">4,081,549</td>
+                <td nowrap style="text-align: right">4,148,417</td>
                 <td nowrap style="text-align: right">all</td>
             </tr>
 
             <tr>
                 <td><i>2</i></td>
                 <td>Keep only insertions and deletions</td>
-                <td nowrap style="text-align: right">537,520</td>
-                <td nowrap style="text-align: right">566,608</td>
+                <td nowrap style="text-align: right">518,285</td>
+                <td nowrap style="text-align: right">562,891</td>
                 <td nowrap style="text-align: right">13.6 %</td>
             </tr>
 
@@ -397,29 +397,29 @@
         <p>Here the motifs are sorted by how common they are in hg38.
             Although the 2 distributions are roughly similar, some motifs clearly have a higher mutation rate than
             others. </p>
-        <p>30,599 out of 144,735 (21%) STR variants are multi-allelic (i.e. have 2 non-reference alleles), reflecting
-            the high mutation rates of STR loci.</p>
+        <p>We can also look at the distribution of multiallelic variants (i.e. those that consist of 2 different non-reference alleles).
+        </p>
         <div align=center>
             <img width=1000 src="https://storage.googleapis.com/str-truth-set/hg38/figures/allele_size_distribution_by_number_of_repeats_and_motif_size.pure_repeats.color_by_multiallelic.svg">
         </div>
+        Overall, 30,603 out of 144,735 (21%) truth set STR variants are multiallelic. This high proportion of
+        multiallelic variants is directly related to the high mutation rate of STRs. For comparison, only 15,641 of the
+        3,563,264 (0.4%) SNVs in SynDip are multiallelic. Similarly, 14,003 out of 373,550 (3.7%) of InDels (excluding those
+        that are pure STRs) are multiallelic.
 
-        <p>Finally, we can also ask - for STR variants in the truth set, how large are the corresponding loci in the
-            hg38
-            reference genome?
-            and also, if a locus has many repeats in the reference genome, is it more likely to be expanded or
-            contracted in CHM1-CHM13?<br/>
-            These plots address those questions:</p>
-        <p><img width=615
-                src="https://storage.googleapis.com/str-truth-set/hg38/figures/reference_locus_size_distribution.pure_repeats.svg">
+        <p>Two other interesting questions are - for STR variants in the truth set, how large are the corresponding loci in
+            the hg38 reference genome? If a locus has many repeats in the reference genome, is it more
+            likely to be expanded or contracted in CHM1-CHM13?<br/>
         </p>
-        <p>Unsurprisingly, truth set variants at loci where the reference sequence contains relatively few repeats are
-            more
-            likely to be expanded, while loci that have many repeats in the reference are more likely to be contracted
-            in
-            the truth set. </p>
+        <p><img width=615 src="https://storage.googleapis.com/str-truth-set/hg38/figures/reference_locus_size_distribution.pure_repeats.svg">
+        </p>
+        <p>The top plot addresses the first question, showing that most polymorphic pure repeats have between 3 and 30 repeats in hg38.
+            The bottom plot shows that, unsurprisingly, truth set variants at loci where the reference sequence contains
+            relatively few repeats are more likely to be expanded, while loci that have many repeats in the reference
+            are more likely to be contracted in the truth set. </p>
         <h3>Genomic regions</h3>
-        <p>How are truth set STR variants distributed across various annotated regions of the genome?</p>
-        <p>3,121 out of 144,735 (2.2%) STR variants overlap segmental duplications (SegDups) in hg38:</p>
+        <p>How are truth set variants distributed across different annotated regions in the genome?</p>
+        <p>3,122 out of 144,735 (2.2%) STR variants overlap segmental duplications (SegDups) in hg38:</p>
         <div align=center>
             <img width=1000 src="https://storage.googleapis.com/str-truth-set/hg38/figures/allele_size_distribution_by_number_of_repeats_and_motif_size.pure_repeats.color_by_overlapssegdupintervals.svg">
         </div>
@@ -442,23 +442,23 @@
             </tr>
             <tr>
                 <td>intron</td>
-                <td style="text-align: right">98,772</td>
+                <td style="text-align: right">81,337</td>
                 <td style="text-align: right">56 %</td>
                 <td></td>
-                <td style="text-align: right">61,529</td>
+                <td style="text-align: right">50,676</td>
                 <td style="text-align: right">35 %</td>
             </tr>
             <tr>
                 <td>intergenic</td>
-                <td style="text-align: right">70,236</td>
+                <td style="text-align: right">58,034</td>
                 <td style="text-align: right">40 %</td>
                 <td></td>
-                <td style="text-align: right">110,723</td>
+                <td style="text-align: right">91,434</td>
                 <td style="text-align: right">63 %</td>
             </tr>
             <tr>
                 <td>exon of a non-coding gene</td>
-                <td style="text-align: right">2,094</td>
+                <td style="text-align: right">1,781</td>
                 <td style="text-align: right">1.2 %</td>
                 <td></td>
                 <td style="text-align: right">0</td>
@@ -466,39 +466,39 @@
             </tr>
             <tr>
                 <td>promoter</td>
-                <td style="text-align: right">1,869</td>
+                <td style="text-align: right">1,558</td>
                 <td style="text-align: right">1.1 %</td>
                 <td></td>
-                <td style="text-align: right">1,214</td>
-                <td style="text-align: right">0.8 %</td>
+                <td style="text-align: right">1,020</td>
+                <td style="text-align: right">0.7 %</td>
             </tr>
             <tr>
                 <td>3' UTR</td>
-                <td style="text-align: right">1,667</td>
+                <td style="text-align: right">1,379</td>
                 <td style="text-align: right">1.0 %</td>
                 <td></td>
-                <td style="text-align: right">1,404</td>
+                <td style="text-align: right">1,158</td>
                 <td style="text-align: right">0.8 %</td>
             </tr>
             <tr>
                 <td>5' UTR</td>
-                <td style="text-align: right">492</td>
+                <td style="text-align: right">431</td>
                 <td style="text-align: right">0.3 %</td>
                 <td></td>
-                <td style="text-align: right">299</td>
+                <td style="text-align: right">265</td>
                 <td style="text-align: right">0.2 %</td>
             </tr>
             <tr>
                 <td>coding region</td>
-                <td style="text-align: right">242</td>
+                <td style="text-align: right">215</td>
                 <td style="text-align: right">0.1 %</td>
                 <td></td>
-                <td style="text-align: right">203</td>
+                <td style="text-align: right">182</td>
                 <td style="text-align: right">0.1 %</td>
             </tr>
         </table>
 
-        <p><em>NOTE: promoters are defined as just a 1kb window upstream of the 5' start of any transcript</em></p>
+        <p><em>NOTE: promoters are defined as a 1kb window upstream of the 5' start of any transcript</em></p>
         <p>Showing the MANE v1 proportions as a histogram stratified by motif sizes:</p>
         <div align=left>
             <img width=1000
@@ -751,7 +751,7 @@
             then, separately, the long alleles:<br/></p>
         <br />
         <center>
-        <div style="padding-right:100px"><b>Example: computing accuracy at a multi-allelic locus:</b></div>
+        <div style="padding-right:100px"><b>Example: computing accuracy at a multiallelic locus:</b></div>
         <p><img width="900" src="https://broadinstitute.github.io/str-truth-set/figures_and_tables/figure__tool_allele_comparison_diagram.png">
             <br/>
             <br/></p>
@@ -1469,14 +1469,14 @@
         <p><b>Figure 1 from Li et al. 2018:</b> Constructing the Syndip benchmark dataset. </p>
         <p><img src="https://user-images.githubusercontent.com/6240170/167907455-84baa96d-95ae-44bc-8471-c7769bd6474f.png"/>
         </p>
-        <p>This yielded 5,362,620 variants of which 4,148,586 were in high-confidence regions.</p>
+        <p>This yielded 5,182,765 variants of which 4,081,549 were in high-confidence regions.</p>
         <p>[<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6341484/">Li 2018</a>] used this data to evaluate SNV
             and INDEL calling tools, but it can also serve as a high-quality truth set for STRs, as well as tandem
             repeats (TRs) and structural variants (SVs).</p>
         <p>This is the size distribution of all deletions and insertions within high-confidence regions:</p>
         <p><img src="https://storage.googleapis.com/str-truth-set/hg38/figures/syndip_indel_size_distribution.svg"/>
         </p>
-        <p>There are a total of 279,126 deletions, and 287,482 insertions. <br/>
+        <p>There are a total of 276,445 deletions, and 286,446 insertions. <br/>
             The largest deletion is -18,268 bp, while the largest insertion is 15,193 bp.</p>
 
         <br/>
