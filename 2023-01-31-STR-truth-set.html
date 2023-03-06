@@ -513,8 +513,18 @@
 
         <p>This shows that nearly all - 195 out of 199 (98.0%) - of the STR alleles in coding regions have motif sizes
             that are multiples of 3bp.<br/>
-            As for the 4 loci that don't fit this pattern, 3 have very large motifs - larger than 50bp, and one is an
-            expansion of a 5bp "GGGGC" motif that adds 3 repeats to the reference and so does not introduce a frameshift. </p>
+            As for the four alleles that don't fit this pattern, one is a +1 repeat expansion of a 5bp "GGGGC" motif
+            at the chr15:40807702-40807711 locus. It represents a heterozygous frameshift variant within the ZFYVE19 gene.
+            Another is also a +1 repeat expansion, but of a much larger motif (TGACATGGACCTCAGGTCAGCTTCAGCGTGAGAAGCAGGCCAGGCCTGGGTCTGGAGCCGTCCTGGCCTTCCCAGA).
+            This is a 76bp motif that repeats two times at chr6:168029511-168029662, overlapping the start codon of KIF25.
+            Since part of the sequence is outside of KIF25's coding region, an expansion doesn't necessarily introduce a frameshift.
+            The remaining two alleles come from the same locus, and represent a multiallelic contraction of a 59bp motif
+            (CCTGTGCGGTGAGTGGGGGCGGCCCCGGGCCCCCCAGACCCCTCGGCCTCTCTGAGTGT) which repeats 8 times in hg38.
+            This STR locus (chr11:1255551-1256022) mostly falls within an intron of the MUC5B gene. The 1st of the 8
+            repeats overlaps exon #37 and is why this locus was included in the set of coding repeats.
+            Since the rest of the repeats are intronic, neither of the two STR alleles produce a frameshift.
+            This shows that, even when they occur within coding regions, no more than 1% (2 out of 199) of STR alleles produce frameshift mutations. </p>
+
         <p>We can also look at whether the 199 coding STR alleles fall within LoF- or missense-constrained genes and
             compare this to constraint scores of genes that harbor the 25 known coding disease-associated STR loci. In
             the plots below each point is a gene from the set described on the y-axis.</p>
@@ -530,12 +540,12 @@
             constraint models only assign relatively high constraint to RUNX2 but not to HOXD12.
         </p>
         <p>Another way to explore constraint is to see whether larger STR variants are less likely to be in constrained genes.
-            We might not have enough data to say, but larger expansions appear to fall in unconstrained genes tha thave pLI close to 0. Here,
+            We might not have enough data to say, but larger expansions appear to fall in unconstrained genes that have pLI close to 0. Here,
             each dot represents a coding STR allele in the truth set, and contractions relative to the reference are negative
             on the y-axis:
             <img width=1100 src="https://storage.googleapis.com/str-truth-set/hg38/figures/gene_constraint_metrics_vs_STR_allele_size.svg"/>
         </p>
-        
+
         <h4>Novel STR loci</h4>
         <p>Unlike variant calling tools for SNVs and structural variants which take only read alignments (bam or cram)
             as
