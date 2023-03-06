@@ -501,60 +501,52 @@
         <p><em>NOTE: promoters are defined as a 1kb window upstream of the 5' start of any transcript</em></p>
         <p>Showing the MANE v1 proportions as a histogram stratified by motif sizes:</p>
         <div align=left>
-            <img width=1000
-                 src="https://storage.googleapis.com/str-truth-set/hg38/figures/truth_set_gene_overlap.all_regions.MANE_v1.svg">
+            <img width=1000 src="https://storage.googleapis.com/str-truth-set/hg38/figures/truth_set_gene_overlap.all_regions.MANE_v1.svg">
         </div>
 
-        <p>If we filter out STRs that are intergenic, intronic or overlap non-coding exons, and look only at the small
+        <p>If we filter out STRs that are intergenic, intronic, or overlap non-coding exons, and look only at the small
             subset
             that overlap either promoters, UTRs or coding regions (CDS), the histogram looks like:</p>
         <div align=left>
-            <img width=1000
-                 src="https://storage.googleapis.com/str-truth-set/hg38/figures/truth_set_gene_overlap.excluding_introns_and_intergenic.MANE_v1.svg">
+            <img width=1000 src="https://storage.googleapis.com/str-truth-set/hg38/figures/truth_set_gene_overlap.excluding_introns_and_intergenic.MANE_v1.svg">
         </div>
 
-        <p>This shows that nearly all - 198 out of 203 (97.5%) - of the STR alleles in coding regions have motif sizes
-            that
-            are multiples of 3bp.<br/>
-            As for the 5 loci that don't fit this pattern, 3 have very large motifs - larger than 50bp, 1 is an
-            out-of-frame
-            expansion of the rare "GC" di-nucleotide motif, and 1 is an expansion of a 5bp "GGGGC" motif that adds 3
-            additional
-            repeats relative to the reference and so does not introduce a frameshift. </p>
-        <p>We can also look at whether the 203 coding STR alleles fall within LoF- or missense-constrained genes and
-            compare
-            this to constraint scores of genes that harbor the 25 known coding disease-associated STR loci. In the plots
-            below each point is a gene from the set described on the y-axis.</p>
+        <p>This shows that nearly all - 195 out of 199 (98.0%) - of the STR alleles in coding regions have motif sizes
+            that are multiples of 3bp.<br/>
+            As for the 4 loci that don't fit this pattern, 3 have very large motifs - larger than 50bp, and one is an
+            expansion of a 5bp "GGGGC" motif that adds 3 repeats to the reference and so does not introduce a frameshift. </p>
+        <p>We can also look at whether the 199 coding STR alleles fall within LoF- or missense-constrained genes and
+            compare this to constraint scores of genes that harbor the 25 known coding disease-associated STR loci. In
+            the plots below each point is a gene from the set described on the y-axis.</p>
         <p><img width=1100 src="https://storage.googleapis.com/str-truth-set/hg38/figures/gene_constraint_metrics_and_STRs.svg"/>
         </p>
         <p>From this, we see that disease-associated STRs are much more likely to be in constrained genes, implying that
-            both
-            missense and LoF constraint computed from SNVs is also relevant for STRs. On the other hand, just because a
-            gene
-            is constrained doesn't mean that in-frame STR variants in that gene cause disease since many of the truth
-            set STRs
-            fall in highly constrained genes.</p>
-        <p>Another way to look at this is to see whether larger STR variants are less likely to be in constrained genes.
-            This
-            might not be enough data to say, but at least for larger expansions, pLI is more likely to be near 0. Here,
-            each
-            dot represents a coding STR allele in the truth set, and contractions relative to the reference are negative
+            both missense and LoF constraint computed from SNVs is also relevant for STRs. On the other hand, just because a
+            gene is constrained doesn't mean that STR variants in that gene cause disease since many of the truth
+            set STRs fall in highly constrained genes. The two disease-associated genes labeled in the plot - RUNX2 and HOXD13 -
+            further support the need for an STR-specific constraint model. These STR loci cause severe early-onset diseases
+            and are expected to be highly constrained. As expected, both are constrained according to the STR-specific
+            constraint metric described in [Gymrek 2017]. However, as the plot above shows, SNV-derived
+            constraint models only assign relatively high constraint to RUNX2 but not to HOXD12.
+        </p>
+        <p>Another way to explore constraint is to see whether larger STR variants are less likely to be in constrained genes.
+            We might not have enough data to say, but larger expansions appear to fall in unconstrained genes tha thave pLI close to 0. Here,
+            each dot represents a coding STR allele in the truth set, and contractions relative to the reference are negative
             on the y-axis:
             <img width=1100 src="https://storage.googleapis.com/str-truth-set/hg38/figures/gene_constraint_metrics_vs_STR_allele_size.svg"/>
         </p>
+
+
+
         <h4>Novel STR loci</h4>
         <p>Unlike variant calling tools for SNVs and structural variants which take only read alignments (bam or cram)
             as
             input, nearly all STR genotyping tools besides <a href="https://github.com/Illumina/ExpansionHunterDenovo">
                 ExpansionHunterDenovo</a> and <a href="https://github.com/quinlan-lab/STRling">STRling</a> require users
-            to
-            also provide the exact boundaries and motifs of the STR loci to genotype. For example, to genotype the
-            Huntington's
-            Disease locus, a user must specify the reference coordinates "chr4:3074876-3074933" and motif "CAG". The
-            implicit
-            assumption of these algorithms is that all STRs a user might want to genotype are also present in the
-            reference
-            genome - meaning that STR variants look like:</p>
+            to also provide the exact boundaries and motifs of the STR loci to genotype. For example, to genotype the
+            Huntington's Disease locus, a user must specify the reference coordinates "chr4:3074876-3074933" and motif "CAG". The
+            implicit assumption of these algorithms is that all STRs a user might want to genotype are also present in the
+            reference genome - meaning that STR variants look like:</p>
         <p><img width="452" src="https://user-images.githubusercontent.com/6240170/200219094-78f3ad2f-bcba-4412-a5cb-098e8f6b56a8.png">
         </p>
         <p>rather than </p>
@@ -564,8 +556,7 @@
             100%:</p>
         <ul>
             <li>144,158 out of 144,735 (99.6%) of STR variants in CHM1-CHM13 match repeats found in hg38 immediately to
-                the
-                left or right of the variant. Only 520 variants are novel STRs, and they are all intergenic (based on
+                the left or right of the variant. Only 520 variants are novel STRs, and they are all intergenic (based on
                 Gencode v42).
             </li>
         </ul>
