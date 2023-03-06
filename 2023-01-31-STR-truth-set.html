@@ -276,9 +276,11 @@
         </p>
 
         <p>Here, the variant sequence consists of 2 <strong>GGC</strong> repeats and the reference contains 9
-            additional repeats so the variant can be represented as having </p>
-        <p><strong>9 x GGC repeats in the reference allele</strong><br/>
-            <strong>11 x GGC repeats in the alternate allele</strong></p>
+            additional repeats so the variant can be represented as having:</p>
+        <p style="margin-left:50px">
+            <strong>9 x GGC repeats in the reference allele</strong><br/>
+            <strong>11 x GGC repeats in the alternate allele</strong>
+        </p>
         <p>This variant passes the thresholds for length ≥ 9bp and repeat count ≥ 3, so <strong>we add it to the STR
             truth set</strong>.
         </p>
@@ -291,8 +293,8 @@
 
         <hr/>
         <h3>Validation</h3>
-        <p>The SynDip benchmark is based on samples from two individuals: CHM1 and CHM13. One of them (CHM13) is also
-            the basis of the new <a href="https://www.genome.gov/about-genomics/telomere-to-telomere">telomere-to-telomere</a>
+        <p>The SynDip benchmark is based on samples from two individuals: CHM1 and CHM13. One of them - CHM13 - also
+            happens to be the basis of the new <a href="https://www.genome.gov/about-genomics/telomere-to-telomere">telomere-to-telomere</a>
             (T2T) reference genome, so it's possible to validate truth set variants by lifting them over to T2T and
             checking that, in each variant, at least one allele exactly matches the T2T reference sequence.</p>
 
@@ -316,14 +318,14 @@
             <tr>
                 <td><i>1</i></td>
                 <td>Lift over STR variant to the CHM13 telomere-to-telomere (T2T) reference</td>
-                <td nowrap style="text-align: right">1,507</td>
+                <td nowrap style="text-align: right">1,497</td>
                 <td nowrap style="text-align: right">1.0 %</td>
             </tr>
 
             <tr>
                 <td><i>2</i></td>
                 <td>Check that at least one allele exactly matches the T2T reference sequence</td>
-                <td nowrap style="text-align: right">295</td>
+                <td nowrap style="text-align: right">291</td>
                 <td nowrap style="text-align: right">0.2 %</td>
             </tr>
 
@@ -342,18 +344,16 @@
             </tr>
         </table>
 
-        <p>Overall, of the 86,028 STRs that could be validated <sup>‡</sup> against T2T, 84,183 (97.9%) passed this
-            validation,
-            underscoring the accuracy and relevance of the truth set. </p>
+        <p>Overall, of the 85,978 STRs that could be validated <sup>‡</sup> against T2T, 84,147 (97.9%) passed this
+            validation, underscoring the accuracy and relevance of the truth set. </p>
 
         <p><a href="#extra-section-6-truth-set-genotype-validation-steps-this-flow-di">Extra Section 6</a>
             shows a flow diagram with additional details about these validation steps.</p>
 
         <p>‡ <em>NOTE</em>: STR contractions that failed hg38 ⇒ T2T liftover due to an “IndelStraddlesMultipleIntevals”
-            error
-            were included in the truth set without these validation steps as I consider this to be a technical issue
-            with
-            liftover rather than a problem with genotype accuracy. This applies to 60,590 (77%) of STR contractions.</p>
+            error were included in the truth set without these validation steps since this error represents a limitation
+            of the liftover algorithm rather than a problem with genotype accuracy.
+            This applies to 60,588 (77%) of STR contractions.</p>
 
         <hr/>
         <h3>Basic Summary Statistics:</h3>
@@ -366,41 +366,32 @@
         <p><img width=500
                 src="https://storage.googleapis.com/str-truth-set/hg38/figures/allele_size_distribution_by_number_of_repeats.pure_repeats.svg">
         </p>
-        <p>Here, the x-axis represents the STR allele size in CHM1-CHM13 minus the number of repeats at that locus in
-            the
+        <p>Here, the x-axis represents the STR allele size in CHM1-CHM13 minus the number of repeats at that locus in the
             hg38 reference genome. The distribution is symmetric around 0 - which is as expected since there's no reason
-            for
-            STRs in hg38 to be systematically larger or smaller than repeats in random individuals from the population
+            for STRs in hg38 to be systematically larger or smaller than repeats in random individuals from the population
             (i.e. CHM1 and CHM13). To take it a step further, this symmetry provides further support for the truth set's
             accuracy since it rules out systematic bias toward expansions or contractions in the pipeline that produced
-            the
-            SynDip Benchmark. </p>
+            the SynDip Benchmark. </p>
         <p>If I plot the same distribution but with size in base pairs rather than # of repeats on the x-axis, it looks
             like:</p>
         <p><img width=500
                 src="https://storage.googleapis.com/str-truth-set/hg38/figures/allele_size_distribution_in_base_pairs.pure_repeats.svg">
         </p>
         <p>To summarize, only 3,028 STR alleles (1.7%) differ by more than 30bp from the reference genome, and only 845
-            (0.5%)
-            differ by more than 60bp. Although there are many STR variants, the overwhelming majority add or subtract
+            (0.5%) differ by more than 60bp. Although there are many STR variants, the overwhelming majority add or subtract
             only a few repeats. </p>
         <p>Splitting this distribution by motif size bins (2-6bp, 7-24bp and 25-50bp) shows that most of the large
-            expansions
-            involve large motifs:</p>
+            expansions involve large motifs:</p>
         <p><img src="https://storage.googleapis.com/str-truth-set/hg38/figures/allele_size_distribution_by_number_of_repeats.x3.pure_repeats.svg">
         </p>
         <p>We can also look at the prevalence of STR variants with different motifs and compare it to the distribution
-            of pure
-            STR repeats in hg38 (found using <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a>):
+            of pure STR repeats in hg38 (found using <a href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a>):
         </p>
 
         <div nowrap align=center>
-            <img width=400
-                 src="https://storage.googleapis.com/str-truth-set/hg38/figures/motif_distribution.pure_repeats.svg">
-            <img width=148
-                 src="https://user-images.githubusercontent.com/6240170/200648659-7b827c97-b95d-4713-947c-bca349cf36c4.png">
-            <img width=400
-                 src="https://storage.googleapis.com/str-truth-set/hg38/figures/motif_distribution_in_hg38_with_atleast_12bp.svg">
+            <img width=400 src="https://storage.googleapis.com/str-truth-set/hg38/figures/motif_distribution.pure_repeats.svg">
+            <img width=148 src="https://user-images.githubusercontent.com/6240170/200648659-7b827c97-b95d-4713-947c-bca349cf36c4.png">
+            <img width=400 src="https://storage.googleapis.com/str-truth-set/hg38/figures/motif_distribution_in_hg38_with_atleast_12bp.svg">
         </div>
 
         <p>Here the motifs are sorted by how common they are in hg38.
