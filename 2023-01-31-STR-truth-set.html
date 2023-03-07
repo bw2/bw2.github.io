@@ -404,8 +404,8 @@
         </div>
         Overall, 30,603 out of 144,735 (21%) truth set STR variants are multiallelic. This high proportion of
         multiallelic variants is directly related to the high mutation rate of STRs. For comparison, only 15,641 of the
-        3,563,264 (0.4%) SNVs in SynDip are multiallelic. Similarly, 14,003 out of 373,550 (3.7%) of InDels (excluding those
-        that are pure STRs) are multiallelic.
+        3,563,264 (0.4%) SNVs in SynDip are multiallelic, as are 14,003 out of 373,550 (3.7%) of InDels (excluding those
+        that are pure STRs).
 
         <p>Two other interesting questions are - for STR variants in the truth set, how large are the corresponding loci in
             the hg38 reference genome? If a locus has many repeats in the reference genome, is it more
@@ -511,7 +511,7 @@
             <img width=1000 src="https://storage.googleapis.com/str-truth-set/hg38/figures/truth_set_gene_overlap.excluding_introns_and_intergenic.MANE_v1.svg">
         </div>
 
-        <p>This shows that nearly all - 195 out of 199 (98.0%) - of the STR alleles in coding regions have motif sizes
+        <p>This shows that 195 out of 199 (98.0%) of the STR alleles in coding regions have motif sizes
             that are multiples of 3bp.<br/>
             As for the four alleles that don't fit this pattern, one is a +1 repeat expansion of a 5bp "GGGGC" motif
             at the chr15:40807702-40807711 locus. It represents a heterozygous frameshift variant within the ZFYVE19 gene.
@@ -523,7 +523,7 @@
             This STR locus (chr11:1255551-1256022) mostly falls within an intron of the MUC5B gene. The 1st of the 8
             repeats overlaps exon #37 and is why this locus was included in the set of coding repeats.
             Since the rest of the repeats are intronic, neither of the two STR alleles produce a frameshift.
-            This shows that, even when they occur within coding regions, no more than 1% (2 out of 199) of STR alleles produce frameshift mutations. </p>
+            This shows that, even when they occur within coding regions, only 1% (2 out of 199) of STR alleles produce frameshift mutations. </p>
 
         <p>We can also look at whether the 199 coding STR alleles fall within LoF- or missense-constrained genes and
             compare this to constraint scores of genes that harbor the 25 known coding disease-associated STR loci. In
@@ -552,7 +552,7 @@
             input, nearly all STR genotyping tools besides <a href="https://github.com/Illumina/ExpansionHunterDenovo">
                 ExpansionHunterDenovo</a> and <a href="https://github.com/quinlan-lab/STRling">STRling</a> require users
             to also provide the exact boundaries and motifs of the STR loci to genotype. For example, to genotype the
-            Huntington's Disease locus, a user must specify the reference coordinates "chr4:3074876-3074933" and motif "CAG". The
+            Huntington's Disease locus, a user must provide the reference coordinates "chr4:3074876-3074933" and motif "CAG". The
             implicit assumption of these algorithms is that all STRs a user might want to genotype are also present in the
             reference genome - meaning that STR variants look like:</p>
         <p><img width="452" src="https://user-images.githubusercontent.com/6240170/200219094-78f3ad2f-bcba-4412-a5cb-098e8f6b56a8.png">
@@ -564,8 +564,8 @@
             100% of the time:</p>
         <ul>
             <li>144,215 out of 144,735 (99.6%) of STR variants in CHM1-CHM13 match repeats found in hg38 immediately to
-                the left or right of the variant. Only 520 variants are novel STRs, and they are all intergenic (based on
-                Gencode v42).
+                the left or right of the variant. Only 520 variants are novel STRs, and they are all intergenic according to
+                Gencode v42.
             </li>
         </ul>
         <p>This suggests that, for samples like CHM1-CHM13 that have European ancestry, nearly all true STR variants can
@@ -593,7 +593,7 @@
                     catalog</a></td>
                 <td>Identifying STRs that are polymorphic in 2,504 individuals from the 1000 genomes project.</td>
                 <td nowrap style="text-align: right">174,300</td>
-                <td nowrap style="text-align: right">53,137 out of 144,735</td>
+                <td nowrap style="text-align: right">53,071 out of 144,735</td>
                 <td nowrap style="text-align: right">36.7 %</td>
             </tr>
             <tr>
@@ -607,13 +607,13 @@
                         2019</a>].
                 </td>
                 <td nowrap style="text-align: right">832,380</td>
-                <td nowrap style="text-align: right">79,397 out of 144,735</td>
+                <td nowrap style="text-align: right">79,348 out of 144,735</td>
                 <td nowrap style="text-align: right">54.8 %</td>
             </tr>
             <tr>
                 <td><a href="https://github.com/gymreklab/GangSTR#gangstr-reference-files">GangSTR v17 loci</a></td>
                 <td nowrap style="text-align: right">1,340,266</td>
-                <td nowrap style="text-align: right">59,462 out of 144,735</td>
+                <td nowrap style="text-align: right">59,419 out of 144,735</td>
                 <td nowrap style="text-align: right">41.1 %</td>
             </tr>
             <tr>
@@ -625,9 +625,9 @@
                     large mismatch and indel penalties to find all pure repeats that <b>span at least 6bp</b> in the
                     hg38 reference genome
                 </td>
-                <td nowrap style="text-align: right">4,722,859</td>
-                <td nowrap style="text-align: right">5,434 out of 144,735</td>
-                <td nowrap style="text-align: right">3.8 %</td>
+                <td nowrap style="text-align: right">4,880,610</td>
+                <td nowrap style="text-align: right">5,416 out of 144,735</td>
+                <td nowrap style="text-align: right">3.7 %</td>
             </tr>
             <tr>
                 <td>4</td>
@@ -639,7 +639,7 @@
                     hg38 reference genome
                 </td>
                 <td nowrap style="text-align: right">2,805,842</td>
-                <td nowrap style="text-align: right">6,787 out of 144,735</td>
+                <td nowrap style="text-align: right">6,774 out of 144,735</td>
                 <td nowrap style="text-align: right">4.7 %</td>
             </tr>
             <tr>
@@ -652,7 +652,7 @@
                     hg38 reference genome
                 </td>
                 <td nowrap style="text-align: right">1,343,313</td>
-                <td nowrap style="text-align: right">11,474 out of 144,735</td>
+                <td nowrap style="text-align: right">11,460 out of 144,735</td>
                 <td nowrap style="text-align: right">7.9 %</td>
             </tr>
             <tr>
@@ -665,19 +665,19 @@
                     hg38 reference genome
                 </td>
                 <td nowrap style="text-align: right">702,486</td>
-                <td nowrap style="text-align: right">22,830 out of 144,735</td>
+                <td nowrap style="text-align: right">22,812 out of 144,735</td>
                 <td nowrap style="text-align: right">15.8 %</td>
             </tr>
         </table>
 
         <p>One takeaway is that, if we want to capture more than 95% of STR variants using a TRF-derived catalog, we
-            need to genotype more than 2.8M loci genome-wide in each individual. </p>
+            need to genotype more than 2.8M loci genome-wide. </p>
         <p>This takeaway is based on the entire truth set - but does is it hold true for larger loci - for example the
-            89,622 (62%) of loci where the reference locus spans at least 24bp? Yes - both the GangSTR and Illumina
-            catalogs would miss 30% to 45% of these variants.</p>
-        <p>What about loci with relatively large expansions? Arguably these are the loci we're most interested in. If
-            you filter the truth set to the 1,702 (1%) of STR expansions that add 10 or more repeats to the reference
-            repeat count, the percentages of missed loci remain large - with 30% missed by the GangSTR v17 catalog and
+            89,607 (62%) of loci where the reference locus spans at least 24bp? Yes - both the GangSTR v17 and Illumina
+            catalogs would miss 32% or 29% of these variants respectively.</p>
+        <p>What about loci with relatively large expansions? Arguably these are the most interesting when studying
+            disease associations. If we filter the truth set to the 1,703 (1%) of STR variants that are expanded by more than 10 repeats
+            relative to the reference, the percentages of missed loci remain large - with 30% missed by the GangSTR v17 catalog and
             45% missed by the Illumina catalog. The 19/20xTCT expansion @
             <a target="_blank" href="https://tgg-viewer.broadinstitute.org/#locus=chr1:18341013-18341042&show=~(~'bed~'gtf~'vcf~'alignment)&selectedRows=~(Tool*20Results~(~)~Mappability*20Tracks~(~)~Truth*20Set~(~'Truth*20Set*20BED~'Truth*20Set*20VCF)~CHM1-CHM13~(~'SynDip*20full*20truth*20set*20VCF)~Other*20STR*20Catalogs~(~'Illumina*20Catalog~'GangSTR*20v17*20catalog)~STR*20Truth*20Set~(~'STR*20Truth*20Set*20VCF~'STR*20Truth*20Set*20BED))&selectedSamples=~()&order=~(~'STR*20Truth*20Set*20VCF*20vcf~'STR*20Truth*20Set*20BED*20~'Illumina*20Catalog*20~'GangSTR*20v17*20catalog*20~'Refseq*20Genes~'Gencode*20v32*20Genes)&sjOptions=~(bounceHeightBasedOn~'random~colorBy~'isAnnotatedJunction~colorByNumReadsThreshold~5~hideAnnotated~false~hideUnannotated~false~labelAnnotatedJunction~false~labelAnnotatedJunctionValue~'*20*5bA*5d~labelMotif~false~labelMultiMappedReadCount~false~labelTotalReadCount~false~labelUniqueReadCount~true~maxFractionMultiMappedReads~1~minSplicedAlignmentOverhang~0~minTotalReads~1~minUniquelyMappedReads~0~showOnlyMinusStrand~false~showOnlyPlusStrand~false~thicknessBasedOn~'numUniqueReads~trackHeight~170~minJunctionEndsVisible~1~labelWithInParen~null~labelWith~'totalReadCount)&vcfOptions=~(displayMode~'EXPANDED)&bamOptions=~(alignmentShading~'strand~showSoftClips~true~trackHeight~400~viewAsPairs~true~showInsertionText~true~showDeletionText~true)&gcnvOptions=~(trackHeight~200~trackMin~0~trackMax~5~autoscale~false~onlyHandleClicksForHighlightedSamples~true)&settingsUrl=~'https*3a*2f*2fstr-truth-set.storage.googleapis.com*2fhg38*2ftgg-viewer-config.json*3fnocache17">chr1:18341013-18341042</a>
             is one example of a truth set variant that's not covered by either the GangSTR v17 or the Illumina catalog.
@@ -685,22 +685,22 @@
         <hr/>
         <h3>Tool comparisons</h3>
 
-        <p>Using the truth set to compare accuracy of existing STR callers requires us to first define what we mean by
+        <p>Using the truth set to compare accuracy of existing STR callers requires that we first define what we mean by
             accuracy.
             For other variant types such as SNVs and InDels, the definition is relatively straight-forward - a tool will
             either call a variant or not, and then it might get the zygosity right or wrong, but that's about it. These
-            metrics are also important for STRs, but the additional aspect of number of repeats introduces a lot more
-            nuance. For example, for a given STR locus, a tool may get the number of repeats exactly right, or it may be
-            off by +/-1, or off by many repeats. It might even call an expansion where the true genotype is a
-            contraction. To avoid getting bogged down in finding the right definition, we can begin with the simplest
-            definition and build from there. </p>
-        <p>Also, to keep the analysis manageable, we focus on several widely-used tools - ExpansionHunter, GangSTR and
+            metrics are also important for STRs, but the additional aspect of number of repeats introduces additional
+            complexity. For example, for a given STR locus, a tool may get the number of repeats exactly right, or it
+            may be off by +/-1, or off by many repeats. It might even call an expansion where the true genotype is a
+            contraction. To avoid getting bogged down in finding the right definition of accuracy, we can begin with
+            the simplest one and build from there. </p>
+        <p>Also, to keep the analysis manageable, we compare only several widely-used tools - ExpansionHunter, GangSTR and
             HipSTR, and later also look at ExpansionHunterDenovo.</p>
         <h4>Strict accuracy</h4>
         <p>The simplest definition of STR calling accuracy is - how many genotypes did a tool get exactly right? i.e.
             what fraction of called allele sizes exactly match the corresponding allele size in the truth set. When we
-            run ExpansionHunter, GangSTR and HipSTR on the 139,244 (96%) truth set loci that have 2bp to 6bp motifs and
-            that are present in the reference genome, we find that accuracy varies as follows: </p>
+            run ExpansionHunter, GangSTR and HipSTR on the 139,218 (96%) truth set loci that have 2bp to 6bp motifs and
+            are present in the reference genome, we find that accuracy varies as follows: </p>
         <table>
             <tr>
                 <th>Tool</th>
@@ -711,45 +711,51 @@
             </tr>
             <tr>
                 <td nowrap>ExpansionHunter v5</td>
-                <td>92.6 %</td>
                 <td>90.9 %</td>
-                <td>83.3 %</td>
-                <td>0.1 %</td>
+                <td>89.9 %</td>
+                <td>86.7 %</td>
+                <td>79.1 %</td>
             </tr>
             <tr>
                 <td nowrap>GangSTR v2.5</td>
-                <td>91.0 %</td>
-                <td>87.1 %</td>
-                <td>76.1 %</td>
-                <td>53.5 %</td>
+                <td>89.8 %</td>
+                <td>86.4 %</td>
+                <td>74.9 %</td>
+                <td>51.4 %</td>
             </tr>
             <tr>
                 <td nowrap>HipSTR v0.6.2</td>
-                <td>74.0 %</td>
-                <td>72.9 %</td>
-                <td>65.9 %</td>
-                <td>42.5 %</td>
+                <td>72.4 %</td>
+                <td>71.6 %</td>
+                <td>65.1 %</td>
+                <td>42.2 %</td>
             </tr>
         </table>
 
-        <p>We can see that ExpansionHunter slightly outperforms GangSTR, and both tools outperform HipSTR.
-            Unsurprisingly, accuracy decreases when the original data (which has 40x genome-wide coverage) is
-            downsampled to lower read depths.</p>
-        <h4>Strict accuracy by number of repeats</h4>
+        <p>We can see that ExpansionHunter outperforms GangSTR, and both tools outperform HipSTR.
+            When the original data with 40x coverage is downsampled to progressively lower read depths, accuracy
+            declines for both ExpansionHunter and GangSTR, though ExpansionHunter is
+            more resilient to lower coverage.<br />
+            <br />
+            <em>NOTE:</em> For 10x and 5x coverage, ExpansionHunter was run with "--min-locus-coverage 3" to allow it to genotype loci with fewer than 10 reads.
+        </p>
+        <h4>Strict accuracy across different allele sizes</h4>
         <p>For most STR analyses, we care more about large expansions than about variants that only add or remove a few
             repeats.
             However, as we saw <a
                     href="https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#results">previously</a>,
             the overwhelming majority of truth set variants only differ from the reference genome by 1 or 2 repeats.
-            This means the accuracy metric defined above is dominated by variants we don't care as much about. To
+            This means the accuracy metric defined above is dominated by small variants that we don't care as much about. To
             improve on this, we can look at how accuracy varies across different true allele size bins. </p>
-        <p><em>NOTE:</em> First though, a technical note about comparing STR genotypes. For a given locus, there are 5
-            numbers to consider - the number of repeats in the reference genome, the true size of the short allele and
-            the long allele, and finally the short and long allele as called by the given tool.
+        <p><em>NOTE:</em> When calculating accuracy at a
+            particular locus, there are 5 numbers to consider - the number of repeats in the reference genome, the true size of the short allele and
+            the long allele, and the short and long allele sizes reported by a given tool.
             For the analyses below, the x-axis values come from comparing the true allele sizes to the number of repeats
-            in the reference. Then, to determine tool accuracy at a locus, the true genotype as well as the tool's
-            reported genotype can be split into a short allele and a long allele. The short alleles can be compared, and
-            then, separately, the long alleles:<br/></p>
+            in the reference. Then, to determine tool accuracy at a locus, we must first pair each true allele with one of the
+            alleles reported by the tool. In our analysis, we do this by pairing the short allele in the truth set with the
+            short allele called by the tool, and the long allele with the long allele, as
+            diagramed below. There are other ways to do this - such as pairing to minimize total error - but we expect
+            these to lead to the same results. <br/></p>
         <br />
         <center>
         <div style="padding-right:100px"><b>Example: computing accuracy at a multiallelic locus:</b></div>
@@ -769,8 +775,8 @@
             across all bins.</p>
         <p>HipSTR shows poor accuracy largely because it refuses to call many loci and outputs the error message:
             "Aborting genotyping of the locus as the sequence upstream/downstream of the repeat is too repetitive for
-            accurate genotyping". If we exclude these loci from the analysis for all tools - thereby discarding 25,257
-            out of 139,244 (18.1%) of truth set loci that have 2 to 6bp motifs - the above plot then looks like:</p>
+            accurate genotyping". If we exclude these loci from the analysis for all tools - thereby discarding 25,223
+            out of 139,218 (18.1%) of truth set loci that have 2 to 6bp motifs - the above plot then looks like:</p>
         <div align="center"><!-- img
                 src="https://user-images.githubusercontent.com/6240170/211717395-b8ff12d9-a80e-45e3-8a8a-36a83de5845e.png"
                 width=800 -->
@@ -818,7 +824,7 @@
         <p>Since exome sequencing data is available for the CHM1-CHM13 sample, we can check what fraction of the truth
             set can be called in an exome. To exclude off-target capture regions that accidentally got some read
             coverage, we prefilter loci to exclude intergenic, intronic or promoter regions (based on Gencode v42), and
-            also exclude loci where neither ExpansionHunter nor GangSTR produced a genotype. Out of the 139,244 truth
+            also exclude loci where neither ExpansionHunter nor GangSTR produced a genotype. Out of the 139,218 truth
             set loci with 2 to 6bp motifs, only 1,766 (1.3%) pass these filters. Even for this small subset, more than
             half of the genotype calls are inaccurate: </p>
         <p>
@@ -1172,7 +1178,7 @@
             </tr>
             <tr>
                 <td nowrap>Pure repeats that <b>span at least 6bp</b> in hg38</td>
-                <td nowrap style="text-align: right">4,722,859</td>
+                <td nowrap style="text-align: right">4,880,610</td>
                 <td nowrap><a
                         href="https://storage.googleapis.com/str-truth-set/hg38/ref/other/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_6bp.bed.gz">gs://str-truth-set/hg38/ref/other/repeat_specs_GRCh38_without_mismatches.sorted.trimmed.at_least_6bp.bed.gz</a>
                 </td>
