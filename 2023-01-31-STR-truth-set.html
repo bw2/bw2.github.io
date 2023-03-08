@@ -581,13 +581,11 @@
                 <th>How It Was Created</th>
                 <th nowrap>Catalog Size:<br/># of STR Loci</th>
                 <th nowrap># of Truth Set Variants<br/>Missed By Catalog</th>
-                <th nowrap># of Truth Set Expansions ≥ 10 Repeats <br/>Missed By Catalog</th>
                 <th nowrap>% Missed</th>
             </tr>
             <tr>
                 <td>1</td>
-                <td><a target="_blank" href="https://github.com/Illumina/RepeatCatalogs/blob/master/docs/str_generation.md">Illumina
-                    catalog</a></td>
+                <td><a target="_blank" href="https://github.com/Illumina/RepeatCatalogs/blob/master/docs/str_generation.md">Illumina catalog</a></td>
                 <td>Identifying STRs that are polymorphic in 2,504 individuals from the 1000 genomes project.</td>
                 <td nowrap style="text-align: right">174,300</td>
                 <td nowrap style="text-align: right">53,071 out of 144,735</td>
@@ -614,7 +612,7 @@
             </tr>
             <tr>
                 <td>3</td>
-                <td nowrap><a target="_blank" href="https://github.com/HipSTR-Tool/HipSTR-references">HipSTR hg38 repeat reference</a></td>
+                <td nowrap><a target="_blank" href="https://github.com/HipSTR-Tool/HipSTR-references">HipSTR hg38 repeat catalog</a></td>
                 <td>Running <a target="_blank" href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF)
                     on the reference genome using default parameters: mismatch penalty = 7 and indel penalty = 7.
                     Then, filtering out repeats with low TRF scores as
@@ -626,8 +624,7 @@
             </tr>
             <tr>
                 <td>4</td>
-                <td nowrap><a target="_blank" href="https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#extra-sections">Pure
-                    Repeats Catalog</a></td>
+                <td nowrap><a target="_blank" href="https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#extra-sections">Pure repeats catalog</a></td>
                 <td>Running <a target="_blank" href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) with very
                     large mismatch and indel penalties to find all pure repeats that <b>span at least 6bp</b> in the
                     hg38 reference genome
@@ -637,9 +634,8 @@
                 <td nowrap style="text-align: right">3.7 %</td>
             </tr>
             <tr>
-                <td>4</td>
-                <td nowrap><a target="_blank" href="https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#extra-sections">Pure
-                    Repeats Catalog<br/>Subset ≥ 9bp</a></td>
+                <td>5</td>
+                <td nowrap><a target="_blank" href="https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#extra-sections">Pure repeats catalog<br/>subset ≥ 9bp</a></td>
                 <td>Running <a target="_blank" href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) with very
                     large mismatch and indel penalties to find all pure repeats that <b>span at least 9bp</b> in the
                     hg38 reference genome
@@ -649,9 +645,8 @@
                 <td nowrap style="text-align: right">4.7 %</td>
             </tr>
             <tr>
-                <td>5</td>
-                <td nowrap><a target="_blank" href="https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#extra-sections">Pure
-                    Repeats Catalog<br/>Subset ≥ 12bp</a></td>
+                <td>6</td>
+                <td nowrap><a target="_blank" href="https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#extra-sections">Pure repeats catalog<br/>subset ≥ 12bp</a></td>
                 <td>Running <a target="_blank" href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) with very
                     large mismatch and indel penalties to find all pure repeats that <b>span at least 12bp</b> in the
                     hg38 reference genome
@@ -661,9 +656,8 @@
                 <td nowrap style="text-align: right">7.9 %</td>
             </tr>
             <tr>
-                <td>6</td>
-                <td nowrap><a target="_blank" href="https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#extra-sections">Pure
-                    Repeats Catalog<br/>Subset ≥ 15bp</a></td>
+                <td>7</td>
+                <td nowrap><a target="_blank" href="https://github.com/bw2/bw2.github.io/blob/master/2022-05-06-STR-truth-set.md#extra-sections">Pure repeats catalog<br/>subset ≥ 15bp</a></td>
                 <td>Running <a target="_blank" href="https://github.com/Benson-Genomics-Lab/TRF">TandemRepeatFinder</a> (TRF) with very
                     large mismatch and indel penalties to find all pure repeats that <b>span at least 15bp</b> in the
                     hg38 reference genome
@@ -682,7 +676,7 @@
             the percentages of missed loci remain large - with 45% missed by the Illumina catalog,
             30% missed by the GangSTR v17 catalog, and 17% missed by the HipSTR catalog. These percentages also don't change much if
             we only consider the 139,704 out of 144,735 (97%) of variants that have motif sizes between 2 to 6bp. As an example,
-            the truth set expansion from 10 TCT repeats in the reference genome to 19 and 20 repeats @
+            the truth set expansion from 10xTCT repeats in the reference genome to 19 and 20 repeats @
             <a target="_blank" href="https://tgg-viewer.broadinstitute.org/#locus=chr1:18341013-18341042&show=~(~'bed~'gtf~'vcf~'alignment)&selectedRows=~(Tool*20Results~(~)~Mappability*20Tracks~(~)~Truth*20Set~(~'Truth*20Set*20BED~'Truth*20Set*20VCF)~CHM1-CHM13~(~'SynDip*20full*20truth*20set*20VCF)~Other*20STR*20Catalogs~(~'Illumina*20Catalog~'GangSTR*20v17*20catalog~'HipSTR*20catalog)~STR*20Truth*20Set~(~'STR*20Truth*20Set*20VCF~'STR*20Truth*20Set*20BED))&selectedSamples=~()&order=~(~'STR*20Truth*20Set*20VCF*20vcf~'STR*20Truth*20Set*20BED*20~'Illumina*20Catalog*20~'GangSTR*20v17*20catalog*20~'HipSTR*20catalog*20~'Gencode*20v32*20Genes~'Refseq*20Genes)&sjOptions=~(bounceHeightBasedOn~'random~colorBy~'isAnnotatedJunction~colorByNumReadsThreshold~5~hideAnnotated~false~hideUnannotated~false~labelAnnotatedJunction~false~labelAnnotatedJunctionValue~'*20*5bA*5d~labelMotif~false~labelMultiMappedReadCount~false~labelTotalReadCount~false~labelUniqueReadCount~true~maxFractionMultiMappedReads~1~minSplicedAlignmentOverhang~0~minTotalReads~1~minUniquelyMappedReads~0~showOnlyMinusStrand~false~showOnlyPlusStrand~false~thicknessBasedOn~'numUniqueReads~trackHeight~170~minJunctionEndsVisible~1~labelWithInParen~null~labelWith~'totalReadCount)&vcfOptions=~(displayMode~'EXPANDED)&bamOptions=~(alignmentShading~'strand~showSoftClips~true~trackHeight~400~viewAsPairs~true~showInsertionText~true~showDeletionText~true)&gcnvOptions=~(trackHeight~200~trackMin~0~trackMax~5~autoscale~false~onlyHandleClicksForHighlightedSamples~true)&settingsUrl=~'https*3a*2f*2fstr-truth-set.storage.googleapis.com*2fhg38*2ftgg-viewer-config.json*3fnocache17">
                 chr1:18341013-18341042
             </a>
