@@ -688,19 +688,19 @@
         <p>Using the truth set to compare accuracy of existing STR callers requires that we first define what we mean by
             accuracy.
             For other variant types such as SNVs and InDels, the definition is relatively straight-forward - a tool will
-            either call a variant or not, and then it might get the zygosity right or wrong, but that's about it. These
-            metrics are also important for STRs, but the additional aspect of number of repeats introduces additional
+            either call a variant or not, and then it might get the zygosity right or wrong.
+            Although these properties are similarly important for STRs, the number of repeats introduces additional
             complexity. For example, for a given STR locus, a tool may get the number of repeats exactly right, or it
             may be off by +/-1, or off by many repeats. It might even call an expansion where the true genotype is a
             contraction. To avoid getting bogged down in finding the right definition of accuracy, we can begin with
             the simplest one and build from there. </p>
-        <p>Also, to keep the analysis manageable, we compare only several widely-used tools - ExpansionHunter, GangSTR and
+        <p>Also, in this first iteration, we compare only several widely-used tools - ExpansionHunter, GangSTR and
             HipSTR, and later also look at ExpansionHunterDenovo.</p>
         <h4>Strict accuracy</h4>
-        <p>The simplest definition of STR calling accuracy is - how many genotypes did a tool get exactly right? i.e.
-            what fraction of called allele sizes exactly match the corresponding allele size in the truth set. When we
-            run ExpansionHunter, GangSTR and HipSTR on the 139,218 (96%) truth set loci that have 2bp to 6bp motifs and
-            are present in the reference genome, we find that accuracy varies as follows: </p>
+        <p>The simplest definition of STR calling accuracy is - what fraction of a tool's reported
+            allele sizes exactly match the corresponding allele size in the truth set. When we
+            run ExpansionHunter, GangSTR and HipSTR on the 139,218 (96%) truth set loci that
+            are present in the reference genome and have motif sizes between 2bp to 6bp, we find that accuracy varies as follows: </p>
         <table>
             <tr>
                 <th>Tool</th>
