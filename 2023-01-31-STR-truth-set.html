@@ -155,20 +155,17 @@
         <h4>Summary of Findings</h4>
         <ul>
             <li>An individual's genome differs from the reference at ~150,000 STR loci, but 98% of STR alleles are
-                within +/-30bp
-                of the reference locus size. On average, only several thousand STR loci differ from the reference by
-                more than 30bp.
+                within +/-30bp of the reference locus size. On average, only several thousand STR loci differ from
+                the reference by more than 30bp.
             </li>
-            <li>99.6% of STR variants occurred at STR loci that are also present in the reference genome. Only 520 STR
-                variants
-                had novel motifs that were entirely different from the adjacent motifs or reference sequence context.
+            <li>99.6% of STR variants occurred at loci where the same repeat was present in the reference genome.
+                Only 520 variants had novel motifs that weren't present in the adjacent reference sequence context.
             </li>
             <li>ExpansionHunter has better accuracy than GangSTR or HipSTR across the entire range of STR allele
                 sizes.
             </li>
-            <li>Widely-used STR catalogs miss 16% to 41% of the STR variants in the truth set. A new catalog of
-                2.8 million STR loci found in the hg38 reference (shared below) would capture more than
-                95% of these variants.
+            <li>Widely-used STR catalogs miss 16% to 41% of the STR variants in the truth set. A new catalog (shared below)
+                - with 2.8 million STR loci found in the hg38 reference - captures more than 95% of these variants.
             </li>
             <li>pLI gene constraint is useful but insufficient for identifying genes that are intolerant of STR
                 variation.
@@ -183,7 +180,8 @@
             longer than 6bp, leaving it to readers to decide of whether to include these in their analyses.</p>
 
         <h4>Tool Comparison Plot Viewer:</h4>
-        <p>These plots show ExpansionHunter, GangSTR, and HipSTR accuracy for expansions and contractions in the STR truth set.
+        <p>These plots show ExpansionHunter, GangSTR, and HipSTR accuracy for expansions and contractions in the STR truth set. <br />
+        They are explained in more detail in the sections below.
         <div>[<a target="_blank" href="https://broadinstitute.github.io/str-truth-set/html/tool_comparison_viewer.html">Open in new window</a>]</div>
         </p>
 
@@ -197,17 +195,30 @@
             uses haploid PacBio assemblies to identify all variants in the CHM1-CHM13 synthetic diploid sample.
             Because these variants are based on alignments of haploid assemblies (rather than individual reads) to the
             reference genome, the SynDip genotypes are more reliable than those produced by short-read or even
-            ordinary long-read pipelines. Conveniently, the authors made these genotypes
+            ordinary long-read pipelines. Additionally, the SynDip genotypes are
             <a target="_blank" href="https://github.com/lh3/CHM-eval">publicly available</a> in
             <a target="_blank" href="https://en.wikipedia.org/wiki/Variant_Call_Format">VCF format</a>.</p>
 
-            <p>The SynDip dataset contains 4.08 million variants and 4.15 million alleles. The number of alleles is
-            higher because 66,868 (1.6%) of the variants are multiallelic, meaning the variant consists of two different
-            alleles which both differ from the reference genome.
+            <p>The SynDip VCF contains 4.08 million high-confidence variants and 4.15 million high-confidence alleles.
+            The number of alleles is higher because 66,868 (1.6%) of the variants are multiallelic, meaning that the
+            variant consists of two different alleles which both differ from the reference genome.
             The alleles include 286k (6.9%) insertions and 276k (6.7%) deletions. To create the STR truth set, I
             filtered these insertion and deletion alleles to the subset that represents STR expansions or contractions:
         </p>
         <table>
+            <tr>
+                <td><i></i></td>
+                <td>Start with all high-confidence variants in the SynDip Benchmark</td>
+                <td nowrap style="text-align: right">4,081,549</td>
+                <td nowrap style="text-align: right">4,148,417</td>
+                <td nowrap style="text-align: right">all</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
             <tr>
                 <th></th>
                 <th>Filtering Step</th>
@@ -215,16 +226,9 @@
                 <th nowrap># of Alleles</th>
                 <th nowrap style="text-align: right">% of Alleles</th>
             </tr>
-            <tr>
-                <td><i>1</i></td>
-                <td>Start with all high-confidence variants in the SynDip Benchmark</td>
-                <td nowrap style="text-align: right">4,081,549</td>
-                <td nowrap style="text-align: right">4,148,417</td>
-                <td nowrap style="text-align: right">all</td>
-            </tr>
 
             <tr>
-                <td><i>2</i></td>
+                <td><i>1</i></td>
                 <td>Keep only insertions and deletions</td>
                 <td nowrap style="text-align: right">518,285</td>
                 <td nowrap style="text-align: right">562,891</td>
@@ -232,13 +236,13 @@
             </tr>
 
             <tr>
-                <td><i>3</i></td>
+                <td><i>2</i></td>
                 <td>Identify the subset that are STR expansions or contractions - requiring that they:
                     <ul>
-                        <li style="margin: 2px">have ≥ 3 repeats</li>
                         <li style="margin: 2px">are pure (i.e. no interruptions)</li>
-                        <li style="margin: 2px">have motif size ≥ 2bp</li>
+                        <li style="margin: 2px">have ≥ 3 repeats</li>
                         <li style="margin: 2px">span ≥ 9 base pairs</li>
+                        <li style="margin: 2px">have motif size ≥ 2bp</li>
                     </ul>
                 </td>
                 <td nowrap style="text-align: right">146,566</td>
@@ -247,7 +251,7 @@
             </tr>
 
         </table>
-        The following example demonstrates how step 3 filters insertions and deletions to the subset that are STR
+        The following example demonstrates how step 2 filters insertions and deletions to the subset that are STR
         expansions or contractions:<br/>
         <p><div style="font-size:18px; color:#006CB6; font-weight: bold">Example</div></p>
         <p>Let's say the SynDip dataset contains this heterozygous insertion:
@@ -356,7 +360,7 @@
         <p>The resulting STR truth set contains:</p>
         <ul>
             <li><strong>144,735 STR variants</strong></li>
-            <li><strong>175,338 STR alleles</strong></li>
+            <li><strong>175,338 STR non-reference alleles</strong></li>
         </ul>
         <p>The size distribution of these alleles is as follows:</p>
         <p><img width=500
