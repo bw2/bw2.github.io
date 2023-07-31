@@ -69,7 +69,7 @@ optional arguments:
                         Path where to write the output catalog. If not specified, it will be based on the input catalog path
 ```
 
-#### TR Truth Set analysis
+### TR Truth Set analysis
 
 To test this script and evaluate how adjacent loci affect ExpansionHunter accuracy, I used the TR truth set from 
 [Insights from a genome-wide truth set of tandem repeat variation by Ben Weisburd, Grace Tiao, Heidi L. Rehm
@@ -94,7 +94,7 @@ python3 -u -m str_analysis.add_adjacent_loci_to_expansion_hunter_catalog \
     truth_set_variant_catalog.json
 ```
 
-### Stats on adjacent loci
+#### Stats on adjacent loci
 
 ```
  48,391 out of 146,318 loci (33.1%) were found to have 1 or more adjacent repeats
@@ -130,6 +130,42 @@ The most common configuration was a pair of adjacent loci (the main locus + a ne
        7 out of  215,309 reference regions ( 0.0%) had adjacent repeats count:   9 reference regions with different motifs
        4 out of  215,309 reference regions ( 0.0%) had adjacent repeats count:  10 reference regions with different motifs
 ```
+
+#### ExpansionHunter performance with vs. without specifying adjacent loci 
+
+To evaluate how ExpansionHunter performance changed when specifying adjacent loci, I first selected the 48,391 (33%) of loci where at least 1 adjacent repeat was added by 
+the `add_adjacent_loci_to_expansion_hunter_catalog` script. Then, I ran ExpansionHunter on these loci first with and then without specifying the adjacent loci. 
+
+```
+ 40,127 out of 48,042 (83.5%) loci had the same exact genotype with vs. without using adjacent loci
+```
+
+I then checked ExpansionHunter accuracy as measured by concordance with the true genotypes from the Synthetic Diploid Benchmark:
+
+<img width="836" alt="image" src="https://github.com/bw2/bw2.github.io/assets/6240170/167255dc-3f5d-431f-b878-09aa8fdaac63">
+
+The blue line represents the calls with adjacent loci, and is slightly lower - indiciating that including adjacent loci leads to **slightly reduced** accuracy overall. 
+
+Comparing the results in other ways:
+```
+3,622 out of 48,042 ( 7.5%) loci: error decreased by at least 1 repeats when using adjacent loci.
+3,995 out of 48,042 ( 8.3%) loci: error INCREASED by at least 1 repeats when using adjacent loci.
+---
+2,375 out of 48,042 ( 4.9%) loci: error decreased by at least 2 repeats when using adjacent loci.
+2,113 out of 48,042 ( 4.4%) loci: error INCREASED by at least 2 repeats when using adjacent loci.
+---
+1,881 out of 48,042 ( 3.9%) loci: error decreased by at least 3 repeats when using adjacent loci.
+1,258 out of 48,042 ( 2.6%) loci: error INCREASED by at least 3 repeats when using adjacent loci.
+---
+1,644 out of 48,042 ( 3.4%) loci: error decreased by at least 4 repeats when using adjacent loci.
+  974 out of 48,042 ( 2.0%) loci: error INCREASED by at least 4 repeats when using adjacent loci.
+---
+1,434 out of 48,042 ( 3.0%) loci: error decreased by at least 5 repeats when using adjacent loci.
+  777 out of 48,042 ( 1.6%) loci: error INCREASED by at least 5 repeats when using adjacent loci.
+```
+
+
+
 
 
 **Pros and Cons**
