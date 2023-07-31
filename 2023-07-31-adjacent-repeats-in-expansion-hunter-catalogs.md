@@ -28,7 +28,7 @@ the user can also specify the adjacent CCG repeat (source:
 }
 ```
 
-To understand how specifying adjacent loci affects ExpansionHunter, I wrote a script that adds adjacent loci to existing STR catalogs. It takes any ExpansionHunter variant catalog (such as the Illumina [catalog of 174k polymorphic loci](https://github.com/Illumina/RepeatCatalogs)) as well as a catalog of all STRs in the reference genome (such as those produced by running TandemRepeatFinder) and outputs a new catalog after adding adjacent repeats that are within a user-defined distance from the original locus. This script is called `add_adjacent_loci_to_expansion_hunter_catalog` and is available in the [str_analysis](https://github.com/broadinstitute/str-analysis) repo:
+To understand how specifying adjacent loci affects ExpansionHunter performance, I wrote a script that adds adjacent loci to existing STR catalogs. It takes any ExpansionHunter variant catalog (such as the Illumina [catalog of 174k polymorphic loci](https://github.com/Illumina/RepeatCatalogs)) as well as a catalog of all STRs in the reference genome (such as those produced by running TandemRepeatFinder) and outputs a new catalog after adding adjacent repeats that are within a user-defined distance from the original locus. This script is called `add_adjacent_loci_to_expansion_hunter_catalog` and is available in the [str_analysis](https://github.com/broadinstitute/str-analysis) repo:
 
 ```
 usage: add_adjacent_loci_to_expansion_hunter_catalog.py [-h] --ref-fasta REF_FASTA [-d MAX_DISTANCE_BETWEEN_ADJACENT_REPEATS]
@@ -69,8 +69,26 @@ optional arguments:
                         Path where to write the output catalog. If not specified, it will be based on the input catalog path
 ```
 
+#### TR Truth Set analysis
 
+To test this script and evaluate how adjacent loci affect ExpansionHunter accuracy, I used the TR truth set from 
+[Insights from a genome-wide truth set of tandem repeat variation by Ben Weisburd, Grace Tiao, Heidi L. Rehm
+bioRxiv 2023.05.05.539588](https://www.biorxiv.org/content/10.1101/2023.05.05.539588v1). 
 
+This truth set contains 146,640 TR loci that are polymorphic in the CHM1-CHM13 synthetic diploid sample. 
+
+First, I ran the `add_adjacent_loci_to_expansion_hunter_catalog` on the ExpansionHunter catalog for these 146,640 loci, and using the reference TR catalog 
+```gs://str-truth-set/hg38/ref/other/repeat_specs_GRCh38_without_mismatches.including_homopolymers.sorted.at_least_9bp.bed.gz```
+which contains 4,484,369 pure TR loci detected in hg38 by TandemRepeatFinder.
+
+```
+python3 -u -m str_analysis.add_adjacent_loci_to_expansion_hunter_catalog \
+	--source-of-adjacent-loci ./ref/other/repeat_specs_GRCh38_without_mismatches.including_homopolymers.sorted.at_least_9bp.bed.gz \
+	--ref-fasta ./ref/hg38.fa \
+    --max-distance-between-adjacent-repeats 10 \
+	--add-extra-fields \
+    truth_set_variant_catalog.json
+```
 
 
 **Pros and Cons**
