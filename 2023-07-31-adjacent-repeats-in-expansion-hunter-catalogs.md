@@ -77,15 +77,19 @@ bioRxiv 2023.05.05.539588](https://www.biorxiv.org/content/10.1101/2023.05.05.53
 
 This truth set contains 146,640 TR loci that are polymorphic in the CHM1-CHM13 synthetic diploid sample. 
 
-First, I ran the `add_adjacent_loci_to_expansion_hunter_catalog` on the ExpansionHunter catalog for these 146,640 loci, and using the reference TR catalog 
-```gs://str-truth-set/hg38/ref/other/repeat_specs_GRCh38_without_mismatches.including_homopolymers.sorted.at_least_9bp.bed.gz```
+First, I ran `add_adjacent_loci_to_expansion_hunter_catalog` on the ExpansionHunter catalog for these 146,640 loci. For the reference TR catalog, I used 
+```
+gs://str-truth-set/hg38/ref/other/repeat_specs_GRCh38_without_mismatches.including_homopolymers.sorted.at_least_9bp.bed.gz
+```
 which contains 4,484,369 pure TR loci detected in hg38 by TandemRepeatFinder.
+Also, I set `max-distance-between-adjacent-repeats` = 10
+since I found little difference in performance when I increased this parameter. 
 
 ```
 python3 -u -m str_analysis.add_adjacent_loci_to_expansion_hunter_catalog \
 	--source-of-adjacent-loci ./ref/other/repeat_specs_GRCh38_without_mismatches.including_homopolymers.sorted.at_least_9bp.bed.gz \
 	--ref-fasta ./ref/hg38.fa \
-    --max-distance-between-adjacent-repeats 10 \
+        --max-distance-between-adjacent-repeats 10 \
 	--add-extra-fields \
     truth_set_variant_catalog.json
 ```
