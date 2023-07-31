@@ -166,9 +166,11 @@ Comparing the results in other ways:
 
 
 
+### Conclusions
 
-
-**Pros and Cons**
-- can genotype multiple loci together and use REViewer to see phased visualizations
+- Adding adjacent loci significantly improves performance for ~4% of loci and significantly degrades performance for ~2% of loci. 
+- For ~85% of loci, adding adjacent loci has no effect on the results.
+- Based on this, it makes sense to add adjacent loci only for a small subset of loci and only after confirming that this improves accuracy.
+- Since REViewer can phase reads across adjacent loci, they can also be useful for loci where phased genotypes are of interest. 
 
 
