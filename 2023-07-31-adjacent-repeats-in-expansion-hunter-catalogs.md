@@ -83,8 +83,8 @@ For the reference TR catalog, I used
 gs://str-truth-set/hg38/ref/other/repeat_specs_GRCh38_without_mismatches.including_homopolymers.sorted.at_least_9bp.bed.gz
 ```
 which contains 4,484,369 pure TR loci detected in hg38 by TandemRepeatFinder.  
-Also, I set `max-distance-between-adjacent-repeats = 10` because I found little difference in performance when I increased this parameter. 
-
+Also, I set `max-distance-between-adjacent-repeats = 10` because I found little difference in performance when I increased this arg. 
+The full command line was:
 ```
 python3 -u -m str_analysis.add_adjacent_loci_to_expansion_hunter_catalog \
 	--source-of-adjacent-loci ./ref/other/repeat_specs_GRCh38_without_mismatches.including_homopolymers.sorted.at_least_9bp.bed.gz \
@@ -92,6 +92,43 @@ python3 -u -m str_analysis.add_adjacent_loci_to_expansion_hunter_catalog \
         --max-distance-between-adjacent-repeats 10 \
 	--add-extra-fields \
     truth_set_variant_catalog.json
+```
+
+### Stats on adjacent loci
+
+```
+ 48,391 out of 146,318 loci (33.1%) were found to have 1 or more adjacent repeats
+```
+
+The distances between these adjacent loci were distributed as follows:
+```
+  35,837 out of   68,991 spacers (51.9%) had     0bp spacer
+   8,273 out of   68,991 spacers (12.0%) had     1bp spacer
+   3,452 out of   68,991 spacers ( 5.0%) had     2bp spacer
+   3,852 out of   68,991 spacers ( 5.6%) had     3bp spacer
+   2,791 out of   68,991 spacers ( 4.0%) had     4bp spacer
+   3,164 out of   68,991 spacers ( 4.6%) had     5bp spacer
+   2,349 out of   68,991 spacers ( 3.4%) had     6bp spacer
+   2,732 out of   68,991 spacers ( 4.0%) had     7bp spacer
+   2,093 out of   68,991 spacers ( 3.0%) had     8bp spacer
+   2,527 out of   68,991 spacers ( 3.7%) had     9bp spacer
+   1,921 out of   68,991 spacers ( 2.8%) had    10bp spacer
+```
+
+The most common configuration was a pair of adjacent loci (the main locus + a newly added adjacent locus) with different motifs. The other configurations were as follows:
+```
+  26,360 out of  215,309 reference regions (12.2%) had adjacent repeats count:   2 reference regions with different motifs
+   7,949 out of  215,309 reference regions ( 3.7%) had adjacent repeats count:   2 reference regions with same motif
+   9,460 out of  215,309 reference regions ( 4.4%) had adjacent repeats count:   3 reference regions with different motifs
+     219 out of  215,309 reference regions ( 0.1%) had adjacent repeats count:   3 reference regions with same motif
+   2,961 out of  215,309 reference regions ( 1.4%) had adjacent repeats count:   4 reference regions with different motifs
+       8 out of  215,309 reference regions ( 0.0%) had adjacent repeats count:   4 reference regions with same motif
+     955 out of  215,309 reference regions ( 0.4%) had adjacent repeats count:   5 reference regions with different motifs
+     333 out of  215,309 reference regions ( 0.2%) had adjacent repeats count:   6 reference regions with different motifs
+     105 out of  215,309 reference regions ( 0.0%) had adjacent repeats count:   7 reference regions with different motifs
+      30 out of  215,309 reference regions ( 0.0%) had adjacent repeats count:   8 reference regions with different motifs
+       7 out of  215,309 reference regions ( 0.0%) had adjacent repeats count:   9 reference regions with different motifs
+       4 out of  215,309 reference regions ( 0.0%) had adjacent repeats count:  10 reference regions with different motifs
 ```
 
 
