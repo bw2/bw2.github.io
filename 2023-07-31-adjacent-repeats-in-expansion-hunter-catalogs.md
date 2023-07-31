@@ -1,5 +1,4 @@
-ExpansionHunter has a unique feature where users can specify adjacent STR loci in addition to the main locus being genotyped. 
-For example, for the Huntington's disease locus, rather than just specifying the CAG repeat as in:
+ExpansionHunter has a unique feature where users can specify adjacent STR loci next to the main locus being genotyped, and ExpansionHunter will genotype both the main locus and these adjacent loci together. For example, for the Huntington's disease locus, rather than just specifying the CAG repeat as in:
 ```
 {
     "LocusId": "HTT",
@@ -8,8 +7,8 @@ For example, for the Huntington's disease locus, rather than just specifying the
     "VariantType": "Repeat",
 }
 ```
-the user can add adjacent repeats to locus description - as is done in 
-[the official ExpansionHunter catalog](https://github.com/Illumina/ExpansionHunter/blob/master/variant_catalog/grch38/variant_catalog.json#L458-L473):
+the user can specify the adjacent CCG repeat (source: 
+[the official ExpansionHunter catalog](https://github.com/Illumina/ExpansionHunter/blob/master/variant_catalog/grch38/variant_catalog.json#L458-L473)):
 ```
 {
     "LocusId": "HTT",
