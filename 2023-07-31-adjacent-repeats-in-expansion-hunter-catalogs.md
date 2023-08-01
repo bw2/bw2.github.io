@@ -146,8 +146,12 @@ I then checked ExpansionHunter accuracy as measured by concordance with the true
 
 The blue line represents the calls with adjacent loci, and is slightly lower - indiciating that including adjacent loci leads to **slightly reduced** accuracy overall. 
 
-Comparing the results in other ways:
+To look a this is more detail, we can compare the per-locus genotyping errors when running ExpansionHunter with vs. without adjacent loci. 
+Here genotyping error at a locus is measured as the total difference between the true allele size and ExpansionHunter's estimated allele size for allele1 + allele2.
+
 ```
+40,423 out of 48,042 (84.1%) loci:  genotype error didn't change when running ExpansionHunter with vs. without adjacent loci.
+---
 3,622 out of 48,042 ( 7.5%) loci: allele1 + allele2 genotype error decreased by at least 1 repeats when using adjacent loci.
 3,995 out of 48,042 ( 8.3%) loci: allele1 + allele2 genotype error INCREASED by at least 1 repeats when using adjacent loci.
 ---
@@ -164,6 +168,8 @@ Comparing the results in other ways:
   777 out of 48,042 ( 1.6%) loci: allele1 + allele2 genotype error INCREASED by at least 5 repeats when using adjacent loci.
 ```
 
+These proportions between the number of loci where errors increased vs. decreased stay approximately the same even when I prefilter to alleles that have the highest genotype 
+quality scores (Q > 0.8) in all cases (ie. when called with and without adjacent repeats).
 
 
 ### Conclusions
