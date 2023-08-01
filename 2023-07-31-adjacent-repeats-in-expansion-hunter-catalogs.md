@@ -183,9 +183,7 @@ The stats for these 100 loci were:
 
 For 20 of these loci, the true genotype from the STR truth set appeared to be incorrect - implying that loci where ExpansionHunter genotypes significantly differ with vs. without adjacent repeats are enriched for assembly errors or cell line mutations in the CHM1-CHM13 synthetic diploid. 
 
-The 200 REViewer images for these 100 loci can be viewed here:
-
-[[200 REViewer images](https://bw2.github.io/2023-07-31_adjacent_repeats_flipbook/)]
+The 200 REViewer images for these 100 loci can be viewed here:  [[200 REViewer images](https://bw2.github.io/2023-07-31_adjacent_repeats_flipbook/)]
 
 ### Conclusions
 
