@@ -133,8 +133,10 @@ The most common configuration was a pair of adjacent loci (the main locus + a ne
 
 #### ExpansionHunter performance with vs. without specifying adjacent loci 
 
-To evaluate how ExpansionHunter performance changed when specifying adjacent loci, I first selected the 48,391 (33%) of loci where at least 1 adjacent repeat was added by 
-the `add_adjacent_loci_to_expansion_hunter_catalog` script. Then, I ran ExpansionHunter on these loci first with and then without specifying the adjacent loci. 
+To evaluate how ExpansionHunter performance changes when specifying adjacent loci, I followed these steps:
+- selected the 48,391 (33%) of loci where at least 1 adjacent repeat was added by the `add_adjacent_loci_to_expansion_hunter_catalog` script.
+- generated 2 ExpansionHunter variant catalogs for these loci: one that included adjacent repeats, and one that didn't.
+- compared results from ExpansionHunter
 
 ```
  40,127 out of 48,042 (83.5%) loci had the same exact genotype with vs. without using adjacent loci
