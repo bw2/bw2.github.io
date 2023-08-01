@@ -40,6 +40,7 @@ for markdown_file_path in glob.glob("*.md"):
         raise ValueError(f"Title not found in {markdown_file_path}. No line starts with '## '")
 
     # handle literal / code blocks
+    markdown_file_contents = markdown_file_contents.replace("<code> </code>", "")
     markdown_file_contents = re.sub("```(.*?)```", r"<pre><code> \1 </code></pre>", markdown_file_contents, flags=re.DOTALL)
     markdown_html = markdown.markdown(markdown_file_contents)
 
