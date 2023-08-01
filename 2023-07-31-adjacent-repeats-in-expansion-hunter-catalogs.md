@@ -136,48 +136,58 @@ The most common configuration was a pair of adjacent loci (the main locus + a ne
 To evaluate how ExpansionHunter performance changes when specifying adjacent loci, I followed these steps:
 - selected the 48,391 (33%) of loci where at least 1 adjacent repeat was added by the `add_adjacent_loci_to_expansion_hunter_catalog` script.
 - generated 2 ExpansionHunter variant catalogs for these loci: one that included adjacent repeats, and one that didn't.
-- compared results from ExpansionHunter
+- looked at differences in ExpansionHunter calls between these 2 catalogs
 
 ```
- 40,127 out of 48,042 (83.5%) loci had the same exact genotype with vs. without using adjacent loci
+ 40,127 out of 48,042 (83.5%) loci had the same exact genotype with vs. without specifying adjacent loci
 ```
 
 I then checked ExpansionHunter accuracy as measured by concordance with the true genotypes from the Synthetic Diploid Benchmark:
 
 <img width="836" alt="image" src="https://github.com/bw2/bw2.github.io/assets/6240170/167255dc-3f5d-431f-b878-09aa8fdaac63">
 
-The blue line represents the calls with adjacent loci, and is slightly lower - indiciating that including adjacent loci leads to **slightly reduced** accuracy overall. 
+The blue line represents the calls with adjacent loci, and is slightly lower - suggesting that specifying adjacent loci **slightly reduced** concordance with the truth set. 
 
-To look a this is more detail, we can compare the per-locus genotyping errors when running ExpansionHunter with vs. without adjacent loci. 
-Here genotyping error at a locus is measured as the total difference between the true allele size and ExpansionHunter's estimated allele size for allele1 + allele2.
+More detailed stats are below, where genotyping error at a locus is defined as the total difference between the true allele size and ExpansionHunter's estimated allele size for allele1 + allele2.
 
 ```
 40,423 out of 48,042 (84.1%) loci:  genotype error didn't change when running ExpansionHunter with vs. without adjacent loci.
 ---
-3,622 out of 48,042 ( 7.5%) loci: allele1 + allele2 genotype error decreased by at least 1 repeats when using adjacent loci.
-3,995 out of 48,042 ( 8.3%) loci: allele1 + allele2 genotype error INCREASED by at least 1 repeats when using adjacent loci.
----
-2,375 out of 48,042 ( 4.9%) loci: allele1 + allele2 genotype error decreased by at least 2 repeats when using adjacent loci.
-2,113 out of 48,042 ( 4.4%) loci: allele1 + allele2 genotype error INCREASED by at least 2 repeats when using adjacent loci.
----
 1,881 out of 48,042 ( 3.9%) loci: allele1 + allele2 genotype error decreased by at least 3 repeats when using adjacent loci.
 1,258 out of 48,042 ( 2.6%) loci: allele1 + allele2 genotype error INCREASED by at least 3 repeats when using adjacent loci.
----
-1,644 out of 48,042 ( 3.4%) loci: allele1 + allele2 genotype error decreased by at least 4 repeats when using adjacent loci.
-  974 out of 48,042 ( 2.0%) loci: allele1 + allele2 genotype error INCREASED by at least 4 repeats when using adjacent loci.
 ---
 1,434 out of 48,042 ( 3.0%) loci: allele1 + allele2 genotype error decreased by at least 5 repeats when using adjacent loci.
   777 out of 48,042 ( 1.6%) loci: allele1 + allele2 genotype error INCREASED by at least 5 repeats when using adjacent loci.
 ```
 
 These proportions between the number of loci where errors increased vs. decreased stay approximately the same even when I prefilter to alleles that have the highest genotype 
-quality scores (Q > 0.8) in all cases (ie. when called with and without adjacent repeats).
+quality scores (Q > 0.8), or those that only have trinucleotide motifs. 
 
+#### Manual review of read visualizations
+
+I then looked at REViewer images for 100 loci where adding adjacent repeats changed the genotype by 3 or more repeats total. 
+At each locus, I compared two images: one from running ExpansionHunter with adjacent repeats specified, and one without adjacent repeats. 
+
+The stats for these 100 loci were:
+
+```
+50 loci ended up with low quality genotypes both with and without repeats
+36 loci had higher quality genotypes when adjacent repeats were specified
+10 loci had lower quality genotypes when adjacent repeats were specified
+ 4 loci were amgibuous
+```
+
+For 20 of these loci, the true genotype from the STR truth set appeared to be incorrect - implying that loci where ExpansionHunter genotypes significantly differ with vs. without adjacent repeats are enriched for assembly errors or cell line mutations in the CHM1-CHM13 synthetic diploid. 
+
+The 200 REViewer images for these 100 loci can be viewed here:
+
+[link]
 
 ### Conclusions
 
-- Adding adjacent loci significantly improves performance for ~4% of loci and significantly degrades performance for ~2% of loci. 
 - For ~85% of loci, adding adjacent loci has no effect on the results.
+- Adding adjacent loci significantly improves performance for ~4% of loci.
+- After manual review of images at loci where concordance with the true genotype appears to drop if adjacent repeats are specified, that these are likely errors in the truth set genotype, and actually support the use of adjacent repeats.
 - Based on this, it makes sense to add adjacent loci only for a small subset of loci and only after confirming that this improves accuracy.
 - Since REViewer can phase reads across adjacent loci, they can also be useful for loci where phased genotypes are of interest. 
 
