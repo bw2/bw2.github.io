@@ -1,0 +1,3884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="width=device-width, initial-scale=1" charset="utf-8" name="viewport" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/se/jq-3.3.1/jszip-2.5.0/dt-1.10.20/b-1.6.1/b-colvis-1.6.1/b-flash-1.6.1/b-html5-1.6.1/b-print-1.6.1/datatables.min.css"/>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/se/jq-3.3.1/jszip-2.5.0/dt-1.10.20/b-1.6.1/b-colvis-1.6.1/b-flash-1.6.1/b-html5-1.6.1/b-print-1.6.1/datatables.min.js"></script>
+
+    <link rel="icon" href="favicon.png" type="image/x-icon"/>
+
+    <title>Adjacent Loci</title>
+    <style>
+        .dt-buttons {
+            margin-top: 15px !important;
+        }
+        .keyboard-shortcut {
+            border-color: rgba(0, 0, 0, 0.55);
+            border-style: solid;
+            border-width: 1px;
+            border-radius: 5px;
+            padding: 1px 4px 2px;
+            margin-left: 0.5em;
+            color: rgba(0, 0, 0, 0.55);
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body style="overflow-x: scroll">
+    <div class="ui stackable grid">
+        <div class="row"></div>
+        <div class="row">
+            <div class="one wide column"></div>
+            <div class="fourteen wide column">
+                
+                <div id="data-table-container" style="width:100%">
+                    <table id="data-table" class="ui celled table">
+                        <thead>
+                            <tr>
+                                <th style="cursor: pointer; min-width:20px">#</th>
+                                <th style="cursor: pointer">Path</th>
+                                
+                                    <th style="cursor: pointer; min-width: 100%">
+                                        Verdict
+                                    </th>
+                                
+                                
+                            </tr>
+                        </thead>
+                        
+                            <tr>
+                                
+                                    <td><span class="keyboard-shortcut">1</span></td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link1" href="page_1-100351973-100352003-GT_expansion_hunter.html">
+                                        1-100351973-100352003-GT_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td><span class="keyboard-shortcut">2</span></td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link2" href="page_1-100351973-100352003-GT_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        1-100351973-100352003-GT_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td><span class="keyboard-shortcut">3</span></td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link3" href="page_1-112387957-112387963-GA_expansion_hunter.html">
+                                        1-112387957-112387963-GA_expansion_hunter
+                                    </a>
+                                </td>
+                                <td>
+                                    both genotypes bad
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td><span class="keyboard-shortcut">4</span></td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link4" href="page_1-112387957-112387963-GA_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        1-112387957-112387963-GA_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td><span class="keyboard-shortcut">5</span></td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link5" href="page_1-113863906-113863928-AT_expansion_hunter.html">
+                                        1-113863906-113863928-AT_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td><span class="keyboard-shortcut">6</span></td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link6" href="page_1-113863906-113863928-AT_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        1-113863906-113863928-AT_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td><span class="keyboard-shortcut">7</span></td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link7" href="page_1-14997204-14997256-ATTT_expansion_hunter.html">
+                                        1-14997204-14997256-ATTT_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        worse with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td><span class="keyboard-shortcut">8</span></td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link8" href="page_1-14997204-14997256-ATTT_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        1-14997204-14997256-ATTT_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        worse with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td><span class="keyboard-shortcut">9</span></td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link9" href="page_1-152234005-152234017-TA_expansion_hunter.html">
+                                        1-152234005-152234017-TA_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>10.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link10" href="page_1-152234005-152234017-TA_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        1-152234005-152234017-TA_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>11.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link11" href="page_1-182299870-182299880-GA_expansion_hunter.html">
+                                        1-182299870-182299880-GA_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        ambiguous
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>12.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link12" href="page_1-182299870-182299880-GA_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        1-182299870-182299880-GA_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        ambiguous
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>13.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link13" href="page_1-182299959-182299984-GGGAG_expansion_hunter.html">
+                                        1-182299959-182299984-GGGAG_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>14.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link14" href="page_1-182299959-182299984-GGGAG_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        1-182299959-182299984-GGGAG_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>15.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link15" href="page_1-200276766-200276802-GA_expansion_hunter.html">
+                                        1-200276766-200276802-GA_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>16.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link16" href="page_1-200276766-200276802-GA_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        1-200276766-200276802-GA_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>17.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link17" href="page_1-204693060-204693088-GA_expansion_hunter.html">
+                                        1-204693060-204693088-GA_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>18.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link18" href="page_1-204693060-204693088-GA_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        1-204693060-204693088-GA_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>19.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link19" href="page_1-217306375-217306419-ATCT_expansion_hunter.html">
+                                        1-217306375-217306419-ATCT_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        worse with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>20.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link20" href="page_1-217306375-217306419-ATCT_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        1-217306375-217306419-ATCT_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        worse with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>21.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link21" href="page_1-22006716-22006743-AAT_expansion_hunter.html">
+                                        1-22006716-22006743-AAT_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>22.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link22" href="page_1-22006716-22006743-AAT_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        1-22006716-22006743-AAT_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>23.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link23" href="page_1-222689569-222689581-TA_expansion_hunter.html">
+                                        1-222689569-222689581-TA_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        ambiguous
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>24.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link24" href="page_1-222689569-222689581-TA_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        1-222689569-222689581-TA_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        ambiguous
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>25.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link25" href="page_1-225964593-225964603-TA_expansion_hunter.html">
+                                        1-225964593-225964603-TA_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>26.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link26" href="page_1-225964593-225964603-TA_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        1-225964593-225964603-TA_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>27.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link27" href="page_1-228892052-228892061-TTA_expansion_hunter.html">
+                                        1-228892052-228892061-TTA_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>28.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link28" href="page_1-228892052-228892061-TTA_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        1-228892052-228892061-TTA_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>29.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link29" href="page_1-248578999-248579043-AC_expansion_hunter.html">
+                                        1-248578999-248579043-AC_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>30.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link30" href="page_1-248578999-248579043-AC_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        1-248578999-248579043-AC_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>31.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link31" href="page_1-26595384-26595432-CCCTGC_expansion_hunter.html">
+                                        1-26595384-26595432-CCCTGC_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        worse with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>32.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link32" href="page_1-26595384-26595432-CCCTGC_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        1-26595384-26595432-CCCTGC_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        worse with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>33.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link33" href="page_1-30972447-30972472-GAAGA_expansion_hunter.html">
+                                        1-30972447-30972472-GAAGA_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>34.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link34" href="page_1-30972447-30972472-GAAGA_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        1-30972447-30972472-GAAGA_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>35.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link35" href="page_1-34942028-34942068-GATA_expansion_hunter.html">
+                                        1-34942028-34942068-GATA_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>36.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link36" href="page_1-34942028-34942068-GATA_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        1-34942028-34942068-GATA_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>37.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link37" href="page_1-46540379-46540429-CA_expansion_hunter.html">
+                                        1-46540379-46540429-CA_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>38.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link38" href="page_1-46540379-46540429-CA_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        1-46540379-46540429-CA_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>39.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link39" href="page_1-60085710-60085726-AT_expansion_hunter.html">
+                                        1-60085710-60085726-AT_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        worse with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>40.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link40" href="page_1-60085710-60085726-AT_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        1-60085710-60085726-AT_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        worse with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>41.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link41" href="page_1-67786935-67786985-TG_expansion_hunter.html">
+                                        1-67786935-67786985-TG_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>42.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link42" href="page_1-67786935-67786985-TG_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        1-67786935-67786985-TG_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>43.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link43" href="page_1-68664206-68664236-AC_expansion_hunter.html">
+                                        1-68664206-68664236-AC_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>44.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link44" href="page_1-68664206-68664236-AC_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        1-68664206-68664236-AC_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>45.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link45" href="page_1-72012816-72012830-AC_expansion_hunter.html">
+                                        1-72012816-72012830-AC_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        worse with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>46.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link46" href="page_1-72012816-72012830-AC_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        1-72012816-72012830-AC_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        worse with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>47.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link47" href="page_1-82163900-82163948-AATA_expansion_hunter.html">
+                                        1-82163900-82163948-AATA_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>48.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link48" href="page_1-82163900-82163948-AATA_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        1-82163900-82163948-AATA_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>49.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link49" href="page_1-89776233-89776257-GATA_expansion_hunter.html">
+                                        1-89776233-89776257-GATA_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>50.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link50" href="page_1-89776233-89776257-GATA_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        1-89776233-89776257-GATA_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>51.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link51" href="page_10-108465707-108465747-TAAA_expansion_hunter.html">
+                                        10-108465707-108465747-TAAA_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>52.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link52" href="page_10-108465707-108465747-TAAA_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        10-108465707-108465747-TAAA_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>53.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link53" href="page_10-114303-114323-TTCT_expansion_hunter.html">
+                                        10-114303-114323-TTCT_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>54.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link54" href="page_10-114303-114323-TTCT_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        10-114303-114323-TTCT_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>55.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link55" href="page_10-124470648-124470681-AAC_expansion_hunter.html">
+                                        10-124470648-124470681-AAC_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>56.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link56" href="page_10-124470648-124470681-AAC_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        10-124470648-124470681-AAC_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>57.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link57" href="page_10-21227711-21227768-TTC_expansion_hunter.html">
+                                        10-21227711-21227768-TTC_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>58.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link58" href="page_10-21227711-21227768-TTC_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        10-21227711-21227768-TTC_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>59.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link59" href="page_10-34261781-34261825-AAAG_expansion_hunter.html">
+                                        10-34261781-34261825-AAAG_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>60.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link60" href="page_10-34261781-34261825-AAAG_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        10-34261781-34261825-AAAG_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>61.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link61" href="page_10-3736241-3736285-CA_expansion_hunter.html">
+                                        10-3736241-3736285-CA_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>62.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link62" href="page_10-3736241-3736285-CA_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        10-3736241-3736285-CA_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>63.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link63" href="page_10-68639466-68639490-TAT_expansion_hunter.html">
+                                        10-68639466-68639490-TAT_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>64.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link64" href="page_10-68639466-68639490-TAT_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        10-68639466-68639490-TAT_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>65.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link65" href="page_11-109151642-109151663-CTCTCTC_expansion_hunter.html">
+                                        11-109151642-109151663-CTCTCTC_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>66.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link66" href="page_11-109151642-109151663-CTCTCTC_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        11-109151642-109151663-CTCTCTC_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>67.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link67" href="page_11-112105120-112105152-AG_expansion_hunter.html">
+                                        11-112105120-112105152-AG_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>68.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link68" href="page_11-112105120-112105152-AG_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        11-112105120-112105152-AG_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>69.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link69" href="page_11-120644059-120644081-GA_expansion_hunter.html">
+                                        11-120644059-120644081-GA_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>70.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link70" href="page_11-120644059-120644081-GA_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        11-120644059-120644081-GA_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>71.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link71" href="page_11-123105353-123105385-TCCC_expansion_hunter.html">
+                                        11-123105353-123105385-TCCC_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        worse with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>72.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link72" href="page_11-123105353-123105385-TCCC_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        11-123105353-123105385-TCCC_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        worse with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>73.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link73" href="page_11-25413725-25413739-AT_expansion_hunter.html">
+                                        11-25413725-25413739-AT_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>74.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link74" href="page_11-25413725-25413739-AT_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        11-25413725-25413739-AT_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>75.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link75" href="page_11-41680695-41680711-TA_expansion_hunter.html">
+                                        11-41680695-41680711-TA_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>76.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link76" href="page_11-41680695-41680711-TA_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        11-41680695-41680711-TA_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>77.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link77" href="page_11-48254906-48254942-TG_expansion_hunter.html">
+                                        11-48254906-48254942-TG_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>78.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link78" href="page_11-48254906-48254942-TG_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        11-48254906-48254942-TG_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>79.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link79" href="page_11-56689772-56689782-AT_expansion_hunter.html">
+                                        11-56689772-56689782-AT_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>80.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link80" href="page_11-56689772-56689782-AT_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        11-56689772-56689782-AT_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>81.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link81" href="page_11-76849050-76849066-GCTT_expansion_hunter.html">
+                                        11-76849050-76849066-GCTT_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>82.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link82" href="page_11-76849050-76849066-GCTT_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        11-76849050-76849066-GCTT_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>83.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link83" href="page_11-91546496-91546538-AT_expansion_hunter.html">
+                                        11-91546496-91546538-AT_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>84.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link84" href="page_11-91546496-91546538-AT_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        11-91546496-91546538-AT_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>85.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link85" href="page_12-17678858-17678860-AG_expansion_hunter.html">
+                                        12-17678858-17678860-AG_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>86.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link86" href="page_12-17678858-17678860-AG_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        12-17678858-17678860-AG_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>87.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link87" href="page_12-3890775-3890799-AG_expansion_hunter.html">
+                                        12-3890775-3890799-AG_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>88.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link88" href="page_12-3890775-3890799-AG_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        12-3890775-3890799-AG_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>89.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link89" href="page_12-41411048-41411068-AT_expansion_hunter.html">
+                                        12-41411048-41411068-AT_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>90.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link90" href="page_12-41411048-41411068-AT_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        12-41411048-41411068-AT_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>91.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link91" href="page_12-48864428-48864436-GT_expansion_hunter.html">
+                                        12-48864428-48864436-GT_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>92.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link92" href="page_12-48864428-48864436-GT_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        12-48864428-48864436-GT_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>93.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link93" href="page_12-93484961-93484979-AC_expansion_hunter.html">
+                                        12-93484961-93484979-AC_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>94.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link94" href="page_12-93484961-93484979-AC_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        12-93484961-93484979-AC_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>95.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link95" href="page_13-102475559-102475586-TAA_expansion_hunter.html">
+                                        13-102475559-102475586-TAA_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>96.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link96" href="page_13-102475559-102475586-TAA_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        13-102475559-102475586-TAA_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>97.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link97" href="page_13-38754858-38754903-GAT_expansion_hunter.html">
+                                        13-38754858-38754903-GAT_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>98.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link98" href="page_13-38754858-38754903-GAT_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        13-38754858-38754903-GAT_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>99.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link99" href="page_13-59177656-59177712-AGGG_expansion_hunter.html">
+                                        13-59177656-59177712-AGGG_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>100.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link100" href="page_13-59177656-59177712-AGGG_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        13-59177656-59177712-AGGG_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>101.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link101" href="page_13-64517615-64517623-AT_expansion_hunter.html">
+                                        13-64517615-64517623-AT_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>102.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link102" href="page_13-64517615-64517623-AT_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        13-64517615-64517623-AT_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>103.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link103" href="page_13-67424504-67424526-CT_expansion_hunter.html">
+                                        13-67424504-67424526-CT_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>104.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link104" href="page_13-67424504-67424526-CT_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        13-67424504-67424526-CT_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>105.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link105" href="page_13-68967948-68967974-TC_expansion_hunter.html">
+                                        13-68967948-68967974-TC_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>106.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link106" href="page_13-68967948-68967974-TC_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        13-68967948-68967974-TC_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>107.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link107" href="page_13-87532867-87532901-TA_expansion_hunter.html">
+                                        13-87532867-87532901-TA_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>108.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link108" href="page_13-87532867-87532901-TA_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        13-87532867-87532901-TA_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>109.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link109" href="page_14-19872531-19872545-TA_expansion_hunter.html">
+                                        14-19872531-19872545-TA_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        worse with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>110.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link110" href="page_14-19872531-19872545-TA_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        14-19872531-19872545-TA_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        worse with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>111.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link111" href="page_14-39860449-39860467-AC_expansion_hunter.html">
+                                        14-39860449-39860467-AC_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>112.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link112" href="page_14-39860449-39860467-AC_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        14-39860449-39860467-AC_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>113.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link113" href="page_14-79110762-79110794-TTTA_expansion_hunter.html">
+                                        14-79110762-79110794-TTTA_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        ambiguous
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>114.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link114" href="page_14-79110762-79110794-TTTA_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        14-79110762-79110794-TTTA_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        ambiguous
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>115.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link115" href="page_14-85775768-85775788-AT_expansion_hunter.html">
+                                        14-85775768-85775788-AT_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        worse with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>116.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link116" href="page_14-85775768-85775788-AT_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        14-85775768-85775788-AT_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        worse with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>117.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link117" href="page_14-88089695-88089743-AAG_expansion_hunter.html">
+                                        14-88089695-88089743-AAG_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>118.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link118" href="page_14-88089695-88089743-AAG_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        14-88089695-88089743-AAG_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>119.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link119" href="page_14-94145378-94145398-TC_expansion_hunter.html">
+                                        14-94145378-94145398-TC_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>120.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link120" href="page_14-94145378-94145398-TC_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        14-94145378-94145398-TC_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>121.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link121" href="page_15-40353110-40353146-GT_expansion_hunter.html">
+                                        15-40353110-40353146-GT_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>122.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link122" href="page_15-40353110-40353146-GT_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        15-40353110-40353146-GT_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>123.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link123" href="page_15-47913472-47913496-AAAG_expansion_hunter.html">
+                                        15-47913472-47913496-AAAG_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>124.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link124" href="page_15-47913472-47913496-AAAG_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        15-47913472-47913496-AAAG_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>125.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link125" href="page_15-48993100-48993142-GT_expansion_hunter.html">
+                                        15-48993100-48993142-GT_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>126.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link126" href="page_15-48993100-48993142-GT_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        15-48993100-48993142-GT_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>127.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link127" href="page_15-49181049-49181065-TCCC_expansion_hunter.html">
+                                        15-49181049-49181065-TCCC_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>128.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link128" href="page_15-49181049-49181065-TCCC_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        15-49181049-49181065-TCCC_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>129.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link129" href="page_15-95446800-95446832-AT_expansion_hunter.html">
+                                        15-95446800-95446832-AT_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>130.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link130" href="page_15-95446800-95446832-AT_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        15-95446800-95446832-AT_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>131.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link131" href="page_16-60884902-60884912-TA_expansion_hunter.html">
+                                        16-60884902-60884912-TA_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>132.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link132" href="page_16-60884902-60884912-TA_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        16-60884902-60884912-TA_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>133.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link133" href="page_16-63084043-63084067-TG_expansion_hunter.html">
+                                        16-63084043-63084067-TG_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>134.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link134" href="page_16-63084043-63084067-TG_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        16-63084043-63084067-TG_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>135.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link135" href="page_16-82374343-82374387-TC_expansion_hunter.html">
+                                        16-82374343-82374387-TC_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>136.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link136" href="page_16-82374343-82374387-TC_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        16-82374343-82374387-TC_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>137.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link137" href="page_16-86132382-86132434-AC_expansion_hunter.html">
+                                        16-86132382-86132434-AC_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>138.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link138" href="page_16-86132382-86132434-AC_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        16-86132382-86132434-AC_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>139.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link139" href="page_17-1690667-1690709-GAGGGA_expansion_hunter.html">
+                                        17-1690667-1690709-GAGGGA_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>140.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link140" href="page_17-1690667-1690709-GAGGGA_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        17-1690667-1690709-GAGGGA_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>141.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link141" href="page_17-2889863-2889889-TA_expansion_hunter.html">
+                                        17-2889863-2889889-TA_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>142.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link142" href="page_17-2889863-2889889-TA_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        17-2889863-2889889-TA_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>143.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link143" href="page_17-37260249-37260297-AT_expansion_hunter.html">
+                                        17-37260249-37260297-AT_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>144.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link144" href="page_17-37260249-37260297-AT_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        17-37260249-37260297-AT_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>145.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link145" href="page_17-38842839-38842855-TCTA_expansion_hunter.html">
+                                        17-38842839-38842855-TCTA_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>146.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link146" href="page_17-38842839-38842855-TCTA_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        17-38842839-38842855-TCTA_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>147.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link147" href="page_17-41158501-41158576-GAA_expansion_hunter.html">
+                                        17-41158501-41158576-GAA_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>148.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link148" href="page_17-41158501-41158576-GAA_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        17-41158501-41158576-GAA_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>149.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link149" href="page_17-54885499-54885531-AC_expansion_hunter.html">
+                                        17-54885499-54885531-AC_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>150.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link150" href="page_17-54885499-54885531-AC_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        17-54885499-54885531-AC_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>151.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link151" href="page_17-57699044-57699074-GT_expansion_hunter.html">
+                                        17-57699044-57699074-GT_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>152.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link152" href="page_17-57699044-57699074-GT_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        17-57699044-57699074-GT_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>153.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link153" href="page_18-35157151-35157181-GGGAA_expansion_hunter.html">
+                                        18-35157151-35157181-GGGAA_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>154.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link154" href="page_18-35157151-35157181-GGGAA_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        18-35157151-35157181-GGGAA_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>155.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link155" href="page_18-61347287-61347319-AT_expansion_hunter.html">
+                                        18-61347287-61347319-AT_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        worse with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>156.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link156" href="page_18-61347287-61347319-AT_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        18-61347287-61347319-AT_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        worse with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>157.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link157" href="page_18-79969259-79969295-GAGG_expansion_hunter.html">
+                                        18-79969259-79969295-GAGG_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>158.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link158" href="page_18-79969259-79969295-GAGG_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        18-79969259-79969295-GAGG_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>159.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link159" href="page_19-33837975-33837995-AT_expansion_hunter.html">
+                                        19-33837975-33837995-AT_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>160.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link160" href="page_19-33837975-33837995-AT_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        19-33837975-33837995-AT_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>161.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link161" href="page_19-43693288-43693336-TG_expansion_hunter.html">
+                                        19-43693288-43693336-TG_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>162.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link162" href="page_19-43693288-43693336-TG_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        19-43693288-43693336-TG_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>163.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link163" href="page_19-48655234-48655252-AG_expansion_hunter.html">
+                                        19-48655234-48655252-AG_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>164.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link164" href="page_19-48655234-48655252-AG_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        19-48655234-48655252-AG_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>165.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link165" href="page_19-55998672-55998702-TA_expansion_hunter.html">
+                                        19-55998672-55998702-TA_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>166.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link166" href="page_19-55998672-55998702-TA_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        19-55998672-55998702-TA_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>167.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link167" href="page_2-156489687-156489723-CTTC_expansion_hunter.html">
+                                        2-156489687-156489723-CTTC_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>168.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link168" href="page_2-156489687-156489723-CTTC_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        2-156489687-156489723-CTTC_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>169.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link169" href="page_2-194246377-194246403-CT_expansion_hunter.html">
+                                        2-194246377-194246403-CT_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>170.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link170" href="page_2-194246377-194246403-CT_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        2-194246377-194246403-CT_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>171.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link171" href="page_2-208534158-208534192-AT_expansion_hunter.html">
+                                        2-208534158-208534192-AT_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>172.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link172" href="page_2-208534158-208534192-AT_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        2-208534158-208534192-AT_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>173.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link173" href="page_2-4566087-4566127-TCTA_expansion_hunter.html">
+                                        2-4566087-4566127-TCTA_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        worse with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>174.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link174" href="page_2-4566087-4566127-TCTA_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        2-4566087-4566127-TCTA_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        worse with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>175.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link175" href="page_2-50219985-50219993-TA_expansion_hunter.html">
+                                        2-50219985-50219993-TA_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>176.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link176" href="page_2-50219985-50219993-TA_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        2-50219985-50219993-TA_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>177.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link177" href="page_2-76332672-76332698-GA_expansion_hunter.html">
+                                        2-76332672-76332698-GA_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>178.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link178" href="page_2-76332672-76332698-GA_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        2-76332672-76332698-GA_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>179.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link179" href="page_2-76332712-76332722-GA_expansion_hunter.html">
+                                        2-76332712-76332722-GA_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>180.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link180" href="page_2-76332712-76332722-GA_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        2-76332712-76332722-GA_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>181.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link181" href="page_20-35539253-35539269-TA_expansion_hunter.html">
+                                        20-35539253-35539269-TA_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>182.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link182" href="page_20-35539253-35539269-TA_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        20-35539253-35539269-TA_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>183.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link183" href="page_20-58688638-58688648-GT_expansion_hunter.html">
+                                        20-58688638-58688648-GT_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>184.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link184" href="page_20-58688638-58688648-GT_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        20-58688638-58688648-GT_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>185.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link185" href="page_21-16448773-16448797-AC_expansion_hunter.html">
+                                        21-16448773-16448797-AC_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>186.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link186" href="page_21-16448773-16448797-AC_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        21-16448773-16448797-AC_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>187.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link187" href="page_22-30308324-30308328-TGCC_expansion_hunter.html">
+                                        22-30308324-30308328-TGCC_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        ambiguous
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>188.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link188" href="page_22-30308324-30308328-TGCC_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        22-30308324-30308328-TGCC_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        ambiguous
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>189.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link189" href="page_3-128469988-128470004-CACCCAGC_expansion_hunter.html">
+                                        3-128469988-128470004-CACCCAGC_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>190.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link190" href="page_3-128469988-128470004-CACCCAGC_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        3-128469988-128470004-CACCCAGC_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>191.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link191" href="page_3-158518095-158518127-GT_expansion_hunter.html">
+                                        3-158518095-158518127-GT_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>192.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link192" href="page_3-158518095-158518127-GT_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        3-158518095-158518127-GT_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>193.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link193" href="page_3-21065811-21065839-CA_expansion_hunter.html">
+                                        3-21065811-21065839-CA_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>194.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link194" href="page_3-21065811-21065839-CA_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        3-21065811-21065839-CA_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        better with adjacent repeats
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>195.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link195" href="page_3-98563084-98563096-TTTC_expansion_hunter.html">
+                                        3-98563084-98563096-TTTC_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>196.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link196" href="page_3-98563084-98563096-TTTC_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        3-98563084-98563096-TTTC_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>197.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link197" href="page_4-11055139-11055194-TTTAT_expansion_hunter.html">
+                                        4-11055139-11055194-TTTAT_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>198.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link198" href="page_4-11055139-11055194-TTTAT_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        4-11055139-11055194-TTTAT_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>199.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link199" href="page_4-8717608-8717620-AAAG_expansion_hunter.html">
+                                        4-8717608-8717620-AAAG_expansion_hunter
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>200.</td>
+                                
+                                <td style="padding-right: 50px;">
+                                    <a id="link200" href="page_4-8717608-8717620-AAAG_expansion_hunter_with_adjacent_loci__max_dist_50bp.html">
+                                        4-8717608-8717620-AAAG_expansion_hunter_with_adjacent_loci__max_dist_50bp
+                                    </a>
+                                </td>
+                                
+                                    <td>
+                                        both genotypes bad
+                                    </td>
+                                
+                                    
+                                
+                                
+                            </tr>
+                        
+                    </table>
+                </div>
+            </div>
+            <div class="one wide column"></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+      // data table
+      $('#data-table').DataTable({
+        stateSave: true,
+        stateDuration: 0,
+        paging: false,
+        dom: 'tB',
+        columnDefs: [
+          {
+            targets: [0, 1],
+            orderSequence: ['asc','desc'],
+          },
+          {
+            targets: '_all',
+            orderSequence: ['desc','asc'], // default to descending sort first
+          },
+        ],
+        responsive: true,
+        buttons: ['copy', 'csv', 'excel', 'pdf'],
+      })
+
+      //keyboard shortcuts
+      $(document).keypress((event) => {
+        const key = parseInt(String.fromCharCode(event.keyCode))
+        if (key > 0 && key < 10 && key <= parseInt("200")) {
+          $("#link" + key)[0].click();
+        }
+      })
+    </script>
+</body>
+</html>
