@@ -186,9 +186,7 @@ The 200 REViewer images for these 100 loci can be viewed here:
 ### Conclusions
 
 - For ~85% of loci, adding adjacent loci has no effect on the results.
-- Adding adjacent loci significantly improves performance for ~4% of loci.
-- After manual review of images at loci where concordance with the true genotype appears to drop if adjacent repeats are specified, that these are likely errors in the truth set genotype, and actually support the use of adjacent repeats.
-- Based on this, it makes sense to add adjacent loci only for a small subset of loci and only after confirming that this improves accuracy.
-- Since REViewer can phase reads across adjacent loci, they can also be useful for loci where phased genotypes are of interest. 
+- Adding adjacent repeats changed the ExpansionHunter genotype by 3 or more repeats in ~7% of loci.
+- Adding adjacent repeats in these 7% of loci clearly leads to better genotype quality in 36% of them, and worse genotype quality in 10% of them (based on manual review). 
 
 
