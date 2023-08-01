@@ -18,9 +18,14 @@ for markdown_file_path in glob.glob("*.md"):
     output_prefix = re.sub(".md$", "", markdown_file_path)
 
     date_posted = output_prefix.split("-")
-    year = int(date_posted[0])
-    month = int(date_posted[1])
-    date = int(date_posted[2])
+
+    try:
+        year = int(date_posted[0])
+        month = int(date_posted[1])
+        date = int(date_posted[2])
+    except Exception as e:
+        print(f"Skipping .md file: {markdown_file_path}")
+        continue
 
     output_html_path = f"{output_prefix}.html"
 

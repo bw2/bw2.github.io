@@ -207,49 +207,41 @@
         </p>
         <table>
             <tr>
+                <th>Step</th>
+                <th>Description</th>
+                <th nowrap># of variant loci</th>
+                <th nowrap># of alleles</th>
+                <th nowrap style="text-align: right">% of alleles</th>
+            </tr>
+            <tr>
                 <td><i></i></td>
-                <td>Start with all high-confidence variants in the SynDip Benchmark</td>
+                <td>Start with all variants in SynDip high-confidence regions</td>
                 <td nowrap style="text-align: right">4,081,549</td>
                 <td nowrap style="text-align: right">4,148,417</td>
-                <td nowrap style="text-align: right">all</td>
+                <td nowrap style="text-align: right">100.0 %</td>
             </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <th></th>
-                <th>Filtering Step</th>
-                <th nowrap># of Variant Loci</th>
-                <th nowrap># of Alleles</th>
-                <th nowrap style="text-align: right">% of Alleles</th>
-            </tr>
-
             <tr>
                 <td><i>1</i></td>
                 <td>Keep only insertions and deletions</td>
                 <td nowrap style="text-align: right">518,285</td>
-                <td nowrap style="text-align: right">562,891</td>
-                <td nowrap style="text-align: right">13.6 %</td>
+                <td nowrap style="text-align: right">535,354</td>
+                <td nowrap style="text-align: right">13.0 %</td>
             </tr>
 
             <tr>
                 <td><i>2</i></td>
-                <td>Identify the subset that are STR expansions or contractions - requiring that they:
+                <td>Keep only insertions and deletions that represent <br />
+                    TR expansions or contractions based on these criteria:
                     <ul>
                         <li style="margin: 2px">span ≥ 9 base pairs</li>
                         <li style="margin: 2px">have ≥ 3 repeats</li>
-                        <li style="margin: 2px">have motif size ≥ 2bp</li>
-                        <li style="margin: 2px">are pure (i.e. no interruptions)</li>
+                        <li style="margin: 2px">motif size ≥ 2bp and ≤ 50bp</li>
                     </ul>
                 </td>
-                <td nowrap style="text-align: right">146,566</td>
-                <td nowrap style="text-align: right">177,320</td>
-                <td nowrap style="text-align: right">4.3 %</td>
+                <td nowrap style="text-align: right">157,601</td>
+                <td nowrap style="text-align: right">188,730</td>
+                <td nowrap style="text-align: right">4.5 %</td>
             </tr>
-
         </table>
         The following example demonstrates how step 2 filters insertions and deletions to the subset that are STR
         expansions or contractions:<br/>
@@ -299,48 +291,44 @@
             checking that, in each variant, at least one allele exactly matches the T2T reference sequence.</p>
 
         <table>
+            <tr>
+                <th>Step</th>
+                <th>Description</th>
+                <th nowrap># failed</th>
+                <th nowrap style="text-align: right">% failed</th>
+            </tr>
             <tr style="margin-bottom: 30px;">
                 <td></td>
-                <td>Start with all STR variants found in SynDip</td>
-                <td nowrap style="text-align: right">146,566</td>
+                <td>Start with all 157,601 TR variants</td>
+                <td nowrap style="text-align: right"></td>
                 <td nowrap style="text-align: right"></td>
             </tr>
             <tr>
-                <td colspan="4"></td>
-            </tr>
-            <tr>
-                <th></th>
-                <th>Validation Step</th>
-                <th nowrap># Failed</th>
-                <th nowrap style="text-align: right">% Failed</th>
-            </tr>
-
-            <tr>
                 <td><i>1</i></td>
                 <td>Lift over STR variant to the CHM13 telomere-to-telomere (T2T) reference</td>
-                <td nowrap style="text-align: right">1,497</td>
+                <td nowrap style="text-align: right">1,999</td>
                 <td nowrap style="text-align: right">1.0 %</td>
             </tr>
 
             <tr>
                 <td><i>2</i></td>
                 <td>Check that at least one allele exactly matches the T2T reference sequence</td>
-                <td nowrap style="text-align: right">291</td>
+                <td nowrap style="text-align: right">347</td>
                 <td nowrap style="text-align: right">0.2 %</td>
             </tr>
 
             <tr>
                 <td><i>3</i></td>
                 <td>Lift back over to hg38</td>
-                <td nowrap style="text-align: right">43</td>
-                <td nowrap style="text-align: right">0.03 %</td>
+                <td nowrap style="text-align: right">46</td>
+                <td nowrap style="text-align: right">0.0 %</td>
             </tr>
 
             <tr>
                 <td><i>4</i></td>
-                <td>Check that the variant's position didn't change after hg38 ⇒ T2T ⇒ hg38 liftover</td>
-                <td nowrap style="text-align: right">0</td>
-                <td nowrap style="text-align: right">0 %</td>
+                <td>Check if the variant's position changed after hg38 ⇒ T2T ⇒ hg38 liftover</td>
+                <td nowrap style="text-align: right">1</td>
+                <td nowrap style="text-align: right">0.0 %</td>
             </tr>
         </table>
 
@@ -570,6 +558,53 @@
         </ul>
         <p>This suggests that, for samples like CHM1-CHM13 that have European ancestry, nearly all true STR variants can
             be found by using a large enough STR catalog generated from the reference genome. </p>
+
+        <h4>Indel types within the Synthetic Diploid Benchmark</h4>
+        <table>
+            <tr>
+                <th>Description</th>
+                <th nowrap># of indels</th>
+                <th nowrap>% of indels</th>
+            </tr>
+            <tr>
+                <td>All indels within SynDip high-confidence regions</td>
+                <td nowrap style="text-align: right">518,285</td>
+                <td nowrap style="text-align: right">100.0 %</td>
+            </tr>
+            <tr>
+                <td colspan="3"> </td>
+            </tr>
+            <tr>
+                <td>TRs that passed TR filter criteria</td>
+                <td nowrap style="text-align: right">518,285</td>
+                <td nowrap style="text-align: right">100.0 %</td>
+            </tr>
+            <tr>
+                <td>Homopolymers</td>
+                <td nowrap style="text-align: right">193,899 + 2,559</td>
+                <td nowrap style="text-align: right">37.4 % + 0.5</td>
+            </tr>
+            <tr>
+                <td>Doesn't have 3 repeats of a motif: No repeats found</td>
+                <td nowrap style="text-align: right">82,200</td>
+                <td nowrap style="text-align: right">15.9 %</td>
+            </tr>
+            <tr>
+                <td>Doesn't have 3 repeats of a motif: Only two repeats found</td>
+                <td nowrap style="text-align: right">56,309</td>
+                <td nowrap style="text-align: right">10.9 %</td>
+            </tr>
+            <tr>
+                <td>Repeat motif is larger than 50bp</td>
+                <td nowrap style="text-align: right">11,690 + 1,729</td>
+                <td nowrap style="text-align: right">2.3 %</td>
+            </tr>
+            <tr>
+                <td>Ends in partial repeat</td>
+                <td nowrap style="text-align: right">2,715</td>
+                <td nowrap style="text-align: right">0.5 %</td>
+            </tr>
+        </table>
 
 
         <h4>Limitations of existing STR catalogs</h4>

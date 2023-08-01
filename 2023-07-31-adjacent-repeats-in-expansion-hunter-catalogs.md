@@ -1,3 +1,5 @@
+## How adjacent repeats in ExpansionHunter catalogs affect genotype quality
+
 ExpansionHunter has a unique feature where, for each locus, users can optionally specify any adjacent STR loci, and ExpansionHunter will genotype both the main locus and these adjacent loci together. For example, for the Huntington's disease locus, rather than just specifying the CAG repeat as in:
 ```
 {
