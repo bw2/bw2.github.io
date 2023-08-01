@@ -185,8 +185,8 @@ The 200 REViewer images for these 100 loci can be viewed here:
 
 ### Conclusions
 
-- For ~85% of loci, adding adjacent loci has no effect on the results.
-- Adding adjacent repeats changed the ExpansionHunter genotype by 3 or more repeats in ~7% of loci.
-- Adding adjacent repeats in these 7% of loci clearly leads to better genotype quality in 36% of them, and worse genotype quality in 10% of them (based on manual review). 
+- For ~85% of loci, adding adjacent loci didn't change the ExpansionHunter genotype.
+- In ~7% of loci, adding adjacent repeats changed the ExpansionHunter genotype by 3 or more repeats.
+- For these 7% of loci, introducing adjacent repeats improved the genotype quality for 36% of loci, and reduced the genotype quality in 10% of loci (based on manual review). 
 
 
