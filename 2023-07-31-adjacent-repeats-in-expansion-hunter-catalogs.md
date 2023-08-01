@@ -148,20 +148,20 @@ The blue line represents the calls with adjacent loci, and is slightly lower - i
 
 Comparing the results in other ways:
 ```
-3,622 out of 48,042 ( 7.5%) loci: error decreased by at least 1 repeats when using adjacent loci.
-3,995 out of 48,042 ( 8.3%) loci: error INCREASED by at least 1 repeats when using adjacent loci.
+3,622 out of 48,042 ( 7.5%) loci: allele1 + allele2 genotype error decreased by at least 1 repeats when using adjacent loci.
+3,995 out of 48,042 ( 8.3%) loci: allele1 + allele2 genotype error INCREASED by at least 1 repeats when using adjacent loci.
 ---
-2,375 out of 48,042 ( 4.9%) loci: error decreased by at least 2 repeats when using adjacent loci.
-2,113 out of 48,042 ( 4.4%) loci: error INCREASED by at least 2 repeats when using adjacent loci.
+2,375 out of 48,042 ( 4.9%) loci: allele1 + allele2 genotype error decreased by at least 2 repeats when using adjacent loci.
+2,113 out of 48,042 ( 4.4%) loci: allele1 + allele2 genotype error INCREASED by at least 2 repeats when using adjacent loci.
 ---
-1,881 out of 48,042 ( 3.9%) loci: error decreased by at least 3 repeats when using adjacent loci.
-1,258 out of 48,042 ( 2.6%) loci: error INCREASED by at least 3 repeats when using adjacent loci.
+1,881 out of 48,042 ( 3.9%) loci: allele1 + allele2 genotype error decreased by at least 3 repeats when using adjacent loci.
+1,258 out of 48,042 ( 2.6%) loci: allele1 + allele2 genotype error INCREASED by at least 3 repeats when using adjacent loci.
 ---
-1,644 out of 48,042 ( 3.4%) loci: error decreased by at least 4 repeats when using adjacent loci.
-  974 out of 48,042 ( 2.0%) loci: error INCREASED by at least 4 repeats when using adjacent loci.
+1,644 out of 48,042 ( 3.4%) loci: allele1 + allele2 genotype error decreased by at least 4 repeats when using adjacent loci.
+  974 out of 48,042 ( 2.0%) loci: allele1 + allele2 genotype error INCREASED by at least 4 repeats when using adjacent loci.
 ---
-1,434 out of 48,042 ( 3.0%) loci: error decreased by at least 5 repeats when using adjacent loci.
-  777 out of 48,042 ( 1.6%) loci: error INCREASED by at least 5 repeats when using adjacent loci.
+1,434 out of 48,042 ( 3.0%) loci: allele1 + allele2 genotype error decreased by at least 5 repeats when using adjacent loci.
+  777 out of 48,042 ( 1.6%) loci: allele1 + allele2 genotype error INCREASED by at least 5 repeats when using adjacent loci.
 ```
 
 
