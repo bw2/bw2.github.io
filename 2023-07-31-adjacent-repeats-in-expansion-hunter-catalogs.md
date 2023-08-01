@@ -71,7 +71,7 @@ optional arguments:
                         Path where to write the output catalog. If not specified, it will be based on the input catalog path
 ```
 
-### TR Truth Set analysis
+### TR truth set analysis
 
 To test this script and evaluate how adjacent loci affect ExpansionHunter accuracy, I used the TR truth set from 
 [Insights from a genome-wide truth set of tandem repeat variation by Ben Weisburd, Grace Tiao, Heidi L. Rehm
@@ -96,7 +96,7 @@ python3 -u -m str_analysis.add_adjacent_loci_to_expansion_hunter_catalog \
     truth_set_variant_catalog.json
 ```
 
-#### Stats on adjacent loci
+### Stats on adjacent loci
 
 ```
  48,391 out of 146,318 loci (33.1%) were found to have 1 or more adjacent repeats
@@ -133,7 +133,7 @@ The most common configuration was a pair of adjacent loci (the main locus + a ne
        4 out of  215,309 reference regions ( 0.0%) had adjacent repeats count:  10 reference regions with different motifs
 ```
 
-#### ExpansionHunter performance with vs. without specifying adjacent loci 
+### ExpansionHunter performance with vs. without specifying adjacent loci 
 
 To evaluate how ExpansionHunter performance changes when specifying adjacent loci, I followed these steps:
 - selected the 48,391 (33%) of loci where at least 1 adjacent repeat was added by the `add_adjacent_loci_to_expansion_hunter_catalog` script.
@@ -165,7 +165,7 @@ More detailed stats are below, where genotyping error at a locus is defined as t
 These proportions between the number of loci where errors increased vs. decreased stay approximately the same even when I prefilter to alleles that have the highest genotype 
 quality scores (Q > 0.8), or those that only have trinucleotide motifs. 
 
-#### Manual review of read visualizations
+### Manual review of read visualizations
 
 I then looked at REViewer images for 100 loci where adding adjacent repeats changed the genotype by 3 or more repeats total. 
 For this, I selected loci where adjacent repeats didn't have any spacers between them, since on initial review, it looked like these were the loci where genotype quality 

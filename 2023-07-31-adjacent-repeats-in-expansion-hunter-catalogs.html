@@ -138,7 +138,7 @@ optional arguments:
                         Path where to write the output catalog. If not specified, it will be based on the input catalog path
  </code></pre>
 
-<h3>TR Truth Set analysis</h3>
+<h3>TR truth set analysis</h3>
 <p>To test this script and evaluate how adjacent loci affect ExpansionHunter accuracy, I used the TR truth set from 
 <a href="https://www.biorxiv.org/content/10.1101/2023.05.05.539588v1">Insights from a genome-wide truth set of tandem repeat variation by Ben Weisburd, Grace Tiao, Heidi L. Rehm
 bioRxiv 2023.05.05.539588</a>. </p>
@@ -160,7 +160,7 @@ python3 -u -m str_analysis.add_adjacent_loci_to_expansion_hunter_catalog \
     truth_set_variant_catalog.json
  </code></pre>
 
-<h4>Stats on adjacent loci</h4>
+<h3>Stats on adjacent loci</h3>
 <pre><code> 
  48,391 out of 146,318 loci (33.1%) were found to have 1 or more adjacent repeats
  </code></pre>
@@ -196,7 +196,7 @@ python3 -u -m str_analysis.add_adjacent_loci_to_expansion_hunter_catalog \
        4 out of  215,309 reference regions ( 0.0%) had adjacent repeats count:  10 reference regions with different motifs
  </code></pre>
 
-<h4>ExpansionHunter performance with vs. without specifying adjacent loci</h4>
+<h3>ExpansionHunter performance with vs. without specifying adjacent loci</h3>
 <p>To evaluate how ExpansionHunter performance changes when specifying adjacent loci, I followed these steps:
 - selected the 48,391 (33%) of loci where at least 1 adjacent repeat was added by the <code>add_adjacent_loci_to_expansion_hunter_catalog</code> script.
 - generated 2 ExpansionHunter variant catalogs for these loci: one that included adjacent repeats, and one that didn't.
@@ -221,7 +221,7 @@ python3 -u -m str_analysis.add_adjacent_loci_to_expansion_hunter_catalog \
 
 <p>These proportions between the number of loci where errors increased vs. decreased stay approximately the same even when I prefilter to alleles that have the highest genotype 
 quality scores (Q &gt; 0.8), or those that only have trinucleotide motifs. </p>
-<h4>Manual review of read visualizations</h4>
+<h3>Manual review of read visualizations</h3>
 <p>I then looked at REViewer images for 100 loci where adding adjacent repeats changed the genotype by 3 or more repeats total. 
 For this, I selected loci where adjacent repeats didn't have any spacers between them, since on initial review, it looked like these were the loci where genotype quality 
 improved most clearly after the addition of adjacent repeats. 
