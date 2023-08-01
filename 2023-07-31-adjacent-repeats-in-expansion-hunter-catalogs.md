@@ -166,6 +166,8 @@ quality scores (Q > 0.8), or those that only have trinucleotide motifs.
 #### Manual review of read visualizations
 
 I then looked at REViewer images for 100 loci where adding adjacent repeats changed the genotype by 3 or more repeats total. 
+For this, I selected loci where adjacent repeats didn't have any spacers between them, since on initial review, it looked like these were the loci where genotype quality 
+improved most clearly after the addition of adjacent repeats. 
 At each locus, I compared two images: one from running ExpansionHunter with adjacent repeats specified, and one without adjacent repeats. 
 
 The stats for these 100 loci were:
@@ -181,7 +183,7 @@ For 20 of these loci, the true genotype from the STR truth set appeared to be in
 
 The 200 REViewer images for these 100 loci can be viewed here:
 
-[link]
+[[200 REViewer images](https://bw2.github.io/2023-07-31_adjacent_repeats_flipbook/)]
 
 ### Conclusions
 
