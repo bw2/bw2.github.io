@@ -30,7 +30,13 @@ the user can also specify the adjacent CCG repeat (source:
 }
 ```
 
-To understand how specifying adjacent loci affects ExpansionHunter performance, I wrote a script that adds adjacent loci to existing STR catalogs. It takes any ExpansionHunter variant catalog (such as the Illumina [catalog of 174k polymorphic loci](https://github.com/Illumina/RepeatCatalogs)) as well as a catalog of all STRs in the reference genome (such as those produced by running TandemRepeatFinder) and outputs a new catalog after adding adjacent repeats that are within a user-defined distance from the original locus. This script is called `add_adjacent_loci_to_expansion_hunter_catalog` and is available in the [str_analysis](https://github.com/broadinstitute/str-analysis) repo:
+To understand how specifying adjacent loci affects ExpansionHunter performance, I wrote a script that adds adjacent 
+loci to existing STR catalogs. It takes any ExpansionHunter variant catalog (such as the 
+Illumina [catalog of 174k polymorphic loci](https://github.com/Illumina/RepeatCatalogs)) as well as a catalog of all 
+STRs in the reference genome (such as those produced by running TandemRepeatFinder) and outputs a new catalog after 
+adding adjacent repeats that are within a user-defined distance from the original locus. This script is 
+called `add_adjacent_loci_to_expansion_hunter_catalog` and is available in the 
+[str_analysis](https://github.com/broadinstitute/str-analysis) repo:
 
 ```
 usage: add_adjacent_loci_to_expansion_hunter_catalog.py [-h] --ref-fasta REF_FASTA [-d MAX_DISTANCE_BETWEEN_ADJACENT_REPEATS]
@@ -79,19 +85,20 @@ bioRxiv 2023.05.05.539588](https://www.biorxiv.org/content/10.1101/2023.05.05.53
 
 This truth set contains 146,640 TR loci that are polymorphic in the CHM1-CHM13 synthetic diploid sample. 
 
-First, I ran `add_adjacent_loci_to_expansion_hunter_catalog` on the ExpansionHunter catalog for these 146,640 truth set loci.  
-For the reference TR catalog, I used 
+I selected 139,578 TR loci that had only pure repeats, converted them to ExpansionHunter catalog format, and then  
+ran `add_adjacent_loci_to_expansion_hunter_catalog` on it. For the reference TR catalog argument, I used 
 ```
 gs://str-truth-set/hg38/ref/other/repeat_specs_GRCh38_without_mismatches.including_homopolymers.sorted.at_least_9bp.bed.gz
 ```
 which contains 4,484,369 pure TR loci detected in hg38 by TandemRepeatFinder.  
-Also, I set `max-distance-between-adjacent-repeats = 10` because I found little difference in performance when I increased this arg. 
+Also, I arbitrarily set `max-distance-between-adjacent-repeats = 10` 
+
 The full command line was:
 ```
 python3 -u -m str_analysis.add_adjacent_loci_to_expansion_hunter_catalog \
 	--source-of-adjacent-loci ./ref/other/repeat_specs_GRCh38_without_mismatches.including_homopolymers.sorted.at_least_9bp.bed.gz \
 	--ref-fasta ./ref/hg38.fa \
-        --max-distance-between-adjacent-repeats 10 \
+    --max-distance-between-adjacent-repeats 10 \
 	--add-extra-fields \
     truth_set_variant_catalog.json
 ```
@@ -136,8 +143,8 @@ The most common configuration was a pair of adjacent loci (the main locus + a ne
 ### ExpansionHunter results with vs. without specifying adjacent loci 
 
 To evaluate how ExpansionHunter performance changes when specifying adjacent loci, I followed these steps:
-- selected the 48,391 (33%) of loci where at least 1 adjacent repeat was added by the `add_adjacent_loci_to_expansion_hunter_catalog` script.
-- generated 2 ExpansionHunter variant catalogs for these loci: one that included adjacent repeats, and one that didn't.
+- selected the 48,391 (33%) of loci that had at least 1 adjacent repeat within 10bp of the main locus
+- generated 2 ExpansionHunter variant catalogs for these loci: one that included adjacent repeats, and one that didn't
 - looked at differences in ExpansionHunter calls between these 2 catalogs
 
 ```
