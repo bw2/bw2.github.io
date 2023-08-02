@@ -133,7 +133,7 @@ The most common configuration was a pair of adjacent loci (the main locus + a ne
        4 out of  215,309 reference regions ( 0.0%) had adjacent repeats count:  10 reference regions with different motifs
 ```
 
-### ExpansionHunter performance with vs. without specifying adjacent loci 
+### ExpansionHunter results with vs. without specifying adjacent loci 
 
 To evaluate how ExpansionHunter performance changes when specifying adjacent loci, I followed these steps:
 - selected the 48,391 (33%) of loci where at least 1 adjacent repeat was added by the `add_adjacent_loci_to_expansion_hunter_catalog` script.
@@ -144,6 +144,25 @@ To evaluate how ExpansionHunter performance changes when specifying adjacent loc
  40,127 out of 48,042 (83.5%) loci had the same exact genotype with vs. without specifying adjacent loci
 ```
 
+Then, for a rough estimate of how different distances (ie. spacer sizes) between adjacent repeats affected results, I 
+regenerated the catalog with `--max-distance-between-adjacent-repeats 50`, and calculated - for loci where adjacent repeats are within some max distance from each other, 
+what fraction of them ends up with different ExpansionHunter genotypes with vs. without specifying these adjacent repeat(s)? The results were:
+
+```
+Max dist =  0bp: Genotype didn't change for 11,918 out of 15,083 (79.0%) loci
+Max dist = 10bp: Genotype didn't change for 30,495 out of 36,224 (84.2%) loci
+Max dist = 20bp: Genotype didn't change for 41,863 out of 48,928 (85.6%) loci
+Max dist = 30bp: Genotype didn't change for 48,826 out of 56,669 (86.2%) loci
+Max dist = 40bp: Genotype didn't change for 53,727 out of 62,035 (86.6%) loci
+Max dist = 50bp: Genotype didn't change for 57,854 out of 66,523 (87.0%) loci
+```
+
+As a graph, they look like:
+![image](https://github.com/bw2/bw2.github.io/assets/6240170/d052657f-6bd4-4b67-8bfe-bfb93a4bd02f)
+
+
+### Concordance with truth set genotypes
+
 I then checked ExpansionHunter accuracy as measured by concordance with the true genotypes from the Synthetic Diploid Benchmark:
 
 <img width="836" alt="image" src="https://github.com/bw2/bw2.github.io/assets/6240170/167255dc-3f5d-431f-b878-09aa8fdaac63">
@@ -153,7 +172,7 @@ The blue line represents the calls with adjacent loci, and is slightly lower - s
 More detailed stats are below, where genotyping error at a locus is defined as the total difference between the true allele size and ExpansionHunter's estimated allele size for allele1 + allele2.
 
 ```
-40,423 out of 48,042 (84.1%) loci:  genotype error didn't change when running ExpansionHunter with vs. without adjacent loci.
+40,423 out of 48,042 (84.1%) loci: genotype error didn't change when running ExpansionHunter with vs. without adjacent loci.
 ---
 1,881 out of 48,042 ( 3.9%) loci: allele1 + allele2 genotype error decreased by at least 3 repeats when using adjacent loci.
 1,258 out of 48,042 ( 2.6%) loci: allele1 + allele2 genotype error INCREASED by at least 3 repeats when using adjacent loci.
@@ -168,8 +187,8 @@ quality scores (Q > 0.8), or those that only have trinucleotide motifs.
 ### Manual review of read visualizations
 
 I then looked at REViewer images for 100 loci where adding adjacent repeats changed the genotype by 3 or more repeats total. 
-For this, I selected loci where adjacent repeats didn't have any spacers between them, since on initial review, it looked like these were the loci where genotype quality 
-improved most clearly after the addition of adjacent repeats. 
+For this, I selected only pure repeat loci where adjacent repeats didn't have any spacers between them (since on initial review, it looked like these were the loci where genotype quality 
+improved most clearly after the addition of adjacent repeats). 
 At each locus, I compared two images: one from running ExpansionHunter with adjacent repeats specified, and one without adjacent repeats. 
 
 The stats for these 100 loci were:
