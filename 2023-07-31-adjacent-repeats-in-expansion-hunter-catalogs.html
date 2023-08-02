@@ -189,21 +189,23 @@ Also, I arbitrarily set <code>max-distance-between-adjacent-repeats = 10</code> 
 <p>To evaluate how ExpansionHunter performance changes when specifying adjacent loci, I followed these steps:
 - selected the 48,391 (33%) of loci that had at least 1 adjacent repeat within 10bp of the main locus
 - generated 2 ExpansionHunter variant catalogs for these loci: one that included adjacent repeats, and one that didn't
-- looked at differences in ExpansionHunter calls between these 2 catalogs</p>
+- looked at differences in ExpansionHunter calls at each locus when using one vs. the other catalog</p>
 <pre><code> 40,127 out of 48,042 (83.5%) loci had the same exact genotype with vs. without specifying adjacent loci</code></pre>
 
-<p>Then, for a rough estimate of how different distances (ie. spacer sizes) between adjacent repeats affected results, I 
-regenerated the catalog with <code>--max-distance-between-adjacent-repeats 50</code>, and calculated - for loci where adjacent repeats are within some max distance from each other, 
-what fraction of them ends up with different ExpansionHunter genotypes with vs. without specifying these adjacent repeat(s)? The results were:</p>
-<pre><code>Max dist =  0bp: Genotype didn't change for 11,918 out of 15,083 (79.0%) loci
-Max dist = 10bp: Genotype didn't change for 30,495 out of 36,224 (84.2%) loci
-Max dist = 20bp: Genotype didn't change for 41,863 out of 48,928 (85.6%) loci
-Max dist = 30bp: Genotype didn't change for 48,826 out of 56,669 (86.2%) loci
-Max dist = 40bp: Genotype didn't change for 53,727 out of 62,035 (86.6%) loci
-Max dist = 50bp: Genotype didn't change for 57,854 out of 66,523 (87.0%) loci</code></pre>
+<p>Then, as a rough estimate of how different distances (ie. spacer sizes) between adjacent repeats affected results, I 
+recomputed adjacent loci after setting <code>--max-distance-between-adjacent-repeats 50</code>. Then, I ran ExpansionHunter on this catalog, and checked:
+for loci where adjacent repeats are closer together than some max distance, 
+what fraction has different ExpansionHunter genotypes with vs. without specifying these adjacent repeat(s):</p>
+<pre><code>Distance between adjacent repeats =  0bp: Genotype didn't change for 11,918 out of 15,083 (79.0%) loci
+Distance between adjacent repeats <= 10bp: Genotype didn't change for 30,495 out of 36,224 (84.2%) loci
+Distance between adjacent repeats <= 20bp: Genotype didn't change for 41,863 out of 48,928 (85.6%) loci
+Distance between adjacent repeats <= 30bp: Genotype didn't change for 48,826 out of 56,669 (86.2%) loci
+Distance between adjacent repeats <= 40bp: Genotype didn't change for 53,727 out of 62,035 (86.6%) loci
+Distance between adjacent repeats <= 50bp: Genotype didn't change for 57,854 out of 66,523 (87.0%) loci</code></pre>
 
 <p>When plotted, they look like:  </p>
 <p><img width="598" alt="image" src="https://github.com/bw2/bw2.github.io/assets/6240170/8f7c22d1-a2ec-4b76-8fdd-dd66b569b60a"></p>
+<p>This suggests that there's not much point in setting <code>--max-distance-between-adjacent-repeats</code> to values larger than ~20bp.</p>
 <h3>Concordance with truth set genotypes</h3>
 <p>I then checked ExpansionHunter accuracy as measured by concordance with the true genotypes from the Synthetic Diploid Benchmark:</p>
 <p><img width="836" alt="image" src="https://github.com/bw2/bw2.github.io/assets/6240170/167255dc-3f5d-431f-b878-09aa8fdaac63"></p>
