@@ -145,23 +145,24 @@ The most common configuration was a pair of adjacent loci (the main locus + a ne
 To evaluate how ExpansionHunter performance changes when specifying adjacent loci, I followed these steps:
 - selected the 48,391 (33%) of loci that had at least 1 adjacent repeat within 10bp of the main locus
 - generated 2 ExpansionHunter variant catalogs for these loci: one that included adjacent repeats, and one that didn't
-- looked at differences in ExpansionHunter calls between these 2 catalogs
+- looked at differences in ExpansionHunter calls at each locus when using one vs. the other catalog
 
 ```
  40,127 out of 48,042 (83.5%) loci had the same exact genotype with vs. without specifying adjacent loci
 ```
 
-Then, for a rough estimate of how different distances (ie. spacer sizes) between adjacent repeats affected results, I 
-regenerated the catalog with `--max-distance-between-adjacent-repeats 50`, and calculated - for loci where adjacent repeats are within some max distance from each other, 
-what fraction of them ends up with different ExpansionHunter genotypes with vs. without specifying these adjacent repeat(s)? The results were:
+Then, as a rough estimate of how different distances (ie. spacer sizes) between adjacent repeats affected results, I 
+recomputed adjacent loci after setting `--max-distance-between-adjacent-repeats 50`. Then, I ran ExpansionHunter on this catalog, and checked:
+for loci where adjacent repeats are closer together than some max distance, 
+what fraction has different ExpansionHunter genotypes with vs. without specifying these adjacent repeat(s):
 
 ```
-Max dist =  0bp: Genotype didn't change for 11,918 out of 15,083 (79.0%) loci
-Max dist = 10bp: Genotype didn't change for 30,495 out of 36,224 (84.2%) loci
-Max dist = 20bp: Genotype didn't change for 41,863 out of 48,928 (85.6%) loci
-Max dist = 30bp: Genotype didn't change for 48,826 out of 56,669 (86.2%) loci
-Max dist = 40bp: Genotype didn't change for 53,727 out of 62,035 (86.6%) loci
-Max dist = 50bp: Genotype didn't change for 57,854 out of 66,523 (87.0%) loci
+Distance between adjacent repeats =  0bp: Genotype didn't change for 11,918 out of 15,083 (79.0%) loci
+Distance between adjacent repeats <= 10bp: Genotype didn't change for 30,495 out of 36,224 (84.2%) loci
+Distance between adjacent repeats <= 20bp: Genotype didn't change for 41,863 out of 48,928 (85.6%) loci
+Distance between adjacent repeats <= 30bp: Genotype didn't change for 48,826 out of 56,669 (86.2%) loci
+Distance between adjacent repeats <= 40bp: Genotype didn't change for 53,727 out of 62,035 (86.6%) loci
+Distance between adjacent repeats <= 50bp: Genotype didn't change for 57,854 out of 66,523 (87.0%) loci
 ```
 
 When plotted, they look like:  
