@@ -157,8 +157,9 @@ Max dist = 40bp: Genotype didn't change for 53,727 out of 62,035 (86.6%) loci
 Max dist = 50bp: Genotype didn't change for 57,854 out of 66,523 (87.0%) loci
 ```
 
-As a graph, they look like:
-![image](https://github.com/bw2/bw2.github.io/assets/6240170/d052657f-6bd4-4b67-8bfe-bfb93a4bd02f)
+When plotted, they look like:
+![image](https://github.com/bw2/bw2.github.io/assets/6240170/44e7b171-261b-48b8-88e3-b5df190af019)
+
 
 
 ### Concordance with truth set genotypes
