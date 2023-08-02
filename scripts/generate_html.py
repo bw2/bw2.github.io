@@ -41,7 +41,7 @@ for markdown_file_path in glob.glob("*.md"):
 
     # handle literal / code blocks
     markdown_file_contents = markdown_file_contents.replace("<code> </code>", "")
-    markdown_file_contents = re.sub("```\n*(.*?)\n*```", r"<pre><code> \1 </code></pre>", markdown_file_contents, flags=re.DOTALL)
+    markdown_file_contents = re.sub("```\n*(.*?)\n*```", r"<pre><code>\1</code></pre>", markdown_file_contents, flags=re.DOTALL)
     markdown_html = markdown.markdown(markdown_file_contents)
 
     blog_post_template = blog_post_template2 if year > 2022 else blog_post_template1

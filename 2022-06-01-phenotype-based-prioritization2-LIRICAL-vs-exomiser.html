@@ -145,10 +145,10 @@ NOTE: Here rank=200 is again a special value that means the correct gene wasn't 
 <p><strong>LIRICAL and Exomiser Command-Lines</strong></p>
 <p>The analysis above prefiltered variants to gnomAD v3.1 popmax allele frequencies &lt; 0.01. It then used these commands to run LIRICAL and Exomiser: </p>
 <p><em>Exomiser command</em> used default settings as defined in this <a href="https://github.com/broadinstitute/phenotype-driven-analysis/blob/60813ce4a1dcdb87aa6f686338bdf56785118362/exomiser/docker/exome_analysis.yml">exome_analysis.yml</a>:</p>
-<pre><code> java -jar exomiser-cli-13.0.1.jar --analysis exome_analysis.yml </code></pre>
+<pre><code>java -jar exomiser-cli-13.0.1.jar --analysis exome_analysis.yml</code></pre>
 
 <p><em>LIRICAL command</em> used LIRICAL v1.3.4 with default settings except --min-diff 200 tells LIRICAL to output up to 200 results regardless of their post-test probability.</p>
-<pre><code> java -jar LIRICAL.jar P -p *.phenopacket.json -e /exomiser-cli-13.0.0/2109_hg38 --tsv --mindiff 200 </code></pre>
+<pre><code>java -jar LIRICAL.jar P -p *.phenopacket.json -e /exomiser-cli-13.0.0/2109_hg38 --tsv --mindiff 200</code></pre>
 
 <hr />
 <p><strong>Extra Plots</strong> </p>
