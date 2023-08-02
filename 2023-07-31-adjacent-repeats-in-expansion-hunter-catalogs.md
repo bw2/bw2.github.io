@@ -219,6 +219,7 @@ The 200 REViewer images for these 100 loci can be viewed here:  [[200 REViewer i
 
 - For ~85% of loci, adding adjacent loci didn't change the ExpansionHunter genotype.
 - In ~7% of loci, adding adjacent repeats changed the ExpansionHunter genotype by 3 or more repeats.
-- For these 7% of loci, introducing adjacent repeats improved the genotype quality for 36% of loci, and reduced the genotype quality in 10% of loci (based on manual review). 
+- For these 7% of loci, introducing adjacent repeats improved the genotype quality for 36% of loci, and reduced the genotype quality in 10% of loci (based on manual review).
+- When running `add_adjacent_loci_to_expansion_hunter_catalog.py`, 20 is a reasonable value for `--max-distance-between-adjacent-repeats`.
 
 
