@@ -157,8 +157,9 @@ Max dist = 40bp: Genotype didn't change for 53,727 out of 62,035 (86.6%) loci
 Max dist = 50bp: Genotype didn't change for 57,854 out of 66,523 (87.0%) loci
 ```
 
-When plotted, they look like:
-![image](https://github.com/bw2/bw2.github.io/assets/6240170/44e7b171-261b-48b8-88e3-b5df190af019)
+When plotted, they look like:  
+
+<img width="598" alt="image" src="https://github.com/bw2/bw2.github.io/assets/6240170/8f7c22d1-a2ec-4b76-8fdd-dd66b569b60a">
 
 
 
