@@ -67,7 +67,7 @@
   <div class="ui ten wide column" style="font-size:16px; color: rgba(0,0,0,.87); padding-top:35px;">
 
     <h2>How adjacent repeats in ExpansionHunter catalogs affect genotype quality</h2>
-<p>ExpansionHunter has a unique feature where, for each locus, users can optionally specify any adjacent STR loci, and ExpansionHunter will genotype both the main locus and these adjacent loci together. For example, for the Huntington's disease locus, rather than just specifying the CAG repeat as in:</p>
+<p>ExpansionHunter has a unique feature where, for each locus, users can optionally specify adjacent STR loci, and ExpansionHunter will genotype both the main locus and the adjacent loci together. For example, for the Huntington's disease locus, rather than just specifying the CAG repeat as in:</p>
 <pre><code>{
     "LocusId": "HTT",
     "LocusStructure": "(CAG)*",
@@ -238,7 +238,8 @@ At each locus, I compared two images: one from running ExpansionHunter with adja
 <ul>
 <li>For ~85% of loci, adding adjacent loci didn't change the ExpansionHunter genotype.</li>
 <li>In ~7% of loci, adding adjacent repeats changed the ExpansionHunter genotype by 3 or more repeats.</li>
-<li>For these 7% of loci, introducing adjacent repeats improved the genotype quality for 36% of loci, and reduced the genotype quality in 10% of loci (based on manual review). </li>
+<li>For these 7% of loci, introducing adjacent repeats improved the genotype quality for 36% of loci, and reduced the genotype quality in 10% of loci (based on manual review).</li>
+<li>When running <code>add_adjacent_loci_to_expansion_hunter_catalog.py</code>, 20 is a reasonable value for <code>--max-distance-between-adjacent-repeats</code>.</li>
 </ul>
 
     <br />
