@@ -169,6 +169,7 @@ When plotted, they look like:
 
 <img width="598" alt="image" src="https://github.com/bw2/bw2.github.io/assets/6240170/8f7c22d1-a2ec-4b76-8fdd-dd66b569b60a">
 
+This suggests that there's not much point in setting `--max-distance-between-adjacent-repeats` to values larger than ~20bp.
 
 
 ### Concordance with truth set genotypes
