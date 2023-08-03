@@ -199,8 +199,8 @@ The 200 REViewer images for these 100 loci can be viewed here:  [[200 REViewer i
 ### Conclusions
 
 - It's possible to find/add adjacent repeats within 50bp of the main locus for 30 to 50% of loci in any given STR catalog. 
-- Within those 30 to 50%, adjacent repeats only make a difference (ie. change ExpansionHunter's genotype) in 10% to 20% of polymorphic loci.
-- For 2.5% of polymorphic loci (2,360 + 1,321 out of 146,318), adding adjacent repeats changed the ExpansionHunter genotype by 3 or more repeats.
+- Within those 30 to 50%, adjacent repeats only make a difference (ie. change ExpansionHunter's genotype) in 10% to 20% of loci.
+- Overall, for 2.5% of polymorphic loci (2,360 + 1,321 out of 146,318), adding adjacent repeats changed the ExpansionHunter genotype by 3 or more repeats.
 - For these 2.5% of loci, introducing adjacent repeats improved the genotype quality for 36% of them, and reduced the genotype quality in 10% of them (based on manual review). For 50% of these loci, the genotype quality remained equally bad with and without adjacent repeats.
 - When running `add_adjacent_loci_to_expansion_hunter_catalog.py`, 20 is a reasonable value for `--max-distance-between-adjacent-repeats`.
 
