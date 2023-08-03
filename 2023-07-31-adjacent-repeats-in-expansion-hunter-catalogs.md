@@ -149,7 +149,7 @@ When plotted, this looks like:
 
 <img width="577" alt="image" src="https://github.com/bw2/bw2.github.io/assets/6240170/449ab132-da02-42aa-a574-52a9c3822345">
 <br />
-    
+<br />
 This suggests that there's not much point in setting `--max-distance-between-adjacent-repeats` to values larger than ~20bp.
 
 
