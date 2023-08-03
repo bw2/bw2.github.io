@@ -149,6 +149,7 @@ When plotted, this looks like:
 
 <img width="577" alt="image" src="https://github.com/bw2/bw2.github.io/assets/6240170/449ab132-da02-42aa-a574-52a9c3822345">
 
+   
 This suggests that there's not much point in setting `--max-distance-between-adjacent-repeats` to values larger than ~20bp.
 
 
@@ -156,20 +157,20 @@ This suggests that there's not much point in setting `--max-distance-between-adj
 
 I then checked ExpansionHunter accuracy as measured by concordance with the true genotypes from the Synthetic Diploid Benchmark:
 
-<img width="836" alt="image" src="https://github.com/bw2/bw2.github.io/assets/6240170/167255dc-3f5d-431f-b878-09aa8fdaac63">
+<img width="851" alt="image" src="https://github.com/bw2/bw2.github.io/assets/6240170/fa58e8d6-e64e-4928-83d7-6232dfdff138">
 
 The blue line represents the calls with adjacent loci, and is slightly lower - suggesting that specifying adjacent loci **slightly reduced** concordance with the truth set. 
 
 More detailed stats are below, where genotyping error at a locus is defined as the total difference between the true allele size and ExpansionHunter's estimated allele size for allele1 + allele2.
 
 ```
-40,423 out of 48,042 (84.1%) loci: genotype error didn't change when running ExpansionHunter with vs. without adjacent loci.
+57,854 out of 66,523 (  87%) loci: genotype error didn't change when running ExpansionHunter with vs. without adjacent loci.
 ---
-1,881 out of 48,042 ( 3.9%) loci: allele1 + allele2 genotype error decreased by at least 3 repeats when using adjacent loci.
-1,258 out of 48,042 ( 2.6%) loci: allele1 + allele2 genotype error INCREASED by at least 3 repeats when using adjacent loci.
+   926 out of 66,523 ( 1.4%) loci: allele1 + allele2 genotype error decreased by at least 3 repeats when using adjacent loci.
+   603 out of 66,523 ( 0.9%) loci: allele1 + allele2 genotype error INCREASED by at least 3 repeats when using adjacent loci.
 ---
-1,434 out of 48,042 ( 3.0%) loci: allele1 + allele2 genotype error decreased by at least 5 repeats when using adjacent loci.
-  777 out of 48,042 ( 1.6%) loci: allele1 + allele2 genotype error INCREASED by at least 5 repeats when using adjacent loci.
+   714 out of 66,523 ( 1.1%) loci: allele1 + allele2 genotype error decreased by at least 5 repeats when using adjacent loci.
+   367 out of 66,523 ( 0.6%) loci: allele1 + allele2 genotype error INCREASED by at least 5 repeats when using adjacent loci.
 ```
 
 These proportions between the number of loci where errors increased vs. decreased stay approximately the same even when I prefilter to alleles that have the highest genotype 
@@ -197,10 +198,10 @@ The 200 REViewer images for these 100 loci can be viewed here:  [[200 REViewer i
 
 ### Conclusions
 
-- It's possible to find/add adjacent repeats for 30 to 50% of loci in any given STR catalog.
-- Within those 30 to 50%, adjacent repeats only make a difference (ie. change ExpansionHunter's genotype) in 5 to 10% of polymorphic loci.
-- In ~7% of loci, specifying adjacent repeats changed the ExpansionHunter genotype by 3 or more repeats.
-- For these 7% of loci, introducing adjacent repeats improved the genotype quality for 36% of loci, and reduced the genotype quality in 10% of loci (based on manual review). For 50% of these loci, the genotype quality remained equally bad with and without adjacent repeats.
+- It's possible to find/add adjacent repeats within 50bp of the main locus for 30 to 50% of loci in any given STR catalog. 
+- Within those 30 to 50%, adjacent repeats only make a difference (ie. change ExpansionHunter's genotype) in 10% to 20% of polymorphic loci.
+- In ~1% of loci, specifying adjacent repeats changed the ExpansionHunter genotype by 3 or more repeats.
+- For these 1% of loci, introducing adjacent repeats improved the genotype quality for 36% of loci, and reduced the genotype quality in 10% of loci (based on manual review). For 50% of these loci, the genotype quality remained equally bad with and without adjacent repeats.
 - When running `add_adjacent_loci_to_expansion_hunter_catalog.py`, 20 is a reasonable value for `--max-distance-between-adjacent-repeats`.
 
 
