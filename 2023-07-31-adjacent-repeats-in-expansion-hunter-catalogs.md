@@ -166,11 +166,11 @@ More detailed stats are below, where genotyping error at a locus is defined as t
 ```
 57,854 out of 66,523 (  87%) loci: genotype error didn't change when running ExpansionHunter with vs. without adjacent loci.
 ---
-   926 out of 66,523 ( 1.4%) loci: allele1 + allele2 genotype error decreased by at least 3 repeats when using adjacent loci.
-   603 out of 66,523 ( 0.9%) loci: allele1 + allele2 genotype error INCREASED by at least 3 repeats when using adjacent loci.
+ 2,360 out of 66,523 ( 3.5%) loci: allele1 + allele2 genotype error decreased by at least 3 repeats when using adjacent loci.
+ 1,321 out of 66,523 ( 2.0%) loci: allele1 + allele2 genotype error INCREASED by at least 3 repeats when using adjacent loci.
 ---
-   714 out of 66,523 ( 1.1%) loci: allele1 + allele2 genotype error decreased by at least 5 repeats when using adjacent loci.
-   367 out of 66,523 ( 0.6%) loci: allele1 + allele2 genotype error INCREASED by at least 5 repeats when using adjacent loci.
+ 1,843 out of 66,523 ( 2.8%) loci: allele1 + allele2 genotype error decreased by at least 5 repeats when using adjacent loci.
+   832 out of 66,523 ( 1.3%) loci: allele1 + allele2 genotype error INCREASED by at least 5 repeats when using adjacent loci.
 ```
 
 These proportions between the number of loci where errors increased vs. decreased stay approximately the same even when I prefilter to alleles that have the highest genotype 
@@ -200,8 +200,8 @@ The 200 REViewer images for these 100 loci can be viewed here:  [[200 REViewer i
 
 - It's possible to find/add adjacent repeats within 50bp of the main locus for 30 to 50% of loci in any given STR catalog. 
 - Within those 30 to 50%, adjacent repeats only make a difference (ie. change ExpansionHunter's genotype) in 10% to 20% of polymorphic loci.
-- In ~1% of polymorphic loci (926+603 out of 146,318), adding adjacent repeats changed the ExpansionHunter genotype by 3 or more repeats.
-- For these 1% of loci, introducing adjacent repeats improved the genotype quality for 36% of them, and reduced the genotype quality in 10% of them (based on manual review). For 50% of these loci, the genotype quality remained equally bad with and without adjacent repeats.
+- For 2.5% of polymorphic loci (2,360 + 1,321 out of 146,318), adding adjacent repeats changed the ExpansionHunter genotype by 3 or more repeats.
+- For these 2.5% of loci, introducing adjacent repeats improved the genotype quality for 36% of them, and reduced the genotype quality in 10% of them (based on manual review). For 50% of these loci, the genotype quality remained equally bad with and without adjacent repeats.
 - When running `add_adjacent_loci_to_expansion_hunter_catalog.py`, 20 is a reasonable value for `--max-distance-between-adjacent-repeats`.
 
 
