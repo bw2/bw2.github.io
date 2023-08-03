@@ -184,7 +184,7 @@ Distance between adjacent repeats <= 50bp: Genotype didn't change for 57,854 out
 <p><img width="577" alt="image" src="https://github.com/bw2/bw2.github.io/assets/6240170/449ab132-da02-42aa-a574-52a9c3822345">
 <br />
 <br />
-This suggests that there's not much point in setting <code>--max-distance-between-adjacent-repeats</code> to values larger than ~20bp.</p>
+This suggests that there's not much point in setting --max-distance-between-adjacent-repeats to values larger than ~20bp.</p>
 <h3>Concordance with truth set genotypes</h3>
 <p>I then checked ExpansionHunter accuracy as measured by concordance with the true genotypes from the Synthetic Diploid Benchmark:</p>
 <p><img width="851" alt="image" src="https://github.com/bw2/bw2.github.io/assets/6240170/fa58e8d6-e64e-4928-83d7-6232dfdff138"></p>
@@ -206,18 +206,18 @@ For this, I selected only pure repeat loci where adjacent repeats didn't have an
 improved most clearly after the addition of adjacent repeats). 
 At each locus, I compared two images: one from running ExpansionHunter with adjacent repeats specified, and one without adjacent repeats. </p>
 <p>The stats for these 100 loci were:</p>
-<pre><code>50 loci ended up with low quality genotypes both with and without repeats
+<pre><code>50 loci had low quality genotypes both with and without repeats
 36 loci had higher quality genotypes when adjacent repeats were specified
 10 loci had lower quality genotypes when adjacent repeats were specified
  4 loci were amgibuous</code></pre>
 
-<p>For 20 of these loci, the true genotype from the STR truth set appeared to be incorrect - implying that loci where ExpansionHunter genotypes significantly differ with vs. without adjacent repeats are enriched for assembly errors or cell line mutations in the CHM1-CHM13 synthetic diploid. </p>
+<p>For 20 loci, the true genotype from the STR truth set appeared to be incorrect - implying that <strong>loci where ExpansionHunter genotypes significantly differ with vs. without adjacent repeats are enriched for assembly errors or cell line mutations in the CHM1-CHM13 synthetic diploid</strong>. </p>
 <p>The 200 REViewer images for these 100 loci can be viewed here:  [<a href="https://bw2.github.io/2023-07-31_adjacent_repeats_flipbook/">200 REViewer images</a>]</p>
 <h3>Conclusions</h3>
 <ul>
 <li>It's possible to find/add adjacent repeats within 50bp of the main locus for 30 to 50% of loci in any given STR catalog. </li>
-<li>Within those 30 to 50%, adjacent repeats only make a difference (ie. change ExpansionHunter's genotype) in 10% to 20% of polymorphic loci.</li>
-<li>For 2.5% of polymorphic loci (2,360 + 1,321 out of 146,318), adding adjacent repeats changed the ExpansionHunter genotype by 3 or more repeats.</li>
+<li>Within those 30 to 50%, adjacent repeats only make a difference (ie. change ExpansionHunter's genotype) in 10% to 20% of loci.</li>
+<li>Overall, for 2.5% of polymorphic loci (2,360 + 1,321 out of 146,318), adding adjacent repeats changed the ExpansionHunter genotype by 3 or more repeats.</li>
 <li>For these 2.5% of loci, introducing adjacent repeats improved the genotype quality for 36% of them, and reduced the genotype quality in 10% of them (based on manual review). For 50% of these loci, the genotype quality remained equally bad with and without adjacent repeats.</li>
 <li>When running <code>add_adjacent_loci_to_expansion_hunter_catalog.py</code>, 20 is a reasonable value for <code>--max-distance-between-adjacent-repeats</code>.</li>
 </ul>
