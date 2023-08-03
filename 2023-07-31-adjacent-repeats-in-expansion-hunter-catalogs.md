@@ -186,7 +186,7 @@ At each locus, I compared two images: one from running ExpansionHunter with adja
 The stats for these 100 loci were:
 
 ```
-50 loci ended up with low quality genotypes both with and without repeats
+50 loci had low quality genotypes both with and without repeats
 36 loci had higher quality genotypes when adjacent repeats were specified
 10 loci had lower quality genotypes when adjacent repeats were specified
  4 loci were amgibuous
