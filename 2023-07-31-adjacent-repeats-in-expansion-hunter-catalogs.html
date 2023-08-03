@@ -99,125 +99,104 @@ Illumina <a href="https://github.com/Illumina/RepeatCatalogs">catalog of 174k po
 STRs in the reference genome (such as those produced by running TandemRepeatFinder) and outputs a new catalog after 
 adding adjacent repeats that are within a user-defined distance from the original locus. This script is 
 called <code>add_adjacent_loci_to_expansion_hunter_catalog</code> and is available in the 
-<a href="https://github.com/broadinstitute/str-analysis">str_analysis</a> repo:</p>
-<pre><code>usage: add_adjacent_loci_to_expansion_hunter_catalog.py [-h] --ref-fasta REF_FASTA [-d MAX_DISTANCE_BETWEEN_ADJACENT_REPEATS]
-                                                        [--max-overlap-between-adjacent-repeats MAX_OVERLAP_BETWEEN_ADJACENT_REPEATS]
-                                                        [--max-total-adjacent-region-size MAX_TOTAL_ADJACENT_REGION_SIZE]
-                                                        --source-of-adjacent-loci SOURCE_OF_ADJACENT_LOCI [--add-extra-info-to-locus-id]
-                                                        [--add-extra-fields] [--output-dir OUTPUT_DIR] [-o OUTPUT_CATALOG]
-                                                        input_catalog_paths [input_catalog_paths ...]
-
-positional arguments:
-  input_catalog_paths   ExpansionHunter catalog json file path. If more than one catalog path is specified, the catalogs will be processed
-                        sequentially, and the output catalog arg will be used as an output filename suffix.
-
-optional arguments:
-  -h, --help            show this help message and exit
-  --ref-fasta REF_FASTA
-                        Reference fasta path
-  -d MAX_DISTANCE_BETWEEN_ADJACENT_REPEATS, --max-distance-between-adjacent-repeats MAX_DISTANCE_BETWEEN_ADJACENT_REPEATS
-                        Loci no more than this many base pairs from each other will be combined into a single locus, including any non-
-                        repetitive bases between them
-  --max-overlap-between-adjacent-repeats MAX_OVERLAP_BETWEEN_ADJACENT_REPEATS
-                        TandemRepeatFinder sometimes outputs loci that overlap by a few base pairs. For ExpansionHunter catalogs that are
-                        based on TandemRepeatFinder output, this controls how slightly overlapping loci are combined
-  --max-total-adjacent-region-size MAX_TOTAL_ADJACENT_REGION_SIZE
-                        The maximum size of the region spanning all adjacent repeats that we will load from the adjacent loci bed file
-  --source-of-adjacent-loci SOURCE_OF_ADJACENT_LOCI
-                        The local or Google Storage (gs://) path of a .bed file that specifies repeat intervals in the reference genome. It
-                        should have 0-based coordinates and the name field (column 4) should contain the repeat motif. This can be a large
-                        catalog of loci generated using TandemRepeatFinder. This .bed file will be used as the source for adjacent loci.
-  --add-extra-info-to-locus-id
-                        Add info about adjacent loci to the locus id in the output variant catalog. This will include the number of adjacent
-                        loci and the max distance between them.
-  --add-extra-fields    Add extra fields to each locus in the output variant catalog that record the number of base pairs between any adjacent
-                        loci and the main locus in an easy-to-parse format
-  --output-dir OUTPUT_DIR
-                        Output directory. If not specified, the input catalog's directory will be used.
-  -o OUTPUT_CATALOG, --output-catalog OUTPUT_CATALOG
-                        Path where to write the output catalog. If not specified, it will be based on the input catalog path</code></pre>
-
+<a href="https://github.com/broadinstitute/str-analysis">str_analysis</a> repo.</p>
 <h3>TR truth set analysis</h3>
 <p>To test this script and evaluate how adjacent loci affect ExpansionHunter accuracy, I used the TR truth set from 
 <a href="https://www.biorxiv.org/content/10.1101/2023.05.05.539588v1">Insights from a genome-wide truth set of tandem repeat variation by Ben Weisburd, Grace Tiao, Heidi L. Rehm
 bioRxiv 2023.05.05.539588</a>. </p>
-<p>This truth set contains 146,640 TR loci that are polymorphic in the CHM1-CHM13 synthetic diploid sample. </p>
-<p>I selected 139,578 TR loci that had only pure repeats, converted them to ExpansionHunter catalog format, and then<br />
-ran <code>add_adjacent_loci_to_expansion_hunter_catalog</code> on it. For the reference TR catalog argument, I used </p>
+<p>This truth set contains 146,318 TR loci that are polymorphic in the CHM1-CHM13 synthetic diploid sample and also present in the hg38 reference.</p>
+<p>I converted these to ExpansionHunter catalog format, and then  ran <code>add_adjacent_loci_to_expansion_hunter_catalog</code> on it. For the reference TR catalog argument, I used </p>
 <pre><code>gs://str-truth-set/hg38/ref/other/repeat_specs_GRCh38_without_mismatches.including_homopolymers.sorted.at_least_9bp.bed.gz</code></pre>
 <p>which contains 4,484,369 pure TR loci detected in hg38 by TandemRepeatFinder.<br />
-Also, I arbitrarily set <code>max-distance-between-adjacent-repeats = 10</code> </p>
+Also, I set the <code>--max-distance-between-adjacent-repeats</code> parameter to 50bp which is 1/3 the read length. </p>
 <p>The full command line was:</p>
 <pre><code>python3 -u -m str_analysis.add_adjacent_loci_to_expansion_hunter_catalog \
     --source-of-adjacent-loci ./ref/other/repeat_specs_GRCh38_without_mismatches.including_homopolymers.sorted.at_least_9bp.bed.gz \
     --ref-fasta ./ref/hg38.fa \
-    --max-distance-between-adjacent-repeats 10 \
+        --max-distance-between-adjacent-repeats 50 \
     --add-extra-fields \
     truth_set_variant_catalog.json</code></pre>
 
-<h3>Stats on adjacent loci</h3>
-<pre><code> 48,391 out of 146,318 loci (33.1%) were found to have 1 or more adjacent repeats</code></pre>
+<h3>Adjacent loci summary statistics</h3>
+<p>For the 146,318 polymorphic TR loci in CHM1-CHM13:</p>
+<pre><code>  67,003 out of 146,318 polymorphic loci (45.8%) were found to have 1 or more adjacent repeats</code></pre>
 
-<p>The distances between these adjacent loci were distributed as follows:</p>
-<pre><code>  35,837 out of   68,991 spacers (51.9%) had     0bp spacer
-   8,273 out of   68,991 spacers (12.0%) had     1bp spacer
-   3,452 out of   68,991 spacers ( 5.0%) had     2bp spacer
-   3,852 out of   68,991 spacers ( 5.6%) had     3bp spacer
-   2,791 out of   68,991 spacers ( 4.0%) had     4bp spacer
-   3,164 out of   68,991 spacers ( 4.6%) had     5bp spacer
-   2,349 out of   68,991 spacers ( 3.4%) had     6bp spacer
-   2,732 out of   68,991 spacers ( 4.0%) had     7bp spacer
-   2,093 out of   68,991 spacers ( 3.0%) had     8bp spacer
-   2,527 out of   68,991 spacers ( 3.7%) had     9bp spacer
-   1,921 out of   68,991 spacers ( 2.8%) had    10bp spacer</code></pre>
+<p>The distances between the adjacent loci were distributed as follows:</p>
+<pre><code>  39,850 out of  114,220 spacers ( 34.9%) had     0bp spacer
+   8,772 out of  114,220 spacers (  7.7%) had     1bp spacer
+   3,895 out of  114,220 spacers (  3.4%) had     2bp spacer
+   4,240 out of  114,220 spacers (  3.7%) had     3bp spacer
+   3,148 out of  114,220 spacers (  2.8%) had     4bp spacer
+   3,481 out of  114,220 spacers (  3.0%) had     5bp spacer
+   ...
+   2,189 out of  114,220 spacers (  1.9%) had    10bp spacer
+   ...
+   1,952 out of  114,220 spacers (  1.7%) had    15bp spacer
+   ...
+   1,202 out of  114,220 spacers (  1.1%) had    20bp spacer
+   ...
+     687 out of  114,220 spacers (  0.6%) had    30bp spacer
+   ...
+     516 out of  114,220 spacers (  0.5%) had    40bp spacer
+   ...
+     393 out of  114,220 spacers (  0.3%) had    50bp spacer</code></pre>
 
-<p>The most common configuration was a pair of adjacent loci (the main locus + a newly added adjacent locus) with different motifs. The other configurations were as follows:</p>
-<pre><code>  26,360 out of  215,309 reference regions (12.2%) had adjacent repeats count:   2 reference regions with different motifs
-   7,949 out of  215,309 reference regions ( 3.7%) had adjacent repeats count:   2 reference regions with same motif
-   9,460 out of  215,309 reference regions ( 4.4%) had adjacent repeats count:   3 reference regions with different motifs
-     219 out of  215,309 reference regions ( 0.1%) had adjacent repeats count:   3 reference regions with same motif
-   2,961 out of  215,309 reference regions ( 1.4%) had adjacent repeats count:   4 reference regions with different motifs
-       8 out of  215,309 reference regions ( 0.0%) had adjacent repeats count:   4 reference regions with same motif
-     955 out of  215,309 reference regions ( 0.4%) had adjacent repeats count:   5 reference regions with different motifs
-     333 out of  215,309 reference regions ( 0.2%) had adjacent repeats count:   6 reference regions with different motifs
-     105 out of  215,309 reference regions ( 0.0%) had adjacent repeats count:   7 reference regions with different motifs
-      30 out of  215,309 reference regions ( 0.0%) had adjacent repeats count:   8 reference regions with different motifs
-       7 out of  215,309 reference regions ( 0.0%) had adjacent repeats count:   9 reference regions with different motifs
-       4 out of  215,309 reference regions ( 0.0%) had adjacent repeats count:  10 reference regions with different motifs</code></pre>
+<p>The most common configuration was a pair of adjacent loci (the main locus + a newly added adjacent locus) with differing motifs - like the HTT locus example above. The other configurations were as follows:</p>
+<pre><code>  30,029 out of  260,538 reference regions ( 11.5%) had adjacent repeats count:   2 reference regions with different motifs
+   9,907 out of  260,538 reference regions (  3.8%) had adjacent repeats count:   2 reference regions with same motif
+  15,117 out of  260,538 reference regions (  5.8%) had adjacent repeats count:   3 reference regions with different motifs
+     631 out of  260,538 reference regions (  0.2%) had adjacent repeats count:   3 reference regions with same motif
+   6,286 out of  260,538 reference regions (  2.4%) had adjacent repeats count:   4 reference regions with different motifs
+      74 out of  260,538 reference regions (  0.0%) had adjacent repeats count:   4 reference regions with same motif
+   2,709 out of  260,538 reference regions (  1.0%) had adjacent repeats count:   5 reference regions with different motifs
+       4 out of  260,538 reference regions (  0.0%) had adjacent repeats count:   5 reference regions with same motif
+   1,281 out of  260,538 reference regions (  0.5%) had adjacent repeats count:   6 reference regions with different motifs
+     556 out of  260,538 reference regions (  0.2%) had adjacent repeats count:   7 reference regions with different motifs
+     247 out of  260,538 reference regions (  0.1%) had adjacent repeats count:   8 reference regions with different motifs
+     100 out of  260,538 reference regions (  0.0%) had adjacent repeats count:   9 reference regions with different motifs
+      43 out of  260,538 reference regions (  0.0%) had adjacent repeats count:  10 reference regions with different motifs
+      14 out of  260,538 reference regions (  0.0%) had adjacent repeats count:  11 reference regions with different motifs
+       2 out of  260,538 reference regions (  0.0%) had adjacent repeats count:  12 reference regions with different motifs
+       2 out of  260,538 reference regions (  0.0%) had adjacent repeats count:  13 reference regions with different motifs
+       1 out of  260,538 reference regions (  0.0%) had adjacent repeats count:  14 reference regions with different motifs</code></pre>
+
+<p>Unsurprisingly, if I went back and selected approximately the same number of non-polymorphic loci (145,429) from the hg38 reference so that they had the same distribution of motif sizes as the polymorphic loci, a smaller percentage of the non-polymorphic lcoi had adjacent repeats:</p>
+<pre><code>   49,862 out of 145,429 non-polymorphic loci (34.4%) were found to have 1 or more adjacent repeats</code></pre>
 
 <h3>ExpansionHunter results with vs. without specifying adjacent loci</h3>
-<p>To evaluate how ExpansionHunter performance changes when specifying adjacent loci, I followed these steps:
-- selected the 48,391 (33%) of loci that had at least 1 adjacent repeat within 10bp of the main locus
-- generated 2 ExpansionHunter variant catalogs for these loci: one that included adjacent repeats, and one that didn't
-- looked at differences in ExpansionHunter calls at each locus when using one vs. the other catalog</p>
-<pre><code> 40,127 out of 48,042 (83.5%) loci had the same exact genotype with vs. without specifying adjacent loci</code></pre>
+<p>To see how ExpansionHunter performance changes when specifying adjacent loci, I followed these steps:
+- selected the 66,523 (45.5%) of polymorphic loci that had ExpansionHunter calls and at least 1 adjacent repeat within 50bp of the main locus 
+- generated 2 ExpansionHunter variant catalogs for these 66,523 loci: one that included adjacent repeats, and one that didn't
+- looked at differences between ExpansionHunter calls with vs. without adjacent repeats</p>
+<pre><code> 57,854 out of 66,523 (87%) loci had the same exact genotype with vs. without specifying adjacent loci</code></pre>
 
-<p>Then, as a rough estimate of how different distances (ie. spacer sizes) between adjacent repeats affected results, I 
-recomputed adjacent loci after setting <code>--max-distance-between-adjacent-repeats 50</code>. Then, I ran ExpansionHunter on this catalog, and checked:
-for loci where adjacent repeats are closer together than some max distance, 
-what fraction has different ExpansionHunter genotypes with vs. without specifying these adjacent repeat(s):</p>
-<pre><code>Distance between adjacent repeats =  0bp: Genotype didn't change for 11,918 out of 15,083 (79.0%) loci
+<p>To see how different distances (ie. spacer sizes) between adjacent repeats affected results, I selected subsets of 
+loci where the adjacent repeats were closer together than a particular max distance, and checked
+what fraction of them had the exact same ExpansionHunter genotype with vs. without specifying adjacent repeat(s):</p>
+<pre><code>Distance between adjacent repeats =   0bp: Genotype didn't change for 11,918 out of 15,083 (79.0%) loci
 Distance between adjacent repeats <= 10bp: Genotype didn't change for 30,495 out of 36,224 (84.2%) loci
 Distance between adjacent repeats <= 20bp: Genotype didn't change for 41,863 out of 48,928 (85.6%) loci
 Distance between adjacent repeats <= 30bp: Genotype didn't change for 48,826 out of 56,669 (86.2%) loci
 Distance between adjacent repeats <= 40bp: Genotype didn't change for 53,727 out of 62,035 (86.6%) loci
 Distance between adjacent repeats <= 50bp: Genotype didn't change for 57,854 out of 66,523 (87.0%) loci</code></pre>
 
-<p>When plotted, they look like:  </p>
-<p><img width="598" alt="image" src="https://github.com/bw2/bw2.github.io/assets/6240170/8f7c22d1-a2ec-4b76-8fdd-dd66b569b60a"></p>
-<p>This suggests that there's not much point in setting <code>--max-distance-between-adjacent-repeats</code> to values larger than ~20bp.</p>
+<p>When plotted, this looks like:  </p>
+<p><img width="577" alt="image" src="https://github.com/bw2/bw2.github.io/assets/6240170/449ab132-da02-42aa-a574-52a9c3822345">
+<br />
+<br />
+This suggests that there's not much point in setting <code>--max-distance-between-adjacent-repeats</code> to values larger than ~20bp.</p>
 <h3>Concordance with truth set genotypes</h3>
 <p>I then checked ExpansionHunter accuracy as measured by concordance with the true genotypes from the Synthetic Diploid Benchmark:</p>
-<p><img width="836" alt="image" src="https://github.com/bw2/bw2.github.io/assets/6240170/167255dc-3f5d-431f-b878-09aa8fdaac63"></p>
+<p><img width="851" alt="image" src="https://github.com/bw2/bw2.github.io/assets/6240170/fa58e8d6-e64e-4928-83d7-6232dfdff138"></p>
 <p>The blue line represents the calls with adjacent loci, and is slightly lower - suggesting that specifying adjacent loci <strong>slightly reduced</strong> concordance with the truth set. </p>
 <p>More detailed stats are below, where genotyping error at a locus is defined as the total difference between the true allele size and ExpansionHunter's estimated allele size for allele1 + allele2.</p>
-<pre><code>40,423 out of 48,042 (84.1%) loci: genotype error didn't change when running ExpansionHunter with vs. without adjacent loci.
+<pre><code>57,854 out of 66,523 (  87%) loci: genotype error didn't change when running ExpansionHunter with vs. without adjacent loci.
 ---
-1,881 out of 48,042 ( 3.9%) loci: allele1 + allele2 genotype error decreased by at least 3 repeats when using adjacent loci.
-1,258 out of 48,042 ( 2.6%) loci: allele1 + allele2 genotype error INCREASED by at least 3 repeats when using adjacent loci.
+ 2,360 out of 66,523 ( 3.5%) loci: allele1 + allele2 genotype error decreased by at least 3 repeats when using adjacent loci.
+ 1,321 out of 66,523 ( 2.0%) loci: allele1 + allele2 genotype error INCREASED by at least 3 repeats when using adjacent loci.
 ---
-1,434 out of 48,042 ( 3.0%) loci: allele1 + allele2 genotype error decreased by at least 5 repeats when using adjacent loci.
-  777 out of 48,042 ( 1.6%) loci: allele1 + allele2 genotype error INCREASED by at least 5 repeats when using adjacent loci.</code></pre>
+ 1,843 out of 66,523 ( 2.8%) loci: allele1 + allele2 genotype error decreased by at least 5 repeats when using adjacent loci.
+   832 out of 66,523 ( 1.3%) loci: allele1 + allele2 genotype error INCREASED by at least 5 repeats when using adjacent loci.</code></pre>
 
 <p>These proportions between the number of loci where errors increased vs. decreased stay approximately the same even when I prefilter to alleles that have the highest genotype 
 quality scores (Q &gt; 0.8), or those that only have trinucleotide motifs. </p>
@@ -236,10 +215,10 @@ At each locus, I compared two images: one from running ExpansionHunter with adja
 <p>The 200 REViewer images for these 100 loci can be viewed here:  [<a href="https://bw2.github.io/2023-07-31_adjacent_repeats_flipbook/">200 REViewer images</a>]</p>
 <h3>Conclusions</h3>
 <ul>
-<li>It's possible to find/add adjacent repeats for 30 to 50% of loci in any given STR catalog.</li>
-<li>Within those 30 to 50%, adjacent repeats only make a difference (ie. change ExpansionHunter's genotype) in 5 to 10% of polymorphic loci.</li>
-<li>In ~7% of loci, specifying adjacent repeats changed the ExpansionHunter genotype by 3 or more repeats.</li>
-<li>For these 7% of loci, introducing adjacent repeats improved the genotype quality for 36% of loci, and reduced the genotype quality in 10% of loci (based on manual review). For 50% of these loci, the genotype quality remained equally bad with and without adjacent repeats.</li>
+<li>It's possible to find/add adjacent repeats within 50bp of the main locus for 30 to 50% of loci in any given STR catalog. </li>
+<li>Within those 30 to 50%, adjacent repeats only make a difference (ie. change ExpansionHunter's genotype) in 10% to 20% of polymorphic loci.</li>
+<li>For 2.5% of polymorphic loci (2,360 + 1,321 out of 146,318), adding adjacent repeats changed the ExpansionHunter genotype by 3 or more repeats.</li>
+<li>For these 2.5% of loci, introducing adjacent repeats improved the genotype quality for 36% of them, and reduced the genotype quality in 10% of them (based on manual review). For 50% of these loci, the genotype quality remained equally bad with and without adjacent repeats.</li>
 <li>When running <code>add_adjacent_loci_to_expansion_hunter_catalog.py</code>, 20 is a reasonable value for <code>--max-distance-between-adjacent-repeats</code>.</li>
 </ul>
 
