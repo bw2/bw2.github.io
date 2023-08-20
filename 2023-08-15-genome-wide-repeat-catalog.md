@@ -10,8 +10,11 @@ Data from the Human Pangenome Research Consortium (HPRC) as well as other studie
 The many genome-wide TR analyses published since then have often used different catalogs. 
 
 <hr />
-<p align="center"><kbd><img width="798" alt="image" src="https://github.com/bw2/bw2.github.io/assets/6240170/1f3cbc71-36b1-4c9e-9c57-7cf47763b3eb"></kbd></p>
 
+Relevant sections from the <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4216929/#sec-1title">Results</a> and <a href="https://genome.cshlp.org/content/24/11/1894/suppl/DC1">Supplementary Materials</a> of 
+<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4216929">Willems T, Gymrek M, Highnam G; 1000 Genomes Project Consortium, Mittelman D, Erlich Y. The landscape of human STR variation. Genome Res. 2014</a>:<br />
+<br />
+<p align="center"><kbd><img width="798" alt="image" src="https://github.com/bw2/bw2.github.io/assets/6240170/1f3cbc71-36b1-4c9e-9c57-7cf47763b3eb"></kbd></p>
 
 <p align="center"><kbd>
 <img width="798" alt="supplementary text" src="https://github.com/bw2/bw2.github.io/assets/6240170/a492bf1a-f56d-4923-a465-75226ceec7f0">
