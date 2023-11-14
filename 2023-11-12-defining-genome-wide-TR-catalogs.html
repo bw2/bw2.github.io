@@ -103,232 +103,441 @@
         <p>Catalogs can differ from each other on several important properties, including:</p>
         <ul>
             <li> total # of loci</li>
-            <li> includes homopolymers?</li>
+            <li> whether it includes homopolymers? </li>
             <li> distribution of motif sizes</li>
             <li> includes only pure, or also impure repeats?  and if it includes impure, how often do locus definitions overlap?</li>
-            <li> do loci overlap each other?</li>
         </ul>
-        The table and IGV.js visualization below compare publicly available catalogs:
+        The tables below compare publicly available catalogs by their motif size distribution:
+
+        <table>
+            <thead>
+            <tr style="text-align: right;">
+                <th>catalog name</th>
+                <th>motif sizes</th>
+                <th>homopolymers</th>
+                <th>2bp motifs</th>
+                <th>3bp motifs</th>
+                <th>4bp motifs</th>
+                <th>5bp motifs</th>
+                <th>6bp motifs</th>
+                <th>7+bp motifs</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Known disease-associated loci</td>
+                <td>1-27bp</td>
+                <td>1.4%</td>
+                <td>1.4%</td>
+                <td>69.0%</td>
+                <td>2.8%</td>
+                <td>14.1%</td>
+                <td>4.2%</td>
+                <td>7.0%</td>
+            </tr>
+            <tr>
+                <td>New TRF: pure loci <br />including homopolymers</td>
+                <td>1-50bp</td>
+                <td>47.8%</td>
+                <td>28.3%</td>
+                <td>15.1%</td>
+                <td>6.0%</td>
+                <td>1.8%</td>
+                <td>0.6%</td>
+                <td>0.4%</td>
+            </tr>
+            <tr>
+                <td>GangSTR ver17</td>
+                <td>1-20bp</td>
+                <td>36.5%</td>
+                <td>13.4%</td>
+                <td>11.2%</td>
+                <td>28.2%</td>
+                <td>7.9%</td>
+                <td>2.1%</td>
+                <td>0.8%</td>
+            </tr>
+            <tr>
+                <td>popSTR</td>
+                <td>1-6bp</td>
+                <td>15.2%</td>
+                <td>7.3%</td>
+                <td>6.0%</td>
+                <td>15.3%</td>
+                <td>26.0%</td>
+                <td>30.3%</td>
+                <td>0.0%</td>
+            </tr>
+            <tr>
+                <td>New TRF: pure &amp; interrupted loci<br />excluding homopolymers</td>
+                <td>2-50bp</td>
+                <td>0.0%</td>
+                <td>50.3%</td>
+                <td>30.3%</td>
+                <td>12.4%</td>
+                <td>3.6%</td>
+                <td>1.4%</td>
+                <td>1.9%</td>
+            </tr>
+            <tr>
+                <td>HipSTR</td>
+                <td>1-6bp</td>
+                <td>51.3%</td>
+                <td>18.3%</td>
+                <td>4.9%</td>
+                <td>14.7%</td>
+                <td>6.2%</td>
+                <td>4.5%</td>
+                <td>0.0%</td>
+            </tr>
+            <tr>
+                <td>TRGT</td>
+                <td>2-24bp</td>
+                <td>0.0%</td>
+                <td>56.7%</td>
+                <td>8.3%</td>
+                <td>24.8%</td>
+                <td>7.2%</td>
+                <td>2.3%</td>
+                <td>0.7%</td>
+            </tr>
+            <tr>
+                <td>Illumina</td>
+                <td>2-24bp</td>
+                <td>0.0%</td>
+                <td>56.7%</td>
+                <td>8.3%</td>
+                <td>24.8%</td>
+                <td>7.2%</td>
+                <td>2.3%</td>
+                <td>0.7%</td>
+            </tr>
+            <tr>
+                <td>TR truth set <br />from 51 HPRC samples</td>
+                <td>1-50bp</td>
+                <td>65.0%</td>
+                <td>15.4%</td>
+                <td>4.1%</td>
+                <td>10.2%</td>
+                <td>2.2%</td>
+                <td>1.0%</td>
+                <td>2.1%</td>
+            </tr>
+            <tr>
+                <td>Adotto v1.2</td>
+                <td>2-495bp</td>
+                <td>0.0%</td>
+                <td>20.0%</td>
+                <td>11.4%</td>
+                <td>18.2%</td>
+                <td>8.1%</td>
+                <td>7.8%</td>
+                <td>34.4%</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <br />
+        as well as their other properties:
+        <br />
+        <table>
+            <thead>
+            <tr style="text-align: right;">
+                <th>catalog name</th>
+                <th>total loci</th>
+                <th>chrX</th>
+                <th>chrY</th>
+                <th>locus sizes</th>
+                <th># of repeats</th>
+                <th>pure repeats</th>
+                <th>trimmed</th>
+                <th>overlapping loci</th>
+                <th>source</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Known disease-associated loci</td>
+                <td>71</td>
+                <td>8 (11.3%)</td>
+                <td>0 (0.0%)</td>
+                <td>12-150bp</td>
+                <td>1-50x</td>
+                <td>59.2%</td>
+                <td>100.0%</td>
+                <td>0 (0.0%)</td>
+                <td><a href="https://github.com/broadinstitute/str-analysis/blob/main/str_analysis/variant_catalogs/variant_catalog_without_offtargets.GRCh38.json">
+                    str-analysis repo</a>
+                </td>
+            </tr>
+            <tr>
+                <td>New TRF: pure loci <br />including homopolymers</td>
+                <td>9,237,117</td>
+                <td>489,574 (5.3%)</td>
+                <td>0 (0.0%)</td>
+                <td>6-1597bp</td>
+                <td>3-300x</td>
+                <td>47.8%</td>
+                <td>99.9%</td>
+                <td>78.0%</td>
+                <td>[<a href="https://www.biorxiv.org/content/10.1101/2023.05.05.539588v1">weisburd 2023</a>]</td>
+            </tr>
+            <tr>
+                <td>GangSTR ver17</td>
+                <td>1,340,266</td>
+                <td>65,719 (4.9%)</td>
+                <td>8,979 (0.7%)</td>
+                <td>10-612bp</td>
+                <td>3-248x</td>
+                <td>100.0%</td>
+                <td>100.0%</td>
+                <td>16 (0.0%)</td>
+                <td>GangSTR repo</td>
+            </tr>
+            <tr>
+                <td>popSTR</td>
+                <td>5,401,401</td>
+                <td>0 (0.0%)</td>
+                <td>0 (0.0%)</td>
+                <td>11-137bp</td>
+                <td>2-128x</td>
+                <td>78.0%</td>
+                <td>42.0%</td>
+                <td>11,202 (0.2%)</td>
+                <td>popSTR repo</td>
+            </tr>
+            <tr>
+                <td>New TRF: pure &amp; interrupted loci<br />excluding homopolymers</td>
+                <td>4,604,776</td>
+                <td>244,906 (5.3%)</td>
+                <td>0 (0.0%)</td>
+                <td>6-6800bp</td>
+                <td>3-1091x</td>
+                <td>84.9%</td>
+                <td>100.0%</td>
+                <td>84,857 (1.8%)</td>
+                <td>[<a href="https://www.biorxiv.org/content/10.1101/2023.05.05.539588v1">weisburd 2023</a>]</td>
+            </tr>
+            <tr>
+                <td>HipSTR</td>
+                <td>1,638,945</td>
+                <td>79,235 (4.8%)</td>
+                <td>16,003 (1.0%)</td>
+                <td>9-132210bp</td>
+                <td>3-26442x</td>
+                <td>46.5%</td>
+                <td>100.0%</td>
+                <td>18 (0.0%)</td>
+                <td>HipSTR repo</td>
+            </tr>
+            <tr>
+                <td>TRGT</td>
+                <td>171,146</td>
+                <td>8,558 (5.0%)</td>
+                <td>0 (0.0%)</td>
+                <td>4-532bp</td>
+                <td>2-133x</td>
+                <td>95.5%</td>
+                <td>100.0%</td>
+                <td>0 (0.0%)</td>
+                <td>TRGT repo</td>
+            </tr>
+            <tr>
+                <td>Illumina</td>
+                <td>174,286</td>
+                <td>8,561 (4.9%)</td>
+                <td>0 (0.0%)</td>
+                <td>4-532bp</td>
+                <td>2-133x</td>
+                <td>95.5%</td>
+                <td>100.0%</td>
+                <td>0 (0.0%)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>TR truth set <br />from 51 HPRC samples</td>
+                <td>1,573,403</td>
+                <td>70,885 (4.5%)</td>
+                <td>4,806 (0.3%)</td>
+                <td>1-1591bp</td>
+                <td>1-301x</td>
+                <td>94.7%</td>
+                <td>100.0%</td>
+                <td>131,515 (8.4%)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Adotto v1.2</td>
+                <td>2,934,805</td>
+                <td>109,743 (3.7%)</td>
+                <td>16,589 (0.6%)</td>
+                <td>4-49816bp</td>
+                <td>1-8836x</td>
+                <td>41.6%</td>
+                <td>32.0%</td>
+                <td>26,198 (0.9%)</td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
+        <br />
+        <h3>Combining catalogs:</h3>
+
+        I think the best way to create a comprehensive genome-wide TR catalog is to merge:
+        <ol>
+            <li>catalog(s) generated by running TRF on the reference</li>
+            <li>all available empirical catalogs - such as the Illumina catalog and TR truth set in the above table - since
+                these are generated using orthogonal approaches and without regard to the number of repeats that happen to be
+                in the reference genome at these loci.
+            </li>
+        </ol>
+        By merging these two types of catalogs, we take advantage of their different stregths to capture:
+        <ul>
+            <li>polymorphic TR loci that, by chance, have only one or two repeats in
+            the hg38 reference and so would only be captured by the empircal catalogs and not by TRF</li>
+            <li>loci where variation is very rare and so would likely not be captured by empirical approaches
+                that only consider polymorphic loci</li>
+        </ul>
+
+        The str-analysis repo contains scripts for merging, annotating and filtering TR catalogs. I used them
+        as follows to produce a comprehensive TR catalog:
+
+        <pre>
+## download various publicly-available catalogs. Some of these have been slightly reformatted from the original.
+
+known_disease_associated_loci=https://raw.githubusercontent.com/broadinstitute/str-analysis/main/str_analysis/variant_catalogs/variant_catalog_without_offtargets.GRCh38.json
+trf_pure_6bp_catalog=https://storage.cloud.google.com/str-truth-set/hg38/ref/other/repeat_specs_GRCh38_without_mismatches.including_homopolymers.sorted.at_least_6bp.bed.gz
+trf_pure_9bp_catalog=https://storage.cloud.google.com/str-truth-set/hg38/ref/other/repeat_specs_GRCh38_without_mismatches.including_homopolymers.sorted.at_least_9bp.bed.gz
+gangstr_catalog=https://storage.cloud.google.com/str-truth-set/hg38/ref/other/hg38_ver17.adjusted.bed.gz
+trgt_catalog=https://storage.cloud.google.com/str-truth-set/hg38/ref/other/trgt_repeat_catalog.hg38.reformatted_to_motif_only.bed.gz
+illumina_catalog=https://storage.cloud.google.com/str-truth-set/hg38/ref/other/illumina_variant_catalog.sorted.bed.gz
+truth_set_catalog=https://storage.cloud.google.com/str-truth-set-v2/results_with_homopolymers/results_from_combined/combined.51_samples.positive_loci.json
+hipstr_catalog=https://storage.cloud.google.com/str-truth-set/hg38/ref/other/hg38.hipstr_reference.adjusted.bed.gz
+trf_6bp_catalog_with_mismatches=https://storage.cloud.google.com/str-truth-set/hg38/ref/other/repeat_specs_GRCh38_allowing_mismatches.sorted.trimmed.at_least_6bp.bed.gz
+trf_9bp_catalog_with_mismatches=https://storage.cloud.google.com/str-truth-set/hg38/ref/other/repeat_specs_GRCh38_allowing_mismatches.sorted.trimmed.at_least_9bp.bed.gz
+
+popstr_catalog=https://storage.cloud.google.com/str-truth-set/hg38/ref/other/popstr_catalog_v2.bed.gz
+adotto_catalog=https://storage.cloud.google.com/str-truth-set/hg38/ref/other/adotto_tr_catalog_v1.2.bed.gz
+
+ref_fasta=/local/path/hg38.fa
+output_prefix=combined_catalog.trf_at_least_9bp
+
+## annotate each catalog and discard loci with N in the motif
+for path in ${known_disease_associated_loci} \
+            ${trf_pure_9bp_catalog} \
+            ${gangstr_catalog} \
+            ${trf_9bp_catalog_with_mismatches} \
+            ${hipstr_catalog} \
+            ${trgt_catalog} \
+            ${illumina_catalog} \
+            ${truth_set_catalog} \
+            ${popstr_catalog} \
+            ${adotto_catalog};
+do
+    # download each catalog
+    wget $path
+
+    # annotate loci and discard edge cases like motif=N
+    python3 -u -m str_analysis.annotate_and_filter_str_catalog  \
+            -r ${ref_fasta} \
+            --output-stats \
+            --output-tsv \
+            --verbose \
+            --discard-loci-with-non-acgt-bases \
+            ${path}
+done
+
+## merge all catalogs into a single file (excluding the popSTR and Adotto catalogs because they are unusual and/or suboptimal in some ways)
+python3 -u -m str_analysis.combine_str_catalogs --verbose \
+            --merge-adjacent-loci-with-same-motif \
+            --output-prefix ${output_prefix} \
+            --add-source-field \
+            $(basename ${known_disease_associated_loci} | sed 's/.json/.annotated_and_filtered.json.gz/') \
+            $(basename ${trf_pure_9bp_catalog} | sed 's/.bed.gz/.annotated_and_filtered.json.gz/') \
+            $(basename ${gangstr_catalog} | sed 's/.bed.gz/.annotated_and_filtered.json.gz/') \
+            $(basename ${trf_9bp_catalog_with_mismatches} | sed 's/.bed.gz/.annotated_and_filtered.json.gz/') \
+            $(basename ${hipstr_catalog} | sed 's/.bed.gz/.annotated_and_filtered.json.gz/') \
+            $(basename ${trgt_catalog} | sed 's/.bed.gz/.annotated_and_filtered.json.gz/') \
+            $(basename ${illumina_catalog} | sed 's/.bed.gz/.annotated_and_filtered.json.gz/') \
+            $(basename ${truth_set_catalog} | sed 's/.json/.annotated_and_filtered.json.gz/')
+
+## annotate the combined catalog
+python3 -u -m str_analysis.annotate_and_filter_str_catalog \
+            -r ${ref_fasta} \
+            --output-stats \
+            --output-tsv \
+            --verbose \
+            --discard-loci-with-non-acgt-bases \
+            ${output_prefix}.json.gz
+
+## add adjacent loci to the catalog
+python3 -u -m str_analysis.add_adjacent_loci_to_expansion_hunter_catalog \
+  --ref-fasta ${ref_fasta} \
+  --max-distance-between-adjacent-repeats 6 \
+  --max-adjacent-repeats 2 \
+  --source-of-adjacent-loci ~/code/str-truth-set/ref/other/repeat_specs_GRCh38_without_mismatches.including_homopolymers.sorted.at_least_6bp.bed.gz \
+  ${output_prefix}.annotated_and_filtered.json.gz
+
+        </pre>
+
+        Running these steps yields a combined catalog with the following properties:
+
+        <pre>
+            Stats for combined_catalog.trf_at_least_9bp.annotated_and_filtered.json.gz:
+            4,944,109 total repeat intervals
+            1,425,773 out of  4,944,109 ( 28.8%) repeat intervals are homopolymers
+              160,509 out of  4,944,109 (  3.2%) repeat intervals overlap each other by at least two motif lengths
+        Examples of overlapping repeats: chrX:8832362-8832422, chr5:140543682-140543702, chr6:469004-469232, chr5:26217645-26217668, chr1:245117424-245117439, chr17:42801508-42801544, chr12:111942768-111942782, chr2:198055294-198055330, chr5:43826764-43826783, chr10:83131202-83131230
+
+        Ranges:
+           Motif size range: 1-50bp
+           Locus size range: 1-102545bp
+           Num repeats range: 1-20509x repeats
+
+           Maximum locus size = 102545bp               @ chrY:11490351-11592896 (AATGG)
+           Minimum fraction pure bases = 0.00      @ chrY:26670808-26670828 (AATGG)
+           Minimum fraction pure repeats = 0.00    @ chr11:135041141-135041273 (GTGTGTCCTGAGTCGGCATCTCCCCGTCACCAG)
+           Minimum overall mappability = 0.00       @ chrY:24489213-24489225 (GCCT)
+
+                  chrX:    252,353 out of  4,944,109 (  5.1%) repeat intervals
+                  chrY:     16,670 out of  4,944,109 (  0.3%) repeat intervals
+                  chrM:         15 out of  4,944,109 (  0.0%) repeat intervals
+           alt contigs:          0 out of  4,944,109 (  0.0%) repeat intervals
+
+        Motif size distribution:
+                  1bp:  1,425,773 out of  4,944,109 ( 28.8%) repeat intervals
+                  2bp:  1,033,483 out of  4,944,109 ( 20.9%) repeat intervals
+                  3bp:  1,423,329 out of  4,944,109 ( 28.8%) repeat intervals
+                  4bp:    651,610 out of  4,944,109 ( 13.2%) repeat intervals
+                  5bp:    198,852 out of  4,944,109 (  4.0%) repeat intervals
+                  6bp:    102,552 out of  4,944,109 (  2.1%) repeat intervals
+               7-24bp:     83,580 out of  4,944,109 (  1.7%) repeat intervals
+                25+bp:     24,930 out of  4,944,109 (  0.5%) repeat intervals
+
+        Fraction pure bases distribution:
+                  0.0:     10,598 out of  4,944,109 (  0.2%) repeat intervals
+                  0.1:      6,701 out of  4,944,109 (  0.1%) repeat intervals
+                  0.2:     14,438 out of  4,944,109 (  0.3%) repeat intervals
+                  0.3:     16,835 out of  4,944,109 (  0.3%) repeat intervals
+                  0.4:     16,413 out of  4,944,109 (  0.3%) repeat intervals
+                  0.5:     38,659 out of  4,944,109 (  0.8%) repeat intervals
+                  0.6:     58,094 out of  4,944,109 (  1.2%) repeat intervals
+                  0.7:     82,071 out of  4,944,109 (  1.7%) repeat intervals
+                  0.8:    140,936 out of  4,944,109 (  2.9%) repeat intervals
+                  0.9:     71,735 out of  4,944,109 (  1.5%) repeat intervals
+                  1.0:  4,487,629 out of  4,944,109 ( 90.8%) repeat intervals
+
+        Wrote 4,918,796 total records to combined_catalog.trf_at_least_9bp.annotated_and_filtered.with_adjacent_loci.json
+        Added adjacent loci to 1,164,753 out of 4,944,101 records (23.6%)
+        </pre>
+
+        <h3>IGV.js display of TR catalogs</h3>
+        <br />
     <div class="ui three wide column"></div>
 </div>
-<table>
-    <thead>
-    <tr style="text-align: right;">
-        <th>catalog name</th>
-        <th>total loci</th>
-        <th>chrX</th>
-        <th>chrY</th>
-        <th>motif sizes</th>
-        <th>locus sizes</th>
-        <th># of repeats</th>
-        <th>homopolymers</th>
-        <th>2bp motifs</th>
-        <th>3bp motifs</th>
-        <th>4bp motifs</th>
-        <th>5bp motifs</th>
-        <th>6bp motifs</th>
-        <th>7+bp motifs</th>
-        <th>pure repeats</th>
-        <th>trimmed</th>
-        <th>overlapping loci</th>
-        <th>source</th>
-        <th>notes</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>Known disease-associated loci</td>
-        <td>71</td>
-        <td>8 (11.3%)</td>
-        <td>0 (0.0%)</td>
-        <td>1-27bp</td>
-        <td>12-150bp</td>
-        <td>1-50x</td>
-        <td>1.4%</td>
-        <td>1.4%</td>
-        <td>69.0%</td>
-        <td>2.8%</td>
-        <td>14.1%</td>
-        <td>4.2%</td>
-        <td>7.0%</td>
-        <td>59.2%</td>
-        <td>100.0%</td>
-        <td>0 (0.0%)</td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>New TRF: pure loci <br />including homopolymers</td>
-        <td>9,237,117</td>
-        <td>489,574 (5.3%)</td>
-        <td>0 (0.0%)</td>
-        <td>1-50bp</td>
-        <td>6-1597bp</td>
-        <td>3-300x</td>
-        <td>47.8%</td>
-        <td>28.3%</td>
-        <td>15.1%</td>
-        <td>6.0%</td>
-        <td>1.8%</td>
-        <td>0.6%</td>
-        <td>0.4%</td>
-        <td>99.9%</td>
-        <td>78.0%</td>
-        <td>0 (0.0%)</td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>GangSTR ver17</td>
-        <td>1,340,266</td>
-        <td>65,719 (4.9%)</td>
-        <td>8,979 (0.7%)</td>
-        <td>1-20bp</td>
-        <td>10-612bp</td>
-        <td>3-248x</td>
-        <td>36.5%</td>
-        <td>13.4%</td>
-        <td>11.2%</td>
-        <td>28.2%</td>
-        <td>7.9%</td>
-        <td>2.1%</td>
-        <td>0.8%</td>
-        <td>100.0%</td>
-        <td>100.0%</td>
-        <td>16 (0.0%)</td>
-    </tr>
-    <tr>
-        <td>popSTR</td>
-        <td>5,401,401</td>
-        <td>0 (0.0%)</td>
-        <td>0 (0.0%)</td>
-        <td>1-6bp</td>
-        <td>11-137bp</td>
-        <td>2-128x</td>
-        <td>15.2%</td>
-        <td>7.3%</td>
-        <td>6.0%</td>
-        <td>15.3%</td>
-        <td>26.0%</td>
-        <td>30.3%</td>
-        <td>0.0%</td>
-        <td>78.0%</td>
-        <td>42.0%</td>
-        <td>11,202 (0.2%)</td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>New TRF: pure &amp; interrupted loci<br />excluding homopolymers</td>
-        <td>4,604,776</td>
-        <td>244,906 (5.3%)</td>
-        <td>0 (0.0%)</td>
-        <td>2-50bp</td>
-        <td>6-6800bp</td>
-        <td>3-1091x</td>
-        <td>0.0%</td>
-        <td>50.3%</td>
-        <td>30.3%</td>
-        <td>12.4%</td>
-        <td>3.6%</td>
-        <td>1.4%</td>
-        <td>1.9%</td>
-        <td>84.9%</td>
-        <td>100.0%</td>
-        <td>84,857 (1.8%)</td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>HipSTR</td>
-        <td>1,638,945</td>
-        <td>79,235 (4.8%)</td>
-        <td>16,003 (1.0%)</td>
-        <td>1-6bp</td>
-        <td>9-132210bp</td>
-        <td>3-26442x</td>
-        <td>51.3%</td>
-        <td>18.3%</td>
-        <td>4.9%</td>
-        <td>14.7%</td>
-        <td>6.2%</td>
-        <td>4.5%</td>
-        <td>0.0%</td>
-        <td>46.5%</td>
-        <td>100.0%</td>
-        <td>18 (0.0%)</td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>TRGT</td>
-        <td>171,146</td>
-        <td>8,558 (5.0%)</td>
-        <td>0 (0.0%)</td>
-        <td>2-24bp</td>
-        <td>4-532bp</td>
-        <td>2-133x</td>
-        <td>0.0%</td>
-        <td>56.7%</td>
-        <td>8.3%</td>
-        <td>24.8%</td>
-        <td>7.2%</td>
-        <td>2.3%</td>
-        <td>0.7%</td>
-        <td>95.5%</td>
-        <td>100.0%</td>
-        <td>0 (0.0%)</td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>Illumina</td>
-        <td>174,286</td>
-        <td>8,561 (4.9%)</td>
-        <td>0 (0.0%)</td>
-        <td>2-24bp</td>
-        <td>4-532bp</td>
-        <td>2-133x</td>
-        <td>0.0%</td>
-        <td>56.7%</td>
-        <td>8.3%</td>
-        <td>24.8%</td>
-        <td>7.2%</td>
-        <td>2.3%</td>
-        <td>0.7%</td>
-        <td>95.5%</td>
-        <td>100.0%</td>
-        <td>0 (0.0%)</td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td>TR truth set <br />from 51 HPRC samples</td>
-        <td>1,573,403</td>
-        <td>70,885 (4.5%)</td>
-        <td>4,806 (0.3%)</td>
-        <td>1-50bp</td>
-        <td>1-1591bp</td>
-        <td>1-301x</td>
-        <td>65.0%</td>
-        <td>15.4%</td>
-        <td>4.1%</td>
-        <td>10.2%</td>
-        <td>2.2%</td>
-        <td>1.0%</td>
-        <td>2.1%</td>
-        <td>94.7%</td>
-        <td>100.0%</td>
-        <td>131,515 (8.4%)</td>
-        <td></td>
-        <td></td>
-    </tr>
-    </tbody>
-</table>
 
-    <br />
-    <br />
-    <p class="ui horizontal divider"></p>
+<br />
+<p class="ui horizontal divider"></p>
 <hr />
 <br />
 
