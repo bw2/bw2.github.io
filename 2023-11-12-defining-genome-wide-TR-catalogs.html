@@ -371,8 +371,8 @@ python3 -u -m str_analysis.add_adjacent_loci_to_expansion_hunter_catalog \
 
         Running these steps yields a combined catalog with the following properties:
 
-        <pre>
-            Stats for combined_catalog.trf_at_least_9bp.annotated_and_filtered.json.gz:
+        <pre>            
+            Stats for combined_catalog.trf_at_least_9bp.annotated_and_filtered.json.gz:            
             4,944,109 total repeat intervals
             1,425,773 out of  4,944,109 ( 28.8%) repeat intervals are homopolymers
               160,509 out of  4,944,109 (  3.2%) repeat intervals overlap each other by at least two motif lengths
@@ -418,6 +418,16 @@ python3 -u -m str_analysis.add_adjacent_loci_to_expansion_hunter_catalog \
 
         Wrote 4,918,796 total records to combined_catalog.trf_at_least_9bp.annotated_and_filtered.with_adjacent_loci.json
         Added adjacent loci to 1,164,753 out of 4,944,101 records (23.6%)
+
+            Source of loci in output catalog:
+   4,431,801 out of 4,992,309 (88.8%) repeat_specs_GRCh38_without_mismatches.including_homopolymers.sorted.at_least_9bp.annotated_and_filtered.json.gz
+     287,561 out of 4,992,309 ( 5.8%) repeat_specs_GRCh38_allowing_mismatches.sorted.trimmed.at_least_9bp.annotated_and_filtered.json.gz
+     158,585 out of 4,992,309 ( 3.2%) combined.51_samples.positive_loci.annotated_and_filtered.json.gz
+      95,196 out of 4,992,309 ( 1.9%) hg38.hipstr_reference.adjusted.annotated_and_filtered.json.gz
+       9,863 out of 4,992,309 ( 0.2%) trgt_repeat_catalog.hg38.reformatted_to_motif_only.annotated_and_filtered.json.gz
+       9,064 out of 4,992,309 ( 0.2%) hg38_ver17.adjusted.annotated_and_filtered.json.gz
+         175 out of 4,992,309 ( 0.0%) illumina_variant_catalog.sorted.annotated_and_filtered.json.gz
+          64 out of 4,992,309 ( 0.0%) variant_catalog_without_offtargets.GRCh38.annotated_and_filtered.json.gz            
         </pre>
 
         <h3>IGV.js display of TR catalogs</h3>
