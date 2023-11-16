@@ -107,8 +107,8 @@
             <li> their overall distribution of motif sizes</li>
             <li> whether they include interrupted repeats, and if yes, how often their locus definitions overlap each other</li>
         </ul>
-        The table below compares publicly available catalogs. The counts and % are based on counting repeat intervals (aka. loci) in the catalog. Some catalogs, such as the
-        one with known disease-associated loci, define adjacent repeats - for example, FXN is defined as (A)*(GAA)*. I count the adjacent repeats independently in the stats below (which is why the catalog of known disease-assocaited TRs
+        The table below compares publicly available catalogs. It counts repeat intervals (aka. loci) in each catalog after removing small numbers of erroneous records from several of the catalogs (such as homopolymers of 'N' rather than A/C/G/T). Also, some catalogs (such as the
+        one with known disease-associated loci) define adjacent repeats - for example, FXN is defined as (A)*(GAA)*. I count any adjacent repeats independently in the stats below (which is why the catalog of known disease-assocaited TRs
         has a non-zero count of homopolymer loci).
 
         <br />
@@ -127,40 +127,39 @@
                 <th>pure repeats</th>
                 <th>trimmed</th>
                 <th>overlapping loci</th>
-                <th>source</th>
             </tr>
             </thead>
             <tbody>
             <tr>
-                <td>Known disease-associated loci</td>
-                <td>71</td>
+                <td>
+                    <a href="https://github.com/broadinstitute/str-analysis/blob/main/str_analysis/variant_catalogs/variant_catalog_without_offtargets.GRCh38.json">
+                    Known disease-associated loci
+                    </a>
+                </td>
+                <td>72</td>
                 <td>8 (11.3%)</td>
                 <td>0 (0.0%)</td>
                 <td>1-27bp</td>
                 <td>12-150bp</td>
                 <td>1-50x</td>
-                <td>59.2%</td>
+                <td>58.3%</td>
                 <td>100.0%</td>
                 <td>0 (0.0%)</td>
-                <td><a href="https://github.com/broadinstitute/str-analysis/blob/main/str_analysis/variant_catalogs/variant_catalog_without_offtargets.GRCh38.json">
-                    str-analysis repo</a>
-                </td>
             </tr>
             <tr>
-                <td>New TRF: pure loci <br />including homopolymers</td>
-                <td>9,237,117</td>
+                <td><a href="https://www.biorxiv.org/content/10.1101/2023.05.05.539588v1">TRF catalog: only pure repeats &amp; homopolymers spanning ≥ 6bp in hg38<a/></td>
+                <td>9,223,577</td>
                 <td>489,574 (5.3%)</td>
                 <td>0 (0.0%)</td>
                 <td>1-50bp</td>
                 <td>6-1597bp</td>
                 <td>3-300x</td>
-                <td>99.9%</td>
+                <td>100.0%</td>
                 <td>78.0%</td>
                 <td>0 (0.0%)</td>
-                <td>[<a href="https://www.biorxiv.org/content/10.1101/2023.05.05.539588v1">weisburd 2023</a>]</td>
             </tr>
             <tr>
-                <td>GangSTR ver17</td>
+                <td>GangSTR v17</td>
                 <td>1,340,266</td>
                 <td>65,719 (4.9%)</td>
                 <td>8,979 (0.7%)</td>
@@ -170,49 +169,33 @@
                 <td>100.0%</td>
                 <td>100.0%</td>
                 <td>16 (0.0%)</td>
-                <td>GangSTR repo</td>
             </tr>
             <tr>
-                <td>popSTR</td>
-                <td>5,401,401</td>
-                <td>0 (0.0%)</td>
-                <td>0 (0.0%)</td>
-                <td>1-6bp</td>
-                <td>11-137bp</td>
-                <td>2-128x</td>
-                <td>78.0%</td>
-                <td>42.0%</td>
-                <td>11,202 (0.2%)</td>
-                <td>popSTR repo</td>
-            </tr>
-            <tr>
-                <td>New TRF: pure &amp; interrupted loci<br />excluding homopolymers</td>
-                <td>4,604,776</td>
+                <td><a href="https://www.biorxiv.org/content/10.1101/2023.05.05.539588v1">TRF catalog: pure &amp; interrupted<br /> repeats spanning ≥ 6bp in hg38<a/></td>
+                <td>4,596,675</td>
                 <td>244,906 (5.3%)</td>
                 <td>0 (0.0%)</td>
                 <td>2-50bp</td>
                 <td>6-6800bp</td>
                 <td>3-1091x</td>
-                <td>84.9%</td>
+                <td>85.1%</td>
                 <td>100.0%</td>
-                <td>84,857 (1.8%)</td>
-                <td>[<a href="https://www.biorxiv.org/content/10.1101/2023.05.05.539588v1">weisburd 2023</a>]</td>
+                <td>84,822 (1.8%)</td>
             </tr>
             <tr>
-                <td>HipSTR</td>
-                <td>1,638,945</td>
-                <td>79,235 (4.8%)</td>
-                <td>16,003 (1.0%)</td>
+                <td><a href="https://github.com/HipSTR-Tool/HipSTR-references">HipSTR</a></td>
+                <td>1,634,957</td>
+                <td>79,233 (4.8%)</td>
+                <td>12,638 (0.8%)</td>
                 <td>1-6bp</td>                
-                <td>9-132210bp</td>
-                <td>3-26442x</td>
-                <td>46.5%</td>
+                <td>11-102545bp</td>
+                <td>3-20509x</td>
+                <td>46.6%</td>
                 <td>100.0%</td>
-                <td>18 (0.0%)</td>
-                <td>HipSTR repo</td>
+                <td>0 (0.0%)</td>
             </tr>
             <tr>
-                <td>TRGT</td>
+                <td><a href="https://github.com/PacificBiosciences/trgt/tree/main/repeats">TRGT</a></td>
                 <td>171,146</td>
                 <td>8,558 (5.0%)</td>
                 <td>0 (0.0%)</td>
@@ -222,11 +205,10 @@
                 <td>95.5%</td>
                 <td>100.0%</td>
                 <td>0 (0.0%)</td>
-                <td>TRGT repo</td>
             </tr>
             <tr>
-                <td>Illumina</td>
-                <td>174,286</td>
+                <td><a href="https://github.com/Illumina/RepeatCatalogs">Illumina</a></td>
+                <td>174,285</td>
                 <td>8,561 (4.9%)</td>
                 <td>0 (0.0%)</td>
                 <td>2-24bp</td>
@@ -235,7 +217,6 @@
                 <td>95.5%</td>
                 <td>100.0%</td>
                 <td>0 (0.0%)</td>
-                <td>Illumina Repeats repo</td>
             </tr>
             <tr>
                 <td>TR truth set <br />from 51 HPRC samples</td>
@@ -248,20 +229,30 @@
                 <td>94.7%</td>
                 <td>100.0%</td>
                 <td>131,515 (8.4%)</td>
-                <td></td>
             </tr>
             <tr>
-                <td>Adotto v1.2</td>
-                <td>2,934,805</td>
-                <td>109,743 (3.7%)</td>
-                <td>16,589 (0.6%)</td>
+                <td><a href="https://github.com/DecodeGenetics/popSTR">popSTR</a></td>
+                <td>5,401,399</td>
+                <td>0 (0.0%)</td>
+                <td>0 (0.0%)</td>
+                <td>1-6bp</td>
+                <td>11-137bp</td>
+                <td>2-128x</td>
+                <td>78.0%</td>
+                <td>42.0%</td>
+                <td>11,202 (0.2%)</td>
+            </tr>                    
+            <tr>
+                <td><a href="https://zenodo.org/records/8387564">Adotto v1.2</a></td>
+                <td>2,934,732</td>
+                <td>109,740 (3.7%)</td>
+                <td>16,585 (0.6%)</td>
                 <td>2-495bp</td>
                 <td>4-49816bp</td>
                 <td>1-8836x</td>
                 <td>41.6%</td>
                 <td>32.0%</td>
                 <td>26,198 (0.9%)</td>
-                <td>Adotto repo</td>
             </tr>
             </tbody>
         </table>
@@ -371,8 +362,8 @@ python3 -u -m str_analysis.add_adjacent_loci_to_expansion_hunter_catalog \
 
         Running these steps yields a combined catalog with the following properties:
 
-        <pre>
-            Stats for combined_catalog.trf_at_least_9bp.annotated_and_filtered.json.gz:
+        <pre>            
+            Stats for combined_catalog.trf_at_least_9bp.annotated_and_filtered.json.gz:            
             4,944,109 total repeat intervals
             1,425,773 out of  4,944,109 ( 28.8%) repeat intervals are homopolymers
               160,509 out of  4,944,109 (  3.2%) repeat intervals overlap each other by at least two motif lengths
@@ -418,6 +409,16 @@ python3 -u -m str_analysis.add_adjacent_loci_to_expansion_hunter_catalog \
 
         Wrote 4,918,796 total records to combined_catalog.trf_at_least_9bp.annotated_and_filtered.with_adjacent_loci.json
         Added adjacent loci to 1,164,753 out of 4,944,101 records (23.6%)
+
+            Source of loci in output catalog:
+   4,431,801 out of 4,992,309 (88.8%) repeat_specs_GRCh38_without_mismatches.including_homopolymers.sorted.at_least_9bp.annotated_and_filtered.json.gz
+     287,561 out of 4,992,309 ( 5.8%) repeat_specs_GRCh38_allowing_mismatches.sorted.trimmed.at_least_9bp.annotated_and_filtered.json.gz
+     158,585 out of 4,992,309 ( 3.2%) combined.51_samples.positive_loci.annotated_and_filtered.json.gz
+      95,196 out of 4,992,309 ( 1.9%) hg38.hipstr_reference.adjusted.annotated_and_filtered.json.gz
+       9,863 out of 4,992,309 ( 0.2%) trgt_repeat_catalog.hg38.reformatted_to_motif_only.annotated_and_filtered.json.gz
+       9,064 out of 4,992,309 ( 0.2%) hg38_ver17.adjusted.annotated_and_filtered.json.gz
+         175 out of 4,992,309 ( 0.0%) illumina_variant_catalog.sorted.annotated_and_filtered.json.gz
+          64 out of 4,992,309 ( 0.0%) variant_catalog_without_offtargets.GRCh38.annotated_and_filtered.json.gz            
         </pre>
 
         <h3>IGV.js display of TR catalogs</h3>
