@@ -108,12 +108,15 @@
             <li> inclusion of chrX or chrY loci</li>
             <li> whether they include interrupted repeats, and if yes, how often their locus definitions overlap each other</li>
         </ul>
-        The table below compares publicly available catalogs. It counts repeat intervals (aka. loci) in each catalog after removing small numbers of erroneous records from several of the catalogs (such as homopolymers of 'N' rather than A/C/G/T). Also, some catalogs (such as the
-        one with known disease-associated loci) define adjacent repeats - for example, FXN is defined as (A)*(GAA)*. I count any adjacent repeats independently in the stats below (which is why the catalog of known disease-assocaited TRs
-        has a non-zero count of homopolymer loci).
+        The table and motif size histograms below compare publicly available catalogs.<sup>**</sup>
 
-        <br />
-        as well as their other properties:
+        <sub><br />
+            ** The counts represent repeat intervals (aka. loci) in each of the catalogs after filtering out a small numbers of erroneous records from several of the catalogs (such as homopolymers of 'N' rather than A/C/G/T).
+            <br />
+            ** Some catalogs - such as the known disease-associated loci catalog - define adjacent repeats. For example, FXN is defined as (A)*(GAA)* rathern than just (GAA)*. I counted any adjacent repeats as separate loci in the stats below, which is why the catalog of known disease-assocaited TRs
+        is counted as having a small number of homopolymer loci.<br />
+        </sub>
+
         <br />
         <table>
             <thead>
@@ -258,7 +261,7 @@
             </tbody>
         </table>
         <br />
-        Also, these catalogs have very different distributions of motif sizes: <br />
+        Motif size distribution in each catalog: <br />
         <br />
         <img src="https://bw2.github.io/2023-11-12-defining-genome-wide-TR-catalogs/variant_catalog_stats.10_catalogs.motif_sizes.png?random=1" />
         
