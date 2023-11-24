@@ -307,10 +307,11 @@
             </li>
         </ol>
 
-        The <a href="https://github.com/broadinstitute/str-analysis">str-analysis</a> repo contains scripts for merging, annotating and filtering TR catalogs. The commands below shows how to use them to generate a combined TR catalog:
+        The <a href="https://github.com/broadinstitute/str-analysis">str-analysis</a> repo contains scripts for merging, annotating and filtering TR catalogs. <br />
+        The commands below use these scripts to generate a combined TR catalog:
 
         <pre>
-## download the publicly-available catalogs from the google buckets and repos associated with [weisburd 2023]
+## download the publicly-available catalogs from the google buckets and repos from [weisburd 2023]
 known_disease_associated_loci=https://raw.githubusercontent.com/broadinstitute/str-analysis/main/str_analysis/variant_catalogs/variant_catalog_without_offtargets.GRCh38.json
 trf_pure_6bp_catalog=https://storage.cloud.google.com/str-truth-set/hg38/ref/other/repeat_specs_GRCh38_without_mismatches.including_homopolymers.sorted.at_least_6bp.bed.gz
 trf_pure_9bp_catalog=https://storage.cloud.google.com/str-truth-set/hg38/ref/other/repeat_specs_GRCh38_without_mismatches.including_homopolymers.sorted.at_least_9bp.bed.gz
