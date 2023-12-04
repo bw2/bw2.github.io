@@ -291,7 +291,7 @@
         </a>
         
         <br />
-        <h3>Combining catalogs:</h3>
+        <h3>Generating a combined catalog:</h3>
 
         I think that currently the best way to create a comprehensive genome-wide TR catalog is to merge:
         <ol>
@@ -306,7 +306,63 @@
                 and so are not captured by TRF-based catalogs.
             </li>
         </ol>
+	<br />
+	<h3>Combined catalogs:</h3>
+	I generated two combined catalogs - a smaller one with 4.7M loci and a larger one with 9.8M loci. The only difference between them is whether they include TRF-generated catalogs
+	of loci that span at least 6bp in the reference, or at least 9bp. Both combined catalogs are publicly available for download:
+	<table>
+            <thead>
+            <tr style="text-align: right;">
+                <th>catalog</th>
+                <th>total loci</th>
+                <th>chrX</th>
+                <th>chrY</th>
+                <th>homo-<br/>polymers?</th>
+                <th>motif<br/>sizes</th>
+                <th>locus<br/>sizes</th>
+                <th># of repeats</th>
+                <th>pure repeats
+                    <div class="ui icon" style="display: inline" data-content="% of loci that have no interruptions in their reference sequence">
+                        <i class="question circle outline icon"></i>
+                    </div>
+                </th>
+                <th>trimmed
+                    <div class="ui icon" style="display: inline" data-content="Trimmed locus intervals span an exact multiple of the repeat motif size. For example: CAG.CAG.CAG rather than CAG.CAG.CAG.CA ">
+                        <i class="question circle outline icon"></i>
+                    </div>
+                </th>
+                <th>
+                    overlapping loci
+                    <div class="ui icon" style="display: inline" data-content="% of loci overlap that overlap each other within the catalog">
+                        <i class="question circle outline icon"></i>
+                    </div>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <a href="https://github.com/broadinstitute/str-analysis/blob/main/str_analysis/variant_catalogs/variant_catalog_without_offtargets.GRCh38.json">
+                    Known disease-associated loci
+                    </a>
+                </td>
+                <td>72</td>
+                <td>8 (11.3%)</td>
+                <td>0 (0.0%)</td>
+                <td style="color:green"><center>✓</center></td>
+                <td>1-27bp</td>
+                <td>12-150bp</td>
+                <td>1-50x</td>
+                <td>58.3%</td>
+                <td>100.0%</td>
+                <td>0 (0.0%)</td>
+            </tr>
+	    </tbody>
+	</table>
+	<br />
+			
 
+	<h3>Technical details:</h3>
         The <a href="https://github.com/broadinstitute/str-analysis">str-analysis</a> repo contains scripts for merging, annotating and filtering TR catalogs. <br />
         The commands below use these scripts to generate a combined TR catalog:
 
