@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>List of public-facing projects</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./github-css.css" />
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G7WEXHL9KW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-G7WEXHL9KW');
+  </script>
+  <style>
+    .header-section {
+      font-weight: 500;
+      color: #555555;
+      display: inline-block;
+    }
+
+    /* used by anchor-js */
+    :target {
+      scroll-margin-top: 70px;
+    }
+
+    pre code {
+      background-color: #F8F8F8 !important;
+      padding: 12px !important;
+      border: none !important;
+      display: block;
+    }
+
+  </style>
+</head>
+<body>
+
+<a name="top"></a>
+
+<div class="ui fixed menu" style="padding: 10px 0px">
+  <div class="ui grid" style="width:100%; font-size:16px; color: rgba(0,0,0,.87)">
+    <div class="ui three wide column"></div>
+    <div class="ui three wide column">
+      <div style="font-weight:800; padding-right:10px; display:inline-block"><a href="/">Project Notes</a></div>
+      <div class="header-section"> - Ben Weisburd</div>
+    </div>
+    <div class="ui six wide column">
+      <div class="header-section, header-section-fade-in" style="color: black; display: none; width:100%">List of public-facing projects</div>
+    </div>
+    <div class="ui one wide column">
+      <div class="header-section" style="float: right;"></div>
+    </div>
+    <div class="ui three wide column">
+      <div class="header-section, header-section-fade-in" style="display: none;">[<a href="#top">Jump to top</a>]</div>
+    </div>
+  </div>
+</div>
+
+<div class="ui grid">
+  <div class="ui three wide column"></div>
+  <div class="ui ten wide column" style="font-size:16px; color: rgba(0,0,0,.87); padding-top:35px;">
+
+    <h2>List of public-facing projects</h2>
+<h3>Tandem Repeats</h3>
+<ul>
+<li><strong><a href="https://trexplorer.broadinstitute.org">trexplorer.broadinstitute.org</a></strong>: An online portal for exploring and visualizing tandem repeats (TRs) genome-wide. It enables searching, sorting, and exporting TRs based on a wide range of annotations including population allele frequencies from short-read and long-read datasets, genic and chromosomal regions, published TR functions (expression, splicing, ...), association study results, and many others. [<a href="https://github.com/broadinstitute/TRExplorer">code</a>] [<a href="https://pubmed.ncbi.nlm.nih.gov/42025159/">publication</a>]</li>
+<li><strong><a href="https://github.com/broadinstitute/trexplorer-catalog/blob/main/README.md">trexplorer-catalog</a></strong>: TR catalog and variation clusters for genome-wide analyses and population databases. [<a href="https://github.com/broadinstitute/trexplorer-catalog">code</a>] [<a href="https://pubmed.ncbi.nlm.nih.gov/42025159/">publication</a>]</li>
+<li><strong><a href="https://github.com/bw2/ExpansionHunter/blob/master/README.md">ExpansionHunter (bw2 fork)</a></strong>: A fork of <a href="https://github.com/Illumina/ExpansionHunter">Illumina/ExpansionHunter</a> that adds substantial new features and optimizations including optimized-streaming mode, motif composition analysis, allele quality scores, and others. [<a href="https://github.com/bw2/ExpansionHunter">code</a>]</li>
+<li><strong><a href="https://github.com/broadinstitute/str-truth-set/blob/main/README.md">str-truth-set</a></strong>: Genome-wide TR truth set based on the Synthetic Diploid Benchmark (Li et al. 2018). [<a href="https://github.com/broadinstitute/str-truth-set">code</a>] [<a href="https://pubmed.ncbi.nlm.nih.gov/37214979/">publication</a>]</li>
+<li><strong><a href="https://github.com/broadinstitute/str-truth-set-v2/blob/main/README.md">str-truth-set-v2</a></strong>: v2.0 of the TR truth set (now based on 321 haplotype-resolved assemblies), along with a <a href="https://broadinstitute.github.io/str-truth-set-v2/tool_comparison_viewer.html">tool benchmark viewer</a>. [<a href="https://github.com/broadinstitute/str-truth-set-v2">code</a>]</li>
+<li><strong><a href="https://github.com/broadinstitute/TRails/blob/main/README.md">TRails</a></strong>: A local, interactive app for prioritizing tandem repeat outlier expansions in rare disease callsets. [<a href="https://github.com/broadinstitute/TRails">code</a>]</li>
+<li><strong><a href="https://github.com/broadinstitute/colab-repeat-finder/blob/main/README.md">colab-repeat-finder</a></strong>: A tool for finding perfect repeats in the reference genome that span more than M base pairs and/or N repeats. [<a href="https://github.com/broadinstitute/colab-repeat-finder">code</a>]</li>
+<li><strong><a href="https://broadinstitute.github.io/StrPileups/">StrPileups</a></strong>: ExpansionHunter genotypes, REViewer read visualizations, and PCR truth data for 133 individuals at 14 known pathogenic STR loci. [<a href="https://github.com/broadinstitute/StrPileups">code</a>] [<a href="https://pubmed.ncbi.nlm.nih.gov/35948990/">publication</a>]</li>
+<li><strong><a href="https://github.com/broadinstitute/str-analysis/blob/main/README.md">str-analysis</a></strong>: Scripts and utilities for analyzing tandem repeats. [<a href="https://github.com/broadinstitute/str-analysis">code</a>]</li>
+</ul>
+<h3>Rare Disease</h3>
+<ul>
+<li><strong><a href="https://github.com/broadinstitute/sma-finder/blob/main/README.md">sma-finder</a></strong>: A tool for diagnosing spinal muscular atrophy (SMA) in exome, genome, or targeted sequencing data. [<a href="https://github.com/broadinstitute/sma-finder">code</a>] [<a href="https://pubmed.ncbi.nlm.nih.gov/39670433/">publication</a>]</li>
+<li><strong><a href="https://seqr.broadinstitute.org">seqr.broadinstitute.org</a></strong>: Web-based interactive analysis and variant prioritization tool for rare disease genomic datasets including genomes, exomes, and RNA-seq. [<a href="https://github.com/broadinstitute/seqr">code</a>] [<a href="https://pubmed.ncbi.nlm.nih.gov/35266241/">publication</a>]</li>
+<li><strong><a href="https://spliceailookup.broadinstitute.org">spliceailookup.broadinstitute.org</a></strong>: Website for running SpliceAI, Pangolin, and SAI-10k prediction models on variants of interest, visualizing results, while also checking other variant effect predictor scores. [<a href="https://github.com/broadinstitute/SpliceAI-lookup">code</a>]</li>
+<li><strong><a href="https://genelookup.broadinstitute.org">genelookup.broadinstitute.org</a></strong>: Website that aggregates information about gene-disease relationships from OMIM, ClinGen, PanelApp UK, and over 10 other sources, provides an AI summary of the phenotype, and makes the information easier to search, compare, and export. [<a href="https://github.com/broadinstitute/gene-lookup">code</a>]</li>
+<li><strong><a href="https://tgg-viewer.broadinstitute.org">tgg-viewer.broadinstitute.org</a></strong>: Web app for visualizing splice junctions, copy number variation, and other sequencing data using IGV.js. [<a href="https://github.com/broadinstitute/tgg-viewer">code</a>]</li>
+<li><strong><a href="https://github.com/broadinstitute/phenotype-driven-analysis/blob/main/README.md">phenotype-driven-analysis</a></strong>: Pipeline for phenotype-driven analysis of rare disease cases using the LIRICAL tool. [<a href="https://github.com/broadinstitute/phenotype-driven-analysis">code</a>]</li>
+</ul>
+<h3>Genomics</h3>
+<ul>
+<li><strong><a href="https://gnomad.broadinstitute.org">gnomad.broadinstitute.org</a></strong>: Genome Aggregation Database browser. Includes <a href="https://github.com/broadinstitute/gnomad-readviz">gnomad-readviz</a>: scripts that precompute the mini-BAMs and other files behind gnomAD's read visualization feature. [<a href="https://github.com/broadinstitute/gnomad-browser">code</a>] [<a href="https://pubmed.ncbi.nlm.nih.gov/32461654/">publication</a>]</li>
+<li><strong><a href="https://liftover.broadinstitute.org">liftover.broadinstitute.org</a></strong>: A user-friendly genomic liftover interface for variants, positions, or intervals. [<a href="https://github.com/broadinstitute/liftover">code</a>]</li>
+</ul>
+<h3>General Software</h3>
+<ul>
+<li><strong><a href="https://github.com/bw2/ConfigArgParse/blob/master/README.md">ConfigArgParse</a></strong>: Drop-in replacement for Python's argparse that adds support for config files and environment variables. [<a href="https://github.com/bw2/ConfigArgParse">code</a>]</li>
+<li><strong><a href="https://github.com/broadinstitute/flipbook/blob/main/README.md">flipbook</a></strong>: Quickly flip through images in a local directory and record notes or answer questions about each one. [<a href="https://github.com/broadinstitute/flipbook">code</a>] [<a href="https://pubmed.ncbi.nlm.nih.gov/35948990/">publication</a>]</li>
+<li><strong><a href="https://github.com/bw2/step-pipeline/blob/main/README.md">step-pipeline</a></strong>: A thin wrapper around Hail Batch that adds features like skipping steps whose output files already exist, more options for localizing files, and notifications when a pipeline finishes. [<a href="https://github.com/bw2/step-pipeline">code</a>]</li>
+</ul>
+<h3>AI Coding Agents</h3>
+<ul>
+<li><strong><a href="https://github.com/bw2/agent-command-tab/blob/main/README.md">agent-command-tab</a></strong>: A macOS menu bar app that lists the iTerm2 and tmux tabs where AI coding agents (Claude Code, Codex CLI, and others) are running, and shows what each one is doing. [<a href="https://github.com/bw2/agent-command-tab">code</a>]</li>
+<li><strong><a href="https://github.com/bw2/claude-code-review-skill/blob/main/README.md">claude-code-review-skill</a></strong>: Claude Code skill that runs code review with Opus and Sonnet (plus, optionally, Google Antigravity), with blind peer validation and confidence-scored findings. [<a href="https://github.com/bw2/claude-code-review-skill">code</a>]</li>
+<li><strong><a href="https://github.com/bw2/claude-code-session-recall/blob/main/README.md">claude-code-session-recall</a></strong>: Claude Code skill that searches and summarizes recent Claude Code sessions for the current directory. [<a href="https://github.com/bw2/claude-code-session-recall">code</a>]</li>
+<li><strong><a href="https://github.com/bw2/claude-error-patterns/blob/main/README.md">claude-error-patterns</a></strong>: Claude Code plugin that analyzes session logs for recurring error patterns and wheel-spinning loops. [<a href="https://github.com/bw2/claude-error-patterns">code</a>]</li>
+</ul>
+
+    <br />
+    <center><img style="margin-left:25px;" width="586" alt="image" src="https://user-images.githubusercontent.com/6240170/167290392-8974f18a-af18-40c1-9f61-fbb6713fc8d0.png"></center>
+
+    <!-- https://giscus.app/ -->
+    <div class="container giscus" style="width:100%; margin:50px 10px">
+      <script src="https://giscus.app/client.js"
+              data-repo="bw2/bw2.github.io"
+              data-repo-id="MDEwOlJlcG9zaXRvcnkzNTU2OTQ0OA=="
+              data-category="Announcements"
+              data-category-id="DIC_kwDOAh6_KM4CO_Vz"
+              data-mapping="pathname"
+              data-reactions-enabled="1"
+              data-emit-metadata="0"
+              data-input-position="bottom"
+              data-theme="light"
+              data-lang="en"
+              crossorigin="anonymous"
+              async>
+      </script>
+    </div>
+  </div>
+  <div class="ui three wide column"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+  const headingAnchors = new AnchorJS({
+    visible: 'hover',
+    placement: 'left'
+  });
+  headingAnchors.add('h2, h3, h4');
+
+  const paragraphAnchors = new AnchorJS({
+    visible: 'hover',
+    placement: 'left',
+    icon: '¶'
+  });
+  paragraphAnchors.add('p');
+
+  $( window ).scroll(() => {
+    if (window.scrollY > 75) {
+      $(".header-section-fade-in").fadeIn("slow");
+    } else {
+      $(".header-section-fade-in").fadeOut("slow");
+    }
+  })
+</script>
+</body>
+</html>

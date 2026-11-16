@@ -37,6 +37,31 @@
 	padding:  7px 10px;
     }
 
+    /* link to GitHub at the end of the header title: the GitHub icon followed by "bw2" */
+    .github-link {
+	white-space: nowrap;
+	margin-left: 11px;  /* matches the visible gap after "Project Notes" */
+    }
+    .github-cat-icon {
+	width: 1em;
+	height: 1em;
+	fill: #000000;
+	margin-right: 5px;
+	vertical-align: -0.1em;
+    }
+    /* on narrow screens, drop the title indent so the longer title fits */
+    @media (max-width: 600px) {
+	.pagetitle {
+	    padding-left: 0;
+	}
+    }
+    /* on phones, also shrink the title so it stays on one line and the fixed header doesn't cover the page */
+    @media (max-width: 400px) {
+	.pagetitle {
+	    font-size: 13pt !important;
+	}
+    }
+
   </style>
   
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -54,13 +79,53 @@
   <div class="ui fixed menu" style="padding: 10px 20px">
     <div class="ui text container pagetitle">
 	<div style="font-weight:800; padding-right:10px">Project Notes</div>
-	<div style="font-weight:500; color:#555555"> - Ben Weisburd</div>
+	<div style="font-weight:500; color:#555555"> - Ben Weisburd -<a class="github-link" href="https://github.com/bw2" target="_blank" rel="noopener"><!--
+	  GitHub mark from Octicons 19.42.0 (mark-github-16.svg, MIT license, https://github.com/primer/octicons)
+	  --><svg class="github-cat-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M6.766 11.328c-2.063-.25-3.516-1.734-3.516-3.656 0-.781.281-1.625.75-2.188-.203-.515-.172-1.609.063-2.062.625-.078 1.468.25 1.968.703.594-.187 1.219-.281 1.985-.281.765 0 1.39.094 1.953.265.484-.437 1.344-.765 1.969-.687.218.422.25 1.515.046 2.047.5.593.766 1.39.766 2.203 0 1.922-1.453 3.375-3.547 3.64.531.344.89 1.094.89 1.954v1.625c0 .468.391.734.86.547C13.781 14.359 16 11.53 16 8.03 16 3.61 12.406 0 7.984 0 3.563 0 0 3.61 0 8.031a7.88 7.88 0 0 0 5.172 7.422c.422.156.828-.125.828-.547v-1.25c-.219.094-.5.156-.75.156-1.031 0-1.64-.562-2.078-1.609-.172-.422-.36-.672-.719-.719-.187-.015-.25-.093-.25-.187 0-.188.313-.328.625-.328.453 0 .844.281 1.25.86.313.452.64.655 1.031.655s.641-.14 1-.5c.266-.265.47-.5.657-.656"/></svg>bw2</a></div>
     </div>
   </div>
 
   <div class="ui main text container">
     <div style="padding-top:75px"></div>
     <table>
+      <tr class="table-row"><td class="date-column"></td> <td>
+        <div style="display:inline-block">
+          <a href="https://bw2.github.io/projects.html">List of public-facing projects</a>
+          <!-- ornamental divider as wide as the link above it: a large and a small four-pointed star at each end, and
+               small, medium, medium, medium, small stars in the middle, joined by two lines with pointed ends.
+               The stars keep a fixed size and only the two lines stretch. width:0 + min-width:100% keeps the
+               divider from widening the box around the link. -->
+          <div aria-hidden="true" style="display:flex; align-items:center; width:0; min-width:100%; margin:8px 0 10px 0">
+            <svg width="26" height="20" style="flex:none">
+              <g fill="#555555">
+                <path d="M 6 4.5 Q 6.99 9.01 11.5 10 Q 6.99 10.99 6 15.5 Q 5.01 10.99 0.5 10 Q 5.01 9.01 6 4.5 Z" />
+                <path d="M 15 7.4 Q 15.468 9.532 17.6 10 Q 15.468 10.468 15 12.6 Q 14.532 10.468 12.4 10 Q 14.532 9.532 15 7.4 Z" />
+                <path d="M 26 8.4 L 26 11.6 L 20 10 Z" />
+              </g>
+            </svg>
+            <svg height="20" style="flex:1; min-width:0"><line x1="0" y1="10" x2="100%" y2="10" stroke="#555555" stroke-width="1.5" /></svg>
+            <svg width="60" height="20" style="flex:none">
+              <g fill="#555555">
+                <path d="M 0 8.4 L 0 11.6 L 6 10 Z" />
+                <path d="M 11.5 7.6 Q 11.932 9.568 13.9 10 Q 11.932 10.432 11.5 12.4 Q 11.068 10.432 9.1 10 Q 11.068 9.568 11.5 7.6 Z" />
+                <path d="M 20 6 Q 20.72 9.28 24 10 Q 20.72 10.72 20 14 Q 19.28 10.72 16 10 Q 19.28 9.28 20 6 Z" />
+                <path d="M 30 6 Q 30.72 9.28 34 10 Q 30.72 10.72 30 14 Q 29.28 10.72 26 10 Q 29.28 9.28 30 6 Z" />
+                <path d="M 40 6 Q 40.72 9.28 44 10 Q 40.72 10.72 40 14 Q 39.28 10.72 36 10 Q 39.28 9.28 40 6 Z" />
+                <path d="M 48.5 7.6 Q 48.932 9.568 50.9 10 Q 48.932 10.432 48.5 12.4 Q 48.068 10.432 46.1 10 Q 48.068 9.568 48.5 7.6 Z" />
+                <path d="M 60 8.4 L 60 11.6 L 54 10 Z" />
+              </g>
+            </svg>
+            <svg height="20" style="flex:1; min-width:0"><line x1="0" y1="10" x2="100%" y2="10" stroke="#555555" stroke-width="1.5" /></svg>
+            <svg width="26" height="20" style="flex:none">
+              <g fill="#555555">
+                <path d="M 0 8.4 L 0 11.6 L 6 10 Z" />
+                <path d="M 11 7.4 Q 11.468 9.532 13.6 10 Q 11.468 10.468 11 12.6 Q 10.532 10.468 8.4 10 Q 10.532 9.532 11 7.4 Z" />
+                <path d="M 20 4.5 Q 20.99 9.01 25.5 10 Q 20.99 10.99 20 15.5 Q 19.01 10.99 14.5 10 Q 19.01 9.01 20 4.5 Z" />
+              </g>
+            </svg>
+          </div>
+        </div>
+      </td></tr>
       <tr class="table-row"><td class="date-column"> 11-12-2023</td> <td><a href="https://bw2.github.io/2023-11-12-defining-genome-wide-TR-catalogs.html">Defining genome-wide TR catalogs</a></td></tr>
       <tr class="table-row"><td class="date-column"> 7-31-2023</td> <td><a href="https://bw2.github.io/2023-07-31-adjacent-repeats-in-expansion-hunter-catalogs.html">How adjacent repeats in ExpansionHunter catalogs affect genotype quality</a></td></tr>
       <tr class="table-row"><td class="date-column"> 6-1-2022</td> <td><a href="https://bw2.github.io/2022-06-01-phenotype-based-prioritization2-LIRICAL-vs-exomiser.html">LIRICAL vs Exomiser phenotype-based prioritization in 75 rare disease cases</a></td></tr>
