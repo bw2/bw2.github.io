@@ -106,6 +106,31 @@ class FillInProjectUsageCountPlaceholdersTests(unittest.TestCase):
             "[11,947 citations](https://scholar.google.com/scholar?cites=1,2), 0 citations, "
             "1,234 weekly visitors"))
 
+    def test_leaves_out_weekly_visitor_counts_under_the_minimum(self):
+        project_usage_counts = {
+            "github_stars": {"broadinstitute/seqr": {"count": 221}},
+            "weekly_visitors": {
+                "seqr.broadinstitute.org": {"count": 151},
+                "genelookup.broadinstitute.org": {"count": 48},
+                "liftover.broadinstitute.org": {"count": 1000},
+            },
+        }
+        markdown_text = (
+            "- first<br /><b>Users:</b> {{weekly_visitors:seqr.broadinstitute.org}}, "
+            "{{github_stars:broadinstitute/seqr}}\n"
+            "- last<br /><b>Users:</b> {{github_stars:broadinstitute/seqr}}, "
+            "{{weekly_visitors:genelookup.broadinstitute.org}}\n"
+            "- only<br /><b>Users:</b> {{weekly_visitors:genelookup.broadinstitute.org}}\n"
+            "- two left out<br /><b>Users:</b> {{weekly_visitors:seqr.broadinstitute.org}}, "
+            "{{weekly_visitors:genelookup.broadinstitute.org}}\n"
+            "- at the minimum<br /><b>Users:</b> {{weekly_visitors:liftover.broadinstitute.org}}\n")
+        self.assertEqual(fill_in_project_usage_count_placeholders(markdown_text, project_usage_counts), (
+            "- first<br /><b>Users:</b> [221 GitHub stars](https://github.com/broadinstitute/seqr/stargazers)\n"
+            "- last<br /><b>Users:</b> [221 GitHub stars](https://github.com/broadinstitute/seqr/stargazers)\n"
+            "- only\n"
+            "- two left out\n"
+            "- at the minimum<br /><b>Users:</b> 1,000 weekly visitors\n"))
+
     def test_missing_counts_are_shown_as_question_marks(self):
         markdown_text = ("{{github_stars:bw2/ConfigArgParse}}, {{google_scholar_citations:Some paper}}, "
                          "{{weekly_visitors:liftover.broadinstitute.org}}")

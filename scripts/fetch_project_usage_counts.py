@@ -8,7 +8,8 @@ fetches the current value of each one:
     {{google_scholar_citations:TITLE}}     "Cited by" count and link of the paper with this title, read from the
                                            Google Scholar profile page below
     {{weekly_visitors:WEBSITE}}            the website's Google Analytics active users per week, averaged over the
-                                           last 12 full weeks (Monday to Sunday)
+                                           last 12 full weeks (Monday to Sunday). Left off the page while it's
+                                           under 1,000.
 
 If a value can't be fetched, it prints a warning and keeps the value saved by the previous run, so a failure never
 blocks publishing.
@@ -21,6 +22,10 @@ the robot account (service account) bw2-github-io-usage-counts@cmg-analysis.iam.
 stored key. That account has no Google Cloud roles. It can read a website's visitor counts only after someone adds it
 as a Viewer in that website's Google Analytics property (Admin > Property access management). cmg-analysis must have
 analyticsdata.googleapis.com enabled.
+
+update_pages.sh also runs it on a Mac, which is the only place the citation counts get refreshed, because Google
+Scholar blocks GitHub's servers. There it acts as the same robot account through the gcloud application-default
+login, whose account needs the Service Account Token Creator role on the robot account.
 
 Usage, from the repo root (update_pages.sh also runs this before generate_html.py):
     python3 scripts/fetch_project_usage_counts.py
@@ -49,7 +54,17 @@ GOOGLE_ANALYTICS_PROPERTY_ID_BY_WEBSITE = {
     "liftover.broadinstitute.org": "253463776",
 }
 
+GOOGLE_ANALYTICS_ROBOT_ACCOUNT = "bw2-github-io-usage-counts@cmg-analysis.iam.gserviceaccount.com"
+GOOGLE_ANALYTICS_READ_ONLY_SCOPE = "https://www.googleapis.com/auth/analytics.readonly"
+
 NUMBER_OF_WEEKS_TO_AVERAGE = 12
+
+# weekly visitor counts below this are left off the page
+MINIMUM_WEEKLY_VISITORS_TO_SHOW = 1000
+
+# stands in for a count that's left off the page until the commas and labels around it are cleaned up. A NUL
+# character, so it can never match text that's really on the page
+HIDDEN_COUNT_MARKER = "\x00"
 
 # Google Scholar turns away requests that don't look like they come from a browser.
 BROWSER_USER_AGENT = (
@@ -151,12 +166,23 @@ def get_date_range_of_last_full_weeks(today, number_of_weeks):
 
 
 def create_google_analytics_session():
-    """Return an HTTP session that sends requests with the default Google login, using only the read-only Analytics
-    scope. In GitHub Actions, that login is the robot account described at the top of this file.
+    """Return an HTTP session signed in as the robot account described at the top of this file, with only the
+    read-only Analytics scope.
+
+    In GitHub Actions, the workflow's sign-in step has already made the robot account the default Google login.
+    Elsewhere, the gcloud application-default login acts as the robot account.
     """
-    import google.auth  # imported here so that generate_html.py, which imports this module, doesn't need it
+    import google.auth  # imported here so that generate_html.py, which imports this module, doesn't need them
+    import google.auth.impersonated_credentials
     import google.auth.transport.requests
-    credentials, _ = google.auth.default(scopes=["https://www.googleapis.com/auth/analytics.readonly"])
+    if os.environ.get("GITHUB_ACTIONS") == "true":
+        credentials, _ = google.auth.default(scopes=[GOOGLE_ANALYTICS_READ_ONLY_SCOPE])
+    else:
+        gcloud_credentials, _ = google.auth.default(scopes=["https://www.googleapis.com/auth/cloud-platform"])
+        credentials = google.auth.impersonated_credentials.Credentials(
+            source_credentials=gcloud_credentials,
+            target_principal=GOOGLE_ANALYTICS_ROBOT_ACCOUNT,
+            target_scopes=[GOOGLE_ANALYTICS_READ_ONLY_SCOPE])
     return google.auth.transport.requests.AuthorizedSession(credentials)
 
 
@@ -196,13 +222,16 @@ def fill_in_project_usage_count_placeholders(markdown_text, project_usage_counts
 
     Returns:
         the text with each placeholder replaced. A placeholder with no saved count is shown as "??", and a warning
-        is printed.
+        is printed. A weekly visitor count under MINIMUM_WEEKLY_VISITORS_TO_SHOW is left out, together with the
+        ", " that separated it from its neighbor, and so is a "<br /><b>Users:</b>" label left with nothing after it.
     """
     def format_placeholder(match):
         kind, key = match.group(1), match.group(2).strip()
         saved = project_usage_counts.get(kind, {}).get(key)
         if saved is None:
             print(f"WARNING: no saved {kind} count for {key}, so showing ?? (run scripts/fetch_project_usage_counts.py)")
+        if kind == "weekly_visitors" and saved and saved["count"] < MINIMUM_WEEKLY_VISITORS_TO_SHOW:
+            return HIDDEN_COUNT_MARKER
         count = f"{saved['count']:,}" if saved else "??"
         if kind == "github_stars":
             return f"[{count} GitHub {'star' if count == '1' else 'stars'}](https://github.com/{key}/stargazers)"
@@ -211,7 +240,10 @@ def fill_in_project_usage_count_placeholders(markdown_text, project_usage_counts
             return f"[{citations}]({saved['cited_by_url']})" if saved and saved["cited_by_url"] else citations
         return f"{count} weekly visitors"
 
-    return PLACEHOLDER_REGEX.sub(format_placeholder, markdown_text)
+    markdown_text = PLACEHOLDER_REGEX.sub(format_placeholder, markdown_text)
+    markdown_text = re.sub(f", {HIDDEN_COUNT_MARKER}|{HIDDEN_COUNT_MARKER}, ", "", markdown_text)
+    markdown_text = re.sub(f"<br />\\s*<b>Users:</b>\\s*{HIDDEN_COUNT_MARKER}", "", markdown_text)
+    return markdown_text.replace(HIDDEN_COUNT_MARKER, "")
 
 
 def main():

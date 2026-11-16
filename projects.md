@@ -1,4 +1,4 @@
-## List of public-facing open source projects
+## List of public-facing projects
 
 ### Tandem Repeats
 
