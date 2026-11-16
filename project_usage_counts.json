@@ -66,24 +66,29 @@
   },
   "weekly_visitors": {
     "genelookup.broadinstitute.org": {
-      "count": 48,
-      "fetched_on": "2026-11-16"
+      "count": 64,
+      "fetched_on": "2026-11-16",
+      "week_starting": "2026-11-09"
     },
     "liftover.broadinstitute.org": {
-      "count": 1269,
-      "fetched_on": "2026-11-16"
+      "count": 1190,
+      "fetched_on": "2026-11-16",
+      "week_starting": "2026-11-09"
     },
     "seqr.broadinstitute.org": {
-      "count": 151,
-      "fetched_on": "2026-11-16"
+      "count": 152,
+      "fetched_on": "2026-11-16",
+      "week_starting": "2026-11-09"
     },
     "spliceailookup.broadinstitute.org": {
-      "count": 8087,
-      "fetched_on": "2026-11-16"
+      "count": 9030,
+      "fetched_on": "2026-11-16",
+      "week_starting": "2026-11-09"
     },
     "trexplorer.broadinstitute.org": {
-      "count": 98,
-      "fetched_on": "2026-11-16"
+      "count": 104,
+      "fetched_on": "2026-11-16",
+      "week_starting": "2026-11-09"
     }
   }
 }

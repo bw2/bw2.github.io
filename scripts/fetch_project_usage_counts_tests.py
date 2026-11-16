@@ -9,7 +9,7 @@ import unittest
 from fetch_project_usage_counts import (
     fill_in_project_usage_count_placeholders,
     find_placeholders,
-    get_date_range_of_last_full_weeks,
+    get_last_full_week,
     normalize_paper_title,
     parse_google_scholar_profile_page,
 )
@@ -71,18 +71,16 @@ class ParseGoogleScholarProfilePageTests(unittest.TestCase):
         self.assertEqual(parse_google_scholar_profile_page("<html>Please show you're not a robot</html>"), {})
 
 
-class GetDateRangeOfLastFullWeeksTests(unittest.TestCase):
+class GetLastFullWeekTests(unittest.TestCase):
 
-    def test_date_ranges(self):
-        sunday_nov_15, monday_nov_16 = datetime.date(2026, 11, 15), datetime.date(2026, 11, 16)
+    def test_last_full_week(self):
+        monday_nov_9, sunday_nov_15 = datetime.date(2026, 11, 9), datetime.date(2026, 11, 15)
         # on a Monday, the last full week ended the day before
-        self.assertEqual(get_date_range_of_last_full_weeks(monday_nov_16, 1),
-                         (datetime.date(2026, 11, 9), sunday_nov_15))
+        self.assertEqual(get_last_full_week(datetime.date(2026, 11, 16)), (monday_nov_9, sunday_nov_15))
+        # on a Tuesday, when the weekly GitHub Actions run happens
+        self.assertEqual(get_last_full_week(datetime.date(2026, 11, 17)), (monday_nov_9, sunday_nov_15))
         # on a Sunday, that day's week isn't over yet
-        self.assertEqual(get_date_range_of_last_full_weeks(sunday_nov_15, 1),
-                         (datetime.date(2026, 11, 2), datetime.date(2026, 11, 8)))
-        self.assertEqual(get_date_range_of_last_full_weeks(datetime.date(2026, 11, 18), 12),
-                         (datetime.date(2026, 8, 24), sunday_nov_15))
+        self.assertEqual(get_last_full_week(sunday_nov_15), (datetime.date(2026, 11, 2), datetime.date(2026, 11, 8)))
 
 
 class FillInProjectUsageCountPlaceholdersTests(unittest.TestCase):
@@ -94,7 +92,7 @@ class FillInProjectUsageCountPlaceholdersTests(unittest.TestCase):
                 "Some paper": {"count": 11947, "cited_by_url": "https://scholar.google.com/scholar?cites=1,2"},
                 "Uncited paper": {"count": 0, "cited_by_url": None},
             },
-            "weekly_visitors": {"liftover.broadinstitute.org": {"count": 1234}},
+            "weekly_visitors": {"liftover.broadinstitute.org": {"count": 1234, "week_starting": "2026-11-09"}},
         }
         markdown_text = (
             "{{github_stars:bw2/ConfigArgParse}}, {{github_stars:bw2/step-pipeline}}, "
@@ -104,7 +102,7 @@ class FillInProjectUsageCountPlaceholdersTests(unittest.TestCase):
             "[761 GitHub stars](https://github.com/bw2/ConfigArgParse/stargazers), "
             "[1 GitHub star](https://github.com/bw2/step-pipeline/stargazers), "
             "[11,947 citations](https://scholar.google.com/scholar?cites=1,2), 0 citations, "
-            "1,234 weekly visitors"))
+            "1,234 weekly visitors [Google Analytics: week of 11/9/2026]"))
 
     def test_leaves_out_weekly_visitor_counts_under_the_minimum(self):
         project_usage_counts = {
@@ -112,7 +110,7 @@ class FillInProjectUsageCountPlaceholdersTests(unittest.TestCase):
             "weekly_visitors": {
                 "seqr.broadinstitute.org": {"count": 151},
                 "genelookup.broadinstitute.org": {"count": 48},
-                "liftover.broadinstitute.org": {"count": 1000},
+                "liftover.broadinstitute.org": {"count": 1000, "week_starting": "2026-11-09"},
             },
         }
         markdown_text = (
@@ -129,7 +127,7 @@ class FillInProjectUsageCountPlaceholdersTests(unittest.TestCase):
             "- last<br /><b>Users:</b> [221 GitHub stars](https://github.com/broadinstitute/seqr/stargazers)\n"
             "- only\n"
             "- two left out\n"
-            "- at the minimum<br /><b>Users:</b> 1,000 weekly visitors\n"))
+            "- at the minimum<br /><b>Users:</b> 1,000 weekly visitors [Google Analytics: week of 11/9/2026]\n"))
 
     def test_missing_counts_are_shown_as_question_marks(self):
         markdown_text = ("{{github_stars:bw2/ConfigArgParse}}, {{google_scholar_citations:Some paper}}, "
