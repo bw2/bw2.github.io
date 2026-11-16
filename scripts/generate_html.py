@@ -4,8 +4,14 @@ import markdown
 import os
 import re
 
+from fetch_project_usage_counts import fill_in_project_usage_count_placeholders, load_project_usage_counts
+
 # Markdown pages whose file names don't start with a date. They are rendered with no date in the header.
 UNDATED_MARKDOWN_FILES = {"projects.md"}
+
+# counts that fill in the {{github_stars:...}}, {{google_scholar_citations:...}} and {{weekly_visitors:...}}
+# placeholders in projects.md (saved by scripts/fetch_project_usage_counts.py)
+project_usage_counts = load_project_usage_counts()
 
 with open("scripts/blog_post_template.html", "rt") as f:
     blog_post_template1 = jinja2.Template(f.read())
@@ -38,7 +44,7 @@ for markdown_file_path in glob.glob("*.md"):
     output_html_path = f"{output_prefix}.html"
 
     with open(markdown_file_path, "rt") as f:
-        markdown_file_contents = f.read()
+        markdown_file_contents = fill_in_project_usage_count_placeholders(f.read(), project_usage_counts)
 
     for line in markdown_file_contents.split("\n"):
         if line.startswith("## "):

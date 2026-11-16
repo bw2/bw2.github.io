@@ -1,0 +1,59 @@
+# Every Tuesday, refreshes the visitor, star and citation counts on https://bw2.github.io/projects.html and commits
+# them. It runs on Tuesday rather than Monday to give Google Analytics a day to finish processing Sunday's visits.
+name: Update project usage counts
+
+on:
+  schedule:
+    - cron: "0 12 * * 2"  # Tuesdays at 12:00 UTC (7 AM in Boston in winter, 8 AM in summer)
+  workflow_dispatch:  # adds a "Run workflow" button to https://github.com/bw2/bw2.github.io/actions
+
+permissions:
+  contents: write  # to commit the updated counts
+  id-token: write  # to sign in to Google Cloud as the robot account without a stored key
+
+concurrency:
+  group: update-project-usage-counts
+
+jobs:
+  update-project-usage-counts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7.0.1
+
+      - uses: actions/setup-python@v7.1.0
+        with:
+          python-version: "3.11"
+
+      # the same versions as on the Mac that runs update_pages.sh, so both render projects.html the same way
+      - name: Install Python libraries
+        run: pip install markdown==3.8 jinja2==3.1.6 google-auth==2.39.0 requests==2.34.2
+
+      # Google lets in only runs of bw2/bw2.github.io on master (set in cmg-analysis's workload identity pool
+      # "github-actions"), and the robot account can only read the Analytics properties it was added to as a Viewer
+      - name: Sign in to Google Cloud as the robot account
+        uses: google-github-actions/auth@v3.0.0
+        with:
+          workload_identity_provider: projects/422849809944/locations/global/workloadIdentityPools/github-actions/providers/bw2-github-io
+          service_account: bw2-github-io-usage-counts@cmg-analysis.iam.gserviceaccount.com
+
+      - name: Fetch the counts
+        run: python3 scripts/fetch_project_usage_counts.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Regenerate the projects page
+        run: python3 scripts/generate_html.py
+
+      # commits only these two files. generate_html.py also rewrites the other pages, and the sign-in step leaves a
+      # gha-creds-*.json file in the repo folder, neither of which should be committed
+      - name: Commit the updated counts
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add project_usage_counts.json projects.html
+          if git diff --cached --quiet; then
+            echo "No counts changed"
+          else
+            git commit -m "Updated project usage counts"
+            git push
+          fi
