@@ -7,9 +7,9 @@ fetches the current value of each one:
     {{github_stars:OWNER/REPO}}            the repo's star count, from the GitHub REST API
     {{google_scholar_citations:TITLE}}     "Cited by" count and link of the paper with this title, read from the
                                            Google Scholar profile page below
-    {{weekly_visitors:WEBSITE}}            the website's Google Analytics active users in the last full week
-                                           (Monday to Sunday), labeled with that week's Monday. Left off the page
-                                           while it's under 1,000.
+    {{weekly_visitors:WEBSITE}}            the website's Google Analytics active users per week, averaged over the
+                                           last 12 full weeks (Monday to Sunday) and labeled with those dates. Left
+                                           off the page while it's under 1,000.
 
 If a value can't be fetched, it prints a warning and keeps the value saved by the previous run, so a failure never
 blocks publishing.
@@ -56,6 +56,8 @@ GOOGLE_ANALYTICS_PROPERTY_ID_BY_WEBSITE = {
 
 GOOGLE_ANALYTICS_ROBOT_ACCOUNT = "bw2-github-io-usage-counts@cmg-analysis.iam.gserviceaccount.com"
 GOOGLE_ANALYTICS_READ_ONLY_SCOPE = "https://www.googleapis.com/auth/analytics.readonly"
+
+NUMBER_OF_WEEKS_TO_AVERAGE = 12
 
 # weekly visitor counts below this are left off the page
 MINIMUM_WEEKLY_VISITORS_TO_SHOW = 1000
@@ -156,10 +158,16 @@ def fetch_google_scholar_citations_by_normalized_title():
     return citations_by_normalized_title
 
 
-def get_last_full_week(today):
-    """Return the (Monday, Sunday) of the last full week before `today`."""
+def get_date_range_of_last_full_weeks(today, number_of_weeks):
+    """Return the (first Monday, last Sunday) of the last `number_of_weeks` full weeks before `today`."""
     last_sunday = today - datetime.timedelta(days=today.isoweekday())  # isoweekday() is 1 on Monday, 7 on Sunday
-    return last_sunday - datetime.timedelta(days=6), last_sunday
+    return last_sunday - datetime.timedelta(days=7 * number_of_weeks - 1), last_sunday
+
+
+def format_date_as_month_day_year(iso_date):
+    """Turn a date like "2026-08-24" into "8/24/2026"."""
+    date = datetime.date.fromisoformat(iso_date)
+    return f"{date.month}/{date.day}/{date.year}"
 
 
 def create_google_analytics_session():
@@ -183,29 +191,31 @@ def create_google_analytics_session():
     return google.auth.transport.requests.AuthorizedSession(credentials)
 
 
-def fetch_weekly_active_users(google_analytics_session, property_id, monday, sunday):
-    """Return the number of different people who used a website in one week, according to Google Analytics.
+def fetch_average_weekly_active_users(google_analytics_session, property_id, first_monday, last_sunday):
+    """Return a Google Analytics property's active users per week, averaged over the weeks in the date range.
 
     Args:
         google_analytics_session: session from create_google_analytics_session().
         property_id: the Google Analytics 4 property ID.
-        monday: datetime.date of the first day of the week.
-        sunday: datetime.date of the last day of the week.
+        first_monday: datetime.date of the first day of the first week.
+        last_sunday: datetime.date of the last day of the last week.
 
     Returns:
-        the property's active users in that week, or 0 if it had none.
+        the average, rounded to the nearest integer. Weeks with no visitors count as 0.
     """
     response = google_analytics_session.post(
         f"https://analyticsdata.googleapis.com/v1beta/properties/{property_id}:runReport",
         json={
-            "dateRanges": [{"startDate": monday.isoformat(), "endDate": sunday.isoformat()}],
+            "dateRanges": [{"startDate": first_monday.isoformat(), "endDate": last_sunday.isoformat()}],
+            "dimensions": [{"name": "isoYearIsoWeek"}],
             "metrics": [{"name": "activeUsers"}],
         },
         timeout=60)
     if not response.ok:
         raise RuntimeError(f"Google Analytics returned HTTP {response.status_code}: {response.text[:500]}")
-    rows = response.json().get("rows", [])
-    return int(rows[0]["metricValues"][0]["value"]) if rows else 0
+    number_of_weeks = ((last_sunday - first_monday).days + 1) // 7
+    weekly_active_users = [int(row["metricValues"][0]["value"]) for row in response.json().get("rows", [])]
+    return round(sum(weekly_active_users) / number_of_weeks)
 
 
 def fill_in_project_usage_count_placeholders(markdown_text, project_usage_counts):
@@ -235,8 +245,9 @@ def fill_in_project_usage_count_placeholders(markdown_text, project_usage_counts
             return f"[{citations}]({saved['cited_by_url']})" if saved and saved["cited_by_url"] else citations
         if saved is None:
             return f"{count} weekly visitors"
-        monday = datetime.date.fromisoformat(saved["week_starting"])
-        return f"{count} weekly visitors [Google Analytics: week of {monday.month}/{monday.day}/{monday.year}]"
+        return (f"{count} weekly visitors [Google Analytics average: "
+                f"{format_date_as_month_day_year(saved['averaged_from'])} to "
+                f"{format_date_as_month_day_year(saved['averaged_to'])}]")
 
     markdown_text = PLACEHOLDER_REGEX.sub(format_placeholder, markdown_text)
     markdown_text = re.sub(f", {HIDDEN_COUNT_MARKER}|{HIDDEN_COUNT_MARKER}, ", "", markdown_text)
@@ -249,7 +260,7 @@ def main():
         placeholders = find_placeholders(f.read())
     previous_project_usage_counts = load_project_usage_counts()
     today = datetime.date.today()
-    monday, sunday = get_last_full_week(today)
+    first_monday, last_sunday = get_date_range_of_last_full_weeks(today, NUMBER_OF_WEEKS_TO_AVERAGE)
     kinds_of_placeholders = {kind for kind, _ in placeholders}
 
     # Load the Scholar profile page and sign in to Google Analytics once, up front, so that a failure is reported
@@ -285,9 +296,11 @@ def main():
                 if key not in GOOGLE_ANALYTICS_PROPERTY_ID_BY_WEBSITE:
                     raise ValueError("this website has no property ID in GOOGLE_ANALYTICS_PROPERTY_ID_BY_WEBSITE")
                 fetched = {
-                    "count": fetch_weekly_active_users(
-                        google_analytics_session, GOOGLE_ANALYTICS_PROPERTY_ID_BY_WEBSITE[key], monday, sunday),
-                    "week_starting": monday.isoformat(),
+                    "count": fetch_average_weekly_active_users(
+                        google_analytics_session, GOOGLE_ANALYTICS_PROPERTY_ID_BY_WEBSITE[key],
+                        first_monday, last_sunday),
+                    "averaged_from": first_monday.isoformat(),
+                    "averaged_to": last_sunday.isoformat(),
                 }
         except Exception as e:
             previous = previous_project_usage_counts.get(kind, {}).get(key)
@@ -307,8 +320,8 @@ def main():
 
     number_of_values_saved = sum(len(counts_by_key) for counts_by_key in project_usage_counts.values())
     print(f"Saved {number_of_values_saved} of {len(placeholders)} values to {PROJECT_USAGE_COUNTS_PATH} "
-          f"({number_of_values_kept_from_previous_run} kept from the previous run). Weekly visitors are for the week "
-          f"of {monday} to {sunday}.")
+          f"({number_of_values_kept_from_previous_run} kept from the previous run). Weekly visitors are averaged "
+          f"over {first_monday} to {last_sunday}.")
 
 
 if __name__ == "__main__":
