@@ -2,66 +2,66 @@
   "github_stars": {
     "broadinstitute/SpliceAI-lookup": {
       "count": 35,
-      "fetched_on": "2026-11-16"
+      "fetched_on": "2026-11-17"
     },
     "broadinstitute/flipbook": {
       "count": 23,
-      "fetched_on": "2026-11-16"
+      "fetched_on": "2026-11-17"
     },
     "broadinstitute/gnomad-browser": {
       "count": 92,
-      "fetched_on": "2026-11-16"
+      "fetched_on": "2026-11-17"
     },
     "broadinstitute/seqr": {
       "count": 221,
-      "fetched_on": "2026-11-16"
+      "fetched_on": "2026-11-17"
     },
     "broadinstitute/sma-finder": {
       "count": 15,
-      "fetched_on": "2026-11-16"
+      "fetched_on": "2026-11-17"
     },
     "broadinstitute/str-analysis": {
       "count": 53,
-      "fetched_on": "2026-11-16"
+      "fetched_on": "2026-11-17"
     },
     "broadinstitute/trexplorer-catalog": {
       "count": 20,
-      "fetched_on": "2026-11-16"
+      "fetched_on": "2026-11-17"
     },
     "bw2/ConfigArgParse": {
       "count": 761,
-      "fetched_on": "2026-11-16"
+      "fetched_on": "2026-11-17"
     },
     "bw2/ExpansionHunter": {
       "count": 20,
-      "fetched_on": "2026-11-16"
+      "fetched_on": "2026-11-17"
     }
   },
   "google_scholar_citations": {
     "Defining a tandem repeat catalog and variation clusters for genome-wide analyses and population databases": {
       "cited_by_url": "https://scholar.google.com/scholar?cites=8905969213586050368",
       "count": 27,
-      "fetched_on": "2026-11-16"
+      "fetched_on": "2026-11-17"
     },
     "Diagnosing missed cases of spinal muscular atrophy in genome, exome, and panel sequencing data sets": {
       "cited_by_url": "https://scholar.google.com/scholar?cites=9736194330297635545,15246350528695278218",
       "count": 12,
-      "fetched_on": "2026-11-16"
+      "fetched_on": "2026-11-17"
     },
     "Insights from a genome-wide truth set of tandem repeat variation": {
       "cited_by_url": "https://scholar.google.com/scholar?cites=421910160160465218",
       "count": 16,
-      "fetched_on": "2026-11-16"
+      "fetched_on": "2026-11-17"
     },
     "The mutational constraint spectrum quantified from variation in 141,456 humans": {
       "cited_by_url": "https://scholar.google.com/scholar?cites=2973153514797288238,7612976847593149730,11824198349350444369",
       "count": 11947,
-      "fetched_on": "2026-11-16"
+      "fetched_on": "2026-11-17"
     },
     "seqr: A web-based analysis and collaboration tool for rare disease genomics": {
       "cited_by_url": "https://scholar.google.com/scholar?cites=2764357361710126723",
       "count": 149,
-      "fetched_on": "2026-11-16"
+      "fetched_on": "2026-11-17"
     }
   },
   "weekly_visitors": {
@@ -69,31 +69,31 @@
       "averaged_from": "2026-08-24",
       "averaged_to": "2026-11-15",
       "count": 48,
-      "fetched_on": "2026-11-16"
+      "fetched_on": "2026-11-17"
     },
     "liftover.broadinstitute.org": {
       "averaged_from": "2026-08-24",
       "averaged_to": "2026-11-15",
       "count": 1269,
-      "fetched_on": "2026-11-16"
+      "fetched_on": "2026-11-17"
     },
     "seqr.broadinstitute.org": {
       "averaged_from": "2026-08-24",
       "averaged_to": "2026-11-15",
       "count": 151,
-      "fetched_on": "2026-11-16"
+      "fetched_on": "2026-11-17"
     },
     "spliceailookup.broadinstitute.org": {
       "averaged_from": "2026-08-24",
       "averaged_to": "2026-11-15",
       "count": 8087,
-      "fetched_on": "2026-11-16"
+      "fetched_on": "2026-11-17"
     },
     "trexplorer.broadinstitute.org": {
       "averaged_from": "2026-08-24",
       "averaged_to": "2026-11-15",
       "count": 98,
-      "fetched_on": "2026-11-16"
+      "fetched_on": "2026-11-17"
     }
   }
 }
