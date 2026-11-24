@@ -2,39 +2,39 @@
   "github_stars": {
     "broadinstitute/SpliceAI-lookup": {
       "count": 35,
-      "fetched_on": "2026-11-17"
+      "fetched_on": "2026-11-24"
     },
     "broadinstitute/flipbook": {
       "count": 23,
-      "fetched_on": "2026-11-17"
+      "fetched_on": "2026-11-24"
     },
     "broadinstitute/gnomad-browser": {
       "count": 92,
-      "fetched_on": "2026-11-17"
+      "fetched_on": "2026-11-24"
     },
     "broadinstitute/seqr": {
       "count": 221,
-      "fetched_on": "2026-11-17"
+      "fetched_on": "2026-11-24"
     },
     "broadinstitute/sma-finder": {
       "count": 15,
-      "fetched_on": "2026-11-17"
+      "fetched_on": "2026-11-24"
     },
     "broadinstitute/str-analysis": {
       "count": 53,
-      "fetched_on": "2026-11-17"
+      "fetched_on": "2026-11-24"
     },
     "broadinstitute/trexplorer-catalog": {
       "count": 20,
-      "fetched_on": "2026-11-17"
+      "fetched_on": "2026-11-24"
     },
     "bw2/ConfigArgParse": {
       "count": 761,
-      "fetched_on": "2026-11-17"
+      "fetched_on": "2026-11-24"
     },
     "bw2/ExpansionHunter": {
       "count": 20,
-      "fetched_on": "2026-11-17"
+      "fetched_on": "2026-11-24"
     }
   },
   "google_scholar_citations": {
@@ -66,34 +66,34 @@
   },
   "weekly_visitors": {
     "genelookup.broadinstitute.org": {
-      "averaged_from": "2026-08-24",
-      "averaged_to": "2026-11-15",
-      "count": 48,
-      "fetched_on": "2026-11-17"
+      "averaged_from": "2026-08-31",
+      "averaged_to": "2026-11-22",
+      "count": 53,
+      "fetched_on": "2026-11-24"
     },
     "liftover.broadinstitute.org": {
-      "averaged_from": "2026-08-24",
-      "averaged_to": "2026-11-15",
-      "count": 1269,
-      "fetched_on": "2026-11-17"
+      "averaged_from": "2026-08-31",
+      "averaged_to": "2026-11-22",
+      "count": 1276,
+      "fetched_on": "2026-11-24"
     },
     "seqr.broadinstitute.org": {
-      "averaged_from": "2026-08-24",
-      "averaged_to": "2026-11-15",
-      "count": 151,
-      "fetched_on": "2026-11-17"
+      "averaged_from": "2026-08-31",
+      "averaged_to": "2026-11-22",
+      "count": 150,
+      "fetched_on": "2026-11-24"
     },
     "spliceailookup.broadinstitute.org": {
-      "averaged_from": "2026-08-24",
-      "averaged_to": "2026-11-15",
-      "count": 8087,
-      "fetched_on": "2026-11-17"
+      "averaged_from": "2026-08-31",
+      "averaged_to": "2026-11-22",
+      "count": 8289,
+      "fetched_on": "2026-11-24"
     },
     "trexplorer.broadinstitute.org": {
-      "averaged_from": "2026-08-24",
-      "averaged_to": "2026-11-15",
-      "count": 98,
-      "fetched_on": "2026-11-17"
+      "averaged_from": "2026-08-31",
+      "averaged_to": "2026-11-22",
+      "count": 99,
+      "fetched_on": "2026-11-24"
     }
   }
 }
